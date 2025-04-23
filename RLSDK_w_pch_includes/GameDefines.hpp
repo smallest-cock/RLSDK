@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -332,9 +332,9 @@ enum EClassCastFlag : uint32_t
 */
 
 // GObjects
-#define GObjects_Offset		(uintptr_t)0x02340200
+#define GObjects_Offset		(uintptr_t)0x02348660
 // GNames
-#define GNames_Offset		(uintptr_t)0x023401B8
+#define GNames_Offset		(uintptr_t)0x02348618
 
 /*
 # ========================================================================================= #

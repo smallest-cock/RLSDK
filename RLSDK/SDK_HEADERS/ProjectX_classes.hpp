@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
@@ -4018,7 +4018,7 @@ public:
 };
 
 // Class ProjectX.PsyNetConfig_X
-// 0x0029 (0x0078 - 0x00A1)
+// 0x0049 (0x0078 - 0x00C1)
 class UPsyNetConfig_X : public UOnlineConfig_X
 {
 public:
@@ -4033,10 +4033,12 @@ public:
 	uint32_t                                           bAllowPlayerCancelMatch : 1;                   // 0x0078 (0x0004) [0x0000000000000001] [0x00000100] (CPF_Edit)
 	float                                              PerConTimeout;                                 // 0x007C (0x0004) [0x0000000000004001] (CPF_Edit | CPF_Config)
 	float                                              PerConPingInterval;                            // 0x0080 (0x0004) [0x0000000000004001] (CPF_Edit | CPF_Config)
-	float                                              FreshConnectionWindow;                         // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              MatchmakingHeartbeatTimeSeconds;               // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	class TArray<class FString>                        SuppressHeadersForDebug;                       // 0x0090 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	EPsyNetEnvironment                                 PsyNetEnvironment;                             // 0x00A0 (0x0001) [0x0000000000000000]               
+	class TArray<EOnlinePlatform>                      DisabledServerBacktracePlatforms;              // 0x0088 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<EOnlinePlatform>                      DisabledClientBacktracePlatforms;              // 0x0098 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	float                                              FreshConnectionWindow;                         // 0x00A8 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              MatchmakingHeartbeatTimeSeconds;               // 0x00AC (0x0004) [0x0000000000000001] (CPF_Edit)    
+	class TArray<class FString>                        SuppressHeadersForDebug;                       // 0x00B0 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	EPsyNetEnvironment                                 PsyNetEnvironment;                             // 0x00C0 (0x0001) [0x0000000000000000]               
 
 public:
 	static UClass* StaticClass()
@@ -4715,6 +4717,8 @@ public:
 	void AddToDisabledActions(const class FName& ActionName);
 	void ReleaseKey(const class FName& Key, bool optionalBTriggerEvents);
 	static class FString GetUIKey(const class FName& KeyName);
+	static void SetCachedUIKey(const class FString& KeyValue, class FName& outKeyName);
+	static bool GetCachedUIKey(class FName& outKeyName, class FString& outOutKey);
 	void ShutdownInputSystem();
 	void InitInputSystem();
 	void ResetInput();
@@ -9442,6 +9446,7 @@ public:
 	void HandleGetPingRegionPingsRPC2Failed(class URPC_GetGameServerPingList2_X* RPC);
 	void HandleGetPingRegionPingsRPC2(class URPC_GetGameServerPingList2_X* RPC);
 	void HandleGetSubRegionsRPCFail(class URPC_GetSubRegions_X* RPC);
+	void ResetPingTimers();
 	void HandleGetSubRegionsRPCSuccess(class URPC_GetSubRegions_X* RPC);
 	void HandleGetPingRegionPingsRPC(class URPC_GetGameServerPingList_X* RPC);
 	void SwitchToLegacyRPC();
@@ -9834,12 +9839,14 @@ public:
 };
 
 // Class ProjectX.OSSConfig_X
-// 0x0008 (0x0078 - 0x0080)
+// 0x0010 (0x0078 - 0x0088)
 class UOSSConfig_X : public UOnlineConfig_X
 {
 public:
 	uint32_t                                           bEnablePresence : 1;                           // 0x0078 (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
 	float                                              EosInitTimeoutSeconds;                         // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              GdkUpdateDlcTimeoutSeconds;                    // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            GdkMaxConcurrentDlcLicenseRequests;            // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
 	static UClass* StaticClass()
@@ -17638,23 +17645,24 @@ public:
 };
 
 // Class ProjectX.OnlineGamePrivateMatch_X
-// 0x0148 (0x0130 - 0x0278)
+// 0x0158 (0x0130 - 0x0288)
 class UOnlineGamePrivateMatch_X : public UOnlineGameMatchmakingBase_X
 {
 public:
 	uint32_t                                           bCancelled : 1;                                // 0x0130 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	class FString                                      PreferredRegion;                               // 0x0138 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	int32_t                                            PreferredPlaylistID;                           // 0x0148 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class FString                                      SearchingString;                               // 0x0150 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      StartSearchFailString;                         // 0x0160 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      FoundServerString;                             // 0x0170 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      AlreadyJoiningGameString;                      // 0x0180 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      TimeoutString;                                 // 0x0190 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      WrongRegionString;                             // 0x01A0 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	struct FCustomMatchSettings                        Settings;                                      // 0x01B0 (0x0090) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	float                                              SearchTimeout;                                 // 0x0240 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
-	struct FScriptDelegate                             __EventPrivateMatchError__Delegate;            // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCancelPrivateMatch__Delegate;           // 0x0260 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class URegionPing_X*>                 PreferredSubRegion;                            // 0x0148 (0x0010) [0x0001004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	int32_t                                            PreferredPlaylistID;                           // 0x0158 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class FString                                      SearchingString;                               // 0x0160 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      StartSearchFailString;                         // 0x0170 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      FoundServerString;                             // 0x0180 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      AlreadyJoiningGameString;                      // 0x0190 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      TimeoutString;                                 // 0x01A0 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      WrongRegionString;                             // 0x01B0 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	struct FCustomMatchSettings                        Settings;                                      // 0x01C0 (0x0090) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	float                                              SearchTimeout;                                 // 0x0250 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	struct FScriptDelegate                             __EventPrivateMatchError__Delegate;            // 0x0258 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCancelPrivateMatch__Delegate;           // 0x0270 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -17675,6 +17683,7 @@ public:
 	void HandleStartSearch(class UAsyncTask* Task);
 	void OnReceiveGameServer(const struct FServerReservationData& Reservation);
 	void HandleSearchTimeout();
+	int32_t __OnlineGamePrivateMatch_X__BeginState_0x1(class URegionPing_X* A, class URegionPing_X* B);
 	void Cancel();
 	void ResetPrivateMatchSettings();
 	void UpdatePrivateMatchSettings(const struct FCustomMatchSettings& InSettings);
@@ -20599,31 +20608,6 @@ public:
 		return uClassPointer;
 	};
 
-};
-
-// Class ProjectX.RPC_ReportCheater_X
-// 0x0058 (0x00E8 - 0x0140)
-class URPC_ReportCheater_X : public URPC_X
-{
-public:
-	struct FUniqueNetId                                PlayerID;                                      // 0x00E8 (0x0048) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      Reason;                                        // 0x0130 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-
-public:
-	static UClass* StaticClass()
-	{
-		static UClass* uClassPointer = nullptr;
-
-		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class ProjectX.RPC_ReportCheater_X");
-		}
-
-		return uClassPointer;
-	};
-
-	class URPC_ReportCheater_X* SetReason(const class FString& InReason);
-	class URPC_ReportCheater_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
 // Class ProjectX.PsyNetBreadcrumbObserver_X

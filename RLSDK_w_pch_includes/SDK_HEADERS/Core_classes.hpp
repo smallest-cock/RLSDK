@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.hpp
@@ -1282,6 +1282,39 @@ enum class EContentKeyIndex_PrimeUpdate54 : uint8_t
 	PrimeUpdate54_F271FCF7E4F5AB3C3765EAD469C8FA45     = 28,
 	PrimeUpdate54_AD62D34A0D4D855B1F882D69A6EF400E     = 29,
 	PrimeUpdate54_END                                  = 30
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate54
+enum class EContentKeyIndex_PrimeUpdate54_2 : uint8_t
+{
+	PrimeUpdate54_1_E571A7EDCD3D444441D9A8DCFB639FBB   = 0,
+	PrimeUpdate54_1_BB062E21E1F2D3E5398A1719C8BAC76F   = 1,
+	PrimeUpdate54_1_5C5C95966BA3DED16D742C959B31F59E   = 2,
+	PrimeUpdate54_1_7B35EBCCDE2A22F3BAD45D5E42B55D6C   = 3,
+	PrimeUpdate54_1_57BFD304A3942175F8EB1E497D22368E   = 4,
+	PrimeUpdate54_1_ECFEADB0EE6E9FD8D590E2F3C54576C5   = 5,
+	PrimeUpdate54_1_695767DFB4788BCC4D1BCE4DD2101DA6   = 6,
+	PrimeUpdate54_1_5E1A4E299460574A3F8226B6F75DA193   = 7,
+	PrimeUpdate54_1_6E25A4C944B4E9F2AAA75300480A9391   = 8,
+	PrimeUpdate54_1_ABF9F53291B661A188059F095723E18B   = 9,
+	PrimeUpdate54_1_2665619FA71ABEFD6B3E5F78097FB1E8   = 10,
+	PrimeUpdate54_1_59E4528A05F72D77BBF4C89D0DEE5A53   = 11,
+	PrimeUpdate54_1_E00B02AD2E51C4ED83D9A12D9540C261   = 12,
+	PrimeUpdate54_1_00B64B13EBD71B59A99D13279159C334   = 13,
+	PrimeUpdate54_1_6AEB4895DB12D59EB10FAF627020F10A   = 14,
+	PrimeUpdate54_1_3B20CF2FA56A6FBCDA59515BF3C27945   = 15,
+	PrimeUpdate54_1_27B762E738B16EFF8A6A6918B1DB65C6   = 16,
+	PrimeUpdate54_1_EA50A5062E87A21C38A197626F000DF5   = 17,
+	PrimeUpdate54_1_6F78629D11BC7673D0311568E9D15416   = 18,
+	PrimeUpdate54_1_DCE26246049C1E74E9120E88DD462A5F   = 19,
+	PrimeUpdate54_1_980018041690AFA84979ACAAD3968264   = 20,
+	PrimeUpdate54_1_311F6A0B96535B31BDD99E421AC57828   = 21,
+	PrimeUpdate54_1_C32D6C9B678FCE37F28A887BAE9DC45B   = 22,
+	PrimeUpdate54_1_740D0B732DC142DD5EAFD95358FA741B   = 23,
+	PrimeUpdate54_1_B6320F6A01680B90105B818F8859EB2C   = 24,
+	PrimeUpdate54_1_BA3B938B925416DC2ACF71FA3BF3800C   = 25,
+	PrimeUpdate54_1_CAB7471443D859E3FD65053646D27FC5   = 26,
+	PrimeUpdate54_1_END                                = 27
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_ContinuousIntegration
@@ -2906,6 +2939,7 @@ public:
 	uint32_t                                           NewsPanelV2 : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
 	uint32_t                                           Blueprints : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
 	uint32_t                                           RocketBucks : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t                                           Tritip : 1;                                    // 0x0070 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
 	uint32_t                                           DiscordRichPresence : 1;                       // 0x0074 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
 	uint32_t                                           SupportACreator : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
 	uint32_t                                           CinematicIntro : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
@@ -2941,6 +2975,8 @@ public:
 	uint32_t                                           ExposeNewMutators : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
 	uint32_t                                           MatchmakingSubRegion : 1;                      // 0x0078 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
 	uint32_t                                           CrossbarSFX : 1;                               // 0x0078 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
+	uint32_t                                           RugbyIteration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           ChallengesV2 : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
 
 public:
 	static UClass* StaticClass()

@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp
@@ -12977,6 +12977,13 @@ struct UDateTime_execFromDateTime_Params
 	int32_t                                            InSecond;                                         // 0x0014 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            InTimeZone;                                       // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	class UDateTime*                                   ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.DateTime.GetClientTimeOffset
+// [0x00022401] 
+struct UDateTime_execGetClientTimeOffset_Params
+{
+	int32_t                                            ReturnValue;                                      // 0x0000 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.DateTime.FromString

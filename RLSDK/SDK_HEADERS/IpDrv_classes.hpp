@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
@@ -2084,11 +2084,11 @@ public:
 };
 
 // Class IpDrv.TcpipConnection
-// 0x0028 (0xB1E8 - 0xB210)
+// 0x0028 (0xB1F0 - 0xB218)
 class UTcpipConnection : public UNetConnection
 {
 public:
-	uint8_t                                            UnknownData00[0x28];                            // 0xB1E8 (0x0028) MISSED OFFSET
+	uint8_t                                            UnknownData00[0x28];                            // 0xB1F0 (0x0028) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2106,14 +2106,14 @@ public:
 };
 
 // Class IpDrv.TcpNetDriver
-// 0x0080 (0x0218 - 0x0298)
+// 0x0080 (0x0258 - 0x02D8)
 class UTcpNetDriver : public UNetDriver
 {
 public:
-	uint8_t                                            UnknownData00[0x58];                            // 0x0218 (0x0058) MISSED OFFSET
-	uint32_t                                           AllowPlayerPortUnreach : 1;                    // 0x0270 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
-	uint32_t                                           LogPortUnreach : 1;                            // 0x0274 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
-	uint8_t                                            UnknownData01[0x20];                            // 0x0278 (0x0020) MISSED OFFSET
+	uint8_t                                            UnknownData00[0x58];                            // 0x0258 (0x0058) MISSED OFFSET
+	uint32_t                                           AllowPlayerPortUnreach : 1;                    // 0x02B0 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t                                           LogPortUnreach : 1;                            // 0x02B4 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint8_t                                            UnknownData01[0x20];                            // 0x02B8 (0x0020) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()

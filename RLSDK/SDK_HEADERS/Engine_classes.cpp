@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.cpp
@@ -36498,6 +36498,28 @@ class UDateTime* UDateTime::FromDateTime(int32_t InYear, int32_t InMonth, int32_
 	UDateTime::StaticClass()->ProcessEvent(uFnFromDateTime, &FromDateTime_Params, nullptr);
 
 	return FromDateTime_Params.ReturnValue;
+};
+
+// Function Engine.DateTime.GetClientTimeOffset
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+int32_t UDateTime::GetClientTimeOffset()
+{
+	static UFunction* uFnGetClientTimeOffset = nullptr;
+
+	if (!uFnGetClientTimeOffset)
+	{
+		uFnGetClientTimeOffset = UFunction::FindFunction("Function Engine.DateTime.GetClientTimeOffset");
+	}
+
+	UDateTime_execGetClientTimeOffset_Params GetClientTimeOffset_Params;
+	memset(&GetClientTimeOffset_Params, 0, sizeof(GetClientTimeOffset_Params));
+
+	UDateTime::StaticClass()->ProcessEvent(uFnGetClientTimeOffset, &GetClientTimeOffset_Params, nullptr);
+
+	return GetClientTimeOffset_Params.ReturnValue;
 };
 
 // Function Engine.DateTime.FromString

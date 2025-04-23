@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
@@ -7380,6 +7380,23 @@ struct UPlayerInput_X_execGetUIKey_Params
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   KeyStr;                                           // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   LocalizedKey;                                     // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.PlayerInput_X.SetCachedUIKey
+// [0x00442401] 
+struct UPlayerInput_X_execSetCachedUIKey_Params
+{
+	class FName                                        KeyName;                                          // 0x0000 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
+	class FString                                      KeyValue;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.PlayerInput_X.GetCachedUIKey
+// [0x00442401] 
+struct UPlayerInput_X_execGetCachedUIKey_Params
+{
+	class FName                                        KeyName;                                          // 0x0000 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
+	class FString                                      OutKey;                                           // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.PlayerInput_X.ShutdownInputSystem
@@ -15371,6 +15388,7 @@ struct UOnlineGameRegions_X_execGetLocalizedName_Params
 {
 	class FString                                      RegionID;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// int32_t                                         RegionIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGameRegions_X.GetSuperRegionID
@@ -15492,6 +15510,12 @@ struct UOnlineGameRegions_X_execHandleGetPingRegionPingsRPC2_Params
 struct UOnlineGameRegions_X_execHandleGetSubRegionsRPCFail_Params
 {
 	class URPC_GetSubRegions_X*                        RPC;                                              // 0x0000 (0x0008) [0x0001400000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.OnlineGameRegions_X.ResetPingTimers
+// [0x00040003] 
+struct UOnlineGameRegions_X_execResetPingTimers_Params
+{
 };
 
 // Function ProjectX.OnlineGameRegions_X.HandleGetSubRegionsRPCSuccess
@@ -26400,6 +26424,15 @@ struct UOnlineGamePrivateMatch_X_execHandleSearchTimeout_Params
 {
 };
 
+// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1
+// [0x40040003] 
+struct UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__BeginState_0x1_Params
+{
+	class URegionPing_X*                               A;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	class URegionPing_X*                               B;                                                // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.OnlineGamePrivateMatch_X.Cancel
 // [0x400020002] 
 struct UOnlineGamePrivateMatch_X_execCancel_Params
@@ -28745,22 +28778,6 @@ struct UPostProcessManager_X_execInit_Params
 {
 	class APlayerController_X*                         NewOwner;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         I;                                                // 0x0008 (0x0004) [0x0000000000000000]               
-};
-
-// Function ProjectX.RPC_ReportCheater_X.SetReason
-// [0x00020003] 
-struct URPC_ReportCheater_X_execSetReason_Params
-{
-	class FString                                      InReason;                                         // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
-	class URPC_ReportCheater_X*                        ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function ProjectX.RPC_ReportCheater_X.SetPlayerID
-// [0x00020003] 
-struct URPC_ReportCheater_X_execSetPlayerID_Params
-{
-	struct FUniqueNetId                                InPlayerID;                                       // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class URPC_ReportCheater_X*                        ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.PsyNetBreadcrumbObserver_X.Breadcrumb

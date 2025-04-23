@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_structs.hpp
@@ -608,7 +608,7 @@ struct FOnlinePlayerMatchData
 	int32_t                                            ConsecutiveMatchesPlayed;                      // 0x0084 (0x0004) [0x0000000000000000]               
 	struct FUniqueNetId                                PartyLeader;                                   // 0x0088 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  PartyMembers;                                  // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              DistanceDrivenKM;                              // 0x00E0 (0x0004) [0x0000000000000000]               
+	int32_t                                            DistanceDrivenMeters;                          // 0x00E0 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bPartyLeaderValid : 1;                         // 0x00E4 (0x0004) [0x0000000000000000] [0x00000001] 
 	int32_t                                            TeamIndex;                                     // 0x00E8 (0x0004) [0x0000000000000000]               
 	class TArray<struct FStatData>                     Stats;                                         // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1266,6 +1266,17 @@ struct FPlaylistMapPrefs : FMapPrefs
 {
 	class FName                                        Playlist;                                      // 0x0020 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bOverrideGlobal : 1;                           // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct TAGame._Types_TA.NetBucketMetrics
+// 0x0014
+struct FNetBucketMetrics
+{
+	int32_t                                            MinPossibleValue;                              // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              TotalSeconds;                                  // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              AvgRecordedValue;                              // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              MaxRecordedValue;                              // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            Count;                                         // 0x0010 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._Types_TA.FPSBucketMetrics
@@ -1979,22 +1990,23 @@ struct FMenuTreeFocusMap
 };
 
 // ScriptStruct TAGame.GFxData_MTXGarage_TA.MTXPurchaseInfo
-// 0x00A0
+// 0x00B0
 struct FMTXPurchaseInfo
 {
 	int32_t                                            CatalogID;                                     // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	class FString                                      Title;                                         // 0x0008 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FString                                      Description;                                   // 0x0018 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      TabTitle;                                      // 0x0028 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class UTexture*                                    Image;                                         // 0x0038 (0x0008) [0x0000000040000000] (CPF_DataBinding)
-	class FString                                      PurchasePrice;                                 // 0x0040 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      OriginalPrice;                                 // 0x0050 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	int32_t                                            DiscountPercentage;                            // 0x0060 (0x0004) [0x0000000040000000] (CPF_DataBinding)
-	class FString                                      ProductHashIDs;                                // 0x0068 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      BundleCurrencies;                              // 0x0078 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	uint32_t                                           bCanBePlayerTraded : 1;                        // 0x0088 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           bIsOwned : 1;                                  // 0x0088 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	class FString                                      ImageURL;                                      // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PriceDescription;                              // 0x0028 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      TabTitle;                                      // 0x0038 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class UTexture*                                    Image;                                         // 0x0048 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      PurchasePrice;                                 // 0x0050 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      OriginalPrice;                                 // 0x0060 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            DiscountPercentage;                            // 0x0070 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      ProductHashIDs;                                // 0x0078 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      BundleCurrencies;                              // 0x0088 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint32_t                                           bCanBePlayerTraded : 1;                        // 0x0098 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           bIsOwned : 1;                                  // 0x0098 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	class FString                                      ImageURL;                                      // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.GFxData_MusicPlayer_TA.GFxMusicPlaylist
@@ -2759,7 +2771,7 @@ struct FArenaStatSound
 };
 
 // ScriptStruct TAGame.StatFactory_TA.StatEventCollection
-// 0x0190
+// 0x01D8
 struct FStatEventCollection
 {
 	class UStatEvent_TA*                               Win;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -2812,6 +2824,15 @@ struct FStatEventCollection
 	class UStatEvent_TA*                               PossessionSteal;                               // 0x0178 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               PossessionDenial;                              // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               PossessionClear;                               // 0x0188 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               SmallBoostsCollected;                          // 0x0190 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BigBoostsCollected;                            // 0x0198 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BoostUsed;                                     // 0x01A0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               Dodges;                                        // 0x01A8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DistanceDrivenMeters;                          // 0x01B0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DistanceFlown;                                 // 0x01B8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               CrossbarHits;                                  // 0x01C0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DoubleGrapple;                                 // 0x01C8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxDodgeStreak;                                // 0x01D0 (0x0008) [0x0001000000000001] (CPF_Edit)    
 };
 
 // ScriptStruct TAGame.AssetAttribute_ChangeProductDrawScale_TA.ProductSlotNewDrawScale
@@ -4447,7 +4468,7 @@ struct FScoreIndex
 };
 
 // ScriptStruct TAGame.RPC_MicroTransactions_GetCatalog_TA.MTCatalogInfo
-// 0x0098
+// 0x00A8
 struct FMTCatalogInfo
 {
 	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
@@ -4455,14 +4476,15 @@ struct FMTCatalogInfo
 	class FString                                      Description;                                   // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      ImageURL;                                      // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      TabTitle;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FOnlineProductData>            Items;                                         // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FCurrency>                     Currencies;                                    // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      PlatformProductID;                             // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Category;                                      // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Price;                                         // 0x0088 (0x0004) [0x0000000000000000]               
-	int32_t                                            OriginalPrice;                                 // 0x008C (0x0004) [0x0000000000000000]               
-	int32_t                                            DiscountPercentage;                            // 0x0090 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bIsOwned : 1;                                  // 0x0094 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FString                                      PriceDescription;                              // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FOnlineProductData>            Items;                                         // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FCurrency>                     Currencies;                                    // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlatformProductID;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Category;                                      // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Price;                                         // 0x0098 (0x0004) [0x0000000000000000]               
+	int32_t                                            OriginalPrice;                                 // 0x009C (0x0004) [0x0000000000000000]               
+	int32_t                                            DiscountPercentage;                            // 0x00A0 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bIsOwned : 1;                                  // 0x00A4 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // ScriptStruct TAGame.GFxData_MTXGarage_TA.CartInfo
@@ -5134,6 +5156,34 @@ struct FRumbleItemIndex
 {
 	class APlayerController_TA*                        PC;                                            // 0x0000 (0x0008) [0x0000000000000000]               
 	int32_t                                            ItemIndex;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame.NetMetricPlayerData_TA.NetBuckets
+// 0x002C
+struct FNetBuckets
+{
+	class TArray<struct FNetBucketMetrics>             Data;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      StatName;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            BannedBucketIndex;                             // 0x0020 (0x0004) [0x0000000000000000]               
+	float                                              KickThresholdSeconds;                          // 0x0024 (0x0004) [0x0000000000000000]               
+	float                                              TotalBannedSeconds;                            // 0x0028 (0x0004) [0x0000000000002000] (CPF_Transient)
+};
+
+// ScriptStruct TAGame.NetMetricsConfig_TA.NetBucketSetup
+// 0x0018
+struct FNetBucketSetup
+{
+	class TArray<int32_t>                              MinPossibleValue;                              // 0x0000 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	int32_t                                            BannedBucketIndex;                             // 0x0010 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              KickThresholdSeconds;                          // 0x0014 (0x0004) [0x0000000000000001] (CPF_Edit)    
+};
+
+// ScriptStruct TAGame.NetMetricPlayerDataExport_TA.NetBucketsExport
+// 0x0020
+struct FNetBucketsExport
+{
+	class TArray<struct FNetBucketMetrics>             Data;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      StatName;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.NetworkConfig_TA.NetworkLimit
@@ -5895,7 +5945,7 @@ struct FThrowSetting
 };
 
 // ScriptStruct TAGame.StatFactory_TA.BallInfo
-// 0x003C
+// 0x0040
 struct FBallInfo
 {
 	class ABall_TA*                                    Ball;                                          // 0x0000 (0x0008) [0x0000000000000000]               
@@ -5909,6 +5959,7 @@ struct FBallInfo
 	float                                              BallHitTime;                                   // 0x0030 (0x0004) [0x0000000000000000]               
 	float                                              SaveTime;                                      // 0x0034 (0x0004) [0x0000000000000000]               
 	float                                              ShotTime;                                      // 0x0038 (0x0004) [0x0000000000000000]               
+	float                                              CrossbarHitTime;                               // 0x003C (0x0004) [0x0001000000000000]               
 };
 
 // ScriptStruct TAGame.StatFactory_TA.StatGroupCollection

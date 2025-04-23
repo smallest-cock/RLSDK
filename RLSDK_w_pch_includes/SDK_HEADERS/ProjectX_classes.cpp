@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.50) 03/27/2025 02:29PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
@@ -21537,6 +21537,60 @@ class FString UPlayerInput_X::GetUIKey(const class FName& KeyName)
 	UPlayerInput_X::StaticClass()->ProcessEvent(uFnGetUIKey, &GetUIKey_Params, nullptr);
 
 	return GetUIKey_Params.ReturnValue;
+};
+
+// Function ProjectX.PlayerInput_X.SetCachedUIKey
+// [0x00442401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Private | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  KeyValue                       (CPF_Parm | CPF_NeedCtorLink)
+// class FName                    KeyName                        (CPF_Const | CPF_Parm | CPF_OutParm)
+
+void UPlayerInput_X::SetCachedUIKey(const class FString& KeyValue, class FName& KeyName)
+{
+	static UFunction* uFnSetCachedUIKey = nullptr;
+
+	if (!uFnSetCachedUIKey)
+	{
+		uFnSetCachedUIKey = UFunction::FindFunction("Function ProjectX.PlayerInput_X.SetCachedUIKey");
+	}
+
+	UPlayerInput_X_execSetCachedUIKey_Params SetCachedUIKey_Params;
+	memset(&SetCachedUIKey_Params, 0, sizeof(SetCachedUIKey_Params));
+	memcpy_s(&SetCachedUIKey_Params.KeyValue, sizeof(SetCachedUIKey_Params.KeyValue), &KeyValue, sizeof(KeyValue));
+	memcpy_s(&SetCachedUIKey_Params.KeyName, sizeof(SetCachedUIKey_Params.KeyName), &KeyName, sizeof(KeyName));
+
+	UPlayerInput_X::StaticClass()->ProcessEvent(uFnSetCachedUIKey, &SetCachedUIKey_Params, nullptr);
+
+	memcpy_s(&KeyName, sizeof(KeyName), &SetCachedUIKey_Params.KeyName, sizeof(SetCachedUIKey_Params.KeyName));
+};
+
+// Function ProjectX.PlayerInput_X.GetCachedUIKey
+// [0x00442401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Private | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FName                    KeyName                        (CPF_Const | CPF_Parm | CPF_OutParm)
+// class FString                  OutKey                         (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+bool UPlayerInput_X::GetCachedUIKey(class FName& KeyName, class FString& OutKey)
+{
+	static UFunction* uFnGetCachedUIKey = nullptr;
+
+	if (!uFnGetCachedUIKey)
+	{
+		uFnGetCachedUIKey = UFunction::FindFunction("Function ProjectX.PlayerInput_X.GetCachedUIKey");
+	}
+
+	UPlayerInput_X_execGetCachedUIKey_Params GetCachedUIKey_Params;
+	memset(&GetCachedUIKey_Params, 0, sizeof(GetCachedUIKey_Params));
+	memcpy_s(&GetCachedUIKey_Params.KeyName, sizeof(GetCachedUIKey_Params.KeyName), &KeyName, sizeof(KeyName));
+	memcpy_s(&GetCachedUIKey_Params.OutKey, sizeof(GetCachedUIKey_Params.OutKey), &OutKey, sizeof(OutKey));
+
+	UPlayerInput_X::StaticClass()->ProcessEvent(uFnGetCachedUIKey, &GetCachedUIKey_Params, nullptr);
+
+	memcpy_s(&KeyName, sizeof(KeyName), &GetCachedUIKey_Params.KeyName, sizeof(GetCachedUIKey_Params.KeyName));
+	memcpy_s(&OutKey, sizeof(OutKey), &GetCachedUIKey_Params.OutKey, sizeof(GetCachedUIKey_Params.OutKey));
+
+	return GetCachedUIKey_Params.ReturnValue;
 };
 
 // Function ProjectX.PlayerInput_X.ShutdownInputSystem
@@ -44410,6 +44464,25 @@ void UOnlineGameRegions_X::HandleGetSubRegionsRPCFail(class URPC_GetSubRegions_X
 	HandleGetSubRegionsRPCFail_Params.RPC = RPC;
 
 	this->ProcessEvent(uFnHandleGetSubRegionsRPCFail, &HandleGetSubRegionsRPCFail_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameRegions_X.ResetPingTimers
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameRegions_X::ResetPingTimers()
+{
+	static UFunction* uFnResetPingTimers = nullptr;
+
+	if (!uFnResetPingTimers)
+	{
+		uFnResetPingTimers = UFunction::FindFunction("Function ProjectX.OnlineGameRegions_X.ResetPingTimers");
+	}
+
+	UOnlineGameRegions_X_execResetPingTimers_Params ResetPingTimers_Params;
+	memset(&ResetPingTimers_Params, 0, sizeof(ResetPingTimers_Params));
+
+	this->ProcessEvent(uFnResetPingTimers, &ResetPingTimers_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameRegions_X.HandleGetSubRegionsRPCSuccess
@@ -75319,6 +75392,32 @@ void UOnlineGamePrivateMatch_X::HandleSearchTimeout()
 	this->ProcessEvent(uFnHandleSearchTimeout, &HandleSearchTimeout_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class URegionPing_X*           A                              (CPF_Parm)
+// class URegionPing_X*           B                              (CPF_Parm)
+
+int32_t UOnlineGamePrivateMatch_X::__OnlineGamePrivateMatch_X__BeginState_0x1(class URegionPing_X* A, class URegionPing_X* B)
+{
+	static UFunction* uFn__OnlineGamePrivateMatch_X__BeginState_0x1 = nullptr;
+
+	if (!uFn__OnlineGamePrivateMatch_X__BeginState_0x1)
+	{
+		uFn__OnlineGamePrivateMatch_X__BeginState_0x1 = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1");
+	}
+
+	UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__BeginState_0x1_Params __OnlineGamePrivateMatch_X__BeginState_0x1_Params;
+	memset(&__OnlineGamePrivateMatch_X__BeginState_0x1_Params, 0, sizeof(__OnlineGamePrivateMatch_X__BeginState_0x1_Params));
+	__OnlineGamePrivateMatch_X__BeginState_0x1_Params.A = A;
+	__OnlineGamePrivateMatch_X__BeginState_0x1_Params.B = B;
+
+	this->ProcessEvent(uFn__OnlineGamePrivateMatch_X__BeginState_0x1, &__OnlineGamePrivateMatch_X__BeginState_0x1_Params, nullptr);
+
+	return __OnlineGamePrivateMatch_X__BeginState_0x1_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGamePrivateMatch_X.Cancel
 // [0x400020002] (FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -82081,54 +82180,6 @@ void UPostProcessManager_X::Init(class APlayerController_X* NewOwner)
 	Init_Params.NewOwner = NewOwner;
 
 	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
-};
-
-// Function ProjectX.RPC_ReportCheater_X.SetReason
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_ReportCheater_X*    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class FString                  InReason                       (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
-
-class URPC_ReportCheater_X* URPC_ReportCheater_X::SetReason(const class FString& InReason)
-{
-	static UFunction* uFnSetReason = nullptr;
-
-	if (!uFnSetReason)
-	{
-		uFnSetReason = UFunction::FindFunction("Function ProjectX.RPC_ReportCheater_X.SetReason");
-	}
-
-	URPC_ReportCheater_X_execSetReason_Params SetReason_Params;
-	memset(&SetReason_Params, 0, sizeof(SetReason_Params));
-	memcpy_s(&SetReason_Params.InReason, sizeof(SetReason_Params.InReason), &InReason, sizeof(InReason));
-
-	this->ProcessEvent(uFnSetReason, &SetReason_Params, nullptr);
-
-	return SetReason_Params.ReturnValue;
-};
-
-// Function ProjectX.RPC_ReportCheater_X.SetPlayerID
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_ReportCheater_X*    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            InPlayerID                     (CPF_Parm | CPF_NeedCtorLink)
-
-class URPC_ReportCheater_X* URPC_ReportCheater_X::SetPlayerID(const struct FUniqueNetId& InPlayerID)
-{
-	static UFunction* uFnSetPlayerID = nullptr;
-
-	if (!uFnSetPlayerID)
-	{
-		uFnSetPlayerID = UFunction::FindFunction("Function ProjectX.RPC_ReportCheater_X.SetPlayerID");
-	}
-
-	URPC_ReportCheater_X_execSetPlayerID_Params SetPlayerID_Params;
-	memset(&SetPlayerID_Params, 0, sizeof(SetPlayerID_Params));
-	memcpy_s(&SetPlayerID_Params.InPlayerID, sizeof(SetPlayerID_Params.InPlayerID), &InPlayerID, sizeof(InPlayerID));
-
-	this->ProcessEvent(uFnSetPlayerID, &SetPlayerID_Params, nullptr);
-
-	return SetPlayerID_Params.ReturnValue;
 };
 
 // Function ProjectX.PsyNetBreadcrumbObserver_X.Breadcrumb
