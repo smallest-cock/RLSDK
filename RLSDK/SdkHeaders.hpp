@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: SdkHeaders.hpp
@@ -48,6 +48,7 @@
 #include "SDK_HEADERS/TAGame_structs.hpp"
 #include "SDK_HEADERS/TAGame_classes.hpp"
 #include "SDK_HEADERS/TAGame_parameters.hpp"
+#include "SDK_HEADERS/Extras.hpp"
 
 /*
 # ========================================================================================= #

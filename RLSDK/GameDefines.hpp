@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 04/22/2025 04:39PM
+# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -336,6 +336,32 @@ enum EClassCastFlag : uint32_t
 // GNames
 #define GNames_Offset		(uintptr_t)0x02348618
 
+
+namespace StringUtils
+{
+	inline std::string ToString(const std::wstring& str)
+	{
+		if (str.empty()) return "";
+		int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
+		if (size <= 0) return "";
+		std::string return_str(size - 1, 0);
+		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, return_str.data(), size, nullptr, nullptr);
+		return return_str;
+	}
+
+	inline std::wstring ToWideString(const std::string& str)
+	{
+		if (str.empty()) return L"";
+		int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
+		if (size <= 0) return L"";
+		std::wstring return_str(size - 1, 0);
+		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, return_str.data(), size);
+		return return_str;
+	}
+}
+
+
+
 /*
 # ========================================================================================= #
 # Classes
@@ -413,6 +439,18 @@ public:
 	}
 };
 
+namespace TArrayUtils
+{
+	struct TArrayBase
+	{
+		void* data;
+		int32_t size;
+		int32_t capacity;
+	};
+
+	bool extendCapacity(void* inOldTArray, int32_t newCapacity, void* outNewTArray, int32_t elementSize);
+}
+
 template<typename InElementType>
 class TArray
 {
@@ -430,14 +468,11 @@ private:
 	int32_t ArrayMax;
 
 public:
-	TArray() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0)
-	{
-		//ReAllocate(sizeof(ElementType));
-	}
+	TArray() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) {}
 
 	~TArray()
 	{
-		//clear();
+		clear();
 		//::operator delete(ArrayData, ArrayMax * sizeof(ElementType));
 	}
 
@@ -471,7 +506,7 @@ public:
 	{
 		if (ArrayCount >= ArrayMax)
 		{
-			ReAllocate(sizeof(ElementType) * (ArrayCount + 1));
+			ReAllocate(ArrayCount + 1);
 		}
 
 		new(&ArrayData[ArrayCount]) ElementType(newElement);
@@ -482,7 +517,7 @@ public:
 	{
 		if (ArrayCount >= ArrayMax)
 		{
-			ReAllocate(sizeof(ElementType) * (ArrayCount + 1));
+			ReAllocate(ArrayCount + 1);
 		}
 
 		new(&ArrayData[ArrayCount]) ElementType(newElement);
@@ -541,27 +576,16 @@ public:
 private:
 	void ReAllocate(int32_t newArrayMax)
 	{
-		ElementPointer newArrayData = (ElementPointer)::operator new(newArrayMax * sizeof(ElementType));
-		int32_t newNum = ArrayCount;
+		if (newArrayMax <= ArrayMax) // only reallocate if we're growing the cacpacity, shrinking would be kinda pointless
+			return;
 
-		if (newArrayMax < newNum)
+		TArrayUtils::TArrayBase tempArray{};
+		if (TArrayUtils::extendCapacity(this, newArrayMax, &tempArray, sizeof(ElementType)))
 		{
-			newNum = newArrayMax;
+			ArrayData = reinterpret_cast<ElementPointer>(tempArray.data);
+			ArrayCount = tempArray.size;
+			ArrayMax = tempArray.capacity;
 		}
-
-		for (int32_t i = 0; i < newNum; i++)
-		{
-			new(newArrayData + i) ElementType(std::move(ArrayData[i]));
-		}
-
-		for (int32_t i = 0; i < ArrayCount; i++)
-		{
-			ArrayData[i].~ElementType();
-		}
-
-		::operator delete(ArrayData, ArrayMax * sizeof(ElementType));
-		ArrayData = newArrayData;
-		ArrayMax = newArrayMax;
 	}
 };
 
@@ -747,29 +771,6 @@ extern class TArray<class FNameEntry*>* GNames;
 # Structs
 # ========================================================================================= #
 */
-
-namespace StringUtils
-{
-	inline std::string ToString(const std::wstring& str)
-	{
-		if (str.empty()) return "";
-		int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
-		if (size <= 0) return "";
-		std::string return_str(size - 1, 0);
-		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, return_str.data(), size, nullptr, nullptr);
-		return return_str;
-	}
-
-	inline std::wstring ToWideString(const std::string& str)
-	{
-		if (str.empty()) return L"";
-		int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
-		if (size <= 0) return L"";
-		std::wstring return_str(size - 1, 0);
-		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, return_str.data(), size);
-		return return_str;
-	}
-}
 
 class FNameEntry
 {
@@ -1079,6 +1080,13 @@ public:
 		return (wcscmp(ArrayData, other.ArrayData) != 0);
 	}
 };
+
+namespace StringUtils
+{
+	FString newFString(const std::string& str);
+	FString newFString(const FString& old);
+	FName findFName(const std::string& str);
+}
 
 struct FScriptDelegate
 {

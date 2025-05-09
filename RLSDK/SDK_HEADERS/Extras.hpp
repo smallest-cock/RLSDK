@@ -1,0 +1,260 @@
+#pragma once
+#include "../GameDefines.hpp"
+
+
+
+// ###############################################################################################
+// ############################    Unreflected UE3 Structs/Classes    ############################
+// ###############################################################################################
+
+typedef float				FLOAT;
+typedef uint8_t				BYTE;		// 8-bit  unsigned.
+typedef int32_t				INT;		// 32-bit signed.
+typedef uint32_t			UINT;		// 32-bit unsigned.
+typedef UINT				UBOOL;		// Boolean 0 (false) or 1 (true).
+typedef unsigned long		BITFIELD;	// For bitfields.
+typedef double				DOUBLE;		// 64-bit IEEE double.
+
+
+// TLinkedList:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Core/Inc/List.h#L18
+template<class ElementType> class TLinkedList
+{
+public:
+
+	/**
+	 * Used to iterate over the elements of a linked list.
+	 */
+	class TIterator
+	{
+	private:
+		// private class for safe bool conversion
+		struct PrivateBooleanHelper { INT Value; };
+
+	public:
+		TIterator(TLinkedList* FirstLink)
+			: CurrentLink(FirstLink)
+		{
+		}
+
+		/**
+		 * Advances the iterator to the next element.
+		 */
+		void Next()
+		{
+			checkSlow(CurrentLink);
+			CurrentLink = CurrentLink->NextLink;
+		}
+
+		TIterator& operator++()
+		{
+			Next();
+			return *this;
+		}
+
+		TIterator operator++(int)
+		{
+			TIterator Tmp(*this);
+			Next();
+			return Tmp;
+		}
+
+		/** conversion to "bool" returning TRUE if the iterator is valid. */
+		typedef bool PrivateBooleanType;
+		operator PrivateBooleanType() const { return CurrentLink != NULL ? &PrivateBooleanHelper::Value : NULL; }
+		bool operator !() const { return !operator PrivateBooleanType(); }
+
+		// Accessors.
+		ElementType& operator->() const
+		{
+			checkSlow(CurrentLink);
+			return CurrentLink->Element;
+		}
+		ElementType& operator*() const
+		{
+			checkSlow(CurrentLink);
+			return CurrentLink->Element;
+		}
+
+	private:
+		TLinkedList* CurrentLink;
+	};
+
+	// Constructors.
+	TLinkedList() :
+		NextLink(NULL),
+		PrevLink(NULL)
+	{
+	}
+	TLinkedList(const ElementType& InElement) :
+		Element(InElement),
+		NextLink(NULL),
+		PrevLink(NULL)
+	{
+	}
+
+	/**
+	 * Removes this element from the list in constant time.
+	 *
+	 * This function is safe to call even if the element is not linked.
+	 */
+	void Unlink()
+	{
+		if (NextLink)
+		{
+			NextLink->PrevLink = PrevLink;
+		}
+		if (PrevLink)
+		{
+			*PrevLink = NextLink;
+		}
+		// Make it safe to call Unlink again.
+		NextLink = NULL;
+		PrevLink = NULL;
+	}
+
+	/**
+	 * Adds this element to a list, before the given element.
+	 *
+	 * @param Before	The link to insert this element before.
+	 */
+	void Link(TLinkedList*& Before)
+	{
+		if (Before)
+		{
+			Before->PrevLink = &NextLink;
+		}
+		NextLink = Before;
+		PrevLink = &Before;
+		Before = this;
+	}
+
+	/**
+	 * Returns whether element is currently linked.
+	 *
+	 * @return TRUE if currently linked, FALSE othwerise
+	 */
+	bool IsLinked()
+	{
+		return PrevLink != NULL;
+	}
+
+	// Accessors.
+	ElementType& operator->()
+	{
+		return Element;
+	}
+	const ElementType& operator->() const
+	{
+		return Element;
+	}
+	ElementType& operator*()
+	{
+		return Element;
+	}
+	const ElementType& operator*() const
+	{
+		return Element;
+	}
+	TLinkedList* Next()
+	{
+		return NextLink;
+	}
+private:
+	ElementType Element;
+	TLinkedList* NextLink;
+	TLinkedList** PrevLink;
+};
+
+
+// FMipBiasFade:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Engine/Inc/UnRenderUtils.h#L611
+struct FMipBiasFade
+{
+	FLOAT	TotalMipCount;			// Number of mip - levels in the texture.
+	FLOAT	MipCountDelta;			// Number of mip-levels to fade (negative if fading out / decreasing the mipcount).
+	FLOAT	StartTime;				// Timestamp when the fade was started.
+	FLOAT	MipCountFadingRate;		// Number of seconds to interpolate through all MipCountDelta (inverted).
+	FLOAT	BiasOffset;				// Difference between total texture mipcount and the starting mipcount for the fade.
+};
+
+
+// FRenderResource:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Engine/Inc/RenderResource.h#L9
+struct FRenderResource
+{
+	TLinkedList<FRenderResource*>	ResourceLink;
+	BITFIELD						bInitialized : 1;
+
+	virtual ~FRenderResource() {}
+};
+
+
+// EShaderFrequency:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Engine/Inc/ShaderCompiler.h#L9
+enum EShaderFrequency
+{
+	SF_Vertex =			0,
+	SF_Hull =			1,
+	SF_Domain =			2,
+	SF_Pixel =			3,
+	SF_Geometry =		4,
+	SF_Compute =		5,
+	SF_NumFrequencies = 6,
+};
+
+
+// forward declarations to make it compile (make sure to include "d3d11.h" before this file if you plan on using these types)
+class FD3D11DynamicRHI;
+class ID3D11ShaderResourceView;
+class ID3D11RenderTargetView;
+class ID3D11DepthStencilView;
+class ID3D11Texture2D;
+
+// FD3D11Texture2D:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/D3D11Drv/Inc/D3D11Resources.h#L327
+struct FD3D11Texture2D
+{
+	ID3D11ShaderResourceView*		View;
+	ID3D11ShaderResourceView*		ViewLinear;
+	ID3D11RenderTargetView*			RenderTargetView;
+	ID3D11DepthStencilView*			DepthStencilView;
+	TArray<INT>						BoundShaderResourceSlots[SF_NumFrequencies];
+	const UINT						SizeX;
+	const UINT						SizeY;
+	const UINT						SizeZ;
+	const UINT						NumMips;
+	EPixelFormat					Format;
+	FD3D11DynamicRHI*				D3DRHI;
+	INT								MemorySize;
+	ID3D11Texture2D*				Resource;
+	const BITFIELD					bCubemap : 1;
+	UINT							Flags;
+
+	FORCEINLINE ID3D11ShaderResourceView* GetShaderResourceView() { return View; }
+	virtual void DummyForVptr() {}
+}; //Size: 0x00C0
+
+
+// UTexture:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Engine/Inc/EngineTextureClasses.h#L380
+//
+// FTextureResource:
+// https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Engine/Inc/UnTex.h#L33
+struct FTextureResource
+{
+	class TLinkedList<FRenderResource*>		ResourceLink;				//0x0008
+	BITFIELD								bInitialized : 1;			//0x0020
+	BYTE									pad_0024[4];				//0x0024
+	FD3D11Texture2D*						TextureRHI;					//0x0028
+	void*									SamplerStateRHI;			//0x0030
+	DOUBLE									LastRenderTime;				//0x0038
+	FMipBiasFade							MipBiasFade;				//0x0040
+	UBOOL									bGreyScaleFormat;			//0x0054
+	UBOOL									bIgnoreGammaConversions;	//0x0058
+	FRenderCommandFence						ReleaseFence;				//0x005C
+
+	virtual void DummyForVptr() {}
+}; //Size: 0x0060
+
+
