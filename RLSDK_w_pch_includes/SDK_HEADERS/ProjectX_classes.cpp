@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #include "../SdkHeaders.hpp"
@@ -44606,7 +44606,7 @@ void UOnlineGameRegions_X::OnRegionsSynced()
 };
 
 // Function ProjectX.OnlineGameRegions_X.AddRegionPing
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class URegion_X*               Region                         (CPF_Parm)
@@ -51819,6 +51819,50 @@ void UParties_X::HandleMemberStatusUpdate(const struct FUniqueNetId& MemberUID, 
 	this->ProcessEvent(uFnHandleMemberStatusUpdate, &HandleMemberStatusUpdate_Params, nullptr);
 };
 
+// Function ProjectX.Parties_X.HandlePermissionsChanged
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UTargetUserChatPermChangedEvent* ChangedEvent                   (CPF_Parm)
+
+void UParties_X::HandlePermissionsChanged(class UTargetUserChatPermChangedEvent* ChangedEvent)
+{
+	static UFunction* uFnHandlePermissionsChanged = nullptr;
+
+	if (!uFnHandlePermissionsChanged)
+	{
+		uFnHandlePermissionsChanged = UFunction::FindFunction("Function ProjectX.Parties_X.HandlePermissionsChanged");
+	}
+
+	UParties_X_execHandlePermissionsChanged_Params HandlePermissionsChanged_Params;
+	memset(&HandlePermissionsChanged_Params, 0, sizeof(HandlePermissionsChanged_Params));
+	HandlePermissionsChanged_Params.ChangedEvent = ChangedEvent;
+
+	this->ProcessEvent(uFnHandlePermissionsChanged, &HandlePermissionsChanged_Params, nullptr);
+};
+
+// Function ProjectX.Parties_X.HandleUserChatPermissionsChanged
+// [0x100042003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UParties_X*              Parties                        (CPF_Parm)
+// class UTargetUserChatPermChangedEvent* ChangedEvent                   (CPF_Parm)
+
+void UParties_X::HandleUserChatPermissionsChanged(class UParties_X* Parties, class UTargetUserChatPermChangedEvent* ChangedEvent)
+{
+	static UFunction* uFnHandleUserChatPermissionsChanged = nullptr;
+
+	if (!uFnHandleUserChatPermissionsChanged)
+	{
+		uFnHandleUserChatPermissionsChanged = UFunction::FindFunction("Function ProjectX.Parties_X.HandleUserChatPermissionsChanged");
+	}
+
+	UParties_X_execHandleUserChatPermissionsChanged_Params HandleUserChatPermissionsChanged_Params;
+	memset(&HandleUserChatPermissionsChanged_Params, 0, sizeof(HandleUserChatPermissionsChanged_Params));
+	HandleUserChatPermissionsChanged_Params.Parties = Parties;
+	HandleUserChatPermissionsChanged_Params.ChangedEvent = ChangedEvent;
+
+	UParties_X::StaticClass()->ProcessEvent(uFnHandleUserChatPermissionsChanged, &HandleUserChatPermissionsChanged_Params, nullptr);
+};
+
 // Function ProjectX.Parties_X.HandleUserInvitedResponse
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -51847,9 +51891,9 @@ void UParties_X::HandleUserInvitedResponse(const struct FUniqueLobbyId& LobbyId,
 // Function ProjectX.Parties_X.HandleUserInvited
 // [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly | FUNC_AllFlags)
 // Parameter Info:
-// class UPsyNetService_PartyUserInvited_X* Notifications                  (CPF_Parm)
+// class UPsyNetService_PartyUserInvited_X* Notification                   (CPF_Parm)
 
-void UParties_X::HandleUserInvited(class UPsyNetService_PartyUserInvited_X* Notifications)
+void UParties_X::HandleUserInvited(class UPsyNetService_PartyUserInvited_X* Notification)
 {
 	static UFunction* uFnHandleUserInvited = nullptr;
 
@@ -51860,7 +51904,7 @@ void UParties_X::HandleUserInvited(class UPsyNetService_PartyUserInvited_X* Noti
 
 	UParties_X_execHandleUserInvited_Params HandleUserInvited_Params;
 	memset(&HandleUserInvited_Params, 0, sizeof(HandleUserInvited_Params));
-	HandleUserInvited_Params.Notifications = Notifications;
+	HandleUserInvited_Params.Notification = Notification;
 
 	this->ProcessEvent(uFnHandleUserInvited, &HandleUserInvited_Params, nullptr);
 };
@@ -61242,7 +61286,7 @@ void UOnlinePlayerStorageSync_X::EventSyncSuccess(struct FOnlinePlayerStorageSyn
 };
 
 // Function ProjectX.__Parties_X__HandleUserInvited_0x1.__Parties_X__HandleUserInvited_0x1
-// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class FString                  EpicId                         (CPF_Parm | CPF_NeedCtorLink)
 // uint32_t                       bBlocked                       (CPF_Parm)
@@ -63443,6 +63487,260 @@ void UTAsyncResult__PsyNetClientService_X::EventResult(class UPsyNetClientServic
 	EventResult_Params.OutResult = OutResult;
 
 	this->ProcessEvent(uFnEventResult, &EventResult_Params, nullptr);
+};
+
+// Function ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class URPC_FilterContent_X*    P                              (CPF_Parm)
+
+bool U__PsyNetWordFilter_X__WordFilterSanitizeString_0x1::__PsyNetWordFilter_X__WordFilterSanitizeString_0x1(class URPC_FilterContent_X* P)
+{
+	static UFunction* uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1 = nullptr;
+
+	if (!uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1)
+	{
+		uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1 = UFunction::FindFunction("Function ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1");
+	}
+
+	U__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params __PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params;
+	memset(&__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params, 0, sizeof(__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params));
+	__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params.P = P;
+
+	this->ProcessEvent(uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1, &__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params, nullptr);
+
+	return __PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.RPC_FilterContent_X.GetPolicy
+// [0x00042003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// EWordFilterUsage               InUsage                        (CPF_Parm)
+
+class FString URPC_FilterContent_X::GetPolicy(EWordFilterUsage InUsage)
+{
+	static UFunction* uFnGetPolicy = nullptr;
+
+	if (!uFnGetPolicy)
+	{
+		uFnGetPolicy = UFunction::FindFunction("Function ProjectX.RPC_FilterContent_X.GetPolicy");
+	}
+
+	URPC_FilterContent_X_execGetPolicy_Params GetPolicy_Params;
+	memset(&GetPolicy_Params, 0, sizeof(GetPolicy_Params));
+	memcpy_s(&GetPolicy_Params.InUsage, sizeof(GetPolicy_Params.InUsage), &InUsage, sizeof(InUsage));
+
+	URPC_FilterContent_X::StaticClass()->ProcessEvent(uFnGetPolicy, &GetPolicy_Params, nullptr);
+
+	return GetPolicy_Params.ReturnValue;
+};
+
+// Function ProjectX.RPC_FilterContent_X.SetUsage
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// EWordFilterUsage               InUsage                        (CPF_Parm)
+
+class URPC_FilterContent_X* URPC_FilterContent_X::SetUsage(EWordFilterUsage InUsage)
+{
+	static UFunction* uFnSetUsage = nullptr;
+
+	if (!uFnSetUsage)
+	{
+		uFnSetUsage = UFunction::FindFunction("Function ProjectX.RPC_FilterContent_X.SetUsage");
+	}
+
+	URPC_FilterContent_X_execSetUsage_Params SetUsage_Params;
+	memset(&SetUsage_Params, 0, sizeof(SetUsage_Params));
+	memcpy_s(&SetUsage_Params.InUsage, sizeof(SetUsage_Params.InUsage), &InUsage, sizeof(InUsage));
+
+	this->ProcessEvent(uFnSetUsage, &SetUsage_Params, nullptr);
+
+	return SetUsage_Params.ReturnValue;
+};
+
+// Function ProjectX.RPC_FilterContent_X.AddComment
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  Comment                        (CPF_Parm | CPF_NeedCtorLink)
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+
+class URPC_FilterContent_X* URPC_FilterContent_X::AddComment(const class FString& Comment, const struct FScriptDelegate& Callback, const struct FUniqueNetId& PlayerID)
+{
+	static UFunction* uFnAddComment = nullptr;
+
+	if (!uFnAddComment)
+	{
+		uFnAddComment = UFunction::FindFunction("Function ProjectX.RPC_FilterContent_X.AddComment");
+	}
+
+	URPC_FilterContent_X_execAddComment_Params AddComment_Params;
+	memset(&AddComment_Params, 0, sizeof(AddComment_Params));
+	memcpy_s(&AddComment_Params.Comment, sizeof(AddComment_Params.Comment), &Comment, sizeof(Comment));
+	memcpy_s(&AddComment_Params.Callback, sizeof(AddComment_Params.Callback), &Callback, sizeof(Callback));
+	memcpy_s(&AddComment_Params.PlayerID, sizeof(AddComment_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnAddComment, &AddComment_Params, nullptr);
+
+	return AddComment_Params.ReturnValue;
+};
+
+// Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
+
+void UPsyNetWordFilter_X::__PsyNetWordFilter_X__WordFilterSanitizeString_0x2(class URPC_FilterContent_X* RPC)
+{
+	static UFunction* uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x2 = nullptr;
+
+	if (!uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x2)
+	{
+		uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x2 = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x2");
+	}
+
+	UPsyNetWordFilter_X_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params __PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params;
+	memset(&__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params, 0, sizeof(__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params));
+	__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params.RPC = RPC;
+
+	this->ProcessEvent(uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x2, &__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
+
+void UPsyNetWordFilter_X::HandlePsyNetWordFilterFail(class URPC_FilterContent_X* RPC)
+{
+	static UFunction* uFnHandlePsyNetWordFilterFail = nullptr;
+
+	if (!uFnHandlePsyNetWordFilterFail)
+	{
+		uFnHandlePsyNetWordFilterFail = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail");
+	}
+
+	UPsyNetWordFilter_X_execHandlePsyNetWordFilterFail_Params HandlePsyNetWordFilterFail_Params;
+	memset(&HandlePsyNetWordFilterFail_Params, 0, sizeof(HandlePsyNetWordFilterFail_Params));
+	HandlePsyNetWordFilterFail_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandlePsyNetWordFilterFail, &HandlePsyNetWordFilterFail_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
+
+void UPsyNetWordFilter_X::HandlePsyNetWordFilterSuccess(class URPC_FilterContent_X* RPC)
+{
+	static UFunction* uFnHandlePsyNetWordFilterSuccess = nullptr;
+
+	if (!uFnHandlePsyNetWordFilterSuccess)
+	{
+		uFnHandlePsyNetWordFilterSuccess = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess");
+	}
+
+	UPsyNetWordFilter_X_execHandlePsyNetWordFilterSuccess_Params HandlePsyNetWordFilterSuccess_Params;
+	memset(&HandlePsyNetWordFilterSuccess_Params, 0, sizeof(HandlePsyNetWordFilterSuccess_Params));
+	HandlePsyNetWordFilterSuccess_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandlePsyNetWordFilterSuccess, &HandlePsyNetWordFilterSuccess_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
+
+void UPsyNetWordFilter_X::HandlePsyNetWordFilter(class URPC_FilterContent_X* RPC)
+{
+	static UFunction* uFnHandlePsyNetWordFilter = nullptr;
+
+	if (!uFnHandlePsyNetWordFilter)
+	{
+		uFnHandlePsyNetWordFilter = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter");
+	}
+
+	UPsyNetWordFilter_X_execHandlePsyNetWordFilter_Params HandlePsyNetWordFilter_Params;
+	memset(&HandlePsyNetWordFilter_Params, 0, sizeof(HandlePsyNetWordFilter_Params));
+	HandlePsyNetWordFilter_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandlePsyNetWordFilter, &HandlePsyNetWordFilter_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UPsyNetWordFilter_X::SendPendingFilterRPC()
+{
+	static UFunction* uFnSendPendingFilterRPC = nullptr;
+
+	if (!uFnSendPendingFilterRPC)
+	{
+		uFnSendPendingFilterRPC = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC");
+	}
+
+	UPsyNetWordFilter_X_execSendPendingFilterRPC_Params SendPendingFilterRPC_Params;
+	memset(&SendPendingFilterRPC_Params, 0, sizeof(SendPendingFilterRPC_Params));
+
+	this->ProcessEvent(uFnSendPendingFilterRPC, &SendPendingFilterRPC_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// EWordFilterUsage               Usage                          (CPF_Parm)
+// class FString                  Comment                        (CPF_Parm | CPF_NeedCtorLink)
+// struct FScriptDelegate         SanitizeDelegate               (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+
+bool UPsyNetWordFilter_X::WordFilterSanitizeString(EWordFilterUsage Usage, const class FString& Comment, const struct FScriptDelegate& SanitizeDelegate, const struct FUniqueNetId& PlayerID)
+{
+	static UFunction* uFnWordFilterSanitizeString = nullptr;
+
+	if (!uFnWordFilterSanitizeString)
+	{
+		uFnWordFilterSanitizeString = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString");
+	}
+
+	UPsyNetWordFilter_X_execWordFilterSanitizeString_Params WordFilterSanitizeString_Params;
+	memset(&WordFilterSanitizeString_Params, 0, sizeof(WordFilterSanitizeString_Params));
+	memcpy_s(&WordFilterSanitizeString_Params.Usage, sizeof(WordFilterSanitizeString_Params.Usage), &Usage, sizeof(Usage));
+	memcpy_s(&WordFilterSanitizeString_Params.Comment, sizeof(WordFilterSanitizeString_Params.Comment), &Comment, sizeof(Comment));
+	memcpy_s(&WordFilterSanitizeString_Params.SanitizeDelegate, sizeof(WordFilterSanitizeString_Params.SanitizeDelegate), &SanitizeDelegate, sizeof(SanitizeDelegate));
+	memcpy_s(&WordFilterSanitizeString_Params.PlayerID, sizeof(WordFilterSanitizeString_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnWordFilterSanitizeString, &WordFilterSanitizeString_Params, nullptr);
+
+	return WordFilterSanitizeString_Params.ReturnValue;
+};
+
+// Function ProjectX.PsyNetWordFilter_X.QueueRPC
+// [0x00120003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_FilterContent_X*    InRPC                          (CPF_Parm)
+
+void UPsyNetWordFilter_X::QueueRPC(class URPC_FilterContent_X* InRPC)
+{
+	static UFunction* uFnQueueRPC = nullptr;
+
+	if (!uFnQueueRPC)
+	{
+		uFnQueueRPC = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.QueueRPC");
+	}
+
+	UPsyNetWordFilter_X_execQueueRPC_Params QueueRPC_Params;
+	memset(&QueueRPC_Params, 0, sizeof(QueueRPC_Params));
+	QueueRPC_Params.InRPC = InRPC;
+
+	this->ProcessEvent(uFnQueueRPC, &QueueRPC_Params, nullptr);
 };
 
 // Function ProjectX.__RegionConfig_X__GetSubRegions_0x1.__RegionConfig_X__GetSubRegions_0x1
@@ -75272,6 +75570,37 @@ void UOnlineGameServerBrowser_X::EventSearchComplete(class TArray<struct FServer
 	memcpy_s(&Results, sizeof(Results), &EventSearchComplete_Params.Results, sizeof(EventSearchComplete_Params.Results));
 };
 
+// Function ProjectX.OnlineGamePrivateMatch_X.SendMetrics
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<class URegionPing_X*> RegionPings                    (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  SelectedRegion                 (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        SelectedPlaylistID             (CPF_Parm)
+// struct FUniqueNetId            PartyLeaderID                  (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       bPartyDisableCrossPlay         (CPF_Parm)
+// int32_t                        PrivateMatchPlaylistID         (CPF_Parm)
+
+void UOnlineGamePrivateMatch_X::SendMetrics(const class TArray<class URegionPing_X*>& RegionPings, const class FString& SelectedRegion, int32_t SelectedPlaylistID, const struct FUniqueNetId& PartyLeaderID, bool bPartyDisableCrossPlay, int32_t PrivateMatchPlaylistID)
+{
+	static UFunction* uFnSendMetrics = nullptr;
+
+	if (!uFnSendMetrics)
+	{
+		uFnSendMetrics = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.SendMetrics");
+	}
+
+	UOnlineGamePrivateMatch_X_execSendMetrics_Params SendMetrics_Params;
+	memset(&SendMetrics_Params, 0, sizeof(SendMetrics_Params));
+	memcpy_s(&SendMetrics_Params.RegionPings, sizeof(SendMetrics_Params.RegionPings), &RegionPings, sizeof(RegionPings));
+	memcpy_s(&SendMetrics_Params.SelectedRegion, sizeof(SendMetrics_Params.SelectedRegion), &SelectedRegion, sizeof(SelectedRegion));
+	memcpy_s(&SendMetrics_Params.SelectedPlaylistID, sizeof(SendMetrics_Params.SelectedPlaylistID), &SelectedPlaylistID, sizeof(SelectedPlaylistID));
+	memcpy_s(&SendMetrics_Params.PartyLeaderID, sizeof(SendMetrics_Params.PartyLeaderID), &PartyLeaderID, sizeof(PartyLeaderID));
+	SendMetrics_Params.bPartyDisableCrossPlay = bPartyDisableCrossPlay;
+	memcpy_s(&SendMetrics_Params.PrivateMatchPlaylistID, sizeof(SendMetrics_Params.PrivateMatchPlaylistID), &PrivateMatchPlaylistID, sizeof(PrivateMatchPlaylistID));
+
+	this->ProcessEvent(uFnSendMetrics, &SendMetrics_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGamePrivateMatch_X.UpdateStatusMessage
 // [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
 // Parameter Info:
@@ -75392,30 +75721,132 @@ void UOnlineGamePrivateMatch_X::HandleSearchTimeout()
 	this->ProcessEvent(uFnHandleSearchTimeout, &HandleSearchTimeout_Params, nullptr);
 };
 
-// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1
+// [0x40042003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class URegionPing_X*           A                              (CPF_Parm)
 // class URegionPing_X*           B                              (CPF_Parm)
 
-int32_t UOnlineGamePrivateMatch_X::__OnlineGamePrivateMatch_X__BeginState_0x1(class URegionPing_X* A, class URegionPing_X* B)
+int32_t UOnlineGamePrivateMatch_X::__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1(class URegionPing_X* A, class URegionPing_X* B)
 {
-	static UFunction* uFn__OnlineGamePrivateMatch_X__BeginState_0x1 = nullptr;
+	static UFunction* uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1 = nullptr;
 
-	if (!uFn__OnlineGamePrivateMatch_X__BeginState_0x1)
+	if (!uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1)
 	{
-		uFn__OnlineGamePrivateMatch_X__BeginState_0x1 = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1");
+		uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1 = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1");
 	}
 
-	UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__BeginState_0x1_Params __OnlineGamePrivateMatch_X__BeginState_0x1_Params;
-	memset(&__OnlineGamePrivateMatch_X__BeginState_0x1_Params, 0, sizeof(__OnlineGamePrivateMatch_X__BeginState_0x1_Params));
-	__OnlineGamePrivateMatch_X__BeginState_0x1_Params.A = A;
-	__OnlineGamePrivateMatch_X__BeginState_0x1_Params.B = B;
+	UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params;
+	memset(&__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params, 0, sizeof(__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params));
+	__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.A = A;
+	__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.B = B;
 
-	this->ProcessEvent(uFn__OnlineGamePrivateMatch_X__BeginState_0x1, &__OnlineGamePrivateMatch_X__BeginState_0x1_Params, nullptr);
+	UOnlineGamePrivateMatch_X::StaticClass()->ProcessEvent(uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1, &__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params, nullptr);
 
-	return __OnlineGamePrivateMatch_X__BeginState_0x1_Params.ReturnValue;
+	return __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPrivateMatchMakingRequest
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
+// Parameter Info:
+// struct FPrivateMatchmakingRequestData ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  SelectedRegion                 (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        InPlaylistID                   (CPF_Parm)
+
+struct FPrivateMatchmakingRequestData UOnlineGamePrivateMatch_X::GetPrivateMatchMakingRequest(const class FString& SelectedRegion, int32_t InPlaylistID)
+{
+	static UFunction* uFnGetPrivateMatchMakingRequest = nullptr;
+
+	if (!uFnGetPrivateMatchMakingRequest)
+	{
+		uFnGetPrivateMatchMakingRequest = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.GetPrivateMatchMakingRequest");
+	}
+
+	UOnlineGamePrivateMatch_X_execGetPrivateMatchMakingRequest_Params GetPrivateMatchMakingRequest_Params;
+	memset(&GetPrivateMatchMakingRequest_Params, 0, sizeof(GetPrivateMatchMakingRequest_Params));
+	memcpy_s(&GetPrivateMatchMakingRequest_Params.SelectedRegion, sizeof(GetPrivateMatchMakingRequest_Params.SelectedRegion), &SelectedRegion, sizeof(SelectedRegion));
+	memcpy_s(&GetPrivateMatchMakingRequest_Params.InPlaylistID, sizeof(GetPrivateMatchMakingRequest_Params.InPlaylistID), &InPlaylistID, sizeof(InPlaylistID));
+
+	this->ProcessEvent(uFnGetPrivateMatchMakingRequest, &GetPrivateMatchMakingRequest_Params, nullptr);
+
+	return GetPrivateMatchMakingRequest_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetSubRegionToMatchmake
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  SelectedRegion                 (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class URegionPing_X*> PreferredSubRegions            (CPF_Parm | CPF_NeedCtorLink)
+
+class FString UOnlineGamePrivateMatch_X::GetSubRegionToMatchmake(const class FString& SelectedRegion, const class TArray<class URegionPing_X*>& PreferredSubRegions)
+{
+	static UFunction* uFnGetSubRegionToMatchmake = nullptr;
+
+	if (!uFnGetSubRegionToMatchmake)
+	{
+		uFnGetSubRegionToMatchmake = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.GetSubRegionToMatchmake");
+	}
+
+	UOnlineGamePrivateMatch_X_execGetSubRegionToMatchmake_Params GetSubRegionToMatchmake_Params;
+	memset(&GetSubRegionToMatchmake_Params, 0, sizeof(GetSubRegionToMatchmake_Params));
+	memcpy_s(&GetSubRegionToMatchmake_Params.SelectedRegion, sizeof(GetSubRegionToMatchmake_Params.SelectedRegion), &SelectedRegion, sizeof(SelectedRegion));
+	memcpy_s(&GetSubRegionToMatchmake_Params.PreferredSubRegions, sizeof(GetSubRegionToMatchmake_Params.PreferredSubRegions), &PreferredSubRegions, sizeof(PreferredSubRegions));
+
+	this->ProcessEvent(uFnGetSubRegionToMatchmake, &GetSubRegionToMatchmake_Params, nullptr);
+
+	return GetSubRegionToMatchmake_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredRegion
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  SelectedRegion                 (CPF_Parm | CPF_NeedCtorLink)
+
+class FString UOnlineGamePrivateMatch_X::GetPreferredRegion(const class FString& SelectedRegion)
+{
+	static UFunction* uFnGetPreferredRegion = nullptr;
+
+	if (!uFnGetPreferredRegion)
+	{
+		uFnGetPreferredRegion = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredRegion");
+	}
+
+	UOnlineGamePrivateMatch_X_execGetPreferredRegion_Params GetPreferredRegion_Params;
+	memset(&GetPreferredRegion_Params, 0, sizeof(GetPreferredRegion_Params));
+	memcpy_s(&GetPreferredRegion_Params.SelectedRegion, sizeof(GetPreferredRegion_Params.SelectedRegion), &SelectedRegion, sizeof(SelectedRegion));
+
+	this->ProcessEvent(uFnGetPreferredRegion, &GetPreferredRegion_Params, nullptr);
+
+	return GetPreferredRegion_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredSubRegions
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<class URegionPing_X*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  SuperRegionID                  (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class URegionPing_X*> RegionPings                    (CPF_Parm | CPF_NeedCtorLink)
+
+class TArray<class URegionPing_X*> UOnlineGamePrivateMatch_X::GetPreferredSubRegions(const class FString& SuperRegionID, const class TArray<class URegionPing_X*>& RegionPings)
+{
+	static UFunction* uFnGetPreferredSubRegions = nullptr;
+
+	if (!uFnGetPreferredSubRegions)
+	{
+		uFnGetPreferredSubRegions = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredSubRegions");
+	}
+
+	UOnlineGamePrivateMatch_X_execGetPreferredSubRegions_Params GetPreferredSubRegions_Params;
+	memset(&GetPreferredSubRegions_Params, 0, sizeof(GetPreferredSubRegions_Params));
+	memcpy_s(&GetPreferredSubRegions_Params.SuperRegionID, sizeof(GetPreferredSubRegions_Params.SuperRegionID), &SuperRegionID, sizeof(SuperRegionID));
+	memcpy_s(&GetPreferredSubRegions_Params.RegionPings, sizeof(GetPreferredSubRegions_Params.RegionPings), &RegionPings, sizeof(RegionPings));
+
+	UOnlineGamePrivateMatch_X::StaticClass()->ProcessEvent(uFnGetPreferredSubRegions, &GetPreferredSubRegions_Params, nullptr);
+
+	return GetPreferredSubRegions_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGamePrivateMatch_X.Cancel
@@ -79548,137 +79979,6 @@ class URPC_UpdateLeaderboard_X* URPC_UpdateLeaderboard_X::SetUpdates(class TArra
 	return SetUpdates_Params.ReturnValue;
 };
 
-// Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
-
-void UPsyNetWordFilter_X::__PsyNetWordFilter_X__WordFilterSanitizeString_0x1(class URPC_FilterContent_X* RPC)
-{
-	static UFunction* uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1 = nullptr;
-
-	if (!uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1)
-	{
-		uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1 = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1");
-	}
-
-	UPsyNetWordFilter_X_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params __PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params;
-	memset(&__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params, 0, sizeof(__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params));
-	__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params.RPC = RPC;
-
-	this->ProcessEvent(uFn__PsyNetWordFilter_X__WordFilterSanitizeString_0x1, &__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail
-// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
-
-void UPsyNetWordFilter_X::HandlePsyNetWordFilterFail(class URPC_FilterContent_X* RPC)
-{
-	static UFunction* uFnHandlePsyNetWordFilterFail = nullptr;
-
-	if (!uFnHandlePsyNetWordFilterFail)
-	{
-		uFnHandlePsyNetWordFilterFail = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail");
-	}
-
-	UPsyNetWordFilter_X_execHandlePsyNetWordFilterFail_Params HandlePsyNetWordFilterFail_Params;
-	memset(&HandlePsyNetWordFilterFail_Params, 0, sizeof(HandlePsyNetWordFilterFail_Params));
-	HandlePsyNetWordFilterFail_Params.RPC = RPC;
-
-	this->ProcessEvent(uFnHandlePsyNetWordFilterFail, &HandlePsyNetWordFilterFail_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess
-// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
-
-void UPsyNetWordFilter_X::HandlePsyNetWordFilterSuccess(class URPC_FilterContent_X* RPC)
-{
-	static UFunction* uFnHandlePsyNetWordFilterSuccess = nullptr;
-
-	if (!uFnHandlePsyNetWordFilterSuccess)
-	{
-		uFnHandlePsyNetWordFilterSuccess = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess");
-	}
-
-	UPsyNetWordFilter_X_execHandlePsyNetWordFilterSuccess_Params HandlePsyNetWordFilterSuccess_Params;
-	memset(&HandlePsyNetWordFilterSuccess_Params, 0, sizeof(HandlePsyNetWordFilterSuccess_Params));
-	HandlePsyNetWordFilterSuccess_Params.RPC = RPC;
-
-	this->ProcessEvent(uFnHandlePsyNetWordFilterSuccess, &HandlePsyNetWordFilterSuccess_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_FilterContent_X*    RPC                            (CPF_Parm)
-
-void UPsyNetWordFilter_X::HandlePsyNetWordFilter(class URPC_FilterContent_X* RPC)
-{
-	static UFunction* uFnHandlePsyNetWordFilter = nullptr;
-
-	if (!uFnHandlePsyNetWordFilter)
-	{
-		uFnHandlePsyNetWordFilter = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter");
-	}
-
-	UPsyNetWordFilter_X_execHandlePsyNetWordFilter_Params HandlePsyNetWordFilter_Params;
-	memset(&HandlePsyNetWordFilter_Params, 0, sizeof(HandlePsyNetWordFilter_Params));
-	HandlePsyNetWordFilter_Params.RPC = RPC;
-
-	this->ProcessEvent(uFnHandlePsyNetWordFilter, &HandlePsyNetWordFilter_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
-// Parameter Info:
-
-void UPsyNetWordFilter_X::SendPendingFilterRPC()
-{
-	static UFunction* uFnSendPendingFilterRPC = nullptr;
-
-	if (!uFnSendPendingFilterRPC)
-	{
-		uFnSendPendingFilterRPC = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC");
-	}
-
-	UPsyNetWordFilter_X_execSendPendingFilterRPC_Params SendPendingFilterRPC_Params;
-	memset(&SendPendingFilterRPC_Params, 0, sizeof(SendPendingFilterRPC_Params));
-
-	this->ProcessEvent(uFnSendPendingFilterRPC, &SendPendingFilterRPC_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString
-// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class FString                  Comment                        (CPF_Parm | CPF_NeedCtorLink)
-// struct FScriptDelegate         SanitizeDelegate               (CPF_Parm | CPF_NeedCtorLink)
-// struct FUniqueNetId            PlayerID                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-
-bool UPsyNetWordFilter_X::WordFilterSanitizeString(const class FString& Comment, const struct FScriptDelegate& SanitizeDelegate, const struct FUniqueNetId& PlayerID)
-{
-	static UFunction* uFnWordFilterSanitizeString = nullptr;
-
-	if (!uFnWordFilterSanitizeString)
-	{
-		uFnWordFilterSanitizeString = UFunction::FindFunction("Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString");
-	}
-
-	UPsyNetWordFilter_X_execWordFilterSanitizeString_Params WordFilterSanitizeString_Params;
-	memset(&WordFilterSanitizeString_Params, 0, sizeof(WordFilterSanitizeString_Params));
-	memcpy_s(&WordFilterSanitizeString_Params.Comment, sizeof(WordFilterSanitizeString_Params.Comment), &Comment, sizeof(Comment));
-	memcpy_s(&WordFilterSanitizeString_Params.SanitizeDelegate, sizeof(WordFilterSanitizeString_Params.SanitizeDelegate), &SanitizeDelegate, sizeof(SanitizeDelegate));
-	memcpy_s(&WordFilterSanitizeString_Params.PlayerID, sizeof(WordFilterSanitizeString_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-
-	this->ProcessEvent(uFnWordFilterSanitizeString, &WordFilterSanitizeString_Params, nullptr);
-
-	return WordFilterSanitizeString_Params.ReturnValue;
-};
-
 // Function ProjectX.UserBugReportComponent_X.Start
 // [0x00020000] (FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -82479,34 +82779,6 @@ void UPsyNetStaticDataMetrics_X::SyncDataTime(float Seconds)
 	memcpy_s(&SyncDataTime_Params.Seconds, sizeof(SyncDataTime_Params.Seconds), &Seconds, sizeof(Seconds));
 
 	this->ProcessEvent(uFnSyncDataTime, &SyncDataTime_Params, nullptr);
-};
-
-// Function ProjectX.RPC_FilterContent_X.AddComment
-// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class URPC_FilterContent_X*    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class FString                  Comment                        (CPF_Parm | CPF_NeedCtorLink)
-// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
-// struct FUniqueNetId            PlayerID                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-
-class URPC_FilterContent_X* URPC_FilterContent_X::AddComment(const class FString& Comment, const struct FScriptDelegate& Callback, const struct FUniqueNetId& PlayerID)
-{
-	static UFunction* uFnAddComment = nullptr;
-
-	if (!uFnAddComment)
-	{
-		uFnAddComment = UFunction::FindFunction("Function ProjectX.RPC_FilterContent_X.AddComment");
-	}
-
-	URPC_FilterContent_X_execAddComment_Params AddComment_Params;
-	memset(&AddComment_Params, 0, sizeof(AddComment_Params));
-	memcpy_s(&AddComment_Params.Comment, sizeof(AddComment_Params.Comment), &Comment, sizeof(Comment));
-	memcpy_s(&AddComment_Params.Callback, sizeof(AddComment_Params.Callback), &Callback, sizeof(Callback));
-	memcpy_s(&AddComment_Params.PlayerID, sizeof(AddComment_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-
-	this->ProcessEvent(uFnAddComment, &AddComment_Params, nullptr);
-
-	return AddComment_Params.ReturnValue;
 };
 
 // Function ProjectX.RPC_CanShowAvatar_X.SetPlayerIDs

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -243,6 +243,23 @@ enum class EObjectEncoding : uint8_t
 	OPSE_END                                           = 2
 };
 
+// Enum ProjectX.WordFilterTypes_X.EWordFilterUsage
+enum class EWordFilterUsage : uint8_t
+{
+	WordFilterUsage_PlayerName                         = 0,
+	WordFilterUsage_TrainingName                       = 1,
+	WordFilterUsage_LanServerName                      = 2,
+	WordFilterUsage_CustomTeamName                     = 3,
+	WordFilterUsage_TourName                           = 4,
+	WordFilterUsage_TourTeamName                       = 5,
+	WordFilterUsage_ClubName                           = 6,
+	WordFilterUsage_ClubTag                            = 7,
+	WordFilterUsage_ClubTagPlayerName                  = 8,
+	WordFilterUsage_MatchChat                          = 9,
+	WordFilterUsage_PartyChat                          = 10,
+	WordFilterUsage_END                                = 11
+};
+
 // Enum ProjectX.RPC_X.ERPCPriority
 enum class ERPCPriority : uint8_t
 {
@@ -398,24 +415,6 @@ enum class EDLCOwnershipState : uint8_t
 	DLCOwnershipState_NotOwned                         = 2,
 	DLCOwnershipState_Error                            = 3,
 	DLCOwnershipState_END                              = 4
-};
-
-// Enum ProjectX.WordFilterTypes_X.EWordFilterUsage
-enum class EWordFilterUsage : uint8_t
-{
-	WordFilterUsage_PlayerName                         = 0,
-	WordFilterUsage_TrainingName                       = 1,
-	WordFilterUsage_LanServerName                      = 2,
-	WordFilterUsage_CustomTeamName                     = 3,
-	WordFilterUsage_TourName                           = 4,
-	WordFilterUsage_TourTeamName                       = 5,
-	WordFilterUsage_ClubName                           = 6,
-	WordFilterUsage_ClubTag                            = 7,
-	WordFilterUsage_ClubMotD                           = 8,
-	WordFilterUsage_ClubTagPlayerName                  = 9,
-	WordFilterUsage_MatchChat                          = 10,
-	WordFilterUsage_PartyChat                          = 11,
-	WordFilterUsage_END                                = 12
 };
 
 // Enum ProjectX.OnlinePlayerRegionRestrictions_X.ERegionRestriction
@@ -9400,8 +9399,8 @@ class UOnlineGameRegions_X : public UOnline_X
 public:
 	float                                              PingRegionsCacheTime;                          // 0x00B0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              LastPingRegionsTime;                           // 0x00B4 (0x0004) [0x0000000000002000] (CPF_Transient)
-	class URegionConfig_X*                             Config;                                        // 0x00B8 (0x0008) [0x0000804000000000] (CPF_PrivateWrite)
-	class TArray<class URegionPing_X*>                 RegionPings;                                   // 0x00C0 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class URegionConfig_X*                             Config;                                        // 0x00B8 (0x0008) [0x0000808000000000] (CPF_ProtectedWrite)
+	class TArray<class URegionPing_X*>                 RegionPings;                                   // 0x00C0 (0x0010) [0x0000008000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_ProtectedWrite)
 	class TArray<struct FCachedRegionPing>             CachedRegionPings;                             // 0x00D0 (0x0010) [0x0000008000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_ProtectedWrite)
 	class UBeaconConfig_X*                             BeaconConfig;                                  // 0x00E0 (0x0008) [0x0000800000000000]               
 	uint32_t                                           bPingingRegions : 1;                           // 0x00E8 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
@@ -10297,7 +10296,7 @@ public:
 };
 
 // Class ProjectX.Parties_X
-// 0x02D0 (0x0060 - 0x0330)
+// 0x02E0 (0x0060 - 0x0340)
 class UParties_X : public UObject
 {
 public:
@@ -10319,25 +10318,26 @@ public:
 	float                                              SecondToWaitForPerConReconnect;                // 0x0144 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	class FString                                      PartySetting_PsyNetPartyId;                    // 0x0148 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class FString                                      PartySetting_JoinKey;                          // 0x0158 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventShowInviteUI__Delegate;                 // 0x0168 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLobbyInviteComplete__Delegate;          // 0x0180 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x0198 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x01B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x01C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x01E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x01F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x0210 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x0228 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x0240 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0258 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0270 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0288 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x02A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLobbyInvitePending__Delegate;           // 0x02B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x02D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPartyChatRecieved__Delegate;            // 0x02E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLobbyMessageFailed__Delegate;           // 0x0300 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x0318 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class UPsyNetService_PartyUserInvited_X*> PendingInviteNotifications;                    // 0x0168 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventShowInviteUI__Delegate;                 // 0x0178 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLobbyInviteComplete__Delegate;          // 0x0190 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x01A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x01C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x01D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x01F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x0208 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x0220 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x0238 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x0250 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0268 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0280 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0298 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x02B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLobbyInvitePending__Delegate;           // 0x02C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x02E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPartyChatRecieved__Delegate;            // 0x02F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLobbyMessageFailed__Delegate;           // 0x0310 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x0328 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -10366,8 +10366,10 @@ public:
 	void HandleUserLeft(class UPsyNetService_PartyUserLeft_X* Notification);
 	void HandleUserJoined(class UPsyNetService_PartyUserJoined_X* Notification);
 	void HandleMemberStatusUpdate(const struct FUniqueNetId& MemberUID, const class FString& Status);
+	void HandlePermissionsChanged(class UTargetUserChatPermChangedEvent* ChangedEvent);
+	static void HandleUserChatPermissionsChanged(class UParties_X* Parties, class UTargetUserChatPermChangedEvent* ChangedEvent);
 	void HandleUserInvitedResponse(const struct FUniqueLobbyId& LobbyId, const struct FUniqueNetId& ForUserId, bool bAccepted);
-	void HandleUserInvited(class UPsyNetService_PartyUserInvited_X* Notifications);
+	void HandleUserInvited(class UPsyNetService_PartyUserInvited_X* Notification);
 	void SetRejoiningParty(bool bRejoining);
 	void HandleChannelClosed(class UPsyNetChannel_X* InChannel);
 	class UPsyNetChannel_X* CreatePsyNetChannel(const struct FUniqueLobbyId& PsyNetPartyId);
@@ -12086,11 +12088,12 @@ public:
 };
 
 // Class ProjectX.__Parties_X__HandleUserInvited_0x1
-// 0x0008 (0x0060 - 0x0068)
+// 0x0018 (0x0060 - 0x0078)
 class U__Parties_X__HandleUserInvited_0x1 : public UObject
 {
 public:
-	class UPsyNetService_PartyUserInvited_X*           Notifications;                                 // 0x0060 (0x0008) [0x0000000000000000]               
+	struct FUniqueLobbyId                              LobbyId;                                       // 0x0060 (0x0010) [0x0000000000000000]               
+	class UPsyNetService_PartyUserInvited_X*           Notification;                                  // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
 	static UClass* StaticClass()
@@ -12894,6 +12897,90 @@ public:
 	void EventResult(class UPsyNetClientService_X* OutResult);
 };
 
+// Class ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1
+// 0x0001 (0x0060 - 0x0061)
+class U__PsyNetWordFilter_X__WordFilterSanitizeString_0x1 : public UObject
+{
+public:
+	EWordFilterUsage                                   Usage;                                         // 0x0060 (0x0001) [0x0000000000000000]               
+
+public:
+	static UClass* StaticClass()
+	{
+		static UClass* uClassPointer = nullptr;
+
+		if (!uClassPointer)
+		{
+			uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1");
+		}
+
+		return uClassPointer;
+	};
+
+	bool __PsyNetWordFilter_X__WordFilterSanitizeString_0x1(class URPC_FilterContent_X* P);
+};
+
+// Class ProjectX.RPC_FilterContent_X
+// 0x0051 (0x00E8 - 0x0139)
+class URPC_FilterContent_X : public URPC_X
+{
+public:
+	class TArray<class FString>                        Content;                                       // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Policy;                                        // 0x00F8 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
+	class TArray<class FString>                        FilteredContent;                               // 0x0108 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FScriptDelegate>               Callbacks;                                     // 0x0118 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FUniqueNetId>                  PlayerIds;                                     // 0x0128 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	EWordFilterUsage                                   Usage;                                         // 0x0138 (0x0001) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+
+public:
+	static UClass* StaticClass()
+	{
+		static UClass* uClassPointer = nullptr;
+
+		if (!uClassPointer)
+		{
+			uClassPointer = UObject::FindClass("Class ProjectX.RPC_FilterContent_X");
+		}
+
+		return uClassPointer;
+	};
+
+	static class FString GetPolicy(EWordFilterUsage InUsage);
+	class URPC_FilterContent_X* SetUsage(EWordFilterUsage InUsage);
+	class URPC_FilterContent_X* AddComment(const class FString& Comment, const struct FScriptDelegate& Callback, const struct FUniqueNetId& optionalPlayerID);
+};
+
+// Class ProjectX.PsyNetWordFilter_X
+// 0x0030 (0x0070 - 0x00A0)
+class UPsyNetWordFilter_X : public UComponent
+{
+public:
+	class UWordFilterConfig_X*                         Config;                                        // 0x0070 (0x0008) [0x0000800000000001] (CPF_Edit)    
+	class TArray<class URPC_FilterContent_X*>          PendingFilterRPCs;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __QueueRPC__Delegate;                          // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+public:
+	static UClass* StaticClass()
+	{
+		static UClass* uClassPointer = nullptr;
+
+		if (!uClassPointer)
+		{
+			uClassPointer = UObject::FindClass("Class ProjectX.PsyNetWordFilter_X");
+		}
+
+		return uClassPointer;
+	};
+
+	void __PsyNetWordFilter_X__WordFilterSanitizeString_0x2(class URPC_FilterContent_X* RPC);
+	void HandlePsyNetWordFilterFail(class URPC_FilterContent_X* RPC);
+	void HandlePsyNetWordFilterSuccess(class URPC_FilterContent_X* RPC);
+	void HandlePsyNetWordFilter(class URPC_FilterContent_X* RPC);
+	void SendPendingFilterRPC();
+	bool WordFilterSanitizeString(EWordFilterUsage Usage, const class FString& Comment, const struct FScriptDelegate& SanitizeDelegate, const struct FUniqueNetId& optionalPlayerID);
+	void QueueRPC(class URPC_FilterContent_X* InRPC);
+};
+
 // Class ProjectX.__RegionConfig_X__GetSubRegions_0x1
 // 0x0010 (0x0060 - 0x0070)
 class U__RegionConfig_X__GetSubRegions_0x1 : public UObject
@@ -12922,7 +13009,7 @@ public:
 class URegionConfig_X : public UOnlineConfig_X
 {
 public:
-	class TArray<class USuperRegion_X*>                SuperRegions;                                  // 0x0078 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
+	class TArray<class USuperRegion_X*>                SuperRegions;                                  // 0x0078 (0x0010) [0x0000008000400000] (CPF_NeedCtorLink | CPF_ProtectedWrite)
 	class TArray<class URegion_X*>                     Regions;                                       // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -17651,7 +17738,7 @@ class UOnlineGamePrivateMatch_X : public UOnlineGameMatchmakingBase_X
 public:
 	uint32_t                                           bCancelled : 1;                                // 0x0130 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	class FString                                      PreferredRegion;                               // 0x0138 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class TArray<class URegionPing_X*>                 PreferredSubRegion;                            // 0x0148 (0x0010) [0x0001004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class TArray<class URegionPing_X*>                 PreferredSubRegion;                            // 0x0148 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	int32_t                                            PreferredPlaylistID;                           // 0x0158 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class FString                                      SearchingString;                               // 0x0160 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      StartSearchFailString;                         // 0x0170 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
@@ -17677,13 +17764,18 @@ public:
 		return uClassPointer;
 	};
 
+	void SendMetrics(const class TArray<class URegionPing_X*>& RegionPings, const class FString& SelectedRegion, int32_t SelectedPlaylistID, const struct FUniqueNetId& PartyLeaderID, bool bPartyDisableCrossPlay, int32_t PrivateMatchPlaylistID);
 	void UpdateStatusMessage();
 	void HandleError(class UError* Error);
 	void StartCheckingReservations();
 	void HandleStartSearch(class UAsyncTask* Task);
 	void OnReceiveGameServer(const struct FServerReservationData& Reservation);
 	void HandleSearchTimeout();
-	int32_t __OnlineGamePrivateMatch_X__BeginState_0x1(class URegionPing_X* A, class URegionPing_X* B);
+	static int32_t __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1(class URegionPing_X* A, class URegionPing_X* B);
+	struct FPrivateMatchmakingRequestData GetPrivateMatchMakingRequest(const class FString& SelectedRegion, int32_t InPlaylistID);
+	class FString GetSubRegionToMatchmake(const class FString& SelectedRegion, const class TArray<class URegionPing_X*>& PreferredSubRegions);
+	class FString GetPreferredRegion(const class FString& SelectedRegion);
+	static class TArray<class URegionPing_X*> GetPreferredSubRegions(const class FString& SuperRegionID, const class TArray<class URegionPing_X*>& RegionPings);
 	void Cancel();
 	void ResetPrivateMatchSettings();
 	void UpdatePrivateMatchSettings(const struct FCustomMatchSettings& InSettings);
@@ -19420,35 +19512,6 @@ public:
 	class URPC_UpdateLeaderboard_X* SetUpdates(class TArray<struct FUploadStatDataSet>& outInUpdates);
 };
 
-// Class ProjectX.PsyNetWordFilter_X
-// 0x0010 (0x0070 - 0x0080)
-class UPsyNetWordFilter_X : public UComponent
-{
-public:
-	class UWordFilterConfig_X*                         Config;                                        // 0x0070 (0x0008) [0x0000800000000001] (CPF_Edit)    
-	class URPC_FilterContent_X*                        PendingFilterRPC;                              // 0x0078 (0x0008) [0x0000000000000000]               
-
-public:
-	static UClass* StaticClass()
-	{
-		static UClass* uClassPointer = nullptr;
-
-		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class ProjectX.PsyNetWordFilter_X");
-		}
-
-		return uClassPointer;
-	};
-
-	void __PsyNetWordFilter_X__WordFilterSanitizeString_0x1(class URPC_FilterContent_X* RPC);
-	void HandlePsyNetWordFilterFail(class URPC_FilterContent_X* RPC);
-	void HandlePsyNetWordFilterSuccess(class URPC_FilterContent_X* RPC);
-	void HandlePsyNetWordFilter(class URPC_FilterContent_X* RPC);
-	void SendPendingFilterRPC();
-	bool WordFilterSanitizeString(const class FString& Comment, const struct FScriptDelegate& SanitizeDelegate, const struct FUniqueNetId& optionalPlayerID);
-};
-
 // Class ProjectX.WordFilterConfig_X
 // 0x0030 (0x0078 - 0x00A8)
 class UWordFilterConfig_X : public UOnlineConfig_X
@@ -20908,32 +20971,6 @@ public:
 		return uClassPointer;
 	};
 
-};
-
-// Class ProjectX.RPC_FilterContent_X
-// 0x0040 (0x00E8 - 0x0128)
-class URPC_FilterContent_X : public URPC_X
-{
-public:
-	class TArray<class FString>                        Content;                                       // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class FString>                        FilteredContent;                               // 0x00F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FScriptDelegate>               Callbacks;                                     // 0x0108 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FUniqueNetId>                  PlayerIds;                                     // 0x0118 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-
-public:
-	static UClass* StaticClass()
-	{
-		static UClass* uClassPointer = nullptr;
-
-		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class ProjectX.RPC_FilterContent_X");
-		}
-
-		return uClassPointer;
-	};
-
-	class URPC_FilterContent_X* AddComment(const class FString& Comment, const struct FScriptDelegate& Callback, const struct FUniqueNetId& optionalPlayerID);
 };
 
 // Class ProjectX.RPC_CanShowAvatar_X

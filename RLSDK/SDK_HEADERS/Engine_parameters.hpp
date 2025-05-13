@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -15435,6 +15435,20 @@ struct UOnlineSessionManager_eventGetRemoteSessionPlayerIds_Params
 	class TArray<struct FUniqueNetId>                  ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
+// Function Engine.OnlineSessionManager.RemovePlayerFromSession
+// [0x00020003] 
+struct UOnlineSessionManager_execRemovePlayerFromSession_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.OnlineSessionManager.AddPlayerToSession
+// [0x00020003] 
+struct UOnlineSessionManager_execAddPlayerToSession_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
 // Function Engine.OnlineStats.GetViewName
 // [0x00020401] 
 struct UOnlineStats_execGetViewName_Params
@@ -15702,6 +15716,15 @@ struct UOnlineSubsystem_execShowRestrictionMessage_Params
 struct UOnlineSubsystem_execIsOriginalAppOwner_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.OnlineSubsystem.GetInteractionPermForPlayer
+// [0x00020002] 
+struct UOnlineSubsystem_execGetInteractionPermForPlayer_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                TargetId;                                         // 0x0048 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            ReturnValue;                                      // 0x0090 (0x0001) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineSubsystem.CanPlayersTextChat

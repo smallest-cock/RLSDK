@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -10996,13 +10996,13 @@ public:
 };
 
 // Class TAGame.OnlineSessionManager_TA
-// 0x0018 (0x0060 - 0x0078)
+// 0x0018 (0x0070 - 0x0088)
 class UOnlineSessionManager_TA : public UOnlineSessionManager
 {
 public:
-	class AGameEvent_TA*                               GameEvent;                                     // 0x0060 (0x0008) [0x0000800000000000]               
-	class UOnlineGameParty_TA*                         OnlineGameParty;                               // 0x0068 (0x0008) [0x0000800000000000]               
-	class UOnlineGame_X*                               OnlineGame;                                    // 0x0070 (0x0008) [0x0000800000000000]               
+	class AGameEvent_TA*                               GameEvent;                                     // 0x0070 (0x0008) [0x0000800000000000]               
+	class UOnlineGameParty_TA*                         OnlineGameParty;                               // 0x0078 (0x0008) [0x0000800000000000]               
+	class UOnlineGame_X*                               OnlineGame;                                    // 0x0080 (0x0008) [0x0000800000000000]               
 
 public:
 	static UClass* StaticClass()
@@ -11017,7 +11017,7 @@ public:
 		return uClassPointer;
 	};
 
-	bool __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3(const struct FUniqueNetId& F);
+	bool __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4(const struct FUniqueNetId& F);
 	struct FUniqueNetId __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x1(class APRI_TA* P);
 	class TArray<struct FUniqueNetId> eventGetRemoteSessionPlayerIds();
 };
@@ -12937,11 +12937,11 @@ public:
 };
 
 // Class TAGame.ProductAttribute_RequiresOwnedProduct_TA
-// 0x0008 (0x0080 - 0x0088)
+// 0x0010 (0x0080 - 0x0090)
 class UProductAttribute_RequiresOwnedProduct_TA : public UProductAttribute_TA
 {
 public:
-	class UProduct_TA*                                 Product;                                       // 0x0080 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class TArray<class UProduct_TA*>                   Products;                                      // 0x0080 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -13952,6 +13952,7 @@ public:
 		return uClassPointer;
 	};
 
+	bool OwnsRequiredProduct(class TArray<class UOnlineProduct_TA*>& outOnlineProducts, class TArray<int32_t>& outProductIDs);
 	bool IsIPAllowed(class UProduct_TA* OtherProduct);
 	bool CanBeArchived();
 	bool IsPaintable();
@@ -17903,10 +17904,11 @@ public:
 	uint32_t                                           bStartVoteToForfeitDisabled : 1;               // 0x047C (0x0004) [0x0000004100002020] [0x00004000] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
 	uint32_t                                           bUsingItems : 1;                               // 0x047C (0x0004) [0x0000000000002020] [0x00008000] (CPF_Net | CPF_Transient)
 	uint32_t                                           bPlayerHistoryValid : 1;                       // 0x047C (0x0004) [0x0000000000000000] [0x00010000] 
-	uint32_t                                           bIdleBanned : 1;                               // 0x047C (0x0004) [0x0000004100002020] [0x00020000] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	uint32_t                                           bStayAsPartyActive : 1;                        // 0x047C (0x0004) [0x0008000000002000] [0x00040000] (CPF_Transient)
-	uint32_t                                           bAbleToStart : 1;                              // 0x047C (0x0004) [0x0000000000002020] [0x00080000] (CPF_Net | CPF_Transient)
-	uint32_t                                           bTeamChanged : 1;                              // 0x047C (0x0004) [0x0000000000002000] [0x00100000] (CPF_Transient)
+	uint32_t                                           PlayerHistoryValid : 1;                        // 0x047C (0x0004) [0x0000000000002000] [0x00020000] (CPF_Transient)
+	uint32_t                                           bIdleBanned : 1;                               // 0x047C (0x0004) [0x0000004100002020] [0x00040000] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	uint32_t                                           bStayAsPartyActive : 1;                        // 0x047C (0x0004) [0x0008000000002000] [0x00080000] (CPF_Transient)
+	uint32_t                                           bAbleToStart : 1;                              // 0x047C (0x0004) [0x0000000000002020] [0x00100000] (CPF_Net | CPF_Transient)
+	uint32_t                                           bTeamChanged : 1;                              // 0x047C (0x0004) [0x0000000000002000] [0x00200000] (CPF_Transient)
 	class AGameEvent_TA*                               GameEvent;                                     // 0x0480 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
 	class AGameEvent_TA*                               ReplicatedGameEvent;                           // 0x0488 (0x0008) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
 	class ACar_TA*                                     Car;                                           // 0x0490 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
@@ -26438,8 +26440,6 @@ public:
 	void HandleSanitizedClubTag(const class FString& Original, const class FString& Sanitized);
 	void HandleSanitizedClubName(const class FString& Original, const class FString& Sanitized);
 	bool CanAllPlayersCommunicateText();
-	void ResetMotD();
-	void HandleNumLocalPlayersChanged(class UGameViewportClient_TA* GVC, int32_t LocalPlayerCount);
 	void Destroyed();
 	void SetClubDetails(class UClubDetails_X* InClubDetails);
 	void eventOnRemoved();
@@ -38757,6 +38757,7 @@ public:
 		return uClassPointer;
 	};
 
+	void __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3(const struct FUniqueNetId& D);
 	void __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2(const struct FPartyMember& M);
 };
 

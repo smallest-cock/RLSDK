@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -763,6 +763,21 @@ struct FPsyNetPartyInfo
 	class FString                                      JoinID;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
+// ScriptStruct ProjectX.WordFilterTypes_X.WordFilterPair
+// 0x0078
+struct FWordFilterPair
+{
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key;                                           // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            Usage;                                         // 0x0030 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bPending : 1;                                  // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              LastRequestTime;                               // 0x0038 (0x0004) [0x0000000000000000]               
+	class UError*                                      Error;                                         // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ErrorCallback;                                 // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // ScriptStruct ProjectX._SharedHelpers.Orientation
 // 0x0018
 struct FOrientation
@@ -1500,6 +1515,14 @@ struct FGetPopulationData
 	int32_t                                            PlayerCount;                                   // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
+// ScriptStruct ProjectX.OnlineGamePrivateMatch_X.PrivateMatchmakingRequestData
+// 0x0014
+struct FPrivateMatchmakingRequestData
+{
+	class FString                                      SubRegionToMatchmake;                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+};
+
 // ScriptStruct ProjectX.RPC_GetGameServerPingList2_X.GetGameServerPingListData
 // 0x0058
 struct FGetGameServerPingListData
@@ -1581,21 +1604,6 @@ struct FUploadStatDataSet
 {
 	class FName                                        StatId;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class TArray<struct FUploadStatData>               Data;                                          // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX.WordFilterTypes_X.WordFilterPair
-// 0x0078
-struct FWordFilterPair
-{
-	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Key;                                           // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            Usage;                                         // 0x0030 (0x0001) [0x0000000000000000]               
-	uint32_t                                           bPending : 1;                                  // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
-	float                                              LastRequestTime;                               // 0x0038 (0x0004) [0x0000000000000000]               
-	class UError*                                      Error;                                         // 0x0040 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ErrorCallback;                                 // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameWordFilterProcessor_X.WordFilterRequest

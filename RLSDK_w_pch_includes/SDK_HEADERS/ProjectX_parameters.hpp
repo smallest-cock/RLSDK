@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -15527,13 +15527,12 @@ struct UOnlineGameRegions_X_execHandleGetSubRegionsRPCSuccess_Params
 	// uint32_t                                        bAddedOrRemovedRegions : 1;                       // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
 	// struct FSuperRegionData                         SuperRegion;                                      // 0x0020 (0x0030) [0x0010000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0050 (0x0004) [0x0000000000000000]               
-	// class URegion_X*                                NewSuperRegion;                                   // 0x0058 (0x0008) [0x0000000000000000]               
-	// class FString                                   SubRegion;                                        // 0x0060 (0x0010) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x2;                              // 0x0070 (0x0004) [0x0000000000000000]               
-	// class URegion_X*                                NewRegion;                                        // 0x0078 (0x0008) [0x0000000000000000]               
-	// int32_t                                         I;                                                // 0x0080 (0x0004) [0x0000000000000000]               
-	// class URegionPing_X*                            PingItr;                                          // 0x0088 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FRegionSecret>              RegionSecrets;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   SubRegion;                                        // 0x0058 (0x0010) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x2;                              // 0x0068 (0x0004) [0x0000000000000000]               
+	// class URegion_X*                                NewRegion;                                        // 0x0070 (0x0008) [0x0000000000000000]               
+	// int32_t                                         I;                                                // 0x0078 (0x0004) [0x0000000000000000]               
+	// class URegionPing_X*                            PingItr;                                          // 0x0080 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FRegionSecret>              RegionSecrets;                                    // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameRegions_X.HandleGetPingRegionPingsRPC
@@ -15575,7 +15574,7 @@ struct UOnlineGameRegions_X_execOnRegionsSynced_Params
 };
 
 // Function ProjectX.OnlineGameRegions_X.AddRegionPing
-// [0x00040003] 
+// [0x00080003] 
 struct UOnlineGameRegions_X_execAddRegionPing_Params
 {
 	class URegion_X*                                   Region;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
@@ -18089,6 +18088,24 @@ struct UParties_X_execHandleMemberStatusUpdate_Params
 	// int32_t                                         MemberIndex;                                      // 0x0058 (0x0004) [0x0000000000000000]               
 };
 
+// Function ProjectX.Parties_X.HandlePermissionsChanged
+// [0x00020003] 
+struct UParties_X_execHandlePermissionsChanged_Params
+{
+	class UTargetUserChatPermChangedEvent*             ChangedEvent;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class UOnlinePlayer_X*                          PrimaryPlayer;                                    // 0x0008 (0x0008) [0x0000000000000000]               
+	// class UOnlineSessionManager*                    SessionManager;                                   // 0x0010 (0x0008) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x0018 (0x0004) [0x0000000000000000]               
+};
+
+// Function ProjectX.Parties_X.HandleUserChatPermissionsChanged
+// [0x100042003] 
+struct UParties_X_execHandleUserChatPermissionsChanged_Params
+{
+	class UParties_X*                                  Parties;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class UTargetUserChatPermChangedEvent*             ChangedEvent;                                     // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function ProjectX.Parties_X.HandleUserInvitedResponse
 // [0x00020003] 
 struct UParties_X_execHandleUserInvitedResponse_Params
@@ -18102,8 +18119,12 @@ struct UParties_X_execHandleUserInvitedResponse_Params
 // [0x20040003] 
 struct UParties_X_execHandleUserInvited_Params
 {
-	class UPsyNetService_PartyUserInvited_X*           Notifications;                                    // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
-	// class U__Parties_X__HandleUserInvited_0x1*      _0x1;                                             // 0x0008 (0x0008) [0x0000000000000000]               
+	class UPsyNetService_PartyUserInvited_X*           Notification;                                     // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
+	// class UOnlinePlayer_X*                          PrimaryPlayer;                                    // 0x0008 (0x0008) [0x0000000000000000]               
+	// uint8_t                                         PlatformLevel;                                    // 0x0010 (0x0001) [0x0000000000000000]               
+	// uint8_t                                         InteractionPerm;                                  // 0x0011 (0x0001) [0x0000000000000000]               
+	// class UOnlineSessionManager*                    SessionManager;                                   // 0x0018 (0x0008) [0x0000000000000000]               
+	// class U__Parties_X__HandleUserInvited_0x1*      _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.Parties_X.SetRejoiningParty
@@ -21428,12 +21449,11 @@ struct UOnlinePlayerStorageSync_X_execEventSyncSuccess_Params
 };
 
 // Function ProjectX.__Parties_X__HandleUserInvited_0x1.__Parties_X__HandleUserInvited_0x1
-// [0x00820003] 
+// [0x00020003] 
 struct U__Parties_X__HandleUserInvited_0x1_exec__Parties_X__HandleUserInvited_0x1_Params
 {
 	class FString                                      EpicId;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bBlocked : 1;                                     // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// struct FUniqueLobbyId                           LobbyId;                                          // 0x0018 (0x0010) [0x0000000000000000]               
 };
 
 // Function ProjectX.__PartyMessageQueue_X__SendMessage_0x1.__PartyMessageQueue_X__SendMessage_0x1
@@ -22215,6 +22235,104 @@ struct UTAsyncResult__PsyNetClientService_X_execEventResultComplete_Params
 struct UTAsyncResult__PsyNetClientService_X_execEventResult_Params
 {
 	class UPsyNetClientService_X*                      OutResult;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1
+// [0x00020003] 
+struct U__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params
+{
+	class URPC_FilterContent_X*                        P;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.RPC_FilterContent_X.GetPolicy
+// [0x00042003] 
+struct URPC_FilterContent_X_execGetPolicy_Params
+{
+	uint8_t                                            InUsage;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.RPC_FilterContent_X.SetUsage
+// [0x00020003] 
+struct URPC_FilterContent_X_execSetUsage_Params
+{
+	uint8_t                                            InUsage;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	class URPC_FilterContent_X*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.RPC_FilterContent_X.AddComment
+// [0x00024003] 
+struct URPC_FilterContent_X_execAddComment_Params
+{
+	class FString                                      Comment;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class URPC_FilterContent_X*                        ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x2
+// [0x40040003] 
+struct UPsyNetWordFilter_X_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x2_Params
+{
+	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail
+// [0x00840003] 
+struct UPsyNetWordFilter_X_execHandlePsyNetWordFilterFail_Params
+{
+	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+	// int32_t                                         Idx;                                              // 0x0010 (0x0004) [0x0000000000000000]               
+	// struct FWordFilterResult                        Result;                                           // 0x0018 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FWordFilterResult                        StructInitializer_0x1;                            // 0x0050 (0x0038) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess
+// [0x00840003] 
+struct UPsyNetWordFilter_X_execHandlePsyNetWordFilterSuccess_Params
+{
+	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// int32_t                                         Idx;                                              // 0x0008 (0x0004) [0x0000000000000000]               
+	// struct FWordFilterResult                        Result;                                           // 0x0010 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FWordFilterResult                        StructInitializer_0x1;                            // 0x0048 (0x0038) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter
+// [0x00040003] 
+struct UPsyNetWordFilter_X_execHandlePsyNetWordFilter_Params
+{
+	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC
+// [0x00040003] 
+struct UPsyNetWordFilter_X_execSendPendingFilterRPC_Params
+{
+	// class URPC_FilterContent_X*                     RpcItr;                                           // 0x0000 (0x0008) [0x0000000000000000]               
+};
+
+// Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString
+// [0x00024003] 
+struct UPsyNetWordFilter_X_execWordFilterSanitizeString_Params
+{
+	uint8_t                                            Usage;                                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	class FString                                      Comment;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class URPC_FilterContent_X*                     FilterRpc;                                        // 0x0080 (0x0008) [0x0000000000000000]               
+	// class U__PsyNetWordFilter_X__WordFilterSanitizeString_0x1* _0x1;                                             // 0x0088 (0x0008) [0x0000000000000000]               
+};
+
+// Function ProjectX.PsyNetWordFilter_X.QueueRPC
+// [0x00120003] 
+struct UPsyNetWordFilter_X_execQueueRPC_Params
+{
+	class URPC_FilterContent_X*                        InRPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function ProjectX.__RegionConfig_X__GetSubRegions_0x1.__RegionConfig_X__GetSubRegions_0x1
@@ -26385,6 +26503,18 @@ struct UOnlineGameServerBrowser_X_execEventSearchComplete_Params
 	class TArray<struct FServerResult>                 Results;                                          // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
+// Function ProjectX.OnlineGamePrivateMatch_X.SendMetrics
+// [0x00080003] 
+struct UOnlineGamePrivateMatch_X_execSendMetrics_Params
+{
+	class TArray<class URegionPing_X*>                 RegionPings;                                      // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      SelectedRegion;                                   // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            SelectedPlaylistID;                               // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	struct FUniqueNetId                                PartyLeaderID;                                    // 0x0028 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bPartyDisableCrossPlay : 1;                       // 0x0070 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	int32_t                                            PrivateMatchPlaylistID;                           // 0x0074 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function ProjectX.OnlineGamePrivateMatch_X.UpdateStatusMessage
 // [0x00080003] 
 struct UOnlineGamePrivateMatch_X_execUpdateStatusMessage_Params
@@ -26424,13 +26554,55 @@ struct UOnlineGamePrivateMatch_X_execHandleSearchTimeout_Params
 {
 };
 
-// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__BeginState_0x1
-// [0x40040003] 
-struct UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__BeginState_0x1_Params
+// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1
+// [0x40042003] 
+struct UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params
 {
-	class URegionPing_X*                               A;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	class URegionPing_X*                               B;                                                // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	class URegionPing_X*                               A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class URegionPing_X*                               B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPrivateMatchMakingRequest
+// [0x00820003] 
+struct UOnlineGamePrivateMatch_X_execGetPrivateMatchMakingRequest_Params
+{
+	class FString                                      SelectedRegion;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            InPlaylistID;                                     // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	struct FPrivateMatchmakingRequestData              ReturnValue;                                      // 0x0018 (0x0018) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// struct FPrivateMatchmakingRequestData           Result;                                           // 0x0030 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   SanitizedRegion;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class URegionPing_X*>              DesiredSubregions;                                // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   DesiredSubRegion;                                 // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetSubRegionToMatchmake
+// [0x00020003] 
+struct UOnlineGamePrivateMatch_X_execGetSubRegionToMatchmake_Params
+{
+	class FString                                      SelectedRegion;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class URegionPing_X*>                 PreferredSubRegions;                              // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredRegion
+// [0x00020003] 
+struct UOnlineGamePrivateMatch_X_execGetPreferredRegion_Params
+{
+	class FString                                      SelectedRegion;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredSubRegions
+// [0x00022003] 
+struct UOnlineGamePrivateMatch_X_execGetPreferredSubRegions_Params
+{
+	class FString                                      SuperRegionID;                                    // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class URegionPing_X*>                 RegionPings;                                      // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class URegionPing_X*>                 ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class TArray<class URegionPing_X*>              Result;                                           // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         I;                                                // 0x0040 (0x0004) [0x0000000000000000]               
+	// class TArray<class URegionPing_X*>              SortLocal_0x1;                                    // 0x0048 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGamePrivateMatch_X.Cancel
@@ -27835,59 +28007,6 @@ struct URPC_UpdateLeaderboard_X_execSetUpdates_Params
 	class URPC_UpdateLeaderboard_X*                    ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
-// Function ProjectX.PsyNetWordFilter_X.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1
-// [0x40040003] 
-struct UPsyNetWordFilter_X_exec__PsyNetWordFilter_X__WordFilterSanitizeString_0x1_Params
-{
-	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterFail
-// [0x00840003] 
-struct UPsyNetWordFilter_X_execHandlePsyNetWordFilterFail_Params
-{
-	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0008 (0x0008) [0x0000000000000000]               
-	// int32_t                                         Idx;                                              // 0x0010 (0x0004) [0x0000000000000000]               
-	// struct FWordFilterResult                        Result;                                           // 0x0018 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FWordFilterResult                        StructInitializer_0x1;                            // 0x0050 (0x0038) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilterSuccess
-// [0x00840003] 
-struct UPsyNetWordFilter_X_execHandlePsyNetWordFilterSuccess_Params
-{
-	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// int32_t                                         Idx;                                              // 0x0008 (0x0004) [0x0000000000000000]               
-	// struct FWordFilterResult                        Result;                                           // 0x0010 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FWordFilterResult                        StructInitializer_0x1;                            // 0x0048 (0x0038) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// Function ProjectX.PsyNetWordFilter_X.HandlePsyNetWordFilter
-// [0x00040003] 
-struct UPsyNetWordFilter_X_execHandlePsyNetWordFilter_Params
-{
-	class URPC_FilterContent_X*                        RPC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function ProjectX.PsyNetWordFilter_X.SendPendingFilterRPC
-// [0x00040003] 
-struct UPsyNetWordFilter_X_execSendPendingFilterRPC_Params
-{
-};
-
-// Function ProjectX.PsyNetWordFilter_X.WordFilterSanitizeString
-// [0x00024003] 
-struct UPsyNetWordFilter_X_execWordFilterSanitizeString_Params
-{
-	class FString                                      Comment;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FUniqueNetId                                PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
 // Function ProjectX.UserBugReportComponent_X.Start
 // [0x00020000] 
 struct UUserBugReportComponent_X_execStart_Params
@@ -28885,16 +29004,6 @@ struct UPsyNetService_FriendStatusUpdate_X_execGetData_Params
 struct UPsyNetStaticDataMetrics_X_execSyncDataTime_Params
 {
 	float                                              Seconds;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function ProjectX.RPC_FilterContent_X.AddComment
-// [0x00024003] 
-struct URPC_FilterContent_X_execAddComment_Params
-{
-	class FString                                      Comment;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FUniqueNetId                                PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class URPC_FilterContent_X*                        ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.RPC_CanShowAvatar_X.SetPlayerIDs

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -15731,9 +15731,9 @@ struct UOnlineSaveRecord_TA_execSerializeRecord_Params
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
-// Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3
+// Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4
 // [0x40040003] 
-struct UOnlineSessionManager_TA_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params
+struct UOnlineSessionManager_TA_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params
 {
 	struct FUniqueNetId                                F;                                                // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0048 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -19142,6 +19142,15 @@ struct UProductTemplate_TA_execGetAttribute_Params
 	class UProductAttribute_TA*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000D80] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm)
 };
 
+// Function TAGame.Product_TA.OwnsRequiredProduct
+// [0x00420401] 
+struct UProduct_TA_execOwnsRequiredProduct_Params
+{
+	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class TArray<int32_t>                              ProductIDs;                                       // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.Product_TA.IsIPAllowed
 // [0x00020401] 
 struct UProduct_TA_execIsIPAllowed_Params
@@ -19429,7 +19438,7 @@ struct UProduct_TA_execGetHashID_Params
 };
 
 // Function TAGame.Product_TA.GetID
-// [0x00020401] 
+// [0x00020400] 
 struct UProduct_TA_execGetID_Params
 {
 	int32_t                                            ReturnValue;                                      // 0x0000 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -39096,7 +39105,9 @@ struct UEOSVoiceManager_TA_execHandlePlayerVoiceAgreementStatusChanged_Params
 	uint32_t                                           bNewAgreement : 1;                                // 0x0014 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
 	// class UOnlinePlayer_TA*                         OnlinePlayer;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 	// class UEOSVoiceSettingsSave_TA*                 VoiceSettingsSave;                                // 0x0020 (0x0008) [0x0001000000000000]               
-	// uint8_t                                         VoiceChatPermissionLevel;                         // 0x0028 (0x0001) [0x0000000000000000]               
+	// uint8_t                                         PrevChatFilter;                                   // 0x0028 (0x0001) [0x0000000000000000]               
+	// uint8_t                                         VoiceChatPermissionLevel;                         // 0x0029 (0x0001) [0x0000000000000000]               
+	// uint8_t                                         NewChatFilter;                                    // 0x002A (0x0001) [0x0000000000000000]               
 };
 
 // Function TAGame.EOSVoiceManager_TA.HandlePlayerStatusChanged
@@ -45962,20 +45973,6 @@ struct UGFxData_ClubDetails_TA_execCanAllPlayersCommunicateText_Params
 	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
-// Function TAGame.GFxData_ClubDetails_TA.ResetMotD
-// [0x00040003] 
-struct UGFxData_ClubDetails_TA_execResetMotD_Params
-{
-};
-
-// Function TAGame.GFxData_ClubDetails_TA.HandleNumLocalPlayersChanged
-// [0x00040003] 
-struct UGFxData_ClubDetails_TA_execHandleNumLocalPlayersChanged_Params
-{
-	class UGameViewportClient_TA*                      GVC;                                              // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	int32_t                                            LocalPlayerCount;                                 // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
-};
-
 // Function TAGame.GFxData_ClubDetails_TA.Destroyed
 // [0x00020003] 
 struct UGFxData_ClubDetails_TA_execDestroyed_Params
@@ -45995,14 +45992,12 @@ struct UGFxData_ClubDetails_TA_execSetClubDetails_Params
 struct UGFxData_ClubDetails_TA_eventOnRemoved_Params
 {
 	// class UAccountSettingsComponent_TA*             AccountSettings;                                  // 0x0000 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// class UGameViewportClient_TA*                   ViewportClient;                                   // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_ClubDetails_TA.OnShellSet
 // [0x400080802] 
 struct UGFxData_ClubDetails_TA_eventOnShellSet_Params
 {
-	// class UGameViewportClient_TA*                   ViewportClient;                                   // 0x0000 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.__GFxData_Clubs_TA__AcceptClubInvite_0x1.__GFxData_Clubs_TA__AcceptClubInvite_0x2
@@ -58642,7 +58637,8 @@ struct ULoadout_TA_execStaticValidate_Params
 	// uint32_t                                        bIsLegacyMusicStinger : 1;                        // 0x0080 (0x0004) [0x0000000000000000] [0x00000001] 
 	// struct FProductInstanceID                       StructInitializer_0x1;                            // 0x0088 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 	// struct FProductInstanceID                       InstanceID;                                       // 0x0098 (0x0010) [0x0000000000000000]               
-	// struct FProductInstanceID                       StructInitializer_0x2;                            // 0x00A8 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	// class UProduct_TA*                              OfflineProduct;                                   // 0x00A8 (0x0008) [0x0000000000000000]               
+	// struct FProductInstanceID                       StructInitializer_0x2;                            // 0x00B0 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.Loadout_TA.Validate
@@ -72835,6 +72831,13 @@ struct UOnlineProductStoreSet_TA_execInitRemote_Params
 struct UOnlineProductStoreSet_TA_execInitLocal_Params
 {
 	class ULocalPlayer*                                InPlayer;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3
+// [0x00020003] 
+struct U__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params
+{
+	struct FUniqueNetId                                D;                                                // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2

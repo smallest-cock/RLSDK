@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.cpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #include "../SdkHeaders.hpp"
@@ -43757,6 +43757,48 @@ class TArray<struct FUniqueNetId> UOnlineSessionManager::eventGetRemoteSessionPl
 	return GetRemoteSessionPlayerIds_Params.ReturnValue;
 };
 
+// Function Engine.OnlineSessionManager.RemovePlayerFromSession
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineSessionManager::RemovePlayerFromSession(const struct FUniqueNetId& PlayerID)
+{
+	static UFunction* uFnRemovePlayerFromSession = nullptr;
+
+	if (!uFnRemovePlayerFromSession)
+	{
+		uFnRemovePlayerFromSession = UFunction::FindFunction("Function Engine.OnlineSessionManager.RemovePlayerFromSession");
+	}
+
+	UOnlineSessionManager_execRemovePlayerFromSession_Params RemovePlayerFromSession_Params;
+	memset(&RemovePlayerFromSession_Params, 0, sizeof(RemovePlayerFromSession_Params));
+	memcpy_s(&RemovePlayerFromSession_Params.PlayerID, sizeof(RemovePlayerFromSession_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnRemovePlayerFromSession, &RemovePlayerFromSession_Params, nullptr);
+};
+
+// Function Engine.OnlineSessionManager.AddPlayerToSession
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineSessionManager::AddPlayerToSession(const struct FUniqueNetId& PlayerID)
+{
+	static UFunction* uFnAddPlayerToSession = nullptr;
+
+	if (!uFnAddPlayerToSession)
+	{
+		uFnAddPlayerToSession = UFunction::FindFunction("Function Engine.OnlineSessionManager.AddPlayerToSession");
+	}
+
+	UOnlineSessionManager_execAddPlayerToSession_Params AddPlayerToSession_Params;
+	memset(&AddPlayerToSession_Params, 0, sizeof(AddPlayerToSession_Params));
+	memcpy_s(&AddPlayerToSession_Params.PlayerID, sizeof(AddPlayerToSession_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnAddPlayerToSession, &AddPlayerToSession_Params, nullptr);
+};
+
 // Function Engine.OnlineStats.GetViewName
 // [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -44557,6 +44599,32 @@ bool UOnlineSubsystem::IsOriginalAppOwner()
 	this->ProcessEvent(uFnIsOriginalAppOwner, &IsOriginalAppOwner_Params, nullptr);
 
 	return IsOriginalAppOwner_Params.ReturnValue;
+};
+
+// Function Engine.OnlineSubsystem.GetInteractionPermForPlayer
+// [0x00020002] (FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// EPlayerInteractionPerm         ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            TargetId                       (CPF_Parm | CPF_NeedCtorLink)
+
+EPlayerInteractionPerm UOnlineSubsystem::GetInteractionPermForPlayer(const struct FUniqueNetId& PlayerID, const struct FUniqueNetId& TargetId)
+{
+	static UFunction* uFnGetInteractionPermForPlayer = nullptr;
+
+	if (!uFnGetInteractionPermForPlayer)
+	{
+		uFnGetInteractionPermForPlayer = UFunction::FindFunction("Function Engine.OnlineSubsystem.GetInteractionPermForPlayer");
+	}
+
+	UOnlineSubsystem_execGetInteractionPermForPlayer_Params GetInteractionPermForPlayer_Params;
+	memset(&GetInteractionPermForPlayer_Params, 0, sizeof(GetInteractionPermForPlayer_Params));
+	memcpy_s(&GetInteractionPermForPlayer_Params.PlayerID, sizeof(GetInteractionPermForPlayer_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&GetInteractionPermForPlayer_Params.TargetId, sizeof(GetInteractionPermForPlayer_Params.TargetId), &TargetId, sizeof(TargetId));
+
+	this->ProcessEvent(uFnGetInteractionPermForPlayer, &GetInteractionPermForPlayer_Params, nullptr);
+
+	return static_cast<EPlayerInteractionPerm>(GetInteractionPermForPlayer_Params.ReturnValue);
 };
 
 // Function Engine.OnlineSubsystem.CanPlayersTextChat

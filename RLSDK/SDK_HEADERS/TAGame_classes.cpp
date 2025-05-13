@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #include "../SdkHeaders.hpp"
@@ -44569,28 +44569,28 @@ bool UOnlineSaveRecord_TA::SerializeRecord(class UOnlineSaveRecord_TA* Record, c
 	return SerializeRecord_Params.ReturnValue;
 };
 
-// Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3
+// Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // struct FUniqueNetId            F                              (CPF_Parm | CPF_NeedCtorLink)
 
-bool UOnlineSessionManager_TA::__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3(const struct FUniqueNetId& F)
+bool UOnlineSessionManager_TA::__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4(const struct FUniqueNetId& F)
 {
-	static UFunction* uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3 = nullptr;
+	static UFunction* uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4 = nullptr;
 
-	if (!uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3)
+	if (!uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4)
 	{
-		uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3 = UFunction::FindFunction("Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3");
+		uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4 = UFunction::FindFunction("Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4");
 	}
 
-	UOnlineSessionManager_TA_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params;
-	memset(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params, 0, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params));
-	memcpy_s(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params.F, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params.F), &F, sizeof(F));
+	UOnlineSessionManager_TA_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params;
+	memset(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params, 0, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params));
+	memcpy_s(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params.F, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params.F), &F, sizeof(F));
 
-	this->ProcessEvent(uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3, &__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params, nullptr);
+	this->ProcessEvent(uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4, &__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params, nullptr);
 
-	return __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params.ReturnValue;
+	return __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4_Params.ReturnValue;
 };
 
 // Function TAGame.OnlineSessionManager_TA.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x1
@@ -54113,6 +54113,35 @@ class UProductAttribute_TA* UProductTemplate_TA::GetAttribute(class UClass* Attr
 	return GetAttribute_Params.ReturnValue;
 };
 
+// Function TAGame.Product_TA.OwnsRequiredProduct
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class TArray<class UOnlineProduct_TA*> OnlineProducts                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class TArray<int32_t>          ProductIDs                     (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+bool UProduct_TA::OwnsRequiredProduct(class TArray<class UOnlineProduct_TA*>& OnlineProducts, class TArray<int32_t>& ProductIDs)
+{
+	static UFunction* uFnOwnsRequiredProduct = nullptr;
+
+	if (!uFnOwnsRequiredProduct)
+	{
+		uFnOwnsRequiredProduct = UFunction::FindFunction("Function TAGame.Product_TA.OwnsRequiredProduct");
+	}
+
+	UProduct_TA_execOwnsRequiredProduct_Params OwnsRequiredProduct_Params;
+	memset(&OwnsRequiredProduct_Params, 0, sizeof(OwnsRequiredProduct_Params));
+	memcpy_s(&OwnsRequiredProduct_Params.OnlineProducts, sizeof(OwnsRequiredProduct_Params.OnlineProducts), &OnlineProducts, sizeof(OnlineProducts));
+	memcpy_s(&OwnsRequiredProduct_Params.ProductIDs, sizeof(OwnsRequiredProduct_Params.ProductIDs), &ProductIDs, sizeof(ProductIDs));
+
+	this->ProcessEvent(uFnOwnsRequiredProduct, &OwnsRequiredProduct_Params, nullptr);
+
+	memcpy_s(&OnlineProducts, sizeof(OnlineProducts), &OwnsRequiredProduct_Params.OnlineProducts, sizeof(OwnsRequiredProduct_Params.OnlineProducts));
+	memcpy_s(&ProductIDs, sizeof(ProductIDs), &OwnsRequiredProduct_Params.ProductIDs, sizeof(OwnsRequiredProduct_Params.ProductIDs));
+
+	return OwnsRequiredProduct_Params.ReturnValue;
+};
+
 // Function TAGame.Product_TA.IsIPAllowed
 // [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -54993,7 +55022,7 @@ struct FProductHashID UProduct_TA::GetHashID()
 };
 
 // Function TAGame.Product_TA.GetID
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -127878,48 +127907,6 @@ bool UGFxData_ClubDetails_TA::CanAllPlayersCommunicateText()
 	this->ProcessEvent(uFnCanAllPlayersCommunicateText, &CanAllPlayersCommunicateText_Params, nullptr);
 
 	return CanAllPlayersCommunicateText_Params.ReturnValue;
-};
-
-// Function TAGame.GFxData_ClubDetails_TA.ResetMotD
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
-// Parameter Info:
-
-void UGFxData_ClubDetails_TA::ResetMotD()
-{
-	static UFunction* uFnResetMotD = nullptr;
-
-	if (!uFnResetMotD)
-	{
-		uFnResetMotD = UFunction::FindFunction("Function TAGame.GFxData_ClubDetails_TA.ResetMotD");
-	}
-
-	UGFxData_ClubDetails_TA_execResetMotD_Params ResetMotD_Params;
-	memset(&ResetMotD_Params, 0, sizeof(ResetMotD_Params));
-
-	this->ProcessEvent(uFnResetMotD, &ResetMotD_Params, nullptr);
-};
-
-// Function TAGame.GFxData_ClubDetails_TA.HandleNumLocalPlayersChanged
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
-// Parameter Info:
-// class UGameViewportClient_TA*  GVC                            (CPF_Parm)
-// int32_t                        LocalPlayerCount               (CPF_Parm)
-
-void UGFxData_ClubDetails_TA::HandleNumLocalPlayersChanged(class UGameViewportClient_TA* GVC, int32_t LocalPlayerCount)
-{
-	static UFunction* uFnHandleNumLocalPlayersChanged = nullptr;
-
-	if (!uFnHandleNumLocalPlayersChanged)
-	{
-		uFnHandleNumLocalPlayersChanged = UFunction::FindFunction("Function TAGame.GFxData_ClubDetails_TA.HandleNumLocalPlayersChanged");
-	}
-
-	UGFxData_ClubDetails_TA_execHandleNumLocalPlayersChanged_Params HandleNumLocalPlayersChanged_Params;
-	memset(&HandleNumLocalPlayersChanged_Params, 0, sizeof(HandleNumLocalPlayersChanged_Params));
-	HandleNumLocalPlayersChanged_Params.GVC = GVC;
-	memcpy_s(&HandleNumLocalPlayersChanged_Params.LocalPlayerCount, sizeof(HandleNumLocalPlayersChanged_Params.LocalPlayerCount), &LocalPlayerCount, sizeof(LocalPlayerCount));
-
-	this->ProcessEvent(uFnHandleNumLocalPlayersChanged, &HandleNumLocalPlayersChanged_Params, nullptr);
 };
 
 // Function TAGame.GFxData_ClubDetails_TA.Destroyed
@@ -201525,6 +201512,27 @@ void UOnlineProductStoreSet_TA::InitLocal(class ULocalPlayer* InPlayer)
 	InitLocal_Params.InPlayer = InPlayer;
 
 	this->ProcessEvent(uFnInitLocal, &InitLocal_Params, nullptr);
+};
+
+// Function TAGame.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            D                              (CPF_Parm | CPF_NeedCtorLink)
+
+void U__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2::__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3(const struct FUniqueNetId& D)
+{
+	static UFunction* uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3 = nullptr;
+
+	if (!uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3)
+	{
+		uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3 = UFunction::FindFunction("Function TAGame.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3");
+	}
+
+	U__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2_exec__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params;
+	memset(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params, 0, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params));
+	memcpy_s(&__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params.D, sizeof(__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params.D), &D, sizeof(D));
+
+	this->ProcessEvent(uFn__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3, &__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x3_Params, nullptr);
 };
 
 // Function TAGame.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2.__OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x2

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.51) 05/09/2025 03:41PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator
+# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 #pragma once
@@ -1403,6 +1403,23 @@ enum class ELoginStatus : uint8_t
 	LS_END                                             = 3
 };
 
+// Enum Engine.OnlineSubsystem.EPlayerInteractionPerm
+enum class EPlayerInteractionPerm : uint8_t
+{
+	PIP_Unset                                          = 0,
+	PIP_Blocked                                        = 1,
+	PIP_Allowed                                        = 2,
+	PIP_END                                            = 3
+};
+
+// Enum Engine.OnlineSubsystem.ECommunicationMethod
+enum class ECommunicationMethod : uint8_t
+{
+	COMM_Text                                          = 0,
+	COMM_Voice                                         = 1,
+	COMM_END                                           = 2
+};
+
 // Enum Engine.OnlineSubsystem.AvatarSize
 enum class EAvatarSize : uint8_t
 {
@@ -1708,14 +1725,6 @@ enum class EWordFilterCensorship : uint8_t
 	WordFilterCensorship_Censored                      = 1,
 	WordFilterCensorship_Evil                          = 2,
 	WordFilterCensorship_END                           = 3
-};
-
-// Enum Engine.OnlineSubsystem.ECommunicationMethod
-enum class ECommunicationMethod : uint8_t
-{
-	COMM_Text                                          = 0,
-	COMM_Voice                                         = 1,
-	COMM_END                                           = 2
 };
 
 // Enum Engine.ParticleSystemComponent.EParticleSysParamType
@@ -12656,10 +12665,11 @@ public:
 };
 
 // Class Engine.OnlineSessionManager
-// 0x0000 (0x0060 - 0x0060)
+// 0x0010 (0x0060 - 0x0070)
 class UOnlineSessionManager : public UObject
 {
 public:
+	class TArray<struct FUniqueNetId>                  AdditionalPlayerIds;                           // 0x0060 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
 	static UClass* StaticClass()
@@ -12675,6 +12685,8 @@ public:
 	};
 
 	class TArray<struct FUniqueNetId> eventGetRemoteSessionPlayerIds();
+	void RemovePlayerFromSession(const struct FUniqueNetId& PlayerID);
+	void AddPlayerToSession(const struct FUniqueNetId& PlayerID);
 };
 
 // Class Engine.OnlineStats
@@ -12884,6 +12896,7 @@ public:
 	static class FString GetPlayerIP(const struct FUniqueNetId& PlayerID);
 	bool ShowRestrictionMessage(int32_t ControllerId, EFeaturePrivilege Privilege);
 	bool IsOriginalAppOwner();
+	EPlayerInteractionPerm GetInteractionPermForPlayer(const struct FUniqueNetId& PlayerID, const struct FUniqueNetId& TargetId);
 	bool CanPlayersTextChat(const struct FUniqueNetId& PlayerID, const struct FUniqueNetId& TargetId);
 	bool ShowHelpUI(uint8_t LocalUserNum);
 	bool ResetStats(bool bResetAchievements);
