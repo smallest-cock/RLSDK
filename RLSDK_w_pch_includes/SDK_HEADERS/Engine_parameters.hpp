@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp

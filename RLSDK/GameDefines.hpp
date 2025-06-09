@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 05/13/2025 04:26PM
+# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -850,7 +850,7 @@ public:
 			}
 		}
 
-		for (int32_t i = 0; i < Names()->size(); i++)
+		for (int32_t i = 0; i < Names()->size(); ++i)
 		{
 			if (Names()->at(i))
 			{
@@ -929,6 +929,12 @@ public:
 		return true;
 	}
 
+	static FName find(const std::string& str)
+	{
+		std::wstring wideStr = StringUtils::ToWideString(str);
+		return FName(wideStr.data());
+	}
+
 public:
 	FName& operator=(const FName& other)
 	{
@@ -961,13 +967,7 @@ private:
 
 public:
 	FString() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) {}
-
 	FString(ElementPointer other) : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) { assign(other); }
-
-	FString(const char* other) : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) { assign(other); }
-
-	FString(const std::string& other) : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) { assign(other.c_str()); }
-
 	~FString() {}
 
 public:
@@ -979,47 +979,30 @@ public:
 		return *this;
 	}
 
-	// version that encodes it properly to when using utf-8
-	FString& assign(const char* other)
+	FString& assign(const std::wstring& other)
 	{
-		if (other && *other != '\0') // Check if the input is not null and not empty
-		{
-			int32_t wideSize = MultiByteToWideChar(CP_UTF8, 0, other, -1, NULL, 0);
+		return assign(other.c_str());
+	}
 
-			if (wideSize > 0)
-			{
-				std::wstring wideStr(wideSize, 0);
-				MultiByteToWideChar(CP_UTF8, 0, other, -1, &wideStr[0], wideSize);
-				size_t size = wideStr.length() + 1;
-				wchar_t* wideChar = new wchar_t[size];
-				memset(wideChar, 0, size * sizeof(wchar_t)); // Ensure size is multiplied by sizeof(wchar_t)
-				wcscpy_s(wideChar, size, wideStr.data());
-				return assign(wideChar); // Call the appropriate assign function for wchar_t*
-			}
-		}
-
-		return *this;
+	FString& assign(const std::string& other)
+	{
+		return assign(StringUtils::ToWideString(other));
 	}
 
 	std::wstring ToWideString() const
 	{
-		if (!empty())
-		{
-			return std::wstring(c_str());
-		}
-
-		return L"";
+		if (empty())
+			return L"";
+		
+		return c_str();
 	}
 
 	std::string ToString() const
 	{
-		if (!empty())
-		{
-			std::wstring wstr = ToWideString();
-			return std::string(wstr.begin(), wstr.end());
-		}
+		if (empty())
+			return "";
 
-		return "";
+		return StringUtils::ToString(c_str());
 	}
 
 	ElementPointer c_str() const
@@ -1029,12 +1012,10 @@ public:
 
 	bool empty() const
 	{
-		if (ArrayData)
-		{
-			return (ArrayCount == 0);
-		}
-
-		return true;
+		if (!ArrayData)
+			return true;
+		
+		return (ArrayCount == 0);
 	}
 
 	int32_t length() const
@@ -1046,6 +1027,9 @@ public:
 	{
 		return ArrayMax;
 	}
+
+	static FString create(const std::string& str);
+	static FString create(const FString& old);
 
 public:
 	FString& operator=(ElementPointer other)
@@ -1080,13 +1064,6 @@ public:
 		return (wcscmp(ArrayData, other.ArrayData) != 0);
 	}
 };
-
-namespace StringUtils
-{
-	FString newFString(const std::string& str);
-	FString newFString(const FString& old);
-	FName findFName(const std::string& str);
-}
 
 struct FScriptDelegate
 {

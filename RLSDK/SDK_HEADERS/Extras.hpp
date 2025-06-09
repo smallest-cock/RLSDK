@@ -2,6 +2,11 @@
 #include "../GameDefines.hpp"
 
 
+inline bool validUObject(const UObject* obj)
+{
+	return obj && !(obj->ObjectFlags & RF_BadObjectFlags);
+}
+
 
 // ###############################################################################################
 // ############################    Unreflected UE3 Structs/Classes    ############################
@@ -256,5 +261,4 @@ struct FTextureResource
 
 	virtual void DummyForVptr() {}
 }; //Size: 0x0060
-
 

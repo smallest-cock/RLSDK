@@ -1,25 +1,17 @@
 #include "Extras.hpp"
 
 
-namespace StringUtils
+FString FString::create(const FString& old)
 {
-	FString newFString(const std::string& str)
-	{
-		std::wstring wideStr = ToWideString(str);
-		return UObject::RepeatString(wideStr.data(), 1);
-	}
-	
-	FString newFString(const FString& old)
-	{
-		return UObject::RepeatString(old, 1);
-	}
-	
-	FName findFName(const std::string& str)
-	{
-		std::wstring wideStr = ToWideString(str);
-		return FName(wideStr.data());
-	}
+	return UObject::RepeatString(old, 1);
 }
+
+FString FString::create(const std::string& str)
+{
+	std::wstring wideStr = StringUtils::ToWideString(str);
+	return UObject::RepeatString(wideStr.data(), 1);
+}
+
 
 namespace TArrayUtils
 {
