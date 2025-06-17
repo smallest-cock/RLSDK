@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_structs.hpp
@@ -107,6 +107,7 @@ struct FVehicleInputs
 	uint32_t                                           bJumped : 1;                                   // 0x001C (0x0004) [0x0000000000000000] [0x00000010] 
 	uint32_t                                           bGrab : 1;                                     // 0x001C (0x0004) [0x0001000000000000] [0x00000020] 
 	uint32_t                                           bButtonMash : 1;                               // 0x001C (0x0004) [0x0001000000000000] [0x00000040] 
+	uint32_t                                           bTargetFind : 1;                               // 0x001C (0x0004) [0x0001000000000000] [0x00000080] 
 };
 
 // ScriptStruct TAGame._Types_TA.ClientOnlineProductStat
@@ -935,11 +936,12 @@ struct FServerSetLoadoutTeam
 };
 
 // ScriptStruct TAGame._Types_TA.ServerSetLoadoutParams
-// 0x0048
+// 0x0058
 struct FServerSetLoadoutParams
 {
 	class FName                                        Title;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FServerSetLoadoutTeam                       Loadouts[2];                                   // 0x0008 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FLoadoutProductData>           DataProducts;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._Types_TA.RandomRange
@@ -1217,6 +1219,14 @@ struct FProductStat
 {
 	int32_t                                            ProductID;                                     // 0x0000 (0x0004) [0x0000000000000000]               
 	int32_t                                            Value;                                         // 0x0004 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame._Types_TA.DemolishInvulnerability
+// 0x0018
+struct FDemolishInvulnerability
+{
+	class UObject*                                     ObjectSource;                                  // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<uint8_t>                              DemolishSources;                               // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._Types_TA.DemolishData
@@ -1560,144 +1570,144 @@ struct FShopCurrencyData
 // 0x0060
 struct FTourPlayer
 {
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class UTexture*                                    Avatar;                                        // 0x0058 (0x0008) [0x0001000000002000] (CPF_Transient)
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UTexture*                                    Avatar;                                        // 0x0058 (0x0008) [0x0000000000002000] (CPF_Transient)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourReward
 // 0x0014
 struct FTourReward
 {
-	class TArray<struct FOnlineProductData>            Rewards;                                       // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Placement;                                     // 0x0010 (0x0004) [0x0001000000000000]               
+	class TArray<struct FOnlineProductData>            Rewards;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Placement;                                     // 0x0010 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourTeam
 // 0x0044
 struct FTourTeam
 {
-	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	struct FCustomMatchTeamSettings                    Settings;                                      // 0x0008 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourPlayer>                   Players;                                       // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint64_t                                           Seed;                                          // 0x0038 (0x0008) [0x0001000000000000]               
-	int32_t                                            Difficulty;                                    // 0x0040 (0x0004) [0x0001000000000000]               
+	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FCustomMatchTeamSettings                    Settings;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourPlayer>                   Players;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           Seed;                                          // 0x0038 (0x0008) [0x0000000000000000]               
+	int32_t                                            Difficulty;                                    // 0x0040 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourMatchGame
 // 0x0018
 struct FTourMatchGame
 {
-	int32_t                                            GameTimeSeconds;                               // 0x0000 (0x0004) [0x0001000000000000]               
-	uint32_t                                           bOverTime : 1;                                 // 0x0004 (0x0004) [0x0001000000000000] [0x00000001] 
-	uint32_t                                           bAborted : 1;                                  // 0x0004 (0x0004) [0x0001000000000000] [0x00000002] 
-	uint64_t                                           Winner;                                        // 0x0008 (0x0008) [0x0001000000000000]               
-	int32_t                                            Scores[2];                                     // 0x0010 (0x0008) [0x0001000000000000]               
+	int32_t                                            GameTimeSeconds;                               // 0x0000 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bAborted : 1;                                  // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint64_t                                           Winner;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+	int32_t                                            Scores[2];                                     // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourPlayerStats
 // 0x0060
 struct FTourPlayerStats
 {
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            TeamNum;                                       // 0x0048 (0x0004) [0x0001000000000000]               
-	int32_t                                            Score;                                         // 0x004C (0x0004) [0x0001000000000000]               
-	int32_t                                            Saves;                                         // 0x0050 (0x0004) [0x0001000000000000]               
-	int32_t                                            Shots;                                         // 0x0054 (0x0004) [0x0001000000000000]               
-	int32_t                                            Goals;                                         // 0x0058 (0x0004) [0x0001000000000000]               
-	int32_t                                            Assists;                                       // 0x005C (0x0004) [0x0001000000000000]               
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TeamNum;                                       // 0x0048 (0x0004) [0x0000000000000000]               
+	int32_t                                            Score;                                         // 0x004C (0x0004) [0x0000000000000000]               
+	int32_t                                            Saves;                                         // 0x0050 (0x0004) [0x0000000000000000]               
+	int32_t                                            Shots;                                         // 0x0054 (0x0004) [0x0000000000000000]               
+	int32_t                                            Goals;                                         // 0x0058 (0x0004) [0x0000000000000000]               
+	int32_t                                            Assists;                                       // 0x005C (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourMatch
 // 0x0030
 struct FTourMatch
 {
-	int32_t                                            MatchID;                                       // 0x0000 (0x0004) [0x0001000000000000]               
-	uint64_t                                           Teams[2];                                      // 0x0008 (0x0010) [0x0001000000000000]               
-	uint64_t                                           Winner;                                        // 0x0018 (0x0008) [0x0001000000000000]               
-	class TArray<struct FTourMatchGame>                Games;                                         // 0x0020 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            MatchID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
+	uint64_t                                           Teams[2];                                      // 0x0008 (0x0010) [0x0000000000000000]               
+	uint64_t                                           Winner;                                        // 0x0018 (0x0008) [0x0000000000000000]               
+	class TArray<struct FTourMatchGame>                Games;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.IntPair
 // 0x0008
 struct FIntPair
 {
-	int32_t                                            A;                                             // 0x0000 (0x0004) [0x0001000000000000]               
-	int32_t                                            B;                                             // 0x0004 (0x0004) [0x0001000000000000]               
+	int32_t                                            A;                                             // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            B;                                             // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.QWORDPair
 // 0x0010
 struct FQWORDPair
 {
-	uint64_t                                           A;                                             // 0x0000 (0x0008) [0x0001000000000000]               
-	uint64_t                                           B;                                             // 0x0008 (0x0008) [0x0001000000000000]               
+	uint64_t                                           A;                                             // 0x0000 (0x0008) [0x0000000000000000]               
+	uint64_t                                           B;                                             // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourMatchNode
 // 0x002C
 struct FTourMatchNode
 {
-	int32_t                                            MatchID;                                       // 0x0000 (0x0004) [0x0001000000000000]               
-	int32_t                                            Round;                                         // 0x0004 (0x0004) [0x0001000000000000]               
-	int32_t                                            Order;                                         // 0x0008 (0x0004) [0x0001000000000000]               
-	struct FQWORDPair                                  Teams;                                         // 0x0010 (0x0010) [0x0001000000000000]               
-	int32_t                                            NextMatchID;                                   // 0x0020 (0x0004) [0x0001000000000000]               
-	struct FIntPair                                    PrevMatch;                                     // 0x0024 (0x0008) [0x0001000000000000]               
+	int32_t                                            MatchID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            Round;                                         // 0x0004 (0x0004) [0x0000000000000000]               
+	int32_t                                            Order;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+	struct FQWORDPair                                  Teams;                                         // 0x0010 (0x0010) [0x0000000000000000]               
+	int32_t                                            NextMatchID;                                   // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FIntPair                                    PrevMatch;                                     // 0x0024 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourPlacementInfo
 // 0x0070
 struct FTourPlacementInfo
 {
-	int32_t                                            Placement;                                     // 0x0000 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	class FString                                      Name;                                          // 0x0008 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	int32_t                                            Value;                                         // 0x0018 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	uint64_t                                           TeamID;                                        // 0x0020 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	struct FUniqueNetId                                PlayerID;                                      // 0x0028 (0x0048) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            Placement;                                     // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      Name;                                          // 0x0008 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            Value;                                         // 0x0018 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint64_t                                           TeamID;                                        // 0x0020 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	struct FUniqueNetId                                PlayerID;                                      // 0x0028 (0x0048) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourLeaderboard
 // 0x0040
 struct FTourLeaderboard
 {
-	class TArray<struct FTourPlacementInfo>            TeamGoals;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourPlacementInfo>            PlayerGoals;                                   // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourPlacementInfo>            PlayerAssists;                                 // 0x0020 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourPlacementInfo>            PlayerSaves;                                   // 0x0030 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourPlacementInfo>            TeamGoals;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourPlacementInfo>            PlayerGoals;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourPlacementInfo>            PlayerAssists;                                 // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourPlacementInfo>            PlayerSaves;                                   // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourMatchPlayerStats
 // 0x0064
 struct FTourMatchPlayerStats
 {
-	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	struct FUniqueNetId                                Id;                                            // 0x0008 (0x0048) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	int32_t                                            Score;                                         // 0x0050 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Goals;                                         // 0x0054 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Assists;                                       // 0x0058 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Saves;                                         // 0x005C (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Shots;                                         // 0x0060 (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	struct FUniqueNetId                                Id;                                            // 0x0008 (0x0048) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            Score;                                         // 0x0050 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Goals;                                         // 0x0054 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Assists;                                       // 0x0058 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Saves;                                         // 0x005C (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Shots;                                         // 0x0060 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourMatchTeamDetails
 // 0x0028
 struct FTourMatchTeamDetails
 {
-	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class TArray<int32_t>                              GoalsPerGame;                                  // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourMatchPlayerStats>         CumulativePlayerStats;                         // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<int32_t>                              GoalsPerGame;                                  // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourMatchPlayerStats>         CumulativePlayerStats;                         // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourBracket
 // 0x0078
 struct FTourBracket
 {
-	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0001000000000000]               
-	class TArray<struct FTourTeam>                     Teams;                                         // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourMatch>                    Matches;                                       // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FTourLeaderboard                            Leaderboard;                                   // 0x0028 (0x0040) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FShopCurrencyInfo>             CurrentPayouts;                                // 0x0068 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FTourTeam>                     Teams;                                         // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourMatch>                    Matches;                                       // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FTourLeaderboard                            Leaderboard;                                   // 0x0028 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FShopCurrencyInfo>             CurrentPayouts;                                // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.CameraState_PodiumSpotlight_TA.CachedPodiumCar
@@ -1862,6 +1872,49 @@ struct FSafeZoneInfo
 	int32_t                                            StartTime;                                     // 0x0004 (0x0004) [0x0001000000000001] (CPF_Edit)    
 	int32_t                                            ReturnToZoneTime;                              // 0x0008 (0x0004) [0x0001000000000001] (CPF_Edit)    
 	float                                              BlendSpeed;                                    // 0x000C (0x0004) [0x0001000000000001] (CPF_Edit)    
+};
+
+// ScriptStruct TAGame.GameEvent_Team_TA.PlayerLeavingData
+// 0x0010
+struct FPlayerLeavingData
+{
+	class AController*                                 Player;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class ATeam_TA*                                    Team;                                          // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame.GameEvent_Soccar_TA.ClubMemberCount
+// 0x0010
+struct FClubMemberCount
+{
+	int32_t                                            Count;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	uint64_t                                           ClubID;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame.GameEvent_Soccar_TA.PendingClubStatRecord
+// 0x0010
+struct FPendingClubStatRecord
+{
+	int32_t                                            TeamIndex;                                     // 0x0000 (0x0004) [0x0000000000000000]               
+	uint64_t                                           ClubID;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame.MatchSeries_TA.SeriesTeam
+// 0x0014
+struct FSeriesTeam
+{
+	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            GamesWon;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame.GameEvent_Soccar_TA.MemberTitleStat
+// 0x0020
+struct FMemberTitleStat
+{
+	class UStatCategory_TA*                            Category;                                      // 0x0000 (0x0008) [0x0000000000000000]               
+	class UStatTitle_TA*                               Title;                                         // 0x0008 (0x0008) [0x0000000000000000]               
+	int32_t                                            PointsEarned;                                  // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            StatCount;                                     // 0x0014 (0x0004) [0x0000000000000000]               
+	class APRI_TA*                                     MemberPRI;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.FpsBucketRecorder_TA.FpsBucketData
@@ -2136,40 +2189,40 @@ struct FTradeIn
 // 0x00E4
 struct FTourServerSettings
 {
-	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0001000000000000]               
-	int32_t                                            MatchID;                                       // 0x0008 (0x0004) [0x0001000000000000]               
-	class FString                                      GameTags;                                      // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            TieBreaker;                                    // 0x0020 (0x0001) [0x0001000000000000]               
-	uint8_t                                            GameMode;                                      // 0x0021 (0x0001) [0x0001000000000000]               
-	class TArray<class FName>                          DisabledMaps;                                  // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FName                                        MapSetName;                                    // 0x0038 (0x0008) [0x0001000000000000]               
-	int32_t                                            SeriesLength;                                  // 0x0040 (0x0004) [0x0001000000000000]               
-	int32_t                                            TeamSize;                                      // 0x0044 (0x0004) [0x0001000000000000]               
-	class TArray<struct FTourTeam>                     Teams;                                         // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<uint64_t>                             BotTeams;                                      // 0x0058 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourMatchGame>                Games;                                         // 0x0068 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FUniqueNetId>                  SpectatorPlayerIDs;                            // 0x0078 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FUniqueNetId                                CreatorPlayerID;                               // 0x0088 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            MinPlayersPerTeam;                             // 0x00D0 (0x0001) [0x0001000000000000]               
-	uint64_t                                           MatchExpireTimestamp;                          // 0x00D8 (0x0008) [0x0001000000000000]               
-	int32_t                                            MinPlayersMetWaitTimeSeconds;                  // 0x00E0 (0x0004) [0x0001000000000000]               
+	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            MatchID;                                       // 0x0008 (0x0004) [0x0000000000000000]               
+	class FString                                      GameTags;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            TieBreaker;                                    // 0x0020 (0x0001) [0x0000000000000000]               
+	uint8_t                                            GameMode;                                      // 0x0021 (0x0001) [0x0000000000000000]               
+	class TArray<class FName>                          DisabledMaps;                                  // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        MapSetName;                                    // 0x0038 (0x0008) [0x0000000000000000]               
+	int32_t                                            SeriesLength;                                  // 0x0040 (0x0004) [0x0000000000000000]               
+	int32_t                                            TeamSize;                                      // 0x0044 (0x0004) [0x0000000000000000]               
+	class TArray<struct FTourTeam>                     Teams;                                         // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<uint64_t>                             BotTeams;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourMatchGame>                Games;                                         // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FUniqueNetId>                  SpectatorPlayerIDs;                            // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                CreatorPlayerID;                               // 0x0088 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            MinPlayersPerTeam;                             // 0x00D0 (0x0001) [0x0000000000000000]               
+	uint64_t                                           MatchExpireTimestamp;                          // 0x00D8 (0x0008) [0x0000000000000000]               
+	int32_t                                            MinPlayersMetWaitTimeSeconds;                  // 0x00E0 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourPrivateCredentials
 // 0x0020
 struct FTourPrivateCredentials
 {
-	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourCreateSettings
 // 0x0038
 struct FTourCreateSettings
 {
-	class UTourSettings_TA*                            Settings;                                      // 0x0000 (0x0008) [0x0001000000000000]               
-	struct FTourPrivateCredentials                     PrivateSettings;                               // 0x0008 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FTourReward>                   Rewards;                                       // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class UTourSettings_TA*                            Settings;                                      // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FTourPrivateCredentials                     PrivateSettings;                               // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTourReward>                   Rewards;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.InMapDragonManager_TA.DragonEntry
@@ -2211,6 +2264,18 @@ struct FActivePlaylistInfo
 	uint64_t                                           StartTime;                                     // 0x0010 (0x0008) [0x0000000000000000]               
 	uint64_t                                           EndTime;                                       // 0x0018 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bCompetitive : 1;                              // 0x0020 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+};
+
+// ScriptStruct TAGame.PhysicsMetrics_TA.ResimMetricData
+// 0x001C
+struct FResimMetricData
+{
+	class FName                                        GameStateName;                                 // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            NumCorrectionEvents;                           // 0x0008 (0x0004) [0x0000000000000000]               
+	int32_t                                            TotalNumResimFrames;                           // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            MinNumResimFramesPerEvent;                     // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            MaxNumResimFramesPerEvent;                     // 0x0014 (0x0004) [0x0000000000000000]               
+	float                                              AverageNumResimFramesPerEvent;                 // 0x0018 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.PlatformMetrics_TA.PlatformMetricData
@@ -2326,6 +2391,14 @@ struct FShopAdData
 	class FString                                      Link;                                          // 0x0058 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 };
 
+// ScriptStruct TAGame.ShopCatalogueCacheSave_TA.ShopItemCacheItem
+// 0x0018
+struct FShopItemCacheItem
+{
+	int32_t                                            ShopItemID;                                    // 0x0000 (0x0004) [0x0000000000000000]               
+	class TArray<struct FProductHashID>                ProductHashIDs;                                // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // ScriptStruct TAGame.ShopNotificationsManager_TA.ReadyItemShopNotification
 // 0x0038
 struct FReadyItemShopNotification
@@ -2362,83 +2435,83 @@ struct FPartyInfo
 // 0x00B8
 struct FBracketResult
 {
-	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	struct FTourBracket                                Bracket;                                       // 0x0008 (0x0078) [0x0001000000400000] (CPF_NeedCtorLink)
-	float                                              RetrieveTime;                                  // 0x0080 (0x0004) [0x0001000000002000] (CPF_Transient)
-	struct FScriptDelegate                             BracketChangedCallback;                        // 0x0088 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ErrorCallback;                                 // 0x00A0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FTourBracket                                Bracket;                                       // 0x0008 (0x0078) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              RetrieveTime;                                  // 0x0080 (0x0004) [0x0000000000002000] (CPF_Transient)
+	struct FScriptDelegate                             BracketChangedCallback;                        // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ErrorCallback;                                 // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.TourBracketCache_TA.BracketRequest
 // 0x0028
 struct FBracketRequest
 {
-	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0001000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.RPC_TourUpdateGame_TA.TeamUpdateInfo
 // 0x000C
 struct FTeamUpdateInfo
 {
-	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	int32_t                                            Difficulty;                                    // 0x0008 (0x0004) [0x0001000000000000]               
+	uint64_t                                           TeamID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            Difficulty;                                    // 0x0008 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourSearchSettings
 // 0x005C
 struct FTourSearchSettings
 {
-	class FString                                      Text;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            RankMin;                                       // 0x0010 (0x0004) [0x0001000000000000]               
-	int32_t                                            RankMax;                                       // 0x0014 (0x0004) [0x0001000000000000]               
-	class TArray<int32_t>                              GameModes;                                     // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<class FString>                        Regions;                                       // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            TeamSize;                                      // 0x0038 (0x0004) [0x0001000000000000]               
-	int32_t                                            BracketSize;                                   // 0x003C (0x0004) [0x0001000000000000]               
-	uint32_t                                           bEnableCrossplay : 1;                          // 0x0040 (0x0004) [0x0001000000000000] [0x00000001] 
-	uint64_t                                           StartTime;                                     // 0x0048 (0x0008) [0x0001000000000000]               
-	uint64_t                                           EndTime;                                       // 0x0050 (0x0008) [0x0001000000000000]               
-	uint32_t                                           bShowFull : 1;                                 // 0x0058 (0x0004) [0x0001000000000000] [0x00000001] 
-	uint32_t                                           bShowIneligibleRank : 1;                       // 0x0058 (0x0004) [0x0001000000000000] [0x00000002] 
+	class FString                                      Text;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            RankMin;                                       // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            RankMax;                                       // 0x0014 (0x0004) [0x0000000000000000]               
+	class TArray<int32_t>                              GameModes;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        Regions;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TeamSize;                                      // 0x0038 (0x0004) [0x0000000000000000]               
+	int32_t                                            BracketSize;                                   // 0x003C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bEnableCrossplay : 1;                          // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint64_t                                           StartTime;                                     // 0x0048 (0x0008) [0x0000000000000000]               
+	uint64_t                                           EndTime;                                       // 0x0050 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bShowFull : 1;                                 // 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bShowIneligibleRank : 1;                       // 0x0058 (0x0004) [0x0000000000000000] [0x00000002] 
 };
 
 // ScriptStruct TAGame._TourTypes_TA.GFxTournamentReward
 // 0x0018
 struct FGFxTournamentReward
 {
-	int32_t                                            Placement;                                     // 0x0000 (0x0004) [0x0001000040000001] (CPF_Edit | CPF_DataBinding)
-	struct FProductInstanceID                          InstanceID;                                    // 0x0008 (0x0010) [0x0001000040000001] (CPF_Edit | CPF_DataBinding)
+	int32_t                                            Placement;                                     // 0x0000 (0x0004) [0x0000000040000001] (CPF_Edit | CPF_DataBinding)
+	struct FProductInstanceID                          InstanceID;                                    // 0x0008 (0x0010) [0x0000000040000001] (CPF_Edit | CPF_DataBinding)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TournamentResult
 // 0x0010
 struct FTournamentResult
 {
-	int32_t                                            Difficulty;                                    // 0x0000 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Placement;                                     // 0x0004 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Score;                                         // 0x0008 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            ResultStanding;                                // 0x000C (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	int32_t                                            Difficulty;                                    // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Placement;                                     // 0x0004 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Score;                                         // 0x0008 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            ResultStanding;                                // 0x000C (0x0004) [0x0000000040000000] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.TourResult
 // 0x0010
 struct FTourResult
 {
-	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Difficulty;                                    // 0x0008 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            Placement;                                     // 0x000C (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	uint64_t                                           TournamentID;                                  // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Difficulty;                                    // 0x0008 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Placement;                                     // 0x000C (0x0004) [0x0000000040000000] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.TourStatus_TA.TourStatus
 // 0x0028
 struct FTourStatus
 {
-	uint64_t                                           Id;                                            // 0x0000 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	uint8_t                                            Status;                                        // 0x0008 (0x0001) [0x0001000040000000] (CPF_DataBinding)
-	uint64_t                                           PlayerTeamID;                                  // 0x0010 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	class FString                                      TeamName;                                      // 0x0018 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint64_t                                           Id;                                            // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                            Status;                                        // 0x0008 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	uint64_t                                           PlayerTeamID;                                  // 0x0010 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      TeamName;                                      // 0x0018 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 };
 
 // ScriptStruct TAGame._UserBugReportTypes_TA.UserBugReportCategory
@@ -2583,23 +2656,23 @@ struct FFreeplayCommandEvent
 // 0x0070
 struct FTournamentEndData
 {
-	uint64_t                                           CycleID;                                       // 0x0000 (0x0008) [0x0001000000000000]               
-	int32_t                                            WeekIndex;                                     // 0x0008 (0x0004) [0x0001000000000000]               
-	class TArray<struct FTournamentResult>             OldWeeklyResults;                              // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FTournamentResult                           Result;                                        // 0x0020 (0x0010) [0x0001000000000000]               
-	class TArray<struct FShopCurrencyInfo>             CurrencyRewards;                               // 0x0030 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FShopCurrencyInfo>             OldWeeklyCurrencies;                           // 0x0040 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FShopCurrencyInfo>             WeeklyCurrencies;                              // 0x0050 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FShopCurrencyInfo>             FinalCurrencies;                               // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           CycleID;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            WeekIndex;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+	class TArray<struct FTournamentResult>             OldWeeklyResults;                              // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FTournamentResult                           Result;                                        // 0x0020 (0x0010) [0x0000000000000000]               
+	class TArray<struct FShopCurrencyInfo>             CurrencyRewards;                               // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FShopCurrencyInfo>             OldWeeklyCurrencies;                           // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FShopCurrencyInfo>             WeeklyCurrencies;                              // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FShopCurrencyInfo>             FinalCurrencies;                               // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame._TourTypes_TA.FaceItReservationMatchInfo
 // 0x000C
 struct FFaceItReservationMatchInfo
 {
-	int32_t                                            PartnerID;                                     // 0x0000 (0x0004) [0x0001000000000000]               
-	int32_t                                            ServerId;                                      // 0x0004 (0x0004) [0x0001000000000000]               
-	uint32_t                                           bIsCrossPlatform : 1;                          // 0x0008 (0x0004) [0x0001000000000000] [0x00000001] 
+	int32_t                                            PartnerID;                                     // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            ServerId;                                      // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bIsCrossPlatform : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // ScriptStruct TAGame._TrainingTypes_TA.TrainingRoundProgress
@@ -2624,6 +2697,22 @@ struct FSkillTierData
 	uint8_t                                            Tier;                                          // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                            PlacementMatchesPlayed;                        // 0x0001 (0x0001) [0x0000000000000000]               
 	uint32_t                                           bReplicated : 1;                               // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct TAGame.ActorChannelMonitor_TA.OverflowedProperties
+// 0x0018
+struct FOverflowedProperties
+{
+	class AActor*                                      OverflowedActor;                               // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<class FString>                        PropertyNames;                                 // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame.ActorChannelMonitor_TA.ActorOverflowEvent
+// 0x0058
+struct FActorOverflowEvent
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FOverflowedProperties>         OverflowedActors;                              // 0x0048 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.AdManager_TA.CachedAdImageData
@@ -2881,26 +2970,26 @@ struct FPriorityCandidate
 // 0x0038
 struct FScheduledTournament
 {
-	uint64_t                                           Time;                                          // 0x0000 (0x0008) [0x0001000000000000]               
-	uint64_t                                           ScheduleID;                                    // 0x0008 (0x0008) [0x0001000000000000]               
-	class FString                                      Description;                                   // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bUpdateSkill : 1;                              // 0x0020 (0x0004) [0x0001000000000000] [0x00000001] 
-	class TArray<class UTourSettings_TA*>              Tournaments;                                   // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           Time;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	uint64_t                                           ScheduleID;                                    // 0x0008 (0x0008) [0x0000000000000000]               
+	class FString                                      Description;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bUpdateSkill : 1;                              // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	class TArray<class UTourSettings_TA*>              Tournaments;                                   // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.AutoTour_TA.TournamentWeek
 // 0x0010
 struct FTournamentWeek
 {
-	class TArray<struct FTournamentResult>             Results;                                       // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTournamentResult>             Results;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.AutoTourConfig_TA.ScheduleRegion
 // 0x0020
 struct FScheduleRegion
 {
-	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Label;                                         // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Label;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.RBActor_TA.WorldContactData
@@ -4011,14 +4100,6 @@ struct FTemporarySpawnSpot
 	float                                              Time;                                          // 0x0024 (0x0004) [0x0000000000000000]               
 };
 
-// ScriptStruct TAGame.MatchSeries_TA.SeriesTeam
-// 0x0014
-struct FSeriesTeam
-{
-	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            GamesWon;                                      // 0x0010 (0x0004) [0x0000000000000000]               
-};
-
 // ScriptStruct TAGame.GlobalLookupTexture_TA.IntVector
 // 0x0008
 struct FIntVector
@@ -4043,25 +4124,6 @@ struct FActorTouchRecordData
 {
 	class AActor*                                      Actor;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FVector                                     TouchDirection;                                // 0x0008 (0x000C) [0x0000000000000000]               
-};
-
-// ScriptStruct TAGame.GameEvent_Team_TA.PlayerLeavingData
-// 0x0010
-struct FPlayerLeavingData
-{
-	class AController*                                 Player;                                        // 0x0000 (0x0008) [0x0000000000000000]               
-	class ATeam_TA*                                    Team;                                          // 0x0008 (0x0008) [0x0000000000000000]               
-};
-
-// ScriptStruct TAGame.GameEvent_Soccar_TA.MemberTitleStat
-// 0x0020
-struct FMemberTitleStat
-{
-	class UStatCategory_TA*                            Category;                                      // 0x0000 (0x0008) [0x0000000000000000]               
-	class UStatTitle_TA*                               Title;                                         // 0x0008 (0x0008) [0x0000000000000000]               
-	int32_t                                            PointsEarned;                                  // 0x0010 (0x0004) [0x0000000000000000]               
-	int32_t                                            StatCount;                                     // 0x0014 (0x0004) [0x0000000000000000]               
-	class APRI_TA*                                     MemberPRI;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.GameEvent_GameEditor_TA.SpawnArchetypeData
@@ -4192,12 +4254,57 @@ struct FChatPresetGroupOverride
 	uint32_t                                           bTeam : 1;                                     // 0x001C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 };
 
+// ScriptStruct TAGame.GFxData_Clubs_TA.GFxSeasonBadgesData
+// 0x0007
+struct FGFxSeasonBadgesData
+{
+	int32_t                                            Season;                                        // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                            AssistBadgeSeasonTier;                         // 0x0004 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                            GoalBadgeSeasonTier;                           // 0x0005 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                            SaveBadgeSeasonTier;                           // 0x0006 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+};
+
+// ScriptStruct TAGame.GFxData_Clubs_TA.GFxClubSeasonStatMilestoneData
+// 0x0008
+struct FGFxClubSeasonStatMilestoneData
+{
+	int32_t                                            MilestoneStatValue;                            // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            MilestoneSize;                                 // 0x0004 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+};
+
+// ScriptStruct TAGame.GFxData_Clubs_TA.GFxClubSeasonMilestoneData
+// 0x0028
+struct FGFxClubSeasonMilestoneData
+{
+	class FString                                      TitleText;                                     // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	struct FColor                                      TitleColor;                                    // 0x0010 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	struct FColor                                      TitleGlowColor;                                // 0x0014 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	class TArray<struct FGFxClubSeasonStatMilestoneData> Stats;                                         // 0x0018 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+};
+
+// ScriptStruct TAGame.GFxData_Clubs_TA.GFxClubStatData
+// 0x0030
+struct FGFxClubStatData
+{
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      Name;                                          // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      DisplayValue;                                  // 0x0020 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+};
+
+// ScriptStruct TAGame.GFxData_Clubs_TA.GFxClubActionData
+// 0x0011
+struct FGFxClubActionData
+{
+	class FString                                      LocalizedName;                                 // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint8_t                                            ClubAction;                                    // 0x0010 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+};
+
 // ScriptStruct TAGame.GFxData_ClubServerBrowser_TA.GFxClubServer
 // 0x0018
 struct FGFxClubServer
 {
-	class UClubServerResult_X*                         Server;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class FString                                      ServerName;                                    // 0x0008 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class UClubServerResult_X*                         Server;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class FString                                      ServerName;                                    // 0x0008 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.GFxData_ContainerDrops_TA.ContainerInfo
@@ -4814,23 +4921,23 @@ struct FGFxStatData
 // 0x0004
 struct FTeamGameStats
 {
-	int32_t                                            Goals;                                         // 0x0000 (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	int32_t                                            Goals;                                         // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.GFxData_TourPlatforms_TA.GFxTourPlatformGroup
 // 0x0024
 struct FGFxTourPlatformGroup
 {
-	class TArray<uint8_t>                              Platforms;                                     // 0x0000 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Label;                                         // 0x0010 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	uint32_t                                           bSelected : 1;                                 // 0x0020 (0x0004) [0x0001000040000000] [0x00000001] (CPF_DataBinding)
+	class TArray<uint8_t>                              Platforms;                                     // 0x0000 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class FString                                      Label;                                         // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint32_t                                           bSelected : 1;                                 // 0x0020 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.GFxData_TourSubscriptions_TA.SubscriptionInfo
 // 0x0008
 struct FSubscriptionInfo
 {
-	uint64_t                                           Id;                                            // 0x0000 (0x0008) [0x0001000040000000] (CPF_DataBinding)
+	uint64_t                                           Id;                                            // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.GFxData_Training_TA.UseAction
@@ -5877,6 +5984,14 @@ struct FSpawnCarColorSet
 	uint32_t                                           bRender : 1;                                   // 0x0008 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 };
 
+// ScriptStruct TAGame.ShopCatalogueCacheSave_TA.CatalogueCacheItem
+// 0x0018
+struct FCatalogueCacheItem
+{
+	int32_t                                            ShopID;                                        // 0x0000 (0x0004) [0x0000000000000000]               
+	class TArray<struct FShopItemCacheItem>            StoreItems;                                    // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // ScriptStruct TAGame.ShopMetrics_TA.ShopItemData
 // 0x0018
 struct FShopItemData
@@ -6031,32 +6146,32 @@ struct FPartyMergeResult
 // 0x0028
 struct FCredentialItem
 {
-	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	struct FTourPrivateCredentials                     Credentials;                                   // 0x0008 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FTourPrivateCredentials                     Credentials;                                   // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.TourRewards_TA.RewardsResult
 // 0x0018
 struct FRewardsResult
 {
-	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class TArray<struct FTourReward>                   Rewards;                                       // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FTourReward>                   Rewards;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.TourRewards_TA.RewardsRequest
 // 0x0028
 struct FRewardsRequest
 {
-	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0001000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.TourSeeder_TA.TeamSeeds
 // 0x0010
 struct FTeamSeeds
 {
-	class TArray<uint64_t>                             Seeds;                                         // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<uint64_t>                             Seeds;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.TrainingEditorMetrics_TA.TrainingManipulationEvent

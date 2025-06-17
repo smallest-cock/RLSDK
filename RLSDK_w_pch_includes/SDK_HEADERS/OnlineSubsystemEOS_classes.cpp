@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.cpp

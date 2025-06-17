@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.cpp
@@ -94,25 +94,31 @@ class UObject* UObject::GetPackageObj()
 
 class UClass* UObject::FindClass(const std::string& classFullName)
 {
-	static std::map<std::string, UClass*> classCache;
+	static bool classesAreCached = false;
+	static std::unordered_map<std::string, UClass*> classCache;
 
-	if (classCache.empty())
+	if (!classesAreCached)
 	{
-		for (int32_t i = 0; i < (UObject::GObjObjects()->size() - 1); i++)
+		for (UObject* uObject : *UObject::GObjObjects())
 		{
-			UObject* uObject = UObject::GObjObjects()->at(i);
+			if (!validUObject(uObject))
+				continue;
 
-			if (uObject)
-			{
-				std::string objectFullName = uObject->GetFullName();
+			std::string objFullName = uObject->GetFullName();
+			if (objFullName.find("Class") != 0)
+				continue;
 
-				if (objectFullName.find("Class") == 0)
-				{
-					classCache[objectFullName] = reinterpret_cast<UClass*>(uObject);
-				}
-			}
+			classCache[objFullName] = reinterpret_cast<UClass*>(uObject);
 		}
+
+		classesAreCached = true;
 	}
+
+	if (auto it = classCache.find(classFullName); it != classCache.end())
+		return it->second;
+
+	return nullptr;
+}
 
 	if (classCache.contains(classFullName))
 	{
@@ -11670,30 +11676,25 @@ void UFileSystem::FindFiles(const class FString& Path, class TArray<class FStrin
 
 class UFunction* UFunction::FindFunction(const std::string& functionFullName)
 {
-	static std::map<std::string, UFunction*> functionCache;
+	static bool initialized = false;
+	static std::unordered_map<std::string, UFunction*> functionCache;
 
-	if (functionCache.empty())
+	// cache all functions the first time FindFunction is called (can also be done in mod's initialization, where game stutters are expected)
+	if (!initialized)
 	{
-		for (int32_t i = 0; i < (UObject::GObjObjects()->size() - 1); i++)
+		for (UObject* uObject : *UObject::GObjObjects())
 		{
-			UObject* uObject = UObject::GObjObjects()->at(i);
+			if (!uObject || !uObject->IsA<UFunction>())
+				continue;
 
-			if (uObject)
-			{
-				std::string objectFullName = uObject->GetFullName();
-
-				if (objectFullName.find("Function") == 0)
-				{
-					functionCache[objectFullName] = reinterpret_cast<UFunction*>(uObject);
-				}
-			}
+			functionCache[uObject->GetFullName()] = static_cast<UFunction*>(uObject);
 		}
+
+		initialized = true;
 	}
 
-	if (functionCache.contains(functionFullName))
-	{
-		return functionCache[functionFullName];
-	}
+	if (auto it = functionCache.find(functionFullName); it != functionCache.end())
+		return it->second;
 
 	return nullptr;
 }

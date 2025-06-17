@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp
@@ -2871,6 +2871,14 @@ struct AWorldInfo_execReleaseCachedConstraintsAndEvaluators_Params
 // [0x00020401] 
 struct AWorldInfo_execSetPitchTekTargetsInitialState_Params
 {
+};
+
+// Function Engine.WorldInfo.GetURLOption
+// [0x00420401] 
+struct AWorldInfo_execGetURLOption_Params
+{
+	class FString                                      Option;                                           // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function Engine.WorldInfo.GetOrSpawnActor
@@ -11601,6 +11609,21 @@ struct APlayerController_execOnHostMigratedOnlineGame_Params
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
+// Function Engine.PlayerController.CloseConnection
+// [0x00020401] 
+struct APlayerController_execCloseConnection_Params
+{
+	class FString                                      Reason;                                           // 0x0000 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.PlayerController.NotifyUnrecoverableChannelOverflow
+// [0x00020802] 
+struct APlayerController_eventNotifyUnrecoverableChannelOverflow_Params
+{
+	class AActor*                                      OverflowedActor;                                  // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class FString                                      PropertyName;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
 // Function Engine.PlayerController.OnUnregisterPlayerCompleteForHostMigrate
 // [0x00020003] 
 struct APlayerController_execOnUnregisterPlayerCompleteForHostMigrate_Params
@@ -11904,6 +11927,15 @@ struct APlayerController_execGetServerNetworkAddress_Params
 struct APlayerController_execGetPlayerNetworkAddress_Params
 {
 	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function Engine.PlayerController.EventUnrecoverableActorChannelOverflow
+// [0x00120001] 
+struct APlayerController_execEventUnrecoverableActorChannelOverflow_Params
+{
+	class APlayerController*                           PC;                                               // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class AActor*                                      OverflowedActor;                                  // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class FString                                      PropertyName;                                     // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.PlayerController.EventDisconnected
@@ -16299,6 +16331,12 @@ struct UOnlineSubsystem_eventPostInit_Params
 struct UOnlineSubsystem_eventInit_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.OnlineSubsystem.OnDeviceSuspend
+// [0x00120001] 
+struct UOnlineSubsystem_execOnDeviceSuspend_Params
+{
 };
 
 // Function Engine.OnlineSubsystem.GetUnsupportedCorrectiveActionURLForUser

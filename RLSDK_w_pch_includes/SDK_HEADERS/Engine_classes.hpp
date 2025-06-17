@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.hpp
@@ -4122,32 +4122,33 @@ public:
 	uint32_t                                           bPathsRebuilt : 1;                             // 0x03E8 (0x0004) [0x0000000000000000] [0x00008000] 
 	uint32_t                                           bHasPathNodes : 1;                             // 0x03E8 (0x0004) [0x0000000000000000] [0x00010000] 
 	uint32_t                                           bIsMenuLevel : 1;                              // 0x03E8 (0x0004) [0x0000000000002002] [0x00020000] (CPF_Const | CPF_Transient)
-	uint32_t                                           bDebugPauseExecution : 1;                      // 0x03E8 (0x0004) [0x0000000800002002] [0x00040000] (CPF_Const | CPF_Transient | CPF_EditorOnly)
-	uint32_t                                           bDebugStepExecution : 1;                       // 0x03E8 (0x0004) [0x0000000800002002] [0x00080000] (CPF_Const | CPF_Transient | CPF_EditorOnly)
-	uint32_t                                           bUseConsoleInput : 1;                          // 0x03E8 (0x0004) [0x0000000000002000] [0x00100000] (CPF_Transient)
-	uint32_t                                           bDisableGlobalGravityZ : 1;                    // 0x03E8 (0x0004) [0x0000000000044002] [0x00200000] (CPF_Const | CPF_Config | CPF_GlobalConfig)
-	uint32_t                                           bMinimizeBSPSections : 1;                      // 0x03E8 (0x0004) [0x0000000000000001] [0x00400000] (CPF_Edit)
-	uint32_t                                           bNoPathWarnings : 1;                           // 0x03E8 (0x0004) [0x0000000000000001] [0x00800000] (CPF_Edit)
-	uint32_t                                           bNoMobileMapWarnings : 1;                      // 0x03E8 (0x0004) [0x0000000000004001] [0x01000000] (CPF_Edit | CPF_Config)
-	uint32_t                                           bHighPriorityLoading : 1;                      // 0x03E8 (0x0004) [0x0000000000000020] [0x02000000] (CPF_Net)
-	uint32_t                                           bHighPriorityLoadingLocal : 1;                 // 0x03E8 (0x0004) [0x0000000000000000] [0x04000000] 
-	uint32_t                                           bUseProcBuildingRulesetOverride : 1;           // 0x03E8 (0x0004) [0x0000000000000001] [0x08000000] (CPF_Edit)
-	uint32_t                                           bInteractiveMode : 1;                          // 0x03E8 (0x0004) [0x0000000000002002] [0x10000000] (CPF_Const | CPF_Transient)
-	uint32_t                                           bForceInteractiveMode : 1;                     // 0x03E8 (0x0004) [0x0000000000000001] [0x20000000] (CPF_Edit)
-	uint32_t                                           bSupportDoubleBufferedPhysics : 1;             // 0x03E8 (0x0004) [0x0000000000000001] [0x40000000] (CPF_Edit)
-	uint32_t                                           bPhysicsIgnoreDeltaTime : 1;                   // 0x03E8 (0x0004) [0x0000000000000001] [0x80000000] (CPF_Edit)
-	uint32_t                                           bEnableChanceOfPhysicsChunkOverride : 1;       // 0x03EC (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
-	uint32_t                                           bLimitExplosionChunkSize : 1;                  // 0x03EC (0x0004) [0x0000000000004001] [0x00000002] (CPF_Edit | CPF_Config)
-	uint32_t                                           bLimitDamageChunkSize : 1;                     // 0x03EC (0x0004) [0x0000000000004001] [0x00000004] (CPF_Edit | CPF_Config)
-	uint32_t                                           bPrecomputeVisibility : 1;                     // 0x03EC (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
-	uint32_t                                           bPlaceCellsOnSurfaces : 1;                     // 0x03EC (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
-	uint32_t                                           bAffectIndirectCompositeShadowDirection : 1;   // 0x03EC (0x0004) [0x0000000000004001] [0x00000020] (CPF_Edit | CPF_Config)
-	uint32_t                                           bAllowTemporalAA : 1;                          // 0x03EC (0x0004) [0x0000000000044001] [0x00000040] (CPF_Edit | CPF_Config | CPF_GlobalConfig)
-	uint32_t                                           bUseGlobalIllumination : 1;                    // 0x03EC (0x0004) [0x0000000800000001] [0x00000080] (CPF_Edit | CPF_EditorOnly)
-	uint32_t                                           bForceNoPrecomputedLighting : 1;               // 0x03EC (0x0004) [0x0000000000000001] [0x00000100] (CPF_Edit)
-	uint32_t                                           bHaveActiveCrowd : 1;                          // 0x03EC (0x0004) [0x0000000000000000] [0x00000200] 
-	uint32_t                                           bAllowHostMigration : 1;                       // 0x03EC (0x0004) [0x0000000000004000] [0x00000400] (CPF_Config)
-	uint32_t                                           bGameplayFramePause : 1;                       // 0x03EC (0x0004) [0x0000000000000000] [0x00000800] 
+	uint32_t                                           bUnitTest : 1;                                 // 0x03E8 (0x0004) [0x0000000000000000] [0x00040000] 
+	uint32_t                                           bDebugPauseExecution : 1;                      // 0x03E8 (0x0004) [0x0000000800002002] [0x00080000] (CPF_Const | CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bDebugStepExecution : 1;                       // 0x03E8 (0x0004) [0x0000000800002002] [0x00100000] (CPF_Const | CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bUseConsoleInput : 1;                          // 0x03E8 (0x0004) [0x0000000000002000] [0x00200000] (CPF_Transient)
+	uint32_t                                           bDisableGlobalGravityZ : 1;                    // 0x03E8 (0x0004) [0x0000000000044002] [0x00400000] (CPF_Const | CPF_Config | CPF_GlobalConfig)
+	uint32_t                                           bMinimizeBSPSections : 1;                      // 0x03E8 (0x0004) [0x0000000000000001] [0x00800000] (CPF_Edit)
+	uint32_t                                           bNoPathWarnings : 1;                           // 0x03E8 (0x0004) [0x0000000000000001] [0x01000000] (CPF_Edit)
+	uint32_t                                           bNoMobileMapWarnings : 1;                      // 0x03E8 (0x0004) [0x0000000000004001] [0x02000000] (CPF_Edit | CPF_Config)
+	uint32_t                                           bHighPriorityLoading : 1;                      // 0x03E8 (0x0004) [0x0000000000000020] [0x04000000] (CPF_Net)
+	uint32_t                                           bHighPriorityLoadingLocal : 1;                 // 0x03E8 (0x0004) [0x0000000000000000] [0x08000000] 
+	uint32_t                                           bUseProcBuildingRulesetOverride : 1;           // 0x03E8 (0x0004) [0x0000000000000001] [0x10000000] (CPF_Edit)
+	uint32_t                                           bInteractiveMode : 1;                          // 0x03E8 (0x0004) [0x0000000000002002] [0x20000000] (CPF_Const | CPF_Transient)
+	uint32_t                                           bForceInteractiveMode : 1;                     // 0x03E8 (0x0004) [0x0000000000000001] [0x40000000] (CPF_Edit)
+	uint32_t                                           bSupportDoubleBufferedPhysics : 1;             // 0x03E8 (0x0004) [0x0000000000000001] [0x80000000] (CPF_Edit)
+	uint32_t                                           bPhysicsIgnoreDeltaTime : 1;                   // 0x03EC (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEnableChanceOfPhysicsChunkOverride : 1;       // 0x03EC (0x0004) [0x0000000000004001] [0x00000002] (CPF_Edit | CPF_Config)
+	uint32_t                                           bLimitExplosionChunkSize : 1;                  // 0x03EC (0x0004) [0x0000000000004001] [0x00000004] (CPF_Edit | CPF_Config)
+	uint32_t                                           bLimitDamageChunkSize : 1;                     // 0x03EC (0x0004) [0x0000000000004001] [0x00000008] (CPF_Edit | CPF_Config)
+	uint32_t                                           bPrecomputeVisibility : 1;                     // 0x03EC (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
+	uint32_t                                           bPlaceCellsOnSurfaces : 1;                     // 0x03EC (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
+	uint32_t                                           bAffectIndirectCompositeShadowDirection : 1;   // 0x03EC (0x0004) [0x0000000000004001] [0x00000040] (CPF_Edit | CPF_Config)
+	uint32_t                                           bAllowTemporalAA : 1;                          // 0x03EC (0x0004) [0x0000000000044001] [0x00000080] (CPF_Edit | CPF_Config | CPF_GlobalConfig)
+	uint32_t                                           bUseGlobalIllumination : 1;                    // 0x03EC (0x0004) [0x0000000800000001] [0x00000100] (CPF_Edit | CPF_EditorOnly)
+	uint32_t                                           bForceNoPrecomputedLighting : 1;               // 0x03EC (0x0004) [0x0000000000000001] [0x00000200] (CPF_Edit)
+	uint32_t                                           bHaveActiveCrowd : 1;                          // 0x03EC (0x0004) [0x0000000000000000] [0x00000400] 
+	uint32_t                                           bAllowHostMigration : 1;                       // 0x03EC (0x0004) [0x0000000000004000] [0x00000800] (CPF_Config)
+	uint32_t                                           bGameplayFramePause : 1;                       // 0x03EC (0x0004) [0x0000000000000000] [0x00001000] 
 	float                                              SquintModeKernelSize;                          // 0x03F0 (0x0004) [0x0000000000004001] (CPF_Edit | CPF_Config)
 	class APostProcessVolume*                          HighestPriorityPostProcessVolume;              // 0x03F8 (0x0008) [0x0000000001002002] (CPF_Const | CPF_Transient)
 	struct FReverbSettings                             DefaultReverbSettings;                         // 0x0400 (0x0010) [0x0000000000004001] (CPF_Edit | CPF_Config)
@@ -4364,6 +4365,7 @@ public:
 	class UNavMeshPathConstraint* GetNavMeshPathConstraintFromCache(class UClass* ConstraintClass, class UNavigationHandle* Requestor);
 	void ReleaseCachedConstraintsAndEvaluators();
 	void SetPitchTekTargetsInitialState();
+	class FString GetURLOption(class FString& outOption);
 	class AActor* GetOrSpawnActor(class UClass* ActorClass);
 	class AActor* GetActor(class UClass* ActorClass);
 	void SetPauser(class APlayerReplicationInfo* InPauser);
@@ -9643,7 +9645,7 @@ public:
 };
 
 // Class Engine.PlayerController
-// 0x035C (0x0474 - 0x07D0)
+// 0x0374 (0x0474 - 0x07E8)
 class APlayerController : public AController
 {
 public:
@@ -9758,9 +9760,10 @@ public:
 	float                                              LastSpectatorStateSynchTime;                   // 0x0750 (0x0004) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventConnectionTimedOut__Delegate;           // 0x0758 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x0770 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMissingPeersUnregistered__Delegate;        // 0x0788 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __CanUnpause__Delegate;                        // 0x07A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __InputMatchDelegate__Delegate;                // 0x07B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventUnrecoverableActorChannelOverflow__Delegate;// 0x0788 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnMissingPeersUnregistered__Delegate;        // 0x07A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __CanUnpause__Delegate;                        // 0x07B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __InputMatchDelegate__Delegate;                // 0x07D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -10081,6 +10084,8 @@ public:
 	void PeerDesignatedAsHost(const class FName& SessionName);
 	class UClass* GetCurrentSearchClass();
 	void OnHostMigratedOnlineGame(const class FName& SessionName, bool bWasSuccessful);
+	void CloseConnection(const class FString& Reason);
+	void eventNotifyUnrecoverableChannelOverflow(class AActor* OverflowedActor, const class FString& PropertyName);
 	void OnUnregisterPlayerCompleteForHostMigrate(const class FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasSuccessful);
 	bool RemoveMissingPeersFromSession(const class FName& SessionName, const struct FScriptDelegate& UnregisterDelegate);
 	class APlayerReplicationInfo* GetPRIFromNetId(const struct FUniqueNetId& PlayerID);
@@ -10119,6 +10124,7 @@ public:
 	class FString ConsoleCommand(const class FString& Command, bool optionalBWriteToLog);
 	class FString GetServerNetworkAddress();
 	class FString GetPlayerNetworkAddress();
+	void EventUnrecoverableActorChannelOverflow(class APlayerController* PC, class AActor* OverflowedActor, const class FString& PropertyName);
 	void EventDisconnected(class APlayerController* PC);
 	void EventConnectionTimedOut(class APlayerController* PC);
 };
@@ -12789,7 +12795,7 @@ public:
 };
 
 // Class Engine.OnlineSubsystem
-// 0x0300 (0x0060 - 0x0360)
+// 0x0318 (0x0060 - 0x0378)
 class UOnlineSubsystem : public UObject
 {
 public:
@@ -12867,8 +12873,9 @@ public:
 	struct FScriptDelegate                             __FeaturePrivilegeLevelUpdated__Delegate;      // 0x02E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventPlatformAccountSettingsCreated__Delegate;// 0x0300 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventPlatformBlockListStatusCreated__Delegate;// 0x0318 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadOnlineAvatarComplete__Delegate;        // 0x0330 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSystemUserControllerPairingChanged__Delegate;// 0x0348 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnDeviceSuspend__Delegate;                   // 0x0330 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadOnlineAvatarComplete__Delegate;        // 0x0348 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnSystemUserControllerPairingChanged__Delegate;// 0x0360 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -12972,6 +12979,7 @@ public:
 	void eventExit();
 	bool eventPostInit();
 	bool eventInit();
+	void OnDeviceSuspend();
 	class UPlatformURL* GetUnsupportedCorrectiveActionURLForUser(int32_t ControllerId);
 	class UPlatformBlockListStatus* GetBlockListStatusForUser(int32_t ControllerId);
 	class UPlatformBlockListStatus* GetBlockListStatusForPrimaryUser();

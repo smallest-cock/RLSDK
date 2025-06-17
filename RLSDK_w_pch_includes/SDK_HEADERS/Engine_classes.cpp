@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.cpp
@@ -8256,6 +8256,32 @@ void AWorldInfo::SetPitchTekTargetsInitialState()
 	memset(&SetPitchTekTargetsInitialState_Params, 0, sizeof(SetPitchTekTargetsInitialState_Params));
 
 	this->ProcessEvent(uFnSetPitchTekTargetsInitialState, &SetPitchTekTargetsInitialState_Params, nullptr);
+};
+
+// Function Engine.WorldInfo.GetURLOption
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  Option                         (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+class FString AWorldInfo::GetURLOption(class FString& Option)
+{
+	static UFunction* uFnGetURLOption = nullptr;
+
+	if (!uFnGetURLOption)
+	{
+		uFnGetURLOption = UFunction::FindFunction("Function Engine.WorldInfo.GetURLOption");
+	}
+
+	AWorldInfo_execGetURLOption_Params GetURLOption_Params;
+	memset(&GetURLOption_Params, 0, sizeof(GetURLOption_Params));
+	memcpy_s(&GetURLOption_Params.Option, sizeof(GetURLOption_Params.Option), &Option, sizeof(Option));
+
+	this->ProcessEvent(uFnGetURLOption, &GetURLOption_Params, nullptr);
+
+	memcpy_s(&Option, sizeof(Option), &GetURLOption_Params.Option, sizeof(GetURLOption_Params.Option));
+
+	return GetURLOption_Params.ReturnValue;
 };
 
 // Function Engine.WorldInfo.GetOrSpawnActor
@@ -32799,6 +32825,50 @@ void APlayerController::OnHostMigratedOnlineGame(const class FName& SessionName,
 	this->ProcessEvent(uFnOnHostMigratedOnlineGame, &OnHostMigratedOnlineGame_Params, nullptr);
 };
 
+// Function Engine.PlayerController.CloseConnection
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  Reason                         (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
+
+void APlayerController::CloseConnection(const class FString& Reason)
+{
+	static UFunction* uFnCloseConnection = nullptr;
+
+	if (!uFnCloseConnection)
+	{
+		uFnCloseConnection = UFunction::FindFunction("Function Engine.PlayerController.CloseConnection");
+	}
+
+	APlayerController_execCloseConnection_Params CloseConnection_Params;
+	memset(&CloseConnection_Params, 0, sizeof(CloseConnection_Params));
+	memcpy_s(&CloseConnection_Params.Reason, sizeof(CloseConnection_Params.Reason), &Reason, sizeof(Reason));
+
+	this->ProcessEvent(uFnCloseConnection, &CloseConnection_Params, nullptr);
+};
+
+// Function Engine.PlayerController.NotifyUnrecoverableChannelOverflow
+// [0x00020802] (FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class AActor*                  OverflowedActor                (CPF_Parm)
+// class FString                  PropertyName                   (CPF_Parm | CPF_NeedCtorLink)
+
+void APlayerController::eventNotifyUnrecoverableChannelOverflow(class AActor* OverflowedActor, const class FString& PropertyName)
+{
+	static UFunction* uFnNotifyUnrecoverableChannelOverflow = nullptr;
+
+	if (!uFnNotifyUnrecoverableChannelOverflow)
+	{
+		uFnNotifyUnrecoverableChannelOverflow = UFunction::FindFunction("Function Engine.PlayerController.NotifyUnrecoverableChannelOverflow");
+	}
+
+	APlayerController_eventNotifyUnrecoverableChannelOverflow_Params NotifyUnrecoverableChannelOverflow_Params;
+	memset(&NotifyUnrecoverableChannelOverflow_Params, 0, sizeof(NotifyUnrecoverableChannelOverflow_Params));
+	NotifyUnrecoverableChannelOverflow_Params.OverflowedActor = OverflowedActor;
+	memcpy_s(&NotifyUnrecoverableChannelOverflow_Params.PropertyName, sizeof(NotifyUnrecoverableChannelOverflow_Params.PropertyName), &PropertyName, sizeof(PropertyName));
+
+	this->ProcessEvent(uFnNotifyUnrecoverableChannelOverflow, &NotifyUnrecoverableChannelOverflow_Params, nullptr);
+};
+
 // Function Engine.PlayerController.OnUnregisterPlayerCompleteForHostMigrate
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -33665,6 +33735,31 @@ class FString APlayerController::GetPlayerNetworkAddress()
 	this->ProcessEvent(uFnGetPlayerNetworkAddress, &GetPlayerNetworkAddress_Params, nullptr);
 
 	return GetPlayerNetworkAddress_Params.ReturnValue;
+};
+
+// Function Engine.PlayerController.EventUnrecoverableActorChannelOverflow
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class APlayerController*       PC                             (CPF_Parm)
+// class AActor*                  OverflowedActor                (CPF_Parm)
+// class FString                  PropertyName                   (CPF_Parm | CPF_NeedCtorLink)
+
+void APlayerController::EventUnrecoverableActorChannelOverflow(class APlayerController* PC, class AActor* OverflowedActor, const class FString& PropertyName)
+{
+	static UFunction* uFnEventUnrecoverableActorChannelOverflow = nullptr;
+
+	if (!uFnEventUnrecoverableActorChannelOverflow)
+	{
+		uFnEventUnrecoverableActorChannelOverflow = UFunction::FindFunction("Function Engine.PlayerController.EventUnrecoverableActorChannelOverflow");
+	}
+
+	APlayerController_execEventUnrecoverableActorChannelOverflow_Params EventUnrecoverableActorChannelOverflow_Params;
+	memset(&EventUnrecoverableActorChannelOverflow_Params, 0, sizeof(EventUnrecoverableActorChannelOverflow_Params));
+	EventUnrecoverableActorChannelOverflow_Params.PC = PC;
+	EventUnrecoverableActorChannelOverflow_Params.OverflowedActor = OverflowedActor;
+	memcpy_s(&EventUnrecoverableActorChannelOverflow_Params.PropertyName, sizeof(EventUnrecoverableActorChannelOverflow_Params.PropertyName), &PropertyName, sizeof(PropertyName));
+
+	this->ProcessEvent(uFnEventUnrecoverableActorChannelOverflow, &EventUnrecoverableActorChannelOverflow_Params, nullptr);
 };
 
 // Function Engine.PlayerController.EventDisconnected
@@ -46331,6 +46426,25 @@ bool UOnlineSubsystem::eventInit()
 	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
 
 	return Init_Params.ReturnValue;
+};
+
+// Function Engine.OnlineSubsystem.OnDeviceSuspend
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineSubsystem::OnDeviceSuspend()
+{
+	static UFunction* uFnOnDeviceSuspend = nullptr;
+
+	if (!uFnOnDeviceSuspend)
+	{
+		uFnOnDeviceSuspend = UFunction::FindFunction("Function Engine.OnlineSubsystem.OnDeviceSuspend");
+	}
+
+	UOnlineSubsystem_execOnDeviceSuspend_Params OnDeviceSuspend_Params;
+	memset(&OnDeviceSuspend_Params, 0, sizeof(OnDeviceSuspend_Params));
+
+	this->ProcessEvent(uFnOnDeviceSuspend, &OnDeviceSuspend_Params, nullptr);
 };
 
 // Function Engine.OnlineSubsystem.GetUnsupportedCorrectiveActionURLForUser

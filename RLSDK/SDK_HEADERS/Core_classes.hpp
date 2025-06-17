@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.52) 06/09/2025 11:04AM
+# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 04:48PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.hpp
@@ -1315,6 +1315,42 @@ enum class EContentKeyIndex_PrimeUpdate54_2 : uint8_t
 	PrimeUpdate54_1_BA3B938B925416DC2ACF71FA3BF3800C   = 25,
 	PrimeUpdate54_1_CAB7471443D859E3FD65053646D27FC5   = 26,
 	PrimeUpdate54_1_END                                = 27
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate55
+enum class EContentKeyIndex_PrimeUpdate55 : uint8_t
+{
+	PrimeUpdate55_507A85E75F2520DE99813E791B31F03E     = 0,
+	PrimeUpdate55_F80054A36B107942DE103AAF5C21CCA7     = 1,
+	PrimeUpdate55_3081EE9E3EBD3377EFA8E6ADA8251C42     = 2,
+	PrimeUpdate55_248FC8DC5CCC0A89A6FE201896B7A29E     = 3,
+	PrimeUpdate55_14C2D744A7A09DBFE0B10CB339F7872F     = 4,
+	PrimeUpdate55_3428057295006480958E2773D826DC41     = 5,
+	PrimeUpdate55_DBBD340DCCE75054BC3FCAF67D428527     = 6,
+	PrimeUpdate55_860BEE38CE68F4B0F135A0E14EE78922     = 7,
+	PrimeUpdate55_FCEDD708F52632EA3A46CC6D250A2D5E     = 8,
+	PrimeUpdate55_DCF0DD634565441CAA1CD22F683F5877     = 9,
+	PrimeUpdate55_273578FB71FC9FF1074B7584E8E19934     = 10,
+	PrimeUpdate55_99AC25C4D3953C8542D169587E4496FE     = 11,
+	PrimeUpdate55_FAEF233BCABCF4941A518948735FF949     = 12,
+	PrimeUpdate55_074474D07CF94AA336B8D92A72D51E03     = 13,
+	PrimeUpdate55_70253F660C35A52E94854B44D5DB287B     = 14,
+	PrimeUpdate55_109C469611BBB06722DC0333473C5720     = 15,
+	PrimeUpdate55_BD8B5DE7E27976E7E3915CFC264FB07C     = 16,
+	PrimeUpdate55_A40B8CE900AA6ABDCB36DFFE8BEB517E     = 17,
+	PrimeUpdate55_26A4F6A97D64821C10F6464076BF6CB3     = 18,
+	PrimeUpdate55_678A04227C624EBEF4C2E7EB155BD34E     = 19,
+	PrimeUpdate55_DA091A7CF158078327CC941B3B98205C     = 20,
+	PrimeUpdate55_066C8ECEDB385C43CD1D80E992AC2070     = 21,
+	PrimeUpdate55_C52A9DDFAC78FE27E0490CEFC3AFA299     = 22,
+	PrimeUpdate55_223D2EEBD192CD6BDCA4E050F6820B0D     = 23,
+	PrimeUpdate55_B4923DCFA20FCA22C0501FD5224FFC96     = 24,
+	PrimeUpdate55_EA9056364987AABE2E6AA999BED443CA     = 25,
+	PrimeUpdate55_4FC88C24E304E84EF2B662D2ACAD49B7     = 26,
+	PrimeUpdate55_BC26CB09E28D1402FCFFCEC11086EA01     = 27,
+	PrimeUpdate55_FE9B7FEBBF9E145CE2AB5A77915F5287     = 28,
+	PrimeUpdate55_1B171ADFAD31D2B7CCCC3BEE347D53F7     = 29,
+	PrimeUpdate55_END                                  = 30
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_ContinuousIntegration
@@ -2893,90 +2929,90 @@ public:
 	uint32_t                                           RemoveCrossPlatformProducts : 1;               // 0x0068 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
 	uint32_t                                           ProductValidation : 1;                         // 0x006C (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
 	uint32_t                                           MapPrefs : 1;                                  // 0x006C (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           Tournaments : 1;                               // 0x006C (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           PreMatchLobby : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
-	uint32_t                                           Challenges : 1;                                // 0x006C (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
-	uint32_t                                           AntiAddiction : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
-	uint32_t                                           TrainingEditor : 1;                            // 0x006C (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
-	uint32_t                                           VoiceChat : 1;                                 // 0x006C (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
-	uint32_t                                           SplitScreen : 1;                               // 0x006C (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
-	uint32_t                                           Clubs : 1;                                     // 0x006C (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
-	uint32_t                                           FilterContent : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
-	uint32_t                                           EncryptContent : 1;                            // 0x006C (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
-	uint32_t                                           EsportsCamera : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
-	uint32_t                                           OnlineXP : 1;                                  // 0x006C (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
-	uint32_t                                           ClanforgeReservation : 1;                      // 0x006C (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
-	uint32_t                                           UserSettingObserver : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
-	uint32_t                                           Metrics : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x00100000] (CPF_DataBinding)
-	uint32_t                                           EOSMetrics : 1;                                // 0x006C (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
-	uint32_t                                           MusicPlaylistSelection : 1;                    // 0x006C (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
-	uint32_t                                           SpecialEvents : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
-	uint32_t                                           PlayerBannerCustomization : 1;                 // 0x006C (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
-	uint32_t                                           SecureUDP : 1;                                 // 0x006C (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
-	uint32_t                                           PsyNet : 1;                                    // 0x006C (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
-	uint32_t                                           OnlinePlayerStorage : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
-	uint32_t                                           LocalSaveData : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
-	uint32_t                                           CrowdV2 : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
-	uint32_t                                           ChatBan : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
-	uint32_t                                           BacktraceCrashDumps : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
-	uint32_t                                           SpotifyButton : 1;                             // 0x0070 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           RocketPass : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           SeasonRewards : 1;                             // 0x0070 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           FaceIt : 1;                                    // 0x0070 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
-	uint32_t                                           KnockOut : 1;                                  // 0x0070 (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
-	uint32_t                                           OnlinePlayerTitles : 1;                        // 0x0070 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
-	uint32_t                                           RestrictByRegion : 1;                          // 0x0070 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
-	uint32_t                                           FirstTimeExperience : 1;                       // 0x0070 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
-	uint32_t                                           RLBot : 1;                                     // 0x0070 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
-	uint32_t                                           UserBugReport : 1;                             // 0x0070 (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
-	uint32_t                                           SteamInput : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
-	uint32_t                                           ReplayFXControls : 1;                          // 0x0070 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
-	uint32_t                                           ESportsShop : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
-	uint32_t                                           MatchHistory : 1;                              // 0x0070 (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
-	uint32_t                                           DynamicRangeAudioSettings : 1;                 // 0x0070 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
-	uint32_t                                           AutoTour : 1;                                  // 0x0070 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
-	uint32_t                                           QuickPlay : 1;                                 // 0x0070 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
-	uint32_t                                           NewsPanelV2 : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
-	uint32_t                                           Blueprints : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
-	uint32_t                                           RocketBucks : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
-	uint32_t                                           Tritip : 1;                                    // 0x0070 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
-	uint32_t                                           DiscordRichPresence : 1;                       // 0x0074 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           SupportACreator : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           CinematicIntro : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
-	uint32_t                                           TinyCrowd : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           CrumbTrail : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
-	uint32_t                                           EpicGameStoreBuild : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
-	uint32_t                                           XPGatedPlaylists : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
-	uint32_t                                           TradeInV2 : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
-	uint32_t                                           Football : 1;                                  // 0x0074 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
-	uint32_t                                           RumbleSelection : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
-	uint32_t                                           UndersizedParty : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
-	uint32_t                                           StreamerSafeAudio : 1;                         // 0x0074 (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
-	uint32_t                                           FreeplayCommands : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x00002000] (CPF_DataBinding)
-	uint32_t                                           Rumble_BM : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
-	uint32_t                                           PlayerReportingV2 : 1;                         // 0x0074 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
-	uint32_t                                           BlogScheduling : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
-	uint32_t                                           EOSVoice : 1;                                  // 0x0074 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
-	uint32_t                                           QuickPostMatchRequeue : 1;                     // 0x0074 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
-	uint32_t                                           TrainingNavigation : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
-	uint32_t                                           TrainingManipulation : 1;                      // 0x0074 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
-	uint32_t                                           FilterByColor : 1;                             // 0x0074 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
-	uint32_t                                           Scoreboard : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
-	uint32_t                                           DynamicMapEvents : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
-	uint32_t                                           NameplateBoost : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
-	uint32_t                                           EOSGameClips : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
-	uint32_t                                           DynamicLogos : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
-	uint32_t                                           XETagging : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
-	uint32_t                                           PlayMenuV4 : 1;                                // 0x0078 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           DemoUpgrades : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           QuickChatTimeStamp : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
-	uint32_t                                           SoccarPong : 1;                                // 0x0078 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           OnlineFreeplay : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
-	uint32_t                                           ExposeNewMutators : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
-	uint32_t                                           MatchmakingSubRegion : 1;                      // 0x0078 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
-	uint32_t                                           CrossbarSFX : 1;                               // 0x0078 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
-	uint32_t                                           RugbyIteration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
-	uint32_t                                           ChallengesV2 : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
+	uint32_t                                           PreMatchLobby : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
+	uint32_t                                           Challenges : 1;                                // 0x006C (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
+	uint32_t                                           AntiAddiction : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
+	uint32_t                                           TrainingEditor : 1;                            // 0x006C (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           VoiceChat : 1;                                 // 0x006C (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
+	uint32_t                                           SplitScreen : 1;                               // 0x006C (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
+	uint32_t                                           Clubs : 1;                                     // 0x006C (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           FilterContent : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
+	uint32_t                                           EncryptContent : 1;                            // 0x006C (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
+	uint32_t                                           EsportsCamera : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
+	uint32_t                                           OnlineXP : 1;                                  // 0x006C (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
+	uint32_t                                           ClanforgeReservation : 1;                      // 0x006C (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
+	uint32_t                                           UserSettingObserver : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
+	uint32_t                                           Metrics : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
+	uint32_t                                           EOSMetrics : 1;                                // 0x006C (0x0004) [0x0000000040000000] [0x00100000] (CPF_DataBinding)
+	uint32_t                                           MusicPlaylistSelection : 1;                    // 0x006C (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
+	uint32_t                                           SpecialEvents : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
+	uint32_t                                           PlayerBannerCustomization : 1;                 // 0x006C (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
+	uint32_t                                           SecureUDP : 1;                                 // 0x006C (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
+	uint32_t                                           PsyNet : 1;                                    // 0x006C (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
+	uint32_t                                           OnlinePlayerStorage : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           LocalSaveData : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
+	uint32_t                                           CrowdV2 : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t                                           ChatBan : 1;                                   // 0x006C (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
+	uint32_t                                           BacktraceCrashDumps : 1;                       // 0x006C (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
+	uint32_t                                           SpotifyButton : 1;                             // 0x006C (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
+	uint32_t                                           RocketPass : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           SeasonRewards : 1;                             // 0x0070 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           FaceIt : 1;                                    // 0x0070 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
+	uint32_t                                           KnockOut : 1;                                  // 0x0070 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
+	uint32_t                                           OnlinePlayerTitles : 1;                        // 0x0070 (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
+	uint32_t                                           RestrictByRegion : 1;                          // 0x0070 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           FirstTimeExperience : 1;                       // 0x0070 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
+	uint32_t                                           RLBot : 1;                                     // 0x0070 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           UserBugReport : 1;                             // 0x0070 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
+	uint32_t                                           SteamInput : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
+	uint32_t                                           ReplayFXControls : 1;                          // 0x0070 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
+	uint32_t                                           ESportsShop : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
+	uint32_t                                           MatchHistory : 1;                              // 0x0070 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
+	uint32_t                                           DynamicRangeAudioSettings : 1;                 // 0x0070 (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
+	uint32_t                                           QuickPlay : 1;                                 // 0x0070 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
+	uint32_t                                           NewsPanelV2 : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
+	uint32_t                                           Blueprints : 1;                                // 0x0070 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
+	uint32_t                                           RocketBucks : 1;                               // 0x0070 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           Tritip : 1;                                    // 0x0070 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t                                           DiscordRichPresence : 1;                       // 0x0070 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
+	uint32_t                                           SupportACreator : 1;                           // 0x0070 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
+	uint32_t                                           CinematicIntro : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           TinyCrowd : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           CrumbTrail : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           EpicGameStoreBuild : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
+	uint32_t                                           XPGatedPlaylists : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
+	uint32_t                                           TradeInV2 : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           Football : 1;                                  // 0x0074 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
+	uint32_t                                           RumbleSelection : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
+	uint32_t                                           UndersizedParty : 1;                           // 0x0074 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           StreamerSafeAudio : 1;                         // 0x0074 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
+	uint32_t                                           FreeplayCommands : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
+	uint32_t                                           Rumble_BM : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
+	uint32_t                                           PlayerReportingV2 : 1;                         // 0x0074 (0x0004) [0x0000000040000000] [0x00002000] (CPF_DataBinding)
+	uint32_t                                           BlogScheduling : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
+	uint32_t                                           EOSVoice : 1;                                  // 0x0074 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
+	uint32_t                                           QuickPostMatchRequeue : 1;                     // 0x0074 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
+	uint32_t                                           TrainingNavigation : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
+	uint32_t                                           TrainingManipulation : 1;                      // 0x0074 (0x0004) [0x0000000040000000] [0x00100000] (CPF_DataBinding)
+	uint32_t                                           FilterByColor : 1;                             // 0x0074 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
+	uint32_t                                           Scoreboard : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
+	uint32_t                                           DynamicMapEvents : 1;                          // 0x0074 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
+	uint32_t                                           NameplateBoost : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           EOSGameClips : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
+	uint32_t                                           DynamicLogos : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t                                           XETagging : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
+	uint32_t                                           PlayMenuV4 : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
+	uint32_t                                           DemoUpgrades : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
+	uint32_t                                           QuickChatTimeStamp : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           SoccarPong : 1;                                // 0x0078 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           OnlineFreeplay : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           MatchmakingSubRegion : 1;                      // 0x0078 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
+	uint32_t                                           CrossbarSFX : 1;                               // 0x0078 (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
+	uint32_t                                           RugbyIteration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           ChallengesV2 : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
+	uint32_t                                           PossessionExpanded : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           RocketPassUpgrades : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
+	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
 
 public:
 	static UClass* StaticClass()
