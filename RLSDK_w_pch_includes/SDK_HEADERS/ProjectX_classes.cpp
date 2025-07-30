@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 05:08PM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 07/29/2025 05:18PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
@@ -13133,7 +13133,7 @@ void UNetMetrics_X::PlayerTimeout(const struct FUniqueNetId& PlayerID)
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // int32_t                        PlaylistId                     (CPF_Parm)
-// class FString                  MatchGuid                      (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  MatchGUID                      (CPF_Parm | CPF_NeedCtorLink)
 // int32_t                        ConnectionType                 (CPF_Parm)
 // int32_t                        PeriodMS                       (CPF_Parm)
 // int32_t                        PingMin                        (CPF_Parm)
@@ -13156,7 +13156,7 @@ void UNetMetrics_X::PlayerTimeout(const struct FUniqueNetId& PlayerID)
 // class FString                  RegionID                       (CPF_Parm | CPF_NeedCtorLink)
 // class FString                  ServerId                       (CPF_Parm | CPF_NeedCtorLink)
 
-void UNetMetrics_X::NetStats(int32_t PlaylistId, const class FString& MatchGuid, int32_t ConnectionType, int32_t PeriodMS, int32_t PingMin, int32_t PingMax, int32_t PingAvg, int32_t PingMed, int32_t OutPackets, int32_t InPackets, int32_t OutLost, int32_t InLost, int32_t OutOfOrder, int32_t OutBytes, int32_t InBytes, int32_t PsyPingMin, int32_t PsyPingMax, int32_t PsyPingAvg, int32_t PsyPingMed, int32_t PsyReceived, int32_t PsyLost, const class FString& RegionID, const class FString& ServerId)
+void UNetMetrics_X::NetStats(int32_t PlaylistId, const class FString& MatchGUID, int32_t ConnectionType, int32_t PeriodMS, int32_t PingMin, int32_t PingMax, int32_t PingAvg, int32_t PingMed, int32_t OutPackets, int32_t InPackets, int32_t OutLost, int32_t InLost, int32_t OutOfOrder, int32_t OutBytes, int32_t InBytes, int32_t PsyPingMin, int32_t PsyPingMax, int32_t PsyPingAvg, int32_t PsyPingMed, int32_t PsyReceived, int32_t PsyLost, const class FString& RegionID, const class FString& ServerId)
 {
 	static UFunction* uFnNetStats = nullptr;
 
@@ -13168,7 +13168,7 @@ void UNetMetrics_X::NetStats(int32_t PlaylistId, const class FString& MatchGuid,
 	UNetMetrics_X_execNetStats_Params NetStats_Params;
 	memset(&NetStats_Params, 0, sizeof(NetStats_Params));
 	memcpy_s(&NetStats_Params.PlaylistId, sizeof(NetStats_Params.PlaylistId), &PlaylistId, sizeof(PlaylistId));
-	memcpy_s(&NetStats_Params.MatchGuid, sizeof(NetStats_Params.MatchGuid), &MatchGuid, sizeof(MatchGuid));
+	memcpy_s(&NetStats_Params.MatchGUID, sizeof(NetStats_Params.MatchGUID), &MatchGUID, sizeof(MatchGUID));
 	memcpy_s(&NetStats_Params.ConnectionType, sizeof(NetStats_Params.ConnectionType), &ConnectionType, sizeof(ConnectionType));
 	memcpy_s(&NetStats_Params.PeriodMS, sizeof(NetStats_Params.PeriodMS), &PeriodMS, sizeof(PeriodMS));
 	memcpy_s(&NetStats_Params.PingMin, sizeof(NetStats_Params.PingMin), &PingMin, sizeof(PingMin));
@@ -28345,26 +28345,26 @@ void UOnlineGameDedicatedServer_X::HandleTrackerPlayerAdded(class UServerPlayerT
 	this->ProcessEvent(uFnHandleTrackerPlayerAdded, &HandleTrackerPlayerAdded_Params, nullptr);
 };
 
-// Function ProjectX.OnlineGameDedicatedServer_X.MatchGuid
+// Function ProjectX.OnlineGameDedicatedServer_X.MatchGUID
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
-class FString UOnlineGameDedicatedServer_X::MatchGuid()
+class FString UOnlineGameDedicatedServer_X::MatchGUID()
 {
-	static UFunction* uFnMatchGuid = nullptr;
+	static UFunction* uFnMatchGUID = nullptr;
 
-	if (!uFnMatchGuid)
+	if (!uFnMatchGUID)
 	{
-		uFnMatchGuid = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.MatchGuid");
+		uFnMatchGUID = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.MatchGUID");
 	}
 
-	UOnlineGameDedicatedServer_X_execMatchGuid_Params MatchGuid_Params;
-	memset(&MatchGuid_Params, 0, sizeof(MatchGuid_Params));
+	UOnlineGameDedicatedServer_X_execMatchGUID_Params MatchGUID_Params;
+	memset(&MatchGUID_Params, 0, sizeof(MatchGUID_Params));
 
-	this->ProcessEvent(uFnMatchGuid, &MatchGuid_Params, nullptr);
+	this->ProcessEvent(uFnMatchGUID, &MatchGUID_Params, nullptr);
 
-	return MatchGuid_Params.ReturnValue;
+	return MatchGUID_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetCurrentMapName
@@ -29478,6 +29478,28 @@ void UOnlineGameDedicatedServer_X::SetPlaylist(int32_t PlaylistId)
 	this->ProcessEvent(uFnSetPlaylist, &SetPlaylist_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.CanStartMatch
+// [0x00020000] (FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineGameDedicatedServer_X::CanStartMatch()
+{
+	static UFunction* uFnCanStartMatch = nullptr;
+
+	if (!uFnCanStartMatch)
+	{
+		uFnCanStartMatch = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.CanStartMatch");
+	}
+
+	UOnlineGameDedicatedServer_X_execCanStartMatch_Params CanStartMatch_Params;
+	memset(&CanStartMatch_Params, 0, sizeof(CanStartMatch_Params));
+
+	this->ProcessEvent(uFnCanStartMatch, &CanStartMatch_Params, nullptr);
+
+	return CanStartMatch_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.HandleReservationsUpdated
 // [0x00080002] (FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
 // Parameter Info:
@@ -30481,6 +30503,78 @@ struct FUniqueNetId UOnlineGameReservations_X::__OnlineGameReservations_X__Handl
 	this->ProcessEvent(uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1, &__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1_Params, nullptr);
 
 	return __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x3
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FReservationData        P                              (CPF_Parm | CPF_NeedCtorLink)
+
+int32_t UOnlineGameReservations_X::__OnlineGameReservations_X__SyncClubDetails_0x3(const struct FReservationData& P)
+{
+	static UFunction* uFn__OnlineGameReservations_X__SyncClubDetails_0x3 = nullptr;
+
+	if (!uFn__OnlineGameReservations_X__SyncClubDetails_0x3)
+	{
+		uFn__OnlineGameReservations_X__SyncClubDetails_0x3 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x3");
+	}
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__SyncClubDetails_0x3_Params __OnlineGameReservations_X__SyncClubDetails_0x3_Params;
+	memset(&__OnlineGameReservations_X__SyncClubDetails_0x3_Params, 0, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x3_Params));
+	memcpy_s(&__OnlineGameReservations_X__SyncClubDetails_0x3_Params.P, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x3_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__SyncClubDetails_0x3, &__OnlineGameReservations_X__SyncClubDetails_0x3_Params, nullptr);
+
+	return __OnlineGameReservations_X__SyncClubDetails_0x3_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FReservationPlayerData  P                              (CPF_Parm | CPF_NeedCtorLink)
+
+int32_t UOnlineGameReservations_X::__OnlineGameReservations_X__SyncClubDetails_0x2(const struct FReservationPlayerData& P)
+{
+	static UFunction* uFn__OnlineGameReservations_X__SyncClubDetails_0x2 = nullptr;
+
+	if (!uFn__OnlineGameReservations_X__SyncClubDetails_0x2)
+	{
+		uFn__OnlineGameReservations_X__SyncClubDetails_0x2 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x2");
+	}
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__SyncClubDetails_0x2_Params __OnlineGameReservations_X__SyncClubDetails_0x2_Params;
+	memset(&__OnlineGameReservations_X__SyncClubDetails_0x2_Params, 0, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x2_Params));
+	memcpy_s(&__OnlineGameReservations_X__SyncClubDetails_0x2_Params.P, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x2_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__SyncClubDetails_0x2, &__OnlineGameReservations_X__SyncClubDetails_0x2_Params, nullptr);
+
+	return __OnlineGameReservations_X__SyncClubDetails_0x2_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FReservationPlayerData  P                              (CPF_Parm | CPF_NeedCtorLink)
+
+bool UOnlineGameReservations_X::__OnlineGameReservations_X__SyncClubDetails_0x1(const struct FReservationPlayerData& P)
+{
+	static UFunction* uFn__OnlineGameReservations_X__SyncClubDetails_0x1 = nullptr;
+
+	if (!uFn__OnlineGameReservations_X__SyncClubDetails_0x1)
+	{
+		uFn__OnlineGameReservations_X__SyncClubDetails_0x1 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__SyncClubDetails_0x1");
+	}
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__SyncClubDetails_0x1_Params __OnlineGameReservations_X__SyncClubDetails_0x1_Params;
+	memset(&__OnlineGameReservations_X__SyncClubDetails_0x1_Params, 0, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x1_Params));
+	memcpy_s(&__OnlineGameReservations_X__SyncClubDetails_0x1_Params.P, sizeof(__OnlineGameReservations_X__SyncClubDetails_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__SyncClubDetails_0x1, &__OnlineGameReservations_X__SyncClubDetails_0x1_Params, nullptr);
+
+	return __OnlineGameReservations_X__SyncClubDetails_0x1_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePublicReservation_0x2
@@ -31705,6 +31799,28 @@ bool UOnlineGameReservations_X::CanStartMatch()
 	return CanStartMatch_Params.ReturnValue;
 };
 
+// Function ProjectX.OnlineGameReservations_X.AreReservationsFullEnough
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineGameReservations_X::AreReservationsFullEnough()
+{
+	static UFunction* uFnAreReservationsFullEnough = nullptr;
+
+	if (!uFnAreReservationsFullEnough)
+	{
+		uFnAreReservationsFullEnough = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.AreReservationsFullEnough");
+	}
+
+	UOnlineGameReservations_X_execAreReservationsFullEnough_Params AreReservationsFullEnough_Params;
+	memset(&AreReservationsFullEnough_Params, 0, sizeof(AreReservationsFullEnough_Params));
+
+	this->ProcessEvent(uFnAreReservationsFullEnough, &AreReservationsFullEnough_Params, nullptr);
+
+	return AreReservationsFullEnough_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameReservations_X.HasMultipleReservedTeams
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -32448,6 +32564,28 @@ class TArray<struct FReservationData> UOnlineGameReservations_X::AddPlayersFromR
 	return AddPlayersFromReservationMessage_Params.ReturnValue;
 };
 
+// Function ProjectX.OnlineGameReservations_X.IsServerClubDetailsReplicationEnabled
+// [0x00080002] (FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineGameReservations_X::IsServerClubDetailsReplicationEnabled()
+{
+	static UFunction* uFnIsServerClubDetailsReplicationEnabled = nullptr;
+
+	if (!uFnIsServerClubDetailsReplicationEnabled)
+	{
+		uFnIsServerClubDetailsReplicationEnabled = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.IsServerClubDetailsReplicationEnabled");
+	}
+
+	UOnlineGameReservations_X_execIsServerClubDetailsReplicationEnabled_Params IsServerClubDetailsReplicationEnabled_Params;
+	memset(&IsServerClubDetailsReplicationEnabled_Params, 0, sizeof(IsServerClubDetailsReplicationEnabled_Params));
+
+	this->ProcessEvent(uFnIsServerClubDetailsReplicationEnabled, &IsServerClubDetailsReplicationEnabled_Params, nullptr);
+
+	return IsServerClubDetailsReplicationEnabled_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameReservations_X.IsUnique
 // [0x00440003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasOutParms | FUNC_AllFlags)
 // Parameter Info:
@@ -32816,6 +32954,29 @@ bool UOnlineGameReservations_X::HandlePublicReservation(class UIReservationConne
 	this->ProcessEvent(uFnHandlePublicReservation, &HandlePublicReservation_Params, nullptr);
 
 	return HandlePublicReservation_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.SyncClubDetails
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReservationMessage             (CPF_Parm)
+// uint32_t                       bIsPrivateMatchReservation     (CPF_Parm)
+
+void UOnlineGameReservations_X::SyncClubDetails(class UAddReservationMessage_X* ReservationMessage, bool bIsPrivateMatchReservation)
+{
+	static UFunction* uFnSyncClubDetails = nullptr;
+
+	if (!uFnSyncClubDetails)
+	{
+		uFnSyncClubDetails = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.SyncClubDetails");
+	}
+
+	UOnlineGameReservations_X_execSyncClubDetails_Params SyncClubDetails_Params;
+	memset(&SyncClubDetails_Params, 0, sizeof(SyncClubDetails_Params));
+	SyncClubDetails_Params.ReservationMessage = ReservationMessage;
+	SyncClubDetails_Params.bIsPrivateMatchReservation = bIsPrivateMatchReservation;
+
+	this->ProcessEvent(uFnSyncClubDetails, &SyncClubDetails_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.HandleBeaconReservationMessage
@@ -36729,227 +36890,6 @@ bool UUdpPingBeaconServer_X::InitServer(int32_t Port)
 	return InitServer_Params.ReturnValue;
 };
 
-// Function ProjectX.AddReservationMessage_X.__AddReservationMessage_X__GetPlayerIDs_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
-// Parameter Info:
-// struct FUniqueNetId            ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-// struct FReservationPlayerData  P                              (CPF_Parm | CPF_NeedCtorLink)
-
-struct FUniqueNetId UAddReservationMessage_X::__AddReservationMessage_X__GetPlayerIDs_0x1(const struct FReservationPlayerData& P)
-{
-	static UFunction* uFn__AddReservationMessage_X__GetPlayerIDs_0x1 = nullptr;
-
-	if (!uFn__AddReservationMessage_X__GetPlayerIDs_0x1)
-	{
-		uFn__AddReservationMessage_X__GetPlayerIDs_0x1 = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.__AddReservationMessage_X__GetPlayerIDs_0x1");
-	}
-
-	UAddReservationMessage_X_exec__AddReservationMessage_X__GetPlayerIDs_0x1_Params __AddReservationMessage_X__GetPlayerIDs_0x1_Params;
-	memset(&__AddReservationMessage_X__GetPlayerIDs_0x1_Params, 0, sizeof(__AddReservationMessage_X__GetPlayerIDs_0x1_Params));
-	memcpy_s(&__AddReservationMessage_X__GetPlayerIDs_0x1_Params.P, sizeof(__AddReservationMessage_X__GetPlayerIDs_0x1_Params.P), &P, sizeof(P));
-
-	this->ProcessEvent(uFn__AddReservationMessage_X__GetPlayerIDs_0x1, &__AddReservationMessage_X__GetPlayerIDs_0x1_Params, nullptr);
-
-	return __AddReservationMessage_X__GetPlayerIDs_0x1_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.GetPlayerIDs
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class TArray<struct FUniqueNetId> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-
-class TArray<struct FUniqueNetId> UAddReservationMessage_X::GetPlayerIDs()
-{
-	static UFunction* uFnGetPlayerIDs = nullptr;
-
-	if (!uFnGetPlayerIDs)
-	{
-		uFnGetPlayerIDs = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.GetPlayerIDs");
-	}
-
-	UAddReservationMessage_X_execGetPlayerIDs_Params GetPlayerIDs_Params;
-	memset(&GetPlayerIDs_Params, 0, sizeof(GetPlayerIDs_Params));
-
-	this->ProcessEvent(uFnGetPlayerIDs, &GetPlayerIDs_Params, nullptr);
-
-	return GetPlayerIDs_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.GetPlayerMapPrefs
-// [0x00420000] (FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
-// Parameter Info:
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// class TArray<class FName>      Likes                          (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-// class TArray<class FName>      Dislikes                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-
-void UAddReservationMessage_X::GetPlayerMapPrefs(const struct FUniqueNetId& PlayerID, class TArray<class FName>& Likes, class TArray<class FName>& Dislikes)
-{
-	static UFunction* uFnGetPlayerMapPrefs = nullptr;
-
-	if (!uFnGetPlayerMapPrefs)
-	{
-		uFnGetPlayerMapPrefs = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.GetPlayerMapPrefs");
-	}
-
-	UAddReservationMessage_X_execGetPlayerMapPrefs_Params GetPlayerMapPrefs_Params;
-	memset(&GetPlayerMapPrefs_Params, 0, sizeof(GetPlayerMapPrefs_Params));
-	memcpy_s(&GetPlayerMapPrefs_Params.PlayerID, sizeof(GetPlayerMapPrefs_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&GetPlayerMapPrefs_Params.Likes, sizeof(GetPlayerMapPrefs_Params.Likes), &Likes, sizeof(Likes));
-	memcpy_s(&GetPlayerMapPrefs_Params.Dislikes, sizeof(GetPlayerMapPrefs_Params.Dislikes), &Dislikes, sizeof(Dislikes));
-
-	this->ProcessEvent(uFnGetPlayerMapPrefs, &GetPlayerMapPrefs_Params, nullptr);
-
-	memcpy_s(&Likes, sizeof(Likes), &GetPlayerMapPrefs_Params.Likes, sizeof(GetPlayerMapPrefs_Params.Likes));
-	memcpy_s(&Dislikes, sizeof(Dislikes), &GetPlayerMapPrefs_Params.Dislikes, sizeof(GetPlayerMapPrefs_Params.Dislikes));
-};
-
-// Function ProjectX.AddReservationMessage_X.SetDisableCrossPlay
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// uint32_t                       bValue                         (CPF_Parm)
-
-class UAddReservationMessage_X* UAddReservationMessage_X::SetDisableCrossPlay(bool bValue)
-{
-	static UFunction* uFnSetDisableCrossPlay = nullptr;
-
-	if (!uFnSetDisableCrossPlay)
-	{
-		uFnSetDisableCrossPlay = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SetDisableCrossPlay");
-	}
-
-	UAddReservationMessage_X_execSetDisableCrossPlay_Params SetDisableCrossPlay_Params;
-	memset(&SetDisableCrossPlay_Params, 0, sizeof(SetDisableCrossPlay_Params));
-	SetDisableCrossPlay_Params.bValue = bValue;
-
-	this->ProcessEvent(uFnSetDisableCrossPlay, &SetDisableCrossPlay_Params, nullptr);
-
-	return SetDisableCrossPlay_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.AddPlayer
-// [0x00820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
-// Parameter Info:
-// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// class FString                  PlayerName                     (CPF_Parm | CPF_NeedCtorLink)
-// uint32_t                       bRemotePlayer                  (CPF_Parm)
-
-class UAddReservationMessage_X* UAddReservationMessage_X::AddPlayer(const struct FUniqueNetId& PlayerID, const class FString& PlayerName, bool bRemotePlayer)
-{
-	static UFunction* uFnAddPlayer = nullptr;
-
-	if (!uFnAddPlayer)
-	{
-		uFnAddPlayer = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddPlayer");
-	}
-
-	UAddReservationMessage_X_execAddPlayer_Params AddPlayer_Params;
-	memset(&AddPlayer_Params, 0, sizeof(AddPlayer_Params));
-	memcpy_s(&AddPlayer_Params.PlayerID, sizeof(AddPlayer_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&AddPlayer_Params.PlayerName, sizeof(AddPlayer_Params.PlayerName), &PlayerName, sizeof(PlayerName));
-	AddPlayer_Params.bRemotePlayer = bRemotePlayer;
-
-	this->ProcessEvent(uFnAddPlayer, &AddPlayer_Params, nullptr);
-
-	return AddPlayer_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.AddOnlinePlayer
-// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class UOnlinePlayer_X*         Player                         (CPF_Parm)
-// uint32_t                       bFriendJoin                    (CPF_OptionalParm | CPF_Parm)
-
-class UAddReservationMessage_X* UAddReservationMessage_X::AddOnlinePlayer(class UOnlinePlayer_X* Player, bool bFriendJoin)
-{
-	static UFunction* uFnAddOnlinePlayer = nullptr;
-
-	if (!uFnAddOnlinePlayer)
-	{
-		uFnAddOnlinePlayer = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddOnlinePlayer");
-	}
-
-	UAddReservationMessage_X_execAddOnlinePlayer_Params AddOnlinePlayer_Params;
-	memset(&AddOnlinePlayer_Params, 0, sizeof(AddOnlinePlayer_Params));
-	AddOnlinePlayer_Params.Player = Player;
-	AddOnlinePlayer_Params.bFriendJoin = bFriendJoin;
-
-	this->ProcessEvent(uFnAddOnlinePlayer, &AddOnlinePlayer_Params, nullptr);
-
-	return AddOnlinePlayer_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.AddPlayers
-// [0x00820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
-// Parameter Info:
-// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-
-class UAddReservationMessage_X* UAddReservationMessage_X::AddPlayers()
-{
-	static UFunction* uFnAddPlayers = nullptr;
-
-	if (!uFnAddPlayers)
-	{
-		uFnAddPlayers = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddPlayers");
-	}
-
-	UAddReservationMessage_X_execAddPlayers_Params AddPlayers_Params;
-	memset(&AddPlayers_Params, 0, sizeof(AddPlayers_Params));
-
-	this->ProcessEvent(uFnAddPlayers, &AddPlayers_Params, nullptr);
-
-	return AddPlayers_Params.ReturnValue;
-};
-
-// Function ProjectX.AddReservationMessage_X.SendReservation
-// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
-// Parameter Info:
-// struct FServerReservationData  Reservation                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-
-void UAddReservationMessage_X::SendReservation(struct FServerReservationData& Reservation)
-{
-	static UFunction* uFnSendReservation = nullptr;
-
-	if (!uFnSendReservation)
-	{
-		uFnSendReservation = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SendReservation");
-	}
-
-	UAddReservationMessage_X_execSendReservation_Params SendReservation_Params;
-	memset(&SendReservation_Params, 0, sizeof(SendReservation_Params));
-	memcpy_s(&SendReservation_Params.Reservation, sizeof(SendReservation_Params.Reservation), &Reservation, sizeof(Reservation));
-
-	this->ProcessEvent(uFnSendReservation, &SendReservation_Params, nullptr);
-
-	memcpy_s(&Reservation, sizeof(Reservation), &SendReservation_Params.Reservation, sizeof(SendReservation_Params.Reservation));
-};
-
-// Function ProjectX.AddReservationMessage_X.SetReservationID
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class FString                  Id                             (CPF_Parm | CPF_NeedCtorLink)
-
-class UAddReservationMessage_X* UAddReservationMessage_X::SetReservationID(const class FString& Id)
-{
-	static UFunction* uFnSetReservationID = nullptr;
-
-	if (!uFnSetReservationID)
-	{
-		uFnSetReservationID = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SetReservationID");
-	}
-
-	UAddReservationMessage_X_execSetReservationID_Params SetReservationID_Params;
-	memset(&SetReservationID_Params, 0, sizeof(SetReservationID_Params));
-	memcpy_s(&SetReservationID_Params.Id, sizeof(SetReservationID_Params.Id), &Id, sizeof(Id));
-
-	this->ProcessEvent(uFnSetReservationID, &SetReservationID_Params, nullptr);
-
-	return SetReservationID_Params.ReturnValue;
-};
-
 // Function ProjectX.PrivilegeCheck_X.HasFeatureRestriction
 // [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
 // Parameter Info:
@@ -37309,6 +37249,227 @@ void UPrivilegeCheck_X::CheckDelegate()
 	memset(&CheckDelegate_Params, 0, sizeof(CheckDelegate_Params));
 
 	this->ProcessEvent(uFnCheckDelegate, &CheckDelegate_Params, nullptr);
+};
+
+// Function ProjectX.AddReservationMessage_X.__AddReservationMessage_X__GetPlayerIDs_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// struct FReservationPlayerData  P                              (CPF_Parm | CPF_NeedCtorLink)
+
+struct FUniqueNetId UAddReservationMessage_X::__AddReservationMessage_X__GetPlayerIDs_0x1(const struct FReservationPlayerData& P)
+{
+	static UFunction* uFn__AddReservationMessage_X__GetPlayerIDs_0x1 = nullptr;
+
+	if (!uFn__AddReservationMessage_X__GetPlayerIDs_0x1)
+	{
+		uFn__AddReservationMessage_X__GetPlayerIDs_0x1 = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.__AddReservationMessage_X__GetPlayerIDs_0x1");
+	}
+
+	UAddReservationMessage_X_exec__AddReservationMessage_X__GetPlayerIDs_0x1_Params __AddReservationMessage_X__GetPlayerIDs_0x1_Params;
+	memset(&__AddReservationMessage_X__GetPlayerIDs_0x1_Params, 0, sizeof(__AddReservationMessage_X__GetPlayerIDs_0x1_Params));
+	memcpy_s(&__AddReservationMessage_X__GetPlayerIDs_0x1_Params.P, sizeof(__AddReservationMessage_X__GetPlayerIDs_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__AddReservationMessage_X__GetPlayerIDs_0x1, &__AddReservationMessage_X__GetPlayerIDs_0x1_Params, nullptr);
+
+	return __AddReservationMessage_X__GetPlayerIDs_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.GetPlayerIDs
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<struct FUniqueNetId> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+
+class TArray<struct FUniqueNetId> UAddReservationMessage_X::GetPlayerIDs()
+{
+	static UFunction* uFnGetPlayerIDs = nullptr;
+
+	if (!uFnGetPlayerIDs)
+	{
+		uFnGetPlayerIDs = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.GetPlayerIDs");
+	}
+
+	UAddReservationMessage_X_execGetPlayerIDs_Params GetPlayerIDs_Params;
+	memset(&GetPlayerIDs_Params, 0, sizeof(GetPlayerIDs_Params));
+
+	this->ProcessEvent(uFnGetPlayerIDs, &GetPlayerIDs_Params, nullptr);
+
+	return GetPlayerIDs_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.GetPlayerMapPrefs
+// [0x00420000] (FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class FName>      Likes                          (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class TArray<class FName>      Dislikes                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UAddReservationMessage_X::GetPlayerMapPrefs(const struct FUniqueNetId& PlayerID, class TArray<class FName>& Likes, class TArray<class FName>& Dislikes)
+{
+	static UFunction* uFnGetPlayerMapPrefs = nullptr;
+
+	if (!uFnGetPlayerMapPrefs)
+	{
+		uFnGetPlayerMapPrefs = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.GetPlayerMapPrefs");
+	}
+
+	UAddReservationMessage_X_execGetPlayerMapPrefs_Params GetPlayerMapPrefs_Params;
+	memset(&GetPlayerMapPrefs_Params, 0, sizeof(GetPlayerMapPrefs_Params));
+	memcpy_s(&GetPlayerMapPrefs_Params.PlayerID, sizeof(GetPlayerMapPrefs_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&GetPlayerMapPrefs_Params.Likes, sizeof(GetPlayerMapPrefs_Params.Likes), &Likes, sizeof(Likes));
+	memcpy_s(&GetPlayerMapPrefs_Params.Dislikes, sizeof(GetPlayerMapPrefs_Params.Dislikes), &Dislikes, sizeof(Dislikes));
+
+	this->ProcessEvent(uFnGetPlayerMapPrefs, &GetPlayerMapPrefs_Params, nullptr);
+
+	memcpy_s(&Likes, sizeof(Likes), &GetPlayerMapPrefs_Params.Likes, sizeof(GetPlayerMapPrefs_Params.Likes));
+	memcpy_s(&Dislikes, sizeof(Dislikes), &GetPlayerMapPrefs_Params.Dislikes, sizeof(GetPlayerMapPrefs_Params.Dislikes));
+};
+
+// Function ProjectX.AddReservationMessage_X.SetDisableCrossPlay
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// uint32_t                       bValue                         (CPF_Parm)
+
+class UAddReservationMessage_X* UAddReservationMessage_X::SetDisableCrossPlay(bool bValue)
+{
+	static UFunction* uFnSetDisableCrossPlay = nullptr;
+
+	if (!uFnSetDisableCrossPlay)
+	{
+		uFnSetDisableCrossPlay = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SetDisableCrossPlay");
+	}
+
+	UAddReservationMessage_X_execSetDisableCrossPlay_Params SetDisableCrossPlay_Params;
+	memset(&SetDisableCrossPlay_Params, 0, sizeof(SetDisableCrossPlay_Params));
+	SetDisableCrossPlay_Params.bValue = bValue;
+
+	this->ProcessEvent(uFnSetDisableCrossPlay, &SetDisableCrossPlay_Params, nullptr);
+
+	return SetDisableCrossPlay_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.AddPlayer
+// [0x00820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  PlayerName                     (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       bRemotePlayer                  (CPF_Parm)
+
+class UAddReservationMessage_X* UAddReservationMessage_X::AddPlayer(const struct FUniqueNetId& PlayerID, const class FString& PlayerName, bool bRemotePlayer)
+{
+	static UFunction* uFnAddPlayer = nullptr;
+
+	if (!uFnAddPlayer)
+	{
+		uFnAddPlayer = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddPlayer");
+	}
+
+	UAddReservationMessage_X_execAddPlayer_Params AddPlayer_Params;
+	memset(&AddPlayer_Params, 0, sizeof(AddPlayer_Params));
+	memcpy_s(&AddPlayer_Params.PlayerID, sizeof(AddPlayer_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&AddPlayer_Params.PlayerName, sizeof(AddPlayer_Params.PlayerName), &PlayerName, sizeof(PlayerName));
+	AddPlayer_Params.bRemotePlayer = bRemotePlayer;
+
+	this->ProcessEvent(uFnAddPlayer, &AddPlayer_Params, nullptr);
+
+	return AddPlayer_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.AddOnlinePlayer
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UOnlinePlayer_X*         Player                         (CPF_Parm)
+// uint32_t                       bFriendJoin                    (CPF_OptionalParm | CPF_Parm)
+
+class UAddReservationMessage_X* UAddReservationMessage_X::AddOnlinePlayer(class UOnlinePlayer_X* Player, bool bFriendJoin)
+{
+	static UFunction* uFnAddOnlinePlayer = nullptr;
+
+	if (!uFnAddOnlinePlayer)
+	{
+		uFnAddOnlinePlayer = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddOnlinePlayer");
+	}
+
+	UAddReservationMessage_X_execAddOnlinePlayer_Params AddOnlinePlayer_Params;
+	memset(&AddOnlinePlayer_Params, 0, sizeof(AddOnlinePlayer_Params));
+	AddOnlinePlayer_Params.Player = Player;
+	AddOnlinePlayer_Params.bFriendJoin = bFriendJoin;
+
+	this->ProcessEvent(uFnAddOnlinePlayer, &AddOnlinePlayer_Params, nullptr);
+
+	return AddOnlinePlayer_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.AddPlayers
+// [0x00820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+class UAddReservationMessage_X* UAddReservationMessage_X::AddPlayers()
+{
+	static UFunction* uFnAddPlayers = nullptr;
+
+	if (!uFnAddPlayers)
+	{
+		uFnAddPlayers = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.AddPlayers");
+	}
+
+	UAddReservationMessage_X_execAddPlayers_Params AddPlayers_Params;
+	memset(&AddPlayers_Params, 0, sizeof(AddPlayers_Params));
+
+	this->ProcessEvent(uFnAddPlayers, &AddPlayers_Params, nullptr);
+
+	return AddPlayers_Params.ReturnValue;
+};
+
+// Function ProjectX.AddReservationMessage_X.SendReservation
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// struct FServerReservationData  Reservation                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UAddReservationMessage_X::SendReservation(struct FServerReservationData& Reservation)
+{
+	static UFunction* uFnSendReservation = nullptr;
+
+	if (!uFnSendReservation)
+	{
+		uFnSendReservation = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SendReservation");
+	}
+
+	UAddReservationMessage_X_execSendReservation_Params SendReservation_Params;
+	memset(&SendReservation_Params, 0, sizeof(SendReservation_Params));
+	memcpy_s(&SendReservation_Params.Reservation, sizeof(SendReservation_Params.Reservation), &Reservation, sizeof(Reservation));
+
+	this->ProcessEvent(uFnSendReservation, &SendReservation_Params, nullptr);
+
+	memcpy_s(&Reservation, sizeof(Reservation), &SendReservation_Params.Reservation, sizeof(SendReservation_Params.Reservation));
+};
+
+// Function ProjectX.AddReservationMessage_X.SetReservationID
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UAddReservationMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  Id                             (CPF_Parm | CPF_NeedCtorLink)
+
+class UAddReservationMessage_X* UAddReservationMessage_X::SetReservationID(const class FString& Id)
+{
+	static UFunction* uFnSetReservationID = nullptr;
+
+	if (!uFnSetReservationID)
+	{
+		uFnSetReservationID = UFunction::FindFunction("Function ProjectX.AddReservationMessage_X.SetReservationID");
+	}
+
+	UAddReservationMessage_X_execSetReservationID_Params SetReservationID_Params;
+	memset(&SetReservationID_Params, 0, sizeof(SetReservationID_Params));
+	memcpy_s(&SetReservationID_Params.Id, sizeof(SetReservationID_Params.Id), &Id, sizeof(Id));
+
+	this->ProcessEvent(uFnSetReservationID, &SetReservationID_Params, nullptr);
+
+	return SetReservationID_Params.ReturnValue;
 };
 
 // Function ProjectX.____OnlineGameParty_X__UpdatePartyInfo_0x1____OnlineGameParty_X__UpdatePartyInfo_0x1_0x1.____OnlineGameParty_X__UpdatePartyInfo_0x1____OnlineGameParty_X__UpdatePartyInfo_0x1_0x1
@@ -40905,26 +41066,26 @@ void UMatchRecorder_X::AddPlayer(const struct FUniqueNetId& PlayerID, const clas
 	this->ProcessEvent(uFnAddPlayer, &AddPlayer_Params, nullptr);
 };
 
-// Function ProjectX.MatchRecorder_X.MatchGuid
+// Function ProjectX.MatchRecorder_X.MatchGUID
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
-class FString UMatchRecorder_X::MatchGuid()
+class FString UMatchRecorder_X::MatchGUID()
 {
-	static UFunction* uFnMatchGuid = nullptr;
+	static UFunction* uFnMatchGUID = nullptr;
 
-	if (!uFnMatchGuid)
+	if (!uFnMatchGUID)
 	{
-		uFnMatchGuid = UFunction::FindFunction("Function ProjectX.MatchRecorder_X.MatchGuid");
+		uFnMatchGUID = UFunction::FindFunction("Function ProjectX.MatchRecorder_X.MatchGUID");
 	}
 
-	UMatchRecorder_X_execMatchGuid_Params MatchGuid_Params;
-	memset(&MatchGuid_Params, 0, sizeof(MatchGuid_Params));
+	UMatchRecorder_X_execMatchGUID_Params MatchGUID_Params;
+	memset(&MatchGUID_Params, 0, sizeof(MatchGUID_Params));
 
-	this->ProcessEvent(uFnMatchGuid, &MatchGuid_Params, nullptr);
+	this->ProcessEvent(uFnMatchGUID, &MatchGUID_Params, nullptr);
 
-	return MatchGuid_Params.ReturnValue;
+	return MatchGUID_Params.ReturnValue;
 };
 
 // Function ProjectX.MatchRecorder_X.Construct
@@ -41268,23 +41429,100 @@ bool U__OnlineClubCache_X__GetPlayerClubDetails_0x1::__OnlineClubCache_X__GetPla
 	return __OnlineClubCache_X__GetPlayerClubDetails_0x1_Params.ReturnValue;
 };
 
-// Function ProjectX.__OnlineClubManager_X__LeaveClub_0x1.__OnlineClubManager_X__LeaveClub_0x1
+// Function ProjectX.__OnlineClubManager_X__AcceptClubInvite_0x1.__OnlineClubManager_X__AcceptClubInvite_0x1
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
+// class UClubDetails_X*          instance                       (CPF_Parm)
 
-void U__OnlineClubManager_X__LeaveClub_0x1::__OnlineClubManager_X__LeaveClub_0x1()
+void U__OnlineClubManager_X__AcceptClubInvite_0x1::__OnlineClubManager_X__AcceptClubInvite_0x1(class UClubDetails_X* instance)
 {
-	static UFunction* uFn__OnlineClubManager_X__LeaveClub_0x1 = nullptr;
+	static UFunction* uFn__OnlineClubManager_X__AcceptClubInvite_0x1 = nullptr;
 
-	if (!uFn__OnlineClubManager_X__LeaveClub_0x1)
+	if (!uFn__OnlineClubManager_X__AcceptClubInvite_0x1)
 	{
-		uFn__OnlineClubManager_X__LeaveClub_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__LeaveClub_0x1.__OnlineClubManager_X__LeaveClub_0x1");
+		uFn__OnlineClubManager_X__AcceptClubInvite_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__AcceptClubInvite_0x1.__OnlineClubManager_X__AcceptClubInvite_0x1");
 	}
 
-	U__OnlineClubManager_X__LeaveClub_0x1_exec__OnlineClubManager_X__LeaveClub_0x1_Params __OnlineClubManager_X__LeaveClub_0x1_Params;
-	memset(&__OnlineClubManager_X__LeaveClub_0x1_Params, 0, sizeof(__OnlineClubManager_X__LeaveClub_0x1_Params));
+	U__OnlineClubManager_X__AcceptClubInvite_0x1_exec__OnlineClubManager_X__AcceptClubInvite_0x1_Params __OnlineClubManager_X__AcceptClubInvite_0x1_Params;
+	memset(&__OnlineClubManager_X__AcceptClubInvite_0x1_Params, 0, sizeof(__OnlineClubManager_X__AcceptClubInvite_0x1_Params));
+	__OnlineClubManager_X__AcceptClubInvite_0x1_Params.instance = instance;
 
-	this->ProcessEvent(uFn__OnlineClubManager_X__LeaveClub_0x1, &__OnlineClubManager_X__LeaveClub_0x1_Params, nullptr);
+	this->ProcessEvent(uFn__OnlineClubManager_X__AcceptClubInvite_0x1, &__OnlineClubManager_X__AcceptClubInvite_0x1_Params, nullptr);
+};
+
+// Function ProjectX.OnlineClubManager_X.OnRoleChanged
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UClubDetails_X*          Club                           (CPF_Parm)
+// struct FUniqueNetId            MemberPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// EClubRole                      OriginalRole                   (CPF_Parm)
+// EClubRole                      NewRole                        (CPF_Parm)
+
+void UOnlineClubManager_X::OnRoleChanged(class UClubDetails_X* Club, const struct FUniqueNetId& MemberPlayerID, EClubRole OriginalRole, EClubRole NewRole)
+{
+	static UFunction* uFnOnRoleChanged = nullptr;
+
+	if (!uFnOnRoleChanged)
+	{
+		uFnOnRoleChanged = UFunction::FindFunction("Function ProjectX.OnlineClubManager_X.OnRoleChanged");
+	}
+
+	UOnlineClubManager_X_execOnRoleChanged_Params OnRoleChanged_Params;
+	memset(&OnRoleChanged_Params, 0, sizeof(OnRoleChanged_Params));
+	OnRoleChanged_Params.Club = Club;
+	memcpy_s(&OnRoleChanged_Params.MemberPlayerID, sizeof(OnRoleChanged_Params.MemberPlayerID), &MemberPlayerID, sizeof(MemberPlayerID));
+	memcpy_s(&OnRoleChanged_Params.OriginalRole, sizeof(OnRoleChanged_Params.OriginalRole), &OriginalRole, sizeof(OriginalRole));
+	memcpy_s(&OnRoleChanged_Params.NewRole, sizeof(OnRoleChanged_Params.NewRole), &NewRole, sizeof(NewRole));
+
+	this->ProcessEvent(uFnOnRoleChanged, &OnRoleChanged_Params, nullptr);
+};
+
+// Function ProjectX.OnlineClubManager_X.OnInviteEventSuccess
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// EClubInviteEventType           InviteEventType                (CPF_Parm)
+
+void UOnlineClubManager_X::OnInviteEventSuccess(uint64_t ClubID, const struct FUniqueNetId& PlayerID, EClubInviteEventType InviteEventType)
+{
+	static UFunction* uFnOnInviteEventSuccess = nullptr;
+
+	if (!uFnOnInviteEventSuccess)
+	{
+		uFnOnInviteEventSuccess = UFunction::FindFunction("Function ProjectX.OnlineClubManager_X.OnInviteEventSuccess");
+	}
+
+	UOnlineClubManager_X_execOnInviteEventSuccess_Params OnInviteEventSuccess_Params;
+	memset(&OnInviteEventSuccess_Params, 0, sizeof(OnInviteEventSuccess_Params));
+	memcpy_s(&OnInviteEventSuccess_Params.ClubID, sizeof(OnInviteEventSuccess_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&OnInviteEventSuccess_Params.PlayerID, sizeof(OnInviteEventSuccess_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&OnInviteEventSuccess_Params.InviteEventType, sizeof(OnInviteEventSuccess_Params.InviteEventType), &InviteEventType, sizeof(InviteEventType));
+
+	this->ProcessEvent(uFnOnInviteEventSuccess, &OnInviteEventSuccess_Params, nullptr);
+};
+
+// Function ProjectX.OnlineClubManager_X.OnPlayerKicked
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UClubDetails_X*          Club                           (CPF_Parm)
+// struct FUniqueNetId            KickedPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineClubManager_X::OnPlayerKicked(class UClubDetails_X* Club, const struct FUniqueNetId& KickedPlayerID)
+{
+	static UFunction* uFnOnPlayerKicked = nullptr;
+
+	if (!uFnOnPlayerKicked)
+	{
+		uFnOnPlayerKicked = UFunction::FindFunction("Function ProjectX.OnlineClubManager_X.OnPlayerKicked");
+	}
+
+	UOnlineClubManager_X_execOnPlayerKicked_Params OnPlayerKicked_Params;
+	memset(&OnPlayerKicked_Params, 0, sizeof(OnPlayerKicked_Params));
+	OnPlayerKicked_Params.Club = Club;
+	memcpy_s(&OnPlayerKicked_Params.KickedPlayerID, sizeof(OnPlayerKicked_Params.KickedPlayerID), &KickedPlayerID, sizeof(KickedPlayerID));
+
+	this->ProcessEvent(uFnOnPlayerKicked, &OnPlayerKicked_Params, nullptr);
 };
 
 // Function ProjectX.OnlineClubManager_X.OnLeaveClub
@@ -41358,8 +41596,9 @@ class UAsyncTask* UOnlineClubManager_X::LeaveClub(uint64_t ClubID)
 // Parameter Info:
 // class UAsyncTask*              ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
 
-class UAsyncTask* UOnlineClubManager_X::RejectClubInvite(uint64_t ClubID)
+class UAsyncTask* UOnlineClubManager_X::RejectClubInvite(uint64_t ClubID, const struct FUniqueNetId& SenderPlayerID)
 {
 	static UFunction* uFnRejectClubInvite = nullptr;
 
@@ -41371,6 +41610,7 @@ class UAsyncTask* UOnlineClubManager_X::RejectClubInvite(uint64_t ClubID)
 	UOnlineClubManager_X_execRejectClubInvite_Params RejectClubInvite_Params;
 	memset(&RejectClubInvite_Params, 0, sizeof(RejectClubInvite_Params));
 	memcpy_s(&RejectClubInvite_Params.ClubID, sizeof(RejectClubInvite_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&RejectClubInvite_Params.SenderPlayerID, sizeof(RejectClubInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
 
 	this->ProcessEvent(uFnRejectClubInvite, &RejectClubInvite_Params, nullptr);
 
@@ -41382,8 +41622,9 @@ class UAsyncTask* UOnlineClubManager_X::RejectClubInvite(uint64_t ClubID)
 // Parameter Info:
 // class UTAsyncResult__ClubDetails_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
 
-class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::AcceptClubInvite(uint64_t ClubID)
+class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::AcceptClubInvite(uint64_t ClubID, const struct FUniqueNetId& SenderPlayerID)
 {
 	static UFunction* uFnAcceptClubInvite = nullptr;
 
@@ -41395,6 +41636,7 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::AcceptClubInvite(uint6
 	UOnlineClubManager_X_execAcceptClubInvite_Params AcceptClubInvite_Params;
 	memset(&AcceptClubInvite_Params, 0, sizeof(AcceptClubInvite_Params));
 	memcpy_s(&AcceptClubInvite_Params.ClubID, sizeof(AcceptClubInvite_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&AcceptClubInvite_Params.SenderPlayerID, sizeof(AcceptClubInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
 
 	this->ProcessEvent(uFnAcceptClubInvite, &AcceptClubInvite_Params, nullptr);
 
@@ -41427,10 +41669,11 @@ class UTAsyncResult__array_ClubInvite_X* UOnlineClubManager_X::SyncClubInvites()
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class UTAsyncResult__ClubDetails_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// EClubRole                      Role                           (CPF_Parm)
+// struct FUniqueNetId            MemberPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// EClubRole                      OriginalRole                   (CPF_Parm)
+// EClubRole                      NewRole                        (CPF_Parm)
 
-class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::SetNewRole(const struct FUniqueNetId& PlayerID, EClubRole Role)
+class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::SetNewRole(const struct FUniqueNetId& MemberPlayerID, EClubRole OriginalRole, EClubRole NewRole)
 {
 	static UFunction* uFnSetNewRole = nullptr;
 
@@ -41441,8 +41684,9 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::SetNewRole(const struc
 
 	UOnlineClubManager_X_execSetNewRole_Params SetNewRole_Params;
 	memset(&SetNewRole_Params, 0, sizeof(SetNewRole_Params));
-	memcpy_s(&SetNewRole_Params.PlayerID, sizeof(SetNewRole_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&SetNewRole_Params.Role, sizeof(SetNewRole_Params.Role), &Role, sizeof(Role));
+	memcpy_s(&SetNewRole_Params.MemberPlayerID, sizeof(SetNewRole_Params.MemberPlayerID), &MemberPlayerID, sizeof(MemberPlayerID));
+	memcpy_s(&SetNewRole_Params.OriginalRole, sizeof(SetNewRole_Params.OriginalRole), &OriginalRole, sizeof(OriginalRole));
+	memcpy_s(&SetNewRole_Params.NewRole, sizeof(SetNewRole_Params.NewRole), &NewRole, sizeof(NewRole));
 
 	this->ProcessEvent(uFnSetNewRole, &SetNewRole_Params, nullptr);
 
@@ -41477,9 +41721,9 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::SetClubOwner(const str
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class UTAsyncResult__ClubDetails_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            KickedPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
 
-class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::RemoveFromClub(const struct FUniqueNetId& PlayerID)
+class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::RemoveFromClub(const struct FUniqueNetId& KickedPlayerID)
 {
 	static UFunction* uFnRemoveFromClub = nullptr;
 
@@ -41490,7 +41734,7 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::RemoveFromClub(const s
 
 	UOnlineClubManager_X_execRemoveFromClub_Params RemoveFromClub_Params;
 	memset(&RemoveFromClub_Params, 0, sizeof(RemoveFromClub_Params));
-	memcpy_s(&RemoveFromClub_Params.PlayerID, sizeof(RemoveFromClub_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&RemoveFromClub_Params.KickedPlayerID, sizeof(RemoveFromClub_Params.KickedPlayerID), &KickedPlayerID, sizeof(KickedPlayerID));
 
 	this->ProcessEvent(uFnRemoveFromClub, &RemoveFromClub_Params, nullptr);
 
@@ -41501,9 +41745,10 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::RemoveFromClub(const s
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class UAsyncTask*              ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            InvitedPlayerID                (CPF_Parm | CPF_NeedCtorLink)
 
-class UAsyncTask* UOnlineClubManager_X::InviteToClub(const struct FUniqueNetId& PlayerID)
+class UAsyncTask* UOnlineClubManager_X::InviteToClub(uint64_t ClubID, const struct FUniqueNetId& InvitedPlayerID)
 {
 	static UFunction* uFnInviteToClub = nullptr;
 
@@ -41514,7 +41759,8 @@ class UAsyncTask* UOnlineClubManager_X::InviteToClub(const struct FUniqueNetId& 
 
 	UOnlineClubManager_X_execInviteToClub_Params InviteToClub_Params;
 	memset(&InviteToClub_Params, 0, sizeof(InviteToClub_Params));
-	memcpy_s(&InviteToClub_Params.PlayerID, sizeof(InviteToClub_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&InviteToClub_Params.ClubID, sizeof(InviteToClub_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&InviteToClub_Params.InvitedPlayerID, sizeof(InviteToClub_Params.InvitedPlayerID), &InvitedPlayerID, sizeof(InvitedPlayerID));
 
 	this->ProcessEvent(uFnInviteToClub, &InviteToClub_Params, nullptr);
 
@@ -41644,6 +41890,28 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubManager_X::CreateClub(class UClub
 	return CreateClub_Params.ReturnValue;
 };
 
+// Function ProjectX.OnlineClubManager_X.GetClubMetrics
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UClubMetrics_X*          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+
+class UClubMetrics_X* UOnlineClubManager_X::GetClubMetrics()
+{
+	static UFunction* uFnGetClubMetrics = nullptr;
+
+	if (!uFnGetClubMetrics)
+	{
+		uFnGetClubMetrics = UFunction::FindFunction("Function ProjectX.OnlineClubManager_X.GetClubMetrics");
+	}
+
+	UOnlineClubManager_X_execGetClubMetrics_Params GetClubMetrics_Params;
+	memset(&GetClubMetrics_Params, 0, sizeof(GetClubMetrics_Params));
+
+	this->ProcessEvent(uFnGetClubMetrics, &GetClubMetrics_Params, nullptr);
+
+	return GetClubMetrics_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineClubManager_X.EventClubChanged
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
 // Parameter Info:
@@ -41665,6 +41933,105 @@ void UOnlineClubManager_X::EventClubChanged(class UOnlineClubManager_X* Manager,
 	memcpy_s(&EventClubChanged_Params.ClubID, sizeof(EventClubChanged_Params.ClubID), &ClubID, sizeof(ClubID));
 
 	this->ProcessEvent(uFnEventClubChanged, &EventClubChanged_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubManager_X__InviteToClub_0x1.__OnlineClubManager_X__InviteToClub_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+
+void U__OnlineClubManager_X__InviteToClub_0x1::__OnlineClubManager_X__InviteToClub_0x1()
+{
+	static UFunction* uFn__OnlineClubManager_X__InviteToClub_0x1 = nullptr;
+
+	if (!uFn__OnlineClubManager_X__InviteToClub_0x1)
+	{
+		uFn__OnlineClubManager_X__InviteToClub_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__InviteToClub_0x1.__OnlineClubManager_X__InviteToClub_0x1");
+	}
+
+	U__OnlineClubManager_X__InviteToClub_0x1_exec__OnlineClubManager_X__InviteToClub_0x1_Params __OnlineClubManager_X__InviteToClub_0x1_Params;
+	memset(&__OnlineClubManager_X__InviteToClub_0x1_Params, 0, sizeof(__OnlineClubManager_X__InviteToClub_0x1_Params));
+
+	this->ProcessEvent(uFn__OnlineClubManager_X__InviteToClub_0x1, &__OnlineClubManager_X__InviteToClub_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubManager_X__LeaveClub_0x1.__OnlineClubManager_X__LeaveClub_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+
+void U__OnlineClubManager_X__LeaveClub_0x1::__OnlineClubManager_X__LeaveClub_0x1()
+{
+	static UFunction* uFn__OnlineClubManager_X__LeaveClub_0x1 = nullptr;
+
+	if (!uFn__OnlineClubManager_X__LeaveClub_0x1)
+	{
+		uFn__OnlineClubManager_X__LeaveClub_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__LeaveClub_0x1.__OnlineClubManager_X__LeaveClub_0x1");
+	}
+
+	U__OnlineClubManager_X__LeaveClub_0x1_exec__OnlineClubManager_X__LeaveClub_0x1_Params __OnlineClubManager_X__LeaveClub_0x1_Params;
+	memset(&__OnlineClubManager_X__LeaveClub_0x1_Params, 0, sizeof(__OnlineClubManager_X__LeaveClub_0x1_Params));
+
+	this->ProcessEvent(uFn__OnlineClubManager_X__LeaveClub_0x1, &__OnlineClubManager_X__LeaveClub_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubManager_X__RejectClubInvite_0x1.__OnlineClubManager_X__RejectClubInvite_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+
+void U__OnlineClubManager_X__RejectClubInvite_0x1::__OnlineClubManager_X__RejectClubInvite_0x1()
+{
+	static UFunction* uFn__OnlineClubManager_X__RejectClubInvite_0x1 = nullptr;
+
+	if (!uFn__OnlineClubManager_X__RejectClubInvite_0x1)
+	{
+		uFn__OnlineClubManager_X__RejectClubInvite_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__RejectClubInvite_0x1.__OnlineClubManager_X__RejectClubInvite_0x1");
+	}
+
+	U__OnlineClubManager_X__RejectClubInvite_0x1_exec__OnlineClubManager_X__RejectClubInvite_0x1_Params __OnlineClubManager_X__RejectClubInvite_0x1_Params;
+	memset(&__OnlineClubManager_X__RejectClubInvite_0x1_Params, 0, sizeof(__OnlineClubManager_X__RejectClubInvite_0x1_Params));
+
+	this->ProcessEvent(uFn__OnlineClubManager_X__RejectClubInvite_0x1, &__OnlineClubManager_X__RejectClubInvite_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubManager_X__RemoveFromClub_0x1.__OnlineClubManager_X__RemoveFromClub_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UClubDetails_X*          ClubDet                        (CPF_Parm)
+
+void U__OnlineClubManager_X__RemoveFromClub_0x1::__OnlineClubManager_X__RemoveFromClub_0x1(class UClubDetails_X* ClubDet)
+{
+	static UFunction* uFn__OnlineClubManager_X__RemoveFromClub_0x1 = nullptr;
+
+	if (!uFn__OnlineClubManager_X__RemoveFromClub_0x1)
+	{
+		uFn__OnlineClubManager_X__RemoveFromClub_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__RemoveFromClub_0x1.__OnlineClubManager_X__RemoveFromClub_0x1");
+	}
+
+	U__OnlineClubManager_X__RemoveFromClub_0x1_exec__OnlineClubManager_X__RemoveFromClub_0x1_Params __OnlineClubManager_X__RemoveFromClub_0x1_Params;
+	memset(&__OnlineClubManager_X__RemoveFromClub_0x1_Params, 0, sizeof(__OnlineClubManager_X__RemoveFromClub_0x1_Params));
+	__OnlineClubManager_X__RemoveFromClub_0x1_Params.ClubDet = ClubDet;
+
+	this->ProcessEvent(uFn__OnlineClubManager_X__RemoveFromClub_0x1, &__OnlineClubManager_X__RemoveFromClub_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubManager_X__SetNewRole_0x1.__OnlineClubManager_X__SetNewRole_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UClubDetails_X*          ClubDet                        (CPF_Parm)
+
+void U__OnlineClubManager_X__SetNewRole_0x1::__OnlineClubManager_X__SetNewRole_0x1(class UClubDetails_X* ClubDet)
+{
+	static UFunction* uFn__OnlineClubManager_X__SetNewRole_0x1 = nullptr;
+
+	if (!uFn__OnlineClubManager_X__SetNewRole_0x1)
+	{
+		uFn__OnlineClubManager_X__SetNewRole_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubManager_X__SetNewRole_0x1.__OnlineClubManager_X__SetNewRole_0x1");
+	}
+
+	U__OnlineClubManager_X__SetNewRole_0x1_exec__OnlineClubManager_X__SetNewRole_0x1_Params __OnlineClubManager_X__SetNewRole_0x1_Params;
+	memset(&__OnlineClubManager_X__SetNewRole_0x1_Params, 0, sizeof(__OnlineClubManager_X__SetNewRole_0x1_Params));
+	__OnlineClubManager_X__SetNewRole_0x1_Params.ClubDet = ClubDet;
+
+	this->ProcessEvent(uFn__OnlineClubManager_X__SetNewRole_0x1, &__OnlineClubManager_X__SetNewRole_0x1_Params, nullptr);
 };
 
 // Function ProjectX.__OnlineClubProvider_X__HandleClubSynced_0x1.__OnlineClubProvider_X__HandleClubSynced_0x1
@@ -41754,6 +42121,30 @@ class UTAsyncResult__ClubDetails_X* URPC_ClubDetailsBase_X::CreateClubDetailsTas
 	this->ProcessEvent(uFnCreateClubDetailsTask, &CreateClubDetailsTask_Params, nullptr);
 
 	return CreateClubDetailsTask_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineClubProvider_X.__OnlineClubProvider_X__GetClubDetailsArray_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        Id                             (CPF_Parm)
+
+bool UOnlineClubProvider_X::__OnlineClubProvider_X__GetClubDetailsArray_0x1(int32_t Id)
+{
+	static UFunction* uFn__OnlineClubProvider_X__GetClubDetailsArray_0x1 = nullptr;
+
+	if (!uFn__OnlineClubProvider_X__GetClubDetailsArray_0x1)
+	{
+		uFn__OnlineClubProvider_X__GetClubDetailsArray_0x1 = UFunction::FindFunction("Function ProjectX.OnlineClubProvider_X.__OnlineClubProvider_X__GetClubDetailsArray_0x1");
+	}
+
+	UOnlineClubProvider_X_exec__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params __OnlineClubProvider_X__GetClubDetailsArray_0x1_Params;
+	memset(&__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params, 0, sizeof(__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params));
+	memcpy_s(&__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params.Id, sizeof(__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params.Id), &Id, sizeof(Id));
+
+	this->ProcessEvent(uFn__OnlineClubProvider_X__GetClubDetailsArray_0x1, &__OnlineClubProvider_X__GetClubDetailsArray_0x1_Params, nullptr);
+
+	return __OnlineClubProvider_X__GetClubDetailsArray_0x1_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineClubProvider_X.ClubSynced
@@ -41981,6 +42372,72 @@ class UTAsyncResult__ClubDetails_X* UOnlineClubProvider_X::SyncClubDetails(uint6
 	return SyncClubDetails_Params.ReturnValue;
 };
 
+// Function ProjectX.OnlineClubProvider_X.HandleClubArraySynced
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_GetClubDetailsArray_X* RPC                            (CPF_Parm)
+
+void UOnlineClubProvider_X::HandleClubArraySynced(class URPC_GetClubDetailsArray_X* RPC)
+{
+	static UFunction* uFnHandleClubArraySynced = nullptr;
+
+	if (!uFnHandleClubArraySynced)
+	{
+		uFnHandleClubArraySynced = UFunction::FindFunction("Function ProjectX.OnlineClubProvider_X.HandleClubArraySynced");
+	}
+
+	UOnlineClubProvider_X_execHandleClubArraySynced_Params HandleClubArraySynced_Params;
+	memset(&HandleClubArraySynced_Params, 0, sizeof(HandleClubArraySynced_Params));
+	HandleClubArraySynced_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandleClubArraySynced, &HandleClubArraySynced_Params, nullptr);
+};
+
+// Function ProjectX.OnlineClubProvider_X.SyncClubDetailsArray
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<int32_t>          ClubIDs                        (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineClubProvider_X::SyncClubDetailsArray(const class TArray<int32_t>& ClubIDs)
+{
+	static UFunction* uFnSyncClubDetailsArray = nullptr;
+
+	if (!uFnSyncClubDetailsArray)
+	{
+		uFnSyncClubDetailsArray = UFunction::FindFunction("Function ProjectX.OnlineClubProvider_X.SyncClubDetailsArray");
+	}
+
+	UOnlineClubProvider_X_execSyncClubDetailsArray_Params SyncClubDetailsArray_Params;
+	memset(&SyncClubDetailsArray_Params, 0, sizeof(SyncClubDetailsArray_Params));
+	memcpy_s(&SyncClubDetailsArray_Params.ClubIDs, sizeof(SyncClubDetailsArray_Params.ClubIDs), &ClubIDs, sizeof(ClubIDs));
+
+	this->ProcessEvent(uFnSyncClubDetailsArray, &SyncClubDetailsArray_Params, nullptr);
+};
+
+// Function ProjectX.OnlineClubProvider_X.GetClubDetailsArray
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class TArray<int32_t>          ClubIDs                        (CPF_Parm | CPF_NeedCtorLink)
+
+bool UOnlineClubProvider_X::GetClubDetailsArray(const class TArray<int32_t>& ClubIDs)
+{
+	static UFunction* uFnGetClubDetailsArray = nullptr;
+
+	if (!uFnGetClubDetailsArray)
+	{
+		uFnGetClubDetailsArray = UFunction::FindFunction("Function ProjectX.OnlineClubProvider_X.GetClubDetailsArray");
+	}
+
+	UOnlineClubProvider_X_execGetClubDetailsArray_Params GetClubDetailsArray_Params;
+	memset(&GetClubDetailsArray_Params, 0, sizeof(GetClubDetailsArray_Params));
+	memcpy_s(&GetClubDetailsArray_Params.ClubIDs, sizeof(GetClubDetailsArray_Params.ClubIDs), &ClubIDs, sizeof(ClubIDs));
+
+	this->ProcessEvent(uFnGetClubDetailsArray, &GetClubDetailsArray_Params, nullptr);
+
+	return GetClubDetailsArray_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineClubProvider_X.GetClubDetails
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -42092,6 +42549,72 @@ bool U__OnlineClubProvider_X__SyncClubDetails_0x1::__OnlineClubProvider_X__SyncC
 	this->ProcessEvent(uFn__OnlineClubProvider_X__SyncClubDetails_0x1, &__OnlineClubProvider_X__SyncClubDetails_0x1_Params, nullptr);
 
 	return __OnlineClubProvider_X__SyncClubDetails_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1.__OnlineClubProvider_X__SyncClubDetailsArray_0x2
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_X*                  instance                       (CPF_Parm)
+
+void U__OnlineClubProvider_X__SyncClubDetailsArray_0x1::__OnlineClubProvider_X__SyncClubDetailsArray_0x2(class URPC_X* instance)
+{
+	static UFunction* uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x2 = nullptr;
+
+	if (!uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x2)
+	{
+		uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x2 = UFunction::FindFunction("Function ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1.__OnlineClubProvider_X__SyncClubDetailsArray_0x2");
+	}
+
+	U__OnlineClubProvider_X__SyncClubDetailsArray_0x1_exec__OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params __OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params;
+	memset(&__OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params, 0, sizeof(__OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params));
+	__OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params.instance = instance;
+
+	this->ProcessEvent(uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x2, &__OnlineClubProvider_X__SyncClubDetailsArray_0x2_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1.__OnlineClubProvider_X__SyncClubDetailsArray_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        Id                             (CPF_Parm)
+
+void U__OnlineClubProvider_X__SyncClubDetailsArray_0x1::__OnlineClubProvider_X__SyncClubDetailsArray_0x1(int32_t Id)
+{
+	static UFunction* uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x1 = nullptr;
+
+	if (!uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x1)
+	{
+		uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1.__OnlineClubProvider_X__SyncClubDetailsArray_0x1");
+	}
+
+	U__OnlineClubProvider_X__SyncClubDetailsArray_0x1_exec__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params __OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params;
+	memset(&__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params, 0, sizeof(__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params));
+	memcpy_s(&__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params.Id, sizeof(__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params.Id), &Id, sizeof(Id));
+
+	this->ProcessEvent(uFn__OnlineClubProvider_X__SyncClubDetailsArray_0x1, &__OnlineClubProvider_X__SyncClubDetailsArray_0x1_Params, nullptr);
+};
+
+// Function ProjectX.RPC_GetClubDetailsArray_X.AddClubID
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_GetClubDetailsArray_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        InClubID                       (CPF_Parm)
+
+class URPC_GetClubDetailsArray_X* URPC_GetClubDetailsArray_X::AddClubID(int32_t InClubID)
+{
+	static UFunction* uFnAddClubID = nullptr;
+
+	if (!uFnAddClubID)
+	{
+		uFnAddClubID = UFunction::FindFunction("Function ProjectX.RPC_GetClubDetailsArray_X.AddClubID");
+	}
+
+	URPC_GetClubDetailsArray_X_execAddClubID_Params AddClubID_Params;
+	memset(&AddClubID_Params, 0, sizeof(AddClubID_Params));
+	memcpy_s(&AddClubID_Params.InClubID, sizeof(AddClubID_Params.InClubID), &InClubID, sizeof(InClubID));
+
+	this->ProcessEvent(uFnAddClubID, &AddClubID_Params, nullptr);
+
+	return AddClubID_Params.ReturnValue;
 };
 
 // Function ProjectX.__OnlineClubProvider_X__SyncPlayerClubDetails_0x1.__OnlineClubProvider_X__SyncPlayerClubDetails_0x2
@@ -43503,6 +44026,73 @@ void UOnlineGameMatchmaking_X::OnInit()
 	memset(&OnInit_Params, 0, sizeof(OnInit_Params));
 
 	this->ProcessEvent(uFnOnInit, &OnInit_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameMatchmaking_X.EventSendMatchmakingRPC
+// [0x00120003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// struct FMatchmakingRequestData MatchmakingData                (CPF_Parm | CPF_NeedCtorLink)
+// struct FScriptDelegate         SuccessCallback                (CPF_Parm | CPF_NeedCtorLink)
+// struct FScriptDelegate         ErrorCallback                  (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineGameMatchmaking_X::EventSendMatchmakingRPC(const struct FMatchmakingRequestData& MatchmakingData, const struct FScriptDelegate& SuccessCallback, const struct FScriptDelegate& ErrorCallback)
+{
+	static UFunction* uFnEventSendMatchmakingRPC = nullptr;
+
+	if (!uFnEventSendMatchmakingRPC)
+	{
+		uFnEventSendMatchmakingRPC = UFunction::FindFunction("Function ProjectX.OnlineGameMatchmaking_X.EventSendMatchmakingRPC");
+	}
+
+	UOnlineGameMatchmaking_X_execEventSendMatchmakingRPC_Params EventSendMatchmakingRPC_Params;
+	memset(&EventSendMatchmakingRPC_Params, 0, sizeof(EventSendMatchmakingRPC_Params));
+	memcpy_s(&EventSendMatchmakingRPC_Params.MatchmakingData, sizeof(EventSendMatchmakingRPC_Params.MatchmakingData), &MatchmakingData, sizeof(MatchmakingData));
+	memcpy_s(&EventSendMatchmakingRPC_Params.SuccessCallback, sizeof(EventSendMatchmakingRPC_Params.SuccessCallback), &SuccessCallback, sizeof(SuccessCallback));
+	memcpy_s(&EventSendMatchmakingRPC_Params.ErrorCallback, sizeof(EventSendMatchmakingRPC_Params.ErrorCallback), &ErrorCallback, sizeof(ErrorCallback));
+
+	this->ProcessEvent(uFnEventSendMatchmakingRPC, &EventSendMatchmakingRPC_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameMatchmaking_X.EventMatchmakingRPCError
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class UError*                  Error                          (CPF_Parm)
+
+void UOnlineGameMatchmaking_X::EventMatchmakingRPCError(class UError* Error)
+{
+	static UFunction* uFnEventMatchmakingRPCError = nullptr;
+
+	if (!uFnEventMatchmakingRPCError)
+	{
+		uFnEventMatchmakingRPCError = UFunction::FindFunction("Function ProjectX.OnlineGameMatchmaking_X.EventMatchmakingRPCError");
+	}
+
+	UOnlineGameMatchmaking_X_execEventMatchmakingRPCError_Params EventMatchmakingRPCError_Params;
+	memset(&EventMatchmakingRPCError_Params, 0, sizeof(EventMatchmakingRPCError_Params));
+	EventMatchmakingRPCError_Params.Error = Error;
+
+	this->ProcessEvent(uFnEventMatchmakingRPCError, &EventMatchmakingRPCError_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameMatchmaking_X.EventMatchmakingRPCSuccess
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_X*                  RPC                            (CPF_Parm)
+
+void UOnlineGameMatchmaking_X::EventMatchmakingRPCSuccess(class URPC_X* RPC)
+{
+	static UFunction* uFnEventMatchmakingRPCSuccess = nullptr;
+
+	if (!uFnEventMatchmakingRPCSuccess)
+	{
+		uFnEventMatchmakingRPCSuccess = UFunction::FindFunction("Function ProjectX.OnlineGameMatchmaking_X.EventMatchmakingRPCSuccess");
+	}
+
+	UOnlineGameMatchmaking_X_execEventMatchmakingRPCSuccess_Params EventMatchmakingRPCSuccess_Params;
+	memset(&EventMatchmakingRPCSuccess_Params, 0, sizeof(EventMatchmakingRPCSuccess_Params));
+	EventMatchmakingRPCSuccess_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnEventMatchmakingRPCSuccess, &EventMatchmakingRPCSuccess_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameMatchmaking_X.EventMatchmakingCanceledOnPartySizeChanged
@@ -49208,6 +49798,27 @@ void UOnlineGameParty_X::EventPartySizeChanged(class UOnlineGameParty_X* PartyOb
 	memcpy_s(&EventPartySizeChanged_Params.OldSize, sizeof(EventPartySizeChanged_Params.OldSize), &OldSize, sizeof(OldSize));
 
 	this->ProcessEvent(uFnEventPartySizeChanged, &EventPartySizeChanged_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameParty_X.EventPartyMemberCompletedChallengesChanged
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class UOnlineGameParty_X*      PartyObject                    (CPF_Parm)
+
+void UOnlineGameParty_X::EventPartyMemberCompletedChallengesChanged(class UOnlineGameParty_X* PartyObject)
+{
+	static UFunction* uFnEventPartyMemberCompletedChallengesChanged = nullptr;
+
+	if (!uFnEventPartyMemberCompletedChallengesChanged)
+	{
+		uFnEventPartyMemberCompletedChallengesChanged = UFunction::FindFunction("Function ProjectX.OnlineGameParty_X.EventPartyMemberCompletedChallengesChanged");
+	}
+
+	UOnlineGameParty_X_execEventPartyMemberCompletedChallengesChanged_Params EventPartyMemberCompletedChallengesChanged_Params;
+	memset(&EventPartyMemberCompletedChallengesChanged_Params, 0, sizeof(EventPartyMemberCompletedChallengesChanged_Params));
+	EventPartyMemberCompletedChallengesChanged_Params.PartyObject = PartyObject;
+
+	this->ProcessEvent(uFnEventPartyMemberCompletedChallengesChanged, &EventPartyMemberCompletedChallengesChanged_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameParty_X.EventPartyMemberXPLevelChanged
@@ -57658,9 +58269,9 @@ void UOnlineGameSkill_X::HandleSkillsUpdated(class URPC_UpdateSkills_X* RPC)
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class UMatchData_X*            Match                          (CPF_Parm)
-// class FString                  MatchGuid                      (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  MatchGUID                      (CPF_Parm | CPF_NeedCtorLink)
 
-void UOnlineGameSkill_X::SubmitMatch(class UMatchData_X* Match, const class FString& MatchGuid)
+void UOnlineGameSkill_X::SubmitMatch(class UMatchData_X* Match, const class FString& MatchGUID)
 {
 	static UFunction* uFnSubmitMatch = nullptr;
 
@@ -57672,7 +58283,7 @@ void UOnlineGameSkill_X::SubmitMatch(class UMatchData_X* Match, const class FStr
 	UOnlineGameSkill_X_execSubmitMatch_Params SubmitMatch_Params;
 	memset(&SubmitMatch_Params, 0, sizeof(SubmitMatch_Params));
 	SubmitMatch_Params.Match = Match;
-	memcpy_s(&SubmitMatch_Params.MatchGuid, sizeof(SubmitMatch_Params.MatchGuid), &MatchGuid, sizeof(MatchGuid));
+	memcpy_s(&SubmitMatch_Params.MatchGUID, sizeof(SubmitMatch_Params.MatchGUID), &MatchGUID, sizeof(MatchGUID));
 
 	this->ProcessEvent(uFnSubmitMatch, &SubmitMatch_Params, nullptr);
 };
@@ -59963,10 +60574,10 @@ void UOnlinePlayerFriends_X::AcceptEpicFriendInvite(const struct FUniqueNetId& F
 // Function ProjectX.OnlinePlayerFriends_X.HandleEpicFriendInviteCompleted
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
 // Parameter Info:
-// struct FUniqueNetId            InvitedPlayerId                (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            InvitedPlayerID                (CPF_Parm | CPF_NeedCtorLink)
 // class UError*                  Error                          (CPF_Parm)
 
-void UOnlinePlayerFriends_X::HandleEpicFriendInviteCompleted(const struct FUniqueNetId& InvitedPlayerId, class UError* Error)
+void UOnlinePlayerFriends_X::HandleEpicFriendInviteCompleted(const struct FUniqueNetId& InvitedPlayerID, class UError* Error)
 {
 	static UFunction* uFnHandleEpicFriendInviteCompleted = nullptr;
 
@@ -59977,7 +60588,7 @@ void UOnlinePlayerFriends_X::HandleEpicFriendInviteCompleted(const struct FUniqu
 
 	UOnlinePlayerFriends_X_execHandleEpicFriendInviteCompleted_Params HandleEpicFriendInviteCompleted_Params;
 	memset(&HandleEpicFriendInviteCompleted_Params, 0, sizeof(HandleEpicFriendInviteCompleted_Params));
-	memcpy_s(&HandleEpicFriendInviteCompleted_Params.InvitedPlayerId, sizeof(HandleEpicFriendInviteCompleted_Params.InvitedPlayerId), &InvitedPlayerId, sizeof(InvitedPlayerId));
+	memcpy_s(&HandleEpicFriendInviteCompleted_Params.InvitedPlayerID, sizeof(HandleEpicFriendInviteCompleted_Params.InvitedPlayerID), &InvitedPlayerID, sizeof(InvitedPlayerID));
 	HandleEpicFriendInviteCompleted_Params.Error = Error;
 
 	this->ProcessEvent(uFnHandleEpicFriendInviteCompleted, &HandleEpicFriendInviteCompleted_Params, nullptr);
@@ -60626,6 +61237,32 @@ void UOnlinePlayerFriends_X::eventConstruct()
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
 };
 
+// Function ProjectX.OnlinePlayerFriends_X.GetDefaultPresence
+// [0x00440003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  PresenceString                 (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  GameMode                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UOnlinePlayerFriends_X::GetDefaultPresence(class FString& PresenceString, class FString& GameMode)
+{
+	static UFunction* uFnGetDefaultPresence = nullptr;
+
+	if (!uFnGetDefaultPresence)
+	{
+		uFnGetDefaultPresence = UFunction::FindFunction("Function ProjectX.OnlinePlayerFriends_X.GetDefaultPresence");
+	}
+
+	UOnlinePlayerFriends_X_execGetDefaultPresence_Params GetDefaultPresence_Params;
+	memset(&GetDefaultPresence_Params, 0, sizeof(GetDefaultPresence_Params));
+	memcpy_s(&GetDefaultPresence_Params.PresenceString, sizeof(GetDefaultPresence_Params.PresenceString), &PresenceString, sizeof(PresenceString));
+	memcpy_s(&GetDefaultPresence_Params.GameMode, sizeof(GetDefaultPresence_Params.GameMode), &GameMode, sizeof(GameMode));
+
+	this->ProcessEvent(uFnGetDefaultPresence, &GetDefaultPresence_Params, nullptr);
+
+	memcpy_s(&PresenceString, sizeof(PresenceString), &GetDefaultPresence_Params.PresenceString, sizeof(GetDefaultPresence_Params.PresenceString));
+	memcpy_s(&GameMode, sizeof(GameMode), &GetDefaultPresence_Params.GameMode, sizeof(GetDefaultPresence_Params.GameMode));
+};
+
 // Function ProjectX.OnlinePlayerFriends_X.HandleOSSConfigChanged
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
 // Parameter Info:
@@ -60906,10 +61543,10 @@ void UOnlinePlayerFriends_X::EventEpicFriendInviteAccepted(const struct FUniqueN
 // Function ProjectX.OnlinePlayerFriends_X.EventEpicFriendInviteFailed
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
 // Parameter Info:
-// struct FUniqueNetId            InvitedPlayerId                (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            InvitedPlayerID                (CPF_Parm | CPF_NeedCtorLink)
 // class UError*                  InviteFriendError              (CPF_Parm)
 
-void UOnlinePlayerFriends_X::EventEpicFriendInviteFailed(const struct FUniqueNetId& InvitedPlayerId, class UError* InviteFriendError)
+void UOnlinePlayerFriends_X::EventEpicFriendInviteFailed(const struct FUniqueNetId& InvitedPlayerID, class UError* InviteFriendError)
 {
 	static UFunction* uFnEventEpicFriendInviteFailed = nullptr;
 
@@ -60920,7 +61557,7 @@ void UOnlinePlayerFriends_X::EventEpicFriendInviteFailed(const struct FUniqueNet
 
 	UOnlinePlayerFriends_X_execEventEpicFriendInviteFailed_Params EventEpicFriendInviteFailed_Params;
 	memset(&EventEpicFriendInviteFailed_Params, 0, sizeof(EventEpicFriendInviteFailed_Params));
-	memcpy_s(&EventEpicFriendInviteFailed_Params.InvitedPlayerId, sizeof(EventEpicFriendInviteFailed_Params.InvitedPlayerId), &InvitedPlayerId, sizeof(InvitedPlayerId));
+	memcpy_s(&EventEpicFriendInviteFailed_Params.InvitedPlayerID, sizeof(EventEpicFriendInviteFailed_Params.InvitedPlayerID), &InvitedPlayerID, sizeof(InvitedPlayerID));
 	EventEpicFriendInviteFailed_Params.InviteFriendError = InviteFriendError;
 
 	this->ProcessEvent(uFnEventEpicFriendInviteFailed, &EventEpicFriendInviteFailed_Params, nullptr);
@@ -60929,9 +61566,9 @@ void UOnlinePlayerFriends_X::EventEpicFriendInviteFailed(const struct FUniqueNet
 // Function ProjectX.OnlinePlayerFriends_X.EventEpicFriendInviteSucceeded
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
 // Parameter Info:
-// struct FUniqueNetId            InvitedPlayerId                (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            InvitedPlayerID                (CPF_Parm | CPF_NeedCtorLink)
 
-void UOnlinePlayerFriends_X::EventEpicFriendInviteSucceeded(const struct FUniqueNetId& InvitedPlayerId)
+void UOnlinePlayerFriends_X::EventEpicFriendInviteSucceeded(const struct FUniqueNetId& InvitedPlayerID)
 {
 	static UFunction* uFnEventEpicFriendInviteSucceeded = nullptr;
 
@@ -60942,7 +61579,7 @@ void UOnlinePlayerFriends_X::EventEpicFriendInviteSucceeded(const struct FUnique
 
 	UOnlinePlayerFriends_X_execEventEpicFriendInviteSucceeded_Params EventEpicFriendInviteSucceeded_Params;
 	memset(&EventEpicFriendInviteSucceeded_Params, 0, sizeof(EventEpicFriendInviteSucceeded_Params));
-	memcpy_s(&EventEpicFriendInviteSucceeded_Params.InvitedPlayerId, sizeof(EventEpicFriendInviteSucceeded_Params.InvitedPlayerId), &InvitedPlayerId, sizeof(InvitedPlayerId));
+	memcpy_s(&EventEpicFriendInviteSucceeded_Params.InvitedPlayerID, sizeof(EventEpicFriendInviteSucceeded_Params.InvitedPlayerID), &InvitedPlayerID, sizeof(InvitedPlayerID));
 
 	this->ProcessEvent(uFnEventEpicFriendInviteSucceeded, &EventEpicFriendInviteSucceeded_Params, nullptr);
 };
@@ -61411,6 +62048,75 @@ void U__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1::__OnlinePlayerFriends_X__
 	memcpy_s(&__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1_Params.LinkedAccountData, sizeof(__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1_Params.LinkedAccountData), &LinkedAccountData, sizeof(LinkedAccountData));
 
 	this->ProcessEvent(uFn__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1, &__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1_Params, nullptr);
+};
+
+// Function ProjectX.SocialMetrics_X.SendFriendInvite
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            ReceiverPlayerID               (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void USocialMetrics_X::SendFriendInvite(const struct FUniqueNetId& ReceiverPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnSendFriendInvite = nullptr;
+
+	if (!uFnSendFriendInvite)
+	{
+		uFnSendFriendInvite = UFunction::FindFunction("Function ProjectX.SocialMetrics_X.SendFriendInvite");
+	}
+
+	USocialMetrics_X_execSendFriendInvite_Params SendFriendInvite_Params;
+	memset(&SendFriendInvite_Params, 0, sizeof(SendFriendInvite_Params));
+	memcpy_s(&SendFriendInvite_Params.ReceiverPlayerID, sizeof(SendFriendInvite_Params.ReceiverPlayerID), &ReceiverPlayerID, sizeof(ReceiverPlayerID));
+	memcpy_s(&SendFriendInvite_Params.TimeStamp, sizeof(SendFriendInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnSendFriendInvite, &SendFriendInvite_Params, nullptr);
+};
+
+// Function ProjectX.SocialMetrics_X.RejectFriendInvite
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void USocialMetrics_X::RejectFriendInvite(const struct FUniqueNetId& SenderPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnRejectFriendInvite = nullptr;
+
+	if (!uFnRejectFriendInvite)
+	{
+		uFnRejectFriendInvite = UFunction::FindFunction("Function ProjectX.SocialMetrics_X.RejectFriendInvite");
+	}
+
+	USocialMetrics_X_execRejectFriendInvite_Params RejectFriendInvite_Params;
+	memset(&RejectFriendInvite_Params, 0, sizeof(RejectFriendInvite_Params));
+	memcpy_s(&RejectFriendInvite_Params.SenderPlayerID, sizeof(RejectFriendInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
+	memcpy_s(&RejectFriendInvite_Params.TimeStamp, sizeof(RejectFriendInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnRejectFriendInvite, &RejectFriendInvite_Params, nullptr);
+};
+
+// Function ProjectX.SocialMetrics_X.AcceptFriendInvite
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void USocialMetrics_X::AcceptFriendInvite(const struct FUniqueNetId& SenderPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnAcceptFriendInvite = nullptr;
+
+	if (!uFnAcceptFriendInvite)
+	{
+		uFnAcceptFriendInvite = UFunction::FindFunction("Function ProjectX.SocialMetrics_X.AcceptFriendInvite");
+	}
+
+	USocialMetrics_X_execAcceptFriendInvite_Params AcceptFriendInvite_Params;
+	memset(&AcceptFriendInvite_Params, 0, sizeof(AcceptFriendInvite_Params));
+	memcpy_s(&AcceptFriendInvite_Params.SenderPlayerID, sizeof(AcceptFriendInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
+	memcpy_s(&AcceptFriendInvite_Params.TimeStamp, sizeof(AcceptFriendInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnAcceptFriendInvite, &AcceptFriendInvite_Params, nullptr);
 };
 
 // Function ProjectX.SocialMetrics_X.UnblockedPlayer
@@ -71145,6 +71851,261 @@ class FString UInitialServerToClientMessage_X::GetReservationID()
 	this->ProcessEvent(uFnGetReservationID, &GetReservationID_Params, nullptr);
 
 	return GetReservationID_Params.ReturnValue;
+};
+
+// Function ProjectX.ClubMetrics_X.ClubIntroShown
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       FirstClubID                    (CPF_Parm)
+// uint64_t                       SecondClubID                   (CPF_Parm)
+// class FString                  MatchGUID                      (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::ClubIntroShown(uint64_t FirstClubID, uint64_t SecondClubID, const class FString& MatchGUID, uint64_t TimeStamp)
+{
+	static UFunction* uFnClubIntroShown = nullptr;
+
+	if (!uFnClubIntroShown)
+	{
+		uFnClubIntroShown = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.ClubIntroShown");
+	}
+
+	UClubMetrics_X_execClubIntroShown_Params ClubIntroShown_Params;
+	memset(&ClubIntroShown_Params, 0, sizeof(ClubIntroShown_Params));
+	memcpy_s(&ClubIntroShown_Params.FirstClubID, sizeof(ClubIntroShown_Params.FirstClubID), &FirstClubID, sizeof(FirstClubID));
+	memcpy_s(&ClubIntroShown_Params.SecondClubID, sizeof(ClubIntroShown_Params.SecondClubID), &SecondClubID, sizeof(SecondClubID));
+	memcpy_s(&ClubIntroShown_Params.MatchGUID, sizeof(ClubIntroShown_Params.MatchGUID), &MatchGUID, sizeof(MatchGUID));
+	memcpy_s(&ClubIntroShown_Params.TimeStamp, sizeof(ClubIntroShown_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnClubIntroShown, &ClubIntroShown_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.GetRoleString
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// EClubRole                      ClubRole                       (CPF_Parm)
+
+class FString UClubMetrics_X::GetRoleString(EClubRole ClubRole)
+{
+	static UFunction* uFnGetRoleString = nullptr;
+
+	if (!uFnGetRoleString)
+	{
+		uFnGetRoleString = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.GetRoleString");
+	}
+
+	UClubMetrics_X_execGetRoleString_Params GetRoleString_Params;
+	memset(&GetRoleString_Params, 0, sizeof(GetRoleString_Params));
+	memcpy_s(&GetRoleString_Params.ClubRole, sizeof(GetRoleString_Params.ClubRole), &ClubRole, sizeof(ClubRole));
+
+	this->ProcessEvent(uFnGetRoleString, &GetRoleString_Params, nullptr);
+
+	return GetRoleString_Params.ReturnValue;
+};
+
+// Function ProjectX.ClubMetrics_X.ChangePlayerRole
+// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            MemberPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  OriginalRole                   (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  NewRole                        (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::ChangePlayerRole(uint64_t ClubID, const struct FUniqueNetId& MemberPlayerID, const class FString& OriginalRole, const class FString& NewRole, uint64_t TimeStamp)
+{
+	static UFunction* uFnChangePlayerRole = nullptr;
+
+	if (!uFnChangePlayerRole)
+	{
+		uFnChangePlayerRole = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.ChangePlayerRole");
+	}
+
+	UClubMetrics_X_execChangePlayerRole_Params ChangePlayerRole_Params;
+	memset(&ChangePlayerRole_Params, 0, sizeof(ChangePlayerRole_Params));
+	memcpy_s(&ChangePlayerRole_Params.ClubID, sizeof(ChangePlayerRole_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&ChangePlayerRole_Params.MemberPlayerID, sizeof(ChangePlayerRole_Params.MemberPlayerID), &MemberPlayerID, sizeof(MemberPlayerID));
+	memcpy_s(&ChangePlayerRole_Params.OriginalRole, sizeof(ChangePlayerRole_Params.OriginalRole), &OriginalRole, sizeof(OriginalRole));
+	memcpy_s(&ChangePlayerRole_Params.NewRole, sizeof(ChangePlayerRole_Params.NewRole), &NewRole, sizeof(NewRole));
+	memcpy_s(&ChangePlayerRole_Params.TimeStamp, sizeof(ChangePlayerRole_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnChangePlayerRole, &ChangePlayerRole_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.HandleRoleChanged
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            MemberPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// EClubRole                      OriginalRole                   (CPF_Parm)
+// EClubRole                      NewRole                        (CPF_Parm)
+
+void UClubMetrics_X::HandleRoleChanged(uint64_t ClubID, const struct FUniqueNetId& MemberPlayerID, EClubRole OriginalRole, EClubRole NewRole)
+{
+	static UFunction* uFnHandleRoleChanged = nullptr;
+
+	if (!uFnHandleRoleChanged)
+	{
+		uFnHandleRoleChanged = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.HandleRoleChanged");
+	}
+
+	UClubMetrics_X_execHandleRoleChanged_Params HandleRoleChanged_Params;
+	memset(&HandleRoleChanged_Params, 0, sizeof(HandleRoleChanged_Params));
+	memcpy_s(&HandleRoleChanged_Params.ClubID, sizeof(HandleRoleChanged_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&HandleRoleChanged_Params.MemberPlayerID, sizeof(HandleRoleChanged_Params.MemberPlayerID), &MemberPlayerID, sizeof(MemberPlayerID));
+	memcpy_s(&HandleRoleChanged_Params.OriginalRole, sizeof(HandleRoleChanged_Params.OriginalRole), &OriginalRole, sizeof(OriginalRole));
+	memcpy_s(&HandleRoleChanged_Params.NewRole, sizeof(HandleRoleChanged_Params.NewRole), &NewRole, sizeof(NewRole));
+
+	this->ProcessEvent(uFnHandleRoleChanged, &HandleRoleChanged_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.SendClubInvite
+// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            ReceiverPlayerID               (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::SendClubInvite(uint64_t ClubID, const struct FUniqueNetId& ReceiverPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnSendClubInvite = nullptr;
+
+	if (!uFnSendClubInvite)
+	{
+		uFnSendClubInvite = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.SendClubInvite");
+	}
+
+	UClubMetrics_X_execSendClubInvite_Params SendClubInvite_Params;
+	memset(&SendClubInvite_Params, 0, sizeof(SendClubInvite_Params));
+	memcpy_s(&SendClubInvite_Params.ClubID, sizeof(SendClubInvite_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&SendClubInvite_Params.ReceiverPlayerID, sizeof(SendClubInvite_Params.ReceiverPlayerID), &ReceiverPlayerID, sizeof(ReceiverPlayerID));
+	memcpy_s(&SendClubInvite_Params.TimeStamp, sizeof(SendClubInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnSendClubInvite, &SendClubInvite_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.RejectClubInvite
+// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::RejectClubInvite(uint64_t ClubID, const struct FUniqueNetId& SenderPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnRejectClubInvite = nullptr;
+
+	if (!uFnRejectClubInvite)
+	{
+		uFnRejectClubInvite = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.RejectClubInvite");
+	}
+
+	UClubMetrics_X_execRejectClubInvite_Params RejectClubInvite_Params;
+	memset(&RejectClubInvite_Params, 0, sizeof(RejectClubInvite_Params));
+	memcpy_s(&RejectClubInvite_Params.ClubID, sizeof(RejectClubInvite_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&RejectClubInvite_Params.SenderPlayerID, sizeof(RejectClubInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
+	memcpy_s(&RejectClubInvite_Params.TimeStamp, sizeof(RejectClubInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnRejectClubInvite, &RejectClubInvite_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.AcceptClubInvite
+// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            SenderPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::AcceptClubInvite(uint64_t ClubID, const struct FUniqueNetId& SenderPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnAcceptClubInvite = nullptr;
+
+	if (!uFnAcceptClubInvite)
+	{
+		uFnAcceptClubInvite = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.AcceptClubInvite");
+	}
+
+	UClubMetrics_X_execAcceptClubInvite_Params AcceptClubInvite_Params;
+	memset(&AcceptClubInvite_Params, 0, sizeof(AcceptClubInvite_Params));
+	memcpy_s(&AcceptClubInvite_Params.ClubID, sizeof(AcceptClubInvite_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&AcceptClubInvite_Params.SenderPlayerID, sizeof(AcceptClubInvite_Params.SenderPlayerID), &SenderPlayerID, sizeof(SenderPlayerID));
+	memcpy_s(&AcceptClubInvite_Params.TimeStamp, sizeof(AcceptClubInvite_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnAcceptClubInvite, &AcceptClubInvite_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.HandleClubInviteEvent
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// EClubInviteEventType           InviteEventType                (CPF_Parm)
+
+void UClubMetrics_X::HandleClubInviteEvent(uint64_t ClubID, const struct FUniqueNetId& PlayerID, EClubInviteEventType InviteEventType)
+{
+	static UFunction* uFnHandleClubInviteEvent = nullptr;
+
+	if (!uFnHandleClubInviteEvent)
+	{
+		uFnHandleClubInviteEvent = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.HandleClubInviteEvent");
+	}
+
+	UClubMetrics_X_execHandleClubInviteEvent_Params HandleClubInviteEvent_Params;
+	memset(&HandleClubInviteEvent_Params, 0, sizeof(HandleClubInviteEvent_Params));
+	memcpy_s(&HandleClubInviteEvent_Params.ClubID, sizeof(HandleClubInviteEvent_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&HandleClubInviteEvent_Params.PlayerID, sizeof(HandleClubInviteEvent_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&HandleClubInviteEvent_Params.InviteEventType, sizeof(HandleClubInviteEvent_Params.InviteEventType), &InviteEventType, sizeof(InviteEventType));
+
+	this->ProcessEvent(uFnHandleClubInviteEvent, &HandleClubInviteEvent_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.LeaveClub
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::LeaveClub(uint64_t ClubID, uint64_t TimeStamp)
+{
+	static UFunction* uFnLeaveClub = nullptr;
+
+	if (!uFnLeaveClub)
+	{
+		uFnLeaveClub = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.LeaveClub");
+	}
+
+	UClubMetrics_X_execLeaveClub_Params LeaveClub_Params;
+	memset(&LeaveClub_Params, 0, sizeof(LeaveClub_Params));
+	memcpy_s(&LeaveClub_Params.ClubID, sizeof(LeaveClub_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&LeaveClub_Params.TimeStamp, sizeof(LeaveClub_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnLeaveClub, &LeaveClub_Params, nullptr);
+};
+
+// Function ProjectX.ClubMetrics_X.KickPlayer
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// uint64_t                       ClubID                         (CPF_Parm)
+// struct FUniqueNetId            KickedPlayerID                 (CPF_Parm | CPF_NeedCtorLink)
+// uint64_t                       TimeStamp                      (CPF_OptionalParm | CPF_Parm)
+
+void UClubMetrics_X::KickPlayer(uint64_t ClubID, const struct FUniqueNetId& KickedPlayerID, uint64_t TimeStamp)
+{
+	static UFunction* uFnKickPlayer = nullptr;
+
+	if (!uFnKickPlayer)
+	{
+		uFnKickPlayer = UFunction::FindFunction("Function ProjectX.ClubMetrics_X.KickPlayer");
+	}
+
+	UClubMetrics_X_execKickPlayer_Params KickPlayer_Params;
+	memset(&KickPlayer_Params, 0, sizeof(KickPlayer_Params));
+	memcpy_s(&KickPlayer_Params.ClubID, sizeof(KickPlayer_Params.ClubID), &ClubID, sizeof(ClubID));
+	memcpy_s(&KickPlayer_Params.KickedPlayerID, sizeof(KickPlayer_Params.KickedPlayerID), &KickedPlayerID, sizeof(KickedPlayerID));
+	memcpy_s(&KickPlayer_Params.TimeStamp, sizeof(KickPlayer_Params.TimeStamp), &TimeStamp, sizeof(TimeStamp));
+
+	this->ProcessEvent(uFnKickPlayer, &KickPlayer_Params, nullptr);
 };
 
 // Function ProjectX.ClubServerResult_X.GetAddress

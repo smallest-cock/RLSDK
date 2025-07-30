@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 05:08PM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 07/29/2025 05:18PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
@@ -21,56 +21,6 @@
 # ========================================================================================= #
 */
 
-// ScriptStruct ProjectX._Types_X.CachedRegionPing
-// 0x000C
-struct FCachedRegionPing
-{
-	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
-	float                                              Ping;                                          // 0x0008 (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.PartyMemberServer
-// 0x0044
-struct FPartyMemberServer
-{
-	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      CustomPassword;                                // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinName;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinPassword;                                  // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            PlaylistId;                                    // 0x0040 (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.PartyMember
-// 0x0171
-struct FPartyMember
-{
-	struct FUniqueNetId                                PrimaryMemberId;                               // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FUniqueNetId                                MemberId;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      MemberName;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            MatchmakeRestrictions;                         // 0x00A0 (0x0004) [0x0000000000000000]               
-	int32_t                                            LocalControllerId;                             // 0x00A4 (0x0004) [0x0000000000000000]               
-	int32_t                                            XpLevel;                                       // 0x00A8 (0x0004) [0x0000000000000000]               
-	uint8_t                                            CrossChatState;                                // 0x00AC (0x0001) [0x0000000000000000]               
-	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00B0 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bTradingEnabled : 1;                           // 0x00B0 (0x0004) [0x0000000000000000] [0x00000002] 
-	struct FUniqueNetId                                TradingMemberId;                               // 0x00B8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FGuid                                       TradeId;                                       // 0x0100 (0x0010) [0x0000000000000000]               
-	uint32_t                                           bReadyToLockTrade : 1;                         // 0x0110 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bReadyToConfirmTrade : 1;                      // 0x0110 (0x0004) [0x0000000000000000] [0x00000002] 
-	struct FPartyMemberServer                          Server;                                        // 0x0118 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FUniqueLobbyId                              PlatformParty;                                 // 0x0160 (0x0010) [0x0000000000000000]               
-	uint8_t                                            VoiceReportingLevel;                           // 0x0170 (0x0001) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.PlayerSeasonRewardProgress
-// 0x0050
-struct FPlayerSeasonRewardProgress
-{
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            SeasonLevel;                                   // 0x0048 (0x0004) [0x0000000000000000]               
-	int32_t                                            SeasonLevelWins;                               // 0x004C (0x0004) [0x0000000000000000]               
-};
-
 // ScriptStruct ProjectX._Types_X.SkillRating
 // 0x0008
 struct FSkillRating
@@ -79,203 +29,8 @@ struct FSkillRating
 	float                                              Sigma;                                         // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
-// ScriptStruct ProjectX._Types_X.TierSkillRating
-// 0x0018 (0x0008 - 0x0020)
-struct FTierSkillRating : FSkillRating
-{
-	int32_t                                            Tier;                                          // 0x0008 (0x0004) [0x0000000000000000]               
-	int32_t                                            Division;                                      // 0x000C (0x0004) [0x0000000000000000]               
-	int32_t                                            MatchesPlayed;                                 // 0x0010 (0x0004) [0x0000000000000000]               
-	int32_t                                            PlacementMatchesPlayed;                        // 0x0014 (0x0004) [0x0000000000000000]               
-	int32_t                                            WinStreak;                                     // 0x0018 (0x0004) [0x0000000000000000]               
-	float                                              MMR;                                           // 0x001C (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.ClubColorSet
-// 0x0008
-struct FClubColorSet
-{
-	uint8_t                                            TeamColorID;                                   // 0x0000 (0x0001) [0x0000000000000000]               
-	uint8_t                                            CustomColorID;                                 // 0x0001 (0x0001) [0x0000000000000000]               
-	uint32_t                                           bTeamColorSet : 1;                             // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
-};
-
-// ScriptStruct ProjectX._Types_X.CustomMatchTeamSettings
-// 0x001C
-struct FCustomMatchTeamSettings
-{
-	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FClubColorSet                               Colors;                                        // 0x0010 (0x0008) [0x0000000000000000]               
-	int32_t                                            GameScore;                                     // 0x0018 (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.CustomMatchSettings
-// 0x0088
-struct FCustomMatchSettings
-{
-	class FString                                      GameTags;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FName                                        MapName;                                       // 0x0010 (0x0008) [0x0000000000000000]               
-	uint8_t                                            GameMode;                                      // 0x0018 (0x0001) [0x0000000000000000]               
-	int32_t                                            MaxPlayerCount;                                // 0x001C (0x0004) [0x0000000000000000]               
-	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Password;                                      // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bPublic : 1;                                   // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bClubServer : 1;                               // 0x0040 (0x0004) [0x0000000000000000] [0x00000002] 
-	struct FCustomMatchTeamSettings                    TeamSettings[2];                               // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.JoinMatchSettings
-// 0x0020
-struct FJoinMatchSettings
-{
-	uint8_t                                            MatchType;                                     // 0x0000 (0x0001) [0x0000000000000000]               
-	int32_t                                            PlaylistId;                                    // 0x0004 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bFriendJoin : 1;                               // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bMigration : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
-	uint32_t                                           bRankedReconnect : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000004] 
-	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.PartyJoinMatchSettings
-// 0x0058
-struct FPartyJoinMatchSettings
-{
-	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bFriendJoin : 1;                               // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	class FString                                      CustomPassword;                                // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinName;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinPassword;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.SkillMatchPlayer
-// 0x0060
-struct FSkillMatchPlayer
-{
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              PctTimePlayed;                                 // 0x0048 (0x0004) [0x0000000000000000]               
-	float                                              TimePlayed;                                    // 0x004C (0x0004) [0x0000000000000000]               
-	uint32_t                                           bQuitter : 1;                                  // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
-	int32_t                                            PartyID;                                       // 0x0054 (0x0004) [0x0000000000000000]               
-	int32_t                                            Score;                                         // 0x0058 (0x0004) [0x0000000000000000]               
-	int32_t                                            Team;                                          // 0x005C (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.ServerResult
-// 0x00A8
-struct FServerResult
-{
-	class FString                                      Address;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FCustomMatchSettings                        Settings;                                      // 0x0020 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.ReplicatedReservationData
-// 0x0059
-struct FReplicatedReservationData
-{
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            Status;                                        // 0x0058 (0x0001) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.SkillMatchData
-// 0x0024
-struct FSkillMatchData
-{
-	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
-	int32_t                                            WinningTeam;                                   // 0x0014 (0x0004) [0x0000000000000000]               
-	int32_t                                            Team0Score;                                    // 0x0018 (0x0004) [0x0000000000000000]               
-	int32_t                                            Team1Score;                                    // 0x001C (0x0004) [0x0000000000000000]               
-	uint32_t                                           bOverTime : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
-};
-
-// ScriptStruct ProjectX._Types_X.SkillMatchParty
-// 0x0020
-struct FSkillMatchParty
-{
-	int32_t                                            PartyID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
-	float                                              PctTimePlayed;                                 // 0x0004 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bQuitter : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.SkillMatchPartyRating
-// 0x0004 (0x0020 - 0x0024)
-struct FSkillMatchPartyRating : FTierSkillRating
-{
-	int32_t                                            PartyID;                                       // 0x0020 (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct ProjectX._Types_X.ServerConnectionInfo
-// 0x0030
-struct FServerConnectionInfo
-{
-	class FString                                      ServerAddress;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      PingAddress;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.CrossplayGroup
-// 0x0010
-struct FCrossplayGroup
-{
-	class TArray<uint8_t>                              Platforms;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.MapPrefs
-// 0x0020
-struct FMapPrefs
-{
-	class TArray<class FName>                          Likes;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class FName>                          Dislikes;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.CheckReservationResponse
-// 0x007C
-struct FCheckReservationResponse
-{
-	class FString                                      IP;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
-	class FString                                      Region;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Host;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Port;                                          // 0x0048 (0x0004) [0x0000000000000000]               
-	class FString                                      ReservationID;                                 // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      DSConnectToken;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UNetworkEncryptionKey*                       Keys;                                          // 0x0070 (0x0008) [0x0000000000000000]               
-	uint32_t                                           IsServerKey : 1;                               // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
-};
-
-// ScriptStruct ProjectX._Types_X.ServerReservationData
-// 0x0070
-struct FServerReservationData
-{
-	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
-	class FString                                      Region;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      DSRToken;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UNetworkEncryptionKey*                       Keys;                                          // 0x0048 (0x0008) [0x0000000000000000]               
-	class FString                                      JoinName;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinPassword;                                  // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct ProjectX._Types_X.ActiveServerData
-// 0x00A0
-struct FActiveServerData
-{
-	struct FServerReservationData                      Reservation;                                   // 0x0000 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      PingURL;                                       // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      GameURL;                                       // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      JoinCredentials;                               // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
 // ScriptStruct ProjectX._Types_X.ReservationData
-// 0x0108
+// 0x0110
 struct FReservationData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -286,13 +41,30 @@ struct FReservationData
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
 	class APlayerReplicationInfo*                      PRI;                                           // 0x00B0 (0x0008) [0x0000000000000000]               
 	uint8_t                                            Team;                                          // 0x00B8 (0x0001) [0x0000000000000000]               
-	class UAddReservationMessage_X*                    ReservationMessage;                            // 0x00C0 (0x0008) [0x0000000000000000]               
-	class UIReservationConnection_X*                   Connection_Object;                             // 0x00C8 (0x0010) [0x0000000000000000] 
-	class UIReservationConnection_X*                   Connection_Interface;                          // 0x00C8 (0x0010) [0x0000000000000000]               
-	uint32_t                                           bIgnoreBeaconDisconnect : 1;                   // 0x00D8 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FSkillRating                                Skill;                                         // 0x00DC (0x0008) [0x0000000000000000]               
-	class TArray<class FName>                          MapLikes;                                      // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class FName>                          MapDislikes;                                   // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0001000000000000]               
+	class UAddReservationMessage_X*                    ReservationMessage;                            // 0x00C8 (0x0008) [0x0000000000000000]               
+	class UIReservationConnection_X*                   Connection_Object;                             // 0x00D0 (0x0010) [0x0000000000000000] 
+	class UIReservationConnection_X*                   Connection_Interface;                          // 0x00D0 (0x0010) [0x0000000000000000]               
+	uint32_t                                           bIgnoreBeaconDisconnect : 1;                   // 0x00E0 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FSkillRating                                Skill;                                         // 0x00E4 (0x0008) [0x0000000000000000]               
+	class TArray<class FName>                          MapLikes;                                      // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.ClubReplicationInfo
+// 0x0043
+struct FClubReplicationInfo
+{
+	uint64_t                                           ClubID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bVerified : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FName                                        EquippedTitle;                                 // 0x000C (0x0008) [0x0000000000000000]               
+	class FString                                      ClubName;                                      // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ClubTag;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PrimaryColor;                                  // 0x0038 (0x0004) [0x0000000000000000]               
+	int32_t                                            AccentColor;                                   // 0x003C (0x0004) [0x0000000000000000]               
+	uint8_t                                            FirstBadgeTier;                                // 0x0040 (0x0001) [0x0000000000000000]               
+	uint8_t                                            SecondBadgeTier;                               // 0x0041 (0x0001) [0x0000000000000000]               
+	uint8_t                                            ThirdBadgeTier;                                // 0x0042 (0x0001) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.MigrationReservationData
@@ -309,6 +81,15 @@ struct FMigrationReservationData
 	class TArray<class FName>                          MapLikes;                                      // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FName>                          MapDislikes;                                   // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UNetworkEncryptionKey*                       SecurityKey;                                   // 0x00D8 (0x0008) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerSeasonRewardProgress
+// 0x0050
+struct FPlayerSeasonRewardProgress
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SeasonLevel;                                   // 0x0048 (0x0004) [0x0000000000000000]               
+	int32_t                                            SeasonLevelWins;                               // 0x004C (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.SuperSonicConfig
@@ -444,6 +225,44 @@ struct FGFxBlurRect
 	float                                              BottomRightY;                                  // 0x001C (0x0004) [0x0000000000000000]               
 };
 
+// ScriptStruct ProjectX._Types_X.ServerReservationData
+// 0x0070
+struct FServerReservationData
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	class FString                                      Region;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DSRToken;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       Keys;                                          // 0x0048 (0x0008) [0x0000000000000000]               
+	class FString                                      JoinName;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.CheckReservationResponse
+// 0x007C
+struct FCheckReservationResponse
+{
+	class FString                                      IP;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	class FString                                      Region;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Host;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Port;                                          // 0x0048 (0x0004) [0x0000000000000000]               
+	class FString                                      ReservationID;                                 // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DSConnectToken;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       Keys;                                          // 0x0070 (0x0008) [0x0000000000000000]               
+	uint32_t                                           IsServerKey : 1;                               // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct ProjectX._Types_X.MapPrefs
+// 0x0020
+struct FMapPrefs
+{
+	class TArray<class FName>                          Likes;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          Dislikes;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // ScriptStruct ProjectX._Types_X.RenderProfile
 // 0x0028
 struct FRenderProfile
@@ -469,6 +288,163 @@ struct FMetricsEvent
 	int32_t                                            Version;                                       // 0x004C (0x0004) [0x0000000000000000]               
 	class FString                                      EventName;                                     // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      EventData;                                     // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.ActiveServerData
+// 0x00A0
+struct FActiveServerData
+{
+	struct FServerReservationData                      Reservation;                                   // 0x0000 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PingURL;                                       // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      GameURL;                                       // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinCredentials;                               // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.CrossplayGroup
+// 0x0010
+struct FCrossplayGroup
+{
+	class TArray<uint8_t>                              Platforms;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.ServerConnectionInfo
+// 0x0030
+struct FServerConnectionInfo
+{
+	class FString                                      ServerAddress;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PingAddress;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.TierSkillRating
+// 0x0018 (0x0008 - 0x0020)
+struct FTierSkillRating : FSkillRating
+{
+	int32_t                                            Tier;                                          // 0x0008 (0x0004) [0x0000000000000000]               
+	int32_t                                            Division;                                      // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            MatchesPlayed;                                 // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            PlacementMatchesPlayed;                        // 0x0014 (0x0004) [0x0000000000000000]               
+	int32_t                                            WinStreak;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              MMR;                                           // 0x001C (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchPartyRating
+// 0x0004 (0x0020 - 0x0024)
+struct FSkillMatchPartyRating : FTierSkillRating
+{
+	int32_t                                            PartyID;                                       // 0x0020 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchParty
+// 0x0020
+struct FSkillMatchParty
+{
+	int32_t                                            PartyID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              PctTimePlayed;                                 // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bQuitter : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchData
+// 0x0024
+struct FSkillMatchData
+{
+	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            WinningTeam;                                   // 0x0014 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team0Score;                                    // 0x0018 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team1Score;                                    // 0x001C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct ProjectX._Types_X.ClubColorSet
+// 0x0008
+struct FClubColorSet
+{
+	uint8_t                                            TeamColorID;                                   // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                            CustomColorID;                                 // 0x0001 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bTeamColorSet : 1;                             // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
+};
+
+// ScriptStruct ProjectX._Types_X.CustomMatchTeamSettings
+// 0x001C
+struct FCustomMatchTeamSettings
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FClubColorSet                               Colors;                                        // 0x0010 (0x0008) [0x0000000000000000]               
+	int32_t                                            GameScore;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.CustomMatchSettings
+// 0x0088
+struct FCustomMatchSettings
+{
+	class FString                                      GameTags;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        MapName;                                       // 0x0010 (0x0008) [0x0000000000000000]               
+	uint8_t                                            GameMode;                                      // 0x0018 (0x0001) [0x0000000000000000]               
+	int32_t                                            MaxPlayerCount;                                // 0x001C (0x0004) [0x0000000000000000]               
+	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Password;                                      // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bPublic : 1;                                   // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bClubServer : 1;                               // 0x0040 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FCustomMatchTeamSettings                    TeamSettings[2];                               // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.ServerResult
+// 0x00A8
+struct FServerResult
+{
+	class FString                                      Address;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FCustomMatchSettings                        Settings;                                      // 0x0020 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchPlayer
+// 0x0060
+struct FSkillMatchPlayer
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              PctTimePlayed;                                 // 0x0048 (0x0004) [0x0000000000000000]               
+	float                                              TimePlayed;                                    // 0x004C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bQuitter : 1;                                  // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	int32_t                                            PartyID;                                       // 0x0054 (0x0004) [0x0000000000000000]               
+	int32_t                                            Score;                                         // 0x0058 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team;                                          // 0x005C (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.ReplicatedReservationData
+// 0x0059
+struct FReplicatedReservationData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            Status;                                        // 0x0058 (0x0001) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.PartyJoinMatchSettings
+// 0x0058
+struct FPartyJoinMatchSettings
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bFriendJoin : 1;                               // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FString                                      CustomPassword;                                // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinName;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.JoinMatchSettings
+// 0x0020
+struct FJoinMatchSettings
+{
+	uint8_t                                            MatchType;                                     // 0x0000 (0x0001) [0x0000000000000000]               
+	int32_t                                            PlaylistId;                                    // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bFriendJoin : 1;                               // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bMigration : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bRankedReconnect : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000004] 
+	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ReservationPlayerData
@@ -564,6 +540,17 @@ struct FPlayerPermissions
 	uint8_t                                            VoiceReporting;                                // 0x0008 (0x0001) [0x0000000000000000]               
 };
 
+// ScriptStruct ProjectX._Types_X.PartyMemberServer
+// 0x0044
+struct FPartyMemberServer
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CustomPassword;                                // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinName;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0040 (0x0004) [0x0000000000000000]               
+};
+
 // ScriptStruct ProjectX._Types_X.PlaylistSkillRating
 // 0x0004 (0x0020 - 0x0024)
 struct FPlaylistSkillRating : FTierSkillRating
@@ -586,6 +573,37 @@ struct FUpdatedPlayerSkillRating : FPlayerSkillRating
 	float                                              PrevSigma;                                     // 0x0074 (0x0004) [0x0000000000000000]               
 	int32_t                                            PrevTier;                                      // 0x0078 (0x0004) [0x0000000000000000]               
 	int32_t                                            PrevDivision;                                  // 0x007C (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.CachedRegionPing
+// 0x000C
+struct FCachedRegionPing
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	float                                              Ping;                                          // 0x0008 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.PartyMember
+// 0x0171
+struct FPartyMember
+{
+	struct FUniqueNetId                                PrimaryMemberId;                               // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                MemberId;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      MemberName;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            MatchmakeRestrictions;                         // 0x00A0 (0x0004) [0x0000000000000000]               
+	int32_t                                            LocalControllerId;                             // 0x00A4 (0x0004) [0x0000000000000000]               
+	int32_t                                            XpLevel;                                       // 0x00A8 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bCompletedChallenges : 1;                      // 0x00AC (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                            CrossChatState;                                // 0x00B0 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00B4 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bTradingEnabled : 1;                           // 0x00B4 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FUniqueNetId                                TradingMemberId;                               // 0x00B8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FGuid                                       TradeId;                                       // 0x0100 (0x0010) [0x0000000000000000]               
+	uint32_t                                           bReadyToLockTrade : 1;                         // 0x0110 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bReadyToConfirmTrade : 1;                      // 0x0110 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FPartyMemberServer                          Server;                                        // 0x0118 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueLobbyId                              PlatformParty;                                 // 0x0160 (0x0010) [0x0000000000000000]               
+	uint8_t                                            VoiceReportingLevel;                           // 0x0170 (0x0001) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerTitleData
@@ -1515,6 +1533,20 @@ struct FGetLeaderboardRankForUserData
 	struct FUniqueNetId                                PlayerID;                                      // 0x0010 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Value;                                         // 0x0058 (0x0004) [0x0000000000000000]               
 	float                                              MMR;                                           // 0x005C (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX.OnlineGameMatchmaking_X.MatchmakingRequestData
+// 0x0060
+struct FMatchmakingRequestData
+{
+	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FDSRegionInfo>                 Regions;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<int32_t>                              Playlists;                                     // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SecondsSearching;                              // 0x0030 (0x0004) [0x0000000000000000]               
+	class FString                                      CurrentServerID;                               // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIgnoreSkill : 1;                              // 0x0048 (0x0004) [0x0000000000000000] [0x00000002] 
+	class TArray<struct FUniqueNetId>                  PartyMembers;                                  // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_GetPopulation_X.GetPopulationData

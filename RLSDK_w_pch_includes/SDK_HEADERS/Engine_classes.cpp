@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 05:08PM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 07/29/2025 05:18PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.cpp
@@ -43828,6 +43828,28 @@ bool UOnlineProfileSettings::GetProfileSettingDefaultId(int32_t ProfileSettingId
 	memcpy_s(&ListIndex, sizeof(ListIndex), &GetProfileSettingDefaultId_Params.ListIndex, sizeof(GetProfileSettingDefaultId_Params.ListIndex));
 
 	return GetProfileSettingDefaultId_Params.ReturnValue;
+};
+
+// Function Engine.OnlineSessionManager.CanCrossplayTextChat
+// [0x00020800] (FUNC_Event | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineSessionManager::eventCanCrossplayTextChat()
+{
+	static UFunction* uFnCanCrossplayTextChat = nullptr;
+
+	if (!uFnCanCrossplayTextChat)
+	{
+		uFnCanCrossplayTextChat = UFunction::FindFunction("Function Engine.OnlineSessionManager.CanCrossplayTextChat");
+	}
+
+	UOnlineSessionManager_eventCanCrossplayTextChat_Params CanCrossplayTextChat_Params;
+	memset(&CanCrossplayTextChat_Params, 0, sizeof(CanCrossplayTextChat_Params));
+
+	this->ProcessEvent(uFnCanCrossplayTextChat, &CanCrossplayTextChat_Params, nullptr);
+
+	return CanCrossplayTextChat_Params.ReturnValue;
 };
 
 // Function Engine.OnlineSessionManager.GetRemoteSessionPlayerIds

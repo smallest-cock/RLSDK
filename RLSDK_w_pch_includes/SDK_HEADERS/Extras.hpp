@@ -7,6 +7,11 @@ inline bool validUObject(const UObject* obj)
 	return obj && !(obj->ObjectFlags & RF_BadObjectFlags);
 }
 
+inline bool sameId(const FUniqueNetId& left, const FUniqueNetId& right)
+{
+	return (left.EpicAccountId == right.EpicAccountId) && (left.Uid == right.Uid);
+}
+
 
 // ###############################################################################################
 // ############################    Unreflected UE3 Structs/Classes    ############################

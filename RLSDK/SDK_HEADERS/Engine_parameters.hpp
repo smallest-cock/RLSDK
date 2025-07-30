@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 18 (v2.53) 06/17/2025 05:08PM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 07/29/2025 05:18PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp
@@ -15458,6 +15458,13 @@ struct UOnlineProfileSettings_execGetProfileSettingDefaultId_Params
 	int32_t                                            DefaultId;                                        // 0x0004 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	int32_t                                            ListIndex;                                        // 0x0008 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.OnlineSessionManager.CanCrossplayTextChat
+// [0x00020800] 
+struct UOnlineSessionManager_eventCanCrossplayTextChat_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineSessionManager.GetRemoteSessionPlayerIds
