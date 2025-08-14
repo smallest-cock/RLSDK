@@ -991,7 +991,7 @@ public:
 
 	std::wstring ToWideString() const
 	{
-		if (empty())
+		if (empty() || !isValid())
 			return L"";
 		
 		return c_str();
@@ -999,7 +999,7 @@ public:
 
 	std::string ToString() const
 	{
-		if (empty())
+		if (empty() || !isValid())
 			return "";
 
 		return StringUtils::ToString(c_str());
@@ -1028,6 +1028,8 @@ public:
 		return ArrayMax;
 	}
 
+	bool isValid() const { return ArrayData && (ArrayCount >= 0) && (ArrayMax >= 0) && (ArrayCount <= ArrayMax); }
+
 	static FString create(const std::string& str);
 	static FString create(const FString& old);
 
@@ -1044,25 +1046,17 @@ public:
 
 	bool operator==(const FString& other) const
 	{
-		if (ArrayData == other.ArrayData)
-			return true;
-
-		if (!ArrayData || !other.ArrayData)
+		if (ArrayCount != other.ArrayCount)
 			return false;
 
-		return (wcscmp(ArrayData, other.ArrayData) == 0);
-	}
-
-	bool operator!=(const FString& other) const
-	{
-		if (ArrayData == other.ArrayData)
+		if (!isValid() || !other.isValid())
 			return false;
 
-		if (!ArrayData || !other.ArrayData)
-			return true;
-
-		return (wcscmp(ArrayData, other.ArrayData) != 0);
+		size_t len = ArrayCount > 0 ? static_cast<size_t>(ArrayCount - 1) : 0;
+		return wcsncmp(ArrayData, other.ArrayData, len) == 0;
 	}
+
+	bool operator!=(const FString& other) const { return !(*this == other); }
 };
 
 struct FScriptDelegate
