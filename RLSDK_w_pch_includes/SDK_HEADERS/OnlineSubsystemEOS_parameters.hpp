@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_parameters.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -61,6 +61,7 @@ struct UOnlineSubsystemEOS_eventFormatCurrency_Params
 {
 	class FString                                      Currency;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Price;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   formattedPrice;                                   // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   tempPrice;                                        // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -183,6 +184,7 @@ struct UOnlineSubsystemEOS_execOnUserOrphaned_Params
 struct UOnlineSubsystemEOS_execOpenStoreForItemsAsync_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -198,6 +200,7 @@ struct UOnlineSubsystemEOS_execOnStorePurchaseCompleteDelegate_Params
 struct UOnlineSubsystemEOS_execOpenStoreForItems_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -206,6 +209,7 @@ struct UOnlineSubsystemEOS_execOpenStoreForItems_Params
 struct UOnlineSubsystemEOS_execOpenStoreForDLC_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        DLC;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -223,6 +227,7 @@ struct UOnlineSubsystemEOS_execOpenPS4DisplayMode_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            DisplayMode;                                      // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            ServiceLabel;                                     // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
@@ -715,6 +720,7 @@ struct UOnlineSubsystemEOS_execOnReadOnlineStatsComplete_Params
 struct UOnlineSubsystemEOS_execReadOnlineStatsByRankAroundPlayer_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            NumRows;                                          // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -735,6 +741,7 @@ struct UOnlineSubsystemEOS_execReadOnlineStatsByRank_Params
 struct UOnlineSubsystemEOS_execReadOnlineStatsForFriends_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -753,6 +760,7 @@ struct UOnlineSubsystemEOS_execReadOnlineStats_Params
 struct UOnlineSubsystemEOS_execUnmuteAll_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -761,6 +769,7 @@ struct UOnlineSubsystemEOS_execUnmuteAll_Params
 struct UOnlineSubsystemEOS_execMuteAll_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAllowFriends : 1;                                // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -770,6 +779,7 @@ struct UOnlineSubsystemEOS_execMuteAll_Params
 struct UOnlineSubsystemEOS_execSetSpeechRecognitionObject_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USpeechRecognition*                          SpeechRecogObj;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -779,6 +789,7 @@ struct UOnlineSubsystemEOS_execSetSpeechRecognitionObject_Params
 struct UOnlineSubsystemEOS_execSelectVocabulary_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            VocabularyId;                                     // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -788,6 +799,7 @@ struct UOnlineSubsystemEOS_execSelectVocabulary_Params
 struct UOnlineSubsystemEOS_execClearRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -797,6 +809,7 @@ struct UOnlineSubsystemEOS_execClearRecognitionCompleteDelegate_Params
 struct UOnlineSubsystemEOS_execAddRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -811,6 +824,7 @@ struct UOnlineSubsystemEOS_execOnRecognitionComplete_Params
 struct UOnlineSubsystemEOS_execGetRecognitionResults_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FSpeechRecognizedWord>         Words;                                            // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -820,6 +834,7 @@ struct UOnlineSubsystemEOS_execGetRecognitionResults_Params
 struct UOnlineSubsystemEOS_execStopSpeechRecognition_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -828,6 +843,7 @@ struct UOnlineSubsystemEOS_execStopSpeechRecognition_Params
 struct UOnlineSubsystemEOS_execStartSpeechRecognition_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -871,6 +887,7 @@ struct UOnlineSubsystemEOS_execOnPlayerTalking_Params
 struct UOnlineSubsystemEOS_execUnmuteRemoteTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -880,6 +897,7 @@ struct UOnlineSubsystemEOS_execUnmuteRemoteTalker_Params
 struct UOnlineSubsystemEOS_execMuteRemoteTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -889,6 +907,7 @@ struct UOnlineSubsystemEOS_execMuteRemoteTalker_Params
 struct UOnlineSubsystemEOS_execSetRemoteTalkerPriority_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Priority;                                         // 0x0050 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0054 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -899,6 +918,7 @@ struct UOnlineSubsystemEOS_execSetRemoteTalkerPriority_Params
 struct UOnlineSubsystemEOS_execIsHeadsetPresent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -915,6 +935,7 @@ struct UOnlineSubsystemEOS_execIsRemotePlayerTalking_Params
 struct UOnlineSubsystemEOS_execIsLocalPlayerTalking_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -939,6 +960,7 @@ struct UOnlineSubsystemEOS_execRegisterRemoteTalker_Params
 struct UOnlineSubsystemEOS_execUnregisterLocalTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -947,6 +969,7 @@ struct UOnlineSubsystemEOS_execUnregisterLocalTalker_Params
 struct UOnlineSubsystemEOS_execRegisterLocalTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -955,6 +978,7 @@ struct UOnlineSubsystemEOS_execRegisterLocalTalker_Params
 struct UOnlineSubsystemEOS_eventGetPlayerUniqueNetIdFromIndex_Params
 {
 	int32_t                                            UserIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                ReturnValue;                                      // 0x0008 (0x0048) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FUniqueNetId                             PlayerID;                                         // 0x0050 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -964,6 +988,7 @@ struct UOnlineSubsystemEOS_eventGetPlayerUniqueNetIdFromIndex_Params
 struct UOnlineSubsystemEOS_eventGetPlayerNicknameFromIndex_Params
 {
 	int32_t                                            UserIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -998,6 +1023,7 @@ struct UOnlineSubsystemEOS_execEventGetAppPriceInfoComplete_Params
 struct UOnlineSubsystemEOS_execOnMicroTxnResponse_Params
 {
 	uint32_t                                           bAuthorized : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           OrderId;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -1031,6 +1057,7 @@ struct UOnlineAuthInterfaceEOS_execRequestMtxCode_Params
 struct UOnlineFriendsInterfaceEOS_execGetActivePlatformId_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                AccountId;                                        // 0x0008 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                PlatformId;                                       // 0x0050 (0x0048) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0098 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1041,6 +1068,7 @@ struct UOnlineFriendsInterfaceEOS_execGetActivePlatformId_Params
 struct UOnlineFriendsInterfaceEOS_execRequestLinkedAccounts_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  AccountIds;                                       // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1059,6 +1087,7 @@ struct UOnlineGameClipsInterfaceEOS_execEventClipErrorOccurred_Params
 {
 	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            ClipId;                                           // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UErrorType*                                  InErrorType;                                      // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -1246,6 +1275,7 @@ struct UOnlineGameClipsInterfaceEOS_execStartRecording_Params
 struct UOnlineGameInterfaceEOS_execAcceptGameInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1273,6 +1303,7 @@ struct UOnlineGameInterfaceEOS_execUpdateOnlineGame_Params
 struct UOnlinePersistentAuthInterfaceEOS_execAuthWithNintendoAccountToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      NintendoAccountToken;                             // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1282,6 +1313,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execAuthWithNintendoAccountToken_Params
 struct UOnlinePersistentAuthInterfaceEOS_execGetTimeUntilAuthExpiration_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1290,6 +1322,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execGetTimeUntilAuthExpiration_Params
 struct UOnlinePersistentAuthInterfaceEOS_execGetAuthExpirationTimestamp_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UDateTime*                                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1298,6 +1331,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execGetAuthExpirationTimestamp_Params
 struct UOnlinePersistentAuthInterfaceEOS_execLaunchAccountPortal_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1327,6 +1361,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execGetClientCredentials_Params
 struct UOnlinePersistentAuthInterfaceEOS_execGetContinuanceToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1335,6 +1370,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execGetContinuanceToken_Params
 struct UOnlinePersistentAuthInterfaceEOS_execUseRefreshToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      RefreshToken;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1344,6 +1380,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execUseRefreshToken_Params
 struct UOnlinePersistentAuthInterfaceEOS_execGetRefreshToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1352,6 +1389,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execGetRefreshToken_Params
 struct UOnlinePersistentAuthInterfaceEOS_execRequestPinGrantCode_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1360,6 +1398,7 @@ struct UOnlinePersistentAuthInterfaceEOS_execRequestPinGrantCode_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriendInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InviteAccepted;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1375,6 +1414,7 @@ struct UOnlinePlayerInterfaceEOS_execOnFriendInviteAccepted_Params
 struct UOnlinePlayerInterfaceEOS_execReadBlockList_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1383,6 +1423,7 @@ struct UOnlinePlayerInterfaceEOS_execReadBlockList_Params
 struct UOnlinePlayerInterfaceEOS_execGetBlockList_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlineFriend>                 OutBlockList;                                     // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -1391,6 +1432,7 @@ struct UOnlinePlayerInterfaceEOS_execGetBlockList_Params
 struct UOnlinePlayerInterfaceEOS_execAddPlayerUnblockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1399,6 +1441,7 @@ struct UOnlinePlayerInterfaceEOS_execAddPlayerUnblockedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddPlayerBlockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1407,6 +1450,7 @@ struct UOnlinePlayerInterfaceEOS_execAddPlayerBlockedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddBlockListUpdatedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1416,6 +1460,7 @@ struct UOnlinePlayerInterfaceEOS_execEpicIDToPlatformID_Params
 {
 	struct FUniqueNetId                                EpicAccountId;                                    // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TargetPlatform;                                   // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1440,6 +1485,7 @@ struct UOnlinePlayerInterfaceEOS_execGetEpicAccountId_Params
 struct UOnlinePlayerInterfaceEOS_execShowInviteUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InviteText;                                       // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1449,6 +1495,7 @@ struct UOnlinePlayerInterfaceEOS_execShowInviteUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowGamerCardUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1458,6 +1505,7 @@ struct UOnlinePlayerInterfaceEOS_execShowGamerCardUI_Params
 struct UOnlinePlayerInterfaceEOS_execSetRichPresence_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PresenceString;                                   // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      GameDataString;                                   // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -1474,6 +1522,7 @@ struct UOnlinePlayerInterfaceEOS_execGetFriendPresence_Params
 struct UOnlinePlayerInterfaceEOS_execRecordPlayersRecentlyMet_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  Players;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      GameDescription;                                  // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1501,6 +1550,7 @@ struct UOnlinePlayerInterfaceEOS_execOnSanitizeStringComplete_Params
 struct UOnlinePlayerInterfaceEOS_execHideKeyboardUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1509,6 +1559,7 @@ struct UOnlinePlayerInterfaceEOS_execHideKeyboardUI_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadPlayerCountryDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadPlayerCountryDelegate;                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1517,6 +1568,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadPlayerCountryDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddReadPlayerCountryDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadPlayerCountryDelegate;                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1540,6 +1592,7 @@ struct UOnlinePlayerInterfaceEOS_execGetPlayerCountry_Params
 struct UOnlinePlayerInterfaceEOS_execClearAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1548,6 +1601,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAvatarChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1556,6 +1610,7 @@ struct UOnlinePlayerInterfaceEOS_execAddAvatarChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execClearFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1564,6 +1619,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendPresenceChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_eventAddFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1586,6 +1642,7 @@ struct UOnlinePlayerInterfaceEOS_execOnAvatarChange_Params
 struct UOnlinePlayerInterfaceEOS_execUnlockAchievement_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            AchievementId;                                    // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              PercentComplete;                                  // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1596,6 +1653,7 @@ struct UOnlinePlayerInterfaceEOS_execUnlockAchievement_Params
 struct UOnlinePlayerInterfaceEOS_execReadAchievements_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TitleId;                                          // 0x0004 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bShouldReadText : 1;                              // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bShouldReadImages : 1;                            // 0x000C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -1607,6 +1665,7 @@ struct UOnlinePlayerInterfaceEOS_execReadAchievements_Params
 struct UOnlinePlayerInterfaceEOS_execGetAchievements_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FAchievementDetails>           Achievements;                                     // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            TitleId;                                          // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            ReturnValue;                                      // 0x001C (0x0001) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1617,6 +1676,7 @@ struct UOnlinePlayerInterfaceEOS_execGetAchievements_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadAchievementsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1625,6 +1685,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadAchievementsCompleteDelegate_Param
 struct UOnlinePlayerInterfaceEOS_execClearUnlockAchievementCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1633,6 +1694,7 @@ struct UOnlinePlayerInterfaceEOS_execClearUnlockAchievementCompleteDelegate_Para
 struct UOnlinePlayerInterfaceEOS_execAddReadAchievementsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1641,6 +1703,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadAchievementsCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddUnlockAchievementCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1670,6 +1733,7 @@ struct UOnlinePlayerInterfaceEOS_execShowControllerUI_Params
 struct UOnlinePlayerInterfaceEOS_execGetPlayerLanguage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1678,6 +1742,7 @@ struct UOnlinePlayerInterfaceEOS_execGetPlayerLanguage_Params
 struct UOnlinePlayerInterfaceEOS_execShowPlayersUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1686,6 +1751,7 @@ struct UOnlinePlayerInterfaceEOS_execShowPlayersUI_Params
 struct UOnlinePlayerInterfaceEOS_execClearProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1694,6 +1760,7 @@ struct UOnlinePlayerInterfaceEOS_execClearProfileDataChangedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1708,6 +1775,7 @@ struct UOnlinePlayerInterfaceEOS_execOnProfileDataChanged_Params
 struct UOnlinePlayerInterfaceEOS_execUnlockGamerPicture_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            PictureId;                                        // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1725,6 +1793,7 @@ struct UOnlinePlayerInterfaceEOS_execIsDeviceValid_Params
 struct UOnlinePlayerInterfaceEOS_execGetDeviceSelectionResults_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DeviceName;                                       // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ReturnValue;                                      // 0x0018 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1734,6 +1803,7 @@ struct UOnlinePlayerInterfaceEOS_execGetDeviceSelectionResults_Params
 struct UOnlinePlayerInterfaceEOS_execClearDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1742,6 +1812,7 @@ struct UOnlinePlayerInterfaceEOS_execClearDeviceSelectionDoneDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1757,6 +1828,7 @@ struct UOnlinePlayerInterfaceEOS_execOnDeviceSelectionComplete_Params
 struct UOnlinePlayerInterfaceEOS_execShowDeviceSelectionUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            SizeNeeded;                                       // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bForceShowUI : 1;                                 // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1767,6 +1839,7 @@ struct UOnlinePlayerInterfaceEOS_execShowDeviceSelectionUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowCustomPlayersUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  Players;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      Title;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Description;                                      // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -1799,6 +1872,7 @@ struct UOnlinePlayerInterfaceEOS_execSetKickPreviousUser_Params
 struct UOnlinePlayerInterfaceEOS_execShowLoginUIForOrphanedUser_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1807,6 +1881,7 @@ struct UOnlinePlayerInterfaceEOS_execShowLoginUIForOrphanedUser_Params
 struct UOnlinePlayerInterfaceEOS_execGetSyncedAchievements_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint32_t>                             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1815,6 +1890,7 @@ struct UOnlinePlayerInterfaceEOS_execGetSyncedAchievements_Params
 struct UOnlinePlayerInterfaceEOS_execIsGuestLogin_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1832,6 +1908,7 @@ struct UOnlinePlayerInterfaceEOS_execCanCommunicateVoice_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1843,6 +1920,7 @@ struct UOnlinePlayerInterfaceEOS_execCanCommunicateVideo_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1854,6 +1932,7 @@ struct UOnlinePlayerInterfaceEOS_execCanCommunicateText_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1865,6 +1944,7 @@ struct UOnlinePlayerInterfaceEOS_execCanShareUserCreatedContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1876,6 +1956,7 @@ struct UOnlinePlayerInterfaceEOS_execCanAccessPremiumVideoContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1887,6 +1968,7 @@ struct UOnlinePlayerInterfaceEOS_execCanAccessPremiumContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1898,6 +1980,7 @@ struct UOnlinePlayerInterfaceEOS_execCanUseCloudStorage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1909,6 +1992,7 @@ struct UOnlinePlayerInterfaceEOS_execCanRecordDVRClips_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1920,6 +2004,7 @@ struct UOnlinePlayerInterfaceEOS_execCanBrowseInternet_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1931,6 +2016,7 @@ struct UOnlinePlayerInterfaceEOS_execCanShareWithSocialNetwork_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1942,6 +2028,7 @@ struct UOnlinePlayerInterfaceEOS_execCanShareKinectContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1953,6 +2040,7 @@ struct UOnlinePlayerInterfaceEOS_execCanUploadFitnessData_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2006,6 +2094,7 @@ struct UOnlinePlayerInterfaceEOS_execAddLoginStatusChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnLoginStatusChange_Params
 {
 	uint8_t                                            NewStatus;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                NewId;                                            // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2177,6 +2266,7 @@ struct UOnlinePlayerInterfaceEOS_execAddInGamePost_Params
 {
 	class FString                                      InPostID;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            LocalUserNum;                                     // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        StringReplaceList;                                // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2186,6 +2276,7 @@ struct UOnlinePlayerInterfaceEOS_execAddInGamePost_Params
 struct UOnlinePlayerInterfaceEOS_execUpdateStat_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        StatName;                                         // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Points;                                           // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2217,6 +2308,7 @@ struct UOnlinePlayerInterfaceEOS_execOnSaveDataNoSpaceDialogComplete_Params
 struct UOnlinePlayerInterfaceEOS_execRecordPlayersRecentlyMetKeys_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FFriendHistoryKey>             PlayerKeys;                                       // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2234,6 +2326,7 @@ struct UOnlinePlayerInterfaceEOS_execIsAchievementUnlocked_Params
 struct UOnlinePlayerInterfaceEOS_execShowContentMarketplaceUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2242,6 +2335,7 @@ struct UOnlinePlayerInterfaceEOS_execShowContentMarketplaceUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowFriendsInviteUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2251,6 +2345,7 @@ struct UOnlinePlayerInterfaceEOS_execShowFriendsInviteUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowAchievementsUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2259,6 +2354,7 @@ struct UOnlinePlayerInterfaceEOS_execShowAchievementsUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowMessagesUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2267,6 +2363,7 @@ struct UOnlinePlayerInterfaceEOS_execShowMessagesUI_Params
 struct UOnlinePlayerInterfaceEOS_execShowFeedbackUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2318,6 +2415,7 @@ struct UOnlinePlayerInterfaceEOS_execOnUserSignInComplete_Params
 struct UOnlinePlayerInterfaceEOS_execShowCustomMessageUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  Recipients;                                       // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      MessageTitle;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      NonEditableMessage;                               // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -2330,6 +2428,7 @@ struct UOnlinePlayerInterfaceEOS_execShowCustomMessageUI_Params
 struct UOnlinePlayerInterfaceEOS_execClearCrossTitleProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TitleId;                                          // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -2338,6 +2437,7 @@ struct UOnlinePlayerInterfaceEOS_execClearCrossTitleProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execGetCrossTitleProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TitleId;                                          // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class UOnlineProfileSettings*                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2347,6 +2447,7 @@ struct UOnlinePlayerInterfaceEOS_execGetCrossTitleProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadCrossTitleProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2355,6 +2456,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadCrossTitleProfileSettingsCompleteD
 struct UOnlinePlayerInterfaceEOS_execAddReadCrossTitleProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2363,6 +2465,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadCrossTitleProfileSettingsCompleteDel
 struct UOnlinePlayerInterfaceEOS_execOnReadCrossTitleProfileSettingsComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TitleId;                                          // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
@@ -2372,6 +2475,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReadCrossTitleProfileSettingsComplete_Par
 struct UOnlinePlayerInterfaceEOS_execReadCrossTitleProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TitleId;                                          // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class UOnlineProfileSettings*                      ProfileSettings;                                  // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2382,6 +2486,7 @@ struct UOnlinePlayerInterfaceEOS_execReadCrossTitleProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execClearWritePlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2390,6 +2495,7 @@ struct UOnlinePlayerInterfaceEOS_execClearWritePlayerStorageCompleteDelegate_Par
 struct UOnlinePlayerInterfaceEOS_execAddWritePlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2398,6 +2504,7 @@ struct UOnlinePlayerInterfaceEOS_execAddWritePlayerStorageCompleteDelegate_Param
 struct UOnlinePlayerInterfaceEOS_execOnWritePlayerStorageComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
@@ -2406,6 +2513,7 @@ struct UOnlinePlayerInterfaceEOS_execOnWritePlayerStorageComplete_Params
 struct UOnlinePlayerInterfaceEOS_execWritePlayerStorage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlinePlayerStorage*                        PlayerStorage;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            DeviceID;                                         // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2440,6 +2548,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReadPlayerStorageForNetIdComplete_Params
 struct UOnlinePlayerInterfaceEOS_execReadPlayerStorageForNetId_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                NetId;                                            // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UOnlinePlayerStorage*                        PlayerStorage;                                    // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2450,6 +2559,7 @@ struct UOnlinePlayerInterfaceEOS_execReadPlayerStorageForNetId_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadPlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2458,6 +2568,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadPlayerStorageCompleteDelegate_Para
 struct UOnlinePlayerInterfaceEOS_execAddReadPlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2466,6 +2577,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadPlayerStorageCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnReadPlayerStorageComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
@@ -2474,6 +2586,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReadPlayerStorageComplete_Params
 struct UOnlinePlayerInterfaceEOS_execReadPlayerStorage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlinePlayerStorage*                        PlayerStorage;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            DeviceID;                                         // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2484,6 +2597,7 @@ struct UOnlinePlayerInterfaceEOS_execReadPlayerStorage_Params
 struct UOnlinePlayerInterfaceEOS_execGetPlayerStorage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlinePlayerStorage*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2492,6 +2606,7 @@ struct UOnlinePlayerInterfaceEOS_execGetPlayerStorage_Params
 struct UOnlinePlayerInterfaceEOS_execRequestNativePlatformAuthTicket_Params
 {
 	int32_t                                            LocalUserNum;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UOnlineSubsystem*                         NativeOnlineSubsystem;                            // 0x0020 (0x0008) [0x0000000000000000]               
 	// struct FUniqueNetId                             PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2503,6 +2618,7 @@ struct UOnlinePlayerInterfaceEOS_execRequestNativePlatformAuthTicket_Params
 struct UOnlinePlayerInterfaceEOS_execOnRequestNativePlatformAuthTicketComplete_Params
 {
 	int32_t                                            LocalUserNum;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PlatformAuthTicket;                               // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2526,6 +2642,7 @@ struct UOnlinePlayerInterfaceEOS_execConnectLogin_Params
 struct UOnlinePlayerInterfaceEOS_execHasIncomingFriendInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                InviteFrom;                                       // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2549,6 +2666,7 @@ struct UOnlinePlayerInterfaceEOS_execHasFriendsFunctionality_Params
 struct UOnlinePlayerInterfaceEOS_execDeleteMessage_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            MessageIndex;                                     // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2558,6 +2676,7 @@ struct UOnlinePlayerInterfaceEOS_execDeleteMessage_Params
 struct UOnlinePlayerInterfaceEOS_execClearFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2566,6 +2685,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendMessageReceivedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2574,6 +2694,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendMessageReceivedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnFriendMessageReceived_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SendingPlayer;                                    // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SendingNick;                                      // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0060 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -2584,6 +2705,7 @@ struct UOnlinePlayerInterfaceEOS_execOnFriendMessageReceived_Params
 struct UOnlinePlayerInterfaceEOS_execGetFriendMessages_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlineFriendMessage>          FriendMessages;                                   // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -2614,6 +2736,7 @@ struct UOnlinePlayerInterfaceEOS_execOnJoinFriendGameComplete_Params
 struct UOnlinePlayerInterfaceEOS_execJoinFriendGame_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Friend;                                           // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2623,6 +2746,7 @@ struct UOnlinePlayerInterfaceEOS_execJoinFriendGame_Params
 struct UOnlinePlayerInterfaceEOS_execClearReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -2632,6 +2756,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReceivedGameInviteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2640,6 +2765,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReceivedGameInviteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnReceivedGameInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InviterName;                                      // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2648,6 +2774,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReceivedGameInvite_Params
 struct UOnlinePlayerInterfaceEOS_execSendGameInviteToFriends_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  Friends;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Text;                                             // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2658,6 +2785,7 @@ struct UOnlinePlayerInterfaceEOS_execSendGameInviteToFriends_Params
 struct UOnlinePlayerInterfaceEOS_execSendGameInviteToFriend_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Friend;                                           // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Text;                                             // 0x0050 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2668,6 +2796,7 @@ struct UOnlinePlayerInterfaceEOS_execSendGameInviteToFriend_Params
 struct UOnlinePlayerInterfaceEOS_execSendMessageToFriendW_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Friend;                                           // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2678,6 +2807,7 @@ struct UOnlinePlayerInterfaceEOS_execSendMessageToFriendW_Params
 struct UOnlinePlayerInterfaceEOS_execClearFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2686,6 +2816,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendInviteCanceledDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2694,6 +2825,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendInviteCanceledDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnFriendInviteCanceled_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                CanceledUserId;                                   // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2702,6 +2834,7 @@ struct UOnlinePlayerInterfaceEOS_execOnFriendInviteCanceled_Params
 struct UOnlinePlayerInterfaceEOS_execClearFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2710,6 +2843,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendInviteReceivedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2718,6 +2852,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendInviteReceivedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnFriendInviteReceived_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                RequestingPlayer;                                 // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      RequestingNick;                                   // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0060 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -2728,6 +2863,7 @@ struct UOnlinePlayerInterfaceEOS_execOnFriendInviteReceived_Params
 struct UOnlinePlayerInterfaceEOS_execRemoveFriend_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                FormerFriend;                                     // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2737,6 +2873,7 @@ struct UOnlinePlayerInterfaceEOS_execRemoveFriend_Params
 struct UOnlinePlayerInterfaceEOS_execClearRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2745,6 +2882,7 @@ struct UOnlinePlayerInterfaceEOS_execClearRemoveFriendCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2753,6 +2891,7 @@ struct UOnlinePlayerInterfaceEOS_execAddRemoveFriendCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execOnRemoveFriendComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                RemovedID;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2761,6 +2900,7 @@ struct UOnlinePlayerInterfaceEOS_execOnRemoveFriendComplete_Params
 struct UOnlinePlayerInterfaceEOS_execDenyFriendInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                RequestingPlayer;                                 // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2770,6 +2910,7 @@ struct UOnlinePlayerInterfaceEOS_execDenyFriendInvite_Params
 struct UOnlinePlayerInterfaceEOS_execClearDenyFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2778,6 +2919,7 @@ struct UOnlinePlayerInterfaceEOS_execClearDenyFriendInviteCompleteDelegate_Param
 struct UOnlinePlayerInterfaceEOS_execAddDenyFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2794,6 +2936,7 @@ struct UOnlinePlayerInterfaceEOS_execOnDenyFriendInviteComplete_Params
 struct UOnlinePlayerInterfaceEOS_execAcceptFriendInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                RequestingPlayer;                                 // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2803,6 +2946,7 @@ struct UOnlinePlayerInterfaceEOS_execAcceptFriendInvite_Params
 struct UOnlinePlayerInterfaceEOS_execClearAcceptFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2811,6 +2955,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAcceptFriendInviteCompleteDelegate_Par
 struct UOnlinePlayerInterfaceEOS_execAddAcceptFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2827,6 +2972,7 @@ struct UOnlinePlayerInterfaceEOS_execOnAcceptFriendInviteComplete_Params
 struct UOnlinePlayerInterfaceEOS_execClearAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2835,6 +2981,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAddFriendByNameCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2850,6 +2997,7 @@ struct UOnlinePlayerInterfaceEOS_execOnAddFriendByNameComplete_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriendByName_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FriendName;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2860,6 +3008,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendByName_Params
 struct UOnlinePlayerInterfaceEOS_execQueryUserByDisplayName_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DisplayName;                                      // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2869,6 +3018,7 @@ struct UOnlinePlayerInterfaceEOS_execQueryUserByDisplayName_Params
 struct UOnlinePlayerInterfaceEOS_execClearQueryUserByDisplayNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2877,6 +3027,7 @@ struct UOnlinePlayerInterfaceEOS_execClearQueryUserByDisplayNameCompleteDelegate
 struct UOnlinePlayerInterfaceEOS_execAddQueryUserByDisplayNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2885,6 +3036,7 @@ struct UOnlinePlayerInterfaceEOS_execAddQueryUserByDisplayNameCompleteDelegate_P
 struct UOnlinePlayerInterfaceEOS_execOnQueryUserByDisplayName_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      QueriedDisplayName;                               // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                UserId;                                           // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -2894,6 +3046,7 @@ struct UOnlinePlayerInterfaceEOS_execOnQueryUserByDisplayName_Params
 struct UOnlinePlayerInterfaceEOS_execAddFriend_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                NewFriend;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0050 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2904,6 +3057,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriend_Params
 struct UOnlinePlayerInterfaceEOS_execClearAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2912,6 +3066,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAddFriendCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2928,6 +3083,7 @@ struct UOnlinePlayerInterfaceEOS_execOnAddFriendComplete_Params
 struct UOnlinePlayerInterfaceEOS_execGetKeyboardInputResults_Params
 {
 	uint8_t                                            bWasCanceled;                                     // 0x0000 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -2957,6 +3113,7 @@ struct UOnlinePlayerInterfaceEOS_execOnKeyboardInputComplete_Params
 struct UOnlinePlayerInterfaceEOS_execShowKeyboardUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      TitleText;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      DescriptionText;                                  // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIsPassword : 1;                                  // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -2971,6 +3128,7 @@ struct UOnlinePlayerInterfaceEOS_execShowKeyboardUI_Params
 struct UOnlinePlayerInterfaceEOS_execSetOnlineStatus_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            StatusId;                                         // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FLocalizedStringSetting>       LocalizedStringSettings;                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<struct FSettingsProperty>             Properties;                                       // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -2981,6 +3139,7 @@ struct UOnlinePlayerInterfaceEOS_execSetOnlineStatus_Params
 struct UOnlinePlayerInterfaceEOS_execGetFriendsList_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlineFriend>                 Friends;                                          // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            Count;                                            // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            StartingAt;                                       // 0x001C (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
@@ -2992,6 +3151,7 @@ struct UOnlinePlayerInterfaceEOS_execGetFriendsList_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -3001,6 +3161,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadFriendsCompleteDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3016,6 +3177,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReadFriendsComplete_Params
 struct UOnlinePlayerInterfaceEOS_execReadFriendsList_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            Count;                                            // 0x0004 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            StartingAt;                                       // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3026,6 +3188,7 @@ struct UOnlinePlayerInterfaceEOS_execReadFriendsList_Params
 struct UOnlinePlayerInterfaceEOS_execClearWriteProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -3035,6 +3198,7 @@ struct UOnlinePlayerInterfaceEOS_execClearWriteProfileSettingsCompleteDelegate_P
 struct UOnlinePlayerInterfaceEOS_execAddWriteProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3043,6 +3207,7 @@ struct UOnlinePlayerInterfaceEOS_execAddWriteProfileSettingsCompleteDelegate_Par
 struct UOnlinePlayerInterfaceEOS_execOnWriteProfileSettingsComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
@@ -3051,6 +3216,7 @@ struct UOnlinePlayerInterfaceEOS_execOnWriteProfileSettingsComplete_Params
 struct UOnlinePlayerInterfaceEOS_execWriteProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProfileSettings*                      ProfileSettings;                                  // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3060,6 +3226,7 @@ struct UOnlinePlayerInterfaceEOS_execWriteProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execGetProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProfileSettings*                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3068,6 +3235,7 @@ struct UOnlinePlayerInterfaceEOS_execGetProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -3077,6 +3245,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadProfileSettingsCompleteDelegate_Pa
 struct UOnlinePlayerInterfaceEOS_execAddReadProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3085,6 +3254,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadProfileSettingsCompleteDelegate_Para
 struct UOnlinePlayerInterfaceEOS_execOnReadProfileSettingsComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
@@ -3093,6 +3263,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReadProfileSettingsComplete_Params
 struct UOnlinePlayerInterfaceEOS_execReadProfileSettings_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProfileSettings*                      ProfileSettings;                                  // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3102,6 +3273,7 @@ struct UOnlinePlayerInterfaceEOS_execReadProfileSettings_Params
 struct UOnlinePlayerInterfaceEOS_execClearFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -3111,6 +3283,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendsChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_eventAddFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3163,6 +3336,7 @@ struct UOnlinePlayerInterfaceEOS_execAddLoginChangeDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execShowFriendsUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3171,6 +3345,7 @@ struct UOnlinePlayerInterfaceEOS_execShowFriendsUI_Params
 struct UOnlinePlayerInterfaceEOS_execIsMuted_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3180,6 +3355,7 @@ struct UOnlinePlayerInterfaceEOS_execIsMuted_Params
 struct UOnlinePlayerInterfaceEOS_execAreAnyFriends_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FFriendsQuery>                 Query;                                            // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3189,6 +3365,7 @@ struct UOnlinePlayerInterfaceEOS_execAreAnyFriends_Params
 struct UOnlinePlayerInterfaceEOS_execIsFriend_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3199,6 +3376,7 @@ struct UOnlinePlayerInterfaceEOS_execCanShowPresenceInformation_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3210,6 +3388,7 @@ struct UOnlinePlayerInterfaceEOS_execCanViewPlayerProfiles_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3221,6 +3400,7 @@ struct UOnlinePlayerInterfaceEOS_execCanPurchaseContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3232,6 +3412,7 @@ struct UOnlinePlayerInterfaceEOS_execCanDownloadUserContent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3243,6 +3424,7 @@ struct UOnlinePlayerInterfaceEOS_execCanCommunicate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            CommMethod;                                       // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            ReturnValue;                                      // 0x0008 (0x0001) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3253,6 +3435,7 @@ struct UOnlinePlayerInterfaceEOS_execCanPlayOnline_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PrivilegeLevelHint;                               // 0x0001 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAttemptToResolve : 1;                            // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      Reason;                                           // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3263,6 +3446,7 @@ struct UOnlinePlayerInterfaceEOS_execCanPlayOnline_Params
 struct UOnlinePlayerInterfaceEOS_execGetPlayerNickname_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -3271,6 +3455,7 @@ struct UOnlinePlayerInterfaceEOS_execGetPlayerNickname_Params
 struct UOnlinePlayerInterfaceEOS_execGetUniquePlayerId_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3288,6 +3473,7 @@ struct UOnlinePlayerInterfaceEOS_execGetLoginStatus_Params
 struct UOnlinePlayerInterfaceEOS_execClearLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -3297,6 +3483,7 @@ struct UOnlinePlayerInterfaceEOS_execClearLogoutCompletedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3312,6 +3499,7 @@ struct UOnlinePlayerInterfaceEOS_execOnLogoutCompleted_Params
 struct UOnlinePlayerInterfaceEOS_execLogout_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3320,6 +3508,7 @@ struct UOnlinePlayerInterfaceEOS_execLogout_Params
 struct UOnlinePlayerInterfaceEOS_execClearLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3328,6 +3517,7 @@ struct UOnlinePlayerInterfaceEOS_execClearLoginFailedDelegate_Params
 struct UOnlinePlayerInterfaceEOS_execAddLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3337,6 +3527,7 @@ struct UOnlinePlayerInterfaceEOS_execOnReceievedPinGrantCode_Params
 {
 	uint8_t                                            Result;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            LocalUserNum;                                     // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Code;                                             // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      URL;                                              // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            SecondsUntilExpiration;                           // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
@@ -3362,6 +3553,7 @@ struct UOnlinePlayerInterfaceEOS_execAutoLogin_Params
 struct UOnlinePlayerInterfaceEOS_execLogin_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      LoginName;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Password;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWantsLocalOnly : 1;                              // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -3373,6 +3565,7 @@ struct UOnlinePlayerInterfaceEOS_execLogin_Params
 struct UOnlinePlayerInterfaceEOS_execShowLoginUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bShowOnlineOnly : 1;                              // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3407,6 +3600,7 @@ struct UOnlinePlayerInterfaceEOS_execOnLoginChange_Params
 struct UOnlinePlayerInterfaceEOS_execOnPlayerUnblocked_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UError*                                      Error;                                            // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
@@ -3416,6 +3610,7 @@ struct UOnlinePlayerInterfaceEOS_execOnPlayerUnblocked_Params
 struct UOnlinePlayerInterfaceEOS_execOnPlayerBlocked_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UError*                                      Error;                                            // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
@@ -3485,6 +3680,7 @@ struct UOnlineStatsInterfaceEOS_execWriteOnlinePlayerScores_Params
 {
 	class FName                                        SessionName;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            LeaderboardId;                                    // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlinePlayerScore>            PlayerScores;                                     // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3563,6 +3759,7 @@ struct UOnlineStatsInterfaceEOS_execOnReadOnlineStatsComplete_Params
 struct UOnlineStatsInterfaceEOS_execReadOnlineStatsByRankAroundPlayer_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            NumRows;                                          // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3573,6 +3770,7 @@ struct UOnlineStatsInterfaceEOS_execReadOnlineStatsByRankAroundPlayer_Params
 struct UOnlineStatsInterfaceEOS_execReadOnlineStatsByRank_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            StartIndex;                                       // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            NumToRead;                                        // 0x0014 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
@@ -3584,6 +3782,7 @@ struct UOnlineStatsInterfaceEOS_execReadOnlineStatsByRank_Params
 struct UOnlineStatsInterfaceEOS_execReadOnlineStatsForFriends_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3593,6 +3792,7 @@ struct UOnlineStatsInterfaceEOS_execReadOnlineStatsForFriends_Params
 struct UOnlineStatsInterfaceEOS_execReadOnlineStats_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  Players;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3634,6 +3834,7 @@ struct UOnlineUserCloudFileInterfaceEOS_execDeleteUserFile_Params
 struct UOnlineUserCloudFileInterfaceEOS_execOnDeleteUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -3667,6 +3868,7 @@ struct UOnlineUserCloudFileInterfaceEOS_execWriteUserFile_Params
 struct UOnlineUserCloudFileInterfaceEOS_execOnWriteUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -3699,6 +3901,7 @@ struct UOnlineUserCloudFileInterfaceEOS_execReadUserFile_Params
 struct UOnlineUserCloudFileInterfaceEOS_execOnReadUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -3737,6 +3940,7 @@ struct UOnlineUserCloudFileInterfaceEOS_execEnumerateUserFiles_Params
 struct UOnlineUserCloudFileInterfaceEOS_execOnEnumerateUserFilesComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3780,6 +3984,7 @@ struct UOnlineVoiceInterfaceEOS_execSetVoiceReceiveVolume_Params
 struct UOnlineVoiceInterfaceEOS_execUnmuteAll_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3788,6 +3993,7 @@ struct UOnlineVoiceInterfaceEOS_execUnmuteAll_Params
 struct UOnlineVoiceInterfaceEOS_execMuteAll_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bAllowFriends : 1;                                // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3797,6 +4003,7 @@ struct UOnlineVoiceInterfaceEOS_execMuteAll_Params
 struct UOnlineVoiceInterfaceEOS_execSetSpeechRecognitionObject_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USpeechRecognition*                          SpeechRecogObj;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3806,6 +4013,7 @@ struct UOnlineVoiceInterfaceEOS_execSetSpeechRecognitionObject_Params
 struct UOnlineVoiceInterfaceEOS_execSelectVocabulary_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            VocabularyId;                                     // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3815,6 +4023,7 @@ struct UOnlineVoiceInterfaceEOS_execSelectVocabulary_Params
 struct UOnlineVoiceInterfaceEOS_execClearRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3823,6 +4032,7 @@ struct UOnlineVoiceInterfaceEOS_execClearRecognitionCompleteDelegate_Params
 struct UOnlineVoiceInterfaceEOS_execAddRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3831,6 +4041,7 @@ struct UOnlineVoiceInterfaceEOS_execAddRecognitionCompleteDelegate_Params
 struct UOnlineVoiceInterfaceEOS_execGetRecognitionResults_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FSpeechRecognizedWord>         Words;                                            // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3840,6 +4051,7 @@ struct UOnlineVoiceInterfaceEOS_execGetRecognitionResults_Params
 struct UOnlineVoiceInterfaceEOS_execStopSpeechRecognition_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3848,6 +4060,7 @@ struct UOnlineVoiceInterfaceEOS_execStopSpeechRecognition_Params
 struct UOnlineVoiceInterfaceEOS_execStartSpeechRecognition_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3884,6 +4097,7 @@ struct UOnlineVoiceInterfaceEOS_execAddPlayerTalkingDelegate_Params
 struct UOnlineVoiceInterfaceEOS_execUnmuteRemoteTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIsSystemWide : 1;                                // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0054 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3894,6 +4108,7 @@ struct UOnlineVoiceInterfaceEOS_execUnmuteRemoteTalker_Params
 struct UOnlineVoiceInterfaceEOS_execMuteRemoteTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIsSystemWide : 1;                                // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0054 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3904,6 +4119,7 @@ struct UOnlineVoiceInterfaceEOS_execMuteRemoteTalker_Params
 struct UOnlineVoiceInterfaceEOS_execSetRemoteTalkerPriority_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Priority;                                         // 0x0050 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0054 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -3914,6 +4130,7 @@ struct UOnlineVoiceInterfaceEOS_execSetRemoteTalkerPriority_Params
 struct UOnlineVoiceInterfaceEOS_execIsHeadsetPresent_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3930,6 +4147,7 @@ struct UOnlineVoiceInterfaceEOS_execIsRemotePlayerTalking_Params
 struct UOnlineVoiceInterfaceEOS_execIsLocalPlayerTalking_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3954,6 +4172,7 @@ struct UOnlineVoiceInterfaceEOS_execRegisterRemoteTalker_Params
 struct UOnlineVoiceInterfaceEOS_execUnregisterLocalTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3962,6 +4181,7 @@ struct UOnlineVoiceInterfaceEOS_execUnregisterLocalTalker_Params
 struct UOnlineVoiceInterfaceEOS_execRegisterLocalTalker_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4220,6 +4440,7 @@ struct UOnlineVoiceInterfaceEOS_execEventLeftVoiceRoom_Params
 struct U__OnlinePlayerInterfaceEOS__LinkedAccount_0x1_exec__OnlinePlayerInterfaceEOS__LinkedAccount_0x1_Params
 {
 	int32_t                                            instance;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PlatformAuthTicket;                               // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -4228,6 +4449,7 @@ struct U__OnlinePlayerInterfaceEOS__LinkedAccount_0x1_exec__OnlinePlayerInterfac
 struct U__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1_exec__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Code;                                             // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 

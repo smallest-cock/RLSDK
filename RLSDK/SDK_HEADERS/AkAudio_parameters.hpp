@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: AkAudio_parameters.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -344,6 +344,7 @@ struct UAkMusicDevice_execEventTrackEnd_Params
 struct UAkMusicDevice_execEventTrackStart_Params
 {
 	int32_t                                            PlayingID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FileMarker;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -596,6 +597,7 @@ struct UAkRevPhysicsSimulation_execCalcRPM_Params
 struct UAkRevPhysicsSimulation_execStep_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAkRevSimUpdateParams                       Params;                                           // 0x0008 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FAkRevSimFrame                              ReturnValue;                                      // 0x0050 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -709,6 +711,7 @@ struct UAkSoundSource_execEventMarker_Params
 {
 	class UAkSoundSource*                              Source;                                           // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	int32_t                                            PlayingID;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Marker;                                           // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 

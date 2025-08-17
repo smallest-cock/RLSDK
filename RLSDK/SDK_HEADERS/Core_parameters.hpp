@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_parameters.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -193,6 +193,7 @@ struct UObject_execPadString_Params
 {
 	class FString                                      Str;                                              // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	int32_t                                            Characters;                                       // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         PadIdx;                                           // 0x0028 (0x0004) [0x0000000000000000]               
 };
@@ -527,6 +528,7 @@ struct UObject_execGetRealArchetypeName_Params
 struct UObject_execFormatTime_Params
 {
 	int32_t                                            Seconds;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         Mins;                                             // 0x0018 (0x0004) [0x0000000000000000]               
 	// class FString                                   NewTimeString;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -677,6 +679,7 @@ struct UObject_execIsPendingKill_Params
 struct UObject_execRangeByteToFloatUnsigned_Params
 {
 	uint8_t                                            inputByte;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -685,6 +688,7 @@ struct UObject_execRangeByteToFloatUnsigned_Params
 struct UObject_execRangeByteToFloatSigned_Params
 {
 	uint8_t                                            inputByte;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -902,6 +906,7 @@ struct UObject_execDynamicLoadObject_Params
 	class FString                                      ObjectName;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UClass*                                      ObjectClass;                                      // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           MayFail : 1;                                      // 0x0018 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1090,6 +1095,7 @@ struct UObject_execLocalize_Params
 	class FString                                      KeyName;                                          // 0x0010 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	class FString                                      PackageName;                                      // 0x0020 (0x0010) [0x0000000000400890] (CPF_OptionalParm | CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	uint32_t                                           bOptional : 1;                                    // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0038 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1441,6 +1447,7 @@ struct UObject_execQuatSlerp_Params
 	struct FQuat                                       B;                                                // 0x0010 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	float                                              Alpha;                                            // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bShortestPath : 1;                                // 0x0024 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[8];                                      // 0x0028 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FQuat                                       ReturnValue;                                      // 0x0030 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1457,6 +1464,7 @@ struct UObject_execQuatToRotator_Params
 struct UObject_execQuatFromRotator_Params
 {
 	struct FRotator                                    A;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FQuat                                       ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1475,6 +1483,7 @@ struct UObject_execQuatFindBetween_Params
 {
 	struct FVector                                     A;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     B;                                                // 0x000C (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0018 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FQuat                                       ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1519,6 +1528,7 @@ struct UObject_execMatrixGetAxis_Params
 {
 	struct FMatrix                                     TM;                                               // 0x0000 (0x0040) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Axis;                                             // 0x0040 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0041 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FVector                                     ReturnValue;                                      // 0x0044 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1543,6 +1553,7 @@ struct UObject_execMatrixGetRotator_Params
 struct UObject_execMakeRotationMatrix_Params
 {
 	struct FRotator                                    Rotation;                                         // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FMatrix                                     ReturnValue;                                      // 0x0010 (0x0040) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1552,6 +1563,7 @@ struct UObject_execMakeRotationTranslationMatrix_Params
 {
 	struct FVector                                     Translation;                                      // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FRotator                                    Rotation;                                         // 0x000C (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0018 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FMatrix                                     ReturnValue;                                      // 0x0020 (0x0040) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1693,6 +1705,7 @@ struct UObject_execSplitString_Params
 	class FString                                      Source;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Delimiter;                                        // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bCullEmpty : 1;                                   // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     Result;                                           // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -1721,6 +1734,7 @@ struct UObject_execRepeatString_Params
 {
 	class FString                                      InValue;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Count;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   NewString;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         I;                                                // 0x0038 (0x0004) [0x0000000000000000]               
@@ -1733,6 +1747,7 @@ struct UObject_execJoinArrayQWord_Params
 	class TArray<uint64_t>                             QWordArray;                                       // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      delim;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreBlanks : 1;                                // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     StringArray;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// uint64_t                                        QWordValue;                                       // 0x0048 (0x0008) [0x0000000000000000]               
@@ -1745,6 +1760,7 @@ struct UObject_execJoinArrayInt_Params
 	class TArray<int32_t>                              IntArray;                                         // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      delim;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreBlanks : 1;                                // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     StringArray;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         IntValue;                                         // 0x0048 (0x0004) [0x0000000000000000]               
@@ -1757,6 +1773,7 @@ struct UObject_execJoinArrayName_Params
 	class TArray<class FName>                          NameArray;                                        // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      delim;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreBlanks : 1;                                // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     StringArray;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FName                                     NameValue;                                        // 0x0048 (0x0008) [0x0000000000000000]               
@@ -1769,6 +1786,7 @@ struct UObject_execJoinArrayStr_Params
 	class TArray<class FString>                        StringArray;                                      // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      delim;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreBlanks : 1;                                // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   out_Result;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -1799,6 +1817,7 @@ struct UObject_execSplit_Params
 	class FString                                      Text;                                             // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	class FString                                      SplitStr;                                         // 0x0010 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	uint32_t                                           bOmitSplitStr : 1;                                // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         pos;                                              // 0x0038 (0x0004) [0x0000000000000000]               
 };
@@ -1828,6 +1847,7 @@ struct UObject_execRepl_Params
 	class FString                                      Match;                                            // 0x0010 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	class FString                                      With;                                             // 0x0020 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	uint32_t                                           bCaseSensitive : 1;                               // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0038 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1844,6 +1864,7 @@ struct UObject_execAsc_Params
 struct UObject_execChr_Params
 {
 	int32_t                                            I;                                                // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1869,6 +1890,7 @@ struct UObject_execRight_Params
 {
 	class FString                                      S;                                                // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	int32_t                                            I;                                                // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -1878,6 +1900,7 @@ struct UObject_execLeft_Params
 {
 	class FString                                      S;                                                // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	int32_t                                            I;                                                // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -3156,6 +3179,7 @@ struct UObject_execSubtract_PreFloat_Params
 struct UObject_execToHex_Params
 {
 	int32_t                                            A;                                                // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -3630,6 +3654,7 @@ struct UObject_execDivideEqual_ByteByte_Params
 struct UObject_execMultiplyEqual_ByteFloat_Params
 {
 	uint8_t                                            A;                                                // 0x0000 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              B;                                                // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ReturnValue;                                      // 0x0008 (0x0001) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3985,6 +4010,7 @@ struct UErrorType_execCreateError_Params
 {
 	class FString                                      InErrorMessage;                                   // 0x0000 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InErrorCode;                                      // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4022,6 +4048,7 @@ struct UError_execGetLocalizedMessage_Params
 struct UDelegateTracker_execRemoveDelegate_Params
 {
 	int32_t                                            CallbackId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReturnValue;                                      // 0x0008 (0x0018) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -4059,6 +4086,7 @@ struct UDebugDrawer_eventPrintArrayProperty_Params
 {
 	class FString                                      PropertyName;                                     // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	int32_t                                            Index;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Value;                                            // 0x0018 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 };
 
@@ -4102,6 +4130,7 @@ struct UDebugDrawer_eventDebugArrayObject_Params
 {
 	class FString                                      Title;                                            // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	int32_t                                            Index;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     ForObj;                                           // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 

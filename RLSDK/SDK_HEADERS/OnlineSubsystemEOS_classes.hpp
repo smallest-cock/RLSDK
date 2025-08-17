@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -493,6 +493,7 @@ public:
 	class UOnlinePersistentAuthInterfaceEOS*           PersistentAuthInterfaceEOS;                    // 0x00A8 (0x0008) [0x0000000000000000]               
 	class UOnlineVoiceInterfaceEOS*                    VoiceInterfaceEOS;                             // 0x00B0 (0x0008) [0x0000000000000000]               
 	int32_t                                            DefaultLocalUser;                              // 0x00B8 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x00BC (0x0004) MISSED OFFSET
 	class FString                                      ProfileDataDirectory;                          // 0x00C0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      ProfileDataExtension;                          // 0x00D0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ReadProfileSettingsDelegates;                  // 0x00E0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -501,6 +502,7 @@ public:
 	class TArray<struct FOnlineProfileSetting>         LastProfileSettings;                           // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ReadFriendsDelegates;                          // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	EOnlineEnumerationReadState                        FriendsReadState;                              // 0x0128 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x7];                            // 0x0129 (0x0007) MISSED OFFSET
 	class TArray<struct FScriptDelegate>               FriendsChangeDelegates;                        // 0x0130 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               LoginFailedDelegates;                          // 0x0140 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               LoginCancelledDelegates;                       // 0x0150 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -886,6 +888,7 @@ class UOnlineUserCloudFileInterfaceEOS : public UObject
 public:
 	struct FPointer                                    PDSHandle;                                     // 0x0060 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	int32_t                                            LastReadFileErrorCode;                         // 0x0068 (0x0004) [0x0000000000003000] (CPF_Native | CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0070 (0x0008) [0x0000000000000000]               
 	class TArray<struct FScriptDelegate>               EnumerateUserFileCompleteDelegates;            // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ReadUserFileCompleteDelegates;                 // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1080,6 +1083,7 @@ class U__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1 : public 
 {
 public:
 	int32_t                                            LocalUserNum;                                  // 0x0060 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:

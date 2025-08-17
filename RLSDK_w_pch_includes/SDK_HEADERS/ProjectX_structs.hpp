@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -22,7 +22,7 @@
 */
 
 // ScriptStruct ProjectX._Types_X.SkillRating
-// 0x0008
+// Size: 0x0008
 struct FSkillRating
 {
 	float                                              Mu;                                            // 0x0000 (0x0004) [0x0000000000000000]               
@@ -30,34 +30,39 @@ struct FSkillRating
 };
 
 // ScriptStruct ProjectX._Types_X.ReservationData
-// 0x0110
+// Size: 0x0110
 struct FReservationData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                PartyID;                                       // 0x0058 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Status;                                        // 0x00A0 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x00A1 (0x0003) MISSED OFFSET
 	float                                              TimeoutTime;                                   // 0x00A4 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 	class APlayerReplicationInfo*                      PRI;                                           // 0x00B0 (0x0008) [0x0000000000000000]               
 	uint8_t                                            Team;                                          // 0x00B8 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x7];                            // 0x00B9 (0x0007) MISSED OFFSET
 	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0001000000000000]               
 	class UAddReservationMessage_X*                    ReservationMessage;                            // 0x00C8 (0x0008) [0x0000000000000000]               
 	class UIReservationConnection_X*                   Connection_Object;                             // 0x00D0 (0x0010) [0x0000000000000000] 
 	class UIReservationConnection_X*                   Connection_Interface;                          // 0x00D0 (0x0010) [0x0000000000000000]               
 	uint32_t                                           bIgnoreBeaconDisconnect : 1;                   // 0x00E0 (0x0004) [0x0000000000000000] [0x00000001] 
 	struct FSkillRating                                Skill;                                         // 0x00E4 (0x0008) [0x0000000000000000]               
+	uint8_t                                          UnknownData03[0x4];                            // 0x00EC (0x0004) MISSED OFFSET
 	class TArray<class FName>                          MapLikes;                                      // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FName>                          MapDislikes;                                   // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ClubReplicationInfo
-// 0x0043
+// Size: 0x0048 (0x0043 PropertySize + 0x0005 padding to satisfy MinAlignment of 8)
 struct FClubReplicationInfo
 {
 	uint64_t                                           ClubID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bVerified : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	class FName                                        EquippedTitle;                                 // 0x000C (0x0008) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0014 (0x0004) MISSED OFFSET
 	class FString                                      ClubName;                                      // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      ClubTag;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            PrimaryColor;                                  // 0x0038 (0x0004) [0x0000000000000000]               
@@ -65,26 +70,30 @@ struct FClubReplicationInfo
 	uint8_t                                            FirstBadgeTier;                                // 0x0040 (0x0001) [0x0000000000000000]               
 	uint8_t                                            SecondBadgeTier;                               // 0x0041 (0x0001) [0x0000000000000000]               
 	uint8_t                                            ThirdBadgeTier;                                // 0x0042 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x5];                      // 0x0043 (0x0005) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.MigrationReservationData
-// 0x00E0
+// Size: 0x00E0
 struct FMigrationReservationData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                PartyID;                                       // 0x0058 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Status;                                        // 0x00A0 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x00A1 (0x0003) MISSED OFFSET
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A4 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                            Team;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x00A9 (0x0003) MISSED OFFSET
 	struct FSkillRating                                Skill;                                         // 0x00AC (0x0008) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 	class TArray<class FName>                          MapLikes;                                      // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FName>                          MapDislikes;                                   // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UNetworkEncryptionKey*                       SecurityKey;                                   // 0x00D8 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerSeasonRewardProgress
-// 0x0050
+// Size: 0x0050
 struct FPlayerSeasonRewardProgress
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -93,7 +102,7 @@ struct FPlayerSeasonRewardProgress
 };
 
 // ScriptStruct ProjectX._Types_X.SuperSonicConfig
-// 0x000C
+// Size: 0x000C
 struct FSuperSonicConfig
 {
 	float                                              Speed;                                         // 0x0000 (0x0004) [0x0000000000000000]               
@@ -102,7 +111,7 @@ struct FSuperSonicConfig
 };
 
 // ScriptStruct ProjectX._Types_X.BumpAngleCheckConfig
-// 0x0014
+// Size: 0x0014
 struct FBumpAngleCheckConfig
 {
 	uint32_t                                           bEnabled : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -113,10 +122,11 @@ struct FBumpAngleCheckConfig
 };
 
 // ScriptStruct ProjectX._Types_X.BumpAngleCurveCheckConfig
-// 0x0068
+// Size: 0x0068
 struct FBumpAngleCurveCheckConfig
 {
 	uint32_t                                           bEnabled : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FInterpCurveFloat                           BumpAngleCurveYaw;                             // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FInterpCurveFloat                           BumpAngleCurvePitch;                           // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FInterpCurveFloat                           DemolishAngleCurveYaw;                         // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -124,10 +134,11 @@ struct FBumpAngleCurveCheckConfig
 };
 
 // ScriptStruct ProjectX._Types_X.CarInteractionConfig
-// 0x0104
+// Size: 0x0108 (0x0104 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FCarInteractionConfig
 {
 	float                                              PushFactor;                                    // 0x0000 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FInterpCurveFloat                           BumperPushFactorCurveGround;                   // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FInterpCurveFloat                           BumperPushFactorCurveAir;                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FInterpCurveFloat                           ZPushFactorCurve;                              // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -139,10 +150,11 @@ struct FCarInteractionConfig
 	uint32_t                                           bCheckImpactNormal : 1;                        // 0x00F8 (0x0004) [0x0000000000000000] [0x00000001] 
 	float                                              ImpactNormalDotProductDemo;                    // 0x00FC (0x0004) [0x0000000000000000]               
 	float                                              ImpactNormalDotProductBump;                    // 0x0100 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0104 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PsyNetPersonaData
-// 0x0078
+// Size: 0x0078
 struct FPsyNetPersonaData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -152,7 +164,7 @@ struct FPsyNetPersonaData
 };
 
 // ScriptStruct ProjectX._Types_X.SuperRegionData
-// 0x0030
+// Size: 0x0030
 struct FSuperRegionData
 {
 	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -161,7 +173,7 @@ struct FSuperRegionData
 };
 
 // ScriptStruct ProjectX._Types_X.RegionSecret
-// 0x0020
+// Size: 0x0020
 struct FRegionSecret
 {
 	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -169,16 +181,17 @@ struct FRegionSecret
 };
 
 // ScriptStruct ProjectX._Types_X.OnlineStatus
-// 0x0059
+// Size: 0x0060 (0x0059 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FOnlineStatus
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PresenceInfo;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            PresenceState;                                 // 0x0058 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0059 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.HonorDuelChallenge
-// 0x0090
+// Size: 0x0090
 struct FHonorDuelChallenge
 {
 	struct FUniqueNetId                                Challenger;                                    // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -186,14 +199,14 @@ struct FHonorDuelChallenge
 };
 
 // ScriptStruct ProjectX._Types_X.PsyNetBeaconPartyReservation
-// 0x0010
+// Size: 0x0010
 struct FPsyNetBeaconPartyReservation
 {
 	class TArray<struct FUniqueNetId>                  Members;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.PsyNetBeaconPlayerReservation
-// 0x0060
+// Size: 0x0060
 struct FPsyNetBeaconPlayerReservation
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -202,7 +215,7 @@ struct FPsyNetBeaconPlayerReservation
 };
 
 // ScriptStruct ProjectX._Types_X.PsyNetBeaconReservation
-// 0x0048
+// Size: 0x0048
 struct FPsyNetBeaconReservation
 {
 	class FString                                      ReservationID;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -215,7 +228,7 @@ struct FPsyNetBeaconReservation
 };
 
 // ScriptStruct ProjectX._Types_X.GFxBlurRect
-// 0x0020
+// Size: 0x0020
 struct FGFxBlurRect
 {
 	class FString                                      RectID;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -226,11 +239,12 @@ struct FGFxBlurRect
 };
 
 // ScriptStruct ProjectX._Types_X.ServerReservationData
-// 0x0070
+// Size: 0x0070
 struct FServerReservationData
 {
 	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0014 (0x0004) MISSED OFFSET
 	class FString                                      Region;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      DSRToken;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -240,23 +254,26 @@ struct FServerReservationData
 };
 
 // ScriptStruct ProjectX._Types_X.CheckReservationResponse
-// 0x007C
+// Size: 0x0080 (0x007C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FCheckReservationResponse
 {
 	class FString                                      IP;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0024 (0x0004) MISSED OFFSET
 	class FString                                      Region;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Host;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Port;                                          // 0x0048 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x004C (0x0004) MISSED OFFSET
 	class FString                                      ReservationID;                                 // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      DSConnectToken;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UNetworkEncryptionKey*                       Keys;                                          // 0x0070 (0x0008) [0x0000000000000000]               
 	uint32_t                                           IsServerKey : 1;                               // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x007C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.MapPrefs
-// 0x0020
+// Size: 0x0020
 struct FMapPrefs
 {
 	class TArray<class FName>                          Likes;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -264,7 +281,7 @@ struct FMapPrefs
 };
 
 // ScriptStruct ProjectX._Types_X.RenderProfile
-// 0x0028
+// Size: 0x0028
 struct FRenderProfile
 {
 	float                                              GameThreadTime;                                // 0x0000 (0x0004) [0x0000000000000000]               
@@ -280,7 +297,7 @@ struct FRenderProfile
 };
 
 // ScriptStruct ProjectX._Types_X.MetricsEvent
-// 0x0070
+// Size: 0x0070
 struct FMetricsEvent
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0020000000400000] (CPF_NeedCtorLink)
@@ -291,7 +308,7 @@ struct FMetricsEvent
 };
 
 // ScriptStruct ProjectX._Types_X.ActiveServerData
-// 0x00A0
+// Size: 0x00A0
 struct FActiveServerData
 {
 	struct FServerReservationData                      Reservation;                                   // 0x0000 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -301,14 +318,14 @@ struct FActiveServerData
 };
 
 // ScriptStruct ProjectX._Types_X.CrossplayGroup
-// 0x0010
+// Size: 0x0010
 struct FCrossplayGroup
 {
 	class TArray<uint8_t>                              Platforms;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ServerConnectionInfo
-// 0x0030
+// Size: 0x0030
 struct FServerConnectionInfo
 {
 	class FString                                      ServerAddress;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -336,17 +353,18 @@ struct FSkillMatchPartyRating : FTierSkillRating
 };
 
 // ScriptStruct ProjectX._Types_X.SkillMatchParty
-// 0x0020
+// Size: 0x0020
 struct FSkillMatchParty
 {
 	int32_t                                            PartyID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
 	float                                              PctTimePlayed;                                 // 0x0004 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bQuitter : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.SkillMatchData
-// 0x0024
+// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FSkillMatchData
 {
 	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -355,44 +373,49 @@ struct FSkillMatchData
 	int32_t                                            Team0Score;                                    // 0x0018 (0x0004) [0x0000000000000000]               
 	int32_t                                            Team1Score;                                    // 0x001C (0x0004) [0x0000000000000000]               
 	uint32_t                                           bOverTime : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.ClubColorSet
-// 0x0008
+// Size: 0x0008
 struct FClubColorSet
 {
 	uint8_t                                            TeamColorID;                                   // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                            CustomColorID;                                 // 0x0001 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x2];                            // 0x0002 (0x0002) MISSED OFFSET
 	uint32_t                                           bTeamColorSet : 1;                             // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
 };
 
 // ScriptStruct ProjectX._Types_X.CustomMatchTeamSettings
-// 0x001C
+// Size: 0x0020 (0x001C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FCustomMatchTeamSettings
 {
 	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FClubColorSet                               Colors;                                        // 0x0010 (0x0008) [0x0000000000000000]               
 	int32_t                                            GameScore;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.CustomMatchSettings
-// 0x0088
+// Size: 0x0088
 struct FCustomMatchSettings
 {
 	class FString                                      GameTags;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        MapName;                                       // 0x0010 (0x0008) [0x0000000000000000]               
 	uint8_t                                            GameMode;                                      // 0x0018 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0019 (0x0003) MISSED OFFSET
 	int32_t                                            MaxPlayerCount;                                // 0x001C (0x0004) [0x0000000000000000]               
 	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Password;                                      // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bPublic : 1;                                   // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bClubServer : 1;                               // 0x0040 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x0044 (0x0004) MISSED OFFSET
 	struct FCustomMatchTeamSettings                    TeamSettings[2];                               // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ServerResult
-// 0x00A8
+// Size: 0x00A8
 struct FServerResult
 {
 	class FString                                      Address;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -401,7 +424,7 @@ struct FServerResult
 };
 
 // ScriptStruct ProjectX._Types_X.SkillMatchPlayer
-// 0x0060
+// Size: 0x0060
 struct FSkillMatchPlayer
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -414,16 +437,17 @@ struct FSkillMatchPlayer
 };
 
 // ScriptStruct ProjectX._Types_X.ReplicatedReservationData
-// 0x0059
+// Size: 0x0060 (0x0059 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FReplicatedReservationData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Status;                                        // 0x0058 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0059 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PartyJoinMatchSettings
-// 0x0058
+// Size: 0x0058
 struct FPartyJoinMatchSettings
 {
 	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -436,19 +460,21 @@ struct FPartyJoinMatchSettings
 };
 
 // ScriptStruct ProjectX._Types_X.JoinMatchSettings
-// 0x0020
+// Size: 0x0020
 struct FJoinMatchSettings
 {
 	uint8_t                                            MatchType;                                     // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	int32_t                                            PlaylistId;                                    // 0x0004 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bFriendJoin : 1;                               // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bMigration : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
 	uint32_t                                           bRankedReconnect : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000004] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ReservationPlayerData
-// 0x00A0
+// Size: 0x00A0
 struct FReservationPlayerData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -464,7 +490,7 @@ struct FReservationPlayerData
 };
 
 // ScriptStruct ProjectX._Types_X.ReplicatedRBStateNoQuat
-// 0x0038
+// Size: 0x0038
 struct FReplicatedRBStateNoQuat
 {
 	float                                              QuatX;                                         // 0x0000 (0x0004) [0x0000000000000000]               
@@ -478,30 +504,32 @@ struct FReplicatedRBStateNoQuat
 };
 
 // ScriptStruct ProjectX._Types_X.ReplicatedRBState
-// (Custom Override)
+// Size: 0x0040 (0x003C PropertySize + 0x0004 padding to satisfy MinAlignment of 16)
 struct FReplicatedRBState
 {
-	struct FQuat                                       Quaternion;                                    // 0x0000 (0x0010) [0x0000000000000000]
-	struct FVector                                     Location;                                      // 0x0010 (0x000C) [0x0000000000000000]
-	struct FVector                                     LinearVelocity;                                // 0x001C (0x000C) [0x0000000000000000]
-	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]
-	float                                              Time;                                          // 0x0034 (0x0004) [0x0000000000000000]
-	uint32_t                                           bSleeping : 1;                                 // 0x0038 (0x0004) [0x0000000000000000] [0x00000001]
-	uint32_t                                           bNewData : 1;                                  // 0x0038 (0x0004) [0x0000000000000000] [0x00000002]
-	uint8_t                                            padding[0x4];                                  // Extra padding to make total struct size be 64 bytes (0x40)
+	struct FQuat                                       Quaternion;                                    // 0x0000 (0x0010) [0x0000000000000000]               
+	struct FVector                                     Location;                                      // 0x0010 (0x000C) [0x0000000000000000]               
+	struct FVector                                     LinearVelocity;                                // 0x001C (0x000C) [0x0000000000000000]               
+	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]               
+	float                                              Time;                                          // 0x0034 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bSleeping : 1;                                 // 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bNewData : 1;                                  // 0x0038 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x003C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerBinding
-// 0x002C
+// Size: 0x002C
 struct FPlayerBinding
 {
 	class FName                                        Action;                                        // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	class FName                                        Key;                                           // 0x0008 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                            AxisSign;                                      // 0x0010 (0x0001) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                            PressType;                                     // 0x0011 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                          UnknownData00[0x2];                            // 0x0012 (0x0002) MISSED OFFSET
 	float                                              Speed;                                         // 0x0014 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint32_t                                           bRequired : 1;                                 // 0x0018 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
 	uint8_t                                            Remappable;                                    // 0x001C (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x001D (0x0003) MISSED OFFSET
 	float                                              PressedTime;                                   // 0x0020 (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              ReleasedTime;                                  // 0x0024 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint32_t                                           bTapped : 1;                                   // 0x0028 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
@@ -509,13 +537,14 @@ struct FPlayerBinding
 };
 
 // ScriptStruct ProjectX._Types_X.BindingAction
-// 0x0038
+// Size: 0x0038
 struct FBindingAction
 {
 	class FName                                        Action;                                        // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	class FName                                        Category;                                      // 0x0008 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	class FName                                        Axis;                                          // 0x0010 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                            AxisSign;                                      // 0x0018 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                          UnknownData00[0x7];                            // 0x0019 (0x0007) MISSED OFFSET
 	class FString                                      Command;                                       // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bDisableRemapping : 1;                         // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	int32_t                                            Priority;                                      // 0x0034 (0x0004) [0x0000000000000000]               
@@ -529,19 +558,21 @@ struct FPlaylistTierSkillRating : FTierSkillRating
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerPermissions
-// 0x0009
+// Size: 0x000C (0x0009 PropertySize + 0x0003 padding to satisfy MinAlignment of 4)
 struct FPlayerPermissions
 {
 	uint8_t                                            TextChat;                                      // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                            VoiceChat;                                     // 0x0001 (0x0001) [0x0000000000000000]               
 	uint8_t                                            Trade;                                         // 0x0002 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x1];                            // 0x0003 (0x0001) MISSED OFFSET
 	uint32_t                                           bRequirePinForFriends : 1;                     // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bItemShopNotificationsAllowed : 1;             // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
 	uint8_t                                            VoiceReporting;                                // 0x0008 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x0009 (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PartyMemberServer
-// 0x0044
+// Size: 0x0048 (0x0044 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPartyMemberServer
 {
 	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -549,6 +580,7 @@ struct FPartyMemberServer
 	class FString                                      JoinName;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      JoinPassword;                                  // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            PlaylistId;                                    // 0x0040 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0044 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PlaylistSkillRating
@@ -562,6 +594,7 @@ struct FPlaylistSkillRating : FTierSkillRating
 // 0x004C (0x0024 - 0x0070)
 struct FPlayerSkillRating : FPlaylistSkillRating
 {
+	uint8_t                                          UnknownData00[0x4];                            // 0x0024 (0x0004) MISSED OFFSET
 	struct FUniqueNetId                                PlayerID;                                      // 0x0028 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
@@ -576,7 +609,7 @@ struct FUpdatedPlayerSkillRating : FPlayerSkillRating
 };
 
 // ScriptStruct ProjectX._Types_X.CachedRegionPing
-// 0x000C
+// Size: 0x000C
 struct FCachedRegionPing
 {
 	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
@@ -584,7 +617,7 @@ struct FCachedRegionPing
 };
 
 // ScriptStruct ProjectX._Types_X.PartyMember
-// 0x0171
+// Size: 0x0178 (0x0171 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FPartyMember
 {
 	struct FUniqueNetId                                PrimaryMemberId;                               // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -595,19 +628,22 @@ struct FPartyMember
 	int32_t                                            XpLevel;                                       // 0x00A8 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bCompletedChallenges : 1;                      // 0x00AC (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                            CrossChatState;                                // 0x00B0 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x00B1 (0x0003) MISSED OFFSET
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00B4 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bTradingEnabled : 1;                           // 0x00B4 (0x0004) [0x0000000000000000] [0x00000002] 
 	struct FUniqueNetId                                TradingMemberId;                               // 0x00B8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FGuid                                       TradeId;                                       // 0x0100 (0x0010) [0x0000000000000000]               
 	uint32_t                                           bReadyToLockTrade : 1;                         // 0x0110 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bReadyToConfirmTrade : 1;                      // 0x0110 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x0114 (0x0004) MISSED OFFSET
 	struct FPartyMemberServer                          Server;                                        // 0x0118 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueLobbyId                              PlatformParty;                                 // 0x0160 (0x0010) [0x0000000000000000]               
 	uint8_t                                            VoiceReportingLevel;                           // 0x0170 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0171 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerTitleData
-// 0x0028
+// Size: 0x0028
 struct FPlayerTitleData
 {
 	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
@@ -618,7 +654,7 @@ struct FPlayerTitleData
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerTitleCategory
-// 0x0028
+// Size: 0x0028
 struct FPlayerTitleCategory
 {
 	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000000000000]               
@@ -627,7 +663,7 @@ struct FPlayerTitleCategory
 };
 
 // ScriptStruct ProjectX._Types_X.LinkedAccount
-// 0x0020
+// Size: 0x0020
 struct FLinkedAccount
 {
 	class FString                                      identityProviderId;                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -635,7 +671,7 @@ struct FLinkedAccount
 };
 
 // ScriptStruct ProjectX._Types_X.IntVector3
-// 0x000C
+// Size: 0x000C
 struct FIntVector3
 {
 	int32_t                                            X;                                             // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
@@ -644,7 +680,7 @@ struct FIntVector3
 };
 
 // ScriptStruct ProjectX._Types_X.DownloadedImage
-// 0x0018
+// Size: 0x0018
 struct FDownloadedImage
 {
 	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -652,7 +688,7 @@ struct FDownloadedImage
 };
 
 // ScriptStruct ProjectX._Types_X.ClubMember
-// 0x00B1
+// Size: 0x00B8 (0x00B1 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FClubMember
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -660,10 +696,11 @@ struct FClubMember
 	class FString                                      PlayerName;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      EpicPlayerName;                                // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            RoleID;                                        // 0x00B0 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x00B1 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerPermissionsList
-// 0x0058
+// Size: 0x0058
 struct FPlayerPermissionsList
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -671,7 +708,7 @@ struct FPlayerPermissionsList
 };
 
 // ScriptStruct ProjectX._Types_X.NetStats
-// 0x000C
+// Size: 0x000C
 struct FNetStats
 {
 	float                                              PingMin;                                       // 0x0000 (0x0004) [0x0000000000000000]               
@@ -680,7 +717,7 @@ struct FNetStats
 };
 
 // ScriptStruct ProjectX.SetPlayerStorageResult_X.SetPlayerStorageResultItem
-// 0x0010
+// Size: 0x0010
 struct FSetPlayerStorageResultItem
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
@@ -689,16 +726,17 @@ struct FSetPlayerStorageResultItem
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.PendingStorage
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPendingStorage
 {
 	class UObject*                                     Data;                                          // 0x0000 (0x0008) [0x0001000000000000]               
 	class UClass*                                      DataClass;                                     // 0x0008 (0x0008) [0x0001000000000000]               
 	int32_t                                            Tick;                                          // 0x0010 (0x0004) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.BlockStatusReporter_X.PlayerBlockListenData
-// 0x0028
+// Size: 0x0028
 struct FPlayerBlockListenData
 {
 	class FString                                      EpicId;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -706,24 +744,26 @@ struct FPlayerBlockListenData
 };
 
 // ScriptStruct ProjectX.CabinedModeResponse.CabinedModeData
-// 0x0028
+// Size: 0x0028
 struct FCabinedModeData
 {
 	uint32_t                                           cabinedMode : 1;                               // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	class FString                                      AccountId;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FLinkedAccount>                linkedAccounts;                                // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameMatchmaking_X.DSRegionInfo
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FDSRegionInfo
 {
 	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Ping;                                          // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineMessageComponent_X.OnlineMessageHandler
-// 0x0018
+// Size: 0x0018
 struct FOnlineMessageHandler
 {
 	class UClass*                                      MessageClass;                                  // 0x0000 (0x0008) [0x0000000000000000]               
@@ -731,7 +771,7 @@ struct FOnlineMessageHandler
 };
 
 // ScriptStruct ProjectX.PartyMessage_LocalPlayers_X.SimplePartyMember
-// 0x0058
+// Size: 0x0058
 struct FSimplePartyMember
 {
 	struct FUniqueNetId                                MemberId;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -739,15 +779,16 @@ struct FSimplePartyMember
 };
 
 // ScriptStruct ProjectX.OnlineGameParty_X.PlaylistRestrictionPlayer
-// 0x004C
+// Size: 0x0050 (0x004C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPlaylistRestrictionPlayer
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Tier;                                          // 0x0048 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlinePlayerFriends_X.EpicSocialTaskData
-// 0x0060
+// Size: 0x0060
 struct FEpicSocialTaskData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -755,7 +796,7 @@ struct FEpicSocialTaskData
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.StorageMaxSize
-// 0x000C
+// Size: 0x000C
 struct FStorageMaxSize
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
@@ -763,7 +804,7 @@ struct FStorageMaxSize
 };
 
 // ScriptStruct ProjectX.RPC_PlayerStorageSet_X.SetPlayerStorageRequestItem
-// 0x0021
+// Size: 0x0028 (0x0021 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FSetPlayerStorageRequestItem
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
@@ -771,10 +812,11 @@ struct FSetPlayerStorageRequestItem
 	int32_t                                            Checksum;                                      // 0x000C (0x0004) [0x0001000000000000]               
 	class FString                                      Data;                                          // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Encoding;                                      // 0x0020 (0x0001) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0021 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.Parties_X.PsyNetPartyInfo
-// 0x0070
+// Size: 0x0070
 struct FPsyNetPartyInfo
 {
 	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -784,22 +826,24 @@ struct FPsyNetPartyInfo
 };
 
 // ScriptStruct ProjectX.WordFilterTypes_X.WordFilterPair
-// 0x0078
+// Size: 0x0078
 struct FWordFilterPair
 {
 	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Key;                                           // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Usage;                                         // 0x0030 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0031 (0x0003) MISSED OFFSET
 	uint32_t                                           bPending : 1;                                  // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
 	float                                              LastRequestTime;                               // 0x0038 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x003C (0x0004) MISSED OFFSET
 	class UError*                                      Error;                                         // 0x0040 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             ErrorCallback;                                 // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._SharedHelpers.Orientation
-// 0x0018
+// Size: 0x0018
 struct FOrientation
 {
 	struct FVector                                     Location;                                      // 0x0000 (0x000C) [0x0000000000000000]               
@@ -807,7 +851,7 @@ struct FOrientation
 };
 
 // ScriptStruct ProjectX.AddReservationMessagePublic_X.OnlinePlayerMapPrefs
-// 0x0068
+// Size: 0x0068
 struct FOnlinePlayerMapPrefs
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -816,7 +860,7 @@ struct FOnlinePlayerMapPrefs
 };
 
 // ScriptStruct ProjectX.AnimateParametersComponent_X.AnimatedParam
-// 0x0008
+// Size: 0x0008
 struct FAnimatedParam
 {
 	class FName                                        ParamName;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -844,7 +888,7 @@ struct FAnimatedLinearColorParam : FAnimatedParam
 };
 
 // ScriptStruct ProjectX.OnlineConfig_X.ModifierSubscription
-// 0x0038
+// Size: 0x0038
 struct FModifierSubscription
 {
 	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
@@ -853,7 +897,7 @@ struct FModifierSubscription
 };
 
 // ScriptStruct ProjectX.AprilConfig_X.QuickChatOverridePair
-// 0x0020
+// Size: 0x0020
 struct FQuickChatOverridePair
 {
 	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -861,7 +905,7 @@ struct FQuickChatOverridePair
 };
 
 // ScriptStruct ProjectX.Camera_X.CameraKnockBase
-// 0x0010
+// Size: 0x0010
 struct FCameraKnockBase
 {
 	float                                              BlendInTime;                                   // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
@@ -871,7 +915,7 @@ struct FCameraKnockBase
 };
 
 // ScriptStruct ProjectX.Camera_X.CameraOrientation
-// 0x002C
+// Size: 0x002C
 struct FCameraOrientation
 {
 	struct FVector                                     Focus;                                         // 0x0000 (0x000C) [0x0000000000000000]               
@@ -882,7 +926,7 @@ struct FCameraOrientation
 };
 
 // ScriptStruct ProjectX.CameraStateBlender_X.CameraTransition
-// 0x004C
+// Size: 0x0050 (0x004C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FCameraTransition
 {
 	class UCameraState_X*                              CameraState;                                   // 0x0000 (0x0008) [0x0000000000000000]               
@@ -890,6 +934,7 @@ struct FCameraTransition
 	float                                              RemainingTime;                                 // 0x0018 (0x0004) [0x0000000000000000]               
 	struct FCameraOrientation                          SnapshotPOV;                                   // 0x001C (0x002C) [0x0000000000000000]               
 	uint32_t                                           bStarted : 1;                                  // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.Camera_X.RotationCameraKnock
@@ -907,7 +952,7 @@ struct FLocationCameraKnock : FCameraKnockBase
 };
 
 // ScriptStruct ProjectX.Camera_X.VectorInterpRate
-// 0x0018
+// Size: 0x0018
 struct FVectorInterpRate
 {
 	float                                              MaxDistance;                                   // 0x0000 (0x0004) [0x0000000000000000]               
@@ -919,14 +964,14 @@ struct FVectorInterpRate
 };
 
 // ScriptStruct ProjectX.CheatManager_X.TestStructEvent
-// 0x0018
+// Size: 0x0018
 struct FTestStructEvent
 {
 	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.ClassPropertyConfig_X.PropertyOverride
-// 0x0030
+// Size: 0x0030
 struct FPropertyOverride
 {
 	class FString                                      Class;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -935,7 +980,7 @@ struct FPropertyOverride
 };
 
 // ScriptStruct ProjectX.ClientNetMetrics_X.PingStats
-// 0x0010
+// Size: 0x0010
 struct FPingStats
 {
 	float                                              Min;                                           // 0x0000 (0x0004) [0x0000000000000000]               
@@ -945,15 +990,16 @@ struct FPingStats
 };
 
 // ScriptStruct ProjectX.ClubDetails_X.StatBadge
-// 0x0009
+// Size: 0x000C (0x0009 PropertySize + 0x0003 padding to satisfy MinAlignment of 4)
 struct FStatBadge
 {
 	class FName                                        Stat;                                          // 0x0000 (0x0008) [0x0000000000000000]               
 	uint8_t                                            Badge;                                         // 0x0008 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x0009 (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.ColorPalette_X.ColorPosition
-// 0x0008
+// Size: 0x0008
 struct FColorPosition
 {
 	int32_t                                            Row;                                           // 0x0000 (0x0004) [0x0000000000000000]               
@@ -961,7 +1007,7 @@ struct FColorPosition
 };
 
 // ScriptStruct ProjectX.ContentConfig_X.ContentPair
-// 0x0020
+// Size: 0x0020
 struct FContentPair
 {
 	class FName                                        KeyName;                                       // 0x0000 (0x0008) [0x0000000000000000]               
@@ -971,7 +1017,7 @@ struct FContentPair
 };
 
 // ScriptStruct ProjectX.EffectsMap_X.EffectsMapping
-// 0x0010
+// Size: 0x0010
 struct FEffectsMapping
 {
 	class UPhysicalMaterial*                           PhysicalMaterial;                              // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -979,7 +1025,7 @@ struct FEffectsMapping
 };
 
 // ScriptStruct ProjectX.EngineShare_X.DynamicallyLoadedPackage
-// 0x0020
+// Size: 0x0020
 struct FDynamicallyLoadedPackage
 {
 	class FString                                      Tag;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -987,62 +1033,66 @@ struct FDynamicallyLoadedPackage
 };
 
 // ScriptStruct ProjectX.EOS_GetAccountsResponse.EOSAccountInfo
-// 0x0038
+// Size: 0x0038
 struct FEOSAccountInfo
 {
 	class FString                                      AccountId;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Created;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           Favorite : 1;                                  // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0024 (0x0004) MISSED OFFSET
 	class FString                                      NickName;                                      // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.EOS_AccountSummaryResponse.PrivacySettings
-// 0x0010
+// Size: 0x0010
 struct FPrivacySettings
 {
 	class FString                                      ReceiveInvites;                                // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.EOS_AccountSummaryResponse.AccountSettings
-// 0x0010
+// Size: 0x0010
 struct FAccountSettings
 {
 	struct FPrivacySettings                            Privacy;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.EOSMetrics_X.MetricEventJsonStruct
-// 0x0010
+// Size: 0x0010
 struct FMetricEventJsonStruct
 {
 	class TArray<class UEOSMetricEvent_X*>             Events;                                        // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.EpicConfig_X.ChatPermissionPair
-// 0x0011
+// Size: 0x0018 (0x0011 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FChatPermissionPair
 {
 	class FString                                      PermissionLabel;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Level;                                         // 0x0010 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0011 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.EpicConfig_X.TradePermissionPair
-// 0x0011
+// Size: 0x0018 (0x0011 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FTradePermissionPair
 {
 	class FString                                      PermissionLabel;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Level;                                         // 0x0010 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0011 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.EpicConfig_X.TradePermissionEnabledPair
-// 0x0008
+// Size: 0x0008
 struct FTradePermissionEnabledPair
 {
 	uint8_t                                            Level;                                         // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	uint32_t                                           bEnabled : 1;                                  // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // ScriptStruct ProjectX.EpochTimerTick_X.EpochTimer
-// 0x0020
+// Size: 0x0020
 struct FEpochTimer
 {
 	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1050,7 +1100,7 @@ struct FEpochTimer
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.NameParamPair
-// 0x0010
+// Size: 0x0010
 struct FNameParamPair
 {
 	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1058,7 +1108,7 @@ struct FNameParamPair
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.FloatParamPair
-// 0x000C
+// Size: 0x000C
 struct FFloatParamPair
 {
 	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1066,7 +1116,7 @@ struct FFloatParamPair
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.VectorParamPair
-// 0x0014
+// Size: 0x0014
 struct FVectorParamPair
 {
 	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1074,7 +1124,7 @@ struct FVectorParamPair
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.ColorParamPair
-// 0x0018
+// Size: 0x0018
 struct FColorParamPair
 {
 	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1082,7 +1132,7 @@ struct FColorParamPair
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.ActorParamPair
-// 0x0010
+// Size: 0x0010
 struct FActorParamPair
 {
 	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1090,15 +1140,16 @@ struct FActorParamPair
 };
 
 // ScriptStruct ProjectX.FXActor_X.AttachToParameterWithUnlockAxes
-// 0x0009
+// Size: 0x000C (0x0009 PropertySize + 0x0003 padding to satisfy MinAlignment of 4)
 struct FAttachToParameterWithUnlockAxes
 {
 	class FName                                        Parameter;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                            IgnoredAxis;                                   // 0x0008 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x0009 (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.FXActor_X.FXAttachment
-// 0x012C
+// Size: 0x0130 (0x012C PropertySize + 0x0004 padding to satisfy MinAlignment of 16)
 struct FFXAttachment
 {
 	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1109,6 +1160,7 @@ struct FFXAttachment
 	float                                              DetachDelay;                                   // 0x0024 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              LifeTime;                                      // 0x0028 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                            Target;                                        // 0x002C (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x3];                            // 0x002D (0x0003) MISSED OFFSET
 	class UActorComponent*                             Component;                                     // 0x0030 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class TArray<class UFXActorEvent_X*>               AttachAny;                                     // 0x0038 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class TArray<class UFXActorEvent_X*>               DetachAny;                                     // 0x0048 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
@@ -1117,6 +1169,7 @@ struct FFXAttachment
 	class TArray<class UFXAttachmentTraitBase_X*>      Traits;                                        // 0x0078 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 	struct FAttachToParameterWithUnlockAxes            AttachToParameterActor;                        // 0x0088 (0x000C) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                            OverrideAttachBehavior;                        // 0x0094 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData01[0x3];                            // 0x0095 (0x0003) MISSED OFFSET
 	struct FVector                                     OverrideAttachLocationOffset;                  // 0x0098 (0x000C) [0x0000000000000001] (CPF_Edit)    
 	struct FRotator                                    OverrideAttachRotationOffset;                  // 0x00A4 (0x000C) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bCreateDuplicates : 1;                         // 0x00B0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
@@ -1127,25 +1180,29 @@ struct FFXAttachment
 	uint32_t                                           bExistingAttachment : 1;                       // 0x00B0 (0x0004) [0x0000000800000000] [0x00000020] (CPF_EditorOnly)
 	float                                              AttachedTime;                                  // 0x00B4 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                            State;                                         // 0x00B8 (0x0001) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData02[0x3];                            // 0x00B9 (0x0003) MISSED OFFSET
 	float                                              WantsAttachmentChangeTime;                     // 0x00BC (0x0004) [0x0000000000002000] (CPF_Transient)
 	class USkeletalMeshComponent*                      AttachedToMesh;                                // 0x00C0 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
-	uint8_t                                            UnknownData00[0x8];                              // 0x00C8 (0x0008) MISSED OFFSET
+	uint8_t                                          UnknownData03[0x8];                            // 0x00C8 (0x0008) MISSED OFFSET
 	struct FMatrix                                     RelativeTransform;                             // 0x00D0 (0x0040) [0x0000000000002000] (CPF_Transient)
 	int32_t                                            BoneIndex;                                     // 0x0110 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData04[0x4];                            // 0x0114 (0x0004) MISSED OFFSET
 	class AActor*                                      AttachToActor;                                 // 0x0118 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FVector                                     OffsetToAttachActor;                           // 0x0120 (0x000C) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x012C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.FXActor_X.FXActorEventCheck
-// 0x000C
+// Size: 0x0010 (0x000C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FFXActorEventCheck
 {
 	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bHasTicked : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x000C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.FXActor_X.FXEventSubscription
-// 0x0038
+// Size: 0x0038
 struct FFXEventSubscription
 {
 	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1154,7 +1211,7 @@ struct FFXEventSubscription
 };
 
 // ScriptStruct ProjectX.ExplosionHitHandler_X.ContactInformation
-// 0x001C
+// Size: 0x001C
 struct FContactInformation
 {
 	struct FVector                                     ContactLocation;                               // 0x0000 (0x000C) [0x0000000000002000] (CPF_Transient)
@@ -1163,38 +1220,44 @@ struct FContactInformation
 };
 
 // ScriptStruct ProjectX.FakeData_X.FakeData1
-// 0x0035
+// Size: 0x0038 (0x0035 PropertySize + 0x0003 padding to satisfy MinAlignment of 8)
 struct FFakeData1
 {
 	class FString                                      string1;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        name1;                                         // 0x0010 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bool1 : 1;                                     // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x001C (0x0004) MISSED OFFSET
 	uint64_t                                           qword1;                                        // 0x0020 (0x0008) [0x0000000000000000]               
 	float                                              float1;                                        // 0x0028 (0x0004) [0x0000000000000000]               
 	uint8_t                                            byte1;                                         // 0x002C (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x002D (0x0003) MISSED OFFSET
 	int32_t                                            int1;                                          // 0x0030 (0x0004) [0x0000000000000000]               
 	uint8_t                                            enum1;                                         // 0x0034 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x0035 (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.FakeData_X.FakeData2
-// 0x0090
+// Size: 0x0090
 struct FFakeData2
 {
 	struct FFakeData1                                  struct1;                                       // 0x0000 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      string1;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        name1;                                         // 0x0048 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bool1 : 1;                                     // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0054 (0x0004) MISSED OFFSET
 	uint64_t                                           qword1;                                        // 0x0058 (0x0008) [0x0000000000000000]               
 	float                                              float1;                                        // 0x0060 (0x0004) [0x0000000000000000]               
 	uint8_t                                            byte1;                                         // 0x0064 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x0065 (0x0003) MISSED OFFSET
 	int32_t                                            int1;                                          // 0x0068 (0x0004) [0x0000000000000000]               
 	uint8_t                                            enum1;                                         // 0x006C (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x3];                            // 0x006D (0x0003) MISSED OFFSET
 	class TArray<struct FFakeData1>                    array1;                                        // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FString>                        array2;                                        // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.FakeData_X.FakeData3
-// 0x0130
+// Size: 0x0130
 struct FFakeData3
 {
 	class TArray<struct FFakeData2>                    array1;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1204,16 +1267,19 @@ struct FFakeData3
 	class TArray<struct FFakeData2>                    array2;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FFakeData2>                    array3;                                        // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bool1 : 1;                                     // 0x0080 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
 	uint64_t                                           qword1;                                        // 0x0088 (0x0008) [0x0000000000000000]               
 	float                                              float1;                                        // 0x0090 (0x0004) [0x0000000000000000]               
 	uint8_t                                            byte1;                                         // 0x0094 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x0095 (0x0003) MISSED OFFSET
 	int32_t                                            int1;                                          // 0x0098 (0x0004) [0x0000000000000000]               
 	uint8_t                                            enum1;                                         // 0x009C (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x3];                            // 0x009D (0x0003) MISSED OFFSET
 	struct FFakeData2                                  struct2;                                       // 0x00A0 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.FakeData_X.FakeData4
-// 0x011D
+// Size: 0x0120 (0x011D PropertySize + 0x0003 padding to satisfy MinAlignment of 8)
 struct FFakeData4
 {
 	struct FFakeData2                                  struct2;                                       // 0x0000 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1223,23 +1289,27 @@ struct FFakeData4
 	class FString                                      string1;                                       // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        name1;                                         // 0x00F8 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bool1 : 1;                                     // 0x0100 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0104 (0x0004) MISSED OFFSET
 	uint64_t                                           qword1;                                        // 0x0108 (0x0008) [0x0000000000000000]               
 	float                                              float1;                                        // 0x0110 (0x0004) [0x0000000000000000]               
 	uint8_t                                            byte1;                                         // 0x0114 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x0115 (0x0003) MISSED OFFSET
 	int32_t                                            int1;                                          // 0x0118 (0x0004) [0x0000000000000000]               
 	uint8_t                                            enum1;                                         // 0x011C (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x011D (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.GameInfo_X.PauserData
-// 0x000C
+// Size: 0x0010 (0x000C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPauserData
 {
 	class APlayerController*                           PC;                                            // 0x0000 (0x0008) [0x0000000000000000]               
 	int32_t                                            PauseNum;                                      // 0x0008 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x000C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.GameSettingConfig_X.GameSettingHidingOverride
-// 0x000C
+// Size: 0x000C
 struct FGameSettingHidingOverride
 {
 	class FName                                        SettingName;                                   // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1247,15 +1317,16 @@ struct FGameSettingHidingOverride
 };
 
 // ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreColumn
-// 0x000C
+// Size: 0x000C
 struct FGFxDataStoreColumn
 {
 	uint8_t                                            Type;                                          // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	class FName                                        Name;                                          // 0x0004 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreRow
-// 0x0018
+// Size: 0x0018
 struct FGFxDataStoreRow
 {
 	class TArray<struct FASValue>                      Values;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1263,26 +1334,28 @@ struct FGFxDataStoreRow
 };
 
 // ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreTable
-// 0x0080
+// Size: 0x0080
 struct FGFxDataStoreTable
 {
 	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
 	class TArray<struct FGFxDataStoreColumn>           Columns;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FGFxDataStoreRow>              Rows;                                          // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bLevelTransitionPersistent : 1;                // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x002C (0x0004) MISSED OFFSET
 	struct FMap_Mirror                                 PrimaryKeyMap;                                 // 0x0030 (0x0050) [0x0000000000001000] (CPF_Native)  
 };
 
 // ScriptStruct ProjectX.GFxDataStore_X.GFxDirtyRow
-// 0x0018
+// Size: 0x0018
 struct FGFxDirtyRow
 {
 	int32_t                                            RowNum;                                        // 0x0000 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	class TArray<class FName>                          DirtyValues;                                   // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.GFxDataStore_X.GFxDirtyTable
-// 0x0018
+// Size: 0x0018
 struct FGFxDirtyTable
 {
 	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1290,16 +1363,17 @@ struct FGFxDirtyTable
 };
 
 // ScriptStruct ProjectX.GFxEngine_X.DirtyObject
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FDirtyObject
 {
 	class UObject*                                     Object;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class UProperty*                                   Property;                                      // 0x0008 (0x0008) [0x0000000000000000]               
 	int32_t                                            Index;                                         // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.GFxSoundPack_X.SoundPackSoundRef
-// 0x0010
+// Size: 0x0010
 struct FSoundPackSoundRef
 {
 	class UAkSoundCue*                                 Sound;                                         // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1307,16 +1381,17 @@ struct FSoundPackSoundRef
 };
 
 // ScriptStruct ProjectX.LensFlareComponent_X.LensFlareFloatParamCurve
-// 0x0038
+// Size: 0x0038
 struct FLensFlareFloatParamCurve
 {
 	class FName                                        MaterialParamName;                             // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            MaterialParamIndex;                            // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	struct FRawDistributionFloat                       ValueOverTime;                                 // 0x0010 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheImportCallbackData
-// 0x0020
+// Size: 0x0020
 struct FCacheImportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
@@ -1324,7 +1399,7 @@ struct FCacheImportCallbackData
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheIOTaskBase
-// 0x0030
+// Size: 0x0030
 struct FCacheIOTaskBase
 {
 	class UObject*                                     CacheObject;                                   // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1340,7 +1415,7 @@ struct FCacheExportTask : FCacheIOTaskBase
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheExportCallbackData
-// 0x0020
+// Size: 0x0020
 struct FCacheExportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
@@ -1354,7 +1429,7 @@ struct FCacheImportTask : FCacheIOTaskBase
 };
 
 // ScriptStruct ProjectX.LocalClubData_X.PlayerClubPair
-// 0x0050
+// Size: 0x0050
 struct FPlayerClubPair
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1362,7 +1437,7 @@ struct FPlayerClubPair
 };
 
 // ScriptStruct ProjectX.LocalizationConfig_X.LocOverride
-// 0x0040
+// Size: 0x0040
 struct FLocOverride
 {
 	class FString                                      Section;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1372,7 +1447,7 @@ struct FLocOverride
 };
 
 // ScriptStruct ProjectX.MatchPlayerData_X.MatchSkillUpdate
-// 0x0024
+// Size: 0x0024
 struct FMatchSkillUpdate
 {
 	uint32_t                                           bValid : 1;                                    // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -1387,7 +1462,7 @@ struct FMatchSkillUpdate
 };
 
 // ScriptStruct ProjectX.OnlineClubProvider_X.PlayerClubSyncResult
-// 0x0050
+// Size: 0x0050
 struct FPlayerClubSyncResult
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1395,7 +1470,7 @@ struct FPlayerClubSyncResult
 };
 
 // ScriptStruct ProjectX.PresetMutators_X.CategorySettingPair
-// 0x0014
+// Size: 0x0014
 struct FCategorySettingPair
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1404,61 +1479,65 @@ struct FCategorySettingPair
 };
 
 // ScriptStruct ProjectX.RPC_CheckReplacementDedicatedServer_X.CheckReplacementDedicatedServerData
-// 0x0034
+// Size: 0x0038 (0x0034 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FCheckReplacementDedicatedServerData
 {
 	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership3
-// 0x0028
+// Size: 0x0028
 struct FSteamJsonResponseGetPublisherAppOwnership3
 {
 	uint64_t                                           AppID;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	uint64_t                                           OwnerSteamID;                                  // 0x0008 (0x0008) [0x0000000000000000]               
 	uint32_t                                           OwnsApp : 1;                                   // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           Permanent : 1;                                 // 0x0010 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0014 (0x0004) MISSED OFFSET
 	class FString                                      TimeStamp;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership2
-// 0x0010
+// Size: 0x0010
 struct FSteamJsonResponseGetPublisherAppOwnership2
 {
 	class TArray<struct FSteamJsonResponseGetPublisherAppOwnership3> Apps;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership
-// 0x0010
+// Size: 0x0010
 struct FSteamJsonResponseGetPublisherAppOwnership
 {
 	struct FSteamJsonResponseGetPublisherAppOwnership2 AppOwnership;                                  // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamPlayerDLCOwnershipState
-// 0x0011
+// Size: 0x0018 (0x0011 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
 struct FSteamPlayerDLCOwnershipState
 {
 	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
 	uint64_t                                           AppID;                                         // 0x0008 (0x0008) [0x0000000000000000]               
 	uint8_t                                            State;                                         // 0x0010 (0x0001) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0011 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.PlayerDLCInfo
-// 0x0074
+// Size: 0x0078 (0x0074 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPlayerDLCInfo
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FSteamPlayerDLCOwnershipState> DLCs;                                          // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             ValidationReadyDelegate;                       // 0x0058 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	float                                              TimeLastOwnershipRequest;                      // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0074 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamWebRequestData
-// 0x0050
+// Size: 0x0050
 struct FSteamWebRequestData
 {
 	class UWebRequest_X*                               Request;                                       // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1466,7 +1545,7 @@ struct FSteamWebRequestData
 };
 
 // ScriptStruct ProjectX.PsyNet_X.PsyNetKeys
-// 0x0040
+// Size: 0x0040
 struct FPsyNetKeys
 {
 	class FString                                      Environment;                                   // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1476,7 +1555,7 @@ struct FPsyNetKeys
 };
 
 // ScriptStruct ProjectX.ReservationBeacon_X.BeaconMessageHandler
-// 0x0018
+// Size: 0x0018
 struct FBeaconMessageHandler
 {
 	class UClass*                                      MessageClass;                                  // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1484,7 +1563,7 @@ struct FBeaconMessageHandler
 };
 
 // ScriptStruct ProjectX.OnlineGameLeaderboards_X.LeaderboardData
-// 0x0080
+// Size: 0x0080
 struct FLeaderboardData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
@@ -1499,7 +1578,7 @@ struct FLeaderboardData
 };
 
 // ScriptStruct ProjectX.OnlineGameLeaderboards_X.CachedLeaderboardData
-// 0x0020
+// Size: 0x0020
 struct FCachedLeaderboardData
 {
 	class FName                                        LeaderboardId;                                 // 0x0000 (0x0008) [0x0000000000002000] (CPF_Transient)
@@ -1508,7 +1587,7 @@ struct FCachedLeaderboardData
 };
 
 // ScriptStruct ProjectX.RPC_GetLeaderboardBase_X.GetLeaderboardBaseData
-// 0x0060
+// Size: 0x0060
 struct FGetLeaderboardBaseData
 {
 	class FString                                      PlayerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1518,7 +1597,7 @@ struct FGetLeaderboardBaseData
 };
 
 // ScriptStruct ProjectX.RPC_GetLeaderboardBase_X.GetLeaderboardPlatformBaseData
-// 0x0020
+// Size: 0x0020
 struct FGetLeaderboardPlatformBaseData
 {
 	class FString                                      Platform;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1526,7 +1605,7 @@ struct FGetLeaderboardPlatformBaseData
 };
 
 // ScriptStruct ProjectX.RPC_GetLeaderboardRankForUsersBase_X.GetLeaderboardRankForUserData
-// 0x0060
+// Size: 0x0060
 struct FGetLeaderboardRankForUserData
 {
 	class FString                                      PlayerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1536,21 +1615,23 @@ struct FGetLeaderboardRankForUserData
 };
 
 // ScriptStruct ProjectX.OnlineGameMatchmaking_X.MatchmakingRequestData
-// 0x0060
+// Size: 0x0060
 struct FMatchmakingRequestData
 {
 	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FDSRegionInfo>                 Regions;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<int32_t>                              Playlists;                                     // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            SecondsSearching;                              // 0x0030 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	class FString                                      CurrentServerID;                               // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bIgnoreSkill : 1;                              // 0x0048 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x004C (0x0004) MISSED OFFSET
 	class TArray<struct FUniqueNetId>                  PartyMembers;                                  // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_GetPopulation_X.GetPopulationData
-// 0x0008
+// Size: 0x0008
 struct FGetPopulationData
 {
 	int32_t                                            Playlist;                                      // 0x0000 (0x0004) [0x0000000000000000]               
@@ -1558,56 +1639,61 @@ struct FGetPopulationData
 };
 
 // ScriptStruct ProjectX.OnlineGamePrivateMatch_X.PrivateMatchmakingRequestData
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPrivateMatchmakingRequestData
 {
 	class FString                                      SubRegionToMatchmake;                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.RPC_GetGameServerPingList2_X.GetGameServerPingListData
-// 0x0058
+// Size: 0x0058
 struct FGetGameServerPingListData
 {
 	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	class FString                                      Address;                                       // 0x0038 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	class FString                                      SubRegion;                                     // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_GetGameServerPingList_X.GetGameServerPingListData_Deprecated
-// 0x0048
+// Size: 0x0048
 struct FGetGameServerPingListData_Deprecated
 {
 	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	class FString                                      Address;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.OnlineGameReservations_AssignTeamsByParty_X.PartyByTeam
-// 0x0050
+// Size: 0x0050
 struct FPartyByTeam
 {
 	struct FUniqueNetId                                PartyID;                                       // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Team;                                          // 0x0048 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0049 (0x0003) MISSED OFFSET
 	int32_t                                            Size;                                          // 0x004C (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.OnlineGameReservations_X.TeamPairHistory
-// 0x0094
+// Size: 0x0098 (0x0094 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FTeamPairHistory
 {
 	struct FUniqueNetId                                PartyA;                                        // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                PartyB;                                        // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Count;                                         // 0x0090 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0094 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameReservations_X.PendingReservation
-// 0x0018
+// Size: 0x0018
 struct FPendingReservation
 {
 	class UIReservationConnection_X*                   Connection_Object;                             // 0x0000 (0x0010) [0x0000000000000000] 
@@ -1616,7 +1702,7 @@ struct FPendingReservation
 };
 
 // ScriptStruct ProjectX.OnlineGameSkill_X.SkillSyncRequest
-// 0x0068
+// Size: 0x0068
 struct FSkillSyncRequest
 {
 	class URPC_X*                                      RPC;                                           // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1625,7 +1711,7 @@ struct FSkillSyncRequest
 };
 
 // ScriptStruct ProjectX.RPC_GetPartyMemberSkill_X.PartyMemberSkill
-// 0x0058
+// Size: 0x0058
 struct FPartyMemberSkill
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1633,15 +1719,16 @@ struct FPartyMemberSkill
 };
 
 // ScriptStruct ProjectX.OnlineGameStats_X.UploadStatData
-// 0x004C
+// Size: 0x0050 (0x004C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FUploadStatData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Value;                                         // 0x0048 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameStats_X.UploadStatDataSet
-// 0x0018
+// Size: 0x0018
 struct FUploadStatDataSet
 {
 	class FName                                        StatId;                                        // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1649,7 +1736,7 @@ struct FUploadStatDataSet
 };
 
 // ScriptStruct ProjectX.OnlineGameWordFilterProcessor_X.WordFilterRequest
-// 0x0040
+// Size: 0x0040
 struct FWordFilterRequest
 {
 	class UWebRequest_X*                               Request;                                       // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1659,16 +1746,17 @@ struct FWordFilterRequest
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageManifest_X.StorageMetadata
-// 0x000D
+// Size: 0x0010 (0x000D PropertySize + 0x0003 padding to satisfy MinAlignment of 4)
 struct FStorageMetadata
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
 	int32_t                                            Checksum;                                      // 0x0008 (0x0004) [0x0001000000000000]               
 	uint8_t                                            Encoding;                                      // 0x000C (0x0001) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x000D (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncResult
-// 0x001D
+// Size: 0x0020 (0x001D PropertySize + 0x0003 padding to satisfy MinAlignment of 8)
 struct FOnlinePlayerStorageSyncResult
 {
 	class UClass*                                      DataClass;                                     // 0x0000 (0x0008) [0x0001000000000000]               
@@ -1677,19 +1765,21 @@ struct FOnlinePlayerStorageSyncResult
 	int32_t                                            Checksum;                                      // 0x0014 (0x0004) [0x0001000000000000]               
 	uint32_t                                           bChecksumMatch : 1;                            // 0x0018 (0x0004) [0x0001000000000000] [0x00000001] 
 	uint8_t                                            Encoding;                                      // 0x001C (0x0001) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x001D (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncRequest
-// 0x000D
+// Size: 0x0010 (0x000D PropertySize + 0x0003 padding to satisfy MinAlignment of 8)
 struct FOnlinePlayerStorageSyncRequest
 {
 	class UObject*                                     DataObj;                                       // 0x0000 (0x0008) [0x0001000000000000]               
 	int32_t                                            ClientTick;                                    // 0x0008 (0x0004) [0x0001000000000000]               
 	uint8_t                                            Encoding;                                      // 0x000C (0x0001) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x000D (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.RPC_PlayerStorageGet_X.GetPlayerStorageRequestItem
-// 0x0018
+// Size: 0x0018
 struct FGetPlayerStorageRequestItem
 {
 	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
@@ -1699,7 +1789,7 @@ struct FGetPlayerStorageRequestItem
 };
 
 // ScriptStruct ProjectX.PartyMessageQueue_X.PendingMessage
-// 0x0020
+// Size: 0x0020
 struct FPendingMessage
 {
 	struct FUniqueLobbyId                              LobbyId;                                       // 0x0000 (0x0010) [0x0000000000000000]               
@@ -1707,7 +1797,7 @@ struct FPendingMessage
 };
 
 // ScriptStruct ProjectX.Parties_X.PsyNetPartyMember
-// 0x0080
+// Size: 0x0080
 struct FPsyNetPartyMember
 {
 	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1718,7 +1808,7 @@ struct FPsyNetPartyMember
 };
 
 // ScriptStruct ProjectX.Parties_X.PartyInvite
-// 0x0078
+// Size: 0x0078
 struct FPartyInvite
 {
 	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1729,7 +1819,7 @@ struct FPartyInvite
 };
 
 // ScriptStruct ProjectX.PsyNetService_PartyJoinRequestAccepted_X.PartyData
-// 0x0080
+// Size: 0x0080
 struct FPartyData
 {
 	struct FPsyNetPartyInfo                            Info;                                          // 0x0000 (0x0070) [0x0001000000400000] (CPF_NeedCtorLink)
@@ -1737,7 +1827,7 @@ struct FPartyData
 };
 
 // ScriptStruct ProjectX.PartyMetrics_X.PartyMetricsData
-// 0x000C
+// Size: 0x000C
 struct FPartyMetricsData
 {
 	int32_t                                            LocalPlayers;                                  // 0x0000 (0x0004) [0x0000000000000000]               
@@ -1746,16 +1836,17 @@ struct FPartyMetricsData
 };
 
 // ScriptStruct ProjectX.PlayerInput_X.GamepadDeadzoneSettings
-// 0x0010
+// Size: 0x0010
 struct FGamepadDeadzoneSettings
 {
 	uint8_t                                            Type;                                          // 0x0000 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	class FName                                        Key;                                           // 0x0004 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	float                                              Deadzone;                                      // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
 };
 
 // ScriptStruct ProjectX.PlayerInput_X.KeyboardAxisBlendSettings
-// 0x000C
+// Size: 0x000C
 struct FKeyboardAxisBlendSettings
 {
 	class FName                                        Axis;                                          // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1763,15 +1854,16 @@ struct FKeyboardAxisBlendSettings
 };
 
 // ScriptStruct ProjectX.PlayerInput_X.RawAxisValue
-// 0x0010
+// Size: 0x0010
 struct FRawAxisValue
 {
 	float                                              Value;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	uint64_t                                           LastFrameChanged;                              // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.PostProcessManager_X.PPEffectDefaults
-// 0x000C
+// Size: 0x000C
 struct FPPEffectDefaults
 {
 	class FName                                        EffectName;                                    // 0x0000 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
@@ -1779,7 +1871,7 @@ struct FPPEffectDefaults
 };
 
 // ScriptStruct ProjectX.PostProcessManager_X.PPPersistentEffectDefaults
-// 0x001C
+// Size: 0x001C
 struct FPPPersistentEffectDefaults
 {
 	class FName                                        EffectName;                                    // 0x0000 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
@@ -1789,7 +1881,7 @@ struct FPPPersistentEffectDefaults
 };
 
 // ScriptStruct ProjectX.PostProcessManager_X.PPChainInfo
-// 0x0010
+// Size: 0x0010
 struct FPPChainInfo
 {
 	class FName                                        ChainName;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -1797,7 +1889,7 @@ struct FPPChainInfo
 };
 
 // ScriptStruct ProjectX.PostProcessManager_X.PostProcessOverride
-// 0x0184
+// Size: 0x0188 (0x0184 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPostProcessOverride
 {
 	struct FPostProcessSettings                        Settings;                                      // 0x0000 (0x0168) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1807,10 +1899,11 @@ struct FPostProcessOverride
 	float                                              BlendOutTime;                                  // 0x017C (0x0004) [0x0000000000000000]               
 	uint32_t                                           bEnabled : 1;                                  // 0x0180 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	uint32_t                                           bDefaultEnabled : 1;                           // 0x0180 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0184 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.PsyNetServiceSubscriptions_X.ServiceSubscription
-// 0x0020
+// Size: 0x0020
 struct FServiceSubscription
 {
 	class UClass*                                      Class;                                         // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1818,26 +1911,29 @@ struct FServiceSubscription
 };
 
 // ScriptStruct ProjectX.PsyNetChannel_X.PendingChannelService
-// 0x001C
+// Size: 0x0020 (0x001C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPendingChannelService
 {
 	class UPsyNetClientService_X*                      Service;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	int32_t                                            MessageId;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	class UAsyncTask*                                  Task;                                          // 0x0010 (0x0008) [0x0000000000000000]               
 	float                                              ReceiveTime;                                   // 0x0018 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.PsyNetMessengerWebSocket_X.QueuedPsyNetMessage
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FQueuedPsyNetMessage
 {
 	class UPsyNetMessage_X*                            Message;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
 	float                                              TimeoutTime;                                   // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.PsyNetMetrics_X.ServiceMetricsData
-// 0x0024
+// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FServiceMetricsData
 {
 	class FString                                      Service;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1846,10 +1942,11 @@ struct FServiceMetricsData
 	float                                              MinLatency;                                    // 0x0018 (0x0004) [0x0000000000000000]               
 	float                                              MaxLatency;                                    // 0x001C (0x0004) [0x0000000000000000]               
 	float                                              AvgLatency;                                    // 0x0020 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.PsyNetMetrics_X.ServiceErrorData
-// 0x000C
+// Size: 0x000C
 struct FServiceErrorData
 {
 	class FName                                        Type;                                          // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1857,7 +1954,7 @@ struct FServiceErrorData
 };
 
 // ScriptStruct ProjectX.PsyNetRequestQue_X.PsyNetRequest
-// 0x0018
+// Size: 0x0018
 struct FPsyNetRequest
 {
 	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1867,7 +1964,7 @@ struct FPsyNetRequest
 };
 
 // ScriptStruct ProjectX.PsyNetService_PersonaInfo_X.OnlinePersonaData
-// 0x0078
+// Size: 0x0078
 struct FOnlinePersonaData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1877,14 +1974,14 @@ struct FOnlinePersonaData
 };
 
 // ScriptStruct ProjectX.RandomStream_X.RandomStream_Mirror
-// 0x0004
+// Size: 0x0004
 struct FRandomStream_Mirror
 {
 	int32_t                                            Seed;                                          // 0x0000 (0x0004) [0x0000000000001001] (CPF_Edit | CPF_Native)
 };
 
 // ScriptStruct ProjectX.RenderProfiler_X.PrimitiveComponentProfile
-// 0x0070
+// Size: 0x0070
 struct FPrimitiveComponentProfile
 {
 	class FString                                      ContentName;                                   // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1894,7 +1991,7 @@ struct FPrimitiveComponentProfile
 };
 
 // ScriptStruct ProjectX.RPC_ClubsRecordStats_X.ClubStatRecord
-// 0x0088
+// Size: 0x0088
 struct FClubStatRecord
 {
 	int32_t                                            ClubID;                                        // 0x0000 (0x0004) [0x0001000000000000]               
@@ -1926,37 +2023,41 @@ struct FClubStatRecord
 	int32_t                                            BreakoutDamage;                                // 0x0068 (0x0004) [0x0021000000000000]               
 	int32_t                                            BreakoutDamageLarge;                           // 0x006C (0x0004) [0x0021000000000000]               
 	int32_t                                            HoopsSwishGoal;                                // 0x0070 (0x0004) [0x0021000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
 	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0078 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_GetClubStats_X.StatMilestoneData
-// 0x001D
+// Size: 0x0020 (0x001D PropertySize + 0x0003 padding to satisfy MinAlignment of 8)
 struct FStatMilestoneData
 {
 	class FName                                        Stat;                                          // 0x0000 (0x0008) [0x0001000000000000]               
 	class TArray<int32_t>                              Milestones;                                    // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	int32_t                                            Value;                                         // 0x0018 (0x0004) [0x0001000000000000]               
 	uint8_t                                            Badge;                                         // 0x001C (0x0001) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x001D (0x0003) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.RPC_GetClubStats_X.SeasonalBadgeTierData
-// 0x0018
+// Size: 0x0018
 struct FSeasonalBadgeTierData
 {
 	int32_t                                            Season;                                        // 0x0000 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	class TArray<struct FStatBadge>                    Badges;                                        // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_GetClubStats_X.MilestoneTitleData
-// 0x000C
+// Size: 0x000C
 struct FMilestoneTitleData
 {
 	uint8_t                                            Badge;                                         // 0x0000 (0x0001) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	class FName                                        Title;                                         // 0x0004 (0x0008) [0x0001000000000000]               
 };
 
 // ScriptStruct ProjectX.RPC_GetClubStats_X.ClubCareerStats
-// 0x0074
+// Size: 0x0074
 struct FClubCareerStats
 {
 	int32_t                                            MatchPlayed;                                   // 0x0000 (0x0004) [0x0001000000000000]               
@@ -1991,7 +2092,7 @@ struct FClubCareerStats
 };
 
 // ScriptStruct ProjectX.RPC_GetGenericDataAll_X.GetGenericDataAllData
-// 0x0018
+// Size: 0x0018
 struct FGetGenericDataAllData
 {
 	class FName                                        DataKey;                                       // 0x0000 (0x0008) [0x0000000000000000]               
@@ -1999,7 +2100,7 @@ struct FGetGenericDataAllData
 };
 
 // ScriptStruct ProjectX.RPC_GetPlayerPermissions_X.PlayerPermissionsReponse
-// 0x0058
+// Size: 0x0058
 struct FPlayerPermissionsReponse
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2007,19 +2108,20 @@ struct FPlayerPermissionsReponse
 };
 
 // ScriptStruct ProjectX.RPC_Test_X.RPCTestItem
-// 0x0078
+// Size: 0x0078
 struct FRPCTestItem
 {
 	uint32_t                                           BoolItem : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
 	int32_t                                            IntItem;                                       // 0x0004 (0x0004) [0x0000000000000000]               
 	float                                              FloatItem;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	class FString                                      StringItem;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                PlayerItem;                                    // 0x0020 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FString>                        StringItems;                                   // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.RPC_Test_X.RPCTestParam
-// 0x0088
+// Size: 0x0088
 struct FRPCTestParam
 {
 	struct FRPCTestItem                                TestItem;                                      // 0x0000 (0x0078) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2027,7 +2129,7 @@ struct FRPCTestParam
 };
 
 // ScriptStruct ProjectX.RPCQueue_X.PendingRPC
-// 0x0020
+// Size: 0x0020
 struct FPendingRPC
 {
 	class URPC_X*                                      RPC;                                           // 0x0000 (0x0008) [0x0000000000000000]               
@@ -2039,7 +2141,7 @@ struct FPendingRPC
 };
 
 // ScriptStruct ProjectX.RPCQueue_X.RPCError
-// 0x0020
+// Size: 0x0020
 struct FRPCError
 {
 	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2047,16 +2149,17 @@ struct FRPCError
 };
 
 // ScriptStruct ProjectX.RPCQueue_X.RPCResponse
-// 0x0030
+// Size: 0x0030
 struct FRPCResponse
 {
 	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FRPCError                                   Error;                                         // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 	class URPC_X*                                      Result;                                        // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.ServerExploitManager_X.MatchExploitReportData
-// 0x0058
+// Size: 0x0058
 struct FMatchExploitReportData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2064,15 +2167,16 @@ struct FMatchExploitReportData
 };
 
 // ScriptStruct ProjectX.ShakeComponent_X.ShakeReceiver
-// 0x000C
+// Size: 0x0010 (0x000C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FShakeReceiver
 {
 	class APlayerController*                           Player;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	float                                              Scale;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x000C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.OSMetrics
-// 0x0020
+// Size: 0x0020
 struct FOSMetrics
 {
 	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2080,7 +2184,7 @@ struct FOSMetrics
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.CpuMetrics
-// 0x0040
+// Size: 0x0040
 struct FCpuMetrics
 {
 	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2090,29 +2194,30 @@ struct FCpuMetrics
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.MemoryMetrics
-// 0x0004
+// Size: 0x0004
 struct FMemoryMetrics
 {
 	float                                              Physical;                                      // 0x0000 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.VideoCardMetrics
-// 0x0014
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FVideoCardMetrics
 {
 	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            RAM;                                           // 0x0010 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.NetworkAdapterMetrics
-// 0x0010
+// Size: 0x0010
 struct FNetworkAdapterMetrics
 {
 	class TArray<class FString>                        Types;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.WebCache_X.CachedDataRequest
-// 0x0050
+// Size: 0x0050
 struct FCachedDataRequest
 {
 	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2120,6 +2225,7 @@ struct FCachedDataRequest
 	class UStringMap*                                  Headers;                                       // 0x0020 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UCachedWebData_X*                            CachedWebData;                                 // 0x0028 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bZipResponse : 1;                              // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 

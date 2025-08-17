@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: WinDrv_classes.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -145,11 +145,11 @@ public:
 class UWindowsClient : public UClient
 {
 public:
-	uint8_t                                            UnknownData00[0x200];                          // 0x0078 (0x0200) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x200];                        // 0x0078 (0x0200) MISSED OFFSET
 	class UClass*                                      AudioDeviceClass;                              // 0x0278 (0x0008) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                            UnknownData01[0x38];                            // 0x0280 (0x0038) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x38];                          // 0x0280 (0x0038) MISSED OFFSET
 	int32_t                                            AllowJoystickInput;                            // 0x02B8 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                            UnknownData02[0x104];                          // 0x02BC (0x0104) MISSED OFFSET
+	uint8_t                                          UnknownData02[0x104];                        // 0x02BC (0x0104) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -171,7 +171,7 @@ public:
 class UXnaForceFeedbackManager : public UForceFeedbackManager
 {
 public:
-	uint8_t                                            UnknownData00[0x18];                            // 0x0098 (0x0018) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x18];                          // 0x0098 (0x0018) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()

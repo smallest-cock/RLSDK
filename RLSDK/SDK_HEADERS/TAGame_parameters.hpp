@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -26,6 +26,7 @@
 struct U_Types_TA_execGetMessageForAutoUpdateReasonW_Params
 {
 	uint8_t                                            Reason;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -95,6 +96,7 @@ struct U_Types_TA_execInitColorSet_Params
 struct U_Types_TA_execProductQualityToString_Params
 {
 	uint8_t                                            Quality;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -195,6 +197,7 @@ struct U_Types_TA_execPickWeightedRandom_Params
 {
 	class TArray<struct FRandomWeight>                 Arr;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Index;                                            // 0x0010 (0x0004) [0x0000000000000190] (CPF_OptionalParm | CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FRandomWeight                               ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// float                                           TotalWeight;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 	// float                                           RandVal;                                          // 0x002C (0x0004) [0x0000000000000000]               
@@ -264,6 +267,7 @@ struct AAIController_TA_eventGetProxyDataInternal_Params
 {
 	class UBTProxyType*                                Type;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Index;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAIProxyData                                OutData;                                          // 0x0010 (0x0048) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -274,6 +278,7 @@ struct AAIController_TA_execGetIndexedProxyData_Params
 {
 	class UBTProxyType*                                Type;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Index;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAIProxyData                                OutData;                                          // 0x0010 (0x0048) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -293,6 +298,7 @@ struct AAIController_TA_execGetIndexedTargetData_Params
 {
 	class UBTTarget*                                   Target;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Index;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAIProxyData                                OutData;                                          // 0x0010 (0x0048) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -320,6 +326,7 @@ struct AAIController_TA_eventCreateProxyData_Params
 {
 	class AActor*                                      A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              Radius;                                           // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAIProxyData                                ReturnValue;                                      // 0x0010 (0x0048) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -559,6 +566,7 @@ struct AAIController_Soccar_TA_eventGetProxyDataInternal_Params
 {
 	class UBTProxyType*                                Type;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Index;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAIProxyData                                OutData;                                          // 0x0010 (0x0048) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -637,6 +645,7 @@ struct AAIController_Soccar_TA_execHandleBallsChanged_Params
 struct AAIController_Soccar_TA_execGetCachedGoalInfo_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAICachedGoalInfo                           ReturnValue;                                      // 0x0008 (0x0018) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAICachedGoalInfo                        GoalInfo;                                         // 0x0020 (0x0018) [0x0000000000000000]               
 	// struct FRotator                                 DeltaRot;                                         // 0x0038 (0x000C) [0x0000000000000000]               
@@ -1126,6 +1135,7 @@ struct APlayerControllerBase_TA_execAddVoiceChatNotification_Params
 struct APlayerControllerBase_TA_execEraseChatByType_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0008 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1147,6 +1157,7 @@ struct APlayerControllerBase_TA_execSay_TA_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Recipient;                                        // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bPreset : 1;                                      // 0x0060 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bFriendsOnly : 1;                                 // 0x0064 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -1174,6 +1185,7 @@ struct APlayerControllerBase_TA_execServerSay_TA_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FPlayerIdArray                              ForbiddenPlayers;                                 // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bPreset : 1;                                      // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
@@ -1183,6 +1195,7 @@ struct APlayerControllerBase_TA_execServerSay_TA_Params
 struct APlayerControllerBase_TA_execRepopulateChatHistory_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0008 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1622,6 +1635,7 @@ struct APlayerController_TA_execClientUpdateTournamentMatch_Params
 {
 	struct FTourMatch                                  Match;                                            // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            GameNum;                                          // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FTourMatchGame                              GameData;                                         // 0x0038 (0x0018) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -1825,6 +1839,7 @@ struct APlayerController_TA_execServerReportPlayer_Params
 {
 	uint8_t                                            ReasonIDStaticArray[256];                         // 0x0000 (0x0100) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            NumReasons;                                       // 0x0100 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0104 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0108 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           ReasonIDs;                                        // 0x0150 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         I;                                                // 0x0160 (0x0004) [0x0000000000000000]               
@@ -1861,6 +1876,7 @@ struct APlayerController_TA_execClientSplitscreenJoinResponse_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bAllow : 1;                                       // 0x0048 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1880,6 +1896,7 @@ struct APlayerController_TA_eventPreClientTravel_Params
 {
 	class FString                                      PendingURL;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TravelType;                                       // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bIsSeamlessTravel : 1;                            // 0x0014 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1918,6 +1935,7 @@ struct APlayerController_TA_execShouldBeMuted_Params
 struct APlayerController_TA_execIsCommunicationFiltered_Params
 {
 	uint8_t                                            Filter;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Other;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bPreset : 1;                                      // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bTactical : 1;                                    // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -2090,6 +2108,7 @@ struct APlayerController_TA_execChatMessage_TA_Params
 	class APlayerReplicationInfo*                      InPRI;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0019 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bPreset : 1;                                      // 0x001C (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	int32_t                                            TimeStamp;                                        // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0028 (0x0008) [0x0000000000000000]               
@@ -2101,6 +2120,7 @@ struct APlayerController_TA_execServerSayInternal_TA_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  ForbiddenPlayers;                                 // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bPreset : 1;                                      // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// class APlayerController_TA*                     PC;                                               // 0x0030 (0x0008) [0x0000000000000000]               
@@ -2118,6 +2138,7 @@ struct APlayerController_TA_execServerSay_TA_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FPlayerIdArray                              ForbiddenPlayers;                                 // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bPreset : 1;                                      // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
@@ -2128,6 +2149,7 @@ struct APlayerController_TA_execSay_TA_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Recipient;                                        // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bPreset : 1;                                      // 0x0060 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bFriendsOnly : 1;                                 // 0x0064 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -2140,6 +2162,7 @@ struct APlayerController_TA_execCheckMatchChatOrQuickChat_Params
 	uint32_t                                           bPreset : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                            QuickChatTest;                                    // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            MatchChatTest;                                    // 0x0005 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0006 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2189,6 +2212,7 @@ struct APlayerController_TA_execShouldTournamentMatchmake_Params
 struct APlayerController_TA_execHandleJoinGameMigrationCompleted_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class AGFxHUD_TA*                               GFXHUD;                                           // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -2888,6 +2912,7 @@ struct APlayerController_TA_execServerRequestVoiceRoomToken_Params
 struct APlayerController_TA_execGetBanMessage_Params
 {
 	uint8_t                                            BanType;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UBanMessage_X*                               ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -2896,6 +2921,7 @@ struct APlayerController_TA_execGetBanMessage_Params
 struct APlayerController_TA_execGetIsBanned_Params
 {
 	uint8_t                                            BanType;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3072,6 +3098,7 @@ struct APlayerController_TA_execSetInputBuffer_Params
 struct APlayerController_TA_execGetInputBufferClass_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3224,6 +3251,7 @@ struct UAudioPriorityComponent_TA_execCreateCandidate_Params
 {
 	class AVehicle_TA*                                 Vehicle;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     CenterLocation;                                   // 0x0008 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FPriorityCandidate                          ReturnValue;                                      // 0x0018 (0x0020) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -3424,6 +3452,7 @@ struct ARBActor_TA_execAddTorque_Params
 {
 	struct FVector                                     Torque;                                           // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ForceMode;                                        // 0x000C (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DebugSource;                                      // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3433,6 +3462,7 @@ struct ARBActor_TA_execAddForce_Params
 {
 	struct FVector                                     Force;                                            // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ForceMode;                                        // 0x000C (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DebugSource;                                      // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3840,6 +3870,7 @@ struct ABall_TA_execExplode_Params
 {
 	class UGoal_TA*                                    ExplosionGoal;                                    // 0x0000 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	struct FVector                                     ExplodeLocation;                                  // 0x0008 (0x000C) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Scorer;                                           // 0x0018 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// struct FRotator                                 ExplosionRotation;                                // 0x0020 (0x000C) [0x0000000000000000]               
 	// class AGameInfo_Replay_TA*                      GameInfoReplay;                                   // 0x0030 (0x0008) [0x0000000000000000]               
@@ -3917,6 +3948,7 @@ struct ABall_TA_execOnHitTeamNumChanged_Params
 struct ABall_TA_execSetHitTeamNum_Params
 {
 	uint8_t                                            TeamNum;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3933,6 +3965,7 @@ struct ABall_TA_execOnCarHitRecorded_Params
 {
 	class ACar_TA*                                     HitCar;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HitType;                                          // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            OldTeamNum;                                       // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -3995,6 +4028,7 @@ struct ABall_TA_execIsGroundMaterial_Params
 struct ABall_TA_execIsGroundHit_Params
 {
 	struct FVector                                     HitNormal;                                        // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPhysicalMaterial*                           PhysMat;                                          // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UPhysicalMaterialProperty_TA*             PhysMatProp;                                      // 0x0020 (0x0008) [0x0000000000000000]               
@@ -4239,6 +4273,7 @@ struct UBallTrajectoryComponent_TA_eventSetupFXs_Params
 struct UBallTrajectoryComponent_TA_eventGetPlayer_Params
 {
 	int32_t                                            LocalPlayerNum;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class APlayerController_TA*                     PC;                                               // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -4337,6 +4372,7 @@ struct UBallTrajectoryComponent_Line_TA_execDestroyFX_Params
 struct UBallTrajectoryComponent_Line_TA_execCreateFX_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class APlayerController_TA*>          Viewers;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -4381,6 +4417,7 @@ struct UBallTrajectoryComponent_Beam_TA_execDestroyFXs_Params
 struct UBallTrajectoryComponent_Beam_TA_execCreateFX_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class APlayerController_TA*>          Viewers;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// struct FTrajectoryFX                            FX;                                               // 0x0018 (0x0008) [0x0000000000000000]               
 	// class APlayerController_TA*                     PC;                                               // 0x0020 (0x0008) [0x0000000000000000]               
@@ -4411,6 +4448,7 @@ struct UBallTrajectoryComponent_Spline_TA_execDestroyFXs_Params
 struct UBallTrajectoryComponent_Spline_TA_execCreateFX_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class APlayerController_TA*>          Viewers;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// struct FTrajectorySplineFX                      FX;                                               // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -4610,6 +4648,7 @@ struct ABreakOutActor_Platform_TA_execGatherNeighbors_Params
 {
 	class ABreakOutActor_Platform_TA*                  Start;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Iterations;                                       // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class ABreakOutActor_Platform_TA*>    ToDamage;                                         // 0x0010 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class ABreakOutActor_Platform_TA*               Neighbor;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 };
@@ -4677,6 +4716,7 @@ struct ABreakOutActor_Platform_TA_execCanDamagePlatform_Params
 struct ABreakOutActor_Platform_TA_execSetDamageState_Params
 {
 	uint8_t                                            InDamageState;                                    // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     InDamageCauser;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     InLocation;                                       // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bDirectDamage : 1;                                // 0x001C (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
@@ -4731,6 +4771,7 @@ struct ABreakOutActor_Platform_TA_execRefreshCollisionForComponent_Params
 struct ABreakOutActor_Platform_TA_execGetClosestNeighborInDirection_Params
 {
 	struct FVector                                     Dir;                                              // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ABreakOutActor_Platform_TA*                  ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ABreakOutActor_Platform_TA*               BestNeighbor;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 	// float                                           BestAngle;                                        // 0x0020 (0x0004) [0x0000000000000000]               
@@ -4820,6 +4861,7 @@ struct UBTComponent_execPrintDebugInfo_Params
 struct UBTComponent_execGetStatusColor_Params
 {
 	uint8_t                                            Status;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FColor                                      ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4828,6 +4870,7 @@ struct UBTComponent_execGetStatusColor_Params
 struct UBTComponent_execGetDepthSpaces_Params
 {
 	float                                              Depth;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -5121,6 +5164,7 @@ struct UBTMoveModifier_eventAdjustDestination_Params
 struct UBTCondition_execShouldProcessTeam_Params
 {
 	uint8_t                                            CheckTeam;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ActorTeam;                                        // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -5130,6 +5174,7 @@ struct UBTCondition_execShouldProcessTeam_Params
 struct UBTCondition_execShouldProcessActor_Params
 {
 	uint8_t                                            CheckTeam;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AActor*                                      CheckActor;                                       // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -5325,6 +5370,7 @@ struct UCachedUnlockedProducts_TA_execContainsAllProducts_Params
 {
 	class UProductSlot_TA*                             Slot;                                             // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            UnlockMethod;                                     // 0x0008 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -5371,6 +5417,7 @@ struct UCarColorSet_TA_execGetMinStadiumBrightness_Params
 struct UCarColorSet_TA_eventGetStadiumColors_Params
 {
 	int32_t                                            ColorID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinearColor>                  ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<struct FLinearColor>               StadiumColors;                                    // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FLinearColor                             MainColor;                                        // 0x0028 (0x0010) [0x0000000000000000]               
@@ -7013,6 +7060,7 @@ struct ASpecialPickup_Tornado_TA_execInitPickupFX_Params
 struct UCertifiedStat_TA_execGetRankLabel_Params
 {
 	int32_t                                            StatValue;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -7051,6 +7099,7 @@ struct UCertifiedStatDatabase_TA_execGetStatByName_Params
 struct UCertifiedStatDatabase_TA_execGetStat_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UCertifiedStat_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -7204,6 +7253,7 @@ struct UDataAssetDatabase_TA_execGetAssetFromID_Params
 {
 	class UClass*                                      ObjClass;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            DataAssetID;                                      // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000D80] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm)
 };
 
@@ -7228,6 +7278,7 @@ struct UDataAssetDatabase_TA_execGetID_Params
 struct UDLCPack_TA_execIsEnabledOnPlatform_Params
 {
 	uint8_t                                            InOnlinePlatform;                                 // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -7236,6 +7287,7 @@ struct UDLCPack_TA_execIsEnabledOnPlatform_Params
 struct UDLCPack_TA_execGetDLCID_Params
 {
 	uint8_t                                            InOnlinePlatform;                                 // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   Region;                                           // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -7485,6 +7537,7 @@ struct UEngineAudioRevSimGearManager_TA_execTickGear_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	struct FAkRevSimFrame                              SimFrame;                                         // 0x0004 (0x0010) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FAkRevSimUpdateParams                       SimUpdate;                                        // 0x0018 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -7607,6 +7660,7 @@ struct UEngineShare_TA_execLoadStandaloneObject_Params
 	class UClass*                                      ExpectedClass;                                    // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        ObjectName;                                       // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            LoadFlags;                                        // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000D80] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm)
 };
 
@@ -8304,6 +8358,7 @@ struct AFXActor_BallHaunted_TA_execHandleIsTrapped_Params
 {
 	class ABall_Haunted_TA*                            InBall;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bIsTrapped : 1;                                   // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    Goal;                                             // 0x0010 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -8805,6 +8860,7 @@ struct UGameData_TA_execGetCurrentMapData_Params
 struct UGameData_TA_execGetMapName_Params
 {
 	uint32_t                                           bLocalize : 1;                                    // 0x0000 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UMapData_TA*                              Map;                                              // 0x0018 (0x0008) [0x0000000000000000]               
 	// class FString                                   CurrentMap;                                       // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -9188,6 +9244,7 @@ struct AGameEvent_TA_execAddPlayerChatMessage_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ATeamInfo*                                   Team;                                             // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      Message;                                          // 0x0058 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0068 (0x0004) [0x0000000000000000]               
@@ -9519,6 +9576,7 @@ struct AGameEvent_TA_execSendGoMessage_Params
 struct AGameEvent_TA_execSendCountdownMessage_Params
 {
 	int32_t                                            Seconds;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         MsgIdx;                                           // 0x0010 (0x0004) [0x0000000000000000]               
 };
@@ -10641,6 +10699,7 @@ struct AGameEvent_Team_TA_execGetOtherTeam_Params
 struct AGameEvent_Team_TA_execChooseTeam_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -10917,6 +10976,7 @@ struct AGameEvent_Team_TA_execAllTeamsCreated_Params
 struct AGameEvent_Team_TA_execSetTeam_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ATeam_TA*                                    NewTeam;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -11051,6 +11111,7 @@ struct UGameModeList_TA_execGetGameModeForClass_Params
 struct UGameModeList_TA_execGetRocketLabsMedleyMapSet_Params
 {
 	int32_t                                            GameModeIndex;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapSet_TA*                                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -11059,6 +11120,7 @@ struct UGameModeList_TA_execGetRocketLabsMedleyMapSet_Params
 struct UGameModeList_TA_execGetStandardMapSet_Params
 {
 	int32_t                                            GameModeIndex;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapSet_TA*                                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -11067,6 +11129,7 @@ struct UGameModeList_TA_execGetStandardMapSet_Params
 struct UGameModeList_TA_execGetMapSet_Params
 {
 	int32_t                                            GameModeIndex;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapSet_TA*                                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -11075,6 +11138,7 @@ struct UGameModeList_TA_execGetMapSet_Params
 struct UGameModeList_TA_execGetGameInfoClass_Params
 {
 	int32_t                                            GameModeIndex;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -11083,6 +11147,7 @@ struct UGameModeList_TA_execGetGameInfoClass_Params
 struct UGameModeList_TA_execGetGameURL_Params
 {
 	int32_t                                            GameModeIndex;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -11179,6 +11244,7 @@ struct UGameObserver_TA_execGetDefensiveGoal_Params
 struct UGameObserver_TA_execUpdateCarData_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FCarData                                    Data;                                             // 0x0008 (0x0058) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -11212,6 +11278,7 @@ struct UGameObserver_TA_execUpdateCarsData_Params
 struct UGameObserver_TA_execUpdateGoalData_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FGoalData                                   Data;                                             // 0x0008 (0x0048) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 };
 
@@ -11470,6 +11537,7 @@ struct UGameViewportClient_TA_exec__GameViewportClient_TA__AddSplitScreenPlayer_
 struct UGameViewportClient_TA_eventSetProgressMessage_Params
 {
 	uint8_t                                            MessageType;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Title;                                            // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreFutureNetworkMessages : 1;                 // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -11489,6 +11557,7 @@ struct UGameViewportClient_TA_execCheckUnsubscribeTournament_Params
 struct UGameViewportClient_TA_execNotifyPlayerRemoved_Params
 {
 	int32_t                                            PlayerIndex;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULocalPlayer*                                RemovedPlayer;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0010 (0x0008) [0x0000000000000000]               
 	// int32_t                                         RemapIndex;                                       // 0x0018 (0x0004) [0x0000000000000000]               
@@ -11561,8 +11630,10 @@ struct UGameViewportClient_TA_execGetAspectRatio_Params
 struct UGameViewportClient_TA_eventCreatePlayer_Params
 {
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      OutError;                                         // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bSpawnActor : 1;                                  // 0x0018 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULocalPlayer*                                ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0028 (0x0008) [0x0000000000000000]               
 };
@@ -11607,6 +11678,7 @@ struct UGameViewportClient_TA_execHandleKeyPress_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -11618,6 +11690,7 @@ struct UGameViewportClient_TA_execSplitscreenJoinResponse_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bAllow : 1;                                       // 0x0048 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0060 (0x0008) [0x0000000000000000]               
 	// int32_t                                         PlayerIndex;                                      // 0x0068 (0x0004) [0x0000000000000000]               
@@ -11750,6 +11823,7 @@ struct UGameViewportClient_TA_execDrawTransition_Params
 struct UGameViewportClient_TA_execNotifyConnectionError_Params
 {
 	uint8_t                                            MessageType;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Title;                                            // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// class APlayerController_TA*                     PC;                                               // 0x0028 (0x0008) [0x0000000000000000]               
@@ -11826,6 +11900,7 @@ struct UGameViewportClient_TA_execEventPostInit_Params
 struct UGFxData_DevUtil_TA_execAssert_Params
 {
 	uint32_t                                           expr : 1;                                         // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -12041,6 +12116,7 @@ struct UGFxData_ShopCatalogue_TA_execHandleCatalogueLoadFailed_Params
 struct UGFxData_ShopCatalogue_TA_execShopItemTextureLoaded_Params
 {
 	int32_t                                            ShopItemID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTexture*                                    LoadedTexture;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         ShopItemIndex;                                    // 0x0010 (0x0004) [0x0000000000000000]               
 };
@@ -12122,6 +12198,7 @@ struct UGFxData_ShopCatalogue_TA_execSetCatalogueItems_Params
 struct UGFxData_ShopCatalogue_TA_execGetShopItemByCostID_Params
 {
 	int32_t                                            CostID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FShopItem                                   OutShopItem;                                      // 0x0008 (0x00D0) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x00D8 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         ShopItemIndex;                                    // 0x00DC (0x0004) [0x0000000000000000]               
@@ -12133,6 +12210,7 @@ struct UGFxData_ShopCatalogue_TA_execGetShopItemByCostID_Params
 struct UGFxData_ShopCatalogue_TA_execGetOnlineProductsByCostID_Params
 {
 	int32_t                                            CostID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UOnlineProduct_TA*>             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<struct FProductHashID>             DeliverableHashIDs;                               // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class U__GFxData_ShopCatalogue_TA__GetOnlineProductsByCostID_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
@@ -12387,6 +12465,7 @@ struct UGFxData_Shops_TA_execHandleGetCrateShopFailed_Params
 struct UGFxData_Shops_TA_execOnReceivedCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FShopItem>                     CrateItems;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            ShopID;                                           // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
@@ -12671,6 +12750,7 @@ struct UGFxData_Shops_TA_execHandleGetShopCataloguesSuccess_Params
 {
 	class TArray<int32_t>                              ShopIDs;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	float                                              RequestStartTime;                                 // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FShopCatalogue>                RequestCatalogues;                                // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         ShopID;                                           // 0x0028 (0x0004) [0x0000000000000000]               
 	// class UGFxData_ShopCatalogue_TA*                Catalogue;                                        // 0x0030 (0x0008) [0x0000000000000000]               
@@ -12796,6 +12876,7 @@ struct UGFxData_Shops_TA_eventOnShellSet_Params
 struct UGFxData_Shops_TA_execGetCatalogueFromShopID_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FShopsMapEntry                              ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -13086,6 +13167,7 @@ struct UIdenticalProductCache_TA_execFindProduct_Params
 struct UIdenticalProductCache_TA_execFindProductFromHash_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -13094,6 +13176,7 @@ struct UIdenticalProductCache_TA_execFindProductFromHash_Params
 struct UIdenticalProductCache_TA_execGetProductsFromHash_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UOnlineProduct_TA*>             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -13417,6 +13500,7 @@ struct UInstanceIDUtils_TA_execFromQWord_Params
 struct UInstanceIDUtils_TA_execFromInt_Params
 {
 	int32_t                                            InstanceID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -13757,6 +13841,7 @@ struct ULocalPlayer_TA_execForceSaveGame_Params
 struct ULocalPlayer_TA_execIsControllerAssociatedWithLoggedInUser_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -13908,6 +13993,7 @@ struct ULocalPlayer_TA_execEventProfileSet_Params
 struct UMapData_TA_exec__MapData_TA__PickRandomMap_0x1_Params
 {
 	float                                              Sum;                                              // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapData_TA*                                 M;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -13918,6 +14004,7 @@ struct UMapData_TA_execGetNewMapData_Params
 {
 	class FString                                      MapName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	float                                              InRandomWeight;                                   // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapData_TA*                                 InVariantOf;                                      // 0x0018 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	class UObject*                                     Owner;                                            // 0x0020 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	class UMapData_TA*                                 ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -13934,6 +14021,7 @@ struct UMapData_TA_execPickPreferredRandomMap_Params
 	int32_t                                            NumPlayers;                                       // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              ForcedIndexRandWeight;                            // 0x0034 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              ForcedMapRandWeight;                              // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapData_TA*                                 ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<float>                             PreferredWeights;                                 // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         MapsIdx;                                          // 0x0058 (0x0004) [0x0000000000000000]               
@@ -13975,6 +14063,7 @@ struct UMapData_TA_execGetPreferredWeights_Params
 	class TArray<class FName>                          Dislikes;                                         // 0x0020 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            NumPlayers;                                       // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        MapSetName;                                       // 0x0034 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<float>                                ReturnValue;                                      // 0x0040 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           Points;                                           // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -13987,6 +14076,7 @@ struct UMapData_TA_execGetWeightsFromPoints_Params
 	class TArray<int32_t>                              Points;                                           // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            NumPlayers;                                       // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        MapSetName;                                       // 0x0024 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<float>                                ReturnValue;                                      // 0x0030 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<float>                             WeightsResult;                                    // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         MapsIdx;                                          // 0x0050 (0x0004) [0x0000000000000000]               
@@ -14027,6 +14117,7 @@ struct UMapData_TA_execPickRandomMap_Params
 {
 	class TArray<class UMapData_TA*>                   Maps;                                             // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	float                                              ForcedRandomWeight;                               // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapData_TA*                                 ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// float                                           TotalWeight;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 	// float                                           ReduceLocal_0x1;                                  // 0x0024 (0x0004) [0x0000000000000102] (CPF_Const | CPF_OutParm)
@@ -14258,6 +14349,7 @@ struct AMatchBroadcast_TA_execRecordLeaveGame_Params
 struct AMatchBroadcast_TA_execRecordJoinServer_Params
 {
 	int32_t                                            PlayerID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerNetId;                                      // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                PartyLeaderNetID;                                 // 0x0060 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -14269,6 +14361,7 @@ struct AMatchBroadcast_TA_execRecordJoinServer_Params
 struct AMatchBroadcast_TA_execRecordJoinGame_Params
 {
 	int32_t                                            PlayerID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerNetId;                                      // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -14282,6 +14375,7 @@ struct AMatchBroadcast_TA_execRecordMatchStart_Params
 	class FName                                        GameType;                                         // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        MatchType;                                        // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            PlaylistId;                                       // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FName>                          Mutators;                                         // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -14343,6 +14437,7 @@ struct AMatchBroadcast_TA_execHandleStat_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	// struct FBallHitInfo                             Hit;                                              // 0x0040 (0x0110) [0x0000000000000000]               
@@ -14587,6 +14682,7 @@ struct UMessage_TA_execSetInt_Params
 {
 	class FName                                        ParamName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Value;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMessage_TA*                                 ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -15206,6 +15302,7 @@ struct UNotification_TA_execSetShown_Params
 struct UNotification_TA_execSetSave_Params
 {
 	uint32_t                                           bInSave : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -15374,6 +15471,7 @@ struct UNotificationManager_TA_execAddNotification_Params
 {
 	class UClass*                                      NotificationClass;                                // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bSuppressPopup : 1;                               // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_TA*                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000D80] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm)
 };
 
@@ -15769,6 +15867,7 @@ struct UOnlineProduct_TA_execInstanceOnlineProductData_Params
 struct UOnlineProduct_TA_execInstanceTempOnlineProduct_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FProductHashSource                       ProductSource;                                    // 0x0010 (0x0020) [0x0000000000000000]               
 	// struct FOnlineProductData                       Data;                                             // 0x0030 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -15828,6 +15927,7 @@ struct UOnlineProductStore_TA_execGetProductIDFromOnlineID_Params
 struct UOnlineProductStore_TA_execFindProductsFromHash_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UOnlineProduct_TA*>             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__OnlineProductStore_TA__FindProductsFromHash_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<class UOnlineProduct_TA*>          MapManyLocal_0x2;                                 // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -15838,6 +15938,7 @@ struct UOnlineProductStore_TA_execFindProductsFromHash_Params
 struct UOnlineProductStore_TA_execFindProductFromHash_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineProductStoreSet_TA*                Set;                                              // 0x0010 (0x0008) [0x0000000004000000] (CPF_EditInline)
 	// class UOnlineProduct_TA*                        Product;                                          // 0x0018 (0x0008) [0x0000000000000000]               
@@ -15957,6 +16058,7 @@ struct UPaintDatabase_TA_execGetPaintByName_Params
 struct UPaintDatabase_TA_execGetPaint_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductPaint_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -16055,6 +16157,7 @@ struct UPersona_TA_execSetPlayerNameInternal_Params
 	class FString                                      OutName;                                          // 0x0010 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      OutUnsanitizedName;                               // 0x0020 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bPrimaryName : 1;                                 // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0038 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bEpicName : 1;                                    // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// class UOnlineGameWordFilter_X*                  WordFilter;                                       // 0x0058 (0x0008) [0x0000000000000000]               
@@ -16172,6 +16275,7 @@ struct UPersona_TA_execSetEpicOnlinePresenceState_Params
 {
 	uint8_t                                            InOnlinePresenceState;                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            InOrigin;                                         // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InPresenceInfo;                                   // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -16202,6 +16306,7 @@ struct UPersona_TA_eventUpdateFromOnlineFriend_Params
 {
 	struct FOnlineFriend                               OnlineInfo;                                       // 0x0000 (0x0118) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -16255,6 +16360,7 @@ struct UPersonas_TA_execCreatePersonaFromOnlineFriend_Params
 {
 	struct FOnlineFriend                               FriendData;                                       // 0x0000 (0x0118) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -16265,6 +16371,7 @@ struct UPersonas_TA_execCreatePersona_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0058 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0059 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineFriend                            StructInitializer_0x1;                            // 0x0068 (0x0118) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -16281,6 +16388,7 @@ struct UPersonas_TA_execRequestEpicAccountIds_Params
 struct UPersonas_TA_execHandleOnReceivedLinkedAccounts_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedData;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLinkedAccountData                       AccountData;                                      // 0x0018 (0x00A8) [0x0010000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         ForEachRefIndex_0x1;                              // 0x00C0 (0x0004) [0x0000000000000000]               
@@ -16340,6 +16448,7 @@ struct UPersonas_TA_eventUpdatePersonaFromData_Params
 {
 	struct FOnlineFriend                               FriendData;                                       // 0x0000 (0x0118) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -16407,6 +16516,7 @@ struct UPersonas_TA_execGetOrCreateEpicPersonaFromPlatformID_Params
 	struct FUniqueNetId                                PlatformId;                                       // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0060 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0061 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FUniqueNetId                             EpicId;                                           // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -16461,6 +16571,7 @@ struct UPersonas_TA_execGetOrCreateFromOnlineFriend_Params
 {
 	struct FOnlineFriend                               FriendData;                                       // 0x0000 (0x0118) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UPersona_TA*                              NoneCoalescing_0x1;                               // 0x0128 (0x0008) [0x0000000000000000]               
 };
@@ -16489,6 +16600,7 @@ struct UPersonas_TA_execLinkPersonas_Params
 struct UPersonas_TA_execHandleIdsLinked_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLinkedAccountData                       LinkedAccountItr;                                 // 0x0030 (0x00A8) [0x0010000000400000] (CPF_NeedCtorLink)
@@ -16502,6 +16614,7 @@ struct UPersonas_TA_execGetOrCreate_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0058 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0059 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UPersona_TA*                              NoneCoalescing_0x1;                               // 0x0068 (0x0008) [0x0000000000000000]               
 };
@@ -16567,6 +16680,7 @@ struct UPersonas_TA_execEventPersonaHiddenChanged_Params
 struct UPersonas_TA_execEventEpicIdsReceived_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedData;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -16757,8 +16871,10 @@ struct UPlayerVanity_TA_execUpdateSaveObject_Params
 struct UPlayerVanity_TA_execInit_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          InInstanceId;                                     // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	struct FProductHashID                              InHashID;                                         // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UProductAttribute_TA*>          InAttributes;                                     // 0x0020 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
@@ -16769,6 +16885,7 @@ struct UPlayerVanity_TA_execInitWithPlayerName_Params
 {
 	class FString                                      InPlayerName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InProductID;                                      // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// struct FProductInstanceID                       StructInitializer_0x1;                            // 0x0030 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -16779,8 +16896,10 @@ struct UPlayerVanity_TA_execInitWithPlayerID_Params
 {
 	struct FUniqueNetId                                InPlayerID;                                       // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InProductID;                                      // 0x0048 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          InInstanceId;                                     // 0x0050 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	struct FProductHashID                              InHashID;                                         // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UProductAttribute_TA*>          InAttributes;                                     // 0x0068 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0078 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
@@ -16955,6 +17074,7 @@ struct UProductAsset_TA_execCreateAndAttachThumbnailPSC_Params
 	struct FFXAttachment                               Attachment;                                       // 0x0000 (0x0130) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class AFXActor_X*                                  FXActor;                                          // 0x0130 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIdx;                                    // 0x0138 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x013C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USkeletalMeshComponent*                      Owner;                                            // 0x0140 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class TArray<class UProductAttribute_TA*>          InAttributes;                                     // 0x0148 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0158 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -16969,6 +17089,7 @@ struct UProductAsset_TA_execGetParticleSystemThumbnailOverride_Params
 	struct FFXAttachment                               Attachment;                                       // 0x0000 (0x0130) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class AFXActor_X*                                  FXActor;                                          // 0x0130 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIdx;                                    // 0x0138 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x013C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UParticleSystem*                             ReturnValue;                                      // 0x0140 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -17010,6 +17131,7 @@ struct UProductAsset_Attachment_TA_execGetSceneSkeletalMesh_Params
 {
 	class UThumbnailScene_TA*                          Scene;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIdx;                                    // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USkeletalMeshComponent*                      ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class USkeletalMeshComponent*                   AttachSKC;                                        // 0x0018 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
@@ -17020,6 +17142,7 @@ struct UProductAsset_Attachment_TA_execGetSceneStaticMesh_Params
 {
 	class UThumbnailScene_TA*                          Scene;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIdx;                                    // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UStaticMeshComponent*                        ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class UStaticMeshComponent*                     AttachSMC;                                        // 0x0018 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
@@ -17146,6 +17269,7 @@ struct UProductAsset_Body_TA_execModifyAttachment_Params
 {
 	class AFXActor_X*                                  OutFXActor;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIndex;                                  // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBoostAttachmentToggle                      EventsToUse;                                      // 0x0010 (0x0028) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class UFXActorEvent_X*                          AttachEvent;                                      // 0x0038 (0x0008) [0x0000000000000000]               
 	// class UFXActorEvent_X*                          DetachEvent;                                      // 0x0040 (0x0008) [0x0000000000000000]               
@@ -17196,6 +17320,7 @@ struct UProductAsset_Boost_TA_execGetParticleSystemThumbnailOverride_Params
 	struct FFXAttachment                               Attachment;                                       // 0x0000 (0x0130) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class AFXActor_X*                                  InFXActor;                                        // 0x0130 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            AttachmentIdx;                                    // 0x0138 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x013C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UParticleSystem*                             ReturnValue;                                      // 0x0140 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UFXTrait_BoostParticle_TA*                Trait;                                            // 0x0148 (0x0008) [0x0000000000000000]               
 };
@@ -17205,6 +17330,7 @@ struct UProductAsset_Boost_TA_execGetParticleSystemThumbnailOverride_Params
 struct UProductAsset_Bot_TA_execGetLoadout_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FLoadoutData                                ReturnValue;                                      // 0x0008 (0x0040) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FLoadoutData                             Loadout;                                          // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class UProduct_TA*                              LoadoutProduct;                                   // 0x0088 (0x0008) [0x0000000000000000]               
@@ -17453,6 +17579,7 @@ struct UProductAssetAttribute_TA_eventCheckIfErrorOrWarning_Params
 struct UAssetAttribute_TeamEdition_TA_eventApplyPaintOverrides_Params
 {
 	int32_t                                            TeamID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductPaint_TA*                            Paint;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UObject*                                     Target;                                           // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         Index;                                            // 0x0018 (0x0004) [0x0000000000000000]               
@@ -17464,6 +17591,7 @@ struct UAssetAttribute_TeamEdition_TA_eventApplyPaintOverrides_Params
 struct UAssetAttribute_TeamEdition_TA_eventApplyToObject_Params
 {
 	int32_t                                            TeamID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     Target;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         Index;                                            // 0x0010 (0x0004) [0x0000000000000000]               
 };
@@ -17555,6 +17683,7 @@ struct UProductAssetLoader_TA_execFlushAsyncLoading_Params
 struct UProductAssetLoader_TA_execCancelLoadAsset_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     Listener;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -17578,6 +17707,7 @@ struct UProductAssetLoader_TA_execLoadAssetByNameAsync_Params
 struct UProductAssetLoader_TA_execLoadThumbnailAssetAsync_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -17586,6 +17716,7 @@ struct UProductAssetLoader_TA_execLoadThumbnailAssetAsync_Params
 struct UProductAssetLoader_TA_execLoadAssetAsync_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -17602,6 +17733,7 @@ struct UProductAssetLoader_TA_execLoadAssetByName_Params
 struct UProductAssetLoader_TA_execLoadAsset_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18068,6 +18200,7 @@ struct UProductAttribute_Painted_TA_execGetPaintColor_Params
 	class UProductAttribute_PaintSettings_TA*          PaintSettings;                                    // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UProductPaint_TA*                            Paint;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PaintVariant;                                     // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bGammaCorrect : 1;                                // 0x0014 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	struct FLinearColor                                ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FLinearColor                             PaintColor;                                       // 0x0028 (0x0010) [0x0000000000000000]               
@@ -18092,6 +18225,7 @@ struct UProductAttribute_Painted_TA_execOverrideMeshMaterial_Params
 	class UProductPaint_TA*                            Paint;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UMeshComponent*                              Mesh;                                             // 0x0010 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	int32_t                                            InMaterialIndex;                                  // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMaterialInterface*                          InMaterial;                                       // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UMaterialInstanceConstant*                MIC;                                              // 0x0028 (0x0008) [0x0000000000000000]               
 };
@@ -18186,6 +18320,7 @@ struct UProductAttribute_Painted_TA_execOnInit_Params
 struct UProductAttribute_Painted_TA_execCreateInstance_Params
 {
 	int32_t                                            InPaintID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAttribute_Painted_TA*                ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAttribute_Painted_TA*             Attribute;                                        // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -18195,6 +18330,7 @@ struct UProductAttribute_Painted_TA_execCreateInstance_Params
 struct UProductAttribute_Quality_TA_execProductQualityToString_Params
 {
 	uint8_t                                            InQuality;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -18306,6 +18442,7 @@ struct UProductAttribute_SpecialEdition_TA_execOnInit_Params
 struct UProductAttribute_SpecialEdition_TA_execCreateInstance_Params
 {
 	int32_t                                            InEditionID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAttribute_SpecialEdition_TA*         ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAttribute_SpecialEdition_TA*      ObjectInitializer_0x1;                            // 0x0010 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -18397,6 +18534,7 @@ struct UProductAttribute_TeamEdition_TA_execGetOnlineProductAttributeValue_Param
 struct UProductAttribute_TeamEdition_TA_execCreateInstance_Params
 {
 	int32_t                                            TeamID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAttribute_TeamEdition_TA*            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAttribute_TeamEdition_TA*         ObjectInitializer_0x1;                            // 0x0010 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -18541,6 +18679,7 @@ struct UProductAttribute_UserColor_TA_execApplyToObject_Params
 struct UProductAttribute_UserColor_TA_execCreateInstance_Params
 {
 	struct FColor                                      InColorValue;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAttribute_UserColor_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAttribute_UserColor_TA*           ObjectInitializer_0x1;                            // 0x0010 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -18573,6 +18712,7 @@ struct UProductDatabase_TA_execResetLabels_Params
 struct UProductDatabase_TA_execIsOnlineUnlock_Params
 {
 	uint8_t                                            UnlockMethod;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18581,6 +18721,7 @@ struct UProductDatabase_TA_execIsOnlineUnlock_Params
 struct UProductDatabase_TA_execFindProductByProductID_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -18632,6 +18773,7 @@ struct UProductDatabase_TA_execContainsOnlineProducts_Params
 struct UProductDatabase_TA_execStaticIsOnlineQuality_Params
 {
 	uint8_t                                            Quality;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18680,6 +18822,7 @@ struct UProductDatabase_TA_execRemoveIncompatibleProducts_Params
 struct UProductDatabase_TA_execReplaceIncompatibleProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              EquippedProducts;                                 // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ReturnValue;                                      // 0x0018 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -18689,6 +18832,7 @@ struct UProductDatabase_TA_execReplaceIncompatibleProduct_Params
 struct UProductDatabase_TA_execCanEquip_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              EquippedProducts;                                 // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -18720,6 +18864,7 @@ struct UProductDatabase_TA_execTLoadAsset_Params
 struct UProductDatabase_TA_execLoadAsset_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18759,6 +18904,7 @@ struct UProductDatabase_TA_execGetProductByName_Params
 struct UProductDatabase_TA_execGetProductByHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProduct_TA*                                 ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18767,6 +18913,7 @@ struct UProductDatabase_TA_execGetProductByHashID_Params
 struct UProductDatabase_TA_execGetProduct_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProduct_TA*                                 ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -18973,6 +19120,7 @@ struct UProductFilter_TA_execGetSortedHashIDs_Params
 	class TArray<class UProduct_TA*>                   UnlockedProducts;                                 // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<int32_t>                              FavoritedHashes;                                  // 0x0020 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            SortType;                                         // 0x0030 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0031 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductInstanceID>            InstanceIDs;                                      // 0x0038 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UIdenticalProductCache_TA*                   IdenticalProductCache;                            // 0x0048 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	uint32_t                                           bUseShortName : 1;                                // 0x0050 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
@@ -18996,6 +19144,7 @@ struct UProductFilter_TA_execGetDisplayableOfflineProducts_Params
 	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<int32_t>                              OfflineProducts;                                  // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bIgnoreLockedProducts : 1;                        // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UProduct_TA*>                   ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -19155,6 +19304,7 @@ struct UProductLoader_TA_execGetAsset_Params
 struct UProductLoader_TA_execGetAssetByID_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__ProductLoader_TA__GetAssetByID_0x1*    _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -19686,6 +19836,7 @@ struct UProductThumbnailQueue_TA_execRenderThumbnail_Params
 	class UProductAsset_TA*                            Asset;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UOnlineProduct_TA*                           OnlineProduct;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Size;                                             // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TeamID;                                           // 0x0014 (0x0004) [0x0000000000000082] (CPF_Const | CPF_Parm)
 	struct FScriptDelegate                             OnRendered;                                       // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
@@ -19757,6 +19908,7 @@ struct UProductUtil_TA_execFindOnlineProductWithNoAttributesFromID_Params
 {
 	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ProductID;                                        // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UClass*>                        AllowedAttributes;                                // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -19776,6 +19928,7 @@ struct UProductUtil_TA_execHasDuplicateOnlineProductsWithNoAttributes_Params
 {
 	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ProductID;                                        // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UClass*>                        AllowedAttributes;                                // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -19880,6 +20033,7 @@ struct UProductUtil_TA_execGetFirstOnlineProduct_Params
 {
 	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ProductID;                                        // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -20305,6 +20459,7 @@ struct ABall_Fire_TA_execOnCarHitRecorded_Params
 {
 	class ACar_TA*                                     HitCar;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HitType;                                          // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            OldTeamNum;                                       // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// class ACar_TA*                                  ClosestCar;                                       // 0x0010 (0x0008) [0x0000000000000000]               
 	// float                                           DistanceSq;                                       // 0x0018 (0x0004) [0x0000000000000000]               
@@ -20519,6 +20674,7 @@ struct ABall_Haunted_TA_execSetLastTeamTouch_Params
 struct ABall_Haunted_TA_execSetBallIsTrapped_Params
 {
 	uint32_t                                           bValue : 1;                                       // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    Goal;                                             // 0x0008 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -20607,6 +20763,7 @@ struct ABall_Haunted_TA_execEventIsTrapped_Params
 {
 	class ABall_Haunted_TA*                            Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bInIsTrapped : 1;                                 // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    Goal;                                             // 0x0010 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -20731,6 +20888,7 @@ struct AVehicle_TA_execIsCarHitAngleWithinForwardAngleCurve_Params
 {
 	class AVehicle_TA*                                 OtherCar;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FTimeOfImpactData                           Impact;                                           // 0x0008 (0x004C) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FInterpCurveFloat                           YawAngleDegreesCurve;                             // 0x0058 (0x0018) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FInterpCurveFloat                           PitchAngleDegreesCurve;                           // 0x0070 (0x0018) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bReverseCarForward : 1;                           // 0x0088 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -20949,6 +21107,7 @@ struct UReplay_TA_execGetPlaybackTime_Params
 struct UReplay_TA_execIsFromBeforeGameVersion_Params
 {
 	uint8_t                                            BeforeGameVersion;                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -20957,6 +21116,7 @@ struct UReplay_TA_execIsFromBeforeGameVersion_Params
 struct UReplay_TA_execIsFromBeforeReplayVersion_Params
 {
 	uint8_t                                            BeforeReplayVersion;                              // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -21019,6 +21179,7 @@ struct UReplay_TA_eventTrimData_Params
 struct UReplay_TA_execCreateCopy_Params
 {
 	float                                              StartTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UReplay_TA*                                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -21527,6 +21688,7 @@ struct URLBot_Util_TA_eventSpawnCustomBot_Params
 	class AGameEvent_TA*                               G;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class FString                                      BotName;                                          // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Team;                                             // 0x0018 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBotLoadout                                 Loadout;                                          // 0x0020 (0x0028) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class AAIController_TA*                            ReturnValue;                                      // 0x0048 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AAIController_TA*                         Bot;                                              // 0x0050 (0x0008) [0x0000000000000000]               
@@ -21539,6 +21701,7 @@ struct URLBot_Util_TA_eventSpawnClassicBot_Params
 	class AGameEvent_TA*                               G;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class FString                                      BotName;                                          // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Team;                                             // 0x0018 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0019 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              Skill;                                            // 0x001C (0x0004) [0x0001000000000080] (CPF_Parm)    
 	struct FBotLoadout                                 Loadout;                                          // 0x0020 (0x0028) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class AAIController_TA*                            ReturnValue;                                      // 0x0048 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -21553,6 +21716,7 @@ struct URLBot_Util_TA_execSpawnBot_Params
 	class AGameEvent_TA*                               G;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class FString                                      BotName;                                          // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TeamNum;                                          // 0x0018 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_Bot_TA*                        Asset;                                            // 0x0020 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FBotLoadout                                 Loadout;                                          // 0x0028 (0x0028) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class AAIController_TA*                            ReturnValue;                                      // 0x0050 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -21675,6 +21839,7 @@ struct URPC_ProductsDebugAddProducts_TA_execConvertOnlineProducts_Params
 struct URPC_ProductsDebugAddProducts_TA_execAddProduct_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductBuilder_TA*                       ProductBuilder;                                   // 0x0010 (0x0008) [0x0000000000000000]               
 	// struct FAddProductsRequestData                  StructInitializer_0x1;                            // 0x0018 (0x0020) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -21707,6 +21872,7 @@ struct USampleHistory_TA_execAddSample_Params
 struct USampleHistory_TA_execGetSummaryValue_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              MaxSampleAge;                                     // 0x0004 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bAbsoluteValue : 1;                               // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	float                                              ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -21717,6 +21883,7 @@ struct USampleHistory_TA_execGetSummaryValue_Params
 struct USampleHistory_TA_execSetBaseValue_Params
 {
 	float                                              InBaseValue;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USampleHistory_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 };
 
@@ -21743,8 +21910,10 @@ struct USampleHistory_TA_execSetGraphMaxMin_Params
 struct USampleHistory_TA_execAddSummary_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              MaxSampleAge;                                     // 0x0004 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bAbsValue : 1;                                    // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USampleHistory_TA*                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// struct FGraphSummaryMethod                      StructInitializer_0x1;                            // 0x0018 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -21963,6 +22132,7 @@ struct USaveData_TA_execGetUniqueSeriesIDs_Params
 struct USaveData_TA_execFindOnlineProductWithNoAttributesFromID_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UClass*>                        AllowedAttributes;                                // 0x0008 (0x0010) [0x0000000000400192] (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -21972,6 +22142,7 @@ struct USaveData_TA_execFindOnlineProductWithNoAttributesFromID_Params
 struct USaveData_TA_execFindFirstOnlineProduct_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -22042,6 +22213,7 @@ struct USaveData_TA_execOwnsProductID_Params
 struct USaveData_TA_execGetOnlineProducts_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UOnlineProduct_TA*>             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class UOnlineProduct_TA*>          Products;                                         // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x0028 (0x0008) [0x0000000000000000]               
@@ -22461,6 +22633,7 @@ struct USaveData_TA_execHasAnyOnlineProductOfID_Params
 struct USaveData_TA_execGetFirstOnlineProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -22530,6 +22703,7 @@ struct USaveData_TA_execRemoveAllProfiles_Params
 struct USaveData_TA_execGetProfileName_Params
 {
 	int32_t                                            LocalId;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   ProfileName;                                      // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -22539,6 +22713,7 @@ struct USaveData_TA_execGetProfileName_Params
 struct USaveData_TA_execGetProfileForByLocalID_Params
 {
 	int32_t                                            LocalId;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProfile_TA*                                 ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProfile_TA*                              Profile;                                          // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -22947,6 +23122,7 @@ struct USaveObjectManager_TA_execCancelGetHeaders_Params
 struct USaveObjectManager_TA_execGetHeaders_Params
 {
 	int32_t                                            InControllerID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InPath;                                           // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      InPattern;                                        // 0x0018 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -22972,6 +23148,7 @@ struct USaveObjectManager_TA_eventHandleSaveResult_Params
 struct USaveObjectManager_TA_execGetSaveError_Params
 {
 	uint8_t                                            Result;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -22980,6 +23157,7 @@ struct USaveObjectManager_TA_execGetSaveError_Params
 struct USaveObjectManager_TA_execGetLoadError_Params
 {
 	uint8_t                                            InResult;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -22988,9 +23166,11 @@ struct USaveObjectManager_TA_execGetLoadError_Params
 struct USaveObjectManager_TA_execLoadAsync_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -22999,9 +23179,11 @@ struct USaveObjectManager_TA_execLoadAsync_Params
 struct USaveObjectManager_TA_execLoad_Params
 {
 	int32_t                                            InControllerID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FLoadObjectResult                           ReturnValue;                                      // 0x0028 (0x0028) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FLoadObjectResult                        Result;                                           // 0x0050 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -23011,6 +23193,7 @@ struct USaveObjectManager_TA_execLoad_Params
 struct USaveObjectManager_TA_execSaveAsync_Params
 {
 	int32_t                                            InControllerID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -23021,9 +23204,11 @@ struct USaveObjectManager_TA_execSaveAsync_Params
 struct USaveObjectManager_TA_execSave_Params
 {
 	int32_t                                            InControllerID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FSaveObjectResult                           ReturnValue;                                      // 0x0028 (0x0018) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FSaveObjectResult                        Result;                                           // 0x0040 (0x0018) [0x0000000000000000]               
 };
@@ -23076,6 +23261,7 @@ struct USaveObjectManager_TA_execGetPlatformSavePath_Params
 struct USaveObjectManager_TA_execDeleteMount_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PathName;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -23085,6 +23271,7 @@ struct USaveObjectManager_TA_execDeleteMount_Params
 struct USaveObjectManager_TA_execDeleteFilesW_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PathName;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            KeepNewestFileCount;                              // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
@@ -23094,6 +23281,7 @@ struct USaveObjectManager_TA_execDeleteFilesW_Params
 struct USaveObjectManager_TA_execDeleteFilesAsyncW_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PathName;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            KeepNewestFileCount;                              // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
@@ -23110,9 +23298,11 @@ struct USaveObjectManager_TA_execIsReadingSaveData_Params
 struct USaveObjectManager_TA_execLoadGameDataAsync_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -23121,6 +23311,7 @@ struct USaveObjectManager_TA_execLoadGameDataAsync_Params
 struct USaveObjectManager_TA_execLoadGameData_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
@@ -23154,6 +23345,7 @@ struct USaveObjectManager_TA_execUpdateSaveResult_Params
 struct USaveObjectManager_TA_execSaveGameDataAsync_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
@@ -23165,6 +23357,7 @@ struct USaveObjectManager_TA_execSaveGameDataAsync_Params
 struct USaveObjectManager_TA_execSaveGameData_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     RootObj;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
@@ -23177,6 +23370,7 @@ struct USaveObjectManager_TA_execSaveGameData_Params
 struct USaveObjectManager_TA_execEventFilesDeleted_Params
 {
 	int32_t                                            ControllerIndex;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PathName;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -23207,6 +23401,7 @@ struct USaveObjectManager_TA_execEventDataLoaded_Params
 struct USaveObjectSerializer_TA_execSetVersion_Params
 {
 	int32_t                                            InVersion;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveObjectSerializer_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -23231,6 +23426,7 @@ struct USaveObjectSerializer_TA_execSerializeObject_Params
 struct USaveObjectSerializer_TA_execCreateNew_Params
 {
 	int32_t                                            InVersion;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveObjectSerializer_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class USaveObjectSerializer_TA*                 Serializer;                                       // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -23351,6 +23547,7 @@ struct USeqAct_SetLoadout_TA_execApplyChangesToProductAsset_Params
 	class UClass*                                      ProductAssetClass;                                // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UAssetAttribute_TeamEdition_TA*              TeamEdition;                                      // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            TeamID;                                           // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     PackageToCompare;                                 // 0x0030 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// class UProductAsset_TA*                         ProductAsset;                                     // 0x0038 (0x0008) [0x0000000000000000]               
 	// class UProductAttribute_PaintSettings_TA*       PaintSettings;                                    // 0x0040 (0x0008) [0x0000000000000000]               
@@ -23527,6 +23724,7 @@ struct USeqAct_SpawnFXActor_TA_execGetFXActorAndPaintSettingsFromProduct_Params
 {
 	class UProductAssetReference_TA*                   ProductAssetRef;                                  // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bWillBePainted : 1;                               // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AFXActor_X*                                  OutFXActor;                                       // 0x0010 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	class UProductAttribute_PaintSettings_TA*          OutPaintSettings;                                 // 0x0018 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	// class UProductAsset_TA*                         ProductAsset;                                     // 0x0020 (0x0008) [0x0000000000000000]               
@@ -23583,6 +23781,7 @@ struct USimpleSpringComponent_TA_execUpdateSpring_Params
 struct USimpleSpringComponent_TA_execUpdatePrimitive_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPrimitiveComponent*                         BaseComponent;                                    // 0x0008 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -23600,6 +23799,7 @@ struct UAntennaComponent_TA_execUpdateSpring_Params
 struct UAntennaComponent_TA_execUpdatePrimitive_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPrimitiveComponent*                         BaseComponent;                                    // 0x0008 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -23772,6 +23972,7 @@ struct USkeletalMeshComponent_TA_execCreateAttachmentSMC_Params
 	class UStaticMesh*                                 Mesh;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UMaterialInterface*                          MaterialOverride;                                 // 0x0008 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bCreateNewMIC : 1;                                // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     OuterOverride;                                    // 0x0018 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	class UStaticMeshComponent_TA*                     ReturnValue;                                      // 0x0020 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class UStaticMeshComponent_TA*                  SMC;                                              // 0x0028 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -23875,6 +24076,7 @@ struct UCarMeshComponentBase_TA_execSetWheelMesh_Params
 	class UMeshComponent*                              MeshComp;                                         // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class UProductAsset_Wheel_TA*                      Asset;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            WheelPos;                                         // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FVehicleAxleSettings                        Axle;                                             // 0x0014 (0x0028) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FName                                        BoneName;                                         // 0x003C (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
@@ -23977,6 +24179,7 @@ struct UCarMeshComponentBase_TA_execCanPaintAntennaMesh_Params
 	class UProductAsset_TA*                            Asset;                                            // 0x0000 (0x0008) [0x0000000000000082] (CPF_Const | CPF_Parm)
 	class UAntennaComponent_TA*                        Antenna;                                          // 0x0008 (0x0008) [0x0000000004000082] (CPF_Const | CPF_Parm | CPF_EditInline)
 	uint8_t                                            Socket;                                           // 0x0010 (0x0001) [0x0000000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAttribute_PaintSettings_TA*       PaintAttribute;                                   // 0x0018 (0x0008) [0x0000000000000000]               
 	// int32_t                                         I;                                                // 0x0020 (0x0004) [0x0000000000000000]               
@@ -24042,6 +24245,7 @@ struct UCarMeshComponentBase_TA_execSetPaintFinishParametersToAccent_Params
 {
 	class UMaterialInstanceConstant*                   MatInst;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bIsPaintFinishDisable : 1;                        // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_PaintFinish_TA*                PaintFinishToApply;                               // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FParameterInformation                       OptionalPaintFinishToApply;                       // 0x0018 (0x0038) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Prefix;                                           // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -24277,6 +24481,7 @@ struct UCarMeshComponentBase_TA_execCreateWheelMesh_Params
 {
 	class UProductAsset_Wheel_TA*                      Asset;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            WheelPos;                                         // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FVehicleAxleSettings                        Axle;                                             // 0x000C (0x0028) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        BoneName;                                         // 0x0034 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UWheelAssetSettings_TA*                   Wheel;                                            // 0x0040 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -24306,6 +24511,7 @@ struct UCarMeshComponentBase_TA_execGetAxleWheelAsset_Params
 	class UAssetAttribute_ForceWheelAxle_TA*           ForceWheelAxle;                                   // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UProductAsset_Wheel_TA*                      InWheelAsset;                                     // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Axle;                                             // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_Wheel_TA*                      ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -24314,6 +24520,7 @@ struct UCarMeshComponentBase_TA_execGetAxleWheelAsset_Params
 struct UCarMeshComponentBase_TA_execSetMaterialParameters_Params
 {
 	int32_t                                            ElementIdx;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FMaterialParams                             Params;                                           // 0x0008 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class UMaterialInstanceConstant*                MatInst;                                          // 0x0038 (0x0008) [0x0000000000000000]               
 	// int32_t                                         ParamIdx;                                         // 0x0040 (0x0004) [0x0000000000000000]               
@@ -24447,6 +24654,7 @@ struct UCarMeshComponent_TA_execSetProductAttributes_Params
 struct UCarMeshComponent_TA_execInitWheelControl_Params
 {
 	int32_t                                            Idx;                                              // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Prefix;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -24585,6 +24793,7 @@ struct USpecialEditionDatabase_TA_execGetSpecialEditionByName_Params
 struct USpecialEditionDatabase_TA_execGetSpecialEdition_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductSpecialEdition_TA*                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -24777,6 +24986,7 @@ struct UStatGraphSystem_TA_execStatGraphNext_Params
 struct UStatGraphSystem_TA_execGetGraphSampleTime_Params
 {
 	uint8_t                                            Level;                                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -24785,6 +24995,7 @@ struct UStatGraphSystem_TA_execGetGraphSampleTime_Params
 struct UStatGraphSystem_TA_execGetDisplayGraphs_Params
 {
 	uint8_t                                            Level;                                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UStatGraph_TA*>                 ReturnValue;                                      // 0x0008 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
 	// class TArray<class UStatGraph_TA*>              ArrayInitializer_0x1;                             // 0x0018 (0x0010) [0x0000000004400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink | CPF_EditInline)
 	// class TArray<class UStatGraph_TA*>              ArrayInitializer_0x2;                             // 0x0028 (0x0010) [0x0000000004400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink | CPF_EditInline)
@@ -24958,6 +25169,7 @@ struct ATeam_TA_exec__ClubColors__ChangeNotifyFunc_Params
 struct ATeam_TA_execUpdateGameShaderParamColors_Params
 {
 	int32_t                                            TeamIdx;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinearColor>                  NewColors;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -25534,6 +25746,7 @@ struct UUserBugReportBulkData_TA_execGatherMemoryDump_Params
 {
 	class TArray<class UClass*>                        IgnoreClasses;                                    // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            MaxPropertyStringLength;                          // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              OutData;                                          // 0x0018 (0x0010) [0x0001000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -25597,6 +25810,7 @@ struct UVanityQuery_TA_execCompleteRequests_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ProcessQuery;                                     // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bUsedCachedResult : 1;                            // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// class TArray<struct FUniqueNetId>               HaveIds;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -25613,6 +25827,7 @@ struct UVanityQuery_TA_execGetQueryInfo_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxShell_X*                                 OutShell;                                         // 0x0050 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	struct FScriptDelegate                             OutCallback;                                      // 0x0058 (0x0018) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -25663,6 +25878,7 @@ struct UVanityQuery_TA_execStartQuery_Params
 	class UGFxShell_X*                                 Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bForcedUpdate : 1;                                // 0x0038 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// struct FVanityQueryRequest                      VQR;                                              // 0x0040 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -25681,6 +25897,7 @@ struct UVanityQuery_TA_execFindQueryIndex_Params
 {
 	struct FUniqueNetId                                InPlayerID;                                       // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InVanityType;                                     // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0049 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x004C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -25761,6 +25978,7 @@ struct UVanitySetManager_TA_execRequestsBorders_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bForcedUpdate : 1;                                // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PsyNetGetVanities_TA*                   RPC;                                              // 0x0018 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	// class U__VanitySetManager_TA__RequestsBorders_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FUniqueNetId>               FilterLocal_0x2;                                  // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -25832,6 +26050,7 @@ struct UVanitySetManager_TA_execRequestBanners_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bForcedUpdate : 1;                                // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PsyNetGetVanities_TA*                   RPC;                                              // 0x0018 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	// class U__VanitySetManager_TA__RequestBanners_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FUniqueNetId>               FilterLocal_0x2;                                  // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -25900,6 +26119,7 @@ struct UVanitySetManager_TA_execRequestAvatars_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bForcedUpdate : 1;                                // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PsyNetGetVanities_TA*                   RPC;                                              // 0x0018 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	// class U__VanitySetManager_TA__RequestAvatars_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FUniqueNetId>               FilterLocal_0x2;                                  // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -25947,6 +26167,7 @@ struct UVanitySetManager_TA_execReadVanity_Internal_Params
 	class UGFxShell_X*                                 Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bForcedUpdate : 1;                                // 0x0038 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// class TArray<struct FUniqueNetId>               FilterLocal_0x1;                                  // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -26066,6 +26287,7 @@ struct AVehiclePickup_TA_execUpdatePickupState_Params
 struct AVehiclePickup_TA_execSetPickedUpDeprecated_Params
 {
 	uint32_t                                           bNewPickedUp : 1;                                 // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     InInstigator;                                     // 0x0008 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
@@ -26380,6 +26602,7 @@ struct AVoteActor_TA_execRequiredVotes_Params
 struct AVoteActor_TA_execGetVotes_Params
 {
 	uint8_t                                            VoteStatus;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bExcludeIdleBannedPlayers : 1;                    // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            ReturnValue;                                      // 0x0008 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__VoteActor_TA__GetVotes_0x1*            _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
@@ -27278,6 +27501,7 @@ struct APRI_TA_execServerSetVoteStatus_Params
 struct APRI_TA_execSetPodiumTitle_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FMemberTitleStat                            InTitle;                                          // 0x0008 (0x0020) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -27827,6 +28051,7 @@ struct APRI_TA_execInitCertifiedProductStat_Params
 {
 	struct FProductInstanceID                          InstanceID;                                       // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ProductID;                                        // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAttribute_Certified_TA*              Certified;                                        // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// struct FOnlineProductStat                       ProductStat;                                      // 0x0020 (0x0018) [0x0000000000000000]               
 };
@@ -27928,6 +28153,7 @@ struct APRI_TA_execValidateLoadout_Params
 struct APRI_TA_execSetLoadoutSlotToDefaultID_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductSlot_TA*                             Slot;                                             // 0x0008 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	// class TArray<class UProductAttribute_TA*>       ArrayInitializer_0x1;                             // 0x0010 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -27953,6 +28179,7 @@ struct APRI_TA_execSetLoadoutDataProducts_Params
 struct APRI_TA_execServerSetTeamLoadout_Params
 {
 	uint8_t                                            TeamIndex;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FServerSetLoadoutTeam                       Params;                                           // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLoadoutData                             Loadout;                                          // 0x0028 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FLoadoutAttributesArray                  LoadoutAttributes;                                // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -27982,6 +28209,7 @@ struct APRI_TA_execServerSetLoadoutDataProduct_Params
 struct APRI_TA_execServerSetTeamLoadoutProduct_Params
 {
 	uint8_t                                            TeamIndex;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FLoadoutProductData                         ProductData;                                      // 0x0008 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -27997,6 +28225,7 @@ struct APRI_TA_execServerSetTeamLoadoutPaint_Params
 struct APRI_TA_execVerifyTeamIndex_Params
 {
 	uint8_t                                            TeamIndex;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint32_t                                        bIsValid : 1;                                     // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 };
@@ -28664,6 +28893,7 @@ struct UProductAsset_Logo_TA_execGetFontColor_Params
 struct UProductAsset_Logo_TA_execGetStadiumColors_Params
 {
 	uint32_t                                           bSwapColors : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinearColor>                  ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<struct FLinearColor>               Colors;                                           // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -28711,6 +28941,7 @@ struct UProductStat_TA_execGetDistanceString_Params
 {
 	class APlayerControllerBase_TA*                    ForPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Meters;                                           // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         MajorUnit;                                        // 0x0020 (0x0004) [0x0000000000000000]               
 	// int32_t                                         MinorUnit;                                        // 0x0024 (0x0004) [0x0000000000000000]               
@@ -28722,6 +28953,7 @@ struct UProductStat_TA_execGetDistanceString_Params
 struct UProductStat_TA_execGetTimeString_Params
 {
 	int32_t                                            Seconds;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         Days;                                             // 0x0018 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Hours;                                            // 0x001C (0x0004) [0x0000000000000000]               
@@ -28735,6 +28967,7 @@ struct UProductStat_TA_execGetDisplayValue_Params
 {
 	class APlayerControllerBase_TA*                    ForPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            StatValue;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -29112,6 +29345,7 @@ struct ACar_TA_execDemolishFromSource_Params
 {
 	class ARBActor_TA*                                 Demolisher;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            DemoSource;                                       // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     DemolisherPRI;                                    // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
@@ -29223,6 +29457,7 @@ struct ACar_TA_eventSetVehicleInput_Params
 struct ACar_TA_execIsInvulnerableToDemolishSource_Params
 {
 	uint8_t                                            DemoSource;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -29242,6 +29477,7 @@ struct ACar_TA_execShouldDemolish_Params
 	struct FVector                                     HitLocation;                                      // 0x0008 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitNormal;                                        // 0x0014 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Result;                                           // 0x0020 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[3];                                      // 0x0021 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0024 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FVector                                  CarForward;                                       // 0x0028 (0x000C) [0x0000000000000000]               
 	// float                                           ForwardSpeed;                                     // 0x0034 (0x0004) [0x0000000000000000]               
@@ -29265,6 +29501,7 @@ struct ACar_TA_execInitTimeOfImpactFromOldRBState_Params
 struct ACar_TA_execAddBumpImpulse_Params
 {
 	struct FVector                                     BumpImpulse;                                      // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     BumpingCar;                                       // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -29273,6 +29510,7 @@ struct ACar_TA_execAddBumpImpulse_Params
 struct ACar_TA_execBumpCar_Params
 {
 	float                                              Speed;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     OtherCar;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitLocation;                                      // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitNormal;                                        // 0x001C (0x000C) [0x0000000000000080] (CPF_Parm)    
@@ -29309,6 +29547,7 @@ struct ACar_TA_execIsValidImpactNormalHit_Params
 struct ACar_TA_execGetBumpImpulse_Params
 {
 	float                                              Speed;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     OtherCar;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitLocation;                                      // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitNormal;                                        // 0x001C (0x000C) [0x0000000000000080] (CPF_Parm)    
@@ -29822,6 +30061,7 @@ struct UGFxData_Mutators_TA_execGetMutatorGroupCount_Params
 struct UGFxData_Mutators_TA_execGetLocalizedMutatorGroupLabel_Params
 {
 	int32_t                                            GroupId;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   GroupLabel;                                       // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -29831,6 +30071,7 @@ struct UGFxData_Mutators_TA_execGetLocalizedMutatorGroupLabel_Params
 struct UGFxData_Mutators_TA_execGetMutatorsByGroupID_Params
 {
 	int32_t                                            GroupId;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FCustomGameSetting>            ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__GFxData_Mutators_TA__GetMutatorsByGroupID_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FCustomGameSetting>         FilterLocal_0x2;                                  // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -29967,6 +30208,7 @@ struct UGFxData_Mutators_TA_execGetGameTagValueFromIndex_Params
 {
 	class FString                                      GameTagCategory;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Index;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UGameSettingCategory_X*                   Category;                                         // 0x0028 (0x0008) [0x0000000000000000]               
 };
@@ -30733,6 +30975,7 @@ struct UProfile_TA_execGetEditingLoadoutSet_Params
 struct UProfile_TA_execGetEditingLoadout_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULoadout_TA*                                 ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -30750,6 +30993,7 @@ struct UProfile_TA_execSetCustomMatchSettings_Params
 struct UProfile_TA_execGetCustomMatchSettings_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FCustomMatchSettings                        ReturnValue;                                      // 0x0008 (0x0088) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FCustomMatchSettings                     Settings;                                         // 0x0090 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -30759,6 +31003,7 @@ struct UProfile_TA_execGetCustomMatchSettings_Params
 struct UProfile_TA_execGetGameTags_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGameTags_TA*                                ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -31278,6 +31523,7 @@ struct UAchievementManager_TA_execGetAchievementProgress_Params
 {
 	int32_t                                            AchievementId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              Out_Progress;                                     // 0x0008 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	float                                              Out_MaxProgress;                                  // 0x000C (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 };
@@ -31288,6 +31534,7 @@ struct UAchievementManager_TA_execGetClampedAchievementProgress_Params
 {
 	int32_t                                            AchievementId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              Out_Progress;                                     // 0x0008 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	float                                              Out_MaxProgress;                                  // 0x000C (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 };
@@ -31423,6 +31670,7 @@ struct UAchievementManager_TA_execIsTurbulentWeather_Params
 struct UAchievementManager_TA_execHasItemQualityEquipped_Params
 {
 	uint8_t                                            Quality;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<class UOnlineProduct_TA*>          Products;                                         // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class U__AchievementManager_TA__HasItemQualityEquipped_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
@@ -31497,6 +31745,7 @@ struct UAchievementManager_TA_execNotifyKeyInput_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -32309,6 +32558,7 @@ struct UAchievementManager_TA_execIncrementStat_Params
 {
 	int32_t                                            AchievementId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            Progress;                                         // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0010 (0x0008) [0x0000000000000000]               
 	// class UOnlineStatsWrite_TA*                     PendingStatWrite;                                 // 0x0018 (0x0008) [0x0000000000000000]               
@@ -32320,6 +32570,7 @@ struct UAchievementManager_TA_execIncrementStat_Params
 struct UAchievementManager_TA_execAchievementTypeExistsOnPlatform_Params
 {
 	uint8_t                                            AchievementType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -32328,6 +32579,7 @@ struct UAchievementManager_TA_execAchievementTypeExistsOnPlatform_Params
 struct UAchievementManager_TA_execGetAchievementTypeMax_Params
 {
 	uint8_t                                            AchievementType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -32337,6 +32589,7 @@ struct UAchievementManager_TA_execGetAchievementIconID_Params
 {
 	int32_t                                            InAchievementID;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0008 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         I;                                                // 0x000C (0x0004) [0x0000000000000000]               
 	// int32_t                                         Count;                                            // 0x0010 (0x0004) [0x0000000000000000]               
@@ -32359,6 +32612,7 @@ struct UAchievementManager_TA_execGetGlobalAchievementID_Params
 {
 	int32_t                                            InAchievementID;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0008 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         AchievementId;                                    // 0x000C (0x0004) [0x0000000000000000]               
 	// int32_t                                         I;                                                // 0x0010 (0x0004) [0x0000000000000000]               
@@ -32371,6 +32625,7 @@ struct UAchievementManager_TA_execIsUnlocked_Params
 {
 	int32_t                                            AchievementId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bIgnoreAuthority : 1;                             // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0010 (0x0008) [0x0000000000000000]               
@@ -32392,6 +32647,7 @@ struct UAchievementManager_TA_execUnlockAchievement_Params
 {
 	int32_t                                            AchievementId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AchievementType;                                  // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bIgnoreAuthority : 1;                             // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// int32_t                                         GlobalID;                                         // 0x000C (0x0004) [0x0000000000000000]               
 	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0010 (0x0008) [0x0000000000000000]               
@@ -33022,6 +33278,7 @@ struct AGameEvent_Soccar_TA_execGetClosestVehicle_Params
 struct AGameEvent_Soccar_TA_execGetClosestGoal_Params
 {
 	struct FVector                                     InLocation;                                       // 0x0000 (0x000C) [0x0000000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// float                                           ShortestDistance;                                 // 0x0018 (0x0004) [0x0000000000000000]               
 	// class UGoal_TA*                                 ClosestGoal;                                      // 0x0020 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -33040,6 +33297,7 @@ struct AGameEvent_Soccar_TA_execOnMaxScoreChanged_Params
 struct AGameEvent_Soccar_TA_execGetGoalByTeamIndex_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class U__GameEvent_Soccar_TA__GetGoalByTeamIndex_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -33099,6 +33357,7 @@ struct AGameEvent_Soccar_TA_execGetInGamePresence_Params
 	class FString                                      PlaylistName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      MapName;                                          // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bLocalize : 1;                                    // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   InGameStr;                                        // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   LocalizedMapName;                                 // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -33397,6 +33656,7 @@ struct AGameEvent_Soccar_TA_execSpawnBall_Params
 	struct FVector                                     SpawnLoc;                                         // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bWake : 1;                                        // 0x000C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bSpawnCannon : 1;                                 // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      BallArch;                                         // 0x0018 (0x0010) [0x0000080000400092] (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class ABall_TA*                                    ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ABall_TA*                                 NewBall;                                          // 0x0030 (0x0008) [0x0000000000000000]               
@@ -33407,6 +33667,7 @@ struct AGameEvent_Soccar_TA_execSpawnBall_Params
 struct AGameEvent_Soccar_TA_execGetScoreStatus_Params
 {
 	uint8_t                                            TeamNum;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        ReturnValue;                                      // 0x0004 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ATeam_TA*                                 WinningTeam;                                      // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -33588,6 +33849,7 @@ struct AGameEvent_Soccar_TA_execOnAllTeamsCreated_Params
 struct AGameEvent_Soccar_TA_execTriggerGoalScoreEvent_Params
 {
 	int32_t                                            TeamScoredOn;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Scorer;                                           // 0x0008 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// class USeqEvent_GoalScored_TA*                  Evt;                                              // 0x0010 (0x0008) [0x0000000000000000]               
 	// class TArray<int32_t>                           Indices;                                          // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -33680,6 +33942,7 @@ struct AGameEvent_Soccar_TA_execOnMyHalf_Params
 {
 	struct FVector                                     TestLocation;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            TeamNum;                                          // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UGoal_TA*                                 Goal;                                             // 0x0018 (0x0008) [0x0000000004000000] (CPF_EditInline)
 	// class UGoal_TA*                                 BestGoal;                                         // 0x0020 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -33719,6 +33982,7 @@ struct AGameEvent_Soccar_TA_execSpawnNewBall_Params
 	struct FVector                                     BallLocation;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FRotator                                    BallRotation;                                     // 0x000C (0x000C) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallIdx;                                          // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ABall_TA*                                    ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ABall_TA*                                 NewBall;                                          // 0x0028 (0x0008) [0x0000000000000000]               
 };
@@ -33945,6 +34209,7 @@ struct AGameEvent_Soccar_TA_execFillClubRecordStatsRPC_Params
 {
 	class URPC_ClubsRecordStats_X*                     RPC;                                              // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            InPlaylistID;                                     // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPendingClubStatRecord>        InClubStatsRecord;                                // 0x0010 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class U__GameEvent_Soccar_TA__FillClubRecordStatsRPC_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 };
@@ -34043,6 +34308,7 @@ struct AGameEvent_Soccar_TA_execHandleGaveStat_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
@@ -35023,6 +35289,7 @@ struct UAutoTour_TA_execHandleTourFound_Params
 struct UAutoTour_TA_execSetWeeksResults_Params
 {
 	int32_t                                            InWeekIndex;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FTournamentResult>             NewWeeksResults;                                  // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -35234,6 +35501,7 @@ struct UBallPossessionComponent_TA_exec__BallPossessionComponent_TA__Tick_0x1_Pa
 struct UBallPossessionComponent_TA_execGetLastTouchWithTeamNum_Params
 {
 	int32_t                                            InTeamNum;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__BallPossessionComponent_TA__GetLastTouchWithTeamNum_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -35356,6 +35624,7 @@ struct UBanSync_TA_exec__BanSync_TA__SetBanMessages_0x1_Params
 struct UBanSync_TA_execIsBanned_Params
 {
 	uint8_t                                            BanType;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -35371,6 +35640,7 @@ struct UBanSync_TA_execClear_Params
 struct UBanSync_TA_execGetBanMessage_Params
 {
 	uint8_t                                            BanType;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UBanMessage_X*                               ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<class UBanMessage_X*>              Bans;                                             // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -35393,6 +35663,7 @@ struct UBanSync_TA_execGetPlayerBanMessages_Params
 struct UBanSync_TA_execGetBanMessageTypes_Params
 {
 	uint8_t                                            BanType;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UBanMessage_X*>                 ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__BanSync_TA__GetBanMessageTypes_0x1*    _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<class UBanMessage_X*>              FilterLocal_0x2;                                  // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -35825,6 +36096,7 @@ struct ACar_KnockOut_TA_execShouldDemolish_Params
 	struct FVector                                     HitLocation;                                      // 0x0008 (0x000C) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     HitNormal;                                        // 0x0014 (0x000C) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                            Result;                                           // 0x0020 (0x0001) [0x0001000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[3];                                      // 0x0021 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0024 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -37290,6 +37562,7 @@ struct UChallengeManager_TA_execAreChallengesComplete_Params
 struct UChallengeManager_TA_execFindChallenge_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UChallenge_TA*                               ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         Index;                                            // 0x0010 (0x0004) [0x0000000000000000]               
 };
@@ -37299,6 +37572,7 @@ struct UChallengeManager_TA_execFindChallenge_Params
 struct UChallengeManager_TA_execCollectChallengeReward_Params
 {
 	int32_t                                            ChallengeID;                                      // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FOnlineReward                               Reward;                                           // 0x0008 (0x0028) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class UOnlineProduct_TA*>             OnlineProductRewards;                             // 0x0030 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UChallenge_TA*                            Challenge;                                        // 0x0040 (0x0008) [0x0001000000000000]               
@@ -37768,6 +38042,7 @@ struct UCinematicIntroSequence_TA_execNotifyKeyInput_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0001000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -37995,6 +38270,7 @@ struct ACrowdActor_TA_execHandleGaveStat_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	// int32_t                                         StatIdx;                                          // 0x0038 (0x0004) [0x0000000000000000]               
@@ -38388,6 +38664,7 @@ struct UCrowdSoundManagerBase_TA_execPrintDebugInfo_Params
 struct UCrowdSoundManagerBase_TA_execGetCrowdValue_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -38451,6 +38728,7 @@ struct UCrowdSoundManagerBase_TA_execUpdate0Seconds_Params
 struct UCrowdSoundManagerBase_TA_execPlayMatchEndCountdown_Params
 {
 	int32_t                                            InSecondsRemaining;                               // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UCrowdSoundsBase_TA*                         InSounds;                                         // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class AActor*                                      FromActor;                                        // 0x0010 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	// int32_t                                         SecondsIdx;                                       // 0x0018 (0x0004) [0x0000000000000000]               
@@ -38896,6 +39174,7 @@ struct UTriggerCondition_TA_execSetCallback_Params
 struct UTriggerCondition_TA_execSetRepeatable_Params
 {
 	uint32_t                                           bIsRepeatable : 1;                                // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTriggerCondition_TA*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -38965,6 +39244,7 @@ struct UCurrencyProductSet_TA_exec__CurrencyProductSet_TA__GetCurrenciesWithBala
 struct UCurrencyProductSet_TA_exec__CurrencyProductSet_TA__GetCurrencies_0x1_Params
 {
 	struct FCurrencyProduct                            C;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FCurrency                                   ReturnValue;                                      // 0x0010 (0x0060) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FCurrency                                StructInitializer_0x1;                            // 0x0070 (0x0060) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -39159,6 +39439,7 @@ struct UEOSGameClipsMetrics_TA_execHandleCreateClipInitiated_Params
 {
 	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InClipId;                                         // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InClipType;                                       // 0x0018 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         ClipIndex;                                        // 0x0028 (0x0004) [0x0000000000000000]               
 };
@@ -39179,6 +39460,7 @@ struct UEOSGameClipsMetrics_TA_execHandleClipErrorOccurred_Params
 {
 	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InClipId;                                         // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UErrorType*                                  InErrorType;                                      // 0x0018 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	// int32_t                                         ClipIndex;                                        // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -39310,6 +39592,7 @@ struct UEOSVoiceManager_TA_execIsSpectatorTeamNum_Params
 struct UEOSVoiceManager_TA_execIsVoiceAllowedForTeam_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AGameEvent_Soccar_TA*                        GameEvent;                                        // 0x0008 (0x0008) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AGameEvent_Soccar_TA*                     NoneCoalescing_0x1;                               // 0x0018 (0x0008) [0x0001000000000000]               
@@ -39321,6 +39604,7 @@ struct UEOSVoiceManager_TA_execGenerateMatchRoomName_Params
 {
 	class FString                                      MatchGUID;                                        // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            TeamNum;                                          // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -39336,6 +39620,7 @@ struct UEOSVoiceManager_TA_execGetMetrics_Params
 struct UEOSVoiceManager_TA_execGetCurrentMatchRoomName_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   MatchGUID;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -39699,6 +39984,7 @@ struct UEOSVoiceManager_TA_execGetRoomTypeBeingRecorded_Params
 struct UEOSVoiceManager_TA_execIsRecordingDataAvailableForRoomType_Params
 {
 	uint8_t                                            RoomType;                                         // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         RecordingIndex;                                   // 0x0008 (0x0004) [0x0000000000000000]               
 	// uint64_t                                        CurrentTime;                                      // 0x0010 (0x0008) [0x0000000000000000]               
@@ -39798,6 +40084,7 @@ struct UEOSVoiceManager_TA_execHandleRemotePlayerLeftVoiceRoom_Params
 struct UEOSVoiceManager_TA_execHandleRequestedLinkedAccounts_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedData;                                       // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FVoiceRoom                               Room;                                             // 0x0018 (0x0038) [0x0011000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0050 (0x0004) [0x0000000000000000]               
@@ -39866,6 +40153,7 @@ struct UEOSVoiceManager_TA_execHandleLeftVoiceRoom_Params
 struct UEOSVoiceManager_TA_execGetResultCodeError_Params
 {
 	uint8_t                                            ResultCode;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -39992,6 +40280,7 @@ struct UEOSVoiceManager_TA_execAddVoiceRoomCredentials_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FVoiceRoomCredentials                       RoomCredentials;                                  // 0x0048 (0x0030) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            RoomType;                                         // 0x0078 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0079 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0080 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         RoomIndex;                                        // 0x0088 (0x0004) [0x0000000000000000]               
 	// struct FVoiceRoomToken                          PlayerToken;                                      // 0x0090 (0x0068) [0x0001000000400000] (CPF_NeedCtorLink)
@@ -40128,6 +40417,7 @@ struct UEOSVoiceManager_TA_execRemoveVoiceReportReasonInt_Params
 struct UEOSVoiceManager_TA_execIsReportReasonVoice_Params
 {
 	uint8_t                                            InReasonId;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -40281,6 +40571,7 @@ struct UOnlineGame_TA_execCanChatWithPlayer_Params
 	class UOnlinePlayer_X*                             OnlinePlayer;                                     // 0x0000 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                OtherPlayer;                                      // 0x0008 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            ChatFilter;                                       // 0x0050 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0051 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0054 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AGameReplicationInfo*                     GRI;                                              // 0x0058 (0x0008) [0x0000000000000000]               
 	// class APlayerController*                        PC;                                               // 0x0060 (0x0008) [0x0000000000000000]               
@@ -40852,6 +41143,7 @@ struct UEpicFriendsConverter_TA_execStartConversion_Params
 struct UEpicFriendsConverter_TA_execHandleOnReceivedLinkedAccount_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedAccountData;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLinkedAccountData                       Data;                                             // 0x0018 (0x00A8) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -41004,6 +41296,7 @@ struct U__ESportConfig_TA__GetNextEventTime_0x1_exec__ESportConfig_TA__GetNextEv
 struct U__Eula_TA__RequiresAcceptance_0x1_exec__Eula_TA__RequiresAcceptance_0x1_Params
 {
 	uint8_t                                            P;                                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -42024,6 +42317,7 @@ struct AFreeplayCommands_TA_execGetDefendShotStandard_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     CarLocation;                                      // 0x0008 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ClosestGoal;                                      // 0x0018 (0x0008) [0x0001000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     ReturnValue;                                      // 0x0020 (0x000C) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FVector                                  GoalWorldFrontCenter;                             // 0x002C (0x000C) [0x0000000000000000]               
@@ -42039,6 +42333,7 @@ struct AFreeplayCommands_TA_execGetDefendShotBreakout_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     CarLocation;                                      // 0x0008 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AGameEvent_Breakout_TA*                      BreakoutGame;                                     // 0x0018 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0020 (0x000C) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<class ABreakOutActor_Platform_TA*> Platforms;                                        // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -42056,6 +42351,7 @@ struct AFreeplayCommands_TA_execGetDefendShotHoops_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     CarLocation;                                      // 0x0008 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_Hoops_TA*                              HoopsGoal;                                        // 0x0018 (0x0008) [0x0001000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     BallProximityToRim;                               // 0x0020 (0x000C) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x002C (0x000C) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -42084,6 +42380,7 @@ struct AFreeplayCommands_TA_execDefendShot_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     CarLocation;                                      // 0x0008 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ClosestGoal;                                      // 0x0018 (0x0008) [0x0001000004000080] (CPF_Parm | CPF_EditInline)
 	class UError*                                      ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FCalculateLaunchVectorInParams           LaunchVectorParams;                               // 0x0028 (0x0024) [0x0001000000000000]               
@@ -42109,6 +42406,7 @@ struct AFreeplayCommands_TA_execRedirectPass_Params
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class ACar_TA*                                     Car;                                              // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     BestGoalLocation;                                 // 0x0010 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FCalculateRedirectHorizontalLaunchSpeedInParams RedirectPassVelocityParams;                       // 0x0028 (0x002C) [0x0001000000000000]               
 	// struct FCalculateRedirectHorizontalLaunchSpeedInParams StructInitializer_0x1;                            // 0x0054 (0x002C) [0x0001000000000102] (CPF_Const | CPF_OutParm)
@@ -42136,6 +42434,7 @@ struct AFreeplayCommands_TA_execLaunchBall_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     LaunchVector;                                     // 0x0008 (0x000C) [0x0001000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0018 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FModifyRBStateInParams                   ModifyRBStateParams;                              // 0x0020 (0x0070) [0x0001000000000000]               
 	// struct FModifyRBStateInParams                   StructInitializer_0x1;                            // 0x0090 (0x0070) [0x0001000000000102] (CPF_Const | CPF_OutParm)
@@ -42186,6 +42485,7 @@ struct AFreeplayCommands_TA_execConditionalTeleportBallToCar_Params
 	struct FVector                                     TeleportLocation;                                 // 0x0008 (0x000C) [0x0001000000000082] (CPF_Const | CPF_Parm)
 	struct FVector                                     CarLocation;                                      // 0x0014 (0x000C) [0x0001000000000082] (CPF_Const | CPF_Parm)
 	struct FVector                                     NewBallVelocity;                                  // 0x0020 (0x000C) [0x0001000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0030 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FModifyRBStateInParams                   ModifyRBStateParams;                              // 0x0040 (0x0070) [0x0001000000000000]               
 	// struct FModifyRBStateInParams                   StructInitializer_0x1;                            // 0x00B0 (0x0070) [0x0001000000000102] (CPF_Const | CPF_OutParm)
@@ -42470,6 +42770,7 @@ struct AGameEvent_KnockOut_TA_execMessageReturnedToSafezone_Params
 struct AGameEvent_KnockOut_TA_execMessageReturnToSafezone_Params
 {
 	int32_t                                            TimeLeft;                                         // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
 };
 
@@ -42766,6 +43067,7 @@ struct UClientConnectionTracker_TA_execShouldUpdateMetric_Params
 {
 	uint8_t                                            ExistingValue;                                    // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewValue;                                         // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              LastUpdateTime;                                   // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              CurrentTime;                                      // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              DelayTime;                                        // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
@@ -42778,6 +43080,7 @@ struct UClientConnectionTracker_TA_execPollMetric_Params
 {
 	uint8_t                                            ExistingState;                                    // 0x0000 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	uint8_t                                            NewState;                                         // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              UpdateTime;                                       // 0x0004 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	float                                              NewTime;                                          // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              DelayTime;                                        // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
@@ -42794,6 +43097,7 @@ struct UClientConnectionTracker_TA_execUpdateSavedRollingMetricTimes_Params
 struct UClientConnectionTracker_TA_execUpdateRollingConnectionQuality_Params
 {
 	uint8_t                                            Status;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              RollingTime;                                      // 0x0004 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 };
 
@@ -43108,6 +43412,7 @@ struct UListenServer_TA_execTimeoutLoadingPlayers_Params
 struct UListenServer_TA_execGetMapLoadTime_Params
 {
 	uint8_t                                            Platform;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -43325,6 +43630,7 @@ struct UMatchType_TA_execShouldKickOnMigrate_Params
 struct UMatchType_TA_execChooseTeam_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -43642,6 +43948,7 @@ struct UMatchType_TA_execInit_Params
 struct UPhysicsMetrics_TA_execResimMetricDataToString_Params
 {
 	struct FResimMetricData                            InData;                                           // 0x0000 (0x001C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   Output;                                           // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -43880,6 +44187,7 @@ struct UOnlineGameDedicatedServer_TA_execGotoPrivateMatchMap_Params
 {
 	class FName                                        MapName;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            GameMode;                                         // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      GameTags;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class FString                                   ServerCommand;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class TArray<class FString>                     OptionsArray;                                     // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -44111,6 +44419,7 @@ struct UGameMetrics_TA_execRecordGoalScoreTouch_Params
 struct UGameMetrics_TA_execGoalScored_Params
 {
 	int32_t                                            Team;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      BallLocation;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BallVelocity;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -44218,6 +44527,7 @@ struct UGameMetrics_TA_execGameInit_Params
 	class FName                                        EventName;                                        // 0x0008 (0x0008) [0x0000000000000880] (CPF_Parm | CPF_CoerceParm)
 	class FName                                        MatchType;                                        // 0x0010 (0x0008) [0x0000000000000880] (CPF_Parm | CPF_CoerceParm)
 	int32_t                                            Playlist;                                         // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      MatchGUID;                                        // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -44542,6 +44852,7 @@ struct UMatchType_Custom_TA_execGetMaxTeamSize_Params
 struct UMatchType_Custom_TA_execChooseTeam_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ATeam_TA*                                 Team;                                             // 0x0018 (0x0008) [0x0000000000000000]               
@@ -45157,6 +45468,7 @@ struct AGameInfo_Replay_TA_execFindPlayerStart_Params
 {
 	class AController*                                 Player;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            InTeam;                                           // 0x0008 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      IncomingName;                                     // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class ANavigationPoint*                            ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ACameraActor*                             CamActor;                                         // 0x0028 (0x0008) [0x0000000000000000]               
@@ -45348,6 +45660,7 @@ struct ATeam_Soccar_TA_execMirrorStartPoint_Params
 {
 	class AActor*                                      SpawnPoint;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     Pivot;                                            // 0x0008 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AActor*                                      ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FVector                                  NewLocation;                                      // 0x0020 (0x000C) [0x0000000000000000]               
 	// struct FVector                                  Dir;                                              // 0x002C (0x000C) [0x0000000000000000]               
@@ -45392,6 +45705,7 @@ struct ATeam_Soccar_TA_execEventGameScoreUpdated_Params
 struct UMatchSeries_TA_exec__MatchSeries_TA__GetGamesPlayed_0x1_Params
 {
 	int32_t                                            Sum;                                              // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FSeriesTeam                                 Team;                                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            ReturnValue;                                      // 0x0020 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -45417,6 +45731,7 @@ struct UMatchSeries_TA_execGetSeriesWinCount_Params
 struct UMatchSeries_TA_execGetSeriesWinnerFromData_Params
 {
 	int32_t                                            InSeriesLength;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              InGamesWon;                                       // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            ReturnValue;                                      // 0x0018 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__MatchSeries_TA__GetSeriesWinnerFromData_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
@@ -45482,6 +45797,7 @@ struct UMatchSeries_TA_execRemoveTeamPlayer_Params
 struct UMatchSeries_TA_execAddTeamPlayer_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Player;                                           // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -45663,6 +45979,7 @@ struct UFunctionTemplates_execObject__SwapArrayItems__SpecialPickup_TA_Params
 struct UFunctionTemplates_execProductDatabase_TA__TLoadAsset__ProductAsset_Skin_TA_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_Skin_TA*                       ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -45689,6 +46006,7 @@ struct UFunctionTemplates_execObject__Swap__ClubDetails_X_Params
 struct UFunctionTemplates_execProductDatabase_TA__TLoadAsset__ProductAsset_Body_TA_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_Body_TA*                       ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -46050,6 +46368,7 @@ struct AStatFactory_TA_execCalculateShotGoal_Params
 	class UGoal_TA*                                    GoalToTest;                                       // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class ABall_TA*                                    Ball;                                             // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              ArriveTime;                                       // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ReturnValue;                                      // 0x0018 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// struct FVector                                  BallProjectionPos;                                // 0x0020 (0x000C) [0x0000000000000000]               
 	// struct FVector                                  VecToBall;                                        // 0x002C (0x000C) [0x0000000000000000]               
@@ -46178,6 +46497,7 @@ struct AStatFactory_TA_execIsInRedZone_Params
 struct AStatFactory_TA_execIsEpicSave_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0008 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBallHitInfo                                Hit;                                              // 0x0010 (0x0110) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0120 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	bool                                               ReturnValue : 1;                                  // 0x0128 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -46191,6 +46511,7 @@ struct AStatFactory_TA_execIsEpicSave_Params
 struct AStatFactory_TA_execGetHitDistanceToGoal_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0008 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBallHitInfo                                Hit;                                              // 0x0010 (0x0110) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0120 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	float                                              ReturnValue;                                      // 0x0128 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -46214,6 +46535,7 @@ struct AStatFactory_TA_execGiveScore_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            BallHitIndex;                                     // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0020 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	class UGoal_TA*                                    Goal;                                             // 0x0028 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	int32_t                                            Count;                                            // 0x0030 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
@@ -46277,6 +46599,7 @@ struct AStatFactory_TA_execEventGaveStat_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
@@ -46299,6 +46622,7 @@ struct AReplayDirector_TA_execHandleGaveStat_Params
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
@@ -46846,6 +47170,7 @@ struct URPC_MatchComplete_TA_execSetMatchData_Params
 struct URPC_MatchComplete_TA_execSetPlaylistID_Params
 {
 	int32_t                                            InPlaylistID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_MatchComplete_TA*                       ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -47065,6 +47390,7 @@ struct URecentPlayersMet_TA_execRecordRecentPlayers_Params
 struct URPC_OnlineFreeplayComplete_TA_execSetIsInParty_Params
 {
 	uint32_t                                           bValue : 1;                                       // 0x0000 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_OnlineFreeplayComplete_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -47073,6 +47399,7 @@ struct URPC_OnlineFreeplayComplete_TA_execSetIsInParty_Params
 struct URPC_OnlineFreeplayComplete_TA_execSetDistanceDrivenMeters_Params
 {
 	int32_t                                            InDistanceDrivenMeters;                           // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_OnlineFreeplayComplete_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FStatData                                StructInitializer_0x1;                            // 0x0010 (0x000C) [0x0001000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -47304,6 +47631,7 @@ struct AGameInfo_TA_eventPreLogin_Params
 	class FString                                      Address;                                          // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                UniqueId;                                         // 0x0020 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bSupportsAuth : 1;                                // 0x0068 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x006C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ErrorMessage;                                     // 0x0070 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -47356,6 +47684,7 @@ struct UMutator_Score_TA_execHandleStatGiven_Params
 	class UStatEvent_TA*                               InStatEvent;                                      // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ABall_TA*                                    Ball;                                             // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            BallHitIndex;                                     // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Victim;                                           // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0030 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	// class ATeam_TA*                                 PlayerTeam;                                       // 0x0038 (0x0008) [0x0000000000000000]               
@@ -47535,6 +47864,7 @@ struct UViralItemConfig_TA_execGetSeriesInfectedType_Params
 struct UStatTitle_TA_execGetUnitTypeAsString_Params
 {
 	uint32_t                                           bMetric : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -47616,6 +47946,7 @@ struct UGFxNameplatesManager_TA_execGetNameplate_Params
 struct UGFxNameplatesManager_TA_execSetNameplate_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNameplateComponent_TA*                      InComponent;                                      // 0x0008 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class UNameplateMeshComponent_TA*                  ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 };
@@ -47625,6 +47956,7 @@ struct UGFxNameplatesManager_TA_execSetNameplate_Params
 struct UGFxNameplatesManager_TA_execSetPlayerData_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNameplateComponent_TA*                      InComponent;                                      // 0x0008 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -47965,6 +48297,7 @@ struct UReplay_Soccar_TA_execRecordSave_Params
 struct UReplay_Soccar_TA_execRecordGoal_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     Scorer;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        BallName;                                         // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        GoalActorName;                                    // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
@@ -47993,6 +48326,7 @@ struct AGFxHUD_TA_exec__GFxHUD_TA__HandleServerNameChanged_0x1_Params
 struct AGFxHUD_TA_exec__GFxHUD_TA__UpdateScoreboardStatNames_0x1_Params
 {
 	struct FScoreboardStat                             S;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0001000040400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_DataBinding)
 };
 
@@ -48097,6 +48431,7 @@ struct AGFxHUD_TA_execHandleVoteFinished_Params
 struct AGFxHUD_TA_execGetVoteBySubject_Params
 {
 	uint8_t                                            VoteSubject;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_Vote_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         RowIndex;                                         // 0x0010 (0x0004) [0x0000000000000000]               
 	// class U__GFxHUD_TA__GetVoteBySubject_0x1*       _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
@@ -48107,6 +48442,7 @@ struct AGFxHUD_TA_execGetVoteBySubject_Params
 struct AGFxHUD_TA_execGetVoteByRow_Params
 {
 	int32_t                                            RowIndex;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_Vote_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -48279,6 +48615,7 @@ struct AGFxHUD_TA_execOpenChat_Params
 struct AGFxHUD_TA_execCanOpenChat_Params
 {
 	uint8_t                                            InChatFilter;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -48769,6 +49106,7 @@ struct AGFxHUD_TA_execVoteLambda_Params
 struct AHUDBase_TA_execFormatTimeStamp_Params
 {
 	int32_t                                            TimeStamp;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         Minutes;                                          // 0x0018 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Seconds;                                          // 0x001C (0x0004) [0x0000000000000000]               
@@ -48902,6 +49240,7 @@ struct AHUDBase_TA_execOnChatMessage_Params
 struct AHUDBase_TA_execEraseChatByType_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0008 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -48910,6 +49249,7 @@ struct AHUDBase_TA_execEraseChatByType_Params
 struct AHUDBase_TA_execRepopulateChatHistory_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0008 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -48920,6 +49260,7 @@ struct AHUDBase_TA_execLobbyMessage_TA_Params
 	class FString                                      PlayerName;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0021 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerReplicationInfo*                      SenderPRI;                                        // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueNetId                                SenderId;                                         // 0x0030 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FChatMessage                             NewMsg;                                           // 0x0078 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -48932,6 +49273,7 @@ struct AHUDBase_TA_execIndividualMessage_TA_Params
 	class FString                                      PlayerName;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0021 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0028 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FGFxChatMessage                          StructInitializer_0x1;                            // 0x0070 (0x0090) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -48943,8 +49285,10 @@ struct AHUDBase_TA_execMessage_TA_Params
 	class APlayerReplicationInfo*                      PRI;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0019 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bPreset : 1;                                      // 0x001C (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	int32_t                                            TimeStamp;                                        // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Recipient;                                        // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// struct FChatMessage                             NewMsg;                                           // 0x0070 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -49389,6 +49733,7 @@ struct AGameEvent_TrainingEditor_TA_execSetMetaData_Params
 	class FString                                      NewName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            NewType;                                          // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewDifficulty;                                    // 0x0011 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0012 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              NewTags;                                          // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -49555,6 +49900,7 @@ struct AGameEvent_TrainingEditor_TA_execIncrementRound_Params
 struct AGameEvent_TrainingEditor_TA_execGetStoredArchetypeCount_Params
 {
 	int32_t                                            RoundNumber;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      ClassType;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         I;                                                // 0x0014 (0x0004) [0x0000000000000000]               
@@ -49652,6 +49998,7 @@ struct AGameEvent_TrainingEditor_TA_execSwitchToRoundNumber_Params
 struct AGameEvent_TrainingEditor_TA_execSetRoundByNumber_Params
 {
 	int32_t                                            RoundNumber;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FEditorRoundData                            RoundData;                                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -49834,6 +50181,7 @@ struct AGameEvent_TrainingEditor_TA_execFindObjectForTraining_Params
 	class FString                                      ObjectName;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UClass*                                      ObjectClass;                                      // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           MayFail : 1;                                      // 0x0018 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UObject*                                     ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -50109,6 +50457,7 @@ struct AGameEvent_GameEditor_TA_execRestoreFromHistory_Params
 {
 	class APlayerController_TA*                        PC;                                               // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HistoryType;                                      // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FActorHistory                               RestoreHistory;                                   // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AActor*                                   FoundActor;                                       // 0x0038 (0x0008) [0x0000000000000000]               
@@ -50155,6 +50504,7 @@ struct AGameEvent_GameEditor_TA_execAddUndoHistory_Params
 {
 	class UInterface_GameEditor_TA*                    EditorActor;                                      // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HistoryEditType;                                  // 0x0010 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bClearRedoHistory : 1;                            // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -50164,8 +50514,10 @@ struct AGameEvent_GameEditor_TA_execAddUndoHistory_Params
 struct AGameEvent_GameEditor_TA_execAddHistory_Params
 {
 	uint8_t                                            HistoryType;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UInterface_GameEditor_TA*                    EditorActor;                                      // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HistoryEditType;                                  // 0x0018 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[3];                                      // 0x0019 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bClearRedoHistory : 1;                            // 0x001C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -50176,6 +50528,7 @@ struct AGameEvent_GameEditor_TA_execMakeHistory_Params
 {
 	class UInterface_GameEditor_TA*                    EditorActor;                                      // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HistoryEditType;                                  // 0x0010 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FActorHistory                               ReturnValue;                                      // 0x0018 (0x0020) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FActorHistory                            NewHistory;                                       // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -50199,6 +50552,7 @@ struct AGameEvent_GameEditor_TA_execDeserializeAndSpawn_Params
 	class FString                                      SerializedData;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UClass*                                      ClassType;                                        // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            HistoryType;                                      // 0x0018 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AActor*                                      ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UJsonObject*                              JsonObject;                                       // 0x0028 (0x0008) [0x0000000000000000]               
 	// class AActor*                                   SpawnedArchetype;                                 // 0x0030 (0x0008) [0x0000000000000000]               
@@ -50212,6 +50566,7 @@ struct AGameEvent_GameEditor_TA_execDestroyActor_Params
 {
 	class AActor*                                      A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            HistoryType;                                      // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -50326,6 +50681,7 @@ struct AGameEvent_GameEditor_TA_execSpawnArchetype_Params
 struct AGameEvent_GameEditor_TA_execGetSelectedSpawnArchetype_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FSpawnArchetypeData                         ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FSpawnArchetypeData                      EmptyData;                                        // 0x0018 (0x0010) [0x0000000000000000]               
 };
@@ -50432,6 +50788,7 @@ struct AGameEvent_GameEditor_TA_execSetupInitialPawnOrientation_Params
 struct AGameEvent_GameEditor_TA_execChooseTeam_Params
 {
 	int32_t                                            TeamIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APlayerController_TA*                        Player;                                           // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -50764,6 +51121,7 @@ struct AGameEvent_Tutorial_TA_execCleanupRoundActors_Params
 struct AGameEvent_Tutorial_TA_execDetermineBallInitialVelocity_Params
 {
 	struct FVector                                     BallSpawnLoc;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FFieldSpawnInfo                             SpawnInfo;                                        // 0x0018 (0x003C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0054 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -50787,6 +51145,7 @@ struct AGameEvent_Tutorial_TA_execResetBalls_Params
 struct AGameEvent_Tutorial_TA_execGetScoreStatus_Params
 {
 	uint8_t                                            InTeamNum;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        ReturnValue;                                      // 0x0004 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -50844,6 +51203,7 @@ struct AGameEvent_Tutorial_TA_execResetOrientation_Params
 struct AGameEvent_Tutorial_TA_execGetBallInitialVelocity_Params
 {
 	struct FVector                                     BallSpawnLoc;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FFieldSpawnInfo                             SpawnInfo;                                        // 0x0018 (0x003C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0054 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -51129,6 +51489,7 @@ struct AGameEvent_Tutorial_TA_execSpawnBall_Params
 	struct FVector                                     SpawnLoc;                                         // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bWake : 1;                                        // 0x000C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bSpawnCannon : 1;                                 // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      BallArch;                                         // 0x0018 (0x0010) [0x0000080000400092] (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class ABall_TA*                                    ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ABall_TA*                                 NewBall;                                          // 0x0030 (0x0008) [0x0000000000000000]               
@@ -51173,6 +51534,7 @@ struct AGameEvent_Tutorial_TA_execGetGoalExtent_Params
 struct AGameEvent_Tutorial_TA_execSetBallVelocity_Params
 {
 	struct FVector                                     InitialVelocity;                                  // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ABall_TA*                                    Ball;                                             // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
@@ -51447,6 +51809,7 @@ struct AGameInfo_GFxMenu_TA_execUIStateIsActive_Params
 {
 	class UGFxShell_TA*                                Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            UIState;                                          // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -51730,6 +52093,7 @@ struct AGameInfo_Soccar_TA_eventPreLogin_Params
 	class FString                                      Address;                                          // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                UniqueId;                                         // 0x0020 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bSupportsAuth : 1;                                // 0x0068 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x006C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ErrorMessage;                                     // 0x0070 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -52104,6 +52468,7 @@ struct UGFxData_Chat_TA_execClearChat_Params
 struct UGFxData_Chat_TA_execClearChatByType_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Persona;                                          // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -52112,12 +52477,15 @@ struct UGFxData_Chat_TA_execClearChatByType_Params
 struct UGFxData_Chat_TA_execOnChatMessage_Params
 {
 	int32_t                                            Team;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      PlayerName;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0028 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[3];                                      // 0x0029 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bLocalPlayer : 1;                                 // 0x002C (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	struct FUniqueNetId                                SenderId;                                         // 0x0030 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            MessageType;                                      // 0x0078 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding2[7];                                      // 0x0079 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      TimeStamp;                                        // 0x0080 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -52175,6 +52543,7 @@ struct UGFxData_Chat_TA_execDispatchChatMessage_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Recipient;                                        // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -52183,6 +52552,7 @@ struct UGFxData_Chat_TA_execDispatchChatMessage_Params
 struct UGFxData_Chat_TA_execEraseChatByType_Params
 {
 	uint8_t                                            ChatChannel;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PersonaId;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -52234,6 +52604,7 @@ struct UGFxData_Chat_TA_execSendChatChannelMessage_Params
 {
 	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                Recipient;                                        // 0x0018 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -52266,6 +52637,7 @@ struct UGFxData_Chat_TA_execSendChatPresetMessage_Params
 struct UGFxData_Chat_TA_execDisplayFreshCrossPlatformFilterHint_Params
 {
 	uint8_t                                            NewCrossplayChatState;                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineGameParty_X*                          Party;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class FString                                   WarningText;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FGFxChatMessage                          StructInitializer_0x1;                            // 0x0020 (0x0090) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -52413,6 +52785,7 @@ struct UChatHistory_TA_execRepopulateChatFromHistory_Params
 {
 	class UGFxData_Chat_TA*                            GFxChat;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Channel;                                          // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SenderId;                                         // 0x0010 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UStoredChatData_TA*                       ChatInfo;                                         // 0x0058 (0x0008) [0x0000000000000000]               
 };
@@ -52422,6 +52795,7 @@ struct UChatHistory_TA_execRepopulateChatFromHistory_Params
 struct UChatHistory_TA_execClearHistory_Params
 {
 	uint8_t                                            Channel;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SenderId;                                         // 0x0008 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// class UStoredChatData_TA*                       ChatInfo;                                         // 0x0050 (0x0008) [0x0000000000000000]               
 };
@@ -52439,6 +52813,7 @@ struct UChatHistory_TA_execStoreMessageInternal_Params
 struct UChatHistory_TA_execCreateNewHistory_Params
 {
 	uint8_t                                            Channel;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SenderId;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UStoredChatData_TA*                          ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UStoredChatData_TA*                       ChatInfo;                                         // 0x0058 (0x0008) [0x0000000000000000]               
@@ -52450,6 +52825,7 @@ struct UChatHistory_TA_execCreateNewHistory_Params
 struct UChatHistory_TA_execFindHistory_Params
 {
 	uint8_t                                            Channel;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SenderId;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UStoredChatData_TA*                          ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<class UStoredChatData_TA*>         Individuals;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -52461,6 +52837,7 @@ struct UChatHistory_TA_execFindHistory_Params
 struct UChatHistory_TA_execGetOrCreateHistory_Params
 {
 	uint8_t                                            Channel;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                SenderId;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UStoredChatData_TA*                          ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UStoredChatData_TA*                       NoneCoalescing_0x1;                               // 0x0058 (0x0008) [0x0000000000000000]               
@@ -52486,6 +52863,7 @@ struct UChatHistory_TA_execActivateStoredChat_Params
 struct UChatHistory_TA_execCanStoreMessage_Params
 {
 	uint8_t                                            ChannelMessage;                                   // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -52848,6 +53226,7 @@ struct UGFxData_Clubs_TA_execHandleRemoveEpicFriend_Params
 struct UGFxData_Clubs_TA_execGetActionsArray_Params
 {
 	uint8_t                                            TargetPlayerRole;                                 // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FGFxClubActionData>            ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<struct FGFxClubActionData>         ArrayInitializer_0x1;                             // 0x0018 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -52857,6 +53236,7 @@ struct UGFxData_Clubs_TA_execGetActionsArray_Params
 struct UGFxData_Clubs_TA_execAddAction_Params
 {
 	uint8_t                                            NewAction;                                        // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FGFxClubActionData>            Actions;                                          // 0x0008 (0x0010) [0x0001000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// struct FGFxClubActionData                       ActionData;                                       // 0x0018 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -53531,6 +53911,7 @@ struct UGFxData_Clubs_TA_execHandleSaveDataLoaded_Params
 struct UGFxData_Clubs_TA_execGetPriorityForAction_Params
 {
 	uint8_t                                            ClubAction;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0004 (0x0004) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -53539,6 +53920,7 @@ struct UGFxData_Clubs_TA_execGetPriorityForAction_Params
 struct UGFxData_Clubs_TA_execGetLocalizedNameForAction_Params
 {
 	uint8_t                                            ClubAction;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -53547,6 +53929,7 @@ struct UGFxData_Clubs_TA_execGetLocalizedNameForAction_Params
 struct UGFxData_Clubs_TA_execGetLocalizedNameForRole_Params
 {
 	uint8_t                                            ClubRole;                                         // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -53605,6 +53988,7 @@ struct UGFxClubAction_TA_eventDispose_Params
 struct UGFxClubAction_TA_execPermission_Params
 {
 	uint8_t                                            MinimumRequiredPermission;                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint8_t                                         LocalPlayerClubRole;                              // 0x0010 (0x0001) [0x0000000000000000]               
 	// uint32_t                                        bHasRequiredPermission : 1;                       // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -53652,6 +54036,7 @@ struct UGFxClubAction_TA_execAssertNotGuest_Params
 struct UGFxClubAction_TA_execAssert_Params
 {
 	uint32_t                                           expr : 1;                                         // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -53895,6 +54280,7 @@ struct UGFxData_Friends_TA_execGetDisplayName_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ForcedRelationships;                              // 0x0048 (0x0001) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[3];                                      // 0x0049 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bSingleResult : 1;                                // 0x004C (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	class FString                                      ReturnValue;                                      // 0x0050 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UPersona_TA*                              Persona;                                          // 0x0060 (0x0008) [0x0000000000000000]               
@@ -53906,6 +54292,7 @@ struct UGFxData_Friends_TA_execGetPreferredDisplayName_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ForcedRelationships;                              // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0050 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -53915,6 +54302,7 @@ struct UGFxData_Friends_TA_execGetPreferredSingleDisplayName_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ForcedRelationships;                              // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0050 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -54037,6 +54425,7 @@ struct UGFxData_Friends_TA_execGenerateGroupId_Params
 struct UGFxData_Friends_TA_execGetGroup_Params
 {
 	int32_t                                            GroupIdx;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_PersonaGroup_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -54045,6 +54434,7 @@ struct UGFxData_Friends_TA_execGetGroup_Params
 struct UGFxData_Friends_TA_execFindGroup_Params
 {
 	int32_t                                            GroupDataId;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_PersonaGroup_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UGFxData_PersonaGroup_TA*                 Data;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -54054,6 +54444,7 @@ struct UGFxData_Friends_TA_execFindGroup_Params
 struct UGFxData_Friends_TA_execReportRecentPlayer_Params
 {
 	uint8_t                                            OffenseReasonID;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           ArrayInitializer_0x1;                             // 0x0050 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -54175,6 +54566,7 @@ struct UGFxData_Friends_TA_execRemoveEpicFriend_Params
 struct UGFxData_Friends_TA_execSwapFriendToGroup_Internal_Params
 {
 	int32_t                                            NewIdx;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UPersona_TA*                              Persona;                                          // 0x0050 (0x0008) [0x0000000000000000]               
 	// class UGFxData_PersonaGroup_TA*                 Group;                                            // 0x0058 (0x0008) [0x0000000000000000]               
@@ -54204,6 +54596,7 @@ struct UGFxData_Friends_TA_execIsFriendInGame_Params
 struct UGFxData_Friends_TA_execSwapFriendToGroup_Params
 {
 	int32_t                                            NewIdx;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -54219,6 +54612,7 @@ struct UGFxData_Friends_TA_execUpdateGroupInfo_Params
 struct UGFxData_Friends_TA_execGetFriendGroupCount_Params
 {
 	uint8_t                                            PersonaInfoOrigin;                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         GroupCount;                                       // 0x0008 (0x0004) [0x0000000000000000]               
 	// class UGFxData_PersonaGroup_TA*                 Group;                                            // 0x0010 (0x0008) [0x0000000000000000]               
@@ -54243,6 +54637,7 @@ struct UGFxData_Friends_TA_execGetPlatformFriendGroupCount_Params
 struct UGFxData_Friends_TA_execChangeGroupName_Params
 {
 	int32_t                                            GroupIdx;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      NewName;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UGFxData_PersonaGroup_TA*                 Group;                                            // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -54317,6 +54712,7 @@ struct UGFxData_Friends_TA_execAcceptEpicFriendInvite_Params
 struct UGFxData_Friends_TA_execAttemptAcceptEpicFriendInvite_Params
 {
 	int32_t                                            NotificationID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -54325,6 +54721,7 @@ struct UGFxData_Friends_TA_execAttemptAcceptEpicFriendInvite_Params
 struct UGFxData_Friends_TA_execShowPinGrantForFriendInvite_Params
 {
 	int32_t                                            NotificationID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -54460,6 +54857,7 @@ struct UGFxData_Friends_TA_execIsSocialBanned_Params
 struct UGFxData_Friends_TA_execHandleRequestLinkedAccount_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class FString                                   PlayerName;                                       // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   NoneCoalescing_0x1;                               // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -54470,6 +54868,7 @@ struct UGFxData_Friends_TA_execHandleRequestLinkedAccount_Params
 struct UGFxData_Friends_TA_execHandleQueriedUserByEpicDisplayName_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      QueriedDisplayName;                               // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                QueriedPlayerId;                                  // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -54693,6 +55092,7 @@ struct UGFxData_Friends_TA_execUpdateRecentPlayerList_Params
 struct UGFxData_Friends_TA_execHandleRecentPlayerLinkedAccountReceived_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -54800,6 +55200,7 @@ struct UGFxData_Friends_TA_execGetAndSetPersona_Params
 {
 	struct FOnlineFriend                               PersonaData;                                      // 0x0000 (0x0118) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -54808,6 +55209,7 @@ struct UGFxData_Friends_TA_execGetAndSetPersona_Params
 struct UGFxData_Friends_TA_execCreatePartyPersonaGroup_Params
 {
 	uint8_t                                            GroupOrigin;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_PersonaGroup_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UGFxData_PersonaGroup_TA*                 PartyGroupData;                                   // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -54905,6 +55307,7 @@ struct UGFxData_Friends_TA_execGetOrCreatePersona_Params
 {
 	struct FOnlineFriend                               PersonaData;                                      // 0x0000 (0x0118) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Origin;                                           // 0x0118 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0119 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPersona_TA*                                 ReturnValue;                                      // 0x0120 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -55233,6 +55636,7 @@ struct UGFxData_ContainerDrops_TA_execGetBlueprintSeriesID_Params
 struct UGFxData_ContainerDrops_TA_execGetPossibleContainerDrops_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         ContainerIdx;                                     // 0x0018 (0x0004) [0x0000000000000000]               
 	// class FString                                   Contents;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -55243,6 +55647,7 @@ struct UGFxData_ContainerDrops_TA_execGetPossibleContainerDrops_Params
 struct UGFxData_ContainerDrops_TA_execGetNonPreviewableProductQualities_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           Qualities;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class TArray<class FString>                     ContentIds;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -55256,6 +55661,7 @@ struct UGFxData_ContainerDrops_TA_execGetNonPreviewableProductQualities_Params
 struct UGFxData_ContainerDrops_TA_execGetMatchingProductSeries_Params
 {
 	int32_t                                            SeriesID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         ContainerIdx;                                     // 0x0018 (0x0004) [0x0000000000000000]               
 	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -55402,6 +55808,7 @@ struct UGFxData_Controls_TA_execIsRemappableType_Params
 {
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            RemappableType;                                   // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlayerBinding>                Bindings;                                         // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FPlayerBinding                           Binding;                                          // 0x0024 (0x002C) [0x0000000000000000]               
@@ -55453,6 +55860,7 @@ struct UGFxData_Controls_TA_execOnRecordBindingCanceled_Params
 struct UGFxData_Controls_TA_execMapUIBinding_Params
 {
 	struct FPlayerBinding                              Binding;                                          // 0x0000 (0x002C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUIPlayerBinding                            ReturnValue;                                      // 0x0030 (0x0040) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FUIPlayerBinding                         StructInitializer_0x1;                            // 0x0070 (0x0040) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -55492,6 +55900,7 @@ struct UGFxData_Controls_TA_execRemoveBinding_Params
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AxisSign;                                         // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlayerBinding>                OutBindings;                                      // 0x0018 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         ActionIdx;                                        // 0x0028 (0x0004) [0x0000000000000000]               
 	// int32_t                                         OtherActionIdx;                                   // 0x002C (0x0004) [0x0000000000000000]               
@@ -55505,6 +55914,7 @@ struct UGFxData_Controls_TA_execSetSingleBinding_Params
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AxisSign;                                         // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlayerBinding>                DefaultBindings;                                  // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<struct FPlayerBinding>                OutBindings;                                      // 0x0028 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         DefaultBindingIdx;                                // 0x0038 (0x0004) [0x0000000000000000]               
@@ -55518,6 +55928,7 @@ struct UGFxData_Controls_TA_execSetBinding_Params
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AxisSign;                                         // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlayerBinding>                DefaultBindings;                                  // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<struct FPlayerBinding>                OutBindings;                                      // 0x0028 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         ActionIdx;                                        // 0x0038 (0x0004) [0x0000000000000000]               
@@ -55564,6 +55975,7 @@ struct UGFxData_Controls_TA_execHandleBindingInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -55632,6 +56044,7 @@ struct UGFxData_Controls_TA_execLocalizeKey_Params
 {
 	class FName                                        Key;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            AxisSign;                                         // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -56268,6 +56681,7 @@ struct UGFxData_EOSVoiceManager_TA_execHandleInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0001000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -57113,6 +57527,7 @@ struct U__GFxData_FaceIt_TA__HandleError_0x1_exec__GFxData_FaceIt_TA__HandleErro
 struct UGFxData_FaceIt_TA_execGetPartnerString_Params
 {
 	int32_t                                            PartnerID;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -57401,8 +57816,10 @@ struct UGFxShell_TA_execShowTextInput_Params
 	class FString                                      Body;                                             // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0038 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DefaultText;                                      // 0x0040 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            MaxLength;                                        // 0x0050 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxModal_X*                                 ReturnValue;                                      // 0x0058 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -57632,6 +58049,7 @@ struct UGFxShell_TA_execHandleGameInit_Params
 struct UGFxShell_TA_execHandleConnectionError_Params
 {
 	uint8_t                                            MessageType;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Title;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -57882,6 +58300,7 @@ struct UGFxShell_TA_execGetKeyForAction_Params
 {
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bGamepad : 1;                                     // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -58271,6 +58690,7 @@ struct UOnlineGameParty_TA_execGetLoadout_Params
 struct UOnlineGameParty_TA_execGetKickedFromPartyError_Params
 {
 	uint8_t                                            Reason;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -58319,6 +58739,7 @@ struct UOnlineGameParty_TA_execCanBroadcastMatchmakingMessages_Params
 struct UOnlineGameParty_TA_execAllowSplitScreenPlayer_Params
 {
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UError*                                      OutError;                                         // 0x0008 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FUniqueNetId                             PlayerID;                                         // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -58619,6 +59040,7 @@ struct UOnlineGameParty_TA_execUpdatePartyMemberLoadout_Params
 {
 	class TArray<class UPartyMemberLoadout_TA*>        MemberLoadouts;                                   // 0x0000 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            LoadoutIndex;                                     // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlineProductData>            NewProducts;                                      // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// struct FOnlineProductData                       NewProductData;                                   // 0x0028 (0x0040) [0x0010000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         SlotIndex;                                        // 0x0068 (0x0004) [0x0000000000000000]               
@@ -59312,9 +59734,11 @@ struct UGFxData_Garage_TA_execInitForcedTeamColor_Params
 struct UGFxData_Garage_TA_execGetForcedFinishLabel_Params
 {
 	uint32_t                                           bFinishDisabled : 1;                              // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductAsset_Body_TA*                       BodyAsset;                                        // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UProductAsset_Skin_TA*                       SkinAsset;                                        // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            TeamID;                                           // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UProductAttribute_TeamOverride_TA*        TeamOverride;                                     // 0x0030 (0x0008) [0x0000000000000000]               
 };
@@ -59500,6 +59924,7 @@ struct UGFxData_Garage_TA_execEquipProduct_Params
 struct UGFxData_Garage_TA_execUpdateLastUnforcedLoadout_Params
 {
 	int32_t                                            SlotIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductHashSource                          ProductSource;                                    // 0x0008 (0x0020) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EquipAction;                                      // 0x0028 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	// class UProduct_TA*                              ProductToEquip;                                   // 0x0030 (0x0008) [0x0000000000000000]               
@@ -59512,6 +59937,7 @@ struct UGFxData_Garage_TA_execUpdateLastUnforcedLoadout_Params
 struct UGFxData_Garage_TA_execGetEquipActionAsTeamIndex_Params
 {
 	uint8_t                                            EquipAction;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           ArrayInitializer_0x1;                             // 0x0018 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 	// class TArray<int32_t>                           ArrayInitializer_0x2;                             // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -60533,6 +60959,7 @@ struct UGFxData_MatchHistory_TA_execGetPrimaryPlayerMatchData_Params
 struct UGFxData_MatchHistory_TA_execInit_Params
 {
 	int32_t                                            InIndex;                                          // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMatchHistoryItem_TA*                        Item;                                             // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	// class UOnlineGamePlaylists_X*                   OnlineGamePlaylists;                              // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -60596,6 +61023,7 @@ struct UGFxData_MatchHistoryManager_TA_execGetMatchHistoryEntryFromReplayURL_Par
 struct UGFxData_MatchHistoryManager_TA_execDownloadMatchReplay_Params
 {
 	int32_t                                            SelectedMatch;                                    // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      SaveName;                                         // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UGFxData_ReplayManager_TA*                ReplayManager;                                    // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -60723,6 +61151,7 @@ struct UMenuTreeNode_TA_exec__MenuTreeNode_TA__OnClicked_0x1_Params
 struct UMenuTreeNode_TA_exec__MenuTreeNode_TA__IsAvailableOnCurrentPlatform_0x1_Params
 {
 	uint8_t                                            Platform;                                         // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -61209,6 +61638,7 @@ struct UGFxData_MTXGarage_TA_execHandlePsynetConfirmPurchase_Params
 struct UGFxData_MTXGarage_TA_execOnPlayerConfirmPurchase_Params
 {
 	uint32_t                                           bAuthorized : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           OrderId;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -61485,6 +61915,7 @@ struct UGFxData_MTXGarage_TA_execUnlockContainerFailed_Params
 struct UGFxData_MTXGarage_TA_execUnlockContainers_Params
 {
 	struct FProductHashID                              ContainerHashID;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductHashID>                KeyHashIDs;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         UnlockQuantity;                                   // 0x0018 (0x0004) [0x0000000000000000]               
 	// class USaveData_TA*                             PCSaveData;                                       // 0x0020 (0x0008) [0x0000000000000000]               
@@ -61508,6 +61939,7 @@ struct UGFxData_MTXGarage_TA_execAnyKeyRestricted_Params
 struct UGFxData_MTXGarage_TA_execGetTradeHoldSortedKeys_Params
 {
 	uint32_t                                           bIsAscending : 1;                                 // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductHashID>                ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class USaveData_TA*                             PCSaveData;                                       // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<class UOnlineProduct_TA*>          KeyList;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -62184,6 +62616,7 @@ struct UGFxData_MultiItemDrops_TA_execAddGroup_Params
 {
 	class UClass*                                      GroupClass;                                       // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            DisplayOrder;                                     // 0x0008 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UItemDropGroup_TA*                           ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UItemDropGroup_TA*                        Group;                                            // 0x0028 (0x0008) [0x0000000000000000]               
@@ -62611,6 +63044,7 @@ struct UGFxData_MusicPlayer_TA_execHandleTrackEnd_Params
 struct UGFxData_MusicPlayer_TA_execHandleTrackStart_Params
 {
 	int32_t                                            PlayingID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FileMarker;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -63897,6 +64331,7 @@ struct UGFxData_PartyInvite_TA_execOnPartyCreatedFromInvite_Params
 struct UGFxData_PartyInvite_TA_execOnJoinLobbyComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0008 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0038 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -63924,6 +64359,7 @@ struct UGFxData_PartyInvite_TA_execShowPartyInviteError_Params
 struct UGFxData_PartyInvite_TA_execOnPartyInviteComplete_Params
 {
 	uint32_t                                           bSucceeded : 1;                                   // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                InviteeID;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UError*                                      InError;                                          // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UPersona_TA*                              InvitedPersona;                                   // 0x0058 (0x0008) [0x0000000000000000]               
@@ -64274,6 +64710,7 @@ struct UProductHash_TA_execGetProductSourceFromInstanceID_Params
 struct UProductHash_TA_execGetOnlineProductsFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	class TArray<class UOnlineProduct_TA*>             ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
@@ -64283,6 +64720,7 @@ struct UProductHash_TA_execGetOnlineProductsFromHashID_Params
 struct UProductHash_TA_execGetOnlineProductFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -64292,6 +64730,7 @@ struct UProductHash_TA_execGetOnlineProductFromHashID_Params
 struct UProductHash_TA_execGetProductFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	class UProduct_TA*                                 ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x0018 (0x0008) [0x0000000000000000]               
@@ -64302,6 +64741,7 @@ struct UProductHash_TA_execGetProductFromHashID_Params
 struct UProductHash_TA_execGetProductIDFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x0018 (0x0008) [0x0000000000000000]               
@@ -64331,6 +64771,7 @@ struct UProductHash_TA_execOnlineProductToProductSource_Params
 struct UProductHash_TA_execGetProductSourcesFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	class TArray<struct FProductHashSource>            ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class UOnlineProduct_TA*>          OnlineProducts;                                   // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -64345,6 +64786,7 @@ struct UProductHash_TA_execGetProductSourcesFromHashID_Params
 struct UProductHash_TA_execGetProductSourceFromHashID_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProductStoreSet_TA*                   ProductSet;                                       // 0x0008 (0x0008) [0x0000000004000090] (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
 	struct FProductHashSource                          ReturnValue;                                      // 0x0010 (0x0020) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x0030 (0x0008) [0x0000000000000000]               
@@ -64440,6 +64882,7 @@ struct UGFxData_PlayerBanners_TA_execHandleBannerPreviewLoaded_Params
 	class UPlayerBanner_TA*                            Banner;                                           // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class UOnlineProduct_TA*                           OnlineProduct;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            InColorID;                                        // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                PlayerID;                                         // 0x0018 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FProductHashID                              HashID;                                           // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// class UGFxData_PlayerBanner_TA*                 GFxData;                                          // 0x0068 (0x0008) [0x0000000000000000]               
@@ -64558,6 +65001,7 @@ struct UGFxData_Playlist_TA_execUpdateSkillData_Params
 struct UGFxData_Playlist_TA_execHandleSkillUpdateOnGameJoin_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -64774,6 +65218,7 @@ struct UProfileLoadoutSave_TA_execSetPreviewTeam_Params
 struct UProfileLoadoutSave_TA_execRenamePreset_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      NewName;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -64832,6 +65277,7 @@ struct UProfileLoadoutSave_TA_execGetLoadoutSets_Params
 struct UProfileLoadoutSave_TA_execGetLoadoutSet_Params
 {
 	int32_t                                            SetIndex;                                         // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULoadoutSet_TA*                              ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -64918,6 +65364,7 @@ struct UGFxData_PRI_TA_exec__GFxData_PRI_TA__UpdatePRIData_0x3_Params
 struct UGFxData_PRI_TA_exec__GFxData_PRI_TA__UpdatePRIData_0x2_Params
 {
 	struct FScoreboardStat                             S;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000040400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_DataBinding)
 };
 
@@ -65038,6 +65485,7 @@ struct UGFxData_PRI_TA_execInitStatTitle_Params
 	class FString                                      TitleLocalizationString;                          // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      StatTitle;                                        // 0x0030 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            StatValue;                                        // 0x0040 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      StatPostfix;                                      // 0x0048 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// uint32_t                                        bPlayerUsesMetricUnits : 1;                       // 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
 	// uint32_t                                        bTitleIsUnitless : 1;                             // 0x005C (0x0004) [0x0000000000000000] [0x00000001] 
@@ -65273,6 +65721,7 @@ struct UGFxData_PRI_TA_execSamePlayer_Params
 struct UGFxData_PRI_TA_execGetReservationStatusString_Params
 {
 	uint8_t                                            Status;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -65454,6 +65903,7 @@ struct UGFxData_ProductFilter_TA_execHandleContainersUpdated_Params
 struct UGFxData_ProductFilter_TA_execApplyBlueprintFilter_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bBlueprintSlotSelected : 1;                       // 0x0004 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
 };
 
@@ -65536,6 +65986,7 @@ struct UGFxData_ProductFilter_TA_execSetSeriesIDSelected_Params
 struct UGFxData_ProductFilter_TA_execSetProhibitedAttributeTypeSelected_Params
 {
 	uint8_t                                            Attribute;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bSelected : 1;                                    // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                            FilterType;                                       // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	// class UClass*                                   AttributeClass;                                   // 0x0010 (0x0008) [0x0000000000000000]               
@@ -65547,6 +65998,7 @@ struct UGFxData_ProductFilter_TA_execSetProhibitedAttributeTypeSelected_Params
 struct UGFxData_ProductFilter_TA_execFilterProductAttributeToName_Params
 {
 	uint8_t                                            Attribute;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        ReturnValue;                                      // 0x0004 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -65556,6 +66008,7 @@ struct UGFxData_ProductFilter_TA_execHandleAttributeSelected_Params
 {
 	uint32_t                                           bSelected : 1;                                    // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                            FilterType;                                       // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      CurrentAttributeClass;                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -65565,6 +66018,7 @@ struct UGFxData_ProductFilter_TA_execHandleDummyAttributeSelected_Params
 {
 	uint32_t                                           bSelected : 1;                                    // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                            FilterType;                                       // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      CurrentAttributeClass;                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -65574,6 +66028,7 @@ struct UGFxData_ProductFilter_TA_execSetAttributeClassSelected_Params
 {
 	uint32_t                                           bSelected : 1;                                    // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                            FilterType;                                       // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      AttributeClass;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -65619,6 +66074,7 @@ struct UGFxData_ProductFilter_TA_execSetTradeInSelected_Params
 struct UGFxData_ProductFilter_TA_execGetProductAttributeFilters_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FFilterProductAttribute>       ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__GFxData_ProductFilter_TA__GetProductAttributeFilters_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FFilterProductAttribute>    FilterLocal_0x2;                                  // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -65629,6 +66085,7 @@ struct UGFxData_ProductFilter_TA_execGetProductAttributeFilters_Params
 struct UGFxData_ProductFilter_TA_execGetProductSortingFilters_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FFilterProductSorting>         ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__GFxData_ProductFilter_TA__GetProductSortingFilters_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FFilterProductSorting>      FilterLocal_0x2;                                  // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -65689,6 +66146,7 @@ struct UGFxData_ProductFilter_TA_execSetLabel_Params
 struct UGFxData_ProductFilter_TA_execFilterProducts_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductHashID>                ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class USaveData_TA*                             SaveData;                                         // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FProductInstanceID>         InstanceIDs;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -65720,6 +66178,7 @@ struct UGFxData_ProductFilter_TA_execGarageLoadoutRefresh_Params
 struct UGFxData_ProductFilter_TA_execSetupFilterProducts_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           ForceIncludeDuplicates : 1;                       // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// uint32_t                                        bIncludeDuplicateProducts : 1;                    // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class USaveData_TA*                             SaveData;                                         // 0x0010 (0x0008) [0x0000000000000000]               
@@ -65746,6 +66205,7 @@ struct UGFxData_ProductFilter_TA_execGetTradableCurrencies_Params
 struct UGFxData_ProductFilter_TA_execShouldDisplayOfflineProducts_Params
 {
 	uint8_t                                            FilterType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint32_t                                        bTradeInMenu : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	// uint32_t                                        bPremiumInventoryMenu : 1;                        // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
@@ -66134,6 +66594,7 @@ struct ULoadout_TA_execSetBodyProduct_Params
 struct ULoadout_TA_execValidateProductID_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProfile_TA*                                 ForProfile;                                       // 0x0008 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	class FString                                      SlotName;                                         // 0x0010 (0x0010) [0x0000000000400890] (CPF_OptionalParm | CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 };
@@ -66143,6 +66604,7 @@ struct ULoadout_TA_execValidateProductID_Params
 struct ULoadout_TA_execIsForcedSlot_Params
 {
 	int32_t                                            BodyProductID;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductSlot_TA*                             Slot;                                             // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UProductAsset_Body_TA*                    Body;                                             // 0x0018 (0x0008) [0x0000000000000000]               
@@ -66196,6 +66658,7 @@ struct ULoadout_TA_execSetBodyProductAndValidate_Params
 {
 	struct FLoadoutData                                OutLoadout;                                       // 0x0000 (0x0040) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            BodyProductID;                                    // 0x0040 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProfile_TA*                                 ForProfile;                                       // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -66206,6 +66669,7 @@ struct ULoadout_TA_execEquipProduct_Params
 	struct FProductInstanceID                          OnlineID;                                         // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	class ULoadout_TA*                                 ForLoadout;                                       // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            SlotIndex;                                        // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FLoadoutData                                ReturnValue;                                      // 0x0020 (0x0040) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         ProductID;                                        // 0x0060 (0x0004) [0x0000000000000000]               
 	// struct FLoadoutData                             Data;                                             // 0x0068 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -66389,6 +66853,7 @@ struct UGFxData_Products_TA_execGetEditLoadout_Params
 {
 	class UProfile_TA*                                 Profile;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            TeamIndex;                                        // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULoadout_TA*                                 ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -66460,6 +66925,7 @@ struct UGFxData_Products_TA_execForceResyncProducts_Params
 struct UGFxData_Products_TA_execGetMatchingInstancesByProductID_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductInstanceID>            ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class USaveData_TA*                             PCSaveData;                                       // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<class UOnlineProduct_TA*>          ArrayResultLocal_0x1;                             // 0x0020 (0x0010) [0x0000000000400100] (CPF_OutParm | CPF_NeedCtorLink)
@@ -66524,6 +66990,7 @@ struct UGFxData_Products_TA_execHasNewOnlineProducts_Params
 struct UGFxData_Products_TA_execGetProductLongLabel_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -66540,6 +67007,7 @@ struct UGFxData_Products_TA_execGetProductQuality_Params
 struct UGFxData_Products_TA_execGetProductTrademarkLabel_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -66548,6 +67016,7 @@ struct UGFxData_Products_TA_execGetProductTrademarkLabel_Params
 struct UGFxData_Products_TA_execGetProductLabel_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -66573,6 +67042,7 @@ struct UGFxData_Products_TA_execGetHashIDFromProductID_Params
 struct UGFxData_Products_TA_execGetSlotLabel_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -66826,6 +67296,7 @@ struct UGFxData_Products_TA_execStartLoadingProduct_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ThumbnailSize;                                    // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ViewId;                                           // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bIgnoreEquipped : 1;                              // 0x000C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// struct FProductHashSource                       ProductSource;                                    // 0x0010 (0x0020) [0x0000000000000000]               
@@ -66859,6 +67330,7 @@ struct UGFxData_Products_TA_execLoadProduct_Params
 {
 	struct FProductHashID                              InHashID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ThumbnailSize;                                    // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ViewId;                                           // 0x0008 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bIgnoreEquipped : 1;                              // 0x000C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// int32_t                                         LoadingIndex;                                     // 0x0010 (0x0004) [0x0000000000000000]               
@@ -66880,6 +67352,7 @@ struct UGFxData_Products_TA_execIsThumbnailReferenced_Params
 	class UProductAsset_TA*                            Asset;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UOnlineProduct_TA*                           OnlineProduct;                                    // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ThumbnailSize;                                    // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__GFxData_Products_TA__IsThumbnailReferenced_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -66914,6 +67387,7 @@ struct UGFxData_Products_TA_execClearReferencedProducts_Params
 struct UGFxData_Products_TA_execSetViewProducts_Params
 {
 	int32_t                                            ViewId;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductHashID>                HashIDs;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ThumbnailSize;                                    // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         LoadingIndex;                                     // 0x001C (0x0004) [0x0000000000000000]               
@@ -66928,6 +67402,7 @@ struct UGFxData_Products_TA_execGetVisibleProductIDs_Params
 	int32_t                                            SlotIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	struct FProductHashID                              PackHashID;                                       // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bUnlockedOnly : 1;                                // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductInstanceID>            ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UProduct_TA*                              Product;                                          // 0x0020 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FProductInstanceID>         ProductIDs;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -66943,6 +67418,7 @@ struct UGFxData_Products_TA_execGetVisibleProductIDs_Params
 struct UGFxData_Products_TA_execGetUnlockedProductIDs_Params
 {
 	int32_t                                            SlotIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FProductInstanceID>            ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FProductHashID                           StructInitializer_0x1;                            // 0x0018 (0x0004) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
@@ -67273,6 +67749,7 @@ struct UGFxData_ProductTradeIn_TA_execIsTradeInAllowed_Params
 {
 	int32_t                                            SeriesID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ProductQuality;                                   // 0x0004 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__GFxData_ProductTradeIn_TA__IsTradeInAllowed_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -67282,6 +67759,7 @@ struct UGFxData_ProductTradeIn_TA_execIsTradeInAllowed_Params
 struct UGFxData_ProductTradeIn_TA_execGetTradeInFilter_Params
 {
 	int32_t                                            FilterID;                                         // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductTradeInFilter                       ReturnValue;                                      // 0x0008 (0x0050) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         TradeGroupIndex;                                  // 0x0058 (0x0004) [0x0000000000000000]               
 	// struct FProductTradeInFilter                    StructInitializer_0x1;                            // 0x0060 (0x0050) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -67811,6 +68289,7 @@ struct UGFxData_UserSetting_TA_execSetValue_Params
 struct UGFxData_UserSetting_TA_execAddEnumValue_Params
 {
 	int32_t                                            InValue;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InLabel;                                          // 0x0008 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -67845,8 +68324,10 @@ struct UGFxData_UserSetting_TA_execSetScalarLimits_Params
 struct UGFxData_UserSetting_TA_execInit_Params
 {
 	uint8_t                                            InType;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        InGroup;                                          // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        InID;                                             // 0x000C (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InDefaultValue;                                   // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bInUserSetting : 1;                               // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bInEnabled : 1;                                   // 0x002C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -68298,6 +68779,7 @@ struct UGFxData_Settings_TA_execRefreshSteamInputSettings_Params
 struct UGFxData_Settings_TA_execSteamInputSettings_ControllerSelected_Params
 {
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         AutodetectOffset;                                 // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -70792,6 +71274,7 @@ struct UGFxData_Settings_TA_execSetListValue_Params
 struct UGFxData_Settings_TA_execEnumToString_Params
 {
 	int32_t                                            Value;                                            // 0x0000 (0x0004) [0x0000000000000880] (CPF_Parm | CPF_CoerceParm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -70800,6 +71283,7 @@ struct UGFxData_Settings_TA_execEnumToString_Params
 struct UGFxData_Settings_TA_execBoolToString_Params
 {
 	uint32_t                                           Value : 1;                                        // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -70818,11 +71302,13 @@ struct UGFxData_Settings_TA_execCreateScalarUserSetting_Params
 	class FName                                        Group;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Id;                                               // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              DefaultValue;                                     // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             SetFunc;                                          // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FProfileSliderLimits                        Limits;                                           // 0x0048 (0x000C) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bUserSetting : 1;                                 // 0x0054 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bEnabled : 1;                                     // 0x0058 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x005C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0068 (0x0008) [0x0000000000000000]               
 	// int32_t                                         Index;                                            // 0x0070 (0x0004) [0x0000000000000000]               
@@ -70835,6 +71321,7 @@ struct UGFxData_Settings_TA_execCreateBooleanUserSetting_Params
 	class FName                                        Group;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Id;                                               // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           DefaultValue : 1;                                 // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             SetFunc;                                          // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bUserSetting : 1;                                 // 0x0048 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
@@ -71016,6 +71503,7 @@ struct U__GFxData_SpecialEvents_TA__HandlePurchaseRewardFromStoreSuccess_0x1_exe
 struct URPC_PurchaseSpecialEventReward_TA_execSetStoreProductID_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PurchaseSpecialEventReward_TA*          ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -71285,6 +71773,7 @@ struct UWallet_TA_execGiveCurrencyDrops_Params
 {
 	class TArray<struct FCurrency>                     Drops;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bIsCrewRefund : 1;                                // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// class U__Wallet_TA__GiveCurrencyDrops_0x1*      _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 };
@@ -71295,6 +71784,7 @@ struct UWallet_TA_execGiveCurrencyDrop_Params
 {
 	struct FCurrency                                   Drop;                                             // 0x0000 (0x0060) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bIsCrewRefund : 1;                                // 0x0060 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Message;                                          // 0x0068 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// struct FCurrency                                NewCurrency;                                      // 0x0078 (0x0060) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class TArray<struct FCurrency>                  ArrayInitializer_0x1;                             // 0x00D8 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -71333,6 +71823,7 @@ struct UWallet_TA_execUpdateWalletCurrencies_Params
 struct UWallet_TA_execUpdateCurrencyImage_Params
 {
 	int32_t                                            InCurrencyID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTexture*                                    SmallImage;                                       // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class UTexture*                                    LargeImage;                                       // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         Idx;                                              // 0x0018 (0x0004) [0x0000000000000000]               
@@ -71343,6 +71834,7 @@ struct UWallet_TA_execUpdateCurrencyImage_Params
 struct UWallet_TA_execUpdateCurrencyName_Params
 {
 	int32_t                                            InCurrencyID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      LocalizedName;                                    // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Idx;                                              // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -71386,6 +71878,7 @@ struct UWallet_TA_execSetCurrencyTradehold_Params
 struct UWallet_TA_execGetCurrency_Params
 {
 	int32_t                                            InCurrencyID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FCurrency                                   ReturnValue;                                      // 0x0008 (0x0060) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__Wallet_TA__GetCurrency_0x1*            _0x1;                                             // 0x0068 (0x0008) [0x0000000000000000]               
 };
@@ -72378,6 +72871,7 @@ struct UGFxData_TourCheckIn_TA_execHandleEnterCredentials_Params
 {
 	class FString                                      Password;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bCanceled : 1;                                    // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           TournamentID;                                     // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UTourSettings_TA*                         Settings;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 	// struct FTourPrivateCredentials                  Credentials;                                      // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -72661,6 +73155,7 @@ struct UTourSubscriptions_TA_execUnsubscribe_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bUnsubscribeAnyRegisteredTournament : 1;          // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<struct FUniqueNetId>               LocalPartyMembers;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -73011,6 +73506,7 @@ struct UGFxData_TourCreate_TA_execGFxRewardsToTourRewards_Params
 struct UGFxData_TourCreate_TA_execRemoveReward_Params
 {
 	int32_t                                            Placement;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          InstanceID;                                       // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         RewardIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -73020,6 +73516,7 @@ struct UGFxData_TourCreate_TA_execRemoveReward_Params
 struct UGFxData_TourCreate_TA_execAddReward_Params
 {
 	int32_t                                            Placement;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          InstanceID;                                       // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         RewardIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -73720,6 +74217,7 @@ struct U__GFxData_TourPlatforms_TA__InitPlatformGroups_0x1_exec__GFxData_TourPla
 struct UGFxData_TourPlatforms_TA_exec__GFxData_TourPlatforms_TA__CreateGFxGroup_0x1_Params
 {
 	uint8_t                                            P;                                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -74174,8 +74672,10 @@ struct UGFxData_TradeInFilter_TA_exec__GFxData_TradeInFilter_TA__GenerateTradeIn
 struct UGFxData_TradeInFilter_TA_execGetPossibleTradeInData_Params
 {
 	uint8_t                                            Quality;                                          // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            SeriesID;                                         // 0x0004 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	uint32_t                                           bIsBlueprint : 1;                                 // 0x0008 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_PossibleTradeIn_TA*                 ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__GFxData_TradeInFilter_TA__GetPossibleTradeInData_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -74426,6 +74926,7 @@ struct UGFxData_Training_TA_execHandleBoostMeterChanged_Params
 struct UGFxData_Training_TA_execParseDifficulty_Params
 {
 	uint8_t                                            InDifficulty;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -74759,6 +75260,7 @@ struct UGFxData_Wallet_TA_execOnWalletUpdated_Params
 struct UGFxData_Wallet_TA_execGetCurrencyRow_Params
 {
 	int32_t                                            InCurrencyID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_WalletCurrency_TA*                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__GFxData_Wallet_TA__GetCurrencyRow_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -75221,6 +75723,7 @@ struct U__InMapDragonManager_TA__IsGoalFirstByTeam_0x1_exec__InMapDragonManager_
 struct UInMapDragonManager_TA_exec__InMapDragonManager_TA__IsGoalFirstByTeam_0x2_Params
 {
 	int32_t                                            Sum;                                              // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ATeam_TA*                                    Element;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -75257,6 +75760,7 @@ struct UInMapDragonManager_TA_execGetPercentGameTimeRemaining_Params
 struct UInMapDragonManager_TA_execShouldExitFly_Params
 {
 	uint8_t                                            ScoredOnTeam;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         FlyChance;                                        // 0x0008 (0x0004) [0x0000000000000000]               
 	// int32_t                                         RollRes;                                          // 0x000C (0x0004) [0x0000000000000000]               
@@ -75267,6 +75771,7 @@ struct UInMapDragonManager_TA_execShouldExitFly_Params
 struct UInMapDragonManager_TA_execIsGoalFirstByTeam_Params
 {
 	uint8_t                                            ScoredOnTeam;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ATeam_TA*                                 ScoringTeam;                                      // 0x0008 (0x0008) [0x0000000000000000]               
 	// class U__InMapDragonManager_TA__IsGoalFirstByTeam_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
@@ -75475,6 +75980,7 @@ struct ULoadoutValidation_TA_execSetLoadoutSlotToDefaultID_Params
 	struct FLoadoutData                                TeamLoadouts[2];                                  // 0x0000 (0x0080) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FLoadoutAttributesArray                     LoadoutAttributes[2];                             // 0x0080 (0x0020) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            TeamIndex;                                        // 0x00A0 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x00A4 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductSlot_TA*                             Slot;                                             // 0x00A8 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class TArray<class UProductAttribute_TA*>       ArrayInitializer_0x1;                             // 0x00B0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -75560,6 +76066,7 @@ struct ULoadoutValidation_TA_execValidateOnlineProductWithLoadoutProduct_Params
 {
 	class UOnlineProduct_TA*                           LoadoutOnlineProduct;                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            LoadoutProductID;                                 // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                InPlayerID;                                       // 0x0010 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -75638,6 +76145,7 @@ struct ULoadoutValidation_TA_execCorrectDuplicateAttributes_Params
 {
 	struct FLoadoutAttributesArray                     LoadoutAttributes[2];                             // 0x0000 (0x0020) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            TeamIndex;                                        // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductSlot_TA*                             Slot;                                             // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class TArray<class UProductAttribute_TA*>       Attributes;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -76231,6 +76739,7 @@ struct UMenuTreeNode_Playlist_TA_execHandleLockForGatedPlaylists_Params
 struct UMenuTreeNode_Playlist_TA_execSetGatedPlaylistsInfo_Params
 {
 	int32_t                                            RequiredLevel;                                    // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              RequiredChallenges;                               // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<class ULocalPlayer_TA*>            OfTypeLocal_0x1;                                  // 0x0018 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 	// class ULocalPlayer_TA*                          InLocalPlayer;                                    // 0x0028 (0x0008) [0x0000000000000000]               
@@ -76541,6 +77050,7 @@ struct UMutator_Freeplay_TA_execHandleNewBoostFillSetting_Params
 {
 	class ACarComponent_Boost_TA*                      InBoost;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            InBoostFillType;                                  // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0009 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              InBoostFillDelay;                                 // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class UFreeplayConfig_TA*                          InFreeplayConfig;                                 // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
@@ -76760,6 +77270,7 @@ struct UOnlineDLCProductCache_TA_execContains_Params
 struct UOnlineDLCProductCache_TA_execGenerateOnlineDLCProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UOnlineProduct_TA*                        OnlineDLCProduct;                                 // 0x0010 (0x0008) [0x0000000000000000]               
 	// struct FOnlineProductData                       StructInitializer_0x1;                            // 0x0018 (0x0040) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -76915,6 +77426,7 @@ struct UOnlineGameDLC_TA_execGetDlcIdFromName_Params
 {
 	class FName                                        DLCName;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PlatformType;                                     // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class UDLCPack_TA*                              FoundDLC;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 	// class U__OnlineGameDLC_TA__GetDlcIdFromName_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
@@ -77092,6 +77604,7 @@ struct UProductsArchiveSave_TA_execGetVersionDelegates_Params
 struct UProductsArchiveSave_TA_execSetIsArchived_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bArchived : 1;                                    // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
@@ -77138,6 +77651,7 @@ struct UProductsHashSave_TA_exec__HashIDs__ChangeNotifyFunc_Params
 struct UProductsHashSave_TA_execUpdateInstanceIDs_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bSaved : 1;                                       // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// class TArray<struct FProductHashSource>         ArrayResultLocal_0x1;                             // 0x0018 (0x0010) [0x0000000000400100] (CPF_OutParm | CPF_NeedCtorLink)
@@ -77174,6 +77688,7 @@ struct UProductsHashSave_TA_execNumProducts_Params
 struct UProductsHashSave_TA_execSetIsSaved_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bSaved : 1;                                       // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
@@ -77230,6 +77745,7 @@ struct UProductsFavoriteSave_TA_execIsProductFavorited_Params
 struct UProductsFavoriteSave_TA_execSetIsFavorited_Params
 {
 	struct FProductHashID                              HashID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bValue : 1;                                       // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
@@ -77514,6 +78030,7 @@ struct UOnlineGameTourServer_TA_execCanAcceptReservations_Params
 struct UOnlineGameTourServer_TA_execFilterMapData_Params
 {
 	int32_t                                            GameMode;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FName>                          FilterMaps;                                       // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class UMapData_TA*>                   ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class U__OnlineGameTourServer_TA__FilterMapData_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
@@ -77711,6 +78228,7 @@ struct UOnlinePlayerFriends_TA_execTryCombiningFriendsList_Params
 struct UOnlinePlayerFriends_TA_execHandleLinkedAccountsToBlockReceived_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            RequestedAccounts;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLinkedAccountData                       RequestedAccount;                                 // 0x0018 (0x00A8) [0x0010000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         ForEachRefIndex_0x1;                              // 0x00C0 (0x0004) [0x0000000000000000]               
@@ -77753,6 +78271,7 @@ struct UOnlinePlayerFriends_TA_execDownloadRecentPlayerDetails_Params
 struct UOnlinePlayerFriends_TA_execHandleEpicIdsReceived_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedData;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FLinkedAccountData                       AccountData;                                      // 0x0018 (0x00A8) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -77844,6 +78363,7 @@ struct UOnlinePlayerMTX_TA_execHandleClaimSuccess_Params
 struct UOnlinePlayerMTX_TA_execHandleMtxCode_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Code;                                             // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -78126,6 +78646,7 @@ struct U__PerfStatGraph_TA__UpdateGraphRanges_0x1_exec__PerfStatGraph_TA__Update
 struct U__Personas_TA__GetOrCreateAndLink_0x1_exec__Personas_TA__GetOrCreateAndLink_0x2_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -78134,6 +78655,7 @@ struct U__Personas_TA__GetOrCreateAndLink_0x1_exec__Personas_TA__GetOrCreateAndL
 struct U__Personas_TA__GetOrCreateAndLink_0x1_exec__Personas_TA__GetOrCreateAndLink_0x1_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -78832,6 +79354,7 @@ struct U__PlaylistSkillDataSave_TA__Reconcile_0x1_exec__PlaylistSkillDataSave_TA
 struct UPlaylistSkillDataSave_TA_execCompareMatchesPlayed_Params
 {
 	struct FPlaylistSkillData                          LocalSkill;                                       // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlaylistSkillData>            RemoteSkillData;                                  // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         Index;                                            // 0x0024 (0x0004) [0x0000000000000000]               
@@ -79436,6 +79959,7 @@ struct U__RecentPlayers_TA__FilterFriends_0x1_exec__RecentPlayers_TA__FilterFrie
 struct U__RecentPlayersMet_TA__RecordRecentPlayers_0x2_exec____RecentPlayersMet_TA__RecordRecentPlayers_0x2____RecentPlayersMet_TA__RecordRecentPlayers_0x1_0x2_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FFriendHistoryKey                           ReturnValue;                                      // 0x0008 (0x0020) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -79464,6 +79988,7 @@ struct U__RecentPlayersMet_TA__RecordRecentPlayers_0x2_exec__RecentPlayersMet_TA
 struct U__RecentPlayersMet_TA__RecordRecentPlayers_0x2_exec__RecentPlayersMet_TA__RecordRecentPlayers_0x3_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FFriendHistoryKey                           ReturnValue;                                      // 0x0008 (0x0020) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -79617,6 +80142,7 @@ struct UShopCatalogueCacheSave_TA_exec__ShopCatalogueCacheSave_TA__MapFromShopIt
 struct UShopCatalogueCacheSave_TA_execHasNewContent_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FShopItem>                     ContentShopItems;                                 // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         ShopCacheIndex;                                   // 0x001C (0x0004) [0x0000000000000000]               
@@ -79640,6 +80166,7 @@ struct UShopCatalogueCacheSave_TA_execMapFromShopItems_Params
 struct UShopCatalogueCacheSave_TA_execUpdateShopCachedContent_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FShopItem>                     ContentShopItems;                                 // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         ShopCacheIndex;                                   // 0x0018 (0x0004) [0x0000000000000000]               
 	// struct FCatalogueCacheItem                      NewCatalogueCacheItem;                            // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -79812,6 +80339,7 @@ struct UShopsManager_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceID;                                  // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedPriceAmount;                              // 0x0014 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             SuccessCallback;                                  // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0038 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -79823,6 +80351,7 @@ struct UShopsManager_TA_execPurchase_Params
 struct UShopsManager_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -79842,6 +80371,7 @@ struct UShopsManager_TA_execGetShopCatalogues_Params
 struct UShopsManager_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -79933,6 +80463,7 @@ struct UShopsManager_TA_execEventShopItemTextureLoaded_Params
 struct UItemShopNotification_TA_execSetShopNotificationID_Params
 {
 	int32_t                                            InShopNotificationID;                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UItemShopNotification_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -79995,6 +80526,7 @@ struct UShopMetrics_TA_execMtxPurchase_Params
 {
 	class FString                                      CurrencyType;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            CurrencyAmount;                                   // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FOnlineProductData>            PurchasedProducts;                                // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UEOSMetrics_X*                            EOSMetrics;                                       // 0x0028 (0x0008) [0x0001000000000000]               
 	// class UEOSMtxPurchaseEvent_X*                   PurchaseEvent;                                    // 0x0030 (0x0008) [0x0000000000000000]               
@@ -80026,6 +80558,7 @@ struct UShopMetrics_TA_execPrintShopMetricsData_Params
 struct UShopMetrics_TA_execShopSessionEnded_Params
 {
 	int32_t                                            BrowseSourceID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FShopTabData>                  ShopTabMetrics;                                   // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<int32_t>                              ShopNotificationIDs;                              // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -80082,6 +80615,7 @@ struct UShopsService_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceID;                                  // 0x0058 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedPriceAmount;                              // 0x005C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80092,6 +80626,7 @@ struct UShopsService_TA_execPurchase_Params
 struct UShopsService_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80111,6 +80646,7 @@ struct UShopsService_TA_execGetShopCatalogues_Params
 struct UShopsService_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80176,6 +80712,7 @@ struct UShopsService_PsyNet_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceID;                                  // 0x0058 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedPriceAmount;                              // 0x005C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80187,6 +80724,7 @@ struct UShopsService_PsyNet_TA_execPurchase_Params
 struct UShopsService_PsyNet_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80208,6 +80746,7 @@ struct UShopsService_PsyNet_TA_execGetShopCatalogues_Params
 struct UShopsService_PsyNet_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -80244,6 +80783,7 @@ struct U__ShopsService_PsyNet_TA__GetCrateShop_0x1_exec__ShopsService_PsyNet_TA_
 struct URPC_GetCrateShop_TA_execSetShopID_Params
 {
 	int32_t                                            InCrateID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_GetCrateShop_TA*                        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -80317,6 +80857,7 @@ struct U__ShopsService_PsyNet_TA__Purchase_0x1_exec__ShopsService_PsyNet_TA__Pur
 struct URPC_PurchaseItemFromShop_TA_execSetExpectedProductCount_Params
 {
 	int32_t                                            InExpectedProductCount;                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PurchaseItemFromShop_TA*                ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -80344,6 +80885,7 @@ struct URPC_PurchaseItemFromShop_TA_execSetPlayerID_Params
 struct URPC_PurchaseItemFromShop_TA_execSetCount_Params
 {
 	int32_t                                            InCount;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PurchaseItemFromShop_TA*                ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -80352,6 +80894,7 @@ struct URPC_PurchaseItemFromShop_TA_execSetCount_Params
 struct URPC_PurchaseItemFromShop_TA_execSetShopID_Params
 {
 	int32_t                                            InShopID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PurchaseItemFromShop_TA*                ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -82294,6 +82837,7 @@ struct UTourCheckIn_TA_execGetCheckInError_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UTourSettings_TA*                            InSettings;                                       // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bHasTeam : 1;                                     // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UErrorType*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint64_t                                        EpochNow;                                         // 0x0060 (0x0008) [0x0000000000000000]               
 	// class UOnlineGameParty_TA*                      Party;                                            // 0x0068 (0x0008) [0x0000000000000000]               
@@ -82437,6 +82981,7 @@ struct UTourGameUpdateDispatcher_TA_execHandleSeriesGameForfeit_Params
 struct UTourGameUpdateDispatcher_TA_execSendUpdateGameRPC_Params
 {
 	int32_t                                            InGameNum;                                        // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FTourMatchGame                              InGameData;                                       // 0x0008 (0x0018) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint64_t                                           SeriesWinnerID;                                   // 0x0020 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// class URPC_X*                                   RPC;                                              // 0x0028 (0x0008) [0x0000000000000000]               
@@ -82809,6 +83354,7 @@ struct UTourService_TA_execGetMatchDetails_Params
 {
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -82994,6 +83540,7 @@ struct UTourService_PsyNet_TA_execGetMatchDetails_Params
 {
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class U__TourService_PsyNet_TA__GetMatchDetails_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
@@ -83154,6 +83701,7 @@ struct U__TourService_PsyNet_TA__GetMatchDetails_0x1_exec__TourService_PsyNet_TA
 struct URPC_TourGetMatchDetails_TA_execSetMatchID_Params
 {
 	int32_t                                            InMatchID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_TourGetMatchDetails_TA*                 ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -83262,6 +83810,7 @@ struct UTourStatus_TA_execHandleTourActivated_Params
 struct UTourStatus_TA_execUpdateStatus_Params
 {
 	uint8_t                                            Status;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           TournamentID;                                     // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -84164,6 +84713,7 @@ struct UViralItemFXComponent_TA_execHandleGameStateChanged_Params
 struct UViralItemFXComponent_TA_execGetInfectedAuraSoundCue_Params
 {
 	uint8_t                                            InInfectedStatus;                                 // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UAkSoundCue*                                 ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -84670,6 +85220,7 @@ struct AGameEvent_Season_TA_execAllowSplitScreenPlayer_Params
 struct AGameEvent_Season_TA_execCheckTeamOverride_Params
 {
 	int32_t                                            TeamIdx;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FSeasonTeam                                 TeamData;                                         // 0x0008 (0x0020) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class UProduct_TA*                              Product;                                          // 0x0028 (0x0008) [0x0000000000000000]               
 	// class UProductAsset_Logo_TA*                    TeamAsset;                                        // 0x0030 (0x0008) [0x0000000000000000]               
@@ -84965,6 +85516,7 @@ struct USeason_TA_execSortTeamRank_Params
 struct USeason_TA_execGetTeamRankings_Params
 {
 	int32_t                                            Week;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FSeasonTeamRank>               Rankings;                                         // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         TeamIdx;                                          // 0x0018 (0x0004) [0x0000000000000000]               
 	// int32_t                                         MatchIdx;                                         // 0x001C (0x0004) [0x0000000000000000]               
@@ -85187,6 +85739,7 @@ struct UProfileStatsSave_TA_execGetProductStatValue_Params
 struct UProfileStatsSave_TA_execGetStatValue_Params
 {
 	uint8_t                                            StatType;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        Id;                                               // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         StatIdx;                                          // 0x0010 (0x0004) [0x0000000000000000]               
@@ -85197,6 +85750,7 @@ struct UProfileStatsSave_TA_execGetStatValue_Params
 struct UProfileStatsSave_TA_execIncrementStatValue_Params
 {
 	uint8_t                                            StatType;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        Id;                                               // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Amount;                                           // 0x000C (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
@@ -85206,6 +85760,7 @@ struct UProfileStatsSave_TA_execIncrementStatValue_Params
 struct UProfileStatsSave_TA_execSetStatValue_Params
 {
 	uint8_t                                            StatType;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        Id;                                               // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Value;                                            // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         StatIdx;                                          // 0x0010 (0x0004) [0x0000000000000000]               
@@ -85273,6 +85828,7 @@ struct UVersionHelper_TA_execUpdate_Params
 	class TArray<struct FScriptDelegate>               VersionDelegates;                                 // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UObject*                                     VersionObject;                                    // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Version;                                          // 0x0018 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             VersionChangedCallback;                           // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            VersionMax;                                       // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// int32_t                                         CurrentVersion;                                   // 0x003C (0x0004) [0x0000000000000000]               
@@ -85434,6 +85990,7 @@ struct UActivityFeedManager_TA_execHandleDistanceDriven_Params
 struct UActivityFeedManager_TA_execPostActivtyFeedSingleString_Params
 {
 	uint8_t                                            ActivityFeedID;                                   // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReplaceString;                                    // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0018 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -85443,6 +86000,7 @@ struct UActivityFeedManager_TA_execPostActivtyFeedSingleString_Params
 struct UActivityFeedManager_TA_execPostActivityFeedMessage_Params
 {
 	uint8_t                                            ActivityFeedID;                                   // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        StringReplaceList;                                // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -85558,6 +86116,7 @@ struct UAdManager_TA_execCompleteBillboardMeshRequests_Params
 struct UAdManager_TA_execGetCachedAdForZoneID_Params
 {
 	int32_t                                            ZoneID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTexture2DDynamic*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         RPCZoneIndex;                                     // 0x0010 (0x0004) [0x0000000000000000]               
 	// int32_t                                         CachedAdIndex;                                    // 0x0014 (0x0004) [0x0000000000000000]               
@@ -89436,6 +89995,7 @@ struct UBTC_Vehicle_eventGetResult_Params
 struct UBTMoveModifier_Boost_execFindBoostPickup_Params
 {
 	struct FVector                                     Destination;                                      // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AVehiclePickup_Boost_TA*                     ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AVehiclePickup_Boost_TA*                  Pickup;                                           // 0x0018 (0x0008) [0x0000000000000000]               
 	// class AVehiclePickup_Boost_TA*                  BestPickup;                                       // 0x0020 (0x0008) [0x0000000000000000]               
@@ -89920,6 +90480,7 @@ struct UCameraState_BallCam_TA_execNextPotentialTarget_Params
 {
 	class APlayerController_TA*                        PC;                                               // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Direction;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0010 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// int32_t                                         CurrentTargetIndex;                               // 0x0018 (0x0004) [0x0000000000000000]               
 	// class UClass*                                   TargetClass;                                      // 0x0020 (0x0008) [0x0000000000000000]               
@@ -90269,6 +90830,7 @@ struct UTargetFinder_TA_execFindTargetsInRotatedPlane_Params
 	float                                              ZExtent;                                          // 0x0040 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0044 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxDegreeAngle;                                   // 0x0048 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0068 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
 	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0078 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
@@ -90291,6 +90853,7 @@ struct UTargetFinder_TA_execFindClosestTargetInRotatedPlane_Params
 	float                                              ZExtent;                                          // 0x0040 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0044 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxDegreeAngle;                                   // 0x0048 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class UTarget_TA*                               BestTarget;                                       // 0x0070 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -90311,6 +90874,7 @@ struct UTargetFinder_TA_execFindClosestTargetInRotatedPlanes_Params
 	struct FRotator                                    Rotation;                                         // 0x001C (0x000C) [0x0000000000000080] (CPF_Parm)    
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0028 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     CheckDirection;                                   // 0x0030 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlaneSelectData>              PlaneSelectSettings;                              // 0x0040 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
@@ -90325,10 +90889,12 @@ struct UTargetFinder_TA_execFindClosestTargetInDirection_Params
 	class UClass*                                      TargetClass;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AActor*                                      Owner;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     Location;                                         // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     ViewDirection;                                    // 0x0028 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            YDirection;                                       // 0x0034 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class UTarget_TA*                               BestTarget;                                       // 0x0060 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -90348,10 +90914,12 @@ struct UTargetFinder_TA_execFindClosestTargetByAngle_Params
 	class UClass*                                      TargetClass;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AActor*                                      Owner;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     AngleLocation;                                    // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     CheckDirection;                                   // 0x0028 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	float                                              MaxDegreeAngle;                                   // 0x0034 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// class UTarget_TA*                               BestTarget;                                       // 0x0060 (0x0008) [0x0000000004000000] (CPF_EditInline)
@@ -90368,10 +90936,12 @@ struct UTargetFinder_TA_execFindTargetsByAngle_Params
 	class UClass*                                      TargetClass;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AActor*                                      Owner;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     AngleLocation;                                    // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     CheckDirection;                                   // 0x0028 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	float                                              MaxDegreeAngle;                                   // 0x0034 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0058 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
 	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0068 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
@@ -90387,8 +90957,10 @@ struct UTargetFinder_TA_execFindTargetsWithinRadius_Params
 	class UClass*                                      TargetClass;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AActor*                                      Owner;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     Location;                                         // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	float                                              MaxRadius;                                        // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0048 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
 	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0058 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
@@ -90404,8 +90976,10 @@ struct UTargetFinder_TA_execFindClosestTargetByAngles_Params
 	class UClass*                                      TargetClass;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AActor*                                      Owner;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     AngleLocation;                                    // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	struct FVector                                     CheckDirection;                                   // 0x0028 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FAngleSelectData>              AngleSelectSettings;                              // 0x0038 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0048 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class UTarget_TA*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
@@ -91755,6 +92329,7 @@ struct UPreMatchLobby_TA_execGetLocalPlayer_Params
 struct UPreMatchLobby_TA_execGetClosestCarToLocation_Params
 {
 	struct FVector                                     Location;                                         // 0x0000 (0x000C) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class AGameEvent_TA*                            GameEvent;                                        // 0x0018 (0x0008) [0x0000000000000000]               
 	// class ACar_TA*                                  ClosestCar;                                       // 0x0020 (0x0008) [0x0000000000000000]               
@@ -92471,6 +93046,7 @@ struct UCameraState_ReplayAutoCam_TA_execResetFocusActorSettings_Params
 struct UCameraState_ReplayAutoCam_TA_execUpdateAerialPRIs_Params
 {
 	float                                              PickWaitTime;                                     // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class APRI_TA*                                  PRI;                                              // 0x0010 (0x0008) [0x0000000000000000]               
 	// class APRI_TA*                                  AerialActor;                                      // 0x0018 (0x0008) [0x0000000000000000]               
@@ -93394,6 +93970,7 @@ struct ULocalPlayerAudioParamsComponent_TA_execHandleLocalPlayerChange_Params
 struct ULocalPlayerAudioParamsComponent_TA_execGetListenerFromSplitScreenPosition_Params
 {
 	uint8_t                                            InSplitScreenPosition;                            // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         ListenerIndex;                                    // 0x0008 (0x0004) [0x0000000000000000]               
 	// class UGameViewportClient_TA*                   ViewportClient;                                   // 0x0010 (0x0008) [0x0000000000000000]               
@@ -94923,6 +95500,7 @@ struct UTutorial_TA_execNotifyKeyInput_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -94980,6 +95558,7 @@ struct UTutorial_TA_execSetIgnoredInput_Params
 struct UTutorial_TA_execSetAllDriving_Params
 {
 	uint8_t                                            PlayerDriveType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bDriving : 1;                                     // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// class ACar_TA*                                  Car;                                              // 0x0008 (0x0008) [0x0000000000000000]               
 	// class AController*                              Player;                                           // 0x0010 (0x0008) [0x0000000000000000]               
@@ -95306,6 +95885,7 @@ struct URocketPass_TA_execPurchaseTiers_Params
 {
 	class TArray<struct FProductInstanceID>            KeyInstanceIDs;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            PurchasableID;                                    // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -95323,6 +95903,7 @@ struct URocketPass_TA_execPurchasePremium_Params
 {
 	class TArray<struct FProductInstanceID>            KeyInstanceIDs;                                   // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            PurchasableID;                                    // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -95359,6 +95940,7 @@ struct URocketPass_TA_execRequestRewards_Params
 struct URocketPass_TA_execForceSetRocketPassInfo_Params
 {
 	struct FRocketPassInfo                             Info;                                             // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FRocketPassStore                            Store;                                            // 0x0010 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	// uint32_t                                        bIsPassConfigActive : 1;                          // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	// struct FRocketPassStore                         StructInitializer_0x1;                            // 0x0038 (0x0020) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -95491,6 +96073,7 @@ struct URPC_Challenge_ClearNewInfo_TA_execSetPlayerID_Params
 struct URPC_Challenge_AvailableReceived_TA_execSetChallengeID_Params
 {
 	int32_t                                            ChallengeID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_AvailableReceived_TA*         ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -95507,6 +96090,7 @@ struct URPC_Challenge_AvailableReceived_TA_execSetPlayerID_Params
 struct URPC_Challenge_CompleteReceived_TA_execSetChallengeID_Params
 {
 	int32_t                                            ChallengeID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_CompleteReceived_TA*          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -95793,6 +96377,7 @@ struct UXPManager_TA_execCalculateTotalXPRequiredForLevel_Params
 struct UXPManager_TA_execDetermineLevelTitle_Params
 {
 	int32_t                                            Level;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         I;                                                // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -96743,6 +97328,7 @@ struct UDebugHelpMenu_TA_execHandleInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -97288,6 +97874,7 @@ struct UEOSGameClipsController_TA_exec__EOSGameClipsController_TA__SetGameClipsI
 {
 	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InClipId;                                         // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UErrorType*                                  InErrorType;                                      // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -97626,6 +98213,7 @@ struct UEOSGameClipsManager_TA_execEventCreateGameClipInitiated_Params
 {
 	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InClipId;                                         // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InClipType;                                       // 0x0018 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -97634,6 +98222,7 @@ struct UEOSGameClipsManager_TA_execEventCreateGameClipInitiated_Params
 struct UEOSOnlineStorageSync_TA_execHandleFileReadComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<uint8_t>                           FileData;                                         // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -97649,6 +98238,7 @@ struct UEOSOnlineStorageSync_TA_execHandleFileReadComplete_Params
 struct UEOSOnlineStorageSync_TA_execHandleEnumerateUserFilesComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<struct FEmsFile>                   UserFiles;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   OnlineStorageFileName;                            // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -97704,6 +98294,7 @@ struct UEOSOnlineStorageUploader_TA_exec__EOSOnlineStorageUploader_TA__UploadSav
 struct UEOSOnlineStorageUploader_TA_execHandleFileWriteComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -97761,6 +98352,7 @@ struct UEOSOnlineStorageUploader_TA_eventConstruct_Params
 struct UEOSOnlineStorageUploader_TA_execEventSaveUploadComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -97800,6 +98392,7 @@ struct UEOSPermissions_TA_exec__EOSPermissions_TA__UpdateSaveObjectReferences_0x
 struct UEOSPermissions_TA_exec__EOSPermissions_TA__RequestEOSPermissions_0x1_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      EpicAuthTicket;                                   // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class FString                                   URL;                                              // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   ServerURL;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -98289,6 +98882,7 @@ struct UExclusiveInteraction_TA_execHandleInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -98299,6 +98893,7 @@ struct UExclusiveInteraction_TA_execHandleInputKey_Params
 struct UExclusiveInteraction_TA_execHandleInputChar_Params
 {
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Character;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -98376,6 +98971,7 @@ struct UExplosionPreviewer_TA_execHandleProductLoaded_Params
 struct UExplosionPreviewer_TA_execSetProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          OnlineProductId;                                  // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	// class TArray<int32_t>                           ArrayInitializer_0x1;                             // 0x0018 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -98422,6 +99018,7 @@ struct UPaintedFXSelector_TA_execGetFXActorForPRI_Params
 {
 	class APRI_TA*                                     PRI;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            SlotIndex;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AFXActor_X*                                  PaintedFXActor;                                   // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AFXActor_X*                                  FXActor;                                          // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AFXActor_X*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -98436,6 +99033,7 @@ struct UPaintedFXSelector_TA_execGetFXActorForMesh_Params
 {
 	class UCarMeshComponentBase_TA*                    CarMesh;                                          // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	int32_t                                            SlotIndex;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AFXActor_X*                                  PaintedFXActor;                                   // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AFXActor_X*                                  FXActor;                                          // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class AFXActor_X*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -98507,6 +99105,7 @@ struct UFaceIt_TA_execOnFailedJoin_Params
 struct UFaceIt_TA_execHandleJoinComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -98623,6 +99222,7 @@ struct UFaceIt_TA_execEventJoiningReservation_Params
 struct UFaceItConfig_TA_execGetPartnerNameFromID_Params
 {
 	int32_t                                            Id;                                               // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         PartnerIndex;                                     // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -98746,6 +99346,7 @@ struct URPC_FaceItPlayerFailedJoin_TA_execSetFailReason_Params
 struct URPC_FaceItPlayerFailedJoin_TA_execSetServerID_Params
 {
 	int32_t                                            InServerID;                                       // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_FaceItPlayerFailedJoin_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -98754,6 +99355,7 @@ struct URPC_FaceItPlayerFailedJoin_TA_execSetServerID_Params
 struct URPC_FaceItPlayerFailedJoin_TA_execSetMatchID_Params
 {
 	int32_t                                            InMatchID;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_FaceItPlayerFailedJoin_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -98872,6 +99474,7 @@ struct UFreeplayCommandsStatics_TA_execGetBestGoalFromVelocity_Params
 struct UFreeplayCommandsStatics_TA_execGetClosestGoalIndicatorOverride_Params
 {
 	struct FVector                                     InLocation;                                       // 0x0000 (0x000C) [0x0001000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    InGoal;                                           // 0x0010 (0x0008) [0x0001000004000080] (CPF_Parm | CPF_EditInline)
 	class AActor*                                      ReturnValue;                                      // 0x0018 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// float                                           ShortestDistance;                                 // 0x0020 (0x0004) [0x0000000000000000]               
@@ -99063,6 +99666,7 @@ struct AFreeplaySessionManager_TA_execHandleCarAddedBoost_Params
 struct AFreeplaySessionManager_TA_execSetAutoRefillBoost_Params
 {
 	uint32_t                                           bEnable : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACarComponent_Boost_TA*                      InBoost;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -99071,6 +99675,7 @@ struct AFreeplaySessionManager_TA_execSetAutoRefillBoost_Params
 struct AFreeplaySessionManager_TA_execSetUnlimitedBoost_Params
 {
 	uint32_t                                           bEnable : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACarComponent_Boost_TA*                      InBoost;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -99079,6 +99684,7 @@ struct AFreeplaySessionManager_TA_execSetUnlimitedBoost_Params
 struct AFreeplaySessionManager_TA_execSetBoostWithSettings_Params
 {
 	uint8_t                                            InBoostFillType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACarComponent_Boost_TA*                      InBoost;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -99117,6 +99723,7 @@ struct AFreeplaySessionManager_TA_execServerSetGoalReset_Params
 struct AFreeplaySessionManager_TA_execGetDisableGoalDelay_Params
 {
 	uint8_t                                            InGoalResetType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -99125,6 +99732,7 @@ struct AFreeplaySessionManager_TA_execGetDisableGoalDelay_Params
 struct AFreeplaySessionManager_TA_execGetDisableGoalScoring_Params
 {
 	uint8_t                                            InGoalResetType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -99783,6 +100391,7 @@ struct AGameEvent_Football_TA_execCalculateSpawnLocation_Params
 	struct FVector                                     StartLocation;                                    // 0x0000 (0x000C) [0x0001000000000080] (CPF_Parm)    
 	struct FRotator                                    StartRotation;                                    // 0x000C (0x000C) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            SpawnLocationIndex;                               // 0x0018 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     PRI;                                              // 0x0020 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0028 (0x000C) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint32_t                                        bEven : 1;                                        // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -99994,6 +100603,7 @@ struct AGameEvent_GodBall_TA_execCalculateSpawnLocation_Params
 	struct FVector                                     StartLocation;                                    // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FRotator                                    StartRotation;                                    // 0x000C (0x000C) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            SpawnLocationIndex;                               // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     PRI;                                              // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0028 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint32_t                                        bEven : 1;                                        // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -100707,6 +101317,7 @@ struct AGameEvent_Training_Goalie_TA_execGetBallAimVelocity_Params
 struct AGameEvent_Training_Goalie_TA_execDetermineBallInitialVelocity_Params
 {
 	struct FVector                                     BallSpawnLoc;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FFieldSpawnInfo                             SpawnInfo;                                        // 0x0018 (0x003C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0054 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -100748,6 +101359,7 @@ struct AGameEvent_Training_Aerial_TA_execCheckForReset_Params
 struct AGameEvent_Training_Aerial_TA_execDetermineBallInitialVelocity_Params
 {
 	struct FVector                                     BallSpawnLoc;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FFieldSpawnInfo                             SpawnInfo;                                        // 0x0018 (0x003C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0054 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -100771,6 +101383,7 @@ struct AGameEvent_Training_Striker_TA_execCheckForReset_Params
 struct AGameEvent_Training_Striker_TA_execDetermineBallInitialVelocity_Params
 {
 	struct FVector                                     BallSpawnLoc;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FFieldSpawnInfo                             SpawnInfo;                                        // 0x0018 (0x003C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     ReturnValue;                                      // 0x0054 (0x000C) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -100965,6 +101578,7 @@ struct USaveData_GameEditor_Training_TA_execGetTrainingFullPath_Params
 {
 	class ULocalPlayer_TA*                             Player;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            InSaveType;                                       // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -100973,6 +101587,7 @@ struct USaveData_GameEditor_Training_TA_execGetTrainingFullPath_Params
 struct USaveData_GameEditor_Training_TA_execGetTrainingPath_Params
 {
 	uint8_t                                            InSaveType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -100981,6 +101596,7 @@ struct USaveData_GameEditor_Training_TA_execGetTrainingPath_Params
 struct USaveData_GameEditor_Training_TA_execGetTrainingFolder_Params
 {
 	uint8_t                                            InSaveType;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -101182,6 +101798,7 @@ struct UTrainingEditorMetrics_TA_execTrainingSetCreate_Params
 	class FString                                      PackCode;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      TrainingType;                                     // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Difficulty;                                       // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserTags;                                         // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bSuccessfullyCreated : 1;                         // 0x0048 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
@@ -101198,6 +101815,7 @@ struct UTrainingPackProgress_TA_execSetAttemptByRoundNumber_Params
 {
 	int32_t                                            RoundNumber;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewAttempt;                                       // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bForceSet : 1;                                    // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         RoundIndex;                                       // 0x0010 (0x0004) [0x0000000000000000]               
@@ -101312,6 +101930,7 @@ struct UProductAssetCache_TA_execClear_Params
 struct UMapSelector_TA_exec__MapSelector_TA__GetNextMap_0x1_Params
 {
 	int32_t                                            GroupIdx;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FMapGroup                                   ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400582] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -101332,6 +101951,7 @@ struct UMapSelector_TA_execGetNextPreferredMap_Params
 	class TArray<class FName>                          Likes;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class FName>                          Dislikes;                                         // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            NumPlayers;                                       // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMapData_TA*                                 ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UMapData_TA*                              Map;                                              // 0x0030 (0x0008) [0x0000000000000000]               
 	// class TArray<float>                             MapGroupWeights;                                  // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -101355,6 +101975,7 @@ struct UMapSelector_TA_execGetMapGroupWeights_Params
 	class TArray<class FName>                          Likes;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class FName>                          Dislikes;                                         // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            NumPlayers;                                       // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<float>                                ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<float>                             GroupPreferredWeights;                            // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         GroupIdx;                                         // 0x0048 (0x0004) [0x0000000000000000]               
@@ -101446,6 +102067,7 @@ struct UMapSelector_TA_execRebuildMaps_Params
 struct UMapSelector_TA_execSetSkill_Params
 {
 	float                                              InSkill;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FMapSkillSettings>             InSkillReqs;                                      // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -101499,6 +102121,7 @@ struct AGameInfo_CollisionTest_TA_execSpawnActor_Params
 {
 	class UCollisionTestComponent_TA*                  Test;                                             // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	float                                              Alpha;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class AActor*                                      ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FVector                                  FireLocation;                                     // 0x0018 (0x000C) [0x0000000000000000]               
 	// struct FVector                                  FireVelocity;                                     // 0x0024 (0x000C) [0x0000000000000000]               
@@ -101628,6 +102251,7 @@ struct ULoadingScreen_TA_execGetProtipMessageWithIcons_Params
 	class FString                                      OpenDelimiter;                                    // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      CloseDelimiter;                                   // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InputType;                                        // 0x0030 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0031 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0038 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class APlayerController*                        ProtipPlayerController;                           // 0x0048 (0x0008) [0x0000000000000000]               
 	// int32_t                                         ProtipMessageIdx;                                 // 0x0050 (0x0004) [0x0000000000000000]               
@@ -101715,6 +102339,7 @@ struct ULoadingScreen_TA_execHandleLoadingUnfairMatch_Params
 struct ULoadingScreen_TA_execGetLocalizedMaximumPlayerCounts_Params
 {
 	int32_t                                            MaxPlayers;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         UnfairNum;                                        // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -101835,6 +102460,7 @@ struct UMusicStingersPreviewer_TA_execLoadAnthemAsset_Params
 struct UMusicStingersPreviewer_TA_execSetProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductInstanceID                          OnlineProductId;                                  // 0x0008 (0x0010) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -101843,6 +102469,7 @@ struct UMusicStingersPreviewer_TA_execSetProduct_Params
 struct UMusicStingersPreviewer_TA_execSetPreview_Params
 {
 	int32_t                                            SlotIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FProductHashSource                          ProductSource;                                    // 0x0008 (0x0020) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         ProductID;                                        // 0x0028 (0x0004) [0x0000000000000000]               
 };
@@ -102083,6 +102710,7 @@ struct AGameInfo_PerfTest_TA_execSpawnPlayerController_Params
 struct UPostProcessManager_TA_execGetPostProcessProperty_Params
 {
 	uint8_t                                            PropertyName;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              ReturnValue;                                      // 0x0004 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -102091,6 +102719,7 @@ struct UPostProcessManager_TA_execGetPostProcessProperty_Params
 struct UPostProcessManager_TA_execSetPostProcessProperty_Params
 {
 	uint8_t                                            PropertyName;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              InValue;                                          // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bSetToDefault : 1;                                // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// float                                           PrimarySettingValue;                              // 0x000C (0x0004) [0x0000000000000000]               
@@ -102339,6 +102968,7 @@ struct UTourServerInfo_TA_execIsTourSet_Params
 struct UOverlayInteractionEGS_TA_execHandleInputChar_Params
 {
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Character;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -102362,6 +102992,7 @@ struct UOverlayInteractionEGS_TA_execHandleInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -102983,6 +103614,7 @@ struct UGFxData_Matchmaking_TA_execDisplayNextMessage_Params
 struct UGFxData_Matchmaking_TA_execAddMessageUpdate_Params
 {
 	int32_t                                            DelayFromStart;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      MessageKey;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FMessageUpdate                           Message;                                          // 0x0018 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -103019,6 +103651,7 @@ struct UGFxData_Matchmaking_TA_execStartMatchmaking_Params
 struct UGFxData_Matchmaking_TA_execIsRankedView_Params
 {
 	uint8_t                                            Tab;                                              // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -103629,6 +104262,7 @@ struct UGFxData_BlueprintGarage_TA_execCreatePreviewProduct_Params
 struct UGFxData_BlueprintGarage_TA_execGetOrCreatePreviewProduct_Params
 {
 	struct FProductHashID                              BlueprintHashID;                                  // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         Index;                                            // 0x0010 (0x0004) [0x0000000000000000]               
 	// struct FBlueprintPreviewProduct                 StructInitializer_0x1;                            // 0x0018 (0x0020) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
@@ -104463,6 +105097,7 @@ struct UGFxData_ChallengeBase_TA_execSetChallengeProxy_Params
 struct URPC_Challenge_RequestReward_TA_execSetChallengeID_Params
 {
 	int32_t                                            ChallengeID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_RequestReward_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -104991,6 +105626,7 @@ struct UGFxData_ServerBrowser_TA_execHandleCancelJoin_Params
 struct UGFxData_ServerBrowser_TA_execHandleJoinGameComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -105362,6 +105998,7 @@ struct UGFxData_CustomTeams_TA_execClearTeamName_Params
 struct UGFxData_CustomTeams_TA_execSetTeamName_Params
 {
 	int32_t                                            Team;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      TeamName;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// struct FCustomMatchSettings                     CustomSettings;                                   // 0x0018 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -105399,6 +106036,7 @@ struct UGFxData_CustomTeams_TA_execInitColorTables_Params
 struct UGFxData_CustomTeams_TA_execCreateTeamSettings_Params
 {
 	int32_t                                            TeamIdx;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FGFxCustomTeamSettings                      ReturnValue;                                      // 0x0008 (0x0018) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FCustomMatchSettings                     CustomSettings;                                   // 0x0020 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FCustomMatchTeamSettings                 TeamSettings;                                     // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -105591,6 +106229,7 @@ struct UGFxData_EngagementEventsConfig_TA_exec__GFxData_EngagementEventsConfig_T
 struct UGFxData_EngagementEventsConfig_TA_execGetStartNotificationShown_Params
 {
 	uint8_t                                            Type;                                             // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -105622,6 +106261,7 @@ struct UGFxData_EngagementEventsConfig_TA_execGetLocalization_Params
 {
 	class TArray<struct FNotificationStatus>           InNotifications;                                  // 0x0000 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            NotificationType;                                 // 0x0010 (0x0004) [0x0000000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      OutTitle;                                         // 0x0018 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      OutBody;                                          // 0x0028 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      OutAnim;                                          // 0x0038 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -106391,6 +107031,7 @@ struct UTravelManager_TA_execSetGameInfoClass_Params
 struct UTravelManager_TA_execSetWorkshopMap_Params
 {
 	uint32_t                                           bInWorkshopMap : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTravelManager_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -106734,6 +107375,7 @@ struct UGFxData_GameEvent_TA_execOnStatEvent_Params
 {
 	class FString                                      EventName;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Points;                                           // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UTexture*                                    Texture;                                          // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Sound;                                            // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
@@ -107236,6 +107878,7 @@ struct URPC_GetLegacyStatus_TA_eventOnSuccess_Params
 struct UGFxData_LegalText_TA_exec__GFxData_LegalText_TA__SyncLegal_0x1_Params
 {
 	uint8_t                                            P;                                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -107430,6 +108073,7 @@ struct UGFxData_LoadoutSets_TA_execHasPresetNamed_Params
 struct UGFxData_LoadoutSets_TA_execRenamePreset_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      NewName;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -108415,6 +109059,7 @@ struct UGFxData_MatchAdmin_TA_execOnShellSet_Params
 struct UGFxData_MatchHistoryPlayer_TA_execInit_Params
 {
 	int32_t                                            InIndex;                                          // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMatchPlayerData_X*                          InPlayer;                                         // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
 };
 
@@ -108459,6 +109104,7 @@ struct UMatchHistoryMetrics_TA_execMatchHistoryReplaySaved_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            CurrentUI;                                        // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      MatchGUID;                                        // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      MatchDate;                                        // 0x0060 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -108484,6 +109130,7 @@ struct UMatchHistoryMetrics_TA_execMatchHistoryMetricsChangedTab_Params
 struct UMatchHistoryMetrics_TA_execMatchHistoryMetricsChangedMatchIndex_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      MatchGUID;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         MatchIndex;                                       // 0x0018 (0x0004) [0x0000000000000000]               
 	// struct FMatchPreviewData                        PreviewData;                                      // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -108703,6 +109350,7 @@ struct UGFxData_OnlineMatchStatus_TA_execHandlePartySizeChanged_Params
 struct UGFxData_OnlineMatchStatus_TA_execHandleJoinGameComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -108773,7 +109421,9 @@ struct UMatchmakingViewFilters_TA_execGetAccessiblePlaylists_Params
 {
 	class TArray<class FName>                          SelectedPlaylists;                                // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            ViewTab;                                          // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        LastVisitedPlaylistFolderID;                      // 0x0014 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0017 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FName>                          ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -108788,6 +109438,7 @@ struct UMatchmakingViewFilters_TA_eventConstruct_Params
 struct UGFxData_MenuTreeNode_TA_execSetBanner_Params
 {
 	uint8_t                                            InBannerType;                                     // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InBannerTitle;                                    // 0x0008 (0x0010) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      InBannerBody;                                     // 0x0018 (0x0010) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
@@ -108797,6 +109448,7 @@ struct UGFxData_MenuTreeNode_TA_execSetBanner_Params
 struct UGFxData_MenuTreeNode_TA_execCanShowEngagementEventType_Params
 {
 	uint8_t                                            EventType;                                        // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UMenuTreeNode_TA*                         TheNode;                                          // 0x0008 (0x0008) [0x0001000000000000]               
 };
@@ -109279,6 +109931,7 @@ struct URPC_MicroTransactions_UnlockContainer_TA_execSetContainerIDs_Params
 struct URPC_MicroTransactions_GetCatalog_TA_execCategoryToName_Params
 {
 	uint8_t                                            InCategory;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        ReturnValue;                                      // 0x0004 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class FString                                   CategoryAsString;                                 // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FName                                     CategoryAsName;                                   // 0x0020 (0x0008) [0x0000000000000000]               
@@ -109289,6 +109942,7 @@ struct URPC_MicroTransactions_GetCatalog_TA_execCategoryToName_Params
 struct URPC_MicroTransactions_GetCatalog_TA_execSetCategory_Params
 {
 	uint8_t                                            InCategory;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_MicroTransactions_GetCatalog_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109337,6 +109991,7 @@ struct URPC_MicroTransactions_FinalizePurchase_TA_execSetPlayerID_Params
 struct URPC_MicroTransactions_FinalizePurchase_TA_execSetAuthorized_Params
 {
 	uint32_t                                           bAuthorized : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_MicroTransactions_FinalizePurchase_TA*  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109750,6 +110405,7 @@ struct UNotification_AchievementProgress_TA_execSetTitle_Params
 struct UNotification_AchievementProgress_TA_execSetMaxProgress_Params
 {
 	float                                              InMaxProgress;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_AchievementProgress_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109758,6 +110414,7 @@ struct UNotification_AchievementProgress_TA_execSetMaxProgress_Params
 struct UNotification_AchievementProgress_TA_execSetProgress_Params
 {
 	float                                              InProgress;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_AchievementProgress_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109774,6 +110431,7 @@ struct UNotification_AchievementProgress_TA_execSetIcon_Params
 struct UNotification_AchievementProgress_TA_execSetID_Params
 {
 	int32_t                                            InID;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_AchievementProgress_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109798,6 +110456,7 @@ struct UNotification_AchievementUnlocked_TA_execSetIcon_Params
 struct UNotification_AchievementUnlocked_TA_execSetPoints_Params
 {
 	int32_t                                            InPoints;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_AchievementUnlocked_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109806,6 +110465,7 @@ struct UNotification_AchievementUnlocked_TA_execSetPoints_Params
 struct UNotification_AchievementUnlocked_TA_execSetID_Params
 {
 	int32_t                                            InID;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UNotification_AchievementUnlocked_TA*        ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -109827,6 +110487,7 @@ struct UGFxData_OnlineFreeplay_TA_execGetPlaylistId_Params
 struct UGFxData_OnlineFreeplay_TA_execGetGoalResetOptionsByGameMode_Params
 {
 	int32_t                                            GameMode;                                         // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     Results;                                          // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0028 (0x0004) [0x0000000000000000]               
@@ -110681,6 +111342,7 @@ struct UProductsConfig_TA_execIsPlayerTradeProhibited_Params
 {
 	int32_t                                            SeriesID;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ProductQuality;                                   // 0x0004 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0005 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         TradeIndex;                                       // 0x000C (0x0004) [0x0000000000000000]               
 };
@@ -110690,6 +111352,7 @@ struct UProductsConfig_TA_execIsPlayerTradeProhibited_Params
 struct UProductsConfig_TA_execGetReplacementOnlineProduct_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineProduct_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         ProductIndex;                                     // 0x0010 (0x0004) [0x0000000000000000]               
 	// class UProduct_TA*                              ReplacedProduct;                                  // 0x0018 (0x0008) [0x0000000000000000]               
@@ -110930,6 +111593,7 @@ struct URPC_RedeemCode_TA_execSetCode_Params
 struct UGFxData_RegionRestrictions_TA_execIsRestricted_Params
 {
 	uint8_t                                            Restriction;                                      // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -111169,6 +111833,7 @@ struct UGFxData_Restrictions_TA_execOnPrivacyPolicy_Params
 struct UGFxData_Restrictions_TA_execIsRestrictedNoModal_Params
 {
 	uint8_t                                            Reason;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -111177,6 +111842,7 @@ struct UGFxData_Restrictions_TA_execIsRestrictedNoModal_Params
 struct UGFxData_Restrictions_TA_execIsRestricted_Params
 {
 	uint8_t                                            Reason;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint32_t                                        IsRestricted : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class FString                                   LocalizedTitleText;                               // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -111189,6 +111855,7 @@ struct UGFxData_Restrictions_TA_execIsRestricted_Params
 struct UGFxData_Restrictions_TA_execIsRestrictedInternal_Params
 {
 	uint8_t                                            Reason;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -111214,6 +111881,7 @@ struct UGFxModal_Info_TA_execSetInfoText_Params
 struct UGFxModal_Info_TA_execSetHeaderVisible_Params
 {
 	uint32_t                                           Value : 1;                                        // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxModal_Info_TA*                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -111957,6 +112625,7 @@ struct UGFxData_SeasonMode_TA_execTeamSizeChanged_Params
 struct UGFxData_SeasonMode_TA_execSetBot_Params
 {
 	int32_t                                            BotIndex;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      BotID;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UProductAsset_Bot_TA*                     BotAsset;                                         // 0x0018 (0x0008) [0x0000000000000000]               
 	// class ACarPreviewActor_TA*                      Car;                                              // 0x0020 (0x0008) [0x0000000000000000]               
@@ -112045,6 +112714,7 @@ struct UGFxData_SeasonReward_TA_execUpdateData_Params
 struct UGFxData_SeasonReward_TA_execHandleRewardUpdateOnGameJoin_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -112392,6 +113062,7 @@ struct UShopTabs_TA_eventConstruct_Params
 struct UShopTabsConfig_TA_execBuildIdLabel_Params
 {
 	int32_t                                            ItemID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DefaultLabel;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
@@ -112536,6 +113207,7 @@ struct UGFxData_SupportACreator_TA_execOnSetSupportACreatorSuccess_Params
 struct UGFxData_SupportACreator_TA_execGetIconName_Params
 {
 	uint8_t                                            InSupportType;                                    // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -113024,6 +113696,7 @@ struct URPC_TourGetPublic_TA_execSetPlayerID_Params
 struct UGFxData_TourSpectate_TA_execHandleJoinGameComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -113089,6 +113762,7 @@ struct UTourMatchServerBrowser_TA_execGetMatchServer_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0050 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class URPC_TourGetMatchServer_TA*               RPC;                                              // 0x0078 (0x0008) [0x0000000000000000]               
@@ -113555,6 +114229,7 @@ struct UGFxData_TrainingModeBrowser_TA_execCanUploadCustomPack_Params
 struct UGFxData_TrainingModeBrowser_TA_execDebugGetTrainingModeByIdx_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxData_TrainingMode_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -113700,6 +114375,7 @@ struct UGFxData_TrainingModeBrowser_TA_execHandleOnlineHeaders_Params
 {
 	class TArray<class FString>                        LocalFiles;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Result;                                           // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint32_t                                           bFeaturedOnly : 1;                                // 0x0014 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	// class UGFxData_TrainingMode_TA*                 Data;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// int32_t                                         CacheIndex;                                       // 0x0020 (0x0004) [0x0000000000000000]               
@@ -113890,7 +114566,9 @@ struct UGFxData_TrainingModeBrowser_TA_execCreateNew_Params
 	class FString                                      NewName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            NewType;                                          // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewDifficulty;                                    // 0x0011 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0012 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        MapName;                                          // 0x0014 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0016 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              Tags;                                             // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UGFxData_TrainingMode_TA*                 GFxTrainingData;                                  // 0x0030 (0x0008) [0x0000000000000000]               
 	// class UTrainingEditorData_TA*                   NewTrainingData;                                  // 0x0038 (0x0008) [0x0000000000000000]               
@@ -114031,6 +114709,7 @@ struct URPC_TrainingEditor_ListPlayerTrainingDataTimestamp_TA_execSetCodes_Param
 struct URPC_TrainingEditor_BrowseTrainingData_TA_execSetFeaturedOnly_Params
 {
 	uint32_t                                           bInFeaturedOnly : 1;                              // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_TrainingEditor_BrowseTrainingData_TA*   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -114178,6 +114857,7 @@ struct UGFxData_TrainingModeEditor_TA_execSetMetaData_Params
 	class FString                                      NewName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            NewType;                                          // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewDifficulty;                                    // 0x0011 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0012 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              NewTags;                                          // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -114479,6 +115159,7 @@ struct UViewMetrics_TA_execMenuInteractionSessionCompleted_Params
 {
 	int32_t                                            ViewSourceID;                                     // 0x0000 (0x0004) [0x0000000000000082] (CPF_Const | CPF_Parm)
 	class FName                                        ViewDescriptor;                                   // 0x0004 (0x0008) [0x0000000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FViewData>                     ViewMetrics;                                      // 0x0010 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -114737,6 +115418,7 @@ struct AGRI_TA_execGetTimeString_Params
 	uint32_t                                           bShowMinutes : 1;                                 // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	float                                              MS;                                               // 0x000C (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bShowMS : 1;                                      // 0x0010 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         Hours;                                            // 0x0028 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Minutes;                                          // 0x002C (0x0004) [0x0000000000000000]               
@@ -115187,6 +115869,7 @@ struct UGFxModal_FriendJoin_TA_execHandlePasswordRequired_Params
 struct UGFxModal_FriendJoin_TA_execHandleGameInviteComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -115222,6 +115905,7 @@ struct UGFxModal_RankedReconnect_TA_execHandleTaskError_Params
 struct UGFxModal_RankedReconnect_TA_execHandleJoin_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -115281,8 +115965,10 @@ struct UGFxModal_TextInput_TA_execSetTextInputData_Params
 {
 	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0018 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DefaultText;                                      // 0x0020 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            MaxLength;                                        // 0x0030 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxModal_TextInput_TA*                      ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UGFxObject*                               DataObj;                                          // 0x0040 (0x0008) [0x0000000000000000]               
 };
@@ -115453,6 +116139,7 @@ struct AHauntedBallTrapTrigger_TA_execHandleIsTrappedChanged_Params
 {
 	class ABall_Haunted_TA*                            Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bInIsTrapped : 1;                                 // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    Goal;                                             // 0x0010 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 };
 
@@ -115703,6 +116390,7 @@ struct UTourGameUpdate_TA_execSendUpdateGameRPC_Params
 {
 	class UTourGameUpdateDispatcher_TA*                Dispatcher;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            InGameNum;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FTourMatchGame                              InGameData;                                       // 0x0010 (0x0018) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           SeriesWinnerID;                                   // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class URPC_X*                                      ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -115957,6 +116645,7 @@ struct AInMapScoreboard_TA_execCreateAndAddMicToMesh_Params
 {
 	class UMaterialInstanceConstant*                   ParentMICInstance;                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MaterialIndexToUse;                               // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMaterialInstanceConstant*                   ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UMaterialInstanceConstant*                NewMIC;                                           // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -116134,6 +116823,7 @@ struct UItemPoolSelection_TA_execAddItemToSlot_Params
 {
 	class ASpecialPickup_TA*                           Item;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            SlotIndex;                                        // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0010 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	// class ASpecialPickup_TA*                        ItemInstance;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 };
@@ -116294,6 +116984,7 @@ struct UJoinGameConnectionChecker_TA_execHandleDisconnected_Params
 struct UJoinGameConnectionChecker_TA_execHandleJoinGameComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FailReason;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -116744,6 +117435,7 @@ struct UMaxTimeEndGame_TA_exec__MaxTimeEndGame_TA__GetWinningTeam_0x1_Params
 struct UMaxTimeEndGame_TA_exec__MaxTimeEndGame_TA__GetWinningTeam_0x2_Params
 {
 	int32_t                                            Sum;                                              // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class APRI_TA*                                     PRI;                                              // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -116754,6 +117446,7 @@ struct UMaxTimeEndGame_TA_execGetWinningTeam_Params
 {
 	class AGameEvent_Soccar_TA*                        GameEvent;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            TieBreakDecision;                                 // 0x0008 (0x0001) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ATeam_TA*                                    ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ATeam_TA*                                 WinningTeam;                                      // 0x0018 (0x0008) [0x0000000000000000]               
 	// class TArray<int32_t>                           NumShots;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -117078,6 +117771,7 @@ struct UMutator_Attachment_TA_execMutateObject_Params
 struct ASpecialAttachment_TA_execIsValidBump_Params
 {
 	float                                              Speed;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ACar_TA*                                     Car;                                              // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitLocation;                                      // 0x0010 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	struct FVector                                     HitNormal;                                        // 0x001C (0x000C) [0x0000000000000080] (CPF_Parm)    
@@ -117682,6 +118376,7 @@ struct UPartyMessage_Chat_TA_execSetText_Params
 struct UPartyMessage_UserVoiceReportingLevel_TA_execSetVoiceReportingLevel_Params
 {
 	uint8_t                                            InValue;                                          // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPartyMessage_UserVoiceReportingLevel_TA*    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -117690,6 +118385,7 @@ struct UPartyMessage_UserVoiceReportingLevel_TA_execSetVoiceReportingLevel_Param
 struct UPartyMessage_LevelAndChallengesUpdate_TA_execSetCompletedChallenges_Params
 {
 	uint32_t                                           bInCompletedChallenges : 1;                       // 0x0000 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPartyMessage_LevelAndChallengesUpdate_TA*   ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -117698,6 +118394,7 @@ struct UPartyMessage_LevelAndChallengesUpdate_TA_execSetCompletedChallenges_Para
 struct UPartyMessage_LevelAndChallengesUpdate_TA_execSetXPLevel_Params
 {
 	int32_t                                            InXPLevel;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPartyMessage_LevelAndChallengesUpdate_TA*   ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -117714,6 +118411,7 @@ struct UPartyMessage_LevelAndChallengesUpdate_TA_execSetPlayer_Params
 struct UPartyMessage_XPLevelUpdate_TA_execSetXPLevel_Params
 {
 	int32_t                                            InXPLevel;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPartyMessage_XPLevelUpdate_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -117730,6 +118428,7 @@ struct UPartyMessage_XPLevelUpdate_TA_execSetPlayer_Params
 struct UPartyMessage_ChallengesUpdate_TA_execSetCompletedChallenges_Params
 {
 	uint32_t                                           bInCompletedChallenges : 1;                       // 0x0000 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UPartyMessage_ChallengesUpdate_TA*           ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -118326,6 +119025,7 @@ struct UProductMetrics_TA_execRecordLoadout_Params
 {
 	class ULocalPlayer*                                Player;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Team;                                             // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ULoadout_TA*                                 Loadout;                                          // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -118415,6 +119115,7 @@ struct UPlayerInputSequence_TA_execHandleFinalInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -118427,6 +119128,7 @@ struct UPlayerInputSequence_TA_execHandleInputKey_Params
 	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -118671,6 +119373,7 @@ struct URPC_ProductsLoadoutGet_TA_execAddLoadout_Params
 {
 	class TArray<struct FProductInstanceID>            InLoadout;                                        // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            TeamIndex;                                        // 0x0010 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsLoadoutGet_TA*                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         Index;                                            // 0x0020 (0x0004) [0x0000000000000000]               
 	// struct FProductInstanceID                       InstanceID;                                       // 0x0028 (0x0010) [0x0000000000000000]               
@@ -118779,6 +119482,7 @@ struct UProductAttribute_SwapMICParameterValues_TA_execApplyToObject_Params
 struct UProductBuilder_TA_execSetSeriesID_Params
 {
 	int32_t                                            InSeriesID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -118787,6 +119491,7 @@ struct UProductBuilder_TA_execSetSeriesID_Params
 struct UProductBuilder_TA_execSetSpecialEdition_Params
 {
 	int32_t                                            SpecialEditionID;                                 // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118796,6 +119501,7 @@ struct UProductBuilder_TA_execSetSpecialEdition_Params
 struct UProductBuilder_TA_execSetBlueprintCost_Params
 {
 	int32_t                                            Cost;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118805,6 +119511,7 @@ struct UProductBuilder_TA_execSetBlueprintCost_Params
 struct UProductBuilder_TA_execSetBlueprint_Params
 {
 	int32_t                                            BlueprintID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118814,6 +119521,7 @@ struct UProductBuilder_TA_execSetBlueprint_Params
 struct UProductBuilder_TA_execSetPainted_Params
 {
 	int32_t                                            PaintID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118823,6 +119531,7 @@ struct UProductBuilder_TA_execSetPainted_Params
 struct UProductBuilder_TA_execSetTeamEdition_Params
 {
 	int32_t                                            TeamEditionId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118832,6 +119541,7 @@ struct UProductBuilder_TA_execSetTeamEdition_Params
 struct UProductBuilder_TA_execSetCertified_Params
 {
 	int32_t                                            CertifiedId;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -118841,6 +119551,7 @@ struct UProductBuilder_TA_execSetCertified_Params
 struct UProductBuilder_TA_execSetRentalLength_Params
 {
 	int32_t                                            RentalLengthDays;                                 // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UProductBuilder_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FOnlineProductAttribute                  StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119038,6 +119749,7 @@ struct UProductStat_BoostTime_TA_execGetDisplayValue_Params
 {
 	class APlayerControllerBase_TA*                    ForPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            StatValue;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -119100,6 +119812,7 @@ struct UProductStat_DistanceDriven_TA_execGetDisplayValue_Params
 {
 	class APlayerControllerBase_TA*                    ForPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            StatValue;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -119201,6 +119914,7 @@ struct UProductStat_TimePlayed_TA_execGetDisplayValue_Params
 {
 	class APlayerControllerBase_TA*                    ForPC;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            StatValue;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -119264,6 +119978,7 @@ struct URewardDrop_XPMultiplier_TA_execCreateInstance_Params
 struct URPC_RocketPassGetPlayerInfo_TA_execSetRocketPassID_Params
 {
 	int32_t                                            InRocketPassID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RocketPassGetPlayerInfo_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119280,6 +119995,7 @@ struct URPC_RocketPassGetPlayerInfo_TA_execSetPlayerID_Params
 struct URPC_RocketPassGetRewardContent_TA_execSetRocketPassID_Params
 {
 	int32_t                                            InRocketPassID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RocketPassGetRewardContent_TA*          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119288,6 +120004,7 @@ struct URPC_RocketPassGetRewardContent_TA_execSetRocketPassID_Params
 struct URPC_RocketPassGetPlayerPrestigeRewards_TA_execSetRocketPassID_Params
 {
 	int32_t                                            InRocketPassID;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RocketPassGetPlayerPrestigeRewards_TA*  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119304,6 +120021,7 @@ struct URPC_RocketPassGetPlayerPrestigeRewards_TA_execSetPlayerID_Params
 struct URPC_RocketPassPurchasePremium_TA_execSetPurchasable_Params
 {
 	int32_t                                            InPurchasableID;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RocketPassPurchasePremium_TA*           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119328,6 +120046,7 @@ struct URPC_RocketPassPurchasePremium_TA_execSetPlayerID_Params
 struct URPC_RocketPassPurchaseTiers_TA_execSetPurchasable_Params
 {
 	int32_t                                            InPurchasableID;                                  // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RocketPassPurchaseTiers_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119360,6 +120079,7 @@ struct URPC_Challenge_ResetAllProgress_TA_execSetPlayerID_Params
 struct URPC_Challenge_ResetChallengeProgress_TA_execSetChallengeID_Params
 {
 	int32_t                                            InChallengeID;                                    // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_ResetChallengeProgress_TA*    ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119376,6 +120096,7 @@ struct URPC_Challenge_ResetChallengeProgress_TA_execSetPlayerID_Params
 struct URPC_Challenge_SetProgress_TA_execSetCount_Params
 {
 	int32_t                                            InCount;                                          // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_SetProgress_TA*               ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119384,6 +120105,7 @@ struct URPC_Challenge_SetProgress_TA_execSetCount_Params
 struct URPC_Challenge_SetProgress_TA_execSetChallengeID_Params
 {
 	int32_t                                            InChallengeID;                                    // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_Challenge_SetProgress_TA*               ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119400,6 +120122,7 @@ struct URPC_Challenge_SetProgress_TA_execSetPlayerID_Params
 struct URPC_DebugAddXP_TA_execSetXPAmount_Params
 {
 	int32_t                                            InXPToAdd;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_DebugAddXP_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119416,6 +120139,7 @@ struct URPC_DebugAddXP_TA_execSetPlayerID_Params
 struct URPC_DebugSetXP_TA_execSetXPAmount_Params
 {
 	int32_t                                            InXPToSet;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_DebugSetXP_TA*                          ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119434,6 +120158,7 @@ struct URPC_DebugUpdateClubStats_TA_execSetStats_Params
 	int32_t                                            InGoal;                                           // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            InSave;                                           // 0x0004 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            InAssist;                                         // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_DebugUpdateClubStats_TA*                ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119458,6 +120183,7 @@ struct URPC_FaceItMatchStarted_TA_execSetPlayerIDs_Params
 struct URPC_FaceItMatchStarted_TA_execSetSeriesRoundNumber_Params
 {
 	int32_t                                            Value;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_FaceItMatchStarted_TA*                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119482,6 +120208,7 @@ struct URPC_FaceItMatchStarted_TA_execSetMatchGUID_Params
 struct URPC_FaceItMatchStarted_TA_execSetMatchID_Params
 {
 	int32_t                                            Value;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_FaceItMatchStarted_TA*                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119498,6 +120225,7 @@ struct URPC_GetSpecialEventCurrency_TA_execSetPlayerID_Params
 struct URPC_GetSpecialEventCurrency_TA_execSetEventID_Params
 {
 	int32_t                                            InEventID;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_GetSpecialEventCurrency_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119520,6 +120248,7 @@ struct URPC_ProductsDebugAddProduct_TA_eventOnSuccess_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetSpecialEdition_Params
 {
 	int32_t                                            SpecialEditionID;                                 // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119529,6 +120258,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetSpecialEdition_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetBlueprintCost_Params
 {
 	int32_t                                            Cost;                                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119538,6 +120268,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetBlueprintCost_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetBlueprint_Params
 {
 	int32_t                                            BlueprintID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119547,6 +120278,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetBlueprint_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetPainted_Params
 {
 	int32_t                                            PaintID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119556,6 +120288,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetPainted_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetTeamEdition_Params
 {
 	int32_t                                            TeamEditionId;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119565,6 +120298,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetTeamEdition_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetCertified_Params
 {
 	int32_t                                            CertifiedId;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119574,6 +120308,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetCertified_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetRentalLength_Params
 {
 	int32_t                                            RentalLengthDays;                                 // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAddProductAttribute                     StructInitializer_0x1;                            // 0x0010 (0x0018) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -119593,6 +120328,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetExpirationTime_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetTradeHoldTimeStamp_Params
 {
 	int32_t                                            InTradeHoldTimestamp;                             // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119601,6 +120337,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetTradeHoldTimeStamp_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetSeriesID_Params
 {
 	int32_t                                            InSeriesID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119609,6 +120346,7 @@ struct URPC_ProductsDebugAddProduct_TA_execSetSeriesID_Params
 struct URPC_ProductsDebugAddProduct_TA_execSetProductID_Params
 {
 	int32_t                                            InProductID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddProduct_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119631,6 +120369,7 @@ struct URPC_ProductsDebugAddRandom_TA_eventOnSuccess_Params
 struct URPC_ProductsDebugAddRandom_TA_execSetSeriesID_Params
 {
 	int32_t                                            InSeriesID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddRandom_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119639,6 +120378,7 @@ struct URPC_ProductsDebugAddRandom_TA_execSetSeriesID_Params
 struct URPC_ProductsDebugAddRandom_TA_execSetCount_Params
 {
 	int32_t                                            InCount;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugAddRandom_TA*              ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119669,6 +120409,7 @@ struct URPC_ProductsDebugSetCertified_TA_execNotifyCertifiedComplete_Params
 struct URPC_ProductsDebugSetCertified_TA_execSetCertifiedValue_Params
 {
 	int32_t                                            InCertifiedValue;                                 // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugSetCertified_TA*           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119677,6 +120418,7 @@ struct URPC_ProductsDebugSetCertified_TA_execSetCertifiedValue_Params
 struct URPC_ProductsDebugSetCertified_TA_execSetCertifiedStatID_Params
 {
 	int32_t                                            InCertifiedStatID;                                // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugSetCertified_TA*           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119722,6 +120464,7 @@ struct URPC_ProductsDebugSetEdition_TA_execNotifyEditionComplete_Params
 struct URPC_ProductsDebugSetEdition_TA_execSetEditionID_Params
 {
 	int32_t                                            InEditionID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugSetEdition_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119767,6 +120510,7 @@ struct URPC_ProductsDebugSetPainted_TA_execNotifyPaintedComplete_Params
 struct URPC_ProductsDebugSetPainted_TA_execSetPaintID_Params
 {
 	int32_t                                            InPaintID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_ProductsDebugSetPainted_TA*             ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119816,6 +120560,7 @@ struct URPC_PsyNetGetVanities_TA_eventOnSuccess_Params
 struct URPC_PsyNetGetVanities_TA_execAddVanityType_Params
 {
 	int32_t                                            InType;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PsyNetGetVanities_TA*                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119842,6 +120587,7 @@ struct URPC_PsyNetSetVanity_TA_execAddVanityInfo_Params
 {
 	class UPlayerVanity_TA*                            Vanity;                                           // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	int32_t                                            InType;                                           // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_PsyNetSetVanity_TA*                     ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FProductInstanceID                       VanityInstanceID;                                 // 0x0018 (0x0010) [0x0000000000000000]               
 	// struct FVanityLoadout                           Loadout;                                          // 0x0028 (0x0020) [0x0000000000000000]               
@@ -119852,6 +120598,7 @@ struct URPC_PsyNetSetVanity_TA_execAddVanityInfo_Params
 struct URPC_RequestHonorDuel_TA_execSetBuildID_Params
 {
 	int32_t                                            InBuildID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_RequestHonorDuel_TA*                    ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119908,6 +120655,7 @@ struct URPC_TourGetMatchReservations_TA_execSetServerID_Params
 struct URPC_TourGetMatchServer_TA_execSetMatchID_Params
 {
 	int32_t                                            InMatchID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_TourGetMatchServer_TA*                  ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -119972,6 +120720,7 @@ struct URPC_TourUnsubscribe_TA_execSetTeamMembers_Params
 struct URPC_TourUnsubscribe_TA_execSetUnsubscribeAnyRegisteredTournament_Params
 {
 	uint32_t                                           bValue : 1;                                       // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_TourUnsubscribe_TA*                     ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -120004,6 +120753,7 @@ struct URPC_UpdateTwoFactorStatus_TA_execSetEpicAuthTicket_Params
 struct URPC_UploadXP_TA_execSetXPLevel_Params
 {
 	int32_t                                            InXPLevel;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_UploadXP_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -120012,6 +120762,7 @@ struct URPC_UploadXP_TA_execSetXPLevel_Params
 struct URPC_UploadXP_TA_execSetXPTotal_Params
 {
 	float                                              InXPTotal;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class URPC_UploadXP_TA*                            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -120225,6 +120976,7 @@ struct USeqAct_DriveSpline_TA_execDriveSpline_Params
 {
 	struct FCarSplineData                              CarData;                                          // 0x0000 (0x0018) [0x0000000000000080] (CPF_Parm)    
 	float                                              DeltaTime;                                        // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FCarSplineData                              ReturnValue;                                      // 0x0020 (0x0018) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class USplineComponent*                         SplineComponent;                                  // 0x0038 (0x0008) [0x0000000004000000] (CPF_EditInline)
 	// float                                           ForwardDistance;                                  // 0x0040 (0x0004) [0x0000000000000000]               
@@ -121467,6 +122219,7 @@ struct ASpecialPickup_Football_TA_execBlendThrowSettings_Params
 {
 	uint8_t                                            ThrowTypeA;                                       // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                            ThrowTypeB;                                       // 0x0001 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	float                                              Alpha;                                            // 0x0004 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	struct FThrowSetting                               ReturnValue;                                      // 0x0008 (0x001C) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FThrowSetting                            Setting;                                          // 0x0024 (0x001C) [0x0001000000000000]               
@@ -121853,6 +122606,7 @@ struct ASpecialPickup_TimeBomb_TA_execPickupStart_Params
 struct ASplineCameraTrack_TA_execGetBestNode_Params
 {
 	struct FVector                                     FromLocation;                                     // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class ASplineActor*                                ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class ASplineActor*                             CurNode;                                          // 0x0018 (0x0008) [0x0000000000000000]               
 	// class ASplineActor*                             NextNode;                                         // 0x0020 (0x0008) [0x0000000000000000]               
@@ -121953,6 +122707,7 @@ struct AStatFactory_Basketball_TA_execIsInRedZone_Params
 struct AStatFactory_Breakout_TA_execGetHitDistanceToGoal_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0008 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBallHitInfo                                Hit;                                              // 0x0010 (0x0110) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0120 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	float                                              ReturnValue;                                      // 0x0128 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -121965,6 +122720,7 @@ struct AStatFactory_Breakout_TA_execCalculateShotGoal_Params
 	class UGoal_TA*                                    GoalToTest;                                       // 0x0000 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class ABall_TA*                                    Ball;                                             // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              ArriveTime;                                       // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGoal_TA*                                    ReturnValue;                                      // 0x0018 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 	// struct FVector                                  PredictedLocation;                                // 0x0020 (0x000C) [0x0000000000000000]               
 	// struct FVector                                  PredictedVelocity;                                // 0x002C (0x000C) [0x0000000000000000]               
@@ -122038,6 +122794,7 @@ struct AStatFactory_Breakout_TA_execIsInRedZone_Params
 struct AStatFactory_HauntedBall_TA_execIsEpicSave_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[8];                                      // 0x0008 (0x0008) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FBallHitInfo                                Hit;                                              // 0x0010 (0x0110) [0x0000000000000080] (CPF_Parm)    
 	class UGoal_TA*                                    Goal;                                             // 0x0120 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	bool                                               ReturnValue : 1;                                  // 0x0128 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -122433,6 +123190,7 @@ struct UTourBracketGenerator_TA_execNodesToMatches_Params
 struct UTourBracketGenerator_TA_execCreateNode_Params
 {
 	int32_t                                            MatchID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FTourMatchNode                              ReturnValue;                                      // 0x0008 (0x0030) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FTourMatchNode                           Node;                                             // 0x0038 (0x0030) [0x0000000000000000]               
 };
@@ -122460,6 +123218,7 @@ struct UTourBracketGenerator_TA_execAddByes_Params
 struct UTourBracketGenerator_TA_execCreateTeamIDs_Params
 {
 	int32_t                                            TeamNum;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint64_t>                             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<uint64_t>                          Teams;                                            // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         TeamIdx;                                          // 0x0028 (0x0004) [0x0000000000000000]               
@@ -122470,6 +123229,7 @@ struct UTourBracketGenerator_TA_execCreateTeamIDs_Params
 struct UTourBracketGenerator_TA_execBuildBracketTree_Params
 {
 	int32_t                                            NumTeams;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FTourMatchNode>                ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class TArray<uint64_t>                          Seeds;                                            // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         SeedIdx;                                          // 0x0028 (0x0004) [0x0000000000000000]               
@@ -122519,6 +123279,7 @@ struct UTourBracketGenerator_TA_execGenerate_Params
 struct UTourSeeder_TA_execGetSeedingForRound_Params
 {
 	int32_t                                            Rounds;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint64_t>                             ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         TeamIdx;                                          // 0x0018 (0x0004) [0x0000000000000000]               
 	// class TArray<uint64_t>                          Teams;                                            // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -122621,6 +123382,7 @@ struct UTourGameUpdate_FaceIt_TA_execSendUpdateGameRPC_Params
 {
 	class UTourGameUpdateDispatcher_TA*                Dispatcher;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            InGameNum;                                        // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FTourMatchGame                              InGameData;                                       // 0x0010 (0x0018) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           SeriesWinnerID;                                   // 0x0028 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class URPC_X*                                      ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)

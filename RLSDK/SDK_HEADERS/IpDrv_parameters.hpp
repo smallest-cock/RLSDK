@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: IpDrv_parameters.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -101,6 +101,7 @@ struct UOnlineSubsystemCommonImpl_execIsPlayerInSession_Params
 struct UOnlineSubsystemCommonImpl_eventGetPlayerNicknameFromIndex_Params
 {
 	int32_t                                            UserIndex;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -141,6 +142,7 @@ struct UAvatarDownloadComponent_execGetAvatar_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Size;                                             // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UAvatarDownload*                             ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FAvatarKey                               Key;                                              // 0x0058 (0x0050) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -164,6 +166,7 @@ struct UAvatarDownloadComponent_execDownloadAvatar_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Size;                                             // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      URL;                                              // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<class FString>                     URLs;                                             // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class UAvatarDownload*                          Avatar;                                           // 0x0070 (0x0008) [0x0000000000000000]               
@@ -176,6 +179,7 @@ struct UAvatarDownloadComponent_execStoreNewAvatars_Params
 {
 	class TArray<struct FUniqueNetId>                  NewPlayerIDs;                                     // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Size;                                             // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;                 // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -185,6 +189,7 @@ struct UAvatarDownloadComponent_execProcessOldRequests_Params
 {
 	class TArray<struct FUniqueNetId>                  InPlayerIDs;                                      // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            SizeType;                                         // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;                 // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  NewRequestIDs;                                    // 0x0030 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -195,6 +200,7 @@ struct UAvatarDownloadComponent_execTryAddAvatarTextureCallback_Params
 {
 	struct FUniqueNetId                                PlayerNetId;                                      // 0x0000 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            Size;                                             // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;                 // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -524,6 +530,7 @@ struct UImageDecoder_execRequestDecodeImage_Params
 {
 	class FString                                      RequestURL;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ImageType;                                        // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             FinishedCallback;                                 // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              ImageData;                                        // 0x0030 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
@@ -570,6 +577,7 @@ struct AInternetLink_execStringToIpAddr_Params
 struct AInternetLink_execIpAddrToString_Params
 {
 	struct FIpAddr                                     Arg;                                              // 0x0000 (0x0014) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -594,6 +602,7 @@ struct AInternetLink_execParseURL_Params
 	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 	class FString                                      Addr;                                             // 0x0010 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            PortNum;                                          // 0x0020 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      LevelName;                                        // 0x0028 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      EntryName;                                        // 0x0038 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0048 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -652,6 +661,7 @@ struct ATcpLink_execReadBinary_Params
 {
 	int32_t                                            Count;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            B[255];                                           // 0x0004 (0x00FF) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint8_t                                          padding0[1];                                      // 0x0103 (0x0001) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0104 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -669,6 +679,7 @@ struct ATcpLink_execSendBinary_Params
 {
 	int32_t                                            Count;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            B[255];                                           // 0x0004 (0x00FF) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[1];                                      // 0x0103 (0x0001) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            ReturnValue;                                      // 0x0104 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -792,6 +803,7 @@ struct UOnlineNewsInterfaceMcp_execGetNews_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewsType;                                         // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         NewsIndex;                                        // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -825,6 +837,7 @@ struct UOnlineNewsInterfaceMcp_execReadNews_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            NewsType;                                         // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -856,6 +869,7 @@ struct UOnlineTitleFileDownloadBase_execAddRequestTitleFileListCompleteDelegate_
 struct UOnlineTitleFileDownloadBase_execOnRequestTitleFileListComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        ResultStr;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -919,6 +933,7 @@ struct UOnlineTitleFileDownloadBase_execReadTitleFile_Params
 {
 	class FString                                      FileToRead;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            FileType;                                         // 0x0010 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -927,6 +942,7 @@ struct UOnlineTitleFileDownloadBase_execReadTitleFile_Params
 struct UOnlineTitleFileDownloadBase_execOnReadTitleFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -969,6 +985,7 @@ struct UOnlineTitleFileDownloadMcp_execReadTitleFile_Params
 {
 	class FString                                      FileToRead;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            FileType;                                         // 0x0010 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -1042,6 +1059,7 @@ struct UOnlineTitleFileDownloadWeb_execGetTitleFileContents_Params
 struct UOnlineTitleFileDownloadWeb_execTriggerDelegates_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      FileRead;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1066,6 +1084,7 @@ struct UOnlineTitleFileDownloadWeb_execReadTitleFile_Params
 {
 	class FString                                      FileToRead;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            FileType;                                         // 0x0010 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0014 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// int32_t                                         FileIndex;                                        // 0x0018 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Idx;                                              // 0x001C (0x0004) [0x0000000000000000]               
@@ -1077,6 +1096,7 @@ struct UOnlineTitleFileDownloadWeb_execReadTitleFile_Params
 struct UOnlineTitleFileDownloadWeb_execUncompressTitleFileContents_Params
 {
 	uint8_t                                            FileCompressionType;                              // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              CompressedFileContents;                           // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              UncompressedFileContents;                         // 0x0018 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1166,6 +1186,7 @@ struct UTitleFileDownloadCache_execAddSaveTitleFileCompleteDelegate_Params
 struct UTitleFileDownloadCache_execOnSaveTitleFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1199,6 +1220,7 @@ struct UTitleFileDownloadCache_execAddLoadTitleFileCompleteDelegate_Params
 struct UTitleFileDownloadCache_execOnLoadTitleFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1241,6 +1263,7 @@ struct UMcpMessageBase_execOnQueryMessageContentsComplete_Params
 {
 	class FString                                      MessageId;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1265,6 +1288,7 @@ struct UMcpMessageBase_execOnQueryMessagesComplete_Params
 {
 	class FString                                      UserId;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1281,6 +1305,7 @@ struct UMcpMessageBase_execOnDeleteMessageComplete_Params
 {
 	class FString                                      MessageId;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1297,6 +1322,7 @@ struct UMcpMessageBase_execOnCreateMessageComplete_Params
 {
 	struct FMcpMessage                                 Message;                                          // 0x0000 (0x0068) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0068 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x006C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0070 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1480,6 +1506,7 @@ struct UMcpMessageManager_execCreateMessage_Params
 struct UMcpMessageManager_eventFinishedAsyncUncompression_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              UncompressedMessageContents;                      // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      MessageId;                                        // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -1490,6 +1517,7 @@ struct UMcpMessageManager_execStartAsyncUncompression_Params
 {
 	class FString                                      MessageId;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            MessageCompressionType;                           // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              MessageContent;                                   // 0x0018 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1499,6 +1527,7 @@ struct UMcpMessageManager_execStartAsyncUncompression_Params
 struct UMcpMessageManager_execStartAsyncCompression_Params
 {
 	uint8_t                                            MessageCompressionType;                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              MessageContent;                                   // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UHttpRequestInterface*                       Request;                                          // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1530,6 +1559,7 @@ struct UMcpUserCloudFileDownload_execAddDeleteUserFileCompleteDelegate_Params
 struct UMcpUserCloudFileDownload_execCallDeleteUserFileCompleteDelegates_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0028 (0x0004) [0x0000000000000000]               
@@ -1541,6 +1571,7 @@ struct UMcpUserCloudFileDownload_execCallDeleteUserFileCompleteDelegates_Params
 struct UMcpUserCloudFileDownload_execOnDeleteUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -1594,6 +1625,7 @@ struct UMcpUserCloudFileDownload_execAddWriteUserFileCompleteDelegate_Params
 struct UMcpUserCloudFileDownload_execCallWriteUserFileCompleteDelegates_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0028 (0x0004) [0x0000000000000000]               
@@ -1605,6 +1637,7 @@ struct UMcpUserCloudFileDownload_execCallWriteUserFileCompleteDelegates_Params
 struct UMcpUserCloudFileDownload_execOnWriteUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -1666,6 +1699,7 @@ struct UMcpUserCloudFileDownload_execAddReadUserFileCompleteDelegate_Params
 struct UMcpUserCloudFileDownload_execCallReadUserFileCompleteDelegates_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0028 (0x0004) [0x0000000000000000]               
@@ -1677,6 +1711,7 @@ struct UMcpUserCloudFileDownload_execCallReadUserFileCompleteDelegates_Params
 struct UMcpUserCloudFileDownload_execOnReadUserFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -1739,6 +1774,7 @@ struct UMcpUserCloudFileDownload_execAddEnumerateUserFileCompleteDelegate_Params
 struct UMcpUserCloudFileDownload_execCallEnumerateUserFileCompleteDelegates_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0018 (0x0004) [0x0000000000000000]               
 	// struct FScriptDelegate                          CallDelegate;                                     // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1749,6 +1785,7 @@ struct UMcpUserCloudFileDownload_execCallEnumerateUserFileCompleteDelegates_Para
 struct UMcpUserCloudFileDownload_execOnEnumerateUserFilesComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -1825,6 +1862,7 @@ struct UMeshBeaconClient_execSendHostNewGameSessionResponse_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      SearchClass;                                      // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PlatformSpecificInfo[80];                         // 0x0018 (0x0050) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -1854,6 +1892,7 @@ struct UMeshBeaconClient_execOnReceivedBandwidthTestResults_Params
 {
 	uint8_t                                            TestType;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            TestResult;                                       // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x0002 (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FConnectionBandwidthStats                   BandwidthStats;                                   // 0x0004 (0x000C) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 };
 
@@ -1876,6 +1915,7 @@ struct UMeshBeaconClient_execOnConnectionRequestResult_Params
 struct UMeshBeaconClient_execBeginBandwidthTest_Params
 {
 	uint8_t                                            TestType;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TestBufferSize;                                   // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -1902,6 +1942,7 @@ struct UMeshBeaconHost_execOnReceivedClientCreateNewSessionResult_Params
 {
 	uint32_t                                           bSucceeded : 1;                                   // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UClass*                                      SearchClass;                                      // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PlatformSpecificInfo[80];                         // 0x0018 (0x0050) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 };
@@ -1962,6 +2003,7 @@ struct UMeshBeaconHost_execOnFinishedBandwidthTest_Params
 	struct FUniqueNetId                                PlayerNetId;                                      // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TestType;                                         // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            TestResult;                                       // 0x0049 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[2];                                      // 0x004A (0x0002) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FConnectionBandwidthStats                   BandwidthStats;                                   // 0x004C (0x000C) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 };
 
@@ -2019,6 +2061,7 @@ struct UMeshBeaconHost_execRequestClientBandwidthTest_Params
 {
 	struct FUniqueNetId                                PlayerNetId;                                      // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TestType;                                         // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0049 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TestBufferSize;                                   // 0x004C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0050 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2090,6 +2133,7 @@ struct UOnlineAuthInterfaceImpl_execRequiresAuthTicket_Params
 struct UOnlineAuthInterfaceImpl_execOnReceivedAuthCode_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Code;                                             // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2432,6 +2476,7 @@ struct UOnlineAuthInterfaceImpl_execAddServerAuthCompleteDelegate_Params
 struct UOnlineAuthInterfaceImpl_execOnServerAuthComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                ServerUID;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UPlayer*                                     ServerConnection;                                 // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      ExtraInfo;                                        // 0x0058 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -2457,6 +2502,7 @@ struct UOnlineAuthInterfaceImpl_execAddClientAuthCompleteDelegate_Params
 struct UOnlineAuthInterfaceImpl_execOnClientAuthComplete_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                ClientUID;                                        // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UPlayer*                                     ClientConnection;                                 // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      ExtraInfo;                                        // 0x0058 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -2593,6 +2639,7 @@ struct UOnlineAuthInterfaceImpl_execIsReady_Params
 struct UOnlineFriendsInterfaceImpl_execGetActivePlatformId_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                AccountId;                                        // 0x0008 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                PlatformId;                                       // 0x0050 (0x0048) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0098 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2603,6 +2650,7 @@ struct UOnlineFriendsInterfaceImpl_execGetActivePlatformId_Params
 struct UOnlineFriendsInterfaceImpl_execRequestLinkedAccounts_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  AccountIds;                                       // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2613,6 +2661,7 @@ struct UOnlineFriendsInterfaceImpl_execRequestLinkedAccounts_Params
 struct UOnlineFriendsInterfaceImpl_execOnReceivedLinkedAccount_Params
 {
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            LinkedAccountData;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -2695,6 +2744,7 @@ struct UOnlineGameInterfaceImpl_execOnQosStatusChanged_Params
 struct UOnlineGameInterfaceImpl_execBindPlatformSpecificSessionToSearch_Params
 {
 	uint8_t                                            SearchingPlayerNum;                               // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineGameSearch*                           SearchSettings;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            PlatformSpecificInfo[80];                         // 0x0010 (0x0050) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
@@ -2755,7 +2805,9 @@ struct UOnlineGameInterfaceImpl_execOnJoinMigratedOnlineGameComplete_Params
 struct UOnlineGameInterfaceImpl_execJoinMigratedOnlineGame_Params
 {
 	uint8_t                                            PlayerNum;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0007 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FOnlineGameSearchResult                     DesiredGame;                                      // 0x0010 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2787,6 +2839,7 @@ struct UOnlineGameInterfaceImpl_execOnMigrateOnlineGameComplete_Params
 struct UOnlineGameInterfaceImpl_execMigrateOnlineGame_Params
 {
 	uint8_t                                            HostingPlayerNum;                                 // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2827,6 +2880,7 @@ struct UOnlineGameInterfaceImpl_execRecalculateSkillRating_Params
 struct UOnlineGameInterfaceImpl_execAcceptGameInvite_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -2836,6 +2890,7 @@ struct UOnlineGameInterfaceImpl_execAcceptGameInvite_Params
 struct UOnlineGameInterfaceImpl_execClearGameInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
@@ -2845,6 +2900,7 @@ struct UOnlineGameInterfaceImpl_execClearGameInviteAcceptedDelegate_Params
 struct UOnlineGameInterfaceImpl_execAddGameInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -3076,7 +3132,9 @@ struct UOnlineGameInterfaceImpl_execOnJoinOnlineGameComplete_Params
 struct UOnlineGameInterfaceImpl_execJoinOnlineGame_Params
 {
 	uint8_t                                            PlayerNum;                                        // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0007 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FOnlineGameSearchResult                     DesiredGame;                                      // 0x0010 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3138,6 +3196,7 @@ struct UOnlineGameInterfaceImpl_execAddFindOnlineGamesCompleteDelegate_Params
 struct UOnlineGameInterfaceImpl_execFindOnlineGames_Params
 {
 	uint8_t                                            SearchingPlayerNum;                               // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineGameSearch*                           SearchSettings;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3234,7 +3293,9 @@ struct UOnlineGameInterfaceImpl_execOnCreateOnlineGameComplete_Params
 struct UOnlineGameInterfaceImpl_execCreateOnlineGame_Params
 {
 	uint8_t                                            HostingPlayerNum;                                 // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        SessionName;                                      // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding1[4];                                      // 0x0007 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UOnlineGameSettings*                         NewGameSettings;                                  // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3628,6 +3689,7 @@ struct UOnlineLobbyInterfaceImpl_execKickPlayer_Params
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0000 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                PlayerID;                                         // 0x0010 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Reason;                                           // 0x0058 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0059 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x005C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -3636,6 +3698,7 @@ struct UOnlineLobbyInterfaceImpl_execKickPlayer_Params
 struct UOnlineLobbyInterfaceImpl_execShowInviteUI_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000082] (CPF_Const | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -3791,6 +3854,7 @@ struct UOnlineLobbyInterfaceImpl_execAddLobbyJoinGameDelegate_Params
 struct UOnlineLobbyInterfaceImpl_eventTriggerLobbyJoinGameDelegates_Params
 {
 	int32_t                                            LobbyIndex;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueNetId                                ServerId;                                         // 0x0008 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      ServerIP;                                         // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<struct FScriptDelegate>            DelList;                                          // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -3837,6 +3901,7 @@ struct UOnlineLobbyInterfaceImpl_execOnLobbyReceiveBinaryData_Params
 {
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0000 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            MemberIndex;                                      // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<uint8_t>                              Data;                                             // 0x0038 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -3882,6 +3947,7 @@ struct UOnlineLobbyInterfaceImpl_execOnLobbyReceiveMessage_Params
 {
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0000 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	int32_t                                            MemberIndex;                                      // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Type;                                             // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Message;                                          // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -3917,6 +3983,7 @@ struct UOnlineLobbyInterfaceImpl_eventTriggerLobbyMemberStatusUpdateDelegates_Pa
 	int32_t                                            LobbyIndex;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MemberIndex;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            InstigatorIndex;                                  // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Status;                                           // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<struct FScriptDelegate>            DelList;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FScriptDelegate                          CurDel;                                           // 0x0030 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -4034,6 +4101,7 @@ struct UOnlineLobbyInterfaceImpl_execAddJoinLobbyCompleteDelegate_Params
 struct UOnlineLobbyInterfaceImpl_eventTriggerJoinLobbyCompleteDelegates_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0008 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueLobbyId                              LobbyUID;                                         // 0x0038 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -4046,6 +4114,7 @@ struct UOnlineLobbyInterfaceImpl_eventTriggerJoinLobbyCompleteDelegates_Params
 struct UOnlineLobbyInterfaceImpl_execOnJoinLobbyComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0008 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueLobbyId                              LobbyUID;                                         // 0x0038 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -4056,6 +4125,7 @@ struct UOnlineLobbyInterfaceImpl_execOnJoinLobbyComplete_Params
 struct UOnlineLobbyInterfaceImpl_execJoinLobby_Params
 {
 	int32_t                                            LocalPlayerNum;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -4089,6 +4159,7 @@ struct UOnlineLobbyInterfaceImpl_eventTriggerFindLobbiesCompleteDelegates_Params
 struct UOnlineLobbyInterfaceImpl_execOnFindLobbiesComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FBasicLobbyInfo>               LobbyList;                                        // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
@@ -4105,10 +4176,12 @@ struct UOnlineLobbyInterfaceImpl_execUpdateFoundLobbies_Params
 struct UOnlineLobbyInterfaceImpl_execFindLobbies_Params
 {
 	int32_t                                            MaxResults;                                       // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLobbyFilter>                  Filters;                                          // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class TArray<struct FLobbySortFilter>              SortFilters;                                      // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            MinSlots;                                         // 0x0028 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                            Distance;                                         // 0x002C (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[3];                                      // 0x002D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4132,6 +4205,7 @@ struct UOnlineLobbyInterfaceImpl_execAddCreateLobbyCompleteDelegate_Params
 struct UOnlineLobbyInterfaceImpl_execOnCreateLobbyComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -4143,6 +4217,7 @@ struct UOnlineLobbyInterfaceImpl_execCreateLobby_Params
 	int32_t                                            LocalPlayerNum;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MaxPlayers;                                       // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Type;                                             // 0x0008 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[7];                                      // 0x0009 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLobbyMetaData>                InitialSettings;                                  // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -4152,6 +4227,7 @@ struct UOnlineLobbyInterfaceImpl_execCreateLobby_Params
 struct UOnlinePersistentAuthInterfaceImpl_execAuthWithNintendoAccountToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      NintendoAccountToken;                             // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -4161,6 +4237,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execAuthWithNintendoAccountToken_Param
 struct UOnlinePersistentAuthInterfaceImpl_execGetTimeUntilAuthExpiration_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4169,6 +4246,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execGetTimeUntilAuthExpiration_Params
 struct UOnlinePersistentAuthInterfaceImpl_execGetAuthExpirationTimestamp_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UDateTime*                                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4177,6 +4255,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execGetAuthExpirationTimestamp_Params
 struct UOnlinePersistentAuthInterfaceImpl_execLaunchAccountPortal_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4206,6 +4285,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execGetClientCredentials_Params
 struct UOnlinePersistentAuthInterfaceImpl_execGetContinuanceToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -4214,6 +4294,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execGetContinuanceToken_Params
 struct UOnlinePersistentAuthInterfaceImpl_execUseRefreshToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      RefreshToken;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -4223,6 +4304,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execUseRefreshToken_Params
 struct UOnlinePersistentAuthInterfaceImpl_execGetRefreshToken_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -4231,6 +4313,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execGetRefreshToken_Params
 struct UOnlinePersistentAuthInterfaceImpl_execRequestPinGrantCode_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -4253,6 +4336,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execAddUnderageUserDetectedDelegate_Pa
 struct UOnlinePersistentAuthInterfaceImpl_execOnUnderageUserDetected_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ParentalConsentURL;                               // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -4261,6 +4345,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execOnUnderageUserDetected_Params
 struct UOnlinePersistentAuthInterfaceImpl_execClearRequestPinGrantCodeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -4269,6 +4354,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execClearRequestPinGrantCodeDelegate_P
 struct UOnlinePersistentAuthInterfaceImpl_execAddRequestPinGrantCodeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -4278,6 +4364,7 @@ struct UOnlinePersistentAuthInterfaceImpl_execOnReceievedPinGrantCode_Params
 {
 	uint8_t                                            Result;                                           // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            LocalUserNum;                                     // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Code;                                             // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      URL;                                              // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            SecondsUntilExpiration;                           // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
@@ -4295,6 +4382,7 @@ struct UOnlinePlaylistManager_execParseDataCenterId_Params
 struct UOnlinePlaylistManager_execOnReadDataCenterIdComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<uint8_t>                           FileData;                                         // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -4343,6 +4431,7 @@ struct UOnlinePlaylistManager_execOnPlaylistPopulationDataUpdated_Params
 struct UOnlinePlaylistManager_execOnReadPlaylistPopulationComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<uint8_t>                           FileData;                                         // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
@@ -4366,6 +4455,7 @@ struct UOnlinePlaylistManager_execReset_Params
 struct UOnlinePlaylistManager_execGetContentIdsFromPlaylist_Params
 {
 	int32_t                                            PlaylistId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              ContentIds;                                       // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         PlaylistIndex;                                    // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -4375,6 +4465,7 @@ struct UOnlinePlaylistManager_execGetContentIdsFromPlaylist_Params
 struct UOnlinePlaylistManager_execGetMapCycleFromPlaylist_Params
 {
 	int32_t                                            PlaylistId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FName>                          MapCycle;                                         // 0x0008 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         PlaylistIndex;                                    // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -4384,6 +4475,7 @@ struct UOnlinePlaylistManager_execGetMapCycleFromPlaylist_Params
 struct UOnlinePlaylistManager_execGetUrlFromPlaylist_Params
 {
 	int32_t                                            PlaylistId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// int32_t                                         PlaylistIndex;                                    // 0x0018 (0x0004) [0x0000000000000000]               
 };
@@ -4467,6 +4559,7 @@ struct UOnlinePlaylistManager_execFinalizePlaylistObjects_Params
 struct UOnlinePlaylistManager_execOnReadTitleFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class UOnlineSubsystem*                         OnlineSub;                                        // 0x0018 (0x0008) [0x0000000000000000]               
 	// int32_t                                         FileIndex;                                        // 0x0020 (0x0004) [0x0000000000000000]               
@@ -4519,6 +4612,7 @@ struct UOnlinePurchaseInterfaceImpl_execAddMicroTxnResponseDelegate_Params
 struct UOnlinePurchaseInterfaceImpl_execOnMicroTxnResponse_Params
 {
 	uint32_t                                           bAuthorized : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           OrderId;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
@@ -4528,6 +4622,7 @@ struct UOnlinePurchaseInterfaceImpl_execFormatCurrency_Params
 {
 	class FString                                      Currency;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Price;                                            // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -4854,6 +4949,7 @@ struct UWebRequest_execGetVariableNumber_Params
 {
 	class FString                                      VariableName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            Number;                                           // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DefaultValue;                                     // 0x0018 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
@@ -4957,6 +5053,7 @@ struct UWebResponse_execSendStandardHeaders_Params
 struct UWebResponse_execHTTPError_Params
 {
 	int32_t                                            ErrorNum;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Data;                                             // 0x0008 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5036,6 +5133,7 @@ struct UWebResponse_execDump_Params
 struct UWebResponse_execGetHTTPExpiration_Params
 {
 	int32_t                                            OffsetSeconds;                                    // 0x0000 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
@@ -5113,6 +5211,7 @@ struct UUIDataStore_OnlinePlaylists_execGetPlaylistProvider_Params
 {
 	class FName                                        ProviderTag;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ProviderIndex;                                    // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UUIResourceDataProvider*                     out_Provider;                                     // 0x0010 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -5264,6 +5363,7 @@ struct UMcpClashMobBase_execUpdateChallengeUserReward_Params
 struct UMcpClashMobBase_execOnUpdateChallengeUserRewardComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UniqueChallengeId;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      UniqueUserId;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -5284,6 +5384,7 @@ struct UMcpClashMobBase_execUpdateChallengeUserProgress_Params
 struct UMcpClashMobBase_execOnUpdateChallengeUserProgressComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UniqueChallengeId;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      UniqueUserId;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -5320,6 +5421,7 @@ struct UMcpClashMobBase_execQueryChallengeUserStatus_Params
 struct UMcpClashMobBase_execOnQueryChallengeUserStatusComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UniqueChallengeId;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      UniqueUserId;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -5338,6 +5440,7 @@ struct UMcpClashMobBase_execAcceptChallenge_Params
 struct UMcpClashMobBase_execOnAcceptChallengeComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UniqueChallengeId;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      UniqueUserId;                                     // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -5389,6 +5492,7 @@ struct UMcpClashMobBase_execGetChallengeFileList_Params
 struct UMcpClashMobBase_execOnDownloadChallengeFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UniqueChallengeId;                                // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      DLName;                                           // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
@@ -5413,6 +5517,7 @@ struct UMcpClashMobBase_execQueryChallengeList_Params
 struct UMcpClashMobBase_execOnQueryChallengeListComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5637,6 +5742,7 @@ struct UMcpClashMobManager_execGetChallengeFileContents_Params
 struct UMcpClashMobManager_execOnDownloadMcpFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DLName;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// class TArray<uint8_t>                           FileContents;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// int32_t                                         ChallengeIdx;                                     // 0x0028 (0x0004) [0x0000000000000000]               
@@ -5649,6 +5755,7 @@ struct UMcpClashMobManager_execOnDownloadMcpFileComplete_Params
 struct UMcpClashMobManager_execOnLoadCachedFileComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DLName;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// uint32_t                                        bRequiresDownload : 1;                            // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class FString                                   FileHashCache;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -5720,6 +5827,7 @@ struct UMcpGroupsBase_execOnAcceptGroupInviteComplete_Params
 {
 	class FString                                      GroupId;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5745,6 +5853,7 @@ struct UMcpGroupsBase_execGetGroupInviteList_Params
 struct UMcpGroupsBase_execOnQueryGroupInvitesComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5761,6 +5870,7 @@ struct UMcpGroupsBase_execOnDeleteAllGroupsComplete_Params
 {
 	class FString                                      RequesterId;                                      // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5777,6 +5887,7 @@ struct UMcpGroupsBase_execOnRemoveGroupMembersComplete_Params
 {
 	class FString                                      GroupId;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5795,6 +5906,7 @@ struct UMcpGroupsBase_execOnAddGroupMembersComplete_Params
 {
 	class FString                                      GroupId;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5822,6 +5934,7 @@ struct UMcpGroupsBase_execOnQueryGroupMembersComplete_Params
 {
 	class FString                                      GroupId;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5847,6 +5960,7 @@ struct UMcpGroupsBase_execOnQueryGroupsComplete_Params
 {
 	class FString                                      UserId;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5863,6 +5977,7 @@ struct UMcpGroupsBase_execOnDeleteGroupComplete_Params
 {
 	class FString                                      GroupId;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -5880,6 +5995,7 @@ struct UMcpGroupsBase_execOnCreateGroupComplete_Params
 {
 	struct FMcpGroup                                   Group;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0048 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6156,6 +6272,7 @@ struct UMcpIdMappingBase_execOnQueryMappingsComplete_Params
 {
 	class FString                                      ExternalType;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6175,6 +6292,7 @@ struct UMcpIdMappingBase_execOnAddMappingComplete_Params
 	class FString                                      ExternalId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ExternalType;                                     // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6272,6 +6390,7 @@ struct UMcpManagedValueManagerBase_execOnDeleteValueComplete_Params
 	class FString                                      SaveSlot;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FName                                        ValueId;                                          // 0x0020 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0028 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6332,6 +6451,7 @@ struct UMcpManagedValueManagerBase_execOnReadSaveSlotComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SaveSlot;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6350,6 +6470,7 @@ struct UMcpManagedValueManagerBase_execOnCreateSaveSlotComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SaveSlot;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6528,6 +6649,7 @@ struct UMcpServerTimeBase_execGetLastServerTime_Params
 struct UMcpServerTimeBase_execOnQueryServerTimeComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      DateTimeStr;                                      // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -6585,6 +6707,7 @@ struct UMcpUserInventoryBase_execOnRecordIapComplete_Params
 	class FString                                      SaveSlotId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        UpdatedItemIds;                                   // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6605,6 +6728,7 @@ struct UMcpUserInventoryBase_execOnDeleteItemComplete_Params
 	class FString                                      SaveSlotId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      InstanceItemId;                                   // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6627,6 +6751,7 @@ struct UMcpUserInventoryBase_execOnConsumeItemComplete_Params
 	class FString                                      InstanceItemId;                                   // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        UpdatedItemIds;                                   // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6650,6 +6775,7 @@ struct UMcpUserInventoryBase_execOnEarnItemComplete_Params
 	class FString                                      GlobalItemId;                                     // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        UpdatedItemIds;                                   // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6673,6 +6799,7 @@ struct UMcpUserInventoryBase_execOnSellItemComplete_Params
 	class FString                                      InstanceItemId;                                   // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        UpdatedItemIds;                                   // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6697,6 +6824,7 @@ struct UMcpUserInventoryBase_execOnPurchaseItemComplete_Params
 	class FString                                      GlobalItemId;                                     // 0x0020 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        UpdatedItemIds;                                   // 0x0030 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6740,6 +6868,7 @@ struct UMcpUserInventoryBase_execOnQueryInventoryItemsComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SaveSlotId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6757,6 +6886,7 @@ struct UMcpUserInventoryBase_execOnQuerySaveSlotListComplete_Params
 {
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6782,6 +6912,7 @@ struct UMcpUserInventoryBase_execOnDeleteSaveSlotComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SaveSlotId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -6800,6 +6931,7 @@ struct UMcpUserInventoryBase_execOnCreateSaveSlotComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SaveSlotId;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -7200,6 +7332,7 @@ struct UMcpUserInventoryManager_execCreateSaveSlot_Params
 struct UMcpUserManagerBase_execOnDeleteUserComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -7231,6 +7364,7 @@ struct UMcpUserManagerBase_execGetUsers_Params
 struct UMcpUserManagerBase_execOnQueryUsersComplete_Params
 {
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -7256,6 +7390,7 @@ struct UMcpUserManagerBase_execOnAuthenticateUserComplete_Params
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Token;                                            // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
@@ -7283,6 +7418,7 @@ struct UMcpUserManagerBase_execOnRegisterUserComplete_Params
 {
 	class FString                                      McpId;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bWasSuccessful : 1;                               // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Error;                                            // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 

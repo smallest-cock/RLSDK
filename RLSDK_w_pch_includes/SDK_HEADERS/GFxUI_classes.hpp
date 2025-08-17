@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -131,6 +131,7 @@ class UGFxEngine : public UObject
 public:
 	class TArray<struct FGCReference>                  GCReferences;                                  // 0x0060 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	int32_t                                            RefCount;                                      // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
 	struct FLoadingMovieMapInfo                        LoadingScreenInfo;                             // 0x0078 (0x00A0) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FString>                        IgnoreWarningsThatStartWith;                   // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
@@ -211,8 +212,9 @@ public:
 	struct FPointer                                    pMovie;                                        // 0x0060 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    pCaptureKeys;                                  // 0x0068 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    pFocusIgnoreKeys;                              // 0x0070 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	uint8_t                                            UnknownData00[0xA0];                            // 0x0078 (0x00A0) MISSED OFFSET
+	uint8_t                                          UnknownData00[0xA0];                          // 0x0078 (0x00A0) MISSED OFFSET
 	int32_t                                            NextASUObject;                                 // 0x0118 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	uint8_t                                          UnknownData01[0x4];                            // 0x011C (0x0004) MISSED OFFSET
 	class USwfMovie*                                   MovieInfo;                                     // 0x0120 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bMovieIsOpen : 1;                              // 0x0128 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
 	uint32_t                                           bDisplayWithHudOff : 1;                        // 0x0128 (0x0004) [0x0000000000000000] [0x00000002] 
@@ -241,8 +243,10 @@ public:
 	uint32_t                                           bIsPriorityHidden : 1;                         // 0x0128 (0x0004) [0x0000000000000000] [0x01000000] 
 	uint32_t                                           bIgnoreVisibilityEffect : 1;                   // 0x0128 (0x0004) [0x0000000000000000] [0x02000000] 
 	uint32_t                                           bIgnoreBlurEffect : 1;                         // 0x0128 (0x0004) [0x0000000000000000] [0x04000000] 
+	uint8_t                                          UnknownData02[0x4];                            // 0x012C (0x0004) MISSED OFFSET
 	class UTextureRenderTarget2D*                      RenderTexture;                                 // 0x0130 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            LocalPlayerOwnerIndex;                         // 0x0138 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData03[0x4];                            // 0x013C (0x0004) MISSED OFFSET
 	class UObject*                                     ExternalInterface;                             // 0x0140 (0x0008) [0x0000000000000000]               
 	class TArray<class FName>                          CaptureKeys;                                   // 0x0148 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FName>                          FocusIgnoreKeys;                               // 0x0158 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -251,10 +255,12 @@ public:
 	EGFxTimingMode                                     TimingMode;                                    // 0x0188 (0x0001) [0x0000000000000000]               
 	EGFxRenderTextureMode                              RenderTextureMode;                             // 0x0189 (0x0001) [0x0000000000000000]               
 	uint8_t                                            Priority;                                      // 0x018A (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData04[0x5];                            // 0x018B (0x0005) MISSED OFFSET
 	class TArray<struct FGFxWidgetBinding>             WidgetBindings;                                // 0x0190 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            UnknownData01[0x50];                            // 0x01A0 (0x0050) MISSED OFFSET
+	uint8_t                                          UnknownData05[0x50];                          // 0x01A0 (0x0050) MISSED OFFSET
 	class UGFxObject*                                  SplitscreenLayoutObject;                       // 0x01F0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	int32_t                                            SplitscreenLayoutYAdjust;                      // 0x01F8 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData06[0x4];                            // 0x01FC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __OnPostAdvance__Delegate;                     // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -483,12 +489,15 @@ public:
 	uint32_t                                           bSetSRGBOnImportedTextures : 1;                // 0x00A0 (0x0004) [0x0000000000020001] [0x00000002] (CPF_Edit | CPF_EditConst)
 	uint32_t                                           bPackTextures : 1;                             // 0x00A0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 	uint32_t                                           bForceSquarePacking : 1;                       // 0x00A0 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	class FString                                      SourceFile;                                    // 0x00A8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	int32_t                                            PackTextureSize;                               // 0x00B8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	EFlashTextureRescale                               TextureRescale;                                // 0x00BC (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData01[0x3];                            // 0x00BD (0x0003) MISSED OFFSET
 	class FString                                      TextureFormat;                                 // 0x00C0 (0x0010) [0x0000000000420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink)
 	class FString                                      SourceFileTimestamp;                           // 0x00D0 (0x0010) [0x0000000000420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink)
 	int32_t                                            SourceFileCRC;                                 // 0x00E0 (0x0004) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
+	uint8_t                                          UnknownData02[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
 	class TArray<EEdition>                             Editions;                                      // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class TArray<class FName>                          Features;                                      // 0x00F8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	int32_t                                            RTTextures;                                    // 0x0108 (0x0004) [0x0000000000000000]               
@@ -618,6 +627,7 @@ public:
 	uint32_t                                           bEnableGammaCorrection : 1;                    // 0x0178 (0x0004) [0x0000000000000000] [0x00000008] 
 	uint32_t                                           bDisplayWithHudOff : 1;                        // 0x0178 (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
 	EGFxRenderTextureMode                              RenderTextureMode;                             // 0x017C (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x3];                            // 0x017D (0x0003) MISSED OFFSET
 	class UTextureRenderTarget2D*                      RenderTexture;                                 // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<class FName>                          CaptureKeys;                                   // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class TArray<class FName>                          FocusIgnoreKeys;                               // 0x0198 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
@@ -690,6 +700,7 @@ public:
 class UGFxEvent_FSCommand : public USequenceEvent
 {
 public:
+	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 	class USwfMovie*                                   Movie;                                         // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class FString                                      FSCommand;                                     // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class UGFxFSCmdHandler_Kismet*                     Handler;                                       // 0x0198 (0x0008) [0x0000000000000000]               

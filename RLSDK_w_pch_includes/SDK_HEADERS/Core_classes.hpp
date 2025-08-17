@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -1903,7 +1903,7 @@ public:
 class UConfig_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x60];                            // 0x0060 (0x0060) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x60];                          // 0x0060 (0x0060) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -1925,7 +1925,7 @@ public:
 class UClassTupleCollection_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x60];                            // 0x0060 (0x0060) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x60];                          // 0x0060 (0x0060) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -1947,7 +1947,7 @@ public:
 class UClassTuple_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x68];                            // 0x0060 (0x0068) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x68];                          // 0x0060 (0x0068) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -1969,7 +1969,7 @@ public:
 class USubscriptionCollection_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x20];                            // 0x0060 (0x0020) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x20];                          // 0x0060 (0x0020) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -1991,7 +1991,7 @@ public:
 class UInstance_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0xB0];                            // 0x0060 (0x00B0) MISSED OFFSET
+	uint8_t                                          UnknownData00[0xB0];                          // 0x0060 (0x00B0) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2013,7 +2013,7 @@ public:
 class UGlobal_ORS : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x18];                            // 0x0060 (0x0018) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x18];                          // 0x0060 (0x0018) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2060,7 +2060,7 @@ public:
 class UTextBuffer : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x30];                            // 0x0060 (0x0030) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x30];                          // 0x0060 (0x0030) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2109,6 +2109,7 @@ public:
 	int32_t                                            MaxOverallCacheSize;                           // 0x0070 (0x0004) [0x0000000000004000] (CPF_Config)  
 	int32_t                                            PackageSizeSoftLimit;                          // 0x0074 (0x0004) [0x0000000000004000] (CPF_Config)  
 	float                                              AsyncIOBandwidthLimit;                         // 0x0078 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData00[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 	class FString                                      SavePath;                                      // 0x0080 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      CachePath;                                     // 0x0090 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      CacheExt;                                      // 0x00A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
@@ -2174,7 +2175,7 @@ public:
 class UPropertyChangeDispatcher : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x10];                            // 0x0060 (0x0010) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x10];                          // 0x0060 (0x0010) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2196,7 +2197,7 @@ public:
 class UPackageMap : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0xB8];                            // 0x0060 (0x00B8) MISSED OFFSET
+	uint8_t                                          UnknownData00[0xB8];                          // 0x0060 (0x00B8) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2246,7 +2247,7 @@ public:
 class UObjectSerializer : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x10];                            // 0x0060 (0x0010) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x10];                          // 0x0060 (0x0010) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2268,7 +2269,7 @@ public:
 class UObjectRedirector : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x8];                              // 0x0060 (0x0008) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x8];                            // 0x0060 (0x0008) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2290,7 +2291,7 @@ public:
 class UMetaData : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x50];                            // 0x0060 (0x0050) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x50];                          // 0x0060 (0x0050) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2312,7 +2313,7 @@ public:
 class ULinker : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x188];                          // 0x0060 (0x0188) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x188];                        // 0x0060 (0x0188) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2334,7 +2335,7 @@ public:
 class ULinkerSave : public ULinker
 {
 public:
-	uint8_t                                            UnknownData00[0xC0];                            // 0x01E8 (0x00C0) MISSED OFFSET
+	uint8_t                                          UnknownData00[0xC0];                          // 0x01E8 (0x00C0) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2356,7 +2357,7 @@ public:
 class ULinkerLoad : public ULinker
 {
 public:
-	uint8_t                                            UnknownData00[0x628];                          // 0x01E8 (0x0628) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x628];                        // 0x01E8 (0x0628) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2464,7 +2465,9 @@ public:
 	class UField* SuperField; // 0x0080 (0x0008)
 	class UField* Children; // 0x0088 (0x0008)
 	int32_t PropertySize; // 0x0090 (0x0004)
-	uint8_t UnknownData01[0x9C];// 0x0094 (0x009C) DYNAMIC FIELD PADDING
+	uint8_t UnknownData01[0x1C];// 0x0094 (0x001C) DYNAMIC FIELD PADDING
+	int32_t MinAlignment; // 0x00B0 (0x0004)
+	uint8_t UnknownData02[0x7C];// 0x00B4 (0x007C) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2486,7 +2489,7 @@ public:
 class UScriptStruct : public UStruct
 {
 public:
-	uint8_t                                            UnknownData00[0x28];                            // 0x0130 (0x0028) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x28];                          // 0x0130 (0x0028) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2799,7 +2802,7 @@ public:
 class UDelegateProperty : public UProperty
 {
 public:
-	uint8_t                                            UnknownData00[0x10];                            // 0x00C8 (0x0010) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x10];                          // 0x00C8 (0x0010) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -2931,7 +2934,7 @@ public:
 class UFeatureSystem : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x8];                              // 0x0060 (0x0008) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x8];                            // 0x0060 (0x0008) MISSED OFFSET
 	uint32_t                                           Prime : 1;                                     // 0x0068 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
 	uint32_t                                           Matchmaking : 1;                               // 0x0068 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
 	uint32_t                                           PrivateMatch : 1;                              // 0x0068 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
@@ -3045,6 +3048,7 @@ public:
 	uint32_t                                           PentathlonTournaments : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
 	uint32_t                                           ViralItem : 1;                                 // 0x0078 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
 	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
+	uint8_t                                          UnknownData01[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3120,10 +3124,10 @@ public:
 class UExporter : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0x8];                              // 0x0060 (0x0008) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x8];                            // 0x0060 (0x0008) MISSED OFFSET
 	class TArray<class FString>                        FormatExtension;                               // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class FString>                        FormatDescription;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            UnknownData01[0x10];                            // 0x0088 (0x0010) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x10];                          // 0x0088 (0x0010) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3273,10 +3277,12 @@ public:
 	uint32_t                                           bSilent : 1;                                   // 0x0064 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bPrintActorsInline : 1;                        // 0x0064 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	int32_t                                            Indentation;                                   // 0x0068 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 	class FString                                      IndentationString;                             // 0x0070 (0x0010) [0x0000008000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_ProtectedWrite)
 	class TArray<class UObject*>                       PrintedObjects;                                // 0x0080 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	class TArray<class UObject*>                       QueuedObjects;                                 // 0x0090 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	int32_t                                            PrintObjectCount;                              // 0x00A0 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __LogFunc__Delegate;                           // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -3428,6 +3434,7 @@ public:
 	class TArray<class UClass*>                        PendingInjectionClasses;                       // 0x0138 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	class TArray<struct FObjectProviderPendingCallback> PendingCallbacks;                              // 0x0148 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	uint8_t                                            bTriggeringCallbacks;                          // 0x0158 (0x0001) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	uint8_t                                          UnknownData00[0x7];                            // 0x0159 (0x0007) MISSED OFFSET
 	class UObjectProvider*                             Parent;                                        // 0x0160 (0x0008) [0x000000000408200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 	class TArray<class UObjectProvider*>               Children;                                      // 0x0168 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 	class TArray<class UObjectProvider*>               Proxies;                                       // 0x0178 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
@@ -3567,6 +3574,7 @@ public:
 class UHelpCommandlet : public UCommandlet
 {
 public:
+	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3669,6 +3677,7 @@ class UAsyncTask : public UObject
 public:
 	uint32_t                                           bComplete : 1;                                 // 0x0060 (0x0004) [0x0000004000000000] [0x00000001] (CPF_PrivateWrite)
 	uint32_t                                           bDisposed : 1;                                 // 0x0060 (0x0004) [0x0000004000000000] [0x00000002] (CPF_PrivateWrite)
+	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	class UError*                                      Error;                                         // 0x0068 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventAsyncTaskSuccess__Delegate;             // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventAsyncTaskFail__Delegate;                // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -3756,7 +3765,7 @@ public:
 class UState : public UStruct
 {
 public:
-	uint8_t                                            UnknownData00[0x60];                            // 0x0130 (0x0060) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x60];                          // 0x0130 (0x0060) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3778,7 +3787,7 @@ public:
 class UPackage : public UObject
 {
 public:
-	uint8_t                                            UnknownData00[0xE8];                            // 0x0060 (0x00E8) MISSED OFFSET
+	uint8_t                                          UnknownData00[0xE8];                          // 0x0060 (0x00E8) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3800,7 +3809,7 @@ public:
 class UClass : public UState
 {
 public:
-	uint8_t                                            UnknownData00[0x228];                          // 0x0190 (0x0228) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x228];                        // 0x0190 (0x0228) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -3823,6 +3832,7 @@ class U__AsyncTask__All_0x1 : public UObject
 {
 public:
 	int32_t                                            DependentsCount;                               // 0x0060 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	class UAsyncTask*                                  Parent;                                        // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:

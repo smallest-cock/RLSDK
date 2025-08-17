@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/03/2025 02:32AM
+# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GFxUI_structs.hpp
@@ -12,7 +12,7 @@
 #pragma once
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x8)
+#pragma pack(push, 0x1)
 #endif
 
 /*
@@ -22,7 +22,7 @@
 */
 
 // ScriptStruct GFxUI.GFxMoviePlayer.SoundThemeBinding
-// 0x0020
+// Size: 0x0020
 struct FSoundThemeBinding
 {
 	class FName                                        ThemeName;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -31,10 +31,11 @@ struct FSoundThemeBinding
 };
 
 // ScriptStruct GFxUI.GFxMoviePlayer.ASValue
-// 0x0028
+// Size: 0x0028
 struct FASValue
 {
 	uint8_t                                            Type;                                          // 0x0000 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	uint32_t                                           B : 1;                                         // 0x0004 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	float                                              N;                                             // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            I;                                             // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
@@ -43,7 +44,7 @@ struct FASValue
 };
 
 // ScriptStruct GFxUI.GFxMoviePlayer.GFxWidgetBinding
-// 0x0010
+// Size: 0x0010
 struct FGFxWidgetBinding
 {
 	class FName                                        WidgetName;                                    // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -51,7 +52,7 @@ struct FGFxWidgetBinding
 };
 
 // ScriptStruct GFxUI.GFxMoviePlayer.ExternalTexture
-// 0x0018
+// Size: 0x0018
 struct FExternalTexture
 {
 	class FString                                      Resource;                                      // 0x0000 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
@@ -59,7 +60,7 @@ struct FExternalTexture
 };
 
 // ScriptStruct GFxUI.GFxObject.ASDisplayInfo
-// 0x002C
+// Size: 0x002C
 struct FASDisplayInfo
 {
 	float                                              X;                                             // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
@@ -87,7 +88,7 @@ struct FASDisplayInfo
 };
 
 // ScriptStruct GFxUI.GFxObject.ASColorTransform
-// 0x0020
+// Size: 0x0020
 struct FASColorTransform
 {
 	struct FLinearColor                                Multiply;                                      // 0x0000 (0x0010) [0x0000000000000001] (CPF_Edit)    
@@ -95,7 +96,7 @@ struct FASColorTransform
 };
 
 // ScriptStruct GFxUI.GFxClikWidget.EventData
-// 0x0034
+// Size: 0x0038 (0x0034 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FEventData
 {
 	class UGFxObject*                                  _this;                                         // 0x0000 (0x0008) [0x0000000000000000]               
@@ -106,10 +107,11 @@ struct FEventData
 	int32_t                                            Button;                                        // 0x0028 (0x0004) [0x0000000000000000]               
 	int32_t                                            Index;                                         // 0x002C (0x0004) [0x0000000000000000]               
 	int32_t                                            lastIndex;                                     // 0x0030 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct GFxUI.GFxEngine.GCReference
-// 0x0010
+// Size: 0x0010
 struct FGCReference
 {
 	class UObject*                                     m_object;                                      // 0x0000 (0x0008) [0x0000000000000002] (CPF_Const)   
@@ -118,10 +120,11 @@ struct FGCReference
 };
 
 // ScriptStruct GFxUI.GFxEngine.LoadingMovieMapInfo
-// 0x009C
+// Size: 0x00A0 (0x009C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FLoadingMovieMapInfo
 {
 	uint8_t                                            InputType;                                     // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x7];                            // 0x0001 (0x0007) MISSED OFFSET
 	class FString                                      MapBaseName;                                   // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PlaylistName;                                  // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      MapVariantName;                                // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -131,9 +134,11 @@ struct FLoadingMovieMapInfo
 	class FString                                      BuildEdition;                                  // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      ProtipTitle;                                   // 0x0078 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	uint8_t                                            WeatherVariant;                                // 0x0088 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x7];                            // 0x0089 (0x0007) MISSED OFFSET
 	class UTexture2D*                                  LargeMapImage;                                 // 0x0090 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bSetBackgroundVisible : 1;                     // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bDisplayGenericBackground : 1;                 // 0x0098 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x009C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 /*
