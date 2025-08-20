@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
+# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
@@ -43995,6 +43995,18 @@ struct UOnlineGameDedicatedServer_TA_execGetTeamScore_Params
 	// class AGameEvent_Team_TA*                       GameEvent;                                        // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService
+// [0x00040001] 
+struct UOnlineGameDedicatedServer_TA_execShutdownDDoSPreventionService_Params
+{
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_TA_execStartDDoSPreventionService_Params
+{
+};
+
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleVoiceTokenCacheError
 // [0x00840003] 
 struct UOnlineGameDedicatedServer_TA_execHandleVoiceTokenCacheError_Params
@@ -44293,6 +44305,7 @@ struct UOnlineGameDedicatedServer_TA_execHandleGameEventStarted_Params
 struct UOnlineGameDedicatedServer_TA_execHandleGameInitialized_Params
 {
 	class AGameInfo_TA*                                Game;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// uint32_t                                        bDDoSPreventionEnabledOnPlaylist : 1;             // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.StartMatch

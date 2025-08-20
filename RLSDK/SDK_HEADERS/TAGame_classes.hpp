@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
+# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.hpp
@@ -25700,21 +25700,21 @@ public:
 };
 
 // Class TAGame.OnlineGameDedicatedServer_TA
-// 0x0068 (0x03E8 - 0x0450)
+// 0x0068 (0x0410 - 0x0478)
 class UOnlineGameDedicatedServer_TA : public UOnlineGameDedicatedServer_X
 {
 public:
-	class UOnlineGameTourServer_TA*                    Tournaments;                                   // 0x03E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	int32_t                                            LastPlaylistID;                                // 0x03F0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x03F4 (0x0004) MISSED OFFSET
-	class TArray<class UObject*>                       AllRelevantProducts;                           // 0x03F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class UReplay_TA*                                  ReplayToUpload;                                // 0x0408 (0x0008) [0x0000000000000000]               
-	class ARLBot_SessionRecorder_TA*                   FlatbufferSession;                             // 0x0410 (0x0008) [0x0001000000000000]               
-	class UEOSVoiceTokenCache_TA*                      VoiceTokenCache;                               // 0x0418 (0x0008) [0x0001000000000000]               
-	class UNetBucketRecorder_TA*                       NetMetricsRecorder;                            // 0x0420 (0x0008) [0x0000000000000000]               
-	class UActorChannelMonitor_TA*                     ActorChannelMonitor;                           // 0x0428 (0x0008) [0x0000000000000000]               
-	class UGameModesConfig_TA*                         GameModesConfig;                               // 0x0430 (0x0008) [0x0000800000000000]               
-	struct FScriptDelegate                             __EventGameEventInitialized__Delegate;         // 0x0438 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UOnlineGameTourServer_TA*                    Tournaments;                                   // 0x0410 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            LastPlaylistID;                                // 0x0418 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x041C (0x0004) MISSED OFFSET
+	class TArray<class UObject*>                       AllRelevantProducts;                           // 0x0420 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class UReplay_TA*                                  ReplayToUpload;                                // 0x0430 (0x0008) [0x0000000000000000]               
+	class ARLBot_SessionRecorder_TA*                   FlatbufferSession;                             // 0x0438 (0x0008) [0x0001000000000000]               
+	class UEOSVoiceTokenCache_TA*                      VoiceTokenCache;                               // 0x0440 (0x0008) [0x0001000000000000]               
+	class UNetBucketRecorder_TA*                       NetMetricsRecorder;                            // 0x0448 (0x0008) [0x0000000000000000]               
+	class UActorChannelMonitor_TA*                     ActorChannelMonitor;                           // 0x0450 (0x0008) [0x0000000000000000]               
+	class UGameModesConfig_TA*                         GameModesConfig;                               // 0x0458 (0x0008) [0x0000800000000000]               
+	struct FScriptDelegate                             __EventGameEventInitialized__Delegate;         // 0x0460 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -25731,6 +25731,8 @@ public:
 
 	void HandleActiveRoundChanged(class AGameEvent_Soccar_TA* GameEvent);
 	int32_t GetTeamScore(int32_t TeamIdx);
+	void ShutdownDDoSPreventionService();
+	void StartDDoSPreventionService();
 	void HandleVoiceTokenCacheError(const class TArray<struct FVoiceRoomTokenRequest>& Requests, class UError* RequestError);
 	void HandleVoiceTokenCacheResponse(const class TArray<struct FVoiceRoomTokenRequest>& Requests, const class TArray<struct FPlayerVoiceRoomCredentials>& NewCredentials);
 	void RequestVoiceRoomToken(const struct FUniqueNetId& PlayerID, const class FString& RoomId, bool bClearCache);
@@ -70433,13 +70435,14 @@ public:
 };
 
 // Class TAGame.ShopTabs_TA
-// 0x0020 (0x0070 - 0x0090)
+// 0x0024 (0x0070 - 0x0094)
 class UShopTabs_TA : public UComponent
 {
 public:
 	class UShopTabsConfig_TA*                          Config;                                        // 0x0070 (0x0008) [0x0000800000000001] (CPF_Edit)    
 	class ULoadedMtxCatalog_TA*                        LoadedMtx;                                     // 0x0078 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class FString                                      EsportsLabel;                                  // 0x0080 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	int32_t                                            MaxTabs;                                       // 0x0090 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
 	static UClass* StaticClass()
@@ -70460,7 +70463,7 @@ public:
 };
 
 // Class TAGame.ShopTabsConfig_TA
-// 0x0068 (0x0078 - 0x00E0)
+// 0x0078 (0x0078 - 0x00F0)
 class UShopTabsConfig_TA : public UOnlineConfig_X
 {
 public:
@@ -70474,8 +70477,9 @@ public:
 	class FString                                      ShopType_EsportsTeam;                          // 0x00A0 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	class FString                                      ShopType_MTX;                                  // 0x00B0 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	class TArray<class FString>                        DisabledTypes;                                 // 0x00C0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	class UIEpochNow*                                  Time_Object;                                   // 0x00D0 (0x0008) [0x0000000000000000] 
-	class UIEpochNow*                                  Time_Interface;                                // 0x00D8 (0x0008) [0x0000000000000000]               
+	class TArray<class FString>                        PlaceholderTypes;                              // 0x00D0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class UIEpochNow*                                  Time_Object;                                   // 0x00E0 (0x0008) [0x0000000000000000] 
+	class UIEpochNow*                                  Time_Interface;                                // 0x00E8 (0x0008) [0x0000000000000000]               
 
 public:
 	static UClass* StaticClass()

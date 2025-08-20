@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
+# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -332,9 +332,9 @@ enum EClassCastFlag : uint32_t
 */
 
 // GObjects
-#define GObjects_Offset		(uintptr_t)0x023C0398
+#define GObjects_Offset		(uintptr_t)0x023C1418
 // GNames
-#define GNames_Offset		(uintptr_t)0x023C0350
+#define GNames_Offset		(uintptr_t)0x023C13D0
 
 
 namespace StringUtils
@@ -1028,7 +1028,7 @@ public:
 		return ArrayMax;
 	}
 
-bool isValid() const { return ArrayData && (ArrayCount >= 0) && (ArrayMax >= 0) && (ArrayCount <= ArrayMax); }
+	bool isValid() const { return ArrayData && (ArrayCount >= 0) && (ArrayMax >= 0) && (ArrayCount <= ArrayMax); }
 
 	static FString create(const std::string& str);
 	static FString create(const FString& old);

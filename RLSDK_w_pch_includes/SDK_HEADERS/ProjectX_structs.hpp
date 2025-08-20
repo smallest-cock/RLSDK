@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
+# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
@@ -1014,6 +1014,17 @@ struct FContentPair
 	class FString                                      Content;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FEncryptedKeyIndex                          Index;                                         // 0x0018 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint32_t                                           bUnreleased : 1;                               // 0x001C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+};
+
+// ScriptStruct ProjectX.DDoSService_X.DDoSServicePayloadStruct
+// Size: 0x0038
+struct FDDoSServicePayloadStruct
+{
+	uint32_t                                           Enabled : 1;                                   // 0x0000 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
+	class FString                                      Port;                                          // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      iid;                                           // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        ip_addresses;                                  // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX.EffectsMap_X.EffectsMapping

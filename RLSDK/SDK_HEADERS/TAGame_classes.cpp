@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.54) 08/16/2025 05:41PM
+# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.cpp
@@ -121413,6 +121413,44 @@ int32_t UOnlineGameDedicatedServer_TA::GetTeamScore(int32_t TeamIdx)
 	this->ProcessEvent(uFnGetTeamScore, &GetTeamScore_Params, nullptr);
 
 	return GetTeamScore_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService
+// [0x00040001] (FUNC_Final | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameDedicatedServer_TA::ShutdownDDoSPreventionService()
+{
+	static UFunction* uFnShutdownDDoSPreventionService = nullptr;
+
+	if (!uFnShutdownDDoSPreventionService)
+	{
+		uFnShutdownDDoSPreventionService = UFunction::FindFunction("Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService");
+	}
+
+	UOnlineGameDedicatedServer_TA_execShutdownDDoSPreventionService_Params ShutdownDDoSPreventionService_Params;
+	memset(&ShutdownDDoSPreventionService_Params, 0, sizeof(ShutdownDDoSPreventionService_Params));
+
+	this->ProcessEvent(uFnShutdownDDoSPreventionService, &ShutdownDDoSPreventionService_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameDedicatedServer_TA::StartDDoSPreventionService()
+{
+	static UFunction* uFnStartDDoSPreventionService = nullptr;
+
+	if (!uFnStartDDoSPreventionService)
+	{
+		uFnStartDDoSPreventionService = UFunction::FindFunction("Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService");
+	}
+
+	UOnlineGameDedicatedServer_TA_execStartDDoSPreventionService_Params StartDDoSPreventionService_Params;
+	memset(&StartDDoSPreventionService_Params, 0, sizeof(StartDDoSPreventionService_Params));
+
+	this->ProcessEvent(uFnStartDDoSPreventionService, &StartDDoSPreventionService_Params, nullptr);
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleVoiceTokenCacheError
