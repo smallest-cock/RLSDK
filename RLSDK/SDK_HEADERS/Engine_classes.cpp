@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.cpp
@@ -50181,6 +50181,29 @@ void UGameViewportClient::EventScaleformEnabledChanged(class UGameViewportClient
 	this->ProcessEvent(uFnEventScaleformEnabledChanged, &EventScaleformEnabledChanged_Params, nullptr);
 };
 
+// Function Engine.GameViewportClient.EventScreenDraggedOnNewScreen
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        NewWidth                       (CPF_Parm)
+// int32_t                        NewHeight                      (CPF_Parm)
+
+void UGameViewportClient::EventScreenDraggedOnNewScreen(int32_t NewWidth, int32_t NewHeight)
+{
+	static UFunction* uFnEventScreenDraggedOnNewScreen = nullptr;
+
+	if (!uFnEventScreenDraggedOnNewScreen)
+	{
+		uFnEventScreenDraggedOnNewScreen = UFunction::FindFunction("Function Engine.GameViewportClient.EventScreenDraggedOnNewScreen");
+	}
+
+	UGameViewportClient_execEventScreenDraggedOnNewScreen_Params EventScreenDraggedOnNewScreen_Params;
+	memset(&EventScreenDraggedOnNewScreen_Params, 0, sizeof(EventScreenDraggedOnNewScreen_Params));
+	memcpy_s(&EventScreenDraggedOnNewScreen_Params.NewWidth, sizeof(EventScreenDraggedOnNewScreen_Params.NewWidth), &NewWidth, sizeof(NewWidth));
+	memcpy_s(&EventScreenDraggedOnNewScreen_Params.NewHeight, sizeof(EventScreenDraggedOnNewScreen_Params.NewHeight), &NewHeight, sizeof(NewHeight));
+
+	this->ProcessEvent(uFnEventScreenDraggedOnNewScreen, &EventScreenDraggedOnNewScreen_Params, nullptr);
+};
+
 // Function Engine.GameViewportClient.HandleInputChar
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
 // Parameter Info:
@@ -51741,6 +51764,27 @@ float USurface::GetSurfaceWidth()
 	this->ProcessEvent(uFnGetSurfaceWidth, &GetSurfaceWidth_Params, nullptr);
 
 	return GetSurfaceWidth_Params.ReturnValue;
+};
+
+// Function Engine.MaterialInterface.WaitForMipLevelsToStream
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// float                          MaxWaitSeconds                 (CPF_Parm)
+
+void UMaterialInterface::WaitForMipLevelsToStream(float MaxWaitSeconds)
+{
+	static UFunction* uFnWaitForMipLevelsToStream = nullptr;
+
+	if (!uFnWaitForMipLevelsToStream)
+	{
+		uFnWaitForMipLevelsToStream = UFunction::FindFunction("Function Engine.MaterialInterface.WaitForMipLevelsToStream");
+	}
+
+	UMaterialInterface_execWaitForMipLevelsToStream_Params WaitForMipLevelsToStream_Params;
+	memset(&WaitForMipLevelsToStream_Params, 0, sizeof(WaitForMipLevelsToStream_Params));
+	memcpy_s(&WaitForMipLevelsToStream_Params.MaxWaitSeconds, sizeof(WaitForMipLevelsToStream_Params.MaxWaitSeconds), &MaxWaitSeconds, sizeof(MaxWaitSeconds));
+
+	this->ProcessEvent(uFnWaitForMipLevelsToStream, &WaitForMipLevelsToStream_Params, nullptr);
 };
 
 // Function Engine.MaterialInterface.GetOrCreateInstance

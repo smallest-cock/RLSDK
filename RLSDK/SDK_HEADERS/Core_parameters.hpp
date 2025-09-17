@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_parameters.hpp
@@ -3281,6 +3281,24 @@ struct UObject_execEqualEqual_QWordInt_Params
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function Core.Object.SubtractEqual_QWordQWord
+// [0x00423401] 
+struct UObject_execSubtractEqual_QWordQWord_Params
+{
+	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.AddEqual_QWordQWord
+// [0x00423401] 
+struct UObject_execAddEqual_QWordQWord_Params
+{
+	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function Core.Object.NotEqual_QWordQWord
 // [0x00023401] 
 struct UObject_execNotEqual_QWordQWord_Params
@@ -3347,6 +3365,24 @@ struct UObject_execSubtract_QWordQWord_Params
 // Function Core.Object.Add_QWordQWord
 // [0x00023401] 
 struct UObject_execAdd_QWordQWord_Params
+{
+	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Divide_QWordQWord
+// [0x00023401] 
+struct UObject_execDivide_QWordQWord_Params
+{
+	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint64_t                                           ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Multiply_QWordQWord
+// [0x00023401] 
+struct UObject_execMultiply_QWordQWord_Params
 {
 	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    

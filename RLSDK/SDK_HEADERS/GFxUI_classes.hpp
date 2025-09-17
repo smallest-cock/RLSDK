@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
@@ -84,6 +84,15 @@ enum class EGFxScaleMode : uint8_t
 	SM_ExactFit                                        = 2,
 	SM_NoBorder                                        = 3,
 	SM_END                                             = 4
+};
+
+// Enum GFxUI.GFxMoviePlayer.GFxCollectionMode
+enum class EGFxCollectionMode : uint8_t
+{
+	GC_Quick                                           = 0,
+	GC_Medium                                          = 1,
+	GC_Full                                            = 2,
+	GC_END                                             = 3
 };
 
 // Enum GFxUI.GFxMoviePlayer.GFxTimingMode
@@ -341,6 +350,7 @@ public:
 	void SetViewScaleMode(EGFxScaleMode SM);
 	void SetViewport(int32_t X, int32_t Y, int32_t Width, int32_t Height);
 	class UGameViewportClient* GetGameViewportClient();
+	void RequestGarbageCollection(EGFxCollectionMode optionalMode, bool optionalBImmediate);
 	void SetPriority(uint8_t NewPriority);
 	bool SetExternalTexture(const class FString& Resource, class UTexture* Texture);
 	void SetExternalInterface(class UObject* H);
@@ -481,7 +491,7 @@ public:
 };
 
 // Class GFxUI.SwfMovie
-// 0x0078 (0x00A0 - 0x0118)
+// 0x0088 (0x00A0 - 0x0128)
 class USwfMovie : public UGFxRawData
 {
 public:
@@ -498,11 +508,12 @@ public:
 	class FString                                      SourceFileTimestamp;                           // 0x00D0 (0x0010) [0x0000000000420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink)
 	int32_t                                            SourceFileCRC;                                 // 0x00E0 (0x0004) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 	uint8_t                                          UnknownData02[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
-	class TArray<EEdition>                             Editions;                                      // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	class TArray<class FName>                          Features;                                      // 0x00F8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	int32_t                                            RTTextures;                                    // 0x0108 (0x0004) [0x0000000000000000]               
-	int32_t                                            RTVideoTextures;                               // 0x010C (0x0004) [0x0000000000000000]               
-	uint64_t                                           ImportTimeStamp;                               // 0x0110 (0x0008) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
+	class TArray<class FString>                        PrioritizeImportSwfs;                          // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<EEdition>                             Editions;                                      // 0x00F8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<class FName>                          Features;                                      // 0x0108 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	int32_t                                            RTTextures;                                    // 0x0118 (0x0004) [0x0000000000000000]               
+	int32_t                                            RTVideoTextures;                               // 0x011C (0x0004) [0x0000000000000000]               
+	uint64_t                                           ImportTimeStamp;                               // 0x0120 (0x0008) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
 
 public:
 	static UClass* StaticClass()
@@ -520,7 +531,7 @@ public:
 };
 
 // Class GFxUI.FlashMovie
-// 0x0000 (0x0118 - 0x0118)
+// 0x0000 (0x0128 - 0x0128)
 class UFlashMovie : public USwfMovie
 {
 public:

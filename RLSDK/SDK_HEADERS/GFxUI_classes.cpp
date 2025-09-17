@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GFxUI_classes.cpp
@@ -1783,6 +1783,29 @@ class UGameViewportClient* UGFxMoviePlayer::GetGameViewportClient()
 	this->ProcessEvent(uFnGetGameViewportClient, &GetGameViewportClient_Params, nullptr);
 
 	return GetGameViewportClient_Params.ReturnValue;
+};
+
+// Function GFxUI.GFxMoviePlayer.RequestGarbageCollection
+// [0x00024401] (FUNC_Final | FUNC_Native | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// EGFxCollectionMode             Mode                           (CPF_OptionalParm | CPF_Parm)
+// uint32_t                       bImmediate                     (CPF_OptionalParm | CPF_Parm)
+
+void UGFxMoviePlayer::RequestGarbageCollection(EGFxCollectionMode Mode, bool bImmediate)
+{
+	static UFunction* uFnRequestGarbageCollection = nullptr;
+
+	if (!uFnRequestGarbageCollection)
+	{
+		uFnRequestGarbageCollection = UFunction::FindFunction("Function GFxUI.GFxMoviePlayer.RequestGarbageCollection");
+	}
+
+	UGFxMoviePlayer_execRequestGarbageCollection_Params RequestGarbageCollection_Params;
+	memset(&RequestGarbageCollection_Params, 0, sizeof(RequestGarbageCollection_Params));
+	memcpy_s(&RequestGarbageCollection_Params.Mode, sizeof(RequestGarbageCollection_Params.Mode), &Mode, sizeof(Mode));
+	RequestGarbageCollection_Params.bImmediate = bImmediate;
+
+	this->ProcessEvent(uFnRequestGarbageCollection, &RequestGarbageCollection_Params, nullptr);
 };
 
 // Function GFxUI.GFxMoviePlayer.SetPriority

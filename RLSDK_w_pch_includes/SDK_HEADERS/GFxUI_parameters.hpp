@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GFxUI_parameters.hpp
@@ -631,6 +631,15 @@ struct UGFxMoviePlayer_execSetViewport_Params
 struct UGFxMoviePlayer_execGetGameViewportClient_Params
 {
 	class UGameViewportClient*                         ReturnValue;                                      // 0x0000 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function GFxUI.GFxMoviePlayer.RequestGarbageCollection
+// [0x00024401] 
+struct UGFxMoviePlayer_execRequestGarbageCollection_Params
+{
+	uint8_t                                            Mode;                                             // 0x0000 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	uint32_t                                           bImmediate : 1;                                   // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetPriority

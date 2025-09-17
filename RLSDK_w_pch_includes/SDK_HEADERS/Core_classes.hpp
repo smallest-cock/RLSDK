@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.hpp
@@ -144,6 +144,41 @@ enum class EAlphaBlendType : uint8_t
 	ABT_END                                            = 7
 };
 
+// Enum Core._Types_Core.EChatChannel
+enum class EChatChannel : uint8_t
+{
+	EChatChannel_Match                                 = 0,
+	EChatChannel_Team                                  = 1,
+	EChatChannel_Party                                 = 2,
+	EChatChannel_Individual                            = 3,
+	EChatChannel_END                                   = 4
+};
+
+// Enum Core._Types_Core.EVoiceResultCode
+enum class EVoiceResultCode : uint8_t
+{
+	VRC_Success                                        = 0,
+	VRC_NoConnection                                   = 1,
+	VRC_InvalidCredentials                             = 2,
+	VRC_TooManyParticipants                            = 3,
+	VRC_UserKicked                                     = 4,
+	VRC_UserBanned                                     = 5,
+	VRC_ServiceFailure                                 = 6,
+	VRC_AccessDenied                                   = 7,
+	VRC_VoiceModerationError                           = 8,
+	VRC_UnexpectedError                                = 9,
+	VRC_END                                            = 10
+};
+
+// Enum Core._Types_Core.EFlushResult
+enum class EFlushResult : uint8_t
+{
+	FlushResult_Success                                = 0,
+	FlushResult_InProgress                             = 1,
+	FlushResult_TimedOut                               = 2,
+	FlushResult_END                                    = 3
+};
+
 // Enum Core._Types_Core.OnlinePlatform
 enum class EOnlinePlatform : uint8_t
 {
@@ -177,31 +212,6 @@ enum class EInputAPI : uint8_t
 	InputAPI_Default                                   = 0,
 	InputAPI_SteamInput                                = 1,
 	InputAPI_END                                       = 2
-};
-
-// Enum Core._Types_Core.EFlushResult
-enum class EFlushResult : uint8_t
-{
-	FlushResult_Success                                = 0,
-	FlushResult_InProgress                             = 1,
-	FlushResult_TimedOut                               = 2,
-	FlushResult_END                                    = 3
-};
-
-// Enum Core._Types_Core.EVoiceResultCode
-enum class EVoiceResultCode : uint8_t
-{
-	VRC_Success                                        = 0,
-	VRC_NoConnection                                   = 1,
-	VRC_InvalidCredentials                             = 2,
-	VRC_TooManyParticipants                            = 3,
-	VRC_UserKicked                                     = 4,
-	VRC_UserBanned                                     = 5,
-	VRC_ServiceFailure                                 = 6,
-	VRC_AccessDenied                                   = 7,
-	VRC_VoiceModerationError                           = 8,
-	VRC_UnexpectedError                                = 9,
-	VRC_END                                            = 10
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate29
@@ -1384,6 +1394,43 @@ enum class EContentKeyIndex_PrimeUpdate55_2 : uint8_t
 	PrimeUpdate55_1_END                                = 25
 };
 
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate56
+enum class EContentKeyIndex_PrimeUpdate56 : uint8_t
+{
+	PrimeUpdate56_41164ED7BDB3F19F21984E0CA10E7C4F     = 0,
+	PrimeUpdate56_C39A48D8A6C08977D55A012BCB13B4D3     = 1,
+	PrimeUpdate56_3209B1937EE66C52D3C1C9216DAC6DB8     = 2,
+	PrimeUpdate56_F3D7A74E3BFDC5D6DFCA45C02F7F7729     = 3,
+	PrimeUpdate56_D79B716521C1174E1FB3FEA6526DECCE     = 4,
+	PrimeUpdate56_6A6AF48FDBD512FA1815A884B952D7A5     = 5,
+	PrimeUpdate56_4BABC8A394750FC25CBDFE31876FD96F     = 6,
+	PrimeUpdate56_C66CB49EA9A9F5AA0099A5406D5D9A79     = 7,
+	PrimeUpdate56_A8D9E7F0372D5FF478154844495FF835     = 8,
+	PrimeUpdate56_C51F2C37FF6CD0108A888AF8CF447F6A     = 9,
+	PrimeUpdate56_13D612D80D63D9D975FA38F60CF88EF2     = 10,
+	PrimeUpdate56_EA5F698DB93ED8C2C27500A497CC2A40     = 11,
+	PrimeUpdate56_8B17C2CAB0CB2B0B152234E45F57D553     = 12,
+	PrimeUpdate56_A48A643DF3A0A727DFD26FAB7EE17389     = 13,
+	PrimeUpdate56_A657ACD394228B2D30E163C349E765B5     = 14,
+	PrimeUpdate56_36669216607B23BD4CA991E82B0F89D1     = 15,
+	PrimeUpdate56_1448C54AF70B6FCCBBCE27EA4B490FF3     = 16,
+	PrimeUpdate56_1E5D9B8D9EB024763D31A07DD1207C91     = 17,
+	PrimeUpdate56_FB23DD57EC3E5E45284E0A5C5ECD624E     = 18,
+	PrimeUpdate56_44CDDD1AF555CAA4D5F62052C757F177     = 19,
+	PrimeUpdate56_28BE02880F6263D0E79FC8B06358FE8A     = 20,
+	PrimeUpdate56_379D4A55A1DDFBE206EC66A67B5E4E51     = 21,
+	PrimeUpdate56_8FF3FC0D6F12F3D2B5DEFF7FEFFCE13F     = 22,
+	PrimeUpdate56_4F9D85A4DAAC2ADC767DE907A782F6D0     = 23,
+	PrimeUpdate56_F85BF95681F2B190DB7CE719FC4F2D4B     = 24,
+	PrimeUpdate56_72245A3AA2009FDCADE521458E9E03E7     = 25,
+	PrimeUpdate56_E83BEBA1D39472EB242EDB0F36E5D705     = 26,
+	PrimeUpdate56_7885584A2661BF346EA285C88957C5A5     = 27,
+	PrimeUpdate56_A43BAB4FD129D0AB1A42BBD3D1DFFB9F     = 28,
+	PrimeUpdate56_D41F80EA1BEF3C55560464959F9B5FFA     = 29,
+	PrimeUpdate56_92A777E7448F613619B98E4FD3AD056D     = 30,
+	PrimeUpdate56_END                                  = 31
+};
+
 // Enum Core._Types_Generated.EContentKeyIndex_ContinuousIntegration
 enum class EContentKeyIndex_ContinuousIntegration : uint8_t
 {
@@ -1845,6 +1892,8 @@ public:
 	static uint64_t QSubtract(uint64_t A, uint64_t B);
 	static bool NotEqual_QWordInt(uint64_t A, int32_t B);
 	static bool EqualEqual_QWordInt(uint64_t A, int32_t B);
+	static uint64_t SubtractEqual_QWordQWord(uint64_t B, uint64_t& outA);
+	static uint64_t AddEqual_QWordQWord(uint64_t B, uint64_t& outA);
 	static bool NotEqual_QWordQWord(uint64_t A, uint64_t B);
 	static bool EqualEqual_QWordQWord(uint64_t A, uint64_t B);
 	static bool GreaterEqual_QWordQWord(uint64_t A, uint64_t B);
@@ -1853,6 +1902,8 @@ public:
 	static bool Less_QWordQWord(uint64_t A, uint64_t B);
 	static int32_t Subtract_QWordQWord(uint64_t A, uint64_t B);
 	static uint64_t Add_QWordQWord(uint64_t A, uint64_t B);
+	static uint64_t Divide_QWordQWord(uint64_t A, uint64_t B);
+	static uint64_t Multiply_QWordQWord(uint64_t A, uint64_t B);
 	static int32_t SubtractSubtract_Int(int32_t& outA);
 	static int32_t AddAdd_Int(int32_t& outA);
 	static int32_t SubtractSubtract_PreInt(int32_t& outA);
@@ -3046,9 +3097,11 @@ public:
 	uint32_t                                           PossessionExpanded : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
 	uint32_t                                           RocketPassUpgrades : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00002000] (CPF_DataBinding)
 	uint32_t                                           PentathlonTournaments : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
+	uint32_t                                           DemolishUpdates : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
 	uint32_t                                           ViralItem : 1;                                 // 0x0078 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
 	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
-	uint32_t                                           DdosPrevention : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
+	uint32_t                                           AttackerDemoFX : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
+	uint32_t                                           NewDriverChallengesV2 : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 
 public:

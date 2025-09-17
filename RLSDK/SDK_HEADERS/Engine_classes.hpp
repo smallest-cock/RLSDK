@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 19 (v2.55) 08/20/2025 04:09PM
+# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.hpp
@@ -1951,7 +1951,8 @@ enum class EConsoleType : uint8_t
 	CONSOLE_Anaconda                                   = 15,
 	CONSOLE_Prospero                                   = 16,
 	CONSOLE_Scorpio                                    = 17,
-	CONSOLE_END                                        = 18
+	CONSOLE_Ounce                                      = 18,
+	CONSOLE_END                                        = 19
 };
 
 // Enum Engine.WorldInfo.EPreferredLightmapType
@@ -12415,7 +12416,7 @@ public:
 };
 
 // Class Engine.NetDriver
-// 0x0230 (0x0068 - 0x0298)
+// 0x01F0 (0x0068 - 0x0258)
 class UNetDriver : public USubsystem
 {
 public:
@@ -12444,7 +12445,7 @@ public:
 	class TArray<class FString>                        DownloadManagers;                              // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	uint8_t                                          UnknownData04[0xA8];                          // 0x0168 (0x00A8) MISSED OFFSET
 	class FString                                      NetConnectionClassName;                        // 0x0210 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	uint8_t                                          UnknownData05[0x78];                          // 0x0220 (0x0078) MISSED OFFSET
+	uint8_t                                          UnknownData05[0x38];                          // 0x0220 (0x0038) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -12462,18 +12463,18 @@ public:
 };
 
 // Class Engine.DemoRecDriver
-// 0x00F8 (0x0298 - 0x0390)
+// 0x00F8 (0x0258 - 0x0350)
 class UDemoRecDriver : public UNetDriver
 {
 public:
-	uint8_t                                          UnknownData00[0x30];                          // 0x0298 (0x0030) MISSED OFFSET
-	class FString                                      DemoSpectatorClass;                            // 0x02C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	uint8_t                                          UnknownData01[0xA0];                          // 0x02D8 (0x00A0) MISSED OFFSET
-	int32_t                                            MaxRewindPoints;                               // 0x0378 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData02[0x4];                            // 0x037C (0x0004) MISSED OFFSET
-	float                                              RewindPointInterval;                           // 0x0380 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            NumRecentRewindPoints;                         // 0x0384 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData03[0x8];                            // 0x0388 (0x0008) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x30];                          // 0x0258 (0x0030) MISSED OFFSET
+	class FString                                      DemoSpectatorClass;                            // 0x0288 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	uint8_t                                          UnknownData01[0xA0];                          // 0x0298 (0x00A0) MISSED OFFSET
+	int32_t                                            MaxRewindPoints;                               // 0x0338 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData02[0x4];                            // 0x033C (0x0004) MISSED OFFSET
+	float                                              RewindPointInterval;                           // 0x0340 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            NumRecentRewindPoints;                         // 0x0344 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData03[0x8];                            // 0x0348 (0x0008) MISSED OFFSET
 
 public:
 	static UClass* StaticClass()
@@ -14535,7 +14536,7 @@ public:
 };
 
 // Class Engine.GameViewportClient
-// 0x01E0 (0x0068 - 0x0248)
+// 0x01F8 (0x0068 - 0x0260)
 class UGameViewportClient : public UScriptViewportClient
 {
 public:
@@ -14577,11 +14578,12 @@ public:
 	struct FScriptDelegate                             __HandleInputKey__Delegate;                    // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __HandleInputAxis__Delegate;                   // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __HandleInputChar__Delegate;                   // 0x01B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScaleformEnabledChanged__Delegate;      // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGamepadInputAPIChanged__Delegate;       // 0x01E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGamepadConnectionStatusChanged__Delegate;// 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGampadConnected__Delegate;              // 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGampadDisconnected__Delegate;           // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScreenDraggedOnNewScreen__Delegate;     // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScaleformEnabledChanged__Delegate;      // 0x01E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGamepadInputAPIChanged__Delegate;       // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGamepadConnectionStatusChanged__Delegate;// 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGampadConnected__Delegate;              // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGampadDisconnected__Delegate;           // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -14657,6 +14659,7 @@ public:
 	void EventGamepadConnectionStatusChanged(class UGameViewportClient* GVC, int32_t ControllerId, bool bConnected);
 	void EventGamepadInputAPIChanged(class UGameViewportClient* GVC, int32_t ControllerId, EInputAPI InputAPI);
 	void EventScaleformEnabledChanged(class UGameViewportClient* GVC);
+	void EventScreenDraggedOnNewScreen(int32_t NewWidth, int32_t NewHeight);
 	bool HandleInputChar(int32_t ControllerId, const class FString& Unicode);
 	bool HandleInputAxis(int32_t ControllerId, const class FName& Key, float delta, float DeltaTime, bool bGamepad);
 	bool HandleInputKey(int32_t ControllerId, const class FName& Key, EInputEvent EventType, float AmountDepressed, bool optionalBGamepad);
@@ -15218,6 +15221,7 @@ public:
 		return uClassPointer;
 	};
 
+	void WaitForMipLevelsToStream(float MaxWaitSeconds);
 	class UMaterialInstance* GetOrCreateInstance();
 	void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int32_t optionalCinematicTextureGroups);
 	bool GetMobileVectorParameterValue(const class FName& ParameterName, struct FLinearColor& outOutValue);
