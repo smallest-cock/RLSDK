@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.hpp
@@ -3102,6 +3102,7 @@ public:
 	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
 	uint32_t                                           AttackerDemoFX : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
 	uint32_t                                           NewDriverChallengesV2 : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00080000] (CPF_DataBinding)
+	uint32_t                                           DdosPrevention : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 
 public:

@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -332,9 +332,9 @@ enum EClassCastFlag : uint32_t
 */
 
 // GObjects
-#define GObjects_Offset		(uintptr_t)0x023C7848
+#define GObjects_Offset		(uintptr_t)0x023C8888
 // GNames
-#define GNames_Offset		(uintptr_t)0x023C7800
+#define GNames_Offset		(uintptr_t)0x023C8840
 
 
 namespace StringUtils
@@ -368,13 +368,12 @@ namespace StringUtils
 # ========================================================================================= #
 */
 
-template<typename TArray>
-class TIterator
+template <typename TArray> class TIterator
 {
 public:
-	using ElementType = typename TArray::ElementType;
-	using ElementPointer = ElementType*;
-	using ElementReference = ElementType&;
+	using ElementType           = typename TArray::ElementType;
+	using ElementPointer        = ElementType*;
+	using ElementReference      = ElementType&;
 	using ElementConstReference = const ElementType&;
 
 private:
@@ -382,7 +381,6 @@ private:
 
 public:
 	TIterator(ElementPointer inElementPointer) : IteratorData(inElementPointer) {}
-
 	~TIterator() {}
 
 public:
@@ -412,31 +410,13 @@ public:
 		return iteratorCopy;
 	}
 
-	ElementReference operator[](int32_t index)
-	{
-		return *(IteratorData[index]);
-	}
-
-	ElementPointer operator->()
-	{
-		return IteratorData;
-	}
-
-	ElementReference operator*()
-	{
-		return *IteratorData;
-	}
+	ElementReference operator[](int32_t index) { return *(IteratorData[index]); }
+	ElementPointer   operator->() { return IteratorData; }
+	ElementReference operator*() { return *IteratorData; }
 
 public:
-	bool operator==(const TIterator& other) const
-	{
-		return (IteratorData == other.IteratorData);
-	}
-
-	bool operator!=(const TIterator& other) const
-	{
-		return !(*this == other);
-	}
+	bool operator==(const TIterator& other) const { return (IteratorData == other.IteratorData); }
+	bool operator!=(const TIterator& other) const { return !(*this == other); }
 };
 
 namespace TArrayUtils
@@ -451,21 +431,20 @@ namespace TArrayUtils
 	bool extendCapacity(void* inOldTArray, int32_t newCapacity, void* outNewTArray, int32_t elementSize);
 }
 
-template<typename InElementType>
-class TArray
+template <typename InElementType> class TArray
 {
 public:
-	using ElementType = InElementType;
-	using ElementPointer = ElementType*;
-	using ElementReference = ElementType&;
-	using ElementConstPointer = const ElementType*;
+	using ElementType           = InElementType;
+	using ElementPointer        = ElementType*;
+	using ElementReference      = ElementType&;
+	using ElementConstPointer   = const ElementType*;
 	using ElementConstReference = const ElementType&;
-	using Iterator = TIterator<TArray<ElementType>>;
+	using Iterator              = TIterator<TArray<ElementType>>;
 
 private:
 	ElementPointer ArrayData;
-	int32_t ArrayCount;
-	int32_t ArrayMax;
+	int32_t        ArrayCount;
+	int32_t        ArrayMax;
 
 public:
 	TArray() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) {}
@@ -477,101 +456,60 @@ public:
 	}
 
 public:
-	ElementConstReference operator[](int32_t index) const
-	{
-		return ArrayData[index];
-	}
-
-	ElementReference operator[](int32_t index)
-	{
-		return ArrayData[index];
-	}
-
-	ElementConstReference at(int32_t index) const
-	{
-		return ArrayData[index];
-	}
-
-	ElementReference at(int32_t index)
-	{
-		return ArrayData[index];
-	}
-
-	ElementConstPointer data() const
-	{
-		return ArrayData;
-	}
+	ElementConstReference operator[](int32_t index) const { return ArrayData[index]; }
+	ElementReference      operator[](int32_t index) { return ArrayData[index]; }
+	ElementConstReference at(int32_t index) const { return ArrayData[index]; }
+	ElementReference      at(int32_t index) { return ArrayData[index]; }
+	ElementConstPointer   data() const { return ArrayData; }
 
 	void push_back(ElementConstReference newElement)
 	{
 		if (ArrayCount >= ArrayMax)
-		{
 			ReAllocate(ArrayCount + 1);
-		}
 
-		new(&ArrayData[ArrayCount]) ElementType(newElement);
+		new (&ArrayData[ArrayCount]) ElementType(newElement);
 		ArrayCount++;
 	}
 
 	void push_back(ElementReference& newElement)
 	{
 		if (ArrayCount >= ArrayMax)
-		{
 			ReAllocate(ArrayCount + 1);
-		}
 
-		new(&ArrayData[ArrayCount]) ElementType(newElement);
+		new (&ArrayData[ArrayCount]) ElementType(newElement);
 		ArrayCount++;
 	}
 
 	void pop_back()
 	{
-		if (ArrayCount > 0)
-		{
-			ArrayCount--;
-			ArrayData[ArrayCount].~ElementType();
-		}
+		if (ArrayCount <= 0)
+			return;
+
+		ArrayCount--;
+		ArrayData[ArrayCount].~ElementType();
 	}
 
 	void clear()
 	{
-		for (int32_t i = 0; i < ArrayCount; i++)
-		{
+		for (int32_t i = 0; i < ArrayCount; ++i)
 			ArrayData[i].~ElementType();
-		}
 
 		ArrayCount = 0;
 	}
 
-	int32_t size() const
-	{
-		return ArrayCount;
-	}
-
-	int32_t capacity() const
-	{
-		return ArrayMax;
-	}
+	int32_t size() const { return ArrayCount; }
+	int32_t capacity() const { return ArrayMax; }
 
 	bool empty() const
 	{
 		if (ArrayData)
-		{
 			return (size() == 0);
-		}
 
 		return true;
 	}
 
-	Iterator begin() const
-	{
-		return Iterator(ArrayData);
-	}
-
-	Iterator end() const
-	{
-		return Iterator(ArrayData + ArrayCount);
-	}
+	Iterator begin() const { return Iterator(ArrayData); }
+	Iterator end() const { return Iterator(ArrayData + ArrayCount); }
 
 private:
 	void ReAllocate(int32_t newArrayMax)
@@ -582,77 +520,51 @@ private:
 		TArrayUtils::TArrayBase tempArray{};
 		if (TArrayUtils::extendCapacity(this, newArrayMax, &tempArray, sizeof(ElementType)))
 		{
-			ArrayData = reinterpret_cast<ElementPointer>(tempArray.data);
+			ArrayData  = reinterpret_cast<ElementPointer>(tempArray.data);
 			ArrayCount = tempArray.size;
-			ArrayMax = tempArray.capacity;
+			ArrayMax   = tempArray.capacity;
 		}
 	}
 };
 
-template<typename TKey, typename TValue>
-class TMap
+template <typename TKey, typename TValue> class TMap
 {
 private:
 	struct TPair
 	{
-		TKey Key;
+		TKey   Key;
 		TValue Value;
 	};
 
 public:
-	using ElementType = TPair;
-	using ElementPointer = ElementType*;
-	using ElementReference = ElementType&;
+	using ElementType           = TPair;
+	using ElementPointer        = ElementType*;
+	using ElementReference      = ElementType&;
 	using ElementConstReference = const ElementType&;
-	using Iterator = TIterator<class TArray<ElementType>>;
+	using Iterator              = TIterator<class TArray<ElementType>>;
 
 public:
-	class TArray<ElementType> Elements;								// 0x0000 (0x0010)
-	struct FPointer IndirectData;									// 0x0010 (0x0008)
-	int32_t InlineData[0x4];										// 0x0018 (0x0010)
-	int32_t NumBits;												// 0x0028 (0x0004)
-	int32_t MaxBits;												// 0x002C (0x0004)
-	int32_t FirstFreeIndex;											// 0x0030 (0x0004)
-	int32_t NumFreeIndices;											// 0x0034 (0x0004)
-	int64_t InlineHash;												// 0x0038 (0x0008)
-	int32_t* Hash;													// 0x0040 (0x0008)
-	int32_t HashCount;												// 0x0048 (0x0004)
+	class TArray<ElementType> Elements;        // 0x0000 (0x0010)
+	struct FPointer           IndirectData;    // 0x0010 (0x0008)
+	int32_t                   InlineData[0x4]; // 0x0018 (0x0010)
+	int32_t                   NumBits;         // 0x0028 (0x0004)
+	int32_t                   MaxBits;         // 0x002C (0x0004)
+	int32_t                   FirstFreeIndex;  // 0x0030 (0x0004)
+	int32_t                   NumFreeIndices;  // 0x0034 (0x0004)
+	int64_t                   InlineHash;      // 0x0038 (0x0008)
+	int32_t*                  Hash;            // 0x0040 (0x0008)
+	int32_t                   HashCount;       // 0x0048 (0x0004)
 public:
-	TMap() :
-		IndirectData(NULL),
-		NumBits(0),
-		MaxBits(0),
-		FirstFreeIndex(0),
-		NumFreeIndices(0),
-		InlineHash(0),
-		Hash(nullptr),
-		HashCount(0)
-	{
+	TMap() : IndirectData(NULL), NumBits(0), MaxBits(0), FirstFreeIndex(0), NumFreeIndices(0), InlineHash(0), Hash(nullptr), HashCount(0) {}
 
-	}
-
-	TMap(struct FMap_Mirror& other) :
-		IndirectData(NULL),
-		NumBits(0),
-		MaxBits(0),
-		FirstFreeIndex(0),
-		NumFreeIndices(0),
-		InlineHash(0),
-		Hash(nullptr),
-		HashCount(0)
+	TMap(struct FMap_Mirror& other)
+	    : IndirectData(NULL), NumBits(0), MaxBits(0), FirstFreeIndex(0), NumFreeIndices(0), InlineHash(0), Hash(nullptr), HashCount(0)
 	{
 		assign(other);
 	}
 
-	TMap(const TMap<TKey, TValue>& other) :
-		IndirectData(NULL),
-		NumBits(0),
-		MaxBits(0),
-		FirstFreeIndex(0),
-		NumFreeIndices(0),
-		InlineHash(0),
-		Hash(nullptr),
-		HashCount(0)
+	TMap(const TMap<TKey, TValue>& other)
+	    : IndirectData(NULL), NumBits(0), MaxBits(0), FirstFreeIndex(0), NumFreeIndices(0), InlineHash(0), Hash(nullptr), HashCount(0)
 	{
 		assign(other);
 	}
@@ -668,19 +580,19 @@ public:
 
 	TMap<TKey, TValue>& assign(const TMap<TKey, TValue>& other)
 	{
-		Elements = other.Elements;
-		IndirectData = other.IndirectData;
-		InlineData[0] = other.InlineData[0];
-		InlineData[1] = other.InlineData[1];
-		InlineData[2] = other.InlineData[2];
-		InlineData[3] = other.InlineData[3];
-		NumBits = other.NumBits;
-		MaxBits = other.MaxBits;
+		Elements       = other.Elements;
+		IndirectData   = other.IndirectData;
+		InlineData[0]  = other.InlineData[0];
+		InlineData[1]  = other.InlineData[1];
+		InlineData[2]  = other.InlineData[2];
+		InlineData[3]  = other.InlineData[3];
+		NumBits        = other.NumBits;
+		MaxBits        = other.MaxBits;
 		FirstFreeIndex = other.FirstFreeIndex;
 		NumFreeIndices = other.NumFreeIndices;
-		InlineHash = other.InlineHash;
-		Hash = other.Hash;
-		HashCount = other.HashCount;
+		InlineHash     = other.InlineHash;
+		Hash           = other.Hash;
+		HashCount      = other.HashCount;
 		return *this;
 	}
 
@@ -688,10 +600,10 @@ public:
 	{
 		for (TPair& pair : Elements)
 		{
-			if (pair.Key == key)
-			{
-				return pair.Value;
-			}
+			if (pair.Key != key)
+				continue;
+
+			return pair.Value;
 		}
 	}
 
@@ -699,68 +611,26 @@ public:
 	{
 		for (const TPair& pair : Elements)
 		{
-			if (pair.Key == key)
-			{
-				return pair.Value;
-			}
+			if (pair.Key != key)
+				continue;
+
+			return pair.Value;
 		}
 	}
 
-	TPair& at_index(int32_t index)
-	{
-		return Elements[index];
-	}
-
-	const TPair& at_index(int32_t index) const
-	{
-		return Elements[index];
-	}
-
-	int32_t size() const
-	{
-		return Elements.size();
-	}
-
-	int32_t capacity() const
-	{
-		return Elements.capacity();
-	}
-
-	bool empty() const
-	{
-		return Elements.empty();
-	}
-
-	Iterator begin()
-	{
-		return Elements.begin();
-	}
-
-	Iterator end()
-	{
-		return Elements.end();
-	}
+	TPair&       at_index(int32_t index) { return Elements[index]; }
+	const TPair& at_index(int32_t index) const { return Elements[index]; }
+	int32_t      size() const { return Elements.size(); }
+	int32_t      capacity() const { return Elements.capacity(); }
+	bool         empty() const { return Elements.empty(); }
+	Iterator     begin() { return Elements.begin(); }
+	Iterator     end() { return Elements.end(); }
 
 public:
-	TValue& operator[](const TKey& key)
-	{
-		return at(key);
-	}
-
-	const TValue& operator[](const TKey& key) const
-	{
-		return at(key);
-	}
-
-	TMap<TKey, TValue>& operator=(const struct FMap_Mirror& other)
-	{
-		return assign(other);
-	}
-
-	TMap<TKey, TValue>& operator=(const TMap<TKey, TValue>& other)
-	{
-		return assign(other);
-	}
+	TValue&             operator[](const TKey& key) { return at(key); }
+	const TValue&       operator[](const TKey& key) const { return at(key); }
+	TMap<TKey, TValue>& operator=(const struct FMap_Mirror& other) { return assign(other); }
+	TMap<TKey, TValue>& operator=(const TMap<TKey, TValue>& other) { return assign(other); }
 };
 
 extern class TArray<class UObject*>* GObjects;
@@ -781,7 +651,7 @@ public:
 	wchar_t Name[0x400]; // 0x0018 (0x0002)
 
 public:
-	FNameEntry() : Flags(0), Index(-1), Name({ 0 }), UnknownData00({ 0 }) {}
+	FNameEntry() : Flags{ 0 }, Index{ -1 }, Name{ 0 }, UnknownData00{ 0 } {}
 	~FNameEntry() {}
 
 public:
@@ -803,13 +673,10 @@ public:
 	std::wstring ToWideString() const
 	{
 		const wchar_t* wideName = GetWideName();
+		if (!wideName)
+			return L"";
 
-		if (wideName)
-		{
-			return std::wstring(wideName);
-		}
-
-		return L"";
+		return std::wstring(wideName);
 	}
 
 	std::string ToString() const
@@ -840,26 +707,26 @@ public:
 
 		for (int32_t entryId : foundNames)
 		{
-			if (Names()->at(entryId))
+			if (!Names()->at(entryId))
+				continue;
+
+			if (wcscmp(Names()->at(entryId)->Name, nameToFind) == 0)
 			{
-				if (wcscmp(Names()->at(entryId)->Name, nameToFind) == 0)
-				{
-					FNameEntryId = entryId;
-					return;
-				}
+				FNameEntryId = entryId;
+				return;
 			}
 		}
 
 		for (int32_t i = 0; i < Names()->size(); ++i)
 		{
-			if (Names()->at(i))
+			if (!Names()->at(i))
+				continue;
+
+			if (wcscmp(Names()->at(i)->Name, nameToFind) == 0)
 			{
-				if (wcscmp(Names()->at(i)->Name, nameToFind) == 0)
-				{
-					foundNames.push_back(i);
-					FNameEntryId = i;
-					return;
-				}
+				foundNames.push_back(i);
+				FNameEntryId = i;
+				return;
 			}
 		}
 	}
@@ -881,22 +748,18 @@ public:
 
 	const FNameEntry GetDisplayNameEntry() const
 	{
-		if (IsValid())
-		{
-			return *Names()->at(FNameEntryId);
-		}
+		if (!IsValid())
+			return FNameEntry();
 
-		return FNameEntry();
+		return *Names()->at(FNameEntryId);
 	}
 
 	FNameEntry* GetEntry()
 	{
-		if (IsValid())
-		{
-			return Names()->at(FNameEntryId);
-		}
+		if (!IsValid())
+			return nullptr;
 
-		return nullptr;
+		return Names()->at(FNameEntryId);
 	}
 
 	int32_t GetInstance() const
@@ -911,22 +774,15 @@ public:
 
 	std::string ToString() const
 	{
-		if (IsValid())
-		{
-			return GetDisplayNameEntry().ToString();
-		}
-
-		return "UnknownName";
+		if (!IsValid())
+			return "UnknownName";
+			
+		return GetDisplayNameEntry().ToString();
 	}
 
 	bool IsValid() const
 	{
-		if ((FNameEntryId < 0 || FNameEntryId > Names()->size()))
-		{
-			return false;
-		}
-
-		return true;
+		return (FNameEntryId >= 0) && (FNameEntryId <= Names()->size());
 	}
 
 	static FName find(const std::string& str)
@@ -957,13 +813,13 @@ public:
 class FString
 {
 public:
-	using ElementType = const wchar_t;
+	using ElementType    = const wchar_t;
 	using ElementPointer = ElementType*;
 
 private:
-	ElementPointer	ArrayData;										// 0x0000 (0x08)
-	int32_t			ArrayCount;										// 0x0008 (0x04)
-	int32_t			ArrayMax;										// 0x000C (0x04)
+	ElementPointer ArrayData;  // 0x0000 (0x08)
+	int32_t        ArrayCount; // 0x0008 (0x04)
+	int32_t        ArrayMax;   // 0x000C (0x04)
 
 public:
 	FString() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) {}
@@ -974,26 +830,19 @@ public:
 	FString& assign(ElementPointer other)
 	{
 		ArrayCount = (other ? (wcslen(other) + 1) : 0);
-		ArrayMax = ArrayCount;
-		ArrayData = (ArrayCount > 0 ? other : nullptr);
+		ArrayMax   = ArrayCount;
+		ArrayData  = (ArrayCount > 0 ? other : nullptr);
 		return *this;
 	}
 
-	FString& assign(const std::wstring& other)
-	{
-		return assign(other.c_str());
-	}
-
-	FString& assign(const std::string& other)
-	{
-		return assign(StringUtils::ToWideString(other));
-	}
+	FString& assign(const std::wstring& other) { return assign(other.c_str()); }
+	FString& assign(const std::string& other) { return assign(StringUtils::ToWideString(other)); }
 
 	std::wstring ToWideString() const
 	{
 		if (empty() || !isValid())
 			return L"";
-		
+
 		return c_str();
 	}
 
@@ -1005,44 +854,26 @@ public:
 		return StringUtils::ToString(c_str());
 	}
 
-	ElementPointer c_str() const
-	{
-		return ArrayData;
-	}
+	ElementPointer c_str() const { return ArrayData; }
 
 	bool empty() const
 	{
 		if (!ArrayData)
 			return true;
-		
+
 		return (ArrayCount == 0);
 	}
 
-	int32_t length() const
-	{
-		return ArrayCount;
-	}
-
-	int32_t size() const
-	{
-		return ArrayMax;
-	}
-
-	bool isValid() const { return ArrayData && (ArrayCount >= 0) && (ArrayMax >= 0) && (ArrayCount <= ArrayMax); }
+	int32_t length() const { return ArrayCount; }
+	int32_t size() const { return ArrayMax; }
+	bool    isValid() const { return ArrayData && (ArrayCount >= 0) && (ArrayMax >= 0) && (ArrayCount <= ArrayMax); }
 
 	static FString create(const std::string& str);
 	static FString create(const FString& old);
 
 public:
-	FString& operator=(ElementPointer other)
-	{
-		return assign(other);
-	}
-
-	FString& operator=(const FString& other)
-	{
-		return assign(other.c_str());
-	}
+	FString& operator=(ElementPointer other) { return assign(other); }
+	FString& operator=(const FString& other) { return assign(other.c_str()); }
 
 	bool operator==(const FString& other) const
 	{
@@ -1061,13 +892,13 @@ public:
 
 struct FScriptDelegate
 {
-	class UObject*		Object;
-	uint8_t				padding[0x10];
+	class UObject* Object;
+	uint8_t        padding[0x10];
 };
 
 struct FPointer
 {
-	uintptr_t Dummy; // 0x0000 (0x04)
+	uintptr_t Dummy; // 0x0000 (0x08)
 };
 
 struct FQWord

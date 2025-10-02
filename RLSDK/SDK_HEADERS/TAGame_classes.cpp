@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.cpp
@@ -117409,23 +117409,23 @@ void UFirstTimeExperienceRedefinition_TA::RedefineFTEGroups(class TArray<struct 
 	memcpy_s(&FTEGroups, sizeof(FTEGroups), &RedefineFTEGroups_Params.FTEGroups, sizeof(RedefineFTEGroups_Params.FTEGroups));
 };
 
-// Function TAGame.PlayerLegacyStatusSave_TA.__bOnlineSet__ChangeNotifyFunc
-// [0x00000000] 
+// Function TAGame.PlayerLegacyStatusSave_TA.OnLoad
+// [0x400080002] (FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
 // Parameter Info:
 
-void UPlayerLegacyStatusSave_TA::__bOnlineSet__ChangeNotifyFunc()
+void UPlayerLegacyStatusSave_TA::OnLoad()
 {
-	static UFunction* uFn__bOnlineSet__ChangeNotifyFunc = nullptr;
+	static UFunction* uFnOnLoad = nullptr;
 
-	if (!uFn__bOnlineSet__ChangeNotifyFunc)
+	if (!uFnOnLoad)
 	{
-		uFn__bOnlineSet__ChangeNotifyFunc = UFunction::FindFunction("Function TAGame.PlayerLegacyStatusSave_TA.__bOnlineSet__ChangeNotifyFunc");
+		uFnOnLoad = UFunction::FindFunction("Function TAGame.PlayerLegacyStatusSave_TA.OnLoad");
 	}
 
-	UPlayerLegacyStatusSave_TA_exec__bOnlineSet__ChangeNotifyFunc_Params __bOnlineSet__ChangeNotifyFunc_Params;
-	memset(&__bOnlineSet__ChangeNotifyFunc_Params, 0, sizeof(__bOnlineSet__ChangeNotifyFunc_Params));
+	UPlayerLegacyStatusSave_TA_execOnLoad_Params OnLoad_Params;
+	memset(&OnLoad_Params, 0, sizeof(OnLoad_Params));
 
-	this->ProcessEvent(uFn__bOnlineSet__ChangeNotifyFunc, &__bOnlineSet__ChangeNotifyFunc_Params, nullptr);
+	this->ProcessEvent(uFnOnLoad, &OnLoad_Params, nullptr);
 };
 
 // Function TAGame.PlayerLegacyStatusSave_TA.EventFailedToUpdateOnlineStatus
@@ -117445,6 +117445,25 @@ void UPlayerLegacyStatusSave_TA::EventFailedToUpdateOnlineStatus()
 	memset(&EventFailedToUpdateOnlineStatus_Params, 0, sizeof(EventFailedToUpdateOnlineStatus_Params));
 
 	this->ProcessEvent(uFnEventFailedToUpdateOnlineStatus, &EventFailedToUpdateOnlineStatus_Params, nullptr);
+};
+
+// Function TAGame.PlayerLegacyStatusSave_TA.EventUpdatedOnlineStatus
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+
+void UPlayerLegacyStatusSave_TA::EventUpdatedOnlineStatus()
+{
+	static UFunction* uFnEventUpdatedOnlineStatus = nullptr;
+
+	if (!uFnEventUpdatedOnlineStatus)
+	{
+		uFnEventUpdatedOnlineStatus = UFunction::FindFunction("Function TAGame.PlayerLegacyStatusSave_TA.EventUpdatedOnlineStatus");
+	}
+
+	UPlayerLegacyStatusSave_TA_execEventUpdatedOnlineStatus_Params EventUpdatedOnlineStatus_Params;
+	memset(&EventUpdatedOnlineStatus_Params, 0, sizeof(EventUpdatedOnlineStatus_Params));
+
+	this->ProcessEvent(uFnEventUpdatedOnlineStatus, &EventUpdatedOnlineStatus_Params, nullptr);
 };
 
 // Function TAGame.__FirstTimeExperienceSave_TA__GetGroupIndex_0x1.__FirstTimeExperienceSave_TA__GetGroupIndex_0x1
@@ -122110,6 +122129,44 @@ int32_t UOnlineGameDedicatedServer_TA::GetTeamScore(int32_t TeamIdx)
 	this->ProcessEvent(uFnGetTeamScore, &GetTeamScore_Params, nullptr);
 
 	return GetTeamScore_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService
+// [0x00040001] (FUNC_Final | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameDedicatedServer_TA::ShutdownDDoSPreventionService()
+{
+	static UFunction* uFnShutdownDDoSPreventionService = nullptr;
+
+	if (!uFnShutdownDDoSPreventionService)
+	{
+		uFnShutdownDDoSPreventionService = UFunction::FindFunction("Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService");
+	}
+
+	UOnlineGameDedicatedServer_TA_execShutdownDDoSPreventionService_Params ShutdownDDoSPreventionService_Params;
+	memset(&ShutdownDDoSPreventionService_Params, 0, sizeof(ShutdownDDoSPreventionService_Params));
+
+	this->ProcessEvent(uFnShutdownDDoSPreventionService, &ShutdownDDoSPreventionService_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameDedicatedServer_TA::StartDDoSPreventionService()
+{
+	static UFunction* uFnStartDDoSPreventionService = nullptr;
+
+	if (!uFnStartDDoSPreventionService)
+	{
+		uFnStartDDoSPreventionService = UFunction::FindFunction("Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService");
+	}
+
+	UOnlineGameDedicatedServer_TA_execStartDDoSPreventionService_Params StartDDoSPreventionService_Params;
+	memset(&StartDDoSPreventionService_Params, 0, sizeof(StartDDoSPreventionService_Params));
+
+	this->ProcessEvent(uFnStartDDoSPreventionService, &StartDDoSPreventionService_Params, nullptr);
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleVoiceTokenCacheError
@@ -167855,6 +167912,50 @@ void UGFxData_LocalPlayer_TA::HandleReceivedPRI(class APlayerController_X* PC)
 	this->ProcessEvent(uFnHandleReceivedPRI, &HandleReceivedPRI_Params, nullptr);
 };
 
+// Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengeProgressChanged
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UChallengeManager_TA*    Manager                        (CPF_Parm)
+// uint32_t                       bFullResync                    (CPF_Parm)
+
+void UGFxData_LocalPlayer_TA::HandleEventChallengeProgressChanged(class UChallengeManager_TA* Manager, bool bFullResync)
+{
+	static UFunction* uFnHandleEventChallengeProgressChanged = nullptr;
+
+	if (!uFnHandleEventChallengeProgressChanged)
+	{
+		uFnHandleEventChallengeProgressChanged = UFunction::FindFunction("Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengeProgressChanged");
+	}
+
+	UGFxData_LocalPlayer_TA_execHandleEventChallengeProgressChanged_Params HandleEventChallengeProgressChanged_Params;
+	memset(&HandleEventChallengeProgressChanged_Params, 0, sizeof(HandleEventChallengeProgressChanged_Params));
+	HandleEventChallengeProgressChanged_Params.Manager = Manager;
+	HandleEventChallengeProgressChanged_Params.bFullResync = bFullResync;
+
+	this->ProcessEvent(uFnHandleEventChallengeProgressChanged, &HandleEventChallengeProgressChanged_Params, nullptr);
+};
+
+// Function TAGame.GFxData_LocalPlayer_TA.UpdateChallengeProgressForCompetitive
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// class UChallengeManager_TA*    Manager                        (CPF_Parm)
+
+void UGFxData_LocalPlayer_TA::UpdateChallengeProgressForCompetitive(class UChallengeManager_TA* Manager)
+{
+	static UFunction* uFnUpdateChallengeProgressForCompetitive = nullptr;
+
+	if (!uFnUpdateChallengeProgressForCompetitive)
+	{
+		uFnUpdateChallengeProgressForCompetitive = UFunction::FindFunction("Function TAGame.GFxData_LocalPlayer_TA.UpdateChallengeProgressForCompetitive");
+	}
+
+	UGFxData_LocalPlayer_TA_execUpdateChallengeProgressForCompetitive_Params UpdateChallengeProgressForCompetitive_Params;
+	memset(&UpdateChallengeProgressForCompetitive_Params, 0, sizeof(UpdateChallengeProgressForCompetitive_Params));
+	UpdateChallengeProgressForCompetitive_Params.Manager = Manager;
+
+	this->ProcessEvent(uFnUpdateChallengeProgressForCompetitive, &UpdateChallengeProgressForCompetitive_Params, nullptr);
+};
+
 // Function TAGame.GFxData_LocalPlayer_TA.HandleReceivedController
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
 // Parameter Info:
@@ -211559,30 +211660,6 @@ void UMenuTreeNode_Playlist_TA::SetGatedPlaylistsInfo(int32_t RequiredLevel, con
 	memcpy_s(&SetGatedPlaylistsInfo_Params.RequiredChallenges, sizeof(SetGatedPlaylistsInfo_Params.RequiredChallenges), &RequiredChallenges, sizeof(RequiredChallenges));
 
 	this->ProcessEvent(uFnSetGatedPlaylistsInfo, &SetGatedPlaylistsInfo_Params, nullptr);
-};
-
-// Function TAGame.MenuTreeNode_Playlist_TA.CheckCompletedChallengesForCompetitive
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class ULocalPlayer_TA*         InLocalPlayer                  (CPF_Parm)
-
-bool UMenuTreeNode_Playlist_TA::CheckCompletedChallengesForCompetitive(class ULocalPlayer_TA* InLocalPlayer)
-{
-	static UFunction* uFnCheckCompletedChallengesForCompetitive = nullptr;
-
-	if (!uFnCheckCompletedChallengesForCompetitive)
-	{
-		uFnCheckCompletedChallengesForCompetitive = UFunction::FindFunction("Function TAGame.MenuTreeNode_Playlist_TA.CheckCompletedChallengesForCompetitive");
-	}
-
-	UMenuTreeNode_Playlist_TA_execCheckCompletedChallengesForCompetitive_Params CheckCompletedChallengesForCompetitive_Params;
-	memset(&CheckCompletedChallengesForCompetitive_Params, 0, sizeof(CheckCompletedChallengesForCompetitive_Params));
-	CheckCompletedChallengesForCompetitive_Params.InLocalPlayer = InLocalPlayer;
-
-	this->ProcessEvent(uFnCheckCompletedChallengesForCompetitive, &CheckCompletedChallengesForCompetitive_Params, nullptr);
-
-	return CheckCompletedChallengesForCompetitive_Params.ReturnValue;
 };
 
 // Function TAGame.MenuTreeNode_Playlist_TA.UpdateLock

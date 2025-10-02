@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
@@ -24408,7 +24408,6 @@ struct UCarMeshComponentBase_TA_execApplyPaintSettings_Params
 	// int32_t                                         EndIdx;                                           // 0x0064 (0x0004) [0x0000000000000000]               
 	// class UMeshComponent*                           Mesh;                                             // 0x0068 (0x0008) [0x0000000004000000] (CPF_EditInline)
 	// int32_t                                         I;                                                // 0x0070 (0x0004) [0x0000000000000000]               
-	// float                                           MaxWaitTime;                                      // 0x0074 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.CarMeshComponentBase_TA.WaitForMipLevelsToStream
@@ -42532,15 +42531,21 @@ struct UFirstTimeExperienceRedefinition_TA_execRedefineFTEGroups_Params
 	// class TArray<class FName>                       DifferenceLocal_0x1;                              // 0x0070 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
-// Function TAGame.PlayerLegacyStatusSave_TA.__bOnlineSet__ChangeNotifyFunc
-// [0x00000000] 
-struct UPlayerLegacyStatusSave_TA_exec__bOnlineSet__ChangeNotifyFunc_Params
+// Function TAGame.PlayerLegacyStatusSave_TA.OnLoad
+// [0x400080002] 
+struct UPlayerLegacyStatusSave_TA_execOnLoad_Params
 {
 };
 
 // Function TAGame.PlayerLegacyStatusSave_TA.EventFailedToUpdateOnlineStatus
 // [0x00120001] 
 struct UPlayerLegacyStatusSave_TA_execEventFailedToUpdateOnlineStatus_Params
+{
+};
+
+// Function TAGame.PlayerLegacyStatusSave_TA.EventUpdatedOnlineStatus
+// [0x00120001] 
+struct UPlayerLegacyStatusSave_TA_execEventUpdatedOnlineStatus_Params
 {
 };
 
@@ -44263,6 +44268,18 @@ struct UOnlineGameDedicatedServer_TA_execGetTeamScore_Params
 	// class AGameEvent_Team_TA*                       GameEvent;                                        // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.OnlineGameDedicatedServer_TA.ShutdownDDoSPreventionService
+// [0x00040001] 
+struct UOnlineGameDedicatedServer_TA_execShutdownDDoSPreventionService_Params
+{
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.StartDDoSPreventionService
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_TA_execStartDDoSPreventionService_Params
+{
+};
+
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleVoiceTokenCacheError
 // [0x00840003] 
 struct UOnlineGameDedicatedServer_TA_execHandleVoiceTokenCacheError_Params
@@ -44554,6 +44571,7 @@ struct UOnlineGameDedicatedServer_TA_execHandleNetMetricKick_Params
 struct UOnlineGameDedicatedServer_TA_execHandleGameEventStarted_Params
 {
 	class AGameEvent_Soccar_TA*                        GameEvent;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// uint32_t                                        bDDoSPreventionEnabledOnPlaylist : 1;             // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleGameInitialized
@@ -61029,11 +61047,28 @@ struct UGFxData_LocalPlayer_TA_execHandleReceivedPRI_Params
 	// class APRI_TA*                                  PRI;                                              // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengeProgressChanged
+// [0x00040003] 
+struct UGFxData_LocalPlayer_TA_execHandleEventChallengeProgressChanged_Params
+{
+	class UChallengeManager_TA*                        Manager;                                          // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	uint32_t                                           bFullResync : 1;                                  // 0x0008 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+};
+
+// Function TAGame.GFxData_LocalPlayer_TA.UpdateChallengeProgressForCompetitive
+// [0x00040003] 
+struct UGFxData_LocalPlayer_TA_execUpdateChallengeProgressForCompetitive_Params
+{
+	class UChallengeManager_TA*                        Manager;                                          // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	// uint32_t                                        bChallengesComplete : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
 // Function TAGame.GFxData_LocalPlayer_TA.HandleReceivedController
 // [0x00040003] 
 struct UGFxData_LocalPlayer_TA_execHandleReceivedController_Params
 {
 	class UPlayer*                                     PlayerRef;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class UChallengeManager_TA*                     ChallengeManager;                                 // 0x0008 (0x0008) [0x0001000000000000]               
 };
 
 // Function TAGame.GFxData_LocalPlayer_TA.CheckBootMessages
@@ -77098,19 +77133,6 @@ struct UMenuTreeNode_Playlist_TA_execSetGatedPlaylistsInfo_Params
 	int32_t                                            RequiredLevel;                                    // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<int32_t>                              RequiredChallenges;                               // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class TArray<class ULocalPlayer_TA*>            OfTypeLocal_0x1;                                  // 0x0018 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class ULocalPlayer_TA*                          InLocalPlayer;                                    // 0x0028 (0x0008) [0x0000000000000000]               
-	// class UGFxData_LocalPlayer_TA*                  InGFxLocalPlayer;                                 // 0x0030 (0x0008) [0x0000000000000000]               
-};
-
-// Function TAGame.MenuTreeNode_Playlist_TA.CheckCompletedChallengesForCompetitive
-// [0x00040003] 
-struct UMenuTreeNode_Playlist_TA_execCheckCompletedChallengesForCompetitive_Params
-{
-	class ULocalPlayer_TA*                             InLocalPlayer;                                    // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UOnlinePlayer_TA*                         OnlinePlayer;                                     // 0x0010 (0x0008) [0x0000000000000000]               
-	// class UChallengeManager_TA*                     ChallengeManager;                                 // 0x0018 (0x0008) [0x0001000000000000]               
 };
 
 // Function TAGame.MenuTreeNode_Playlist_TA.UpdateLock

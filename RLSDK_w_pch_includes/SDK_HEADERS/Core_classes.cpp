@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.cpp
@@ -23,15 +23,9 @@
 # ========================================================================================= #
 */
 
-class TArray<class UObject*>* UObject::GObjObjects()
-{
-	return reinterpret_cast<TArray<UObject*>*>(GObjects);
-}
+class TArray<class UObject*>* UObject::GObjObjects() { return reinterpret_cast<TArray<UObject*>*>(GObjects); }
 
-std::string UObject::GetName()
-{
-	return this->Name.ToString();
-}
+std::string UObject::GetName() { return this->Name.ToString(); }
 
 std::string UObject::GetNameCPP()
 {
@@ -74,9 +68,7 @@ std::string UObject::GetFullName()
 	std::string fullName = this->GetName();
 
 	for (UObject* uOuter = this->Outer; uOuter; uOuter = uOuter->Outer)
-	{
 		fullName = (uOuter->GetName() + "." + fullName);
-	}
 
 	fullName = (this->Class->GetName() + " " + fullName);
 	return fullName;
@@ -85,18 +77,15 @@ std::string UObject::GetFullName()
 class UObject* UObject::GetPackageObj()
 {
 	UObject* uPackage = nullptr;
-
 	for (UObject* uOuter = this->Outer; uOuter; uOuter = uOuter->Outer)
-	{
 		uPackage = uOuter;
-	}
 
 	return uPackage;
 }
 
 class UClass* UObject::FindClass(const std::string& classFullName)
 {
-	static bool classesAreCached = false;
+	static bool                                     classesAreCached = false;
 	static std::unordered_map<std::string, UClass*> classCache;
 
 	if (!classesAreCached)
@@ -124,12 +113,11 @@ class UClass* UObject::FindClass(const std::string& classFullName)
 
 bool UObject::IsA(class UClass* uClass)
 {
-	for (UClass* uSuperClass = reinterpret_cast<UClass*>(this->Class); uSuperClass; uSuperClass = reinterpret_cast<UClass*>(uSuperClass->SuperField))
+	for (UClass* uSuperClass = reinterpret_cast<UClass*>(this->Class); uSuperClass;
+	    uSuperClass          = reinterpret_cast<UClass*>(uSuperClass->SuperField))
 	{
 		if (uSuperClass == uClass)
-		{
 			return true;
-		}
 	}
 
 	return false;
@@ -138,13 +126,10 @@ bool UObject::IsA(class UClass* uClass)
 bool UObject::IsA(int32_t objInternalInteger)
 {
 	UClass* uClass = reinterpret_cast<UClass*>(UObject::GObjObjects()->at(objInternalInteger)->Class);
+	if (!uClass)
+		return false;
 
-	if (uClass)
-	{
-		return this->IsA(uClass);
-	}
-
-	return false;
+	return this->IsA(uClass);
 }
 
 template<typename T> T GetVirtualFunction(const void* instance, size_t index)
@@ -11778,10 +11763,11 @@ void UFileSystem::FindFiles(const class FString& Path, class TArray<class FStrin
 
 class UFunction* UFunction::FindFunction(const std::string& functionFullName)
 {
-	static bool initialized = false;
+	static bool                                        initialized = false;
 	static std::unordered_map<std::string, UFunction*> functionCache;
 
-	// cache all functions the first time FindFunction is called (can also be done in mod's initialization, where game stutters are expected)
+	// cache all functions the first time FindFunction is called (can also be done in mod's initialization, where game stutters are
+	// expected)
 	if (!initialized)
 	{
 		for (UObject* uObject : *UObject::GObjObjects())

@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.56) 09/17/2025 10:38AM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: TAGame_classes.hpp
@@ -25009,10 +25009,10 @@ class UPlayerLegacyStatusSave_TA : public USaveObject_TA
 public:
 	ELegacyBoxStatus                                   LegacyStatus;                                  // 0x00C8 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x00C9 (0x0003) MISSED OFFSET
-	uint32_t                                           bOnlineSet : 1;                                // 0x00CC (0x0004) [0x0008000000000000] [0x00000001] 
+	uint32_t                                           bOnlineSet : 1;                                // 0x00CC (0x0004) [0x0000000000000000] [0x00000001] 
 	class TArray<struct FOnlineProductData>            OnlineProducts;                                // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventFailedToUpdateOnlineStatus__Delegate;   // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __bOnlineSet__ChangeNotify;                    // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventUpdatedOnlineStatus__Delegate;          // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventFailedToUpdateOnlineStatus__Delegate;   // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -25027,8 +25027,9 @@ public:
 		return uClassPointer;
 	};
 
-	void __bOnlineSet__ChangeNotifyFunc();
+	void OnLoad();
 	void EventFailedToUpdateOnlineStatus();
+	void EventUpdatedOnlineStatus();
 };
 
 // Class TAGame.__FirstTimeExperienceSave_TA__GetGroupIndex_0x1
@@ -25896,21 +25897,21 @@ public:
 };
 
 // Class TAGame.OnlineGameDedicatedServer_TA
-// 0x0068 (0x03F8 - 0x0460)
+// 0x0068 (0x0410 - 0x0478)
 class UOnlineGameDedicatedServer_TA : public UOnlineGameDedicatedServer_X
 {
 public:
-	class UOnlineGameTourServer_TA*                    Tournaments;                                   // 0x03F8 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	int32_t                                            LastPlaylistID;                                // 0x0400 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x0404 (0x0004) MISSED OFFSET
-	class TArray<class UObject*>                       AllRelevantProducts;                           // 0x0408 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class UReplay_TA*                                  ReplayToUpload;                                // 0x0418 (0x0008) [0x0000000000000000]               
-	class ARLBot_SessionRecorder_TA*                   FlatbufferSession;                             // 0x0420 (0x0008) [0x0001000000000000]               
-	class UEOSVoiceTokenCache_TA*                      VoiceTokenCache;                               // 0x0428 (0x0008) [0x0001000000000000]               
-	class UNetBucketRecorder_TA*                       NetMetricsRecorder;                            // 0x0430 (0x0008) [0x0000000000000000]               
-	class UActorChannelMonitor_TA*                     ActorChannelMonitor;                           // 0x0438 (0x0008) [0x0000000000000000]               
-	class UGameModesConfig_TA*                         GameModesConfig;                               // 0x0440 (0x0008) [0x0000800000000000]               
-	struct FScriptDelegate                             __EventGameEventInitialized__Delegate;         // 0x0448 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UOnlineGameTourServer_TA*                    Tournaments;                                   // 0x0410 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            LastPlaylistID;                                // 0x0418 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x041C (0x0004) MISSED OFFSET
+	class TArray<class UObject*>                       AllRelevantProducts;                           // 0x0420 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class UReplay_TA*                                  ReplayToUpload;                                // 0x0430 (0x0008) [0x0000000000000000]               
+	class ARLBot_SessionRecorder_TA*                   FlatbufferSession;                             // 0x0438 (0x0008) [0x0001000000000000]               
+	class UEOSVoiceTokenCache_TA*                      VoiceTokenCache;                               // 0x0440 (0x0008) [0x0001000000000000]               
+	class UNetBucketRecorder_TA*                       NetMetricsRecorder;                            // 0x0448 (0x0008) [0x0000000000000000]               
+	class UActorChannelMonitor_TA*                     ActorChannelMonitor;                           // 0x0450 (0x0008) [0x0000000000000000]               
+	class UGameModesConfig_TA*                         GameModesConfig;                               // 0x0458 (0x0008) [0x0000800000000000]               
+	struct FScriptDelegate                             __EventGameEventInitialized__Delegate;         // 0x0460 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -25927,6 +25928,8 @@ public:
 
 	void HandleActiveRoundChanged(class AGameEvent_Soccar_TA* GameEvent);
 	int32_t GetTeamScore(int32_t TeamIdx);
+	void ShutdownDDoSPreventionService();
+	void StartDDoSPreventionService();
 	void HandleVoiceTokenCacheError(const class TArray<struct FVoiceRoomTokenRequest>& Requests, class UError* RequestError);
 	void HandleVoiceTokenCacheResponse(const class TArray<struct FVoiceRoomTokenRequest>& Requests, const class TArray<struct FPlayerVoiceRoomCredentials>& NewCredentials);
 	void RequestVoiceRoomToken(const struct FUniqueNetId& PlayerID, const class FString& RoomId, bool bClearCache);
@@ -33064,9 +33067,10 @@ public:
 	uint32_t                                           bCheckedBootMessage : 1;                       // 0x0098 (0x0004) [0x0000000000000000] [0x00400000] 
 	uint32_t                                           bUseSteamInput : 1;                            // 0x0098 (0x0004) [0x0000004040000000] [0x00800000] (CPF_DataBinding | CPF_PrivateWrite)
 	uint32_t                                           bControllerConnected : 1;                      // 0x0098 (0x0004) [0x0000000000002000] [0x01000000] (CPF_Transient)
-	uint32_t                                           bCompletedChallengesForCompetitive : 1;        // 0x0098 (0x0004) [0x0000000000000000] [0x02000000] 
-	uint32_t                                           bLegacyPlayer : 1;                             // 0x0098 (0x0004) [0x0000000000000000] [0x04000000] 
-	uint32_t                                           bGuestAccount : 1;                             // 0x0098 (0x0004) [0x0000000000000000] [0x08000000] 
+	uint32_t                                           bPrimaryPlayerPendingOrphaned : 1;             // 0x0098 (0x0004) [0x0000004000002000] [0x02000000] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bCompletedChallengesForCompetitive : 1;        // 0x0098 (0x0004) [0x0000000000000000] [0x04000000] 
+	uint32_t                                           bLegacyPlayer : 1;                             // 0x0098 (0x0004) [0x0000000000000000] [0x08000000] 
+	uint32_t                                           bGuestAccount : 1;                             // 0x0098 (0x0004) [0x0000000000000000] [0x10000000] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 	class FString                                      SaveDataError;                                 // 0x00A0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FString                                      OnlineError;                                   // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
@@ -33145,6 +33149,8 @@ public:
 	class UOnlineGame_X* GetOnlineGame();
 	void HandleGetAvatar(const struct FUniqueNetId& InPlayerID, class UTexture* Avatar, const class FString& OnlinePlayerName);
 	void HandleReceivedPRI(class APlayerController_X* PC);
+	void HandleEventChallengeProgressChanged(class UChallengeManager_TA* Manager, bool bFullResync);
+	void UpdateChallengeProgressForCompetitive(class UChallengeManager_TA* Manager);
 	void HandleReceivedController(class UPlayer* PlayerRef);
 	void CheckBootMessages();
 	void HandleOnlineNameChanged(class UOnlinePlayer_X* P);
@@ -40960,7 +40966,6 @@ public:
 	class UGFxData_Playlist_TA* GetGFxPlaylistRow(class UGFxShell_X* optionalInShell);
 	bool HandleLockForGatedPlaylists();
 	void SetGatedPlaylistsInfo(int32_t RequiredLevel, const class TArray<int32_t>& RequiredChallenges);
-	bool CheckCompletedChallengesForCompetitive(class ULocalPlayer_TA* InLocalPlayer);
 	void UpdateLock();
 	void UpdateSelected(bool bNewSelected);
 	void UpdateSecondaryTitle();
