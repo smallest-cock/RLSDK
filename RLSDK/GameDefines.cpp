@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.cpp
@@ -17,8 +17,9 @@
 # ========================================================================================= #
 */
 
-class TArray<class UObject*>* GObjects{};
+GMallocWrapper GMalloc{};
 class TArray<class FNameEntry*>* GNames{};
+class TArray<class UObject*>* GObjects{};
 
 /*
 # ========================================================================================= #

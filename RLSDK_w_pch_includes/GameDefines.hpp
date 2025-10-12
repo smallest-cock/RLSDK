@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/01/2025 06:46PM
+# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -331,11 +331,19 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-// GObjects
-#define GObjects_Offset		(uintptr_t)0x023C8888
-// GNames
-#define GNames_Offset		(uintptr_t)0x023C8840
+#define GMALLOC_OFFSET    static_cast<uintptr_t>(0x02299A38)
+#define GNAMES_OFFSET     static_cast<uintptr_t>(0x023C8840)
+#define GOBJECTS_OFFSET   static_cast<uintptr_t>(0x023C8888)
 
+// Process Event
+#define ProcessEvent_Pattern	(const uint8_t*)""
+#define ProcessEvent_Mask		(const char*)""
+
+/*
+# ========================================================================================= #
+# Classes
+# ========================================================================================= #
+*/
 
 namespace StringUtils
 {
@@ -361,12 +369,66 @@ namespace StringUtils
 }
 
 
+template <typename T> T getVirtualFunc(const void* instance, size_t index)
+{
+	auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
+	return reinterpret_cast<T>(vtable[index]);
+}
 
-/*
-# ========================================================================================= #
-# Classes
-# ========================================================================================= #
-*/
+// Wrapper for GMalloc
+//
+// Usage: void* myNewMem = GMalloc.Malloc(100);
+class GMallocWrapper
+{
+	void** m_gmallocAddress = nullptr;
+
+public:
+	GMallocWrapper() = default;
+	GMallocWrapper(uintptr_t gmallocAddress) : m_gmallocAddress(reinterpret_cast<void**>(gmallocAddress)) {}
+
+private:
+	template <typename T> T getVirtualFunc(const void* instance, size_t index)
+	{
+		auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
+		return reinterpret_cast<T>(vtable[index]);
+	}
+
+public:
+	// always dereference GMalloc to get the current FMalloc instance
+	void* getFMallocInstance() const { return m_gmallocAddress ? *m_gmallocAddress : nullptr; }
+
+	void* Malloc(DWORD Count)
+	{
+		void* fmallocInstance = getFMallocInstance();
+		if (!fmallocInstance || Count == 0)
+			return nullptr;
+
+		using Malloc_t = void*(__thiscall*)(void*, DWORD);
+		return getVirtualFunc<Malloc_t>(fmallocInstance, 2)(fmallocInstance, Count);
+	}
+
+	void* Realloc(void* Original, SIZE_T Count)
+	{
+		void* fmallocInstance = getFMallocInstance();
+		if (!fmallocInstance || Count == 0)
+			return nullptr;
+
+		using Realloc_t = void*(__thiscall*)(void*, void*, SIZE_T);
+		return getVirtualFunc<Realloc_t>(fmallocInstance, 3)(fmallocInstance, Original, Count);
+	}
+
+	void Free(void* Original)
+	{
+		void* fmallocInstance = getFMallocInstance();
+		if (!fmallocInstance || !Original)
+			return;
+
+		using Free_t = void(__thiscall*)(void*, void*);
+		getVirtualFunc<Free_t>(fmallocInstance, 4)(fmallocInstance, Original);
+	}
+};
+
+extern GMallocWrapper GMalloc;
 
 template <typename TArray> class TIterator
 {
@@ -419,17 +481,19 @@ public:
 	bool operator!=(const TIterator& other) const { return !(*this == other); }
 };
 
+#ifndef USE_GMALLOC
 namespace TArrayUtils
 {
-	struct TArrayBase
-	{
-		void* data;
-		int32_t size;
-		int32_t capacity;
-	};
+struct TArrayBase
+{
+	void*   data;
+	int32_t size;
+	int32_t capacity;
+};
 
-	bool extendCapacity(void* inOldTArray, int32_t newCapacity, void* outNewTArray, int32_t elementSize);
-}
+bool extendCapacity(void* inOldTArray, int32_t newCapacity, void* outNewTArray, int32_t elementSize);
+} // namespace TArrayUtils
+#endif
 
 template <typename InElementType> class TArray
 {
@@ -442,88 +506,111 @@ public:
 	using Iterator              = TIterator<TArray<ElementType>>;
 
 private:
-	ElementPointer ArrayData;
-	int32_t        ArrayCount;
-	int32_t        ArrayMax;
+	ElementPointer m_data;
+	int32_t        m_size;
+	int32_t        m_capacity;
 
 public:
-	TArray() : ArrayData(nullptr), ArrayCount(0), ArrayMax(0) {}
-
-	~TArray()
-	{
-		clear();
-		//::operator delete(ArrayData, ArrayMax * sizeof(ElementType));
-	}
+	TArray() : m_data(nullptr), m_size(0), m_capacity(0) {}
+	~TArray() { clear(); }
 
 public:
-	ElementConstReference operator[](int32_t index) const { return ArrayData[index]; }
-	ElementReference      operator[](int32_t index) { return ArrayData[index]; }
-	ElementConstReference at(int32_t index) const { return ArrayData[index]; }
-	ElementReference      at(int32_t index) { return ArrayData[index]; }
-	ElementConstPointer   data() const { return ArrayData; }
+	ElementConstReference operator[](int32_t index) const { return m_data[index]; }
+	ElementReference      operator[](int32_t index) { return m_data[index]; }
+	ElementConstReference at(int32_t index) const { return m_data[index]; }
+	ElementReference      at(int32_t index) { return m_data[index]; }
+	ElementConstPointer   data() const { return m_data; }
 
 	void push_back(ElementConstReference newElement)
 	{
-		if (ArrayCount >= ArrayMax)
-			ReAllocate(ArrayCount + 1);
+		if (m_size >= m_capacity)
+			ReAllocate(m_size + 1);
 
-		new (&ArrayData[ArrayCount]) ElementType(newElement);
-		ArrayCount++;
+		new (&m_data[m_size]) ElementType(newElement);
+		m_size++;
 	}
 
-	void push_back(ElementReference& newElement)
+	void push_back(ElementType&& newElement)
 	{
-		if (ArrayCount >= ArrayMax)
-			ReAllocate(ArrayCount + 1);
+		if (m_size >= m_capacity)
+			ReAllocate(m_size + 1);
 
-		new (&ArrayData[ArrayCount]) ElementType(newElement);
-		ArrayCount++;
+		new (&m_data[m_size]) ElementType(std::move(newElement));
+		m_size++;
 	}
 
 	void pop_back()
 	{
-		if (ArrayCount <= 0)
+		if (m_size <= 0)
 			return;
 
-		ArrayCount--;
-		ArrayData[ArrayCount].~ElementType();
+		m_size--;
+		DestroyElement(&m_data[m_size]);
 	}
 
 	void clear()
 	{
-		for (int32_t i = 0; i < ArrayCount; ++i)
-			ArrayData[i].~ElementType();
+		if constexpr (!std::is_trivially_destructible_v<ElementType>)
+		{
+			for (int32_t i = 0; i < m_size; ++i)
+				DestroyElement(&m_data[i]);
+		}
 
-		ArrayCount = 0;
+		m_size = 0;
 	}
 
-	int32_t size() const { return ArrayCount; }
-	int32_t capacity() const { return ArrayMax; }
+	int32_t size() const { return m_size; }
+	int32_t capacity() const { return m_capacity; }
 
 	bool empty() const
 	{
-		if (ArrayData)
+		if (m_data)
 			return (size() == 0);
 
 		return true;
 	}
 
-	Iterator begin() const { return Iterator(ArrayData); }
-	Iterator end() const { return Iterator(ArrayData + ArrayCount); }
+	Iterator begin() const { return Iterator(m_data); }
+	Iterator end() const { return Iterator(m_data + m_size); }
 
 private:
+	static void DestroyElement(ElementPointer element)
+	{
+		if constexpr (!std::is_trivially_destructible_v<ElementType>)
+			element->~ElementType();
+	}
+
 	void ReAllocate(int32_t newArrayMax)
 	{
-		if (newArrayMax <= ArrayMax) // only reallocate if we're growing the cacpacity, shrinking would be kinda pointless
+#ifdef USE_GMALLOC
+		if (newArrayMax <= m_capacity)
+			return; // nothing to do
+
+		const size_t newByteSize = static_cast<size_t>(newArrayMax) * sizeof(ElementType);
+		const size_t oldByteSize = static_cast<size_t>(m_capacity) * sizeof(ElementType);
+
+		void* newData = GMalloc.Realloc(m_data, newByteSize);
+		if (!newData)
+			return; // allocation failed (ideally handle more gracefully)
+
+		// zero the newly allocated tail to avoid uninitialized elements
+		if (newArrayMax > m_capacity)
+			std::memset(static_cast<uint8_t*>(newData) + oldByteSize, 0, newByteSize - oldByteSize);
+
+		m_data     = reinterpret_cast<ElementPointer>(newData);
+		m_capacity = newArrayMax;
+#else
+		if (newArrayMax <= m_capacity) // only reallocate if we're growing the cacpacity, shrinking would be kinda pointless
 			return;
 
 		TArrayUtils::TArrayBase tempArray{};
 		if (TArrayUtils::extendCapacity(this, newArrayMax, &tempArray, sizeof(ElementType)))
 		{
-			ArrayData  = reinterpret_cast<ElementPointer>(tempArray.data);
-			ArrayCount = tempArray.size;
-			ArrayMax   = tempArray.capacity;
+			m_data     = reinterpret_cast<ElementPointer>(tempArray.data);
+			m_size     = tempArray.size;
+			m_capacity = tempArray.capacity;
 		}
+#endif
 	}
 };
 
@@ -633,8 +720,8 @@ public:
 	TMap<TKey, TValue>& operator=(const TMap<TKey, TValue>& other) { return assign(other); }
 };
 
-extern class TArray<class UObject*>* GObjects;
 extern class TArray<class FNameEntry*>* GNames;
+extern class TArray<class UObject*>* GObjects;
 
 /*
 # ========================================================================================= #
