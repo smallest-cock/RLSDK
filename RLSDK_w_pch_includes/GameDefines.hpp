@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: GameDefines.hpp
@@ -331,9 +331,9 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define GMALLOC_OFFSET    static_cast<uintptr_t>(0x02299A38)
-#define GNAMES_OFFSET     static_cast<uintptr_t>(0x023C8840)
-#define GOBJECTS_OFFSET   static_cast<uintptr_t>(0x023C8888)
+#define GMALLOC_OFFSET    static_cast<uintptr_t>(0x022A7D70)
+#define GNAMES_OFFSET     static_cast<uintptr_t>(0x023D6D80)
+#define GOBJECTS_OFFSET   static_cast<uintptr_t>(0x023D6DC8)
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""
@@ -347,25 +347,29 @@ enum EClassCastFlag : uint32_t
 
 namespace StringUtils
 {
-	inline std::string ToString(const std::wstring& str)
-	{
-		if (str.empty()) return "";
-		int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
-		if (size <= 0) return "";
-		std::string return_str(size - 1, 0);
-		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, return_str.data(), size, nullptr, nullptr);
-		return return_str;
-	}
+    inline std::string ToString(const std::wstring& str)
+    {
+        if (str.empty())
+            return "";
+        int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
+        if (size <= 0)
+            return "";
+        std::string returnStr(size - 1, 0);
+        WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(returnStr.data()), size, nullptr, nullptr);
+        return returnStr;
+    }
 
-	inline std::wstring ToWideString(const std::string& str)
-	{
-		if (str.empty()) return L"";
-		int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
-		if (size <= 0) return L"";
-		std::wstring return_str(size - 1, 0);
-		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, return_str.data(), size);
-		return return_str;
-	}
+    inline std::wstring ToWideString(const std::string& str)
+    {
+        if (str.empty())
+            return L"";
+        int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
+        if (size <= 0)
+            return L"";
+        std::wstring returnStr(size - 1, 0);
+        MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(returnStr.data()), size);
+        return returnStr;
+    }
 }
 
 

@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
@@ -8610,35 +8610,12 @@ EFeaturePrivilegeLevel UOnlinePlayer_X::CanPlayOnline()
 	return static_cast<EFeaturePrivilegeLevel>(CanPlayOnline_Params.ReturnValue);
 };
 
-// Function ProjectX.OnlinePlayer_X.HandlePlayerCountryReceived
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// struct FUniqueNetId            InPlayerID                     (CPF_Parm | CPF_NeedCtorLink)
-// class FString                  Country                        (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlinePlayer_X::HandlePlayerCountryReceived(const struct FUniqueNetId& InPlayerID, const class FString& Country)
-{
-	static UFunction* uFnHandlePlayerCountryReceived = nullptr;
-
-	if (!uFnHandlePlayerCountryReceived)
-	{
-		uFnHandlePlayerCountryReceived = UFunction::FindFunction("Function ProjectX.OnlinePlayer_X.HandlePlayerCountryReceived");
-	}
-
-	UOnlinePlayer_X_execHandlePlayerCountryReceived_Params HandlePlayerCountryReceived_Params;
-	memset(&HandlePlayerCountryReceived_Params, 0, sizeof(HandlePlayerCountryReceived_Params));
-	memcpy_s(&HandlePlayerCountryReceived_Params.InPlayerID, sizeof(HandlePlayerCountryReceived_Params.InPlayerID), &InPlayerID, sizeof(InPlayerID));
-	memcpy_s(&HandlePlayerCountryReceived_Params.Country, sizeof(HandlePlayerCountryReceived_Params.Country), &Country, sizeof(Country));
-
-	this->ProcessEvent(uFnHandlePlayerCountryReceived, &HandlePlayerCountryReceived_Params, nullptr);
-};
-
 // Function ProjectX.OnlinePlayer_X.GetPlayerCountry
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020002] (FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
-// struct FScriptDelegate         Handler                        (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
-void UOnlinePlayer_X::GetPlayerCountry(const struct FScriptDelegate& Handler)
+class FString UOnlinePlayer_X::GetPlayerCountry()
 {
 	static UFunction* uFnGetPlayerCountry = nullptr;
 
@@ -8649,9 +8626,10 @@ void UOnlinePlayer_X::GetPlayerCountry(const struct FScriptDelegate& Handler)
 
 	UOnlinePlayer_X_execGetPlayerCountry_Params GetPlayerCountry_Params;
 	memset(&GetPlayerCountry_Params, 0, sizeof(GetPlayerCountry_Params));
-	memcpy_s(&GetPlayerCountry_Params.Handler, sizeof(GetPlayerCountry_Params.Handler), &Handler, sizeof(Handler));
 
 	this->ProcessEvent(uFnGetPlayerCountry, &GetPlayerCountry_Params, nullptr);
+
+	return GetPlayerCountry_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlinePlayer_X.CanCommunicateVoice
@@ -9509,27 +9487,6 @@ void UOnlinePlayer_X::EventCanPlayOnlineChanged(class UOnlinePlayer_X* Player)
 	EventCanPlayOnlineChanged_Params.Player = Player;
 
 	this->ProcessEvent(uFnEventCanPlayOnlineChanged, &EventCanPlayOnlineChanged_Params, nullptr);
-};
-
-// Function ProjectX.OnlinePlayer_X.EventCountryUpdated
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
-// Parameter Info:
-// class FString                  Country                        (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlinePlayer_X::EventCountryUpdated(const class FString& Country)
-{
-	static UFunction* uFnEventCountryUpdated = nullptr;
-
-	if (!uFnEventCountryUpdated)
-	{
-		uFnEventCountryUpdated = UFunction::FindFunction("Function ProjectX.OnlinePlayer_X.EventCountryUpdated");
-	}
-
-	UOnlinePlayer_X_execEventCountryUpdated_Params EventCountryUpdated_Params;
-	memset(&EventCountryUpdated_Params, 0, sizeof(EventCountryUpdated_Params));
-	memcpy_s(&EventCountryUpdated_Params.Country, sizeof(EventCountryUpdated_Params.Country), &Country, sizeof(Country));
-
-	this->ProcessEvent(uFnEventCountryUpdated, &EventCountryUpdated_Params, nullptr);
 };
 
 // Function ProjectX.OnlinePlayer_X.EventLoginStatusChanged
@@ -10718,11 +10675,10 @@ bool UOnlinePlayerAuthentication_X::RequiresAuthTicket()
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.ReLogin
-// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
-// uint32_t                       bCleanUpConsecutiveAuthFailures (CPF_OptionalParm | CPF_Parm)
 
-void UOnlinePlayerAuthentication_X::ReLogin(bool bCleanUpConsecutiveAuthFailures)
+void UOnlinePlayerAuthentication_X::ReLogin()
 {
 	static UFunction* uFnReLogin = nullptr;
 
@@ -10733,7 +10689,6 @@ void UOnlinePlayerAuthentication_X::ReLogin(bool bCleanUpConsecutiveAuthFailures
 
 	UOnlinePlayerAuthentication_X_execReLogin_Params ReLogin_Params;
 	memset(&ReLogin_Params, 0, sizeof(ReLogin_Params));
-	ReLogin_Params.bCleanUpConsecutiveAuthFailures = bCleanUpConsecutiveAuthFailures;
 
 	this->ProcessEvent(uFnReLogin, &ReLogin_Params, nullptr);
 };
@@ -10779,11 +10734,10 @@ void UOnlinePlayerAuthentication_X::SetAuthLoginError(class UError* E)
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.UpdateLoginState
-// [0x00084002] (FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Protected | FUNC_AllFlags)
+// [0x00080002] (FUNC_Defined | FUNC_Protected | FUNC_AllFlags)
 // Parameter Info:
-// uint32_t                       instance                       (CPF_OptionalParm | CPF_Parm)
 
-void UOnlinePlayerAuthentication_X::UpdateLoginState(bool instance)
+void UOnlinePlayerAuthentication_X::UpdateLoginState()
 {
 	static UFunction* uFnUpdateLoginState = nullptr;
 
@@ -10794,7 +10748,6 @@ void UOnlinePlayerAuthentication_X::UpdateLoginState(bool instance)
 
 	UOnlinePlayerAuthentication_X_execUpdateLoginState_Params UpdateLoginState_Params;
 	memset(&UpdateLoginState_Params, 0, sizeof(UpdateLoginState_Params));
-	UpdateLoginState_Params.instance = instance;
 
 	this->ProcessEvent(uFnUpdateLoginState, &UpdateLoginState_Params, nullptr);
 };
@@ -20499,6 +20452,27 @@ void UOnlineLegalTextEOS_X::Sync()
 	this->ProcessEvent(uFnSync, &Sync_Params, nullptr);
 };
 
+// Function ProjectX.OnlineLegalTextEOS_X.RequestKey
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
+// Parameter Info:
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineLegalTextEOS_X::RequestKey(const struct FScriptDelegate& Callback)
+{
+	static UFunction* uFnRequestKey = nullptr;
+
+	if (!uFnRequestKey)
+	{
+		uFnRequestKey = UFunction::FindFunction("Function ProjectX.OnlineLegalTextEOS_X.RequestKey");
+	}
+
+	UOnlineLegalTextEOS_X_execRequestKey_Params RequestKey_Params;
+	memset(&RequestKey_Params, 0, sizeof(RequestKey_Params));
+	memcpy_s(&RequestKey_Params.Callback, sizeof(RequestKey_Params.Callback), &Callback, sizeof(Callback));
+
+	this->ProcessEvent(uFnRequestKey, &RequestKey_Params, nullptr);
+};
+
 // Function ProjectX.OnlineLegalTextEOS_X.HandleTextResponse
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
 // Parameter Info:
@@ -20560,6 +20534,25 @@ void UOnlineLegalTextEOS_X::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function ProjectX.OnlineLegalTextEOS_X.EventKeyReceived
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineLegalTextEOS_X::EventKeyReceived()
+{
+	static UFunction* uFnEventKeyReceived = nullptr;
+
+	if (!uFnEventKeyReceived)
+	{
+		uFnEventKeyReceived = UFunction::FindFunction("Function ProjectX.OnlineLegalTextEOS_X.EventKeyReceived");
+	}
+
+	UOnlineLegalTextEOS_X_execEventKeyReceived_Params EventKeyReceived_Params;
+	memset(&EventKeyReceived_Params, 0, sizeof(EventKeyReceived_Params));
+
+	this->ProcessEvent(uFnEventKeyReceived, &EventKeyReceived_Params, nullptr);
 };
 
 // Function ProjectX.OnlineLegalTextEOS_X.EventHandleSyncResponse
@@ -22918,12 +22911,11 @@ void UPsyNetConnection_X::ClearAuthDisabledError()
 };
 
 // Function ProjectX.PsyNetConnection_X.SetAuthDisabledError
-// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Private | FUNC_AllFlags)
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_AllFlags)
 // Parameter Info:
 // class UError*                  Error                          (CPF_Parm)
-// uint32_t                       bIgnoreRetryCooldown           (CPF_OptionalParm | CPF_Parm)
 
-void UPsyNetConnection_X::SetAuthDisabledError(class UError* Error, bool bIgnoreRetryCooldown)
+void UPsyNetConnection_X::SetAuthDisabledError(class UError* Error)
 {
 	static UFunction* uFnSetAuthDisabledError = nullptr;
 
@@ -22935,7 +22927,6 @@ void UPsyNetConnection_X::SetAuthDisabledError(class UError* Error, bool bIgnore
 	UPsyNetConnection_X_execSetAuthDisabledError_Params SetAuthDisabledError_Params;
 	memset(&SetAuthDisabledError_Params, 0, sizeof(SetAuthDisabledError_Params));
 	SetAuthDisabledError_Params.Error = Error;
-	SetAuthDisabledError_Params.bIgnoreRetryCooldown = bIgnoreRetryCooldown;
 
 	this->ProcessEvent(uFnSetAuthDisabledError, &SetAuthDisabledError_Params, nullptr);
 };
@@ -23059,12 +23050,11 @@ void UPsyNetConnection_X::eventAddDisabledError(class UError* Error)
 };
 
 // Function ProjectX.PsyNetConnection_X.RemoveDisabledError
-// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
 // class UError*                  Error                          (CPF_Parm)
-// uint32_t                       bCleanUpConsecutiveAuthFailures (CPF_OptionalParm | CPF_Parm)
 
-void UPsyNetConnection_X::RemoveDisabledError(class UError* Error, bool bCleanUpConsecutiveAuthFailures)
+void UPsyNetConnection_X::RemoveDisabledError(class UError* Error)
 {
 	static UFunction* uFnRemoveDisabledError = nullptr;
 
@@ -23076,7 +23066,6 @@ void UPsyNetConnection_X::RemoveDisabledError(class UError* Error, bool bCleanUp
 	UPsyNetConnection_X_execRemoveDisabledError_Params RemoveDisabledError_Params;
 	memset(&RemoveDisabledError_Params, 0, sizeof(RemoveDisabledError_Params));
 	RemoveDisabledError_Params.Error = Error;
-	RemoveDisabledError_Params.bCleanUpConsecutiveAuthFailures = bCleanUpConsecutiveAuthFailures;
 
 	this->ProcessEvent(uFnRemoveDisabledError, &RemoveDisabledError_Params, nullptr);
 };
@@ -27460,6 +27449,28 @@ void UOnlineGame_X::PrintDebugInfo(class UDebugDrawer* Drawer)
 	PrintDebugInfo_Params.Drawer = Drawer;
 
 	this->ProcessEvent(uFnPrintDebugInfo, &PrintDebugInfo_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGame_X.IsMatureLanguageFiltered
+// [0x00020002] (FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineGame_X::IsMatureLanguageFiltered()
+{
+	static UFunction* uFnIsMatureLanguageFiltered = nullptr;
+
+	if (!uFnIsMatureLanguageFiltered)
+	{
+		uFnIsMatureLanguageFiltered = UFunction::FindFunction("Function ProjectX.OnlineGame_X.IsMatureLanguageFiltered");
+	}
+
+	UOnlineGame_X_execIsMatureLanguageFiltered_Params IsMatureLanguageFiltered_Params;
+	memset(&IsMatureLanguageFiltered_Params, 0, sizeof(IsMatureLanguageFiltered_Params));
+
+	this->ProcessEvent(uFnIsMatureLanguageFiltered, &IsMatureLanguageFiltered_Params, nullptr);
+
+	return IsMatureLanguageFiltered_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGame_X.GetOnlinePlayerFromPlayerId
@@ -32300,6 +32311,25 @@ void UOnlineGameReservations_X::ClearTeamHistory()
 	memset(&ClearTeamHistory_Params, 0, sizeof(ClearTeamHistory_Params));
 
 	this->ProcessEvent(uFnClearTeamHistory, &ClearTeamHistory_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameReservations_X.ClearPsynetReservationsTeams
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+
+void UOnlineGameReservations_X::ClearPsynetReservationsTeams()
+{
+	static UFunction* uFnClearPsynetReservationsTeams = nullptr;
+
+	if (!uFnClearPsynetReservationsTeams)
+	{
+		uFnClearPsynetReservationsTeams = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.ClearPsynetReservationsTeams");
+	}
+
+	UOnlineGameReservations_X_execClearPsynetReservationsTeams_Params ClearPsynetReservationsTeams_Params;
+	memset(&ClearPsynetReservationsTeams_Params, 0, sizeof(ClearPsynetReservationsTeams_Params));
+
+	this->ProcessEvent(uFnClearPsynetReservationsTeams, &ClearPsynetReservationsTeams_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.ClearReservations
@@ -40075,11 +40105,9 @@ void UEOSHelpers_X::SendHTTPRequestSelectAuth(const class FString& Verb, const c
 // struct FScriptDelegate         ConvertErrorNew                (CPF_Parm | CPF_NeedCtorLink)
 // class UOnlineSubsystem*        EOS                            (CPF_Parm)
 // int32_t                        LocalPlayerNum                 (CPF_Parm)
-// class FString                  AuthURL                        (CPF_Parm | CPF_NeedCtorLink)
 // class FString                  BodyJson                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-// class FString                  Continuation                   (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 
-void UEOSHelpers_X::SendHTTPRequestEASAuth(const class FString& Verb, const class FString& URL, bool bAddContentTypeHeader, class UClass* ResponseClass, const struct FScriptDelegate& Callback, const struct FScriptDelegate& ConvertErrorNew, class UOnlineSubsystem* EOS, int32_t LocalPlayerNum, const class FString& AuthURL, const class FString& BodyJson, const class FString& Continuation)
+void UEOSHelpers_X::SendHTTPRequestEASAuth(const class FString& Verb, const class FString& URL, bool bAddContentTypeHeader, class UClass* ResponseClass, const struct FScriptDelegate& Callback, const struct FScriptDelegate& ConvertErrorNew, class UOnlineSubsystem* EOS, int32_t LocalPlayerNum, const class FString& BodyJson)
 {
 	static UFunction* uFnSendHTTPRequestEASAuth = nullptr;
 
@@ -40098,9 +40126,7 @@ void UEOSHelpers_X::SendHTTPRequestEASAuth(const class FString& Verb, const clas
 	memcpy_s(&SendHTTPRequestEASAuth_Params.ConvertErrorNew, sizeof(SendHTTPRequestEASAuth_Params.ConvertErrorNew), &ConvertErrorNew, sizeof(ConvertErrorNew));
 	SendHTTPRequestEASAuth_Params.EOS = EOS;
 	memcpy_s(&SendHTTPRequestEASAuth_Params.LocalPlayerNum, sizeof(SendHTTPRequestEASAuth_Params.LocalPlayerNum), &LocalPlayerNum, sizeof(LocalPlayerNum));
-	memcpy_s(&SendHTTPRequestEASAuth_Params.AuthURL, sizeof(SendHTTPRequestEASAuth_Params.AuthURL), &AuthURL, sizeof(AuthURL));
 	memcpy_s(&SendHTTPRequestEASAuth_Params.BodyJson, sizeof(SendHTTPRequestEASAuth_Params.BodyJson), &BodyJson, sizeof(BodyJson));
-	memcpy_s(&SendHTTPRequestEASAuth_Params.Continuation, sizeof(SendHTTPRequestEASAuth_Params.Continuation), &Continuation, sizeof(Continuation));
 
 	UEOSHelpers_X::StaticClass()->ProcessEvent(uFnSendHTTPRequestEASAuth, &SendHTTPRequestEASAuth_Params, nullptr);
 };
@@ -52846,6 +52872,27 @@ void UParties_X::HandleChatNotification(class UPsyNetService_PartyChat_X* Notifi
 	this->ProcessEvent(uFnHandleChatNotification, &HandleChatNotification_Params, nullptr);
 };
 
+// Function ProjectX.Parties_X.HandleSignedChatNotification
+// [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly | FUNC_AllFlags)
+// Parameter Info:
+// class UPsyNetService_SignedPartyChat_X* Notification                   (CPF_Parm)
+
+void UParties_X::HandleSignedChatNotification(class UPsyNetService_SignedPartyChat_X* Notification)
+{
+	static UFunction* uFnHandleSignedChatNotification = nullptr;
+
+	if (!uFnHandleSignedChatNotification)
+	{
+		uFnHandleSignedChatNotification = UFunction::FindFunction("Function ProjectX.Parties_X.HandleSignedChatNotification");
+	}
+
+	UParties_X_execHandleSignedChatNotification_Params HandleSignedChatNotification_Params;
+	memset(&HandleSignedChatNotification_Params, 0, sizeof(HandleSignedChatNotification_Params));
+	HandleSignedChatNotification_Params.Notification = Notification;
+
+	this->ProcessEvent(uFnHandleSignedChatNotification, &HandleSignedChatNotification_Params, nullptr);
+};
+
 // Function ProjectX.Parties_X.HandleSystemNotification
 // [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly | FUNC_AllFlags)
 // Parameter Info:
@@ -54147,6 +54194,52 @@ bool UParties_X::SendLobbyBinaryData(struct FUniqueLobbyId& LobbyId, class TArra
 	return SendLobbyBinaryData_Params.ReturnValue;
 };
 
+// Function ProjectX.Parties_X.HandleSignedLobbyMessageFailed
+// [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_SignedPartyChat_X*  RPC                            (CPF_Parm)
+
+void UParties_X::HandleSignedLobbyMessageFailed(class URPC_SignedPartyChat_X* RPC)
+{
+	static UFunction* uFnHandleSignedLobbyMessageFailed = nullptr;
+
+	if (!uFnHandleSignedLobbyMessageFailed)
+	{
+		uFnHandleSignedLobbyMessageFailed = UFunction::FindFunction("Function ProjectX.Parties_X.HandleSignedLobbyMessageFailed");
+	}
+
+	UParties_X_execHandleSignedLobbyMessageFailed_Params HandleSignedLobbyMessageFailed_Params;
+	memset(&HandleSignedLobbyMessageFailed_Params, 0, sizeof(HandleSignedLobbyMessageFailed_Params));
+	HandleSignedLobbyMessageFailed_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandleSignedLobbyMessageFailed, &HandleSignedLobbyMessageFailed_Params, nullptr);
+};
+
+// Function ProjectX.Parties_X.SendSignedLobbyMessage
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// class USignedMessageObject_X*  MessageObject                  (CPF_Parm)
+// struct FUniqueLobbyId          LobbyId                        (CPF_Const | CPF_Parm | CPF_OutParm)
+
+void UParties_X::SendSignedLobbyMessage(class USignedMessageObject_X* MessageObject, struct FUniqueLobbyId& LobbyId)
+{
+	static UFunction* uFnSendSignedLobbyMessage = nullptr;
+
+	if (!uFnSendSignedLobbyMessage)
+	{
+		uFnSendSignedLobbyMessage = UFunction::FindFunction("Function ProjectX.Parties_X.SendSignedLobbyMessage");
+	}
+
+	UParties_X_execSendSignedLobbyMessage_Params SendSignedLobbyMessage_Params;
+	memset(&SendSignedLobbyMessage_Params, 0, sizeof(SendSignedLobbyMessage_Params));
+	SendSignedLobbyMessage_Params.MessageObject = MessageObject;
+	memcpy_s(&SendSignedLobbyMessage_Params.LobbyId, sizeof(SendSignedLobbyMessage_Params.LobbyId), &LobbyId, sizeof(LobbyId));
+
+	this->ProcessEvent(uFnSendSignedLobbyMessage, &SendSignedLobbyMessage_Params, nullptr);
+
+	memcpy_s(&LobbyId, sizeof(LobbyId), &SendSignedLobbyMessage_Params.LobbyId, sizeof(SendSignedLobbyMessage_Params.LobbyId));
+};
+
 // Function ProjectX.Parties_X.HandleLobbyMessageFailed
 // [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly | FUNC_AllFlags)
 // Parameter Info:
@@ -54529,6 +54622,31 @@ bool UParties_X::CreateLobby(int32_t LocalPlayerNum, int32_t MaxPlayers, ELobbyV
 	this->ProcessEvent(uFnCreateLobby, &CreateLobby_Params, nullptr);
 
 	return CreateLobby_Params.ReturnValue;
+};
+
+// Function ProjectX.Parties_X.EventSignedPartyChatRecieved
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// struct FUniqueNetId            RecipientId                    (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            SenderId                       (CPF_Parm | CPF_NeedCtorLink)
+// class USignedMessageObject_X*  MessageObject                  (CPF_Parm)
+
+void UParties_X::EventSignedPartyChatRecieved(const struct FUniqueNetId& RecipientId, const struct FUniqueNetId& SenderId, class USignedMessageObject_X* MessageObject)
+{
+	static UFunction* uFnEventSignedPartyChatRecieved = nullptr;
+
+	if (!uFnEventSignedPartyChatRecieved)
+	{
+		uFnEventSignedPartyChatRecieved = UFunction::FindFunction("Function ProjectX.Parties_X.EventSignedPartyChatRecieved");
+	}
+
+	UParties_X_execEventSignedPartyChatRecieved_Params EventSignedPartyChatRecieved_Params;
+	memset(&EventSignedPartyChatRecieved_Params, 0, sizeof(EventSignedPartyChatRecieved_Params));
+	memcpy_s(&EventSignedPartyChatRecieved_Params.RecipientId, sizeof(EventSignedPartyChatRecieved_Params.RecipientId), &RecipientId, sizeof(RecipientId));
+	memcpy_s(&EventSignedPartyChatRecieved_Params.SenderId, sizeof(EventSignedPartyChatRecieved_Params.SenderId), &SenderId, sizeof(SenderId));
+	EventSignedPartyChatRecieved_Params.MessageObject = MessageObject;
+
+	this->ProcessEvent(uFnEventSignedPartyChatRecieved, &EventSignedPartyChatRecieved_Params, nullptr);
 };
 
 // Function ProjectX.Parties_X.EventLobbyMessageFailed
@@ -59880,6 +59998,31 @@ void U__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1::__OnlineLegalTextEOS_X__
 	memcpy_s(&__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1_Params.InLocalPlayerNum, sizeof(__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1_Params.InLocalPlayerNum), &InLocalPlayerNum, sizeof(InLocalPlayerNum));
 
 	this->ProcessEvent(uFn__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1, &__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineLegalTextEOS_X__RequestKey_0x1.__OnlineLegalTextEOS_X__RequestKey_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class UKeyRequestResponse*     Response                       (CPF_Const | CPF_Parm)
+// class UError*                  Error                          (CPF_Parm)
+// int32_t                        ResponseCode                   (CPF_Parm)
+
+void U__OnlineLegalTextEOS_X__RequestKey_0x1::__OnlineLegalTextEOS_X__RequestKey_0x1(class UKeyRequestResponse* Response, class UError* Error, int32_t ResponseCode)
+{
+	static UFunction* uFn__OnlineLegalTextEOS_X__RequestKey_0x1 = nullptr;
+
+	if (!uFn__OnlineLegalTextEOS_X__RequestKey_0x1)
+	{
+		uFn__OnlineLegalTextEOS_X__RequestKey_0x1 = UFunction::FindFunction("Function ProjectX.__OnlineLegalTextEOS_X__RequestKey_0x1.__OnlineLegalTextEOS_X__RequestKey_0x1");
+	}
+
+	U__OnlineLegalTextEOS_X__RequestKey_0x1_exec__OnlineLegalTextEOS_X__RequestKey_0x1_Params __OnlineLegalTextEOS_X__RequestKey_0x1_Params;
+	memset(&__OnlineLegalTextEOS_X__RequestKey_0x1_Params, 0, sizeof(__OnlineLegalTextEOS_X__RequestKey_0x1_Params));
+	__OnlineLegalTextEOS_X__RequestKey_0x1_Params.Response = Response;
+	__OnlineLegalTextEOS_X__RequestKey_0x1_Params.Error = Error;
+	memcpy_s(&__OnlineLegalTextEOS_X__RequestKey_0x1_Params.ResponseCode, sizeof(__OnlineLegalTextEOS_X__RequestKey_0x1_Params.ResponseCode), &ResponseCode, sizeof(ResponseCode));
+
+	this->ProcessEvent(uFn__OnlineLegalTextEOS_X__RequestKey_0x1, &__OnlineLegalTextEOS_X__RequestKey_0x1_Params, nullptr);
 };
 
 // Function ProjectX.__OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1.__OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1
@@ -82914,6 +83057,30 @@ class URPC_UpdateLeaderboard_X* URPC_UpdateLeaderboard_X::SetUpdates(class TArra
 	return SetUpdates_Params.ReturnValue;
 };
 
+// Function ProjectX.WordFilterConfig_X.AllowMatureLanguageForUsage
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// EWordFilterUsage               Usage                          (CPF_Parm)
+
+bool UWordFilterConfig_X::AllowMatureLanguageForUsage(EWordFilterUsage Usage)
+{
+	static UFunction* uFnAllowMatureLanguageForUsage = nullptr;
+
+	if (!uFnAllowMatureLanguageForUsage)
+	{
+		uFnAllowMatureLanguageForUsage = UFunction::FindFunction("Function ProjectX.WordFilterConfig_X.AllowMatureLanguageForUsage");
+	}
+
+	UWordFilterConfig_X_execAllowMatureLanguageForUsage_Params AllowMatureLanguageForUsage_Params;
+	memset(&AllowMatureLanguageForUsage_Params, 0, sizeof(AllowMatureLanguageForUsage_Params));
+	memcpy_s(&AllowMatureLanguageForUsage_Params.Usage, sizeof(AllowMatureLanguageForUsage_Params.Usage), &Usage, sizeof(Usage));
+
+	this->ProcessEvent(uFnAllowMatureLanguageForUsage, &AllowMatureLanguageForUsage_Params, nullptr);
+
+	return AllowMatureLanguageForUsage_Params.ReturnValue;
+};
+
 // Function ProjectX.UserBugReportComponent_X.Start
 // [0x00020000] (FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
@@ -84318,6 +84485,30 @@ class URPC_PartyChat_X* URPC_PartyChat_X::SetText(const class FString& InText)
 	this->ProcessEvent(uFnSetText, &SetText_Params, nullptr);
 
 	return SetText_Params.ReturnValue;
+};
+
+// Function ProjectX.RPC_SignedPartyChat_X.SetSignedMessageData
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class URPC_SignedPartyChat_X*  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class USignedMessageObject_X*  InMessageData                  (CPF_Parm)
+
+class URPC_SignedPartyChat_X* URPC_SignedPartyChat_X::SetSignedMessageData(class USignedMessageObject_X* InMessageData)
+{
+	static UFunction* uFnSetSignedMessageData = nullptr;
+
+	if (!uFnSetSignedMessageData)
+	{
+		uFnSetSignedMessageData = UFunction::FindFunction("Function ProjectX.RPC_SignedPartyChat_X.SetSignedMessageData");
+	}
+
+	URPC_SignedPartyChat_X_execSetSignedMessageData_Params SetSignedMessageData_Params;
+	memset(&SetSignedMessageData_Params, 0, sizeof(SetSignedMessageData_Params));
+	SetSignedMessageData_Params.InMessageData = InMessageData;
+
+	this->ProcessEvent(uFnSetSignedMessageData, &SetSignedMessageData_Params, nullptr);
+
+	return SetSignedMessageData_Params.ReturnValue;
 };
 
 // Function ProjectX.RPC_PartyChangeOwner_X.SetNewOwnerId
@@ -87106,6 +87297,32 @@ void USmoothDynamicValue_X::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function ProjectX.StringUtil_X.SplitStringIntoMaxSizePieces
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<class FString>    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  OriginalString                 (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        MaxStringSize                  (CPF_Parm)
+
+class TArray<class FString> UStringUtil_X::SplitStringIntoMaxSizePieces(const class FString& OriginalString, int32_t MaxStringSize)
+{
+	static UFunction* uFnSplitStringIntoMaxSizePieces = nullptr;
+
+	if (!uFnSplitStringIntoMaxSizePieces)
+	{
+		uFnSplitStringIntoMaxSizePieces = UFunction::FindFunction("Function ProjectX.StringUtil_X.SplitStringIntoMaxSizePieces");
+	}
+
+	UStringUtil_X_execSplitStringIntoMaxSizePieces_Params SplitStringIntoMaxSizePieces_Params;
+	memset(&SplitStringIntoMaxSizePieces_Params, 0, sizeof(SplitStringIntoMaxSizePieces_Params));
+	memcpy_s(&SplitStringIntoMaxSizePieces_Params.OriginalString, sizeof(SplitStringIntoMaxSizePieces_Params.OriginalString), &OriginalString, sizeof(OriginalString));
+	memcpy_s(&SplitStringIntoMaxSizePieces_Params.MaxStringSize, sizeof(SplitStringIntoMaxSizePieces_Params.MaxStringSize), &MaxStringSize, sizeof(MaxStringSize));
+
+	UStringUtil_X::StaticClass()->ProcessEvent(uFnSplitStringIntoMaxSizePieces, &SplitStringIntoMaxSizePieces_Params, nullptr);
+
+	return SplitStringIntoMaxSizePieces_Params.ReturnValue;
 };
 
 // Function ProjectX.StringUtil_X.IsStringEmptyOrWhiteSpace

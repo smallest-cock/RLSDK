@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.cpp
@@ -22,6 +22,157 @@
 # Functions
 # ========================================================================================= #
 */
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageValidated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// uint32_t                       bMessageValid                  (CPF_Parm)
+// int32_t                        RequestID                      (CPF_Parm)
+
+void UOnlineSubsystemEOS::EventTextMessageValidated(bool bMessageValid, int32_t RequestID)
+{
+	static UFunction* uFnEventTextMessageValidated = nullptr;
+
+	if (!uFnEventTextMessageValidated)
+	{
+		uFnEventTextMessageValidated = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageValidated");
+	}
+
+	UOnlineSubsystemEOS_execEventTextMessageValidated_Params EventTextMessageValidated_Params;
+	memset(&EventTextMessageValidated_Params, 0, sizeof(EventTextMessageValidated_Params));
+	EventTextMessageValidated_Params.bMessageValid = bMessageValid;
+	memcpy_s(&EventTextMessageValidated_Params.RequestID, sizeof(EventTextMessageValidated_Params.RequestID), &RequestID, sizeof(RequestID));
+
+	this->ProcessEvent(uFnEventTextMessageValidated, &EventTextMessageValidated_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageSigned
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  Signature                      (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        RequestID                      (CPF_Parm)
+
+void UOnlineSubsystemEOS::EventTextMessageSigned(const class FString& Signature, int32_t RequestID)
+{
+	static UFunction* uFnEventTextMessageSigned = nullptr;
+
+	if (!uFnEventTextMessageSigned)
+	{
+		uFnEventTextMessageSigned = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageSigned");
+	}
+
+	UOnlineSubsystemEOS_execEventTextMessageSigned_Params EventTextMessageSigned_Params;
+	memset(&EventTextMessageSigned_Params, 0, sizeof(EventTextMessageSigned_Params));
+	memcpy_s(&EventTextMessageSigned_Params.Signature, sizeof(EventTextMessageSigned_Params.Signature), &Signature, sizeof(Signature));
+	memcpy_s(&EventTextMessageSigned_Params.RequestID, sizeof(EventTextMessageSigned_Params.RequestID), &RequestID, sizeof(RequestID));
+
+	this->ProcessEvent(uFnEventTextMessageSigned, &EventTextMessageSigned_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventCryptoKeyCreated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  EpicAccountId                  (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  PublicKey                      (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::EventCryptoKeyCreated(const class FString& EpicAccountId, const class FString& PublicKey)
+{
+	static UFunction* uFnEventCryptoKeyCreated = nullptr;
+
+	if (!uFnEventCryptoKeyCreated)
+	{
+		uFnEventCryptoKeyCreated = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventCryptoKeyCreated");
+	}
+
+	UOnlineSubsystemEOS_execEventCryptoKeyCreated_Params EventCryptoKeyCreated_Params;
+	memset(&EventCryptoKeyCreated_Params, 0, sizeof(EventCryptoKeyCreated_Params));
+	memcpy_s(&EventCryptoKeyCreated_Params.EpicAccountId, sizeof(EventCryptoKeyCreated_Params.EpicAccountId), &EpicAccountId, sizeof(EpicAccountId));
+	memcpy_s(&EventCryptoKeyCreated_Params.PublicKey, sizeof(EventCryptoKeyCreated_Params.PublicKey), &PublicKey, sizeof(PublicKey));
+
+	this->ProcessEvent(uFnEventCryptoKeyCreated, &EventCryptoKeyCreated_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.ValidateTextMessage
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        RequestID                      (CPF_Const | CPF_Parm)
+// class FString                  Message                        (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  PublicKey                      (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  Signature                      (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::ValidateTextMessage(int32_t RequestID, class FString& Message, class FString& PublicKey, class FString& Signature)
+{
+	static UFunction* uFnValidateTextMessage = nullptr;
+
+	if (!uFnValidateTextMessage)
+	{
+		uFnValidateTextMessage = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.ValidateTextMessage");
+	}
+
+	UOnlineSubsystemEOS_execValidateTextMessage_Params ValidateTextMessage_Params;
+	memset(&ValidateTextMessage_Params, 0, sizeof(ValidateTextMessage_Params));
+	memcpy_s(&ValidateTextMessage_Params.RequestID, sizeof(ValidateTextMessage_Params.RequestID), &RequestID, sizeof(RequestID));
+	memcpy_s(&ValidateTextMessage_Params.Message, sizeof(ValidateTextMessage_Params.Message), &Message, sizeof(Message));
+	memcpy_s(&ValidateTextMessage_Params.PublicKey, sizeof(ValidateTextMessage_Params.PublicKey), &PublicKey, sizeof(PublicKey));
+	memcpy_s(&ValidateTextMessage_Params.Signature, sizeof(ValidateTextMessage_Params.Signature), &Signature, sizeof(Signature));
+
+	this->ProcessEvent(uFnValidateTextMessage, &ValidateTextMessage_Params, nullptr);
+
+	memcpy_s(&Message, sizeof(Message), &ValidateTextMessage_Params.Message, sizeof(ValidateTextMessage_Params.Message));
+	memcpy_s(&PublicKey, sizeof(PublicKey), &ValidateTextMessage_Params.PublicKey, sizeof(ValidateTextMessage_Params.PublicKey));
+	memcpy_s(&Signature, sizeof(Signature), &ValidateTextMessage_Params.Signature, sizeof(ValidateTextMessage_Params.Signature));
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.SignTextMessage
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// int32_t                        RequestID                      (CPF_Const | CPF_Parm)
+// class FString                  EpicAccountId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  Message                        (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::SignTextMessage(int32_t RequestID, class FString& EpicAccountId, class FString& Message)
+{
+	static UFunction* uFnSignTextMessage = nullptr;
+
+	if (!uFnSignTextMessage)
+	{
+		uFnSignTextMessage = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.SignTextMessage");
+	}
+
+	UOnlineSubsystemEOS_execSignTextMessage_Params SignTextMessage_Params;
+	memset(&SignTextMessage_Params, 0, sizeof(SignTextMessage_Params));
+	memcpy_s(&SignTextMessage_Params.RequestID, sizeof(SignTextMessage_Params.RequestID), &RequestID, sizeof(RequestID));
+	memcpy_s(&SignTextMessage_Params.EpicAccountId, sizeof(SignTextMessage_Params.EpicAccountId), &EpicAccountId, sizeof(EpicAccountId));
+	memcpy_s(&SignTextMessage_Params.Message, sizeof(SignTextMessage_Params.Message), &Message, sizeof(Message));
+
+	this->ProcessEvent(uFnSignTextMessage, &SignTextMessage_Params, nullptr);
+
+	memcpy_s(&EpicAccountId, sizeof(EpicAccountId), &SignTextMessage_Params.EpicAccountId, sizeof(SignTextMessage_Params.EpicAccountId));
+	memcpy_s(&Message, sizeof(Message), &SignTextMessage_Params.Message, sizeof(SignTextMessage_Params.Message));
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.GenerateCryptoKeyForUser
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  EpicAccountId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::GenerateCryptoKeyForUser(class FString& EpicAccountId)
+{
+	static UFunction* uFnGenerateCryptoKeyForUser = nullptr;
+
+	if (!uFnGenerateCryptoKeyForUser)
+	{
+		uFnGenerateCryptoKeyForUser = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.GenerateCryptoKeyForUser");
+	}
+
+	UOnlineSubsystemEOS_execGenerateCryptoKeyForUser_Params GenerateCryptoKeyForUser_Params;
+	memset(&GenerateCryptoKeyForUser_Params, 0, sizeof(GenerateCryptoKeyForUser_Params));
+	memcpy_s(&GenerateCryptoKeyForUser_Params.EpicAccountId, sizeof(GenerateCryptoKeyForUser_Params.EpicAccountId), &EpicAccountId, sizeof(EpicAccountId));
+
+	this->ProcessEvent(uFnGenerateCryptoKeyForUser, &GenerateCryptoKeyForUser_Params, nullptr);
+
+	memcpy_s(&EpicAccountId, sizeof(EpicAccountId), &GenerateCryptoKeyForUser_Params.EpicAccountId, sizeof(GenerateCryptoKeyForUser_Params.EpicAccountId));
+};
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.ShowEOSVoiceAgreement
 // [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
@@ -4424,81 +4575,13 @@ bool UOnlinePlayerInterfaceEOS::HideKeyboardUI(uint8_t LocalUserNum)
 	return HideKeyboardUI_Params.ReturnValue;
 };
 
-// Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearReadPlayerCountryDelegate
-// [0x00020001] (FUNC_Final | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// uint8_t                        LocalUserNum                   (CPF_Parm)
-// struct FScriptDelegate         ReadPlayerCountryDelegate      (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlinePlayerInterfaceEOS::ClearReadPlayerCountryDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadPlayerCountryDelegate)
-{
-	static UFunction* uFnClearReadPlayerCountryDelegate = nullptr;
-
-	if (!uFnClearReadPlayerCountryDelegate)
-	{
-		uFnClearReadPlayerCountryDelegate = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearReadPlayerCountryDelegate");
-	}
-
-	UOnlinePlayerInterfaceEOS_execClearReadPlayerCountryDelegate_Params ClearReadPlayerCountryDelegate_Params;
-	memset(&ClearReadPlayerCountryDelegate_Params, 0, sizeof(ClearReadPlayerCountryDelegate_Params));
-	memcpy_s(&ClearReadPlayerCountryDelegate_Params.LocalUserNum, sizeof(ClearReadPlayerCountryDelegate_Params.LocalUserNum), &LocalUserNum, sizeof(LocalUserNum));
-	memcpy_s(&ClearReadPlayerCountryDelegate_Params.ReadPlayerCountryDelegate, sizeof(ClearReadPlayerCountryDelegate_Params.ReadPlayerCountryDelegate), &ReadPlayerCountryDelegate, sizeof(ReadPlayerCountryDelegate));
-
-	this->ProcessEvent(uFnClearReadPlayerCountryDelegate, &ClearReadPlayerCountryDelegate_Params, nullptr);
-};
-
-// Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadPlayerCountryDelegate
-// [0x00020001] (FUNC_Final | FUNC_Public | FUNC_AllFlags)
-// Parameter Info:
-// uint8_t                        LocalUserNum                   (CPF_Parm)
-// struct FScriptDelegate         ReadPlayerCountryDelegate      (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlinePlayerInterfaceEOS::AddReadPlayerCountryDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadPlayerCountryDelegate)
-{
-	static UFunction* uFnAddReadPlayerCountryDelegate = nullptr;
-
-	if (!uFnAddReadPlayerCountryDelegate)
-	{
-		uFnAddReadPlayerCountryDelegate = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadPlayerCountryDelegate");
-	}
-
-	UOnlinePlayerInterfaceEOS_execAddReadPlayerCountryDelegate_Params AddReadPlayerCountryDelegate_Params;
-	memset(&AddReadPlayerCountryDelegate_Params, 0, sizeof(AddReadPlayerCountryDelegate_Params));
-	memcpy_s(&AddReadPlayerCountryDelegate_Params.LocalUserNum, sizeof(AddReadPlayerCountryDelegate_Params.LocalUserNum), &LocalUserNum, sizeof(LocalUserNum));
-	memcpy_s(&AddReadPlayerCountryDelegate_Params.ReadPlayerCountryDelegate, sizeof(AddReadPlayerCountryDelegate_Params.ReadPlayerCountryDelegate), &ReadPlayerCountryDelegate, sizeof(ReadPlayerCountryDelegate));
-
-	this->ProcessEvent(uFnAddReadPlayerCountryDelegate, &AddReadPlayerCountryDelegate_Params, nullptr);
-};
-
-// Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnPlayerCountryRetrieved
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
-// Parameter Info:
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// class FString                  Country                        (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlinePlayerInterfaceEOS::OnPlayerCountryRetrieved(const struct FUniqueNetId& PlayerID, const class FString& Country)
-{
-	static UFunction* uFnOnPlayerCountryRetrieved = nullptr;
-
-	if (!uFnOnPlayerCountryRetrieved)
-	{
-		uFnOnPlayerCountryRetrieved = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnPlayerCountryRetrieved");
-	}
-
-	UOnlinePlayerInterfaceEOS_execOnPlayerCountryRetrieved_Params OnPlayerCountryRetrieved_Params;
-	memset(&OnPlayerCountryRetrieved_Params, 0, sizeof(OnPlayerCountryRetrieved_Params));
-	memcpy_s(&OnPlayerCountryRetrieved_Params.PlayerID, sizeof(OnPlayerCountryRetrieved_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&OnPlayerCountryRetrieved_Params.Country, sizeof(OnPlayerCountryRetrieved_Params.Country), &Country, sizeof(Country));
-
-	this->ProcessEvent(uFnOnPlayerCountryRetrieved, &OnPlayerCountryRetrieved_Params, nullptr);
-};
-
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.GetPlayerCountry
 // [0x00020001] (FUNC_Final | FUNC_Public | FUNC_AllFlags)
 // Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // uint8_t                        LocalUserNum                   (CPF_Parm)
 
-void UOnlinePlayerInterfaceEOS::GetPlayerCountry(uint8_t LocalUserNum)
+class FString UOnlinePlayerInterfaceEOS::GetPlayerCountry(uint8_t LocalUserNum)
 {
 	static UFunction* uFnGetPlayerCountry = nullptr;
 
@@ -4512,6 +4595,8 @@ void UOnlinePlayerInterfaceEOS::GetPlayerCountry(uint8_t LocalUserNum)
 	memcpy_s(&GetPlayerCountry_Params.LocalUserNum, sizeof(GetPlayerCountry_Params.LocalUserNum), &LocalUserNum, sizeof(LocalUserNum));
 
 	this->ProcessEvent(uFnGetPlayerCountry, &GetPlayerCountry_Params, nullptr);
+
+	return GetPlayerCountry_Params.ReturnValue;
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearAvatarChangeDelegate

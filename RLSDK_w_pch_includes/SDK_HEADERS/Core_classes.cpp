@@ -2,7 +2,7 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_classes.cpp
@@ -5307,6 +5307,104 @@ class FString UObject::Split(const class FString& Text, const class FString& Spl
 	UObject::StaticClass()->ProcessEvent(uFnSplit, &Split_Params, nullptr);
 
 	return Split_Params.ReturnValue;
+};
+
+// Function Core.Object.TCharToUTF8
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  Src                            (CPF_Parm | CPF_NeedCtorLink)
+
+class FString UObject::TCharToUTF8(const class FString& Src)
+{
+	static UFunction* uFnTCharToUTF8 = nullptr;
+
+	if (!uFnTCharToUTF8)
+	{
+		uFnTCharToUTF8 = UFunction::FindFunction("Function Core.Object.TCharToUTF8");
+	}
+
+	UObject_execTCharToUTF8_Params TCharToUTF8_Params;
+	memset(&TCharToUTF8_Params, 0, sizeof(TCharToUTF8_Params));
+	memcpy_s(&TCharToUTF8_Params.Src, sizeof(TCharToUTF8_Params.Src), &Src, sizeof(Src));
+
+	UObject::StaticClass()->ProcessEvent(uFnTCharToUTF8, &TCharToUTF8_Params, nullptr);
+
+	return TCharToUTF8_Params.ReturnValue;
+};
+
+// Function Core.Object.UTF8ToTChar
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  Src                            (CPF_Parm | CPF_NeedCtorLink)
+
+class FString UObject::UTF8ToTChar(const class FString& Src)
+{
+	static UFunction* uFnUTF8ToTChar = nullptr;
+
+	if (!uFnUTF8ToTChar)
+	{
+		uFnUTF8ToTChar = UFunction::FindFunction("Function Core.Object.UTF8ToTChar");
+	}
+
+	UObject_execUTF8ToTChar_Params UTF8ToTChar_Params;
+	memset(&UTF8ToTChar_Params, 0, sizeof(UTF8ToTChar_Params));
+	memcpy_s(&UTF8ToTChar_Params.Src, sizeof(UTF8ToTChar_Params.Src), &Src, sizeof(Src));
+
+	UObject::StaticClass()->ProcessEvent(uFnUTF8ToTChar, &UTF8ToTChar_Params, nullptr);
+
+	return UTF8ToTChar_Params.ReturnValue;
+};
+
+// Function Core.Object.MakeAsciiSafe
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  InStr                          (CPF_Parm | CPF_NeedCtorLink)
+
+class FString UObject::MakeAsciiSafe(const class FString& InStr)
+{
+	static UFunction* uFnMakeAsciiSafe = nullptr;
+
+	if (!uFnMakeAsciiSafe)
+	{
+		uFnMakeAsciiSafe = UFunction::FindFunction("Function Core.Object.MakeAsciiSafe");
+	}
+
+	UObject_execMakeAsciiSafe_Params MakeAsciiSafe_Params;
+	memset(&MakeAsciiSafe_Params, 0, sizeof(MakeAsciiSafe_Params));
+	memcpy_s(&MakeAsciiSafe_Params.InStr, sizeof(MakeAsciiSafe_Params.InStr), &InStr, sizeof(InStr));
+
+	UObject::StaticClass()->ProcessEvent(uFnMakeAsciiSafe, &MakeAsciiSafe_Params, nullptr);
+
+	return MakeAsciiSafe_Params.ReturnValue;
+};
+
+// Function Core.Object.PadRight
+// [0x00026003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  S                              (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        WidthChars                     (CPF_OptionalParm | CPF_Parm)
+
+class FString UObject::PadRight(const class FString& S, int32_t WidthChars)
+{
+	static UFunction* uFnPadRight = nullptr;
+
+	if (!uFnPadRight)
+	{
+		uFnPadRight = UFunction::FindFunction("Function Core.Object.PadRight");
+	}
+
+	UObject_execPadRight_Params PadRight_Params;
+	memset(&PadRight_Params, 0, sizeof(PadRight_Params));
+	memcpy_s(&PadRight_Params.S, sizeof(PadRight_Params.S), &S, sizeof(S));
+	memcpy_s(&PadRight_Params.WidthChars, sizeof(PadRight_Params.WidthChars), &WidthChars, sizeof(WidthChars));
+
+	UObject::StaticClass()->ProcessEvent(uFnPadRight, &PadRight_Params, nullptr);
+
+	return PadRight_Params.ReturnValue;
 };
 
 // Function Core.Object.StartsWith
@@ -13406,6 +13504,30 @@ void UBreadcrumbs::BreadcrumbString(const class FString& Category, const class F
 	memcpy_s(&BreadcrumbString_Params.Value, sizeof(BreadcrumbString_Params.Value), &Value, sizeof(Value));
 
 	this->ProcessEvent(uFnBreadcrumbString, &BreadcrumbString_Params, nullptr);
+};
+
+// Function Core.Base64.PadAndDecodeString
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// Parameter Info:
+// class TArray<uint8_t>          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  Input                          (CPF_Parm | CPF_NeedCtorLink)
+
+class TArray<uint8_t> UBase64::PadAndDecodeString(const class FString& Input)
+{
+	static UFunction* uFnPadAndDecodeString = nullptr;
+
+	if (!uFnPadAndDecodeString)
+	{
+		uFnPadAndDecodeString = UFunction::FindFunction("Function Core.Base64.PadAndDecodeString");
+	}
+
+	UBase64_execPadAndDecodeString_Params PadAndDecodeString_Params;
+	memset(&PadAndDecodeString_Params, 0, sizeof(PadAndDecodeString_Params));
+	memcpy_s(&PadAndDecodeString_Params.Input, sizeof(PadAndDecodeString_Params.Input), &Input, sizeof(Input));
+
+	UBase64::StaticClass()->ProcessEvent(uFnPadAndDecodeString, &PadAndDecodeString_Params, nullptr);
+
+	return PadAndDecodeString_Params.ReturnValue;
 };
 
 // Function Core.Base64.DecodeStringInline

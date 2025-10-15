@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_parameters.hpp
@@ -17889,14 +17889,6 @@ struct UGameViewportClient_execEventScaleformEnabledChanged_Params
 	class UGameViewportClient*                         GVC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
-// Function Engine.GameViewportClient.EventScreenDraggedOnNewScreen
-// [0x00120001] 
-struct UGameViewportClient_execEventScreenDraggedOnNewScreen_Params
-{
-	int32_t                                            NewWidth;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	int32_t                                            NewHeight;                                        // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
-};
-
 // Function Engine.GameViewportClient.HandleInputChar
 // [0x00120001] 
 struct UGameViewportClient_execHandleInputChar_Params
@@ -18417,13 +18409,6 @@ struct USurface_execGetSurfaceHeight_Params
 struct USurface_execGetSurfaceWidth_Params
 {
 	float                                              ReturnValue;                                      // 0x0000 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.MaterialInterface.WaitForMipLevelsToStream
-// [0x00020401] 
-struct UMaterialInterface_execWaitForMipLevelsToStream_Params
-{
-	float                                              MaxWaitSeconds;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function Engine.MaterialInterface.GetOrCreateInstance
@@ -33074,24 +33059,8 @@ struct UOnlinePlayerInterface_execGetPlayerLanguage_Params
 struct UOnlinePlayerInterface_execGetPlayerCountry_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlinePlayerInterface.ClearReadPlayerCountryDelegate
-// [0x00020000] 
-struct UOnlinePlayerInterface_execClearReadPlayerCountryDelegate_Params
-{
-	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadPlayerCountryDelegate;                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlinePlayerInterface.AddReadPlayerCountryDelegate
-// [0x00020000] 
-struct UOnlinePlayerInterface_execAddReadPlayerCountryDelegate_Params
-{
-	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadPlayerCountryDelegate;                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.GetAchievements
@@ -34507,14 +34476,6 @@ struct UOnlinePlayerInterface_execShowLoginUI_Params
 struct UOnlinePlayerInterface_execCanPlayOnlineChanged_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlinePlayerInterface.OnPlayerCountryRetrieved
-// [0x00120000] 
-struct UOnlinePlayerInterface_execOnPlayerCountryRetrieved_Params
-{
-	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      Country;                                          // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.FriendPresenceChange

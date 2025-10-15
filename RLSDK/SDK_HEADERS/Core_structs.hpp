@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Core_structs.hpp
@@ -562,38 +562,28 @@ struct FUniqueNetId
 	uint8_t                                          MinAlignmentPadding[0x6];                      // 0x0042 (0x0006) PADDING FOR MINALIGNMENT
 };
 
-// ScriptStruct Core._Types_Core.MessagePayload
-// Size: 0x0080
-struct FMessagePayload
+// ScriptStruct Core._Types_Core.ProductHashID
+// Size: 0x0004
+struct FProductHashID
 {
-	struct FUniqueNetId                                SenderId;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      RoomId;                                        // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      MessageText;                                   // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint64_t                                           TimeStamp;                                     // 0x0068 (0x0008) [0x0000000000000000]               
-	int32_t                                            SequenceNumber;                                // 0x0070 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bWantsToRecord : 1;                            // 0x0074 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                            ChannelType;                                   // 0x0078 (0x0001) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x3];                            // 0x0079 (0x0003) MISSED OFFSET
-	int32_t                                            MessageId;                                     // 0x007C (0x0004) [0x0000000000000000]               
+	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
 };
 
-// ScriptStruct Core._Types_Core.SignedMessageData
-// Size: 0x00B8
-struct FSignedMessageData
+// ScriptStruct Core._Types_Core.EncryptedKeyIndex
+// Size: 0x0004
+struct FEncryptedKeyIndex
 {
-	struct FMessagePayload                             Payload;                                       // 0x0000 (0x0080) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Signature;                                     // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint64_t                                           ReceivingTimestamp;                            // 0x0090 (0x0008) [0x0000000000000000]               
-	class FString                                      SanitizedReceivedTextMessage;                  // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      PublicKey;                                     // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Index;                                         // 0x0000 (0x0004) [0x0000000000000000]               
 };
 
-// ScriptStruct Core._Types_Core.ProductInstanceID
-// Size: 0x0010
-struct FProductInstanceID
+// ScriptStruct Core._Types_Core.VoiceAudioDevice
+// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FVoiceAudioDevice
 {
-	uint64_t                                           UpperBits;                                     // 0x0000 (0x0008) [0x0000000000000000]               
-	uint64_t                                           LowerBits;                                     // 0x0008 (0x0008) [0x0000000000000000]               
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      Name;                                          // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint32_t                                           bDefault : 1;                                  // 0x0020 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct Core._Types_Core.VoiceRoomMemberStatus
@@ -608,28 +598,12 @@ struct FVoiceRoomMemberStatus
 	uint32_t                                           bBlocked : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000020] 
 };
 
-// ScriptStruct Core._Types_Core.VoiceAudioDevice
-// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
-struct FVoiceAudioDevice
+// ScriptStruct Core._Types_Core.ProductInstanceID
+// Size: 0x0010
+struct FProductInstanceID
 {
-	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      Name;                                          // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	uint32_t                                           bDefault : 1;                                  // 0x0020 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
-};
-
-// ScriptStruct Core._Types_Core.EncryptedKeyIndex
-// Size: 0x0004
-struct FEncryptedKeyIndex
-{
-	int32_t                                            Index;                                         // 0x0000 (0x0004) [0x0000000000000000]               
-};
-
-// ScriptStruct Core._Types_Core.ProductHashID
-// Size: 0x0004
-struct FProductHashID
-{
-	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
+	uint64_t                                           UpperBits;                                     // 0x0000 (0x0008) [0x0000000000000000]               
+	uint64_t                                           LowerBits;                                     // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct Core.AutomationTest.ScriptWarning

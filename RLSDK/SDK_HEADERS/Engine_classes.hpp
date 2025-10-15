@@ -1,6 +1,6 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.58) 10/11/2025 01:40AM
+# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
 # Generated with the CodeRedGenerator v1.1.5
 # ========================================================================================= #
 # File: Engine_classes.hpp
@@ -14536,7 +14536,7 @@ public:
 };
 
 // Class Engine.GameViewportClient
-// 0x01F8 (0x0068 - 0x0260)
+// 0x01E0 (0x0068 - 0x0248)
 class UGameViewportClient : public UScriptViewportClient
 {
 public:
@@ -14578,12 +14578,11 @@ public:
 	struct FScriptDelegate                             __HandleInputKey__Delegate;                    // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __HandleInputAxis__Delegate;                   // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __HandleInputChar__Delegate;                   // 0x01B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScreenDraggedOnNewScreen__Delegate;     // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScaleformEnabledChanged__Delegate;      // 0x01E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGamepadInputAPIChanged__Delegate;       // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGamepadConnectionStatusChanged__Delegate;// 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGampadConnected__Delegate;              // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGampadDisconnected__Delegate;           // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScaleformEnabledChanged__Delegate;      // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGamepadInputAPIChanged__Delegate;       // 0x01E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGamepadConnectionStatusChanged__Delegate;// 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGampadConnected__Delegate;              // 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGampadDisconnected__Delegate;           // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -14659,7 +14658,6 @@ public:
 	void EventGamepadConnectionStatusChanged(class UGameViewportClient* GVC, int32_t ControllerId, bool bConnected);
 	void EventGamepadInputAPIChanged(class UGameViewportClient* GVC, int32_t ControllerId, EInputAPI InputAPI);
 	void EventScaleformEnabledChanged(class UGameViewportClient* GVC);
-	void EventScreenDraggedOnNewScreen(int32_t NewWidth, int32_t NewHeight);
 	bool HandleInputChar(int32_t ControllerId, const class FString& Unicode);
 	bool HandleInputAxis(int32_t ControllerId, const class FName& Key, float delta, float DeltaTime, bool bGamepad);
 	bool HandleInputKey(int32_t ControllerId, const class FName& Key, EInputEvent EventType, float AmountDepressed, bool optionalBGamepad);
@@ -15221,7 +15219,6 @@ public:
 		return uClassPointer;
 	};
 
-	void WaitForMipLevelsToStream(float MaxWaitSeconds);
 	class UMaterialInstance* GetOrCreateInstance();
 	void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int32_t optionalCinematicTextureGroups);
 	bool GetMobileVectorParameterValue(const class FName& ParameterName, struct FLinearColor& outOutValue);
@@ -44308,9 +44305,7 @@ public:
 	void RemoveCanPlayOnlineChangedDelegate(const struct FScriptDelegate& Callback);
 	void AddCanPlayOnlineChangedDelegate(const struct FScriptDelegate& Callback);
 	class FString GetPlayerLanguage(uint8_t LocalUserNum);
-	void GetPlayerCountry(uint8_t LocalUserNum);
-	void ClearReadPlayerCountryDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadPlayerCountryDelegate);
-	void AddReadPlayerCountryDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadPlayerCountryDelegate);
+	class FString GetPlayerCountry(uint8_t LocalUserNum);
 	EOnlineEnumerationReadState GetAchievements(uint8_t LocalUserNum, int32_t optionalTitleId, class TArray<struct FAchievementDetails>& outAchievements);
 	void ClearReadAchievementsCompleteDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadAchievementsCompleteDelegate);
 	void AddReadAchievementsCompleteDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ReadAchievementsCompleteDelegate);
@@ -44464,7 +44459,6 @@ public:
 	bool ShowLoginUIForOrphanedUser(uint8_t LocalUserNum);
 	bool ShowLoginUI(uint8_t LocalUserNum, bool optionalBShowOnlineOnly);
 	void CanPlayOnlineChanged(uint8_t LocalUserNum);
-	void OnPlayerCountryRetrieved(const struct FUniqueNetId& PlayerID, const class FString& Country);
 	void FriendPresenceChange(const struct FUniqueNetId& PlayerID);
 	void OnAvatarChange(const struct FUniqueNetId& PlayerID);
 	void AddFriendInviteAcceptedDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& InviteAccepted);
