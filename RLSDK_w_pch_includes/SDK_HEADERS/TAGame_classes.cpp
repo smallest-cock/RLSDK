@@ -2,10 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
-# Generated with the CodeRedGenerator v1.1.5
+# Rocket League SDK (RLSDK) Season 20 (v2.60)
+# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
+# ========================================================================================= #
+# Psyonix Build ID: 251015.64315.499932
+# Build Date: Oct 15 2025 19:31:09
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -234522,6 +234525,31 @@ void U__TextChatActor_TA__SendSignedMessage_0x1::__TextChatActor_TA__SendSignedM
 	__TextChatActor_TA__SendSignedMessage_0x1_Params.MessageObject = MessageObject;
 
 	this->ProcessEvent(uFn__TextChatActor_TA__SendSignedMessage_0x1, &__TextChatActor_TA__SendSignedMessage_0x1_Params, nullptr);
+};
+
+// Function TAGame.__TextModerationManager_TA__HandleCryptoKeyCreated_0x1.__TextModerationManager_TA__HandleCryptoKeyCreated_0x3
+// [0x20020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_EditorOnly | FUNC_AllFlags)
+// Parameter Info:
+// class UKeyRegistrationResponse* Response                       (CPF_Parm)
+// class UError*                  Error                          (CPF_Parm)
+// int32_t                        ResponseCode                   (CPF_Parm)
+
+void U__TextModerationManager_TA__HandleCryptoKeyCreated_0x1::__TextModerationManager_TA__HandleCryptoKeyCreated_0x3(class UKeyRegistrationResponse* Response, class UError* Error, int32_t ResponseCode)
+{
+	static UFunction* uFn__TextModerationManager_TA__HandleCryptoKeyCreated_0x3 = nullptr;
+
+	if (!uFn__TextModerationManager_TA__HandleCryptoKeyCreated_0x3)
+	{
+		uFn__TextModerationManager_TA__HandleCryptoKeyCreated_0x3 = UFunction::FindFunction("Function TAGame.__TextModerationManager_TA__HandleCryptoKeyCreated_0x1.__TextModerationManager_TA__HandleCryptoKeyCreated_0x3");
+	}
+
+	U__TextModerationManager_TA__HandleCryptoKeyCreated_0x1_exec__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params __TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params;
+	memset(&__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params, 0, sizeof(__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params));
+	__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params.Response = Response;
+	__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params.Error = Error;
+	memcpy_s(&__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params.ResponseCode, sizeof(__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params.ResponseCode), &ResponseCode, sizeof(ResponseCode));
+
+	this->ProcessEvent(uFn__TextModerationManager_TA__HandleCryptoKeyCreated_0x3, &__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params, nullptr);
 };
 
 // Function TAGame.__TextModerationManager_TA__HandleCryptoKeyCreated_0x1.__TextModerationManager_TA__HandleCryptoKeyCreated_0x2

@@ -1,9 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
-# Generated with the CodeRedGenerator v1.1.5
+# Rocket League SDK (RLSDK) Season 20 (v2.60)
+# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
 # ========================================================================================= #
 # File: GameDefines.hpp
+# ========================================================================================= #
+# Psyonix Build ID: 251015.64315.499932
+# Build Date: Oct 15 2025 19:31:09
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -139,7 +142,7 @@ enum EPropertyFlags : uint64_t
 // Object Flags
 enum EObjectFlags : uint64_t
 {
-	RF_NoFlags =							0x000000000000000,	// Object has no flags.
+	RF_NoFlags =							0x0000000000000000,	// Object has no flags.
 	RF_InSingularFunc =						0x0000000000000002,	// In a singular function.
 	RF_StateChanged =						0x0000000000000004,	// Object did a state change.
 	RF_DebugPostLoad =						0x0000000000000008,	// For debugging PostLoad calls.
@@ -331,9 +334,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define GMALLOC_OFFSET    static_cast<uintptr_t>(0x022A7D70)
-#define GNAMES_OFFSET     static_cast<uintptr_t>(0x023D6D80)
-#define GOBJECTS_OFFSET   static_cast<uintptr_t>(0x023D6DC8)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x0219DF18)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x0219DF48)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022A7D70)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x023D6D80)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x023D6DC8)
+
+// Game Build Info
+#define GPSYONIXBUILDID_STRING "251015.64315.499932"
+#define BUILDDATE_STRING       "Oct 15 2025 19:31:09"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""
@@ -347,29 +356,29 @@ enum EClassCastFlag : uint32_t
 
 namespace StringUtils
 {
-    inline std::string ToString(const std::wstring& str)
-    {
-        if (str.empty())
+	inline std::string ToString(const std::wstring& str)
+	{
+		if (str.empty())
             return "";
-        int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
-        if (size <= 0)
+		int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
+		if (size <= 0)
             return "";
-        std::string returnStr(size - 1, 0);
-        WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(returnStr.data()), size, nullptr, nullptr);
-        return returnStr;
-    }
+		std::string return_str(size - 1, 0);
+		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(return_str.data()), size, nullptr, nullptr);
+		return return_str;
+	}
 
-    inline std::wstring ToWideString(const std::string& str)
-    {
-        if (str.empty())
+	inline std::wstring ToWideString(const std::string& str)
+	{
+		if (str.empty())
             return L"";
-        int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
-        if (size <= 0)
+		int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
+		if (size <= 0)
             return L"";
-        std::wstring returnStr(size - 1, 0);
-        MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(returnStr.data()), size);
-        return returnStr;
-    }
+		std::wstring return_str(size - 1, 0);
+		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(return_str.data()), size);
+		return return_str;
+	}
 }
 
 
@@ -726,6 +735,8 @@ public:
 
 extern class TArray<class FNameEntry*>* GNames;
 extern class TArray<class UObject*>* GObjects;
+extern wchar_t** GPsyonixBuildID;
+extern char** BuildDate;
 
 /*
 # ========================================================================================= #

@@ -1,9 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
-# Generated with the CodeRedGenerator v1.1.5
+# Rocket League SDK (RLSDK) Season 20 (v2.60)
+# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
+# ========================================================================================= #
+# Psyonix Build ID: 251015.64315.499932
+# Build Date: Oct 15 2025 19:31:09
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -10731,7 +10734,7 @@ public:
 	uint32_t                                           bLevBeforeEuro : 1;                            // 0x0078 (0x0004) [0x0000004000000000] [0x00000200] (CPF_PrivateWrite)
 	int32_t                                            MaxCurrencyWalletAmount;                       // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            MaxCurrencyDailyAmount;                        // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
+	int32_t                                            CatalogCacheDurationSeconds;                   // 0x0084 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 	class FString                                      FulfillmentRestrictedWalletMessage;            // 0x0088 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      FulfillmentRestrictedDailyMessage;             // 0x0098 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      FulfillmentRestrictedTitle;                    // 0x00A8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
@@ -41609,7 +41612,7 @@ public:
 	class UAsyncTask*                                  PendingGetCatalogInfoExactPacksTask;           // 0x00C8 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class UAsyncTask*                                  SyncAllPendingRequestsTask;                    // 0x00D0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	int32_t                                            PlatformGetPriceRequestsPending;               // 0x00D8 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              CacheDuration;                                 // 0x00DC (0x0004) [0x0000000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData01[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
 	class UPsyNetConnection_X*                         PsyNetConn;                                    // 0x00E0 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventCatalogComplete__Delegate;              // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __CatalogsQueried__Delegate;                   // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -47245,12 +47248,13 @@ public:
 		return uClassPointer;
 	};
 
+	void __TextModerationManager_TA__HandleCryptoKeyCreated_0x3(class UKeyRegistrationResponse* Response, class UError* Error, int32_t ResponseCode);
 	void __TextModerationManager_TA__HandleCryptoKeyCreated_0x2(class UKeyRegistrationResponse* Response, class UError* Error, int32_t ResponseCode);
 	bool __TextModerationManager_TA__HandleCryptoKeyCreated_0x1(const struct FUserPublicKey& P);
 };
 
 // Class TAGame.TextModerationManager_TA
-// 0x00D8 (0x0060 - 0x0138)
+// 0x00E0 (0x0060 - 0x0140)
 class UTextModerationManager_TA : public UObject
 {
 public:
@@ -47270,8 +47274,9 @@ public:
 	class UOnlineGame_X*                               OnlineGame;                                    // 0x00F0 (0x0008) [0x0001800000000000]               
 	class AGRI_X*                                      GRI;                                           // 0x00F8 (0x0008) [0x0001800000000000]               
 	class UPersonas_TA*                                Personas;                                      // 0x0100 (0x0008) [0x0001800000000000]               
-	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMessageSigned__Delegate;                // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UTextModerationConfig_TA*                    TextModConfig;                                 // 0x0108 (0x0008) [0x0001800000000000]               
+	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x0110 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMessageSigned__Delegate;                // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -47315,19 +47320,20 @@ public:
 };
 
 // Class TAGame.KeyRegistrationResponse
-// 0x0090 (0x0060 - 0x00F0)
+// 0x00A0 (0x0060 - 0x0100)
 class UKeyRegistrationResponse : public UObject
 {
 public:
-	class FString                                      Environment;                                   // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Expiration;                                    // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Jwt;                                           // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Key;                                           // 0x0090 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Key_Guid;                                      // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      KId;                                           // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      product_id;                                    // 0x00C0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Product_User_Id;                               // 0x00D0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Type;                                          // 0x00E0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Account_Id;                                    // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Environment;                                   // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Expiration;                                    // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Jwt;                                           // 0x0090 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key;                                           // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key_Guid;                                      // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      KId;                                           // 0x00C0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      product_id;                                    // 0x00D0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Product_User_Id;                               // 0x00E0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Type;                                          // 0x00F0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -47468,6 +47474,33 @@ public:
 	};
 
 	bool __TextModerationManager_TA__OnKeyFailedToGenerate_0x1(const struct FPendingKeyGenMessage& P);
+};
+
+// Class TAGame.TextModerationConfig_TA
+// 0x0020 (0x0078 - 0x0098)
+class UTextModerationConfig_TA : public UOnlineConfig_X
+{
+public:
+	uint32_t                                           bTextChatEnabled : 1;                          // 0x0078 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint32_t                                           bUseEOSTokenFlow : 1;                          // 0x0078 (0x0004) [0x0001000000000000] [0x00000002] 
+	int32_t                                            MaxReportableMessages;                         // 0x007C (0x0004) [0x0001000000000000]               
+	int32_t                                            MaxVisibleMessages;                            // 0x0080 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
+	class FString                                      ReportURL;                                     // 0x0088 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+	static UClass* StaticClass()
+	{
+		static UClass* uClassPointer = nullptr;
+
+		if (!uClassPointer)
+		{
+			uClassPointer = UObject::FindClass("Class TAGame.TextModerationConfig_TA");
+		}
+
+		return uClassPointer;
+	};
+
 };
 
 // Class TAGame.__TextModerationManager_TA__PreFilterMessage_0x1
@@ -66033,32 +66066,6 @@ public:
 	void Select();
 	void eventOnRemoved();
 	void eventOnShellSet();
-};
-
-// Class TAGame.TextModerationConfig_TA
-// 0x0020 (0x0078 - 0x0098)
-class UTextModerationConfig_TA : public UOnlineConfig_X
-{
-public:
-	uint32_t                                           bTextChatEnabled : 1;                          // 0x0078 (0x0004) [0x0001000000000000] [0x00000001] 
-	int32_t                                            MaxReportableMessages;                         // 0x007C (0x0004) [0x0001000000000000]               
-	int32_t                                            MaxVisibleMessages;                            // 0x0080 (0x0004) [0x0001000000000000]               
-	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
-	class FString                                      ReportURL;                                     // 0x0088 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-
-public:
-	static UClass* StaticClass()
-	{
-		static UClass* uClassPointer = nullptr;
-
-		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class TAGame.TextModerationConfig_TA");
-		}
-
-		return uClassPointer;
-	};
-
 };
 
 // Class TAGame.ProfileQuickChatSave_TA
@@ -84755,23 +84762,24 @@ public:
 };
 
 // Class TAGame.TextModKeyJWT
-// 0x00D0 (0x0060 - 0x0130)
+// 0x00E0 (0x0060 - 0x0140)
 class UTextModKeyJWT : public UObject
 {
 public:
-	class FString                                      Client_Role;                                   // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      deployment_id;                                 // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      organization_id;                               // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Product_User_Id;                               // 0x0090 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      sandbox_id;                                    // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      product_id;                                    // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Environment;                                   // 0x00C0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Generated;                                     // 0x00D0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Key_Guid;                                      // 0x00E0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      KId;                                           // 0x00F0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Key;                                           // 0x0100 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Expiration;                                    // 0x0110 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      Type;                                          // 0x0120 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Account_Id;                                    // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Client_Role;                                   // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      deployment_id;                                 // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      organization_id;                               // 0x0090 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Product_User_Id;                               // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      sandbox_id;                                    // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      product_id;                                    // 0x00C0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Environment;                                   // 0x00D0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Generated;                                     // 0x00E0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key_Guid;                                      // 0x00F0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      KId;                                           // 0x0100 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key;                                           // 0x0110 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Expiration;                                    // 0x0120 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Type;                                          // 0x0130 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()

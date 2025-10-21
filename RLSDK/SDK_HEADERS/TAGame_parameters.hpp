@@ -1,9 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
-# Generated with the CodeRedGenerator v1.1.5
+# Rocket League SDK (RLSDK) Season 20 (v2.60)
+# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
+# ========================================================================================= #
+# Psyonix Build ID: 251015.64315.499932
+# Build Date: Oct 15 2025 19:31:09
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -85673,6 +85676,15 @@ struct ATextChatActor_TA_execEventChatMessageReceived_Params
 struct U__TextChatActor_TA__SendSignedMessage_0x1_exec__TextChatActor_TA__SendSignedMessage_0x1_Params
 {
 	class USignedMessageObject_X*                      MessageObject;                                    // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.__TextModerationManager_TA__HandleCryptoKeyCreated_0x1.__TextModerationManager_TA__HandleCryptoKeyCreated_0x3
+// [0x20020003] 
+struct U__TextModerationManager_TA__HandleCryptoKeyCreated_0x1_exec__TextModerationManager_TA__HandleCryptoKeyCreated_0x3_Params
+{
+	class UKeyRegistrationResponse*                    Response;                                         // 0x0000 (0x0008) [0x0001400000000080] (CPF_Parm)    
+	class UError*                                      Error;                                            // 0x0008 (0x0008) [0x0001400000000080] (CPF_Parm)    
+	int32_t                                            ResponseCode;                                     // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.__TextModerationManager_TA__HandleCryptoKeyCreated_0x1.__TextModerationManager_TA__HandleCryptoKeyCreated_0x2

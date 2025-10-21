@@ -1,9 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.59) 10/14/2025 05:30PM
-# Generated with the CodeRedGenerator v1.1.5
+# Rocket League SDK (RLSDK) Season 20 (v2.60)
+# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
 # ========================================================================================= #
 # File: XAudio2_parameters.hpp
+# ========================================================================================= #
+# Psyonix Build ID: 251015.64315.499932
+# Build Date: Oct 15 2025 19:31:09
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
