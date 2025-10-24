@@ -365,7 +365,7 @@ namespace StringUtils
             return "";
 		std::string returnStr(size - 1, 0);
 		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(returnStr.data()), size, nullptr, nullptr);
-		return return_str;
+		return returnStr;
 	}
 
 	inline std::wstring ToWideString(const std::string& str)
@@ -377,7 +377,7 @@ namespace StringUtils
             return L"";
 		std::wstring returnStr(size - 1, 0);
 		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(returnStr.data()), size);
-		return return_str;
+		return returnStr;
 	}
 }
 
