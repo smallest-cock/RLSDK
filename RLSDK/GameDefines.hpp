@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.60)
-# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
+# Rocket League SDK (RLSDK) Season 20 (v2.61)
+# Generated with CodeRedGenerator v1.1.5 on 10/24/2025 02:45PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251015.64315.499932
-# Build Date: Oct 15 2025 19:31:09
+# Psyonix Build ID: 251020.62592.500294
+# Build Date: Oct 20 2025 19:02:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -334,15 +334,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x0219DF18)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x0219DF48)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022A7D70)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x023D6D80)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x023D6DC8)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x0219CF18)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x0219CF48)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022A6D70)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x023D5D80)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x023D5DC8)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "251015.64315.499932"
-#define BUILDDATE_STRING       "Oct 15 2025 19:31:09"
+#define GPSYONIXBUILDID_STRING "251020.62592.500294"
+#define BUILDDATE_STRING       "Oct 20 2025 19:02:19"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""
@@ -363,8 +363,8 @@ namespace StringUtils
 		int32_t size = WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, nullptr, 0, nullptr, nullptr);
 		if (size <= 0)
             return "";
-		std::string return_str(size - 1, 0);
-		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(return_str.data()), size, nullptr, nullptr);
+		std::string returnStr(size - 1, 0);
+		WideCharToMultiByte(CP_UTF8, 0, str.data(), -1, const_cast<char*>(returnStr.data()), size, nullptr, nullptr);
 		return return_str;
 	}
 
@@ -375,8 +375,8 @@ namespace StringUtils
 		int32_t size = MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, nullptr, 0);
 		if (size <= 0)
             return L"";
-		std::wstring return_str(size - 1, 0);
-		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(return_str.data()), size);
+		std::wstring returnStr(size - 1, 0);
+		MultiByteToWideChar(CP_UTF8, 0, str.data(), -1, const_cast<wchar_t*>(returnStr.data()), size);
 		return return_str;
 	}
 }

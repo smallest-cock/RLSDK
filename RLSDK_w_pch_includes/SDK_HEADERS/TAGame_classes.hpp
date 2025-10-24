@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.60)
-# Generated with CodeRedGenerator v1.1.5 on 10/20/2025 07:06PM
+# Rocket League SDK (RLSDK) Season 20 (v2.61)
+# Generated with CodeRedGenerator v1.1.5 on 10/24/2025 02:45PM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251015.64315.499932
-# Build Date: Oct 15 2025 19:31:09
+# Psyonix Build ID: 251020.62592.500294
+# Build Date: Oct 20 2025 19:02:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -16938,10 +16938,10 @@ public:
 class USonyPricingInfo_TA : public UObject
 {
 public:
-	uint32_t                                           Success : 1;                                   // 0x0060 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           Success : 1;                                   // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
-	class TArray<struct FSonyInputs>                   SONY_INPUTS;                                   // 0x0068 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	struct FSonyMetadataStruct                         MetaData;                                      // 0x0078 (0x0058) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<struct FSonyInputs>                   SONY_INPUTS;                                   // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FSonyMetadataStruct                         MetaData;                                      // 0x0078 (0x0058) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -28880,7 +28880,7 @@ public:
 	uint32_t                                           bFirstTimeDefaultVoice : 1;                    // 0x00C8 (0x0004) [0x0000000000000000] [0x00000200] 
 	uint32_t                                           bFirstTimeDefaultText : 1;                     // 0x00C8 (0x0004) [0x0000000000000000] [0x00000400] 
 	uint32_t                                           bFirstTimeDefaultTrade : 1;                    // 0x00C8 (0x0004) [0x0001000000000000] [0x00000800] 
-	uint32_t                                           bFilterMatureLanguage : 1;                     // 0x00C8 (0x0004) [0x0001000000000000] [0x00001000] 
+	uint32_t                                           bFilterLanguage : 1;                           // 0x00C8 (0x0004) [0x0001000000000000] [0x00001000] 
 	EChatFilter                                        QuickChatFilter;                               // 0x00CC (0x0001) [0x0008000000000000]               
 	EChatFilter                                        MatchChatFilter;                               // 0x00CD (0x0001) [0x0008000000000000]               
 	EChatFilter                                        PartyChatFilter;                               // 0x00CE (0x0001) [0x0008000000000000]               
