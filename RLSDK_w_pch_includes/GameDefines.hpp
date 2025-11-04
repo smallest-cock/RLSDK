@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 10/24/2025 02:45PM
+# Generated with CodeRedGenerator v1.1.5 on 11/03/2025 06:15PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
@@ -747,10 +747,10 @@ extern char** BuildDate;
 class FNameEntry
 {
 public:
-	uint64_t Flags; // 0x0000 (0x0008)
-	int32_t Index; // 0x0008 (0x0004)
-	uint8_t UnknownData00[0xC];// 0x000C (0x000C) DYNAMIC FIELD PADDING
-	wchar_t Name[0x400]; // 0x0018 (0x0002)
+	uint64_t Flags;                                   // 0x0000 (0x0008)
+	int32_t Index;                                    // 0x0008 (0x0004)
+	uint8_t UnknownData00[0xC];   // 0x000C (0x000C) DYNAMIC FIELD PADDING
+	wchar_t Name[0x400];                              // 0x0018 (0x0002)
 
 public:
 	FNameEntry() : Flags{ 0 }, Index{ -1 }, Name{ 0 }, UnknownData00{ 0 } {}

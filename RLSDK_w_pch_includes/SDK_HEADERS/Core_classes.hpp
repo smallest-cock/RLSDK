@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 10/24/2025 02:45PM
+# Generated with CodeRedGenerator v1.1.5 on 11/03/2025 06:15PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
@@ -2508,8 +2508,8 @@ public:
 class UField : public UObject
 {
 public:
-	class UField* Next; // 0x0060 (0x0008)
-	uint8_t UnknownData00[0x8];// 0x0068 (0x0008) DYNAMIC FIELD PADDING
+	class UField* Next;           // 0x0060 (0x0008)
+	uint8_t UnknownData00[0x8];   // 0x0068 (0x0008) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2531,13 +2531,13 @@ public:
 class UStruct : public UField
 {
 public:
-	uint8_t UnknownData00[0x10];// 0x0070 (0x0010) DYNAMIC FIELD PADDING
-	class UField* SuperField; // 0x0080 (0x0008)
-	class UField* Children; // 0x0088 (0x0008)
-	int32_t PropertySize; // 0x0090 (0x0004)
-	uint8_t UnknownData01[0x1C];// 0x0094 (0x001C) DYNAMIC FIELD PADDING
-	int32_t MinAlignment; // 0x00B0 (0x0004)
-	uint8_t UnknownData02[0x7C];// 0x00B4 (0x007C) DYNAMIC FIELD PADDING
+	uint8_t UnknownData00[0x10];  // 0x0070 (0x0010) DYNAMIC FIELD PADDING
+	class UField* SuperField;     // 0x0080 (0x0008)
+	class UField* Children;       // 0x0088 (0x0008)
+	int32_t PropertySize;         // 0x0090 (0x0004)
+	uint8_t UnknownData01[0x1C];  // 0x0094 (0x001C) DYNAMIC FIELD PADDING
+	int32_t MinAlignment;         // 0x00B0 (0x0004)
+	uint8_t UnknownData02[0x7C];  // 0x00B4 (0x007C) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2576,14 +2576,24 @@ public:
 
 };
 
+class UStructProperty; // forward declaration for UFunction::FirstStructWithDefaults
+
 // Class Core.Function
 // 0x0030 (0x0130 - 0x0160)
 class UFunction : public UStruct
 {
 public:
-	uint64_t FunctionFlags; // 0x0130 (0x0008)
-	uint16_t iNative; // 0x0138 (0x0002)
-	uint8_t UnknownData00[0x26];// 0x013A (0x0026) DYNAMIC FIELD PADDING
+	uint64_t FunctionFlags;       // 0x0130 (0x0008)
+	uint16_t iNative;             // 0x0138 (0x0002)
+	uint16_t RepOffset;           // 0x013A (0x0002)
+	class FName FriendlyName;     // 0x013C (0x0008)
+	uint8_t OperPrecedence;       // 0x0144 (0x0001)
+	uint8_t NumParms;             // 0x0145 (0x0001)
+	uint16_t ParmsSize;           // 0x0146 (0x0002)
+	uint16_t ReturnValueOffset;   // 0x0148 (0x0002)
+	uint8_t UnknownData00[0x6];   // 0x014A (0x0006) DYNAMIC FIELD PADDING
+	UStructProperty* FirstStructWithDefaults;// 0x0150 (0x0008)
+	void* Func;                   // 0x0158 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2606,12 +2616,12 @@ public:
 class UProperty : public UField
 {
 public:
-	int32_t ArrayDim; // 0x0070 (0x0004)
-	int32_t ElementSize; // 0x0074 (0x0004)
-	uint64_t PropertyFlags; // 0x0078 (0x0008)
-	uint8_t UnknownData00[0x18];// 0x0080 (0x0018) DYNAMIC FIELD PADDING
-	int32_t Offset; // 0x0098 (0x0004)
-	uint8_t UnknownData01[0x2C];// 0x009C (0x002C) DYNAMIC FIELD PADDING
+	int32_t ArrayDim;             // 0x0070 (0x0004)
+	int32_t ElementSize;          // 0x0074 (0x0004)
+	uint64_t PropertyFlags;       // 0x0078 (0x0008)
+	uint8_t UnknownData00[0x18];  // 0x0080 (0x0018) DYNAMIC FIELD PADDING
+	int32_t Offset;               // 0x0098 (0x0004)
+	uint8_t UnknownData01[0x2C];  // 0x009C (0x002C) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2633,7 +2643,7 @@ public:
 class UStructProperty : public UProperty
 {
 public:
-	class UStruct* Struct; // 0x00C8 (0x0008)
+	class UStruct* Struct;        // 0x00C8 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2697,8 +2707,8 @@ public:
 class UObjectProperty : public UProperty
 {
 public:
-	class UClass* PropertyClass; // 0x00C8 (0x0008)
-	uint8_t UnknownData00[0x8];// 0x00D0 (0x0008) DYNAMIC FIELD PADDING
+	class UClass* PropertyClass;  // 0x00C8 (0x0008)
+	uint8_t UnknownData00[0x8];   // 0x00D0 (0x0008) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2741,7 +2751,7 @@ public:
 class UClassProperty : public UObjectProperty
 {
 public:
-	class UClass* MetaClass; // 0x00D8 (0x0008)
+	class UClass* MetaClass;      // 0x00D8 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2784,8 +2794,8 @@ public:
 class UMapProperty : public UProperty
 {
 public:
-	class UProperty* Key; // 0x00C8 (0x0008)
-	class UProperty* Value; // 0x00D0 (0x0008)
+	class UProperty* Key;         // 0x00C8 (0x0008)
+	class UProperty* Value;       // 0x00D0 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2829,7 +2839,7 @@ class UInterfaceProperty : public UProperty
 {
 public:
 	class UClass* InterfaceClass; // 0x00C8 (0x0008)
-	uint8_t UnknownData00[0x8];// 0x00D0 (0x0008) DYNAMIC FIELD PADDING
+	uint8_t UnknownData00[0x8];   // 0x00D0 (0x0008) DYNAMIC FIELD PADDING
 
 public:
 	static UClass* StaticClass()
@@ -2894,7 +2904,7 @@ public:
 class UByteProperty : public UProperty
 {
 public:
-	class UEnum* Enum; // 0x00C8 (0x0008)
+	class UEnum* Enum;            // 0x00C8 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2916,7 +2926,7 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	uint32_t BitMask; // 0x00C8 (0x0008)
+	uint32_t BitMask;             // 0x00C8 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2938,7 +2948,7 @@ public:
 class UArrayProperty : public UProperty
 {
 public:
-	class UProperty* Inner; // 0x00C8 (0x0008)
+	class UProperty* Inner;       // 0x00C8 (0x0008)
 
 public:
 	static UClass* StaticClass()
@@ -2960,7 +2970,7 @@ public:
 class UEnum : public UField
 {
 public:
-	class TArray<class FName> Names; // 0x0070 (0x0010)
+	class TArray<class FName> Names;// 0x0070 (0x0010)
 
 public:
 	static UClass* StaticClass()
@@ -2982,7 +2992,7 @@ public:
 class UConst : public UField
 {
 public:
-	class FString Value; // 0x0070 (0x0010)
+	class FString Value;          // 0x0070 (0x0010)
 
 public:
 	static UClass* StaticClass()
