@@ -25,6 +25,40 @@ typedef UINT          UBOOL;    // Boolean 0 (false) or 1 (true).
 typedef unsigned long BITFIELD; // For bitfields.
 typedef double        DOUBLE;   // 64-bit IEEE double.
 
+class UObject;
+class UStruct;
+class UFunction;
+
+/*
+    Node    - Function to be exectued
+    Object  - Calling object (context in which the function will be executed)
+    Code    - Offset in script array of function which gets executed (ProcessInternal calls Stack.Step until end of function)
+    Locals  - Params of the function which gets executed
+*/
+struct FFrame
+{
+	BYTE     padding0[0x10]; // 0x0008 <-- 8 byte offset bc vtable ptr occupies first 8 bytes
+	UStruct* Node;           // 0x0018
+	UObject* Object;         // 0x0020
+	BYTE*    Code;           // 0x0028
+	BYTE*    Locals;         // 0x0030
+	INT      LineNum;        // 0x0038
+	BYTE     padding1[0x4];  // 0x003C
+	FFrame*  PreviousFrame;  // 0x0040
+
+	virtual void func0();
+	virtual void func1();
+	virtual void func2(); // just returns a value (1 asm instruction)
+	virtual void func3(); // just returns a value (1 asm instruction)
+}; // Size: 0x0048
+
+#define RESULT_DECL void* const Result
+
+using tCallFunction    = void (*)(UObject*, FFrame&, void* const, UFunction*); 
+using tProcessInternal = void (*)(UObject*, FFrame&, void* const);
+using tProcessEvent    = void (*)(UObject*, UFunction*, void*, void*); // Calling object, Function, Struct ptr with params, Unused result
+
+
 // TLinkedList:
 // https://github.com/CodeRedModding/UnrealEngine3/blob/7bf53e29f620b0d4ca5c9bd063a2d2dbcee732fe/Development/Src/Core/Inc/List.h#L18
 template <class ElementType> class TLinkedList
