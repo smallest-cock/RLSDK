@@ -1965,9 +1965,7 @@ public:
 	static bool NotEqual_BoolBool(bool A, bool B);
 	static bool EqualEqual_BoolBool(bool A, bool B);
 	static bool Not_PreBool(bool A);
-	static bool                                        initialized;
-	static std::unordered_map<std::string, UFunction*> functionCache;
-	static UFunction* FindFunction(const std::string& functionFullName);
+	void ProcessEvent(class UFunction* uFunction, void* uParams, void* uResult = nullptr);
 };
 
 // Class Core.Config_ORS
