@@ -3,7 +3,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/05/2025 07:11PM
+# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
 # ========================================================================================= #
 # File: WinDrv_classes.cpp
 # ========================================================================================= #
@@ -27,7 +27,7 @@
 */
 
 // Function WinDrv.FacebookWindows.OnFacebookFriendsRequestComplete
-// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
 // class UHttpRequestInterface*   OriginalRequest                (CPF_Parm)
 // class UHttpResponseInterface*  Response                       (CPF_Parm)
@@ -52,7 +52,7 @@ void UFacebookWindows::OnFacebookFriendsRequestComplete(class UHttpRequestInterf
 };
 
 // Function WinDrv.FacebookWindows.RequestFacebookFriends
-// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private | FUNC_AllFlags)
+// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private)
 // Parameter Info:
 
 void UFacebookWindows::eventRequestFacebookFriends()
@@ -71,7 +71,7 @@ void UFacebookWindows::eventRequestFacebookFriends()
 };
 
 // Function WinDrv.FacebookWindows.OnFacebookMeRequestComplete
-// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_AllFlags)
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
 // class UHttpRequestInterface*   OriginalRequest                (CPF_Parm)
 // class UHttpResponseInterface*  Response                       (CPF_Parm)
@@ -96,7 +96,7 @@ void UFacebookWindows::OnFacebookMeRequestComplete(class UHttpRequestInterface* 
 };
 
 // Function WinDrv.FacebookWindows.RequestFacebookMeInfo
-// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private | FUNC_AllFlags)
+// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private)
 // Parameter Info:
 
 void UFacebookWindows::eventRequestFacebookMeInfo()
@@ -115,7 +115,7 @@ void UFacebookWindows::eventRequestFacebookMeInfo()
 };
 
 // Function WinDrv.FacebookWindows.FacebookRequestCallback
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class UHttpRequestInterface*   OriginalRequest                (CPF_Parm)
 // class UHttpResponseInterface*  Response                       (CPF_Parm)
@@ -140,7 +140,7 @@ void UFacebookWindows::FacebookRequestCallback(class UHttpRequestInterface* Orig
 };
 
 // Function WinDrv.FacebookWindows.ProcessFacebookRequest
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  Payload                        (CPF_Parm | CPF_NeedCtorLink)
 // int32_t                        ResponseCode                   (CPF_Parm)
@@ -163,7 +163,7 @@ void UFacebookWindows::ProcessFacebookRequest(const class FString& Payload, int3
 };
 
 // Function WinDrv.FacebookWindows.FacebookRequest
-// [0x400024002] (FUNC_Defined | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_AllFlags)
+// [0x400024002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
 // class FString                  GraphRequest                   (CPF_Parm | CPF_NeedCtorLink)
 // class FString                  HTTPMethod                     (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
@@ -188,7 +188,7 @@ void UFacebookWindows::FacebookRequest(const class FString& GraphRequest, const 
 };
 
 // Function WinDrv.FacebookWindows.Disconnect
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 
 void UFacebookWindows::Disconnect()
@@ -207,7 +207,7 @@ void UFacebookWindows::Disconnect()
 };
 
 // Function WinDrv.FacebookWindows.IsAuthorized
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -229,7 +229,7 @@ bool UFacebookWindows::IsAuthorized()
 };
 
 // Function WinDrv.FacebookWindows.Authorize
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -251,7 +251,7 @@ bool UFacebookWindows::Authorize()
 };
 
 // Function WinDrv.FacebookWindows.Init
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -273,7 +273,7 @@ bool UFacebookWindows::Init()
 };
 
 // Function WinDrv.HttpRequestWindows.ProcessRequest
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -295,7 +295,7 @@ bool UHttpRequestWindows::ProcessRequest()
 };
 
 // Function WinDrv.HttpRequestWindows.SetHeader
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class UHttpRequestInterface*   ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class FString                  HeaderName                     (CPF_Parm | CPF_NeedCtorLink)
@@ -321,7 +321,7 @@ class UHttpRequestInterface* UHttpRequestWindows::SetHeader(const class FString&
 };
 
 // Function WinDrv.HttpRequestWindows.SetContentAsString
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class UHttpRequestInterface*   ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class FString                  ContentString                  (CPF_Parm | CPF_NeedCtorLink)
@@ -345,7 +345,7 @@ class UHttpRequestInterface* UHttpRequestWindows::SetContentAsString(const class
 };
 
 // Function WinDrv.HttpRequestWindows.SetContent
-// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // class UHttpRequestInterface*   ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class TArray<uint8_t>          ContentPayload                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -371,7 +371,7 @@ class UHttpRequestInterface* UHttpRequestWindows::SetContent(class TArray<uint8_
 };
 
 // Function WinDrv.HttpRequestWindows.SetURL
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class UHttpRequestInterface*   ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class FString                  URL                            (CPF_Parm | CPF_NeedCtorLink)
@@ -395,7 +395,7 @@ class UHttpRequestInterface* UHttpRequestWindows::SetURL(const class FString& UR
 };
 
 // Function WinDrv.HttpRequestWindows.SetVerb
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class UHttpRequestInterface*   ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class FString                  Verb                           (CPF_Parm | CPF_NeedCtorLink)
@@ -419,7 +419,7 @@ class UHttpRequestInterface* UHttpRequestWindows::SetVerb(const class FString& V
 };
 
 // Function WinDrv.HttpRequestWindows.GetVerb
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -441,7 +441,7 @@ class FString UHttpRequestWindows::GetVerb()
 };
 
 // Function WinDrv.HttpRequestWindows.GetContent
-// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // class TArray<uint8_t>          Content                        (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
@@ -464,7 +464,7 @@ void UHttpRequestWindows::GetContent(class TArray<uint8_t>& Content)
 };
 
 // Function WinDrv.HttpRequestWindows.GetURL
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -486,7 +486,7 @@ class FString UHttpRequestWindows::GetURL()
 };
 
 // Function WinDrv.HttpRequestWindows.GetContentLength
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -508,7 +508,7 @@ int32_t UHttpRequestWindows::GetContentLength()
 };
 
 // Function WinDrv.HttpRequestWindows.GetContentType
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -530,7 +530,7 @@ class FString UHttpRequestWindows::GetContentType()
 };
 
 // Function WinDrv.HttpRequestWindows.GetURLParameter
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class FString                  ParameterName                  (CPF_Parm | CPF_NeedCtorLink)
@@ -554,7 +554,7 @@ class FString UHttpRequestWindows::GetURLParameter(const class FString& Paramete
 };
 
 // Function WinDrv.HttpRequestWindows.GetHeaders
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class TArray<class FString>    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -576,7 +576,7 @@ class TArray<class FString> UHttpRequestWindows::GetHeaders()
 };
 
 // Function WinDrv.HttpRequestWindows.GetHeader
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class FString                  HeaderName                     (CPF_Parm | CPF_NeedCtorLink)
@@ -600,7 +600,7 @@ class FString UHttpRequestWindows::GetHeader(const class FString& HeaderName)
 };
 
 // Function WinDrv.HttpResponseWindows.GetResponseCode
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -622,7 +622,7 @@ int32_t UHttpResponseWindows::GetResponseCode()
 };
 
 // Function WinDrv.HttpResponseWindows.GetContentAsString
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -644,7 +644,7 @@ class FString UHttpResponseWindows::GetContentAsString()
 };
 
 // Function WinDrv.HttpResponseWindows.GetContent
-// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // class TArray<uint8_t>          Content                        (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
@@ -667,7 +667,7 @@ void UHttpResponseWindows::GetContent(class TArray<uint8_t>& Content)
 };
 
 // Function WinDrv.HttpResponseWindows.GetURL
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -689,7 +689,7 @@ class FString UHttpResponseWindows::GetURL()
 };
 
 // Function WinDrv.HttpResponseWindows.GetContentLength
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -711,7 +711,7 @@ int32_t UHttpResponseWindows::GetContentLength()
 };
 
 // Function WinDrv.HttpResponseWindows.GetContentType
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -733,7 +733,7 @@ class FString UHttpResponseWindows::GetContentType()
 };
 
 // Function WinDrv.HttpResponseWindows.GetURLParameter
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class FString                  ParameterName                  (CPF_Parm | CPF_NeedCtorLink)
@@ -757,7 +757,7 @@ class FString UHttpResponseWindows::GetURLParameter(const class FString& Paramet
 };
 
 // Function WinDrv.HttpResponseWindows.GetHeaders
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class TArray<class FString>    ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 
@@ -779,7 +779,7 @@ class TArray<class FString> UHttpResponseWindows::GetHeaders()
 };
 
 // Function WinDrv.HttpResponseWindows.GetHeader
-// [0x400020400] (FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x400020400] (FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class FString                  HeaderName                     (CPF_Parm | CPF_NeedCtorLink)
@@ -803,7 +803,7 @@ class FString UHttpResponseWindows::GetHeader(const class FString& HeaderName)
 };
 
 // Function WinDrv.HttpRequestWindowsMcp.ProcessRequest
-// [0x400020002] (FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x400020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 

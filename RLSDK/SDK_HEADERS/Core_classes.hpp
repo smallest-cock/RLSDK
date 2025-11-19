@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/05/2025 07:11PM
+# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
@@ -1965,7 +1965,9 @@ public:
 	static bool NotEqual_BoolBool(bool A, bool B);
 	static bool EqualEqual_BoolBool(bool A, bool B);
 	static bool Not_PreBool(bool A);
-	void ProcessEvent(class UFunction* uFunction, void* uParams, void* uResult = nullptr);
+	static bool                                        initialized;
+	static std::unordered_map<std::string, UFunction*> functionCache;
+	static UFunction* FindFunction(const std::string& functionFullName);
 };
 
 // Class Core.Config_ORS
@@ -2608,6 +2610,8 @@ public:
 		return uClassPointer;
 	};
 
+	static bool                                        initialized;
+	static std::unordered_map<std::string, UFunction*> functionCache;
 	static UFunction* FindFunction(const std::string& functionFullName);
 };
 

@@ -3,7 +3,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/05/2025 07:11PM
+# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
 # ========================================================================================= #
 # File: AkAudio_classes.cpp
 # ========================================================================================= #
@@ -27,7 +27,7 @@
 */
 
 // Function AkAudio.AkBusActor.RegisterReflectionEmitter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    BusName                        (CPF_Parm)
 // EBusEmitterType                BusType                        (CPF_Parm)
@@ -50,7 +50,7 @@ void AAkBusActor::RegisterReflectionEmitter(const class FName& BusName, EBusEmit
 };
 
 // Function AkAudio.AkBusActor.SetPinnedAxis
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // EPinnedAxisType                AxisToPin                      (CPF_Parm)
 
@@ -71,7 +71,7 @@ void AAkBusActor::SetPinnedAxis(EPinnedAxisType AxisToPin)
 };
 
 // Function AkAudio.AkDevice.SetBusEffect
-// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_HasOptionalParms | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    BusName                        (CPF_Parm)
 // class FName                    EffectSetting                  (CPF_Parm)
@@ -96,7 +96,7 @@ void UAkDevice::SetBusEffect(const class FName& BusName, const class FName& Effe
 };
 
 // Function AkAudio.AkDevice.ResetSlapbackObjects
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkDevice::ResetSlapbackObjects()
@@ -115,7 +115,7 @@ void UAkDevice::ResetSlapbackObjects()
 };
 
 // Function AkAudio.AkDevice.SetSoundEnvironment
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class AActor*                  Actor                          (CPF_Parm)
 // EAkEnvironmentType             EnvironmentType                (CPF_Parm)
@@ -138,7 +138,7 @@ void UAkDevice::SetSoundEnvironment(class AActor* Actor, EAkEnvironmentType Envi
 };
 
 // Function AkAudio.AkDevice.GetEnvironments
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkEnvironments*         ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -160,7 +160,7 @@ class UAkEnvironments* UAkDevice::GetEnvironments()
 };
 
 // Function AkAudio.AkDevice.NotifyWhenInitialized
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
 
@@ -181,7 +181,7 @@ void UAkDevice::NotifyWhenInitialized(const struct FScriptDelegate& Callback)
 };
 
 // Function AkAudio.AkDevice.ProfileStop
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkDevice::ProfileStop()
@@ -200,7 +200,7 @@ void UAkDevice::ProfileStop()
 };
 
 // Function AkAudio.AkDevice.ProfileStart
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkDevice::ProfileStart()
@@ -219,7 +219,7 @@ void UAkDevice::ProfileStart()
 };
 
 // Function AkAudio.AkDevice.PrintData
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkDevice::PrintData()
@@ -238,7 +238,7 @@ void UAkDevice::PrintData()
 };
 
 // Function AkAudio.AkDevice.SetDynamicRange
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // EAkDynamicRangeType            Type                           (CPF_Parm)
 
@@ -259,7 +259,7 @@ void UAkDevice::SetDynamicRange(EAkDynamicRangeType Type)
 };
 
 // Function AkAudio.AkDevice.SetOutputType
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // EAkOutputType                  Type                           (CPF_Parm)
 
@@ -280,7 +280,7 @@ void UAkDevice::SetOutputType(EAkOutputType Type)
 };
 
 // Function AkAudio.AkDevice.SetListenerSpatialization
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class ULocalPlayer*            Player                         (CPF_Parm)
 // EAkListenerSpacialization      Value                          (CPF_Parm)
@@ -303,7 +303,7 @@ void UAkDevice::SetListenerSpatialization(class ULocalPlayer* Player, EAkListene
 };
 
 // Function AkAudio.AkDevice.SetSplitScreenListenerEnabled
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // uint32_t                       bEnable                        (CPF_Parm)
 
@@ -324,7 +324,7 @@ void UAkDevice::SetSplitScreenListenerEnabled(bool bEnable)
 };
 
 // Function AkAudio.AkDevice.SetSplitScreenListenerPosition
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // struct FVector                 Location                       (CPF_Parm)
 
@@ -345,7 +345,7 @@ void UAkDevice::SetSplitScreenListenerPosition(const struct FVector& Location)
 };
 
 // Function AkAudio.AkDevice.UpdateSecondaryOutputs
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkDevice::UpdateSecondaryOutputs()
@@ -364,7 +364,7 @@ void UAkDevice::UpdateSecondaryOutputs()
 };
 
 // Function AkAudio.AkDevice.SetGlobalRTCP
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -387,7 +387,7 @@ void UAkDevice::SetGlobalRTCP(const class FName& Key, float Value)
 };
 
 // Function AkAudio.AkDevice.StopGlobalSound
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 
@@ -408,7 +408,7 @@ void UAkDevice::StopGlobalSound(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkDevice.PlayGlobalSound
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 
@@ -429,7 +429,7 @@ void UAkDevice::PlayGlobalSound(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkDevice.SetState
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    InStateGroup                   (CPF_Parm)
 // class FName                    InState                        (CPF_Parm)
@@ -452,7 +452,7 @@ void UAkDevice::SetState(const class FName& InStateGroup, const class FName& InS
 };
 
 // Function AkAudio.AkDevice.SetSwitch
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class AActor*                  SourceActor                    (CPF_Parm)
 // class FName                    Key                            (CPF_Parm)
@@ -477,7 +477,7 @@ void UAkDevice::SetSwitch(class AActor* SourceActor, const class FName& Key, con
 };
 
 // Function AkAudio.AkDevice.SetRTCP
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class AActor*                  SourceActor                    (CPF_Parm)
 // class FName                    Key                            (CPF_Parm)
@@ -502,7 +502,7 @@ void UAkDevice::SetRTCP(class AActor* SourceActor, const class FName& Key, float
 };
 
 // Function AkAudio.AkDevice.StopAllSounds
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class AActor*                  SourceActor                    (CPF_Parm)
 
@@ -523,7 +523,7 @@ void UAkDevice::StopAllSounds(class AActor* SourceActor)
 };
 
 // Function AkAudio.AkDevice.StopSound
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class AActor*                  SourceActor                    (CPF_Parm)
 // class UAkSoundCue*             Sound                          (CPF_Parm)
@@ -546,7 +546,7 @@ void UAkDevice::StopSound(class AActor* SourceActor, class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkDevice.PlaySound
-// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_HasOptionalParms | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundSource*          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 // class AActor*                  SourceActor                    (CPF_Parm)
@@ -576,7 +576,7 @@ class UAkSoundSource* UAkDevice::PlaySound(class AActor* SourceActor, class UAkS
 };
 
 // Function AkAudio.AkDevice.GetSoundSource
-// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_HasOptionalParms | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundSource*          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 // class AActor*                  SourceActor                    (CPF_Parm)
@@ -604,7 +604,7 @@ class UAkSoundSource* UAkDevice::GetSoundSource(class AActor* SourceActor, const
 };
 
 // Function AkAudio.AkDevice.EventInitialized
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 
 void UAkDevice::EventInitialized()
@@ -623,7 +623,7 @@ void UAkDevice::EventInitialized()
 };
 
 // Function AkAudio.AkEnvironments.RemoveActorEnvironment
-// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // class AActor*                  TargetActor                    (CPF_Parm)
 // class FString                  EnvironmentID                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -648,7 +648,7 @@ void UAkEnvironments::RemoveActorEnvironment(class AActor* TargetActor, class FS
 };
 
 // Function AkAudio.AkEnvironments.AddActorEnvironment
-// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // class AActor*                  TargetActor                    (CPF_Parm)
 // struct FAkEnvironment          Environment                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -673,7 +673,7 @@ void UAkEnvironments::AddActorEnvironment(class AActor* TargetActor, struct FAkE
 };
 
 // Function AkAudio.AkEnvironments.AddLevelDefault
-// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // struct FAkEnvironment          Environment                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
@@ -696,7 +696,7 @@ void UAkEnvironments::AddLevelDefault(struct FAkEnvironment& Environment)
 };
 
 // Function AkAudio.AkMusicAnalysis.UpdateSmoothedMusicInfo
-// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
 // float                          DeltaTime                      (CPF_Const | CPF_Parm)
 
@@ -717,7 +717,7 @@ void UAkMusicAnalysis::UpdateSmoothedMusicInfo(float DeltaTime)
 };
 
 // Function AkAudio.AkMusicAnalysis.UpdateMusicInfo
-// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // struct FMusicAnalysisInfo      NewValues                      (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
@@ -740,7 +740,7 @@ void UAkMusicAnalysis::UpdateMusicInfo(struct FMusicAnalysisInfo& NewValues)
 };
 
 // Function AkAudio.AkMusicAnalysis.OnNewTrack
-// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
 // int32_t                        NewBPM                         (CPF_Parm)
 
@@ -761,7 +761,7 @@ void UAkMusicAnalysis::OnNewTrack(int32_t NewBPM)
 };
 
 // Function AkAudio.AkMusicAnalysis.GetInstance
-// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
 // class UAkMusicAnalysis*        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -783,7 +783,7 @@ class UAkMusicAnalysis* UAkMusicAnalysis::GetInstance()
 };
 
 // Function AkAudio.AkMusicAnalysis.EventMusicBar
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 
 void UAkMusicAnalysis::EventMusicBar()
@@ -802,7 +802,7 @@ void UAkMusicAnalysis::EventMusicBar()
 };
 
 // Function AkAudio.AkMusicAnalysis.EventMusicBeat
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 
 void UAkMusicAnalysis::EventMusicBeat()
@@ -821,7 +821,7 @@ void UAkMusicAnalysis::EventMusicBeat()
 };
 
 // Function AkAudio.AkMusicAnalysis.EventNewMusicTrack
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // int32_t                        PlayingID                      (CPF_Parm)
 // int32_t                        NewBPM                         (CPF_Parm)
@@ -844,7 +844,7 @@ void UAkMusicAnalysis::EventNewMusicTrack(int32_t PlayingID, int32_t NewBPM)
 };
 
 // Function AkAudio.AkMusicDevice.Seek
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 // float                          PositionSeconds                (CPF_Parm)
@@ -867,7 +867,7 @@ void UAkMusicDevice::Seek(class UAkSoundCue* Sound, float PositionSeconds)
 };
 
 // Function AkAudio.AkMusicDevice.SetRTCP
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -890,7 +890,7 @@ void UAkMusicDevice::SetRTCP(const class FName& Key, float Value)
 };
 
 // Function AkAudio.AkMusicDevice.StopPlayingID
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // int32_t                        PlayingID                      (CPF_Parm)
 
@@ -911,7 +911,7 @@ void UAkMusicDevice::StopPlayingID(int32_t PlayingID)
 };
 
 // Function AkAudio.AkMusicDevice.Stop
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 
@@ -932,7 +932,7 @@ void UAkMusicDevice::Stop(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkMusicDevice.Play
-// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class UAkSoundCue*             Sound                          (CPF_Parm)
@@ -956,7 +956,7 @@ int32_t UAkMusicDevice::Play(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkMusicDevice.EventTrackEnd
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // int32_t                        PlayingID                      (CPF_Parm)
 
@@ -977,7 +977,7 @@ void UAkMusicDevice::EventTrackEnd(int32_t PlayingID)
 };
 
 // Function AkAudio.AkMusicDevice.EventTrackStart
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // int32_t                        PlayingID                      (CPF_Parm)
 // class FString                  FileMarker                     (CPF_Parm | CPF_NeedCtorLink)
@@ -1000,7 +1000,7 @@ void UAkMusicDevice::EventTrackStart(int32_t PlayingID, const class FString& Fil
 };
 
 // Function AkAudio.AkParamGroup.SetSendToSlapbacks
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // uint32_t                       bSend                          (CPF_Parm)
 
@@ -1021,7 +1021,7 @@ void UAkParamGroup::SetSendToSlapbacks(bool bSend)
 };
 
 // Function AkAudio.AkParamGroup.SetControllerId
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // int32_t                        InID                           (CPF_Parm)
 
@@ -1042,7 +1042,7 @@ void UAkParamGroup::SetControllerId(int32_t InID)
 };
 
 // Function AkAudio.AkParamGroup.EnableObjectAttenuation
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 
 void UAkParamGroup::EnableObjectAttenuation()
@@ -1061,7 +1061,7 @@ void UAkParamGroup::EnableObjectAttenuation()
 };
 
 // Function AkAudio.AkParamGroup.DisableObjectAttenuation
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 
 void UAkParamGroup::DisableObjectAttenuation()
@@ -1080,7 +1080,7 @@ void UAkParamGroup::DisableObjectAttenuation()
 };
 
 // Function AkAudio.AkParamGroup.PrintDebugInfo
-// [0x400020102] (FUNC_Defined | FUNC_Simulated | FUNC_Public | FUNC_AllFlags)
+// [0x400020102] (FUNC_Defined | FUNC_Simulated | FUNC_Public)
 // Parameter Info:
 // class UDebugDrawer*            Drawer                         (CPF_Parm)
 
@@ -1101,7 +1101,7 @@ void UAkParamGroup::PrintDebugInfo(class UDebugDrawer* Drawer)
 };
 
 // Function AkAudio.AkParamGroup.UpdateSoundSourceAttenuationScaling
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkParamGroup::UpdateSoundSourceAttenuationScaling()
@@ -1120,7 +1120,7 @@ void UAkParamGroup::UpdateSoundSourceAttenuationScaling()
 };
 
 // Function AkAudio.AkParamGroup.SetActorParameter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class AActor*                  Value                          (CPF_Parm)
@@ -1143,7 +1143,7 @@ void UAkParamGroup::SetActorParameter(const class FName& Key, class AActor* Valu
 };
 
 // Function AkAudio.AkParamGroup.SetLinearColorParameter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // struct FLinearColor            Value                          (CPF_Parm)
@@ -1166,7 +1166,7 @@ void UAkParamGroup::SetLinearColorParameter(const class FName& Key, const struct
 };
 
 // Function AkAudio.AkParamGroup.SetVectorParameter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // struct FVector                 Value                          (CPF_Parm)
@@ -1189,7 +1189,7 @@ void UAkParamGroup::SetVectorParameter(const class FName& Key, const struct FVec
 };
 
 // Function AkAudio.AkParamGroup.SetFloatParameter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -1212,7 +1212,7 @@ void UAkParamGroup::SetFloatParameter(const class FName& Key, float Value)
 };
 
 // Function AkAudio.AkParamGroup.SetNameParameter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class FName                    Value                          (CPF_Parm)
@@ -1235,7 +1235,7 @@ void UAkParamGroup::SetNameParameter(const class FName& Key, const class FName& 
 };
 
 // Function AkAudio.AkParamGroup.GetDebugData
-// [0x04420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_K2Call | FUNC_AllFlags)
+// [0x04420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_K2Call)
 // Parameter Info:
 // class TArray<class FName>      RTCPKeys                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 // class TArray<float>            RTCPValues                     (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -1267,7 +1267,7 @@ void UAkParamGroup::GetDebugData(class TArray<class FName>& RTCPKeys, class TArr
 };
 
 // Function AkAudio.AkParamGroup.StopSound
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 
@@ -1288,7 +1288,7 @@ void UAkParamGroup::StopSound(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkParamGroup.PlaySound
-// [0x04024401] (FUNC_Final | FUNC_Native | FUNC_NoExport | FUNC_OptionalParm | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04024401] (FUNC_Final | FUNC_Native | FUNC_HasOptionalParms | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundSource*          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
 // class UAkSoundCue*             Sound                          (CPF_Parm)
@@ -1316,7 +1316,7 @@ class UAkSoundSource* UAkParamGroup::PlaySound(class UAkSoundCue* Sound, const s
 };
 
 // Function AkAudio.AkParamGroup.SetSwitch
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class FName                    Value                          (CPF_Parm)
@@ -1339,7 +1339,7 @@ void UAkParamGroup::SetSwitch(const class FName& Key, const class FName& Value)
 };
 
 // Function AkAudio.AkParamGroup.SetRTCP
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -1362,7 +1362,7 @@ void UAkParamGroup::SetRTCP(const class FName& Key, float Value)
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetActorParameter
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class AActor*                  Value                          (CPF_Parm)
@@ -1385,7 +1385,7 @@ void UAkPlaySoundComponent::SetActorParameter(const class FName& Key, class AAct
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetLinearColorParameter
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // struct FLinearColor            Value                          (CPF_Parm)
@@ -1408,7 +1408,7 @@ void UAkPlaySoundComponent::SetLinearColorParameter(const class FName& Key, cons
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetVectorParameter
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // struct FVector                 Value                          (CPF_Parm)
@@ -1431,7 +1431,7 @@ void UAkPlaySoundComponent::SetVectorParameter(const class FName& Key, const str
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetFloatParameter
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -1454,7 +1454,7 @@ void UAkPlaySoundComponent::SetFloatParameter(const class FName& Key, float Valu
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetNameParameter
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class FName                    Value                          (CPF_Parm)
@@ -1477,7 +1477,7 @@ void UAkPlaySoundComponent::SetNameParameter(const class FName& Key, const class
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetRTCP
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // float                          Value                          (CPF_Parm)
@@ -1500,7 +1500,7 @@ void UAkPlaySoundComponent::SetRTCP(const class FName& Key, float Value)
 };
 
 // Function AkAudio.AkPlaySoundComponent.SetSwitch
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FName                    Key                            (CPF_Parm)
 // class FName                    Value                          (CPF_Parm)
@@ -1523,7 +1523,7 @@ void UAkPlaySoundComponent::SetSwitch(const class FName& Key, const class FName&
 };
 
 // Function AkAudio.AkPlaySoundComponent.IsPlaying
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -1545,7 +1545,7 @@ bool UAkPlaySoundComponent::IsPlaying()
 };
 
 // Function AkAudio.AkPlaySoundComponent.Stop
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 
 void UAkPlaySoundComponent::Stop()
@@ -1564,7 +1564,7 @@ void UAkPlaySoundComponent::Stop()
 };
 
 // Function AkAudio.AkPlaySoundComponent.Play
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 
 void UAkPlaySoundComponent::Play()
@@ -1583,7 +1583,7 @@ void UAkPlaySoundComponent::Play()
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.PrintDebugInfo
-// [0x400020102] (FUNC_Defined | FUNC_Simulated | FUNC_Public | FUNC_AllFlags)
+// [0x400020102] (FUNC_Defined | FUNC_Simulated | FUNC_Public)
 // Parameter Info:
 // class UDebugDrawer*            Drawer                         (CPF_Parm)
 
@@ -1604,7 +1604,7 @@ void UAkRevPhysicsSimulation::PrintDebugInfo(class UDebugDrawer* Drawer)
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.InterpGearRatio
-// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // float                          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // int32_t                        Gear                           (CPF_Parm)
@@ -1632,7 +1632,7 @@ float UAkRevPhysicsSimulation::InterpGearRatio(int32_t Gear, struct FAkRevSimUpd
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.GetGearRatio
-// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // float                          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // struct FAkRevSimUpdateParams   SimUpdate                      (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -1658,7 +1658,7 @@ float UAkRevPhysicsSimulation::GetGearRatio(struct FAkRevSimUpdateParams& SimUpd
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.CalcVelocity
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // float                          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // float                          GearRatio                      (CPF_Parm)
@@ -1684,7 +1684,7 @@ float UAkRevPhysicsSimulation::CalcVelocity(float GearRatio, float RPM)
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.CalcRPM
-// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_AllFlags)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // float                          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // float                          GearRatio                      (CPF_Parm)
@@ -1710,7 +1710,7 @@ float UAkRevPhysicsSimulation::CalcRPM(float GearRatio, float Velocity)
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.Step
-// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms | FUNC_AllFlags)
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
 // struct FAkRevSimFrame          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // float                          DeltaTime                      (CPF_Parm)
@@ -1738,7 +1738,7 @@ struct FAkRevSimFrame UAkRevPhysicsSimulation::Step(float DeltaTime, struct FAkR
 };
 
 // Function AkAudio.AkRevPhysicsSimulation.EventGearChange
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // class UAkRevPhysicsSimulation* Simulation                     (CPF_Parm)
 
@@ -1759,7 +1759,7 @@ void UAkRevPhysicsSimulation::EventGearChange(class UAkRevPhysicsSimulation* Sim
 };
 
 // Function AkAudio.AkSoundBanksInfo.Parse
-// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
 // class UAkSoundBanksInfo*       ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class FString                  Text                           (CPF_Parm | CPF_NeedCtorLink)
@@ -1783,7 +1783,7 @@ class UAkSoundBanksInfo* UAkSoundBanksInfo::Parse(const class FString& Text)
 };
 
 // Function AkAudio.AkSoundBanksInfo.LoadForNativePlatform
-// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_AllFlags)
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
 // class UAkSoundBanksInfo*       ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -1805,7 +1805,7 @@ class UAkSoundBanksInfo* UAkSoundBanksInfo::LoadForNativePlatform()
 };
 
 // Function AkAudio.AkSoundSource.SetSubtitlesEnabled
-// [0x04020803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // uint32_t                       bValue                         (CPF_Parm)
 
@@ -1826,7 +1826,7 @@ void UAkSoundSource::eventSetSubtitlesEnabled(bool bValue)
 };
 
 // Function AkAudio.AkSoundSource.SetAttenuationScaling
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // EAttenuationType               AttenuationType                (CPF_Parm)
 
@@ -1847,7 +1847,7 @@ void UAkSoundSource::SetAttenuationScaling(EAttenuationType AttenuationType)
 };
 
 // Function AkAudio.AkSoundSource.ForceUpdatePosition
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkSoundSource::ForceUpdatePosition()
@@ -1866,7 +1866,7 @@ void UAkSoundSource::ForceUpdatePosition()
 };
 
 // Function AkAudio.AkSoundSource.RegisterReflectionEmitter
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class FName                    BusName                        (CPF_Parm)
 // EBusEmitterType                BusType                        (CPF_Parm)
@@ -1889,7 +1889,7 @@ void UAkSoundSource::RegisterReflectionEmitter(const class FName& BusName, EBusE
 };
 
 // Function AkAudio.AkSoundSource.IsPlayingAny
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -1911,7 +1911,7 @@ bool UAkSoundSource::IsPlayingAny()
 };
 
 // Function AkAudio.AkSoundSource.IsPlaying
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class UAkSoundCue*             Sound                          (CPF_Parm)
@@ -1935,7 +1935,7 @@ bool UAkSoundSource::IsPlaying(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkSoundSource.Seek
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 // float                          SeekSeconds                    (CPF_Parm)
@@ -1958,7 +1958,7 @@ void UAkSoundSource::Seek(class UAkSoundCue* Sound, float SeekSeconds)
 };
 
 // Function AkAudio.AkSoundSource.StopAll
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 
 void UAkSoundSource::StopAll()
@@ -1977,7 +1977,7 @@ void UAkSoundSource::StopAll()
 };
 
 // Function AkAudio.AkSoundSource.Stop
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // class UAkSoundCue*             Sound                          (CPF_Parm)
 
@@ -1998,7 +1998,7 @@ void UAkSoundSource::Stop(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkSoundSource.Play
-// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call | FUNC_AllFlags)
+// [0x04020401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_K2Call)
 // Parameter Info:
 // int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class UAkSoundCue*             Sound                          (CPF_Parm)
@@ -2022,7 +2022,7 @@ int32_t UAkSoundSource::Play(class UAkSoundCue* Sound)
 };
 
 // Function AkAudio.AkSoundSource.EventDuration
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // class UAkSoundSource*          Source                         (CPF_Parm | CPF_EditInline)
 // int32_t                        PlayingID                      (CPF_Parm)
@@ -2047,7 +2047,7 @@ void UAkSoundSource::EventDuration(class UAkSoundSource* Source, int32_t Playing
 };
 
 // Function AkAudio.AkSoundSource.EventMarker
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // class UAkSoundSource*          Source                         (CPF_Parm | CPF_EditInline)
 // int32_t                        PlayingID                      (CPF_Parm)
@@ -2072,7 +2072,7 @@ void UAkSoundSource::EventMarker(class UAkSoundSource* Source, int32_t PlayingID
 };
 
 // Function AkAudio.AkSoundSource.EventFinished
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate | FUNC_AllFlags)
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
 // class UAkSoundSource*          Source                         (CPF_Parm | CPF_EditInline)
 // int32_t                        PlayingID                      (CPF_Parm)
@@ -2095,7 +2095,7 @@ void UAkSoundSource::EventFinished(class UAkSoundSource* Source, int32_t Playing
 };
 
 // Function AkAudio.SeqAct_AkPlayMusicWithCues.TriggerEvents
-// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private | FUNC_AllFlags)
+// [0x00040803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Private)
 // Parameter Info:
 // class FString                  CueName                        (CPF_Parm | CPF_NeedCtorLink)
 
@@ -2116,7 +2116,7 @@ void USeqAct_AkPlayMusicWithCues::eventTriggerEvents(const class FString& CueNam
 };
 
 // Function AkAudio.SeqAct_AkPlaySound.ToggleSoundFor
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class AActor*                  A                              (CPF_Parm)
 // uint32_t                       bPlay                          (CPF_Parm)
@@ -2139,7 +2139,7 @@ void USeqAct_AkPlaySound::ToggleSoundFor(class AActor* A, bool bPlay)
 };
 
 // Function AkAudio.SeqAct_AkPlaySound.ToggleSound
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // uint32_t                       bPlay                          (CPF_Parm)
 
@@ -2160,7 +2160,7 @@ void USeqAct_AkPlaySound::ToggleSound(bool bPlay)
 };
 
 // Function AkAudio.SeqAct_AkPlaySound.Activated
-// [0x400020802] (FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_AllFlags)
+// [0x400020802] (FUNC_Defined | FUNC_Event | FUNC_Public)
 // Parameter Info:
 
 void USeqAct_AkPlaySound::eventActivated()
@@ -2179,7 +2179,7 @@ void USeqAct_AkPlaySound::eventActivated()
 };
 
 // Function AkAudio.SeqAct_AkPostEvent.HandleSoundCueFinished
-// [0x00040C01] (FUNC_Final | FUNC_Native | FUNC_Event | FUNC_Private | FUNC_AllFlags)
+// [0x00040C01] (FUNC_Final | FUNC_Native | FUNC_Event | FUNC_Private)
 // Parameter Info:
 // class UAkSoundSource*          Source                         (CPF_Parm | CPF_EditInline)
 // int32_t                        PlayingID                      (CPF_Parm)
@@ -2202,7 +2202,7 @@ void USeqAct_AkPostEvent::eventHandleSoundCueFinished(class UAkSoundSource* Sour
 };
 
 // Function AkAudio.AkAmbientSoundActor.OnToggle
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class USeqAct_Toggle*          Action                         (CPF_Parm)
 
@@ -2223,7 +2223,7 @@ void AAkAmbientSoundActor::OnToggle(class USeqAct_Toggle* Action)
 };
 
 // Function AkAudio.SeqAct_AkPlaySoundAndSeek.ToggleSoundFor
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class AActor*                  A                              (CPF_Parm)
 // uint32_t                       bPlay                          (CPF_Parm)
@@ -2246,7 +2246,7 @@ void USeqAct_AkPlaySoundAndSeek::ToggleSoundFor(class AActor* A, bool bPlay)
 };
 
 // Function AkAudio.SeqAct_AkPlaySoundAndSeek.ToggleSound
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_AllFlags)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // uint32_t                       bPlay                          (CPF_Parm)
 
@@ -2267,7 +2267,7 @@ void USeqAct_AkPlaySoundAndSeek::ToggleSound(bool bPlay)
 };
 
 // Function AkAudio.SeqAct_AkPlaySoundAndSeek.Activated
-// [0x400020802] (FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_AllFlags)
+// [0x400020802] (FUNC_Defined | FUNC_Event | FUNC_Public)
 // Parameter Info:
 
 void USeqAct_AkPlaySoundAndSeek::eventActivated()

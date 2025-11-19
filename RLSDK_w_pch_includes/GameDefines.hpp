@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/05/2025 07:11PM
+# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
@@ -41,51 +41,52 @@ enum EStateFlags
 	STATE_HasLocals =						0x00000008,	// State has local variables.
 };
 
+// clang-format off
 // https://github.com/CodeRedModding/UnrealEngine3/blob/main/Development/Src/Core/Inc/UnStack.h#L60
 // Function Flags
 enum EFunctionFlags : uint64_t
 {
-	FUNC_None =								0x00000000,
-	FUNC_Final =							0x00000001,
-	FUNC_Defined =							0x00000002,
-	FUNC_Iterator =							0x00000004,
-	FUNC_Latent =							0x00000008,
-	FUNC_PreOperator =						0x00000010,
-	FUNC_Singular =							0x00000020,
-	FUNC_Net =								0x00000040,
-	FUNC_NetReliable =						0x00000080,
-	FUNC_Simulated =						0x00000100,
-	FUNC_Exec =								0x00000200,
-	FUNC_Native =							0x00000400,
-	FUNC_Event =							0x00000800,
-	FUNC_Operator =							0x00001000,
-	FUNC_Static =							0x00002000,
-	FUNC_NoExport =							0x00004000,
-	FUNC_OptionalParm =						0x00004000,
-	FUNC_Const =							0x00008000,
-	FUNC_Invariant =						0x00010000,
-	FUNC_Public =							0x00020000,
-	FUNC_Private =							0x00040000,
-	FUNC_Protected =						0x00080000,
-	FUNC_Delegate =							0x00100000,
-	FUNC_NetServer =						0x00200000,
-	FUNC_HasOutParms =						0x00400000,
-	FUNC_HasDefaults =						0x00800000,
-	FUNC_NetClient =						0x01000000,
-	FUNC_DLLImport =						0x02000000,
+	FUNC_None               = 0x00000000,	// No flags
+	FUNC_Final              = 0x00000001,	// Function is final (prebindable, non-overridable function).
+	FUNC_Defined            = 0x00000002,	// Function has been defined (not just declared).
+	FUNC_Iterator           = 0x00000004,	// Function is an iterator.
+	FUNC_Latent             = 0x00000008,	// Function is a latent state function.
+	FUNC_PreOperator        = 0x00000010,	// Unary operator is a prefix operator.
+	FUNC_Singular           = 0x00000020,   // Function cannot be reentered.
+	FUNC_Net                = 0x00000040,   // Function is network-replicated.
+	FUNC_NetReliable        = 0x00000080,   // Function should be sent reliably on the network.
+	FUNC_Simulated          = 0x00000100,	// Function executed on the client side.
+	FUNC_Exec               = 0x00000200,	// Executable from command line.
+	FUNC_Native             = 0x00000400,	// Native function.
+	FUNC_Event              = 0x00000800,   // Event function.
+	FUNC_Operator           = 0x00001000,   // Operator function.
+	FUNC_Static             = 0x00002000,   // Static function.
+	FUNC_HasOptionalParms   = 0x00004000,	// Function has optional parameters
+	FUNC_Const              = 0x00008000,   // Function doesn't modify this object.
+	FUNC_Invariant          = 0x00010000,   // Unused.
+	FUNC_Public             = 0x00020000,	// Function is accessible in all classes (if overridden, parameters much remain unchanged).
+	FUNC_Private            = 0x00040000,	// Function is accessible only in the class it is defined in (cannot be overriden, but function name may be reused in subclasses.  IOW: if overridden, parameters don't need to match, and Super.Func() cannot be accessed since it's private.)
+	FUNC_Protected          = 0x00080000,	// Function is accessible only in the class it is defined in and subclasses (if overridden, parameters much remain unchanged).
+	FUNC_Delegate           = 0x00100000,	// Function is actually a delegate.
+	FUNC_NetServer          = 0x00200000,	// Function is executed on servers (set by replication code if passes check)
+	FUNC_HasOutParms        = 0x00400000,	// function has out (pass by reference) parameters
+	FUNC_HasDefaults        = 0x00800000,	// function has structs that contain defaults
+	FUNC_NetClient          = 0x01000000,	// function is executed on clients
+	FUNC_DLLImport          = 0x02000000,	// function is imported from a DLL
 
-	FUNC_K2Call =							0x04000000,
-	FUNC_K2Override =						0x08000000,
-	FUNC_K2Pure =							0x10000000,
-	FUNC_EditorOnly =						0x20000000,
-	FUNC_Lambda =							0x40000000,
-	FUNC_NetValidate =						0x80000000,
+    FUNC_K2Call             = 0x04000000,
+    FUNC_K2Override         = 0x08000000,
+    FUNC_K2Pure             = 0x10000000,
+    FUNC_EditorOnly         = 0x20000000,
+    FUNC_Lambda             = 0x40000000,
+    FUNC_NetValidate        = 0x80000000,
 
-	FUNC_FuncInherit =						(FUNC_Exec | FUNC_Event),
-	FUNC_FuncOverrideMatch =				(FUNC_Exec | FUNC_Final | FUNC_Latent | FUNC_PreOperator | FUNC_Iterator | FUNC_Static | FUNC_Public | FUNC_Protected | FUNC_Const),
-	FUNC_NetFuncFlags =						(FUNC_Net | FUNC_NetReliable | FUNC_NetServer | FUNC_NetClient),
+	// Combinations of flags.
+	FUNC_FuncInherit        = FUNC_Exec | FUNC_Event,
+	FUNC_FuncOverrideMatch  = FUNC_Exec | FUNC_Final | FUNC_Latent | FUNC_PreOperator | FUNC_Iterator | FUNC_Static | FUNC_Public | FUNC_Protected | FUNC_Const,
+	FUNC_NetFuncFlags       = FUNC_Net | FUNC_NetReliable | FUNC_NetServer | FUNC_NetClient,
 
-	FUNC_AllFlags =							0xFFFFFFFF
+	FUNC_AllFlags           = 0xFFFFFFFF
 };
 
 // https://github.com/CodeRedModding/UnrealEngine3/blob/main/Development/Src/Core/Inc/UnObjBas.h#L238
