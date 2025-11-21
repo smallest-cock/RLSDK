@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
+# Rocket League SDK (RLSDK) Season 20 (v2.62)
+# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251020.62592.500294
-# Build Date: Oct 20 2025 19:02:19
+# Psyonix Build ID: 251112.52733.503214
+# Build Date: Nov 12 2025 15:04:30
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -3670,9 +3670,10 @@ struct UOnlinePlayerAuthentication_X_execRequiresAuthTicket_Params
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.ReLogin
-// [0x00020003] 
+// [0x00024003] 
 struct UOnlinePlayerAuthentication_X_execReLogin_Params
 {
+	uint32_t                                           bCleanUpConsecutiveAuthFailures : 1;              // 0x0000 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.Logout
@@ -3689,9 +3690,10 @@ struct UOnlinePlayerAuthentication_X_execSetAuthLoginError_Params
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.UpdateLoginState
-// [0x00080002] 
+// [0x00084002] 
 struct UOnlinePlayerAuthentication_X_execUpdateLoginState_Params
 {
+	uint32_t                                           instance : 1;                                     // 0x0000 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.GetAuthLoginError
@@ -7901,11 +7903,12 @@ struct UPsyNetConnection_X_execClearAuthDisabledError_Params
 };
 
 // Function ProjectX.PsyNetConnection_X.SetAuthDisabledError
-// [0x00040003] 
+// [0x00044003] 
 struct UPsyNetConnection_X_execSetAuthDisabledError_Params
 {
 	class UError*                                      Error;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// float                                           RetryDelay;                                       // 0x0008 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bIgnoreRetryCooldown : 1;                         // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	// float                                           RetryDelay;                                       // 0x000C (0x0004) [0x0000000000000000]               
 };
 
 // Function ProjectX.PsyNetConnection_X.ConditionalSetAuthRetryDelay
@@ -7951,10 +7954,17 @@ struct UPsyNetConnection_X_eventAddDisabledError_Params
 };
 
 // Function ProjectX.PsyNetConnection_X.RemoveDisabledError
-// [0x00020003] 
+// [0x00024003] 
 struct UPsyNetConnection_X_execRemoveDisabledError_Params
 {
 	class UError*                                      Error;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint32_t                                           bCleanUpConsecutiveAuthFailures : 1;              // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+};
+
+// Function ProjectX.PsyNetConnection_X.ResetTimersAndFailureCount
+// [0x00020003] 
+struct UPsyNetConnection_X_execResetTimersAndFailureCount_Params
+{
 };
 
 // Function ProjectX.PsyNetConnection_X.Flush
@@ -9465,6 +9475,13 @@ struct UOnlineGame_Base_X_execEventInternetConnectionChanged_Params
 	uint32_t                                           bConnected : 1;                                   // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
+// Function ProjectX.OnlineGame_X.__OnlineGame_X__OnInit_0x1
+// [0x40040003] 
+struct UOnlineGame_X_exec__OnlineGame_X__OnInit_0x1_Params
+{
+	class ULegalConfig_X*                              LegalConfig;                                      // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
+};
+
 // Function ProjectX.OnlineGame_X.PrintDebugInfo
 // [0x400020102] 
 struct UOnlineGame_X_execPrintDebugInfo_Params
@@ -9826,6 +9843,13 @@ struct UOnlineGameDedicatedServer_X_execClearDDoSAttackEvent_Params
 // [0x00080401] 
 struct UOnlineGameDedicatedServer_X_execSubscribeToDDoSAttackEvent_Params
 {
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.GetNetDriverStableConnections
+// [0x00020401] 
+struct UOnlineGameDedicatedServer_X_execGetNetDriverStableConnections_Params
+{
+	class TArray<class FString>                        ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.SendRecordMatchRPC
@@ -27012,6 +27036,21 @@ struct UMatchInfoMessage_X_execGetReservation_Params
 {
 	struct FPsyNetBeaconReservation                    ReturnValue;                                      // 0x0000 (0x0048) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// struct FPsyNetBeaconReservation                 Reservation;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.MatchInfoWebService_X.Query
+// [0x400820802] 
+struct UMatchInfoWebService_X_eventQuery_Params
+{
+	class UWebRequest*                                 Request;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class UWebResponse*                                Response;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// struct FMatchInfoJson                           Info;                                             // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.MatchInfoWebService_X.Init
+// [0x400020002] 
+struct UMatchInfoWebService_X_execInit_Params
+{
 };
 
 // Function ProjectX.MatchLog_X.ConditionalSendWebRequest

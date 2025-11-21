@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
+# Rocket League SDK (RLSDK) Season 20 (v2.62)
+# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251020.62592.500294
-# Build Date: Oct 20 2025 19:02:19
+# Psyonix Build ID: 251112.52733.503214
+# Build Date: Nov 12 2025 15:04:30
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -6649,85 +6649,16 @@ struct FBothWheelAssets
 	class UMeshComponent*                              Right;                                         // 0x0008 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 };
 
-// ScriptStruct TAGame.SonyPricingInfo_TA.LocalizedStrings
-// Size: 0x00A0
-struct FLocalizedStrings
-{
-	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      furigana;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      soloName;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      soloNameAllCaps;                               // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      appleTitle;                                    // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      longDescription;                               // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      shortDescription;                              // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      switchDescription;                             // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      switchDisclaimer;                              // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      egsDescription;                                // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct TAGame.SonyPricingInfo_TA.ProductGroup
-// Size: 0x01D8 (0x01D4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
-struct FProductGroup
-{
-	struct FLocalizedStrings                           LocalizedStrings;                              // 0x0000 (0x00A0) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      conceptName;                                   // 0x00A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      currencyAmountString;                          // 0x00B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      labelPrefix;                                   // 0x00C0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      currencyLabelAmount;                           // 0x00D0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Region;                                        // 0x00E0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Currency;                                      // 0x00F0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Game;                                          // 0x0100 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      CurrencyType;                                  // 0x0110 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      wholesalePrice;                                // 0x0120 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      vatPrice;                                      // 0x0130 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      isotonicPrice;                                 // 0x0140 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      CurrencyCode;                                  // 0x0150 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      languageCode;                                  // 0x0160 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Country;                                       // 0x0170 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      offerName;                                     // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      retailPrice;                                   // 0x0190 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      currencySymbol;                                // 0x01A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            CurrencyAmount;                                // 0x01B0 (0x0004) [0x0000000000000000]               
-	float                                              localPrice;                                    // 0x01B4 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              exchangeRate;                                  // 0x01B8 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              vatRate;                                       // 0x01BC (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              retailPriceNumber;                             // 0x01C0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              wholesalePriceNumber;                          // 0x01C4 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              vatPriceNumber;                                // 0x01C8 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              isotonicPriceNumber;                           // 0x01CC (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              wholesaleDiscountPercent;                      // 0x01D0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x01D4 (0x0004) PADDING FOR MINALIGNMENT
-};
-
 // ScriptStruct TAGame.SonyPricingInfo_TA.BaseInput
-// Size: 0x0218
+// Size: 0x0048 (0x0044 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FBaseInput
 {
-	struct FProductGroup                               ProductGroup;                                  // 0x0000 (0x01D8) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      conceptName;                                   // 0x01D8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      GameName;                                      // 0x01E8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      Region;                                        // 0x01F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class FString                                      ReleaseDate;                                   // 0x0208 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-};
-
-// ScriptStruct TAGame.SonyPricingInfo_TA.SonyInputs
-// Size: 0x0218
-struct FSonyInputs
-{
-	struct FBaseInput                                  SONY_INPUTS;                                   // 0x0000 (0x0218) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct TAGame.SonyPricingInfo_TA.SonyMetadataStruct
-// Size: 0x0058
-struct FSonyMetadataStruct
-{
-	class TArray<int32_t>                              currencyAmounts;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      GameName;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      targetCountries;                               // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      generatedAt;                                   // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      ReleaseDate;                                   // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            totalGenerated;                                // 0x0050 (0x0004) [0x0000000000000000]               
-	int32_t                                            Count;                                         // 0x0054 (0x0004) [0x0000000000000000]               
+	class FString                                      Country;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      offerName;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      retailPrice;                                   // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      currencySymbol;                                // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            CurrencyAmount;                                // 0x0040 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0044 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.SpecialEventConfig_TA.DebugMicroEventPlaylistID

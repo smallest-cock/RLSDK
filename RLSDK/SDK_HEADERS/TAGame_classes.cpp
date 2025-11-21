@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.61)
-# Generated with CodeRedGenerator v1.1.5 on 11/18/2025 10:52PM
+# Rocket League SDK (RLSDK) Season 20 (v2.62)
+# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 251020.62592.500294
-# Build Date: Oct 20 2025 19:02:19
+# Psyonix Build ID: 251112.52733.503214
+# Build Date: Nov 12 2025 15:04:30
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -161378,6 +161378,27 @@ void UGFxData_EpicLogin_TA::HandleLoggedIn()
 	this->ProcessEvent(uFnHandleLoggedIn, &HandleLoggedIn_Params, nullptr);
 };
 
+// Function TAGame.GFxData_EpicLogin_TA.HandleModalClosed
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UGFxModal_X*             Modal                          (CPF_Parm)
+
+void UGFxData_EpicLogin_TA::HandleModalClosed(class UGFxModal_X* Modal)
+{
+	static UFunction* uFnHandleModalClosed = nullptr;
+
+	if (!uFnHandleModalClosed)
+	{
+		uFnHandleModalClosed = UFunction::FindFunction("Function TAGame.GFxData_EpicLogin_TA.HandleModalClosed");
+	}
+
+	UGFxData_EpicLogin_TA_execHandleModalClosed_Params HandleModalClosed_Params;
+	memset(&HandleModalClosed_Params, 0, sizeof(HandleModalClosed_Params));
+	HandleModalClosed_Params.Modal = Modal;
+
+	this->ProcessEvent(uFnHandleModalClosed, &HandleModalClosed_Params, nullptr);
+};
+
 // Function TAGame.GFxData_EpicLogin_TA.HandleLoginError
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -162005,6 +162026,27 @@ void UGFxData_FaceIt_TA::eventOnShellSet()
 	memset(&OnShellSet_Params, 0, sizeof(OnShellSet_Params));
 
 	this->ProcessEvent(uFnOnShellSet, &OnShellSet_Params, nullptr);
+};
+
+// Function TAGame.GFxShell_TA.__GFxShell_TA__OnStart_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UEulaConfig_TA*          InConfig                       (CPF_Parm)
+
+void UGFxShell_TA::__GFxShell_TA__OnStart_0x1(class UEulaConfig_TA* InConfig)
+{
+	static UFunction* uFn__GFxShell_TA__OnStart_0x1 = nullptr;
+
+	if (!uFn__GFxShell_TA__OnStart_0x1)
+	{
+		uFn__GFxShell_TA__OnStart_0x1 = UFunction::FindFunction("Function TAGame.GFxShell_TA.__GFxShell_TA__OnStart_0x1");
+	}
+
+	UGFxShell_TA_exec__GFxShell_TA__OnStart_0x1_Params __GFxShell_TA__OnStart_0x1_Params;
+	memset(&__GFxShell_TA__OnStart_0x1_Params, 0, sizeof(__GFxShell_TA__OnStart_0x1_Params));
+	__GFxShell_TA__OnStart_0x1_Params.InConfig = InConfig;
+
+	this->ProcessEvent(uFn__GFxShell_TA__OnStart_0x1, &__GFxShell_TA__OnStart_0x1_Params, nullptr);
 };
 
 // Function TAGame.GFxShell_TA.__GFxShell_TA__HandleOnlinePlayerStorageSyncError_0x2
@@ -317248,6 +317290,27 @@ void UGFxData_ReplayViewer_TA::SetReplay(class UReplay_TA* InReplay)
 	SetReplay_Params.InReplay = InReplay;
 
 	this->ProcessEvent(uFnSetReplay, &SetReplay_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ReplayViewer_TA.EventFocusCarUpdated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class FString                  FocusCar                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UGFxData_ReplayViewer_TA::EventFocusCarUpdated(const class FString& FocusCar)
+{
+	static UFunction* uFnEventFocusCarUpdated = nullptr;
+
+	if (!uFnEventFocusCarUpdated)
+	{
+		uFnEventFocusCarUpdated = UFunction::FindFunction("Function TAGame.GFxData_ReplayViewer_TA.EventFocusCarUpdated");
+	}
+
+	UGFxData_ReplayViewer_TA_execEventFocusCarUpdated_Params EventFocusCarUpdated_Params;
+	memset(&EventFocusCarUpdated_Params, 0, sizeof(EventFocusCarUpdated_Params));
+	memcpy_s(&EventFocusCarUpdated_Params.FocusCar, sizeof(EventFocusCarUpdated_Params.FocusCar), &FocusCar, sizeof(FocusCar));
+
+	this->ProcessEvent(uFnEventFocusCarUpdated, &EventFocusCarUpdated_Params, nullptr);
 };
 
 // Function TAGame.GFxData_ReplayViewer_TA.EventInitDone
