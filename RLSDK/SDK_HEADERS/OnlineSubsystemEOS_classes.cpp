@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -23,6 +23,69 @@
 # Functions
 # ========================================================================================= #
 */
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.ClearCaptureAvailabilityChangeDelegate
+// [0x00020001] (FUNC_Final | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         CaptureAvailabilityDelegate    (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::ClearCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate)
+{
+	static UFunction* uFnClearCaptureAvailabilityChangeDelegate = nullptr;
+
+	if (!uFnClearCaptureAvailabilityChangeDelegate)
+	{
+		uFnClearCaptureAvailabilityChangeDelegate = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.ClearCaptureAvailabilityChangeDelegate");
+	}
+
+	UOnlineSubsystemEOS_execClearCaptureAvailabilityChangeDelegate_Params ClearCaptureAvailabilityChangeDelegate_Params;
+	memset(&ClearCaptureAvailabilityChangeDelegate_Params, 0, sizeof(ClearCaptureAvailabilityChangeDelegate_Params));
+	memcpy_s(&ClearCaptureAvailabilityChangeDelegate_Params.CaptureAvailabilityDelegate, sizeof(ClearCaptureAvailabilityChangeDelegate_Params.CaptureAvailabilityDelegate), &CaptureAvailabilityDelegate, sizeof(CaptureAvailabilityDelegate));
+
+	this->ProcessEvent(uFnClearCaptureAvailabilityChangeDelegate, &ClearCaptureAvailabilityChangeDelegate_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCaptureAvailabilityChangeDelegate
+// [0x00020001] (FUNC_Final | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         CaptureAvailabilityDelegate    (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineSubsystemEOS::AddCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate)
+{
+	static UFunction* uFnAddCaptureAvailabilityChangeDelegate = nullptr;
+
+	if (!uFnAddCaptureAvailabilityChangeDelegate)
+	{
+		uFnAddCaptureAvailabilityChangeDelegate = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCaptureAvailabilityChangeDelegate");
+	}
+
+	UOnlineSubsystemEOS_execAddCaptureAvailabilityChangeDelegate_Params AddCaptureAvailabilityChangeDelegate_Params;
+	memset(&AddCaptureAvailabilityChangeDelegate_Params, 0, sizeof(AddCaptureAvailabilityChangeDelegate_Params));
+	memcpy_s(&AddCaptureAvailabilityChangeDelegate_Params.CaptureAvailabilityDelegate, sizeof(AddCaptureAvailabilityChangeDelegate_Params.CaptureAvailabilityDelegate), &CaptureAvailabilityDelegate, sizeof(CaptureAvailabilityDelegate));
+
+	this->ProcessEvent(uFnAddCaptureAvailabilityChangeDelegate, &AddCaptureAvailabilityChangeDelegate_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCaptureAvailabilityChange
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// uint32_t                       bCaptureAllowed                (CPF_Parm)
+
+void UOnlineSubsystemEOS::OnCaptureAvailabilityChange(bool bCaptureAllowed)
+{
+	static UFunction* uFnOnCaptureAvailabilityChange = nullptr;
+
+	if (!uFnOnCaptureAvailabilityChange)
+	{
+		uFnOnCaptureAvailabilityChange = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCaptureAvailabilityChange");
+	}
+
+	UOnlineSubsystemEOS_execOnCaptureAvailabilityChange_Params OnCaptureAvailabilityChange_Params;
+	memset(&OnCaptureAvailabilityChange_Params, 0, sizeof(OnCaptureAvailabilityChange_Params));
+	OnCaptureAvailabilityChange_Params.bCaptureAllowed = bCaptureAllowed;
+
+	this->ProcessEvent(uFnOnCaptureAvailabilityChange, &OnCaptureAvailabilityChange_Params, nullptr);
+};
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageValidated
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
@@ -4577,7 +4640,7 @@ bool UOnlinePlayerInterfaceEOS::HideKeyboardUI(uint8_t LocalUserNum)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.GetPlayerCountry
-// [0x00020001] (FUNC_Final | FUNC_Public)
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // uint8_t                        LocalUserNum                   (CPF_Parm)

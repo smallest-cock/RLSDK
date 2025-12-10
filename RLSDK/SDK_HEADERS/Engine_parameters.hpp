@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -17892,6 +17892,14 @@ struct UGameViewportClient_execEventScaleformEnabledChanged_Params
 	class UGameViewportClient*                         GVC;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function Engine.GameViewportClient.EventScreenDraggedOnNewScreen
+// [0x00120001] 
+struct UGameViewportClient_execEventScreenDraggedOnNewScreen_Params
+{
+	int32_t                                            NewWidth;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            NewHeight;                                        // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function Engine.GameViewportClient.HandleInputChar
 // [0x00120001] 
 struct UGameViewportClient_execHandleInputChar_Params
@@ -18412,6 +18420,13 @@ struct USurface_execGetSurfaceHeight_Params
 struct USurface_execGetSurfaceWidth_Params
 {
 	float                                              ReturnValue;                                      // 0x0000 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.MaterialInterface.WaitForMipLevelsToStream
+// [0x00020401] 
+struct UMaterialInterface_execWaitForMipLevelsToStream_Params
+{
+	float                                              MaxWaitSeconds;                                   // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function Engine.MaterialInterface.GetOrCreateInstance
@@ -37454,6 +37469,27 @@ struct UOnlinePurchaseInterface_execEventGetAppPriceInfoComplete_Params
 	class FString                                      Price;                                            // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      DiscountPrice;                                    // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            DiscountPercentage;                               // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function Engine.OnlineSystemInterface.ClearCaptureAvailabilityChangeDelegate
+// [0x00020000] 
+struct UOnlineSystemInterface_execClearCaptureAvailabilityChangeDelegate_Params
+{
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.OnlineSystemInterface.AddCaptureAvailabilityChangeDelegate
+// [0x00020000] 
+struct UOnlineSystemInterface_execAddCaptureAvailabilityChangeDelegate_Params
+{
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.OnlineSystemInterface.OnCaptureAvailabilityChange
+// [0x00120000] 
+struct UOnlineSystemInterface_execOnCaptureAvailabilityChange_Params
+{
+	uint32_t                                           bCaptureAllowed : 1;                              // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
 // Function Engine.OnlineSystemInterface.ClearPlayerSigningOutDelegate

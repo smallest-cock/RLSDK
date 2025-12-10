@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: WinDrv_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ

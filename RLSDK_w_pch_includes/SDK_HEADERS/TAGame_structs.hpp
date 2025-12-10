@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -33,13 +33,14 @@ struct FMatchData
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
-// ScriptStruct TAGame._Types_TA.PrespawnData
-// Size: 0x001C
-struct FPrespawnData
+// ScriptStruct TAGame._Types_TA.MutatorInfo
+// Size: 0x0028
+struct FMutatorInfo
 {
-	uint32_t                                           bPrespawnSet : 1;                              // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FVector                                     Location;                                      // 0x0004 (0x000C) [0x0000000000000000]               
-	struct FRotator                                    Rotation;                                      // 0x0010 (0x000C) [0x0000000000000000]               
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      Category;                                      // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	struct FColor                                      ColorOverride;                                 // 0x0020 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            SortPriority;                                  // 0x0024 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._Types_TA.VoiceRoomCredentials
@@ -420,6 +421,7 @@ struct FCurrency
 	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	class FName                                        Name;                                          // 0x0004 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bCanBeTraded : 1;                              // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIsRocketPassDrop : 1;                         // 0x000C (0x0004) [0x0000000000000000] [0x00000002] 
 	int32_t                                            TradeHold;                                     // 0x0010 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x0014 (0x0004) MISSED OFFSET
 	struct U_Types_TA_FCurrencyProductData             ProductData;                                   // 0x0018 (0x0010) [0x0000000000000000]               
@@ -1091,6 +1093,14 @@ struct FThumbnailComponent
 	uint8_t                                          MinAlignmentPadding[0x8];                      // 0x0058 (0x0008) PADDING FOR MINALIGNMENT
 };
 
+// ScriptStruct TAGame._Types_TA.RocketPassPlayerRewards
+// Size: 0x0008
+struct FRocketPassPlayerRewards
+{
+	int32_t                                            BaseTierRewards;                               // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            ProTierRewards;                                // 0x0004 (0x0004) [0x0000000000000000]               
+};
+
 // ScriptStruct TAGame._Types_TA.RocketPassTierBonusRange
 // Size: 0x000C
 struct FRocketPassTierBonusRange
@@ -1119,21 +1129,6 @@ struct FTierUnlockRequirements
 	int32_t                                            Requirement;                                   // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
-// ScriptStruct TAGame._Types_TA.RocketPassPageData
-// Size: 0x0030
-struct FRocketPassPageData
-{
-	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
-	int32_t                                            RocketPassID;                                  // 0x0004 (0x0004) [0x0000000000000000]               
-	int32_t                                            Page;                                          // 0x0008 (0x0004) [0x0000000000000000]               
-	int32_t                                            StartLevel;                                    // 0x000C (0x0004) [0x0000000000000000]               
-	int32_t                                            EndLevel;                                      // 0x0010 (0x0004) [0x0000000000000000]               
-	int32_t                                            LevelRequiredToUnlock;                         // 0x0014 (0x0004) [0x0000000000000000]               
-	int32_t                                            ClaimsRequiredToUnlock;                        // 0x0018 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x4];                            // 0x001C (0x0004) MISSED OFFSET
-	class TArray<struct FTierUnlockRequirements>       TierClaimRequirements;                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
 // ScriptStruct TAGame._Types_TA.OnlineProductTimestampedData
 // 0x0010 (0x0040 - 0x0050)
 struct FOnlineProductTimestampedData : FOnlineProductData
@@ -1159,10 +1154,9 @@ struct FItemSetsData
 struct FRocketPassRewardData
 {
 	int32_t                                            Tier;                                          // 0x0000 (0x0004) [0x0000000000000000]               
-	uint8_t                                            UnlockType;                                    // 0x0004 (0x0001) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x3];                            // 0x0005 (0x0003) MISSED OFFSET
-	uint32_t                                           Claimable : 1;                                 // 0x0008 (0x0004) [0x0001000000000000] [0x00000001] 
-	uint8_t                                          UnknownData01[0x4];                            // 0x000C (0x0004) MISSED OFFSET
+	uint32_t                                           Claimable : 1;                                 // 0x0004 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint8_t                                            UnlockType;                                    // 0x0008 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x7];                            // 0x0009 (0x0007) MISSED OFFSET
 	class TArray<struct FOnlineProductData>            ProductData;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FItemSetsData>                 ItemSets;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FXPRewardData>                 XPRewards;                                     // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1170,23 +1164,34 @@ struct FRocketPassRewardData
 };
 
 // ScriptStruct TAGame._Types_TA.RocketPassExtendedRewardData
-// 0x0005 (0x0050 - 0x0055)
+// 0x0010 (0x0050 - 0x0060)
 struct FRocketPassExtendedRewardData : FRocketPassRewardData
 {
 	uint32_t                                           bPremiumTier : 1;                              // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                            LockState;                                     // 0x0054 (0x0001) [0x0000000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x3];                      // 0x0055 (0x0003) PADDING FOR MINALIGNMENT
+	uint8_t                                          UnknownData00[0x3];                            // 0x0055 (0x0003) MISSED OFFSET
+	int32_t                                            LevelRequirement;                              // 0x0058 (0x0004) [0x0000000000000000]               
+	int32_t                                            ClaimRequirement;                              // 0x005C (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._Types_TA.RocketPassPage
-// Size: 0x0020 (0x001C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0050 (0x004C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FRocketPassPage
 {
-	uint32_t                                           bProTier : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
-	class TArray<struct FRocketPassExtendedRewardData> Rewards;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            MaxTierLevel;                                  // 0x0018 (0x0004) [0x0000000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
+	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            RocketPassID;                                  // 0x0004 (0x0004) [0x0000000000000000]               
+	int32_t                                            Page;                                          // 0x0008 (0x0004) [0x0000000000000000]               
+	int32_t                                            StartLevel;                                    // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            EndLevel;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            LevelRequiredToUnlock;                         // 0x0014 (0x0004) [0x0000000000000000]               
+	int32_t                                            ClaimsRequiredToUnlock;                        // 0x0018 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x001C (0x0004) MISSED OFFSET
+	class TArray<struct FTierUnlockRequirements>       TierClaimRequirements;                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bProTier : 1;                                  // 0x0030 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
+	class TArray<struct FRocketPassExtendedRewardData> Rewards;                                       // 0x0038 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	int32_t                                            NumClaimedRewards;                             // 0x0048 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame._Types_TA.RocketPassClaimData
@@ -1379,6 +1384,15 @@ struct FProductStat
 {
 	int32_t                                            ProductID;                                     // 0x0000 (0x0004) [0x0000000000000000]               
 	int32_t                                            Value;                                         // 0x0004 (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct TAGame._Types_TA.PrespawnData
+// Size: 0x001C
+struct FPrespawnData
+{
+	uint32_t                                           bPrespawnSet : 1;                              // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     Location;                                      // 0x0004 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    Rotation;                                      // 0x0010 (0x000C) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._Types_TA.DemolishInvulnerability
@@ -1621,6 +1635,7 @@ struct FShopDeliverable
 	struct FProductHashID                              HashID;                                        // 0x0018 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint32_t                                           IsOwned : 1;                                   // 0x001C (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
 	uint32_t                                           bOwnedUntradeable : 1;                         // 0x001C (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           bIsInjectedProduct : 1;                        // 0x001C (0x0004) [0x0000000000000000] [0x00000004] 
 	struct FOnlineProductData                          Product;                                       // 0x0020 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
@@ -1669,7 +1684,7 @@ struct FOnlineShopAttribute
 };
 
 // ScriptStruct TAGame._ShopTypes_TA.ShopItem
-// Size: 0x00D0
+// Size: 0x00D8 (0x00D4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FShopItem
 {
 	int32_t                                            ShopItemID;                                    // 0x0000 (0x0004) [0x0000000040000000] (CPF_DataBinding)
@@ -1693,6 +1708,8 @@ struct FShopItem
 	uint32_t                                           bOwnsAllDeliverables : 1;                      // 0x00C8 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
 	uint32_t                                           bIsProrated : 1;                               // 0x00C8 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
 	int32_t                                            BuyingProductCount;                            // 0x00CC (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            NonInjectedBuyingProductCount;                 // 0x00D0 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x00D4 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame._ShopTypes_TA.ShopCatalogue
@@ -2120,6 +2137,26 @@ struct FMemberTitleStat
 	class APRI_TA*                                     MemberPRI;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
+// ScriptStruct TAGame.ThistleConfig_TA.ThistleData
+// Size: 0x0040 (0x003C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FThistleData
+{
+	class FString                                      TeamName;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FLinearColor                                TeamColor;                                     // 0x0010 (0x0010) [0x0000000000000000]               
+	struct FLinearColor                                TeamColorSecondary;                            // 0x0020 (0x0010) [0x0000000000000000]               
+	int32_t                                            CosmeticID;                                    // 0x0030 (0x0004) [0x0000000000000000]               
+	class FName                                        TitleId;                                       // 0x0034 (0x0008) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x003C (0x0004) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame.OnlineGameReservations_TA.ReservationLoadout
+// Size: 0x0058
+struct FReservationLoadout
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<int32_t>                              ProductIDs;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // ScriptStruct TAGame.FpsBucketRecorder_TA.FpsBucketData
 // Size: 0x0024
 struct FFpsBucketData
@@ -2279,9 +2316,9 @@ struct FPendingError
 // Size: 0x0020
 struct FMenuTreeNodeData
 {
-	class FName                                        NodeID;                                        // 0x0000 (0x0008) [0x0001000040000000] (CPF_DataBinding)
-	class FString                                      TableName;                                     // 0x0008 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class UMenuTreeNode_TA*                            Node;                                          // 0x0018 (0x0008) [0x0001000000000000]               
+	class FName                                        NodeID;                                        // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      TableName;                                     // 0x0008 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class UMenuTreeNode_TA*                            Node;                                          // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.PlayMenuSave_TA.MenuTreeFocusMap
@@ -4251,7 +4288,7 @@ struct FUserVoiceSettings
 };
 
 // ScriptStruct TAGame.ESportConfig_TA.ESportEventData
-// Size: 0x00B0
+// Size: 0x00D8 (0x00D4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FESportEventData
 {
 	class FString                                      Image;                                         // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
@@ -4271,6 +4308,11 @@ struct FESportEventData
 	uint64_t                                           EpochSoonStartTime;                            // 0x0098 (0x0008) [0x0000000000002000] (CPF_Transient)
 	uint64_t                                           EpochStartTime;                                // 0x00A0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	uint64_t                                           EpochEndTime;                                  // 0x00A8 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class FString                                      ButtonTitle;                                   // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      ButtonDescription;                             // 0x00C0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint32_t                                           bShowLiveNow : 1;                              // 0x00D0 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           bCanNavigateToEventURL : 1;                    // 0x00D0 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x00D4 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.EulaSave_TA.EulaVersion
@@ -4498,6 +4540,15 @@ struct FFreeplaySettings
 	uint8_t                                            GoalResetValue;                                // 0x0000 (0x0001) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                            BoostFillValue;                                // 0x0001 (0x0001) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          MinAlignmentPadding[0x2];                      // 0x0002 (0x0002) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame.FriendsListBuilder_TA.PersonaUpdateData
+// Size: 0x0120 (0x0119 PropertySize + 0x0007 padding to satisfy MinAlignment of 8)
+struct FPersonaUpdateData
+{
+	struct FOnlineFriend                               FriendData;                                    // 0x0000 (0x0118) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            Origin;                                        // 0x0118 (0x0001) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x7];                      // 0x0119 (0x0007) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.FriendsListUtils_TA.FriendInfoCounts
@@ -5793,18 +5844,18 @@ struct FMatchHistoryChangeTabEvent
 // Size: 0x0018
 struct FNodePlatformAvailability
 {
-	uint32_t                                           bPlatformIncludeList : 1;                      // 0x0000 (0x0004) [0x0001000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bPlatformIncludeList : 1;                      // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
-	class TArray<uint8_t>                              Platforms;                                     // 0x0008 (0x0010) [0x0001000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<uint8_t>                              Platforms;                                     // 0x0008 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.MenuTreePlaylistQueue_TA.ActivePlaylistQueueInfo
 // Size: 0x0010
 struct FActivePlaylistQueueInfo
 {
-	int32_t                                            PlaylistDataIndex;                             // 0x0000 (0x0004) [0x0001000000000000]               
+	int32_t                                            PlaylistDataIndex;                             // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
-	uint64_t                                           StartTime;                                     // 0x0008 (0x0008) [0x0001000000000000]               
+	uint64_t                                           StartTime;                                     // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.MergePartyEvent_TA.MergePartyReplicatedData
@@ -5920,14 +5971,6 @@ struct FCachedPlayerData
 	uint8_t                                          UnknownData00[0x4];                            // 0x005C (0x0004) MISSED OFFSET
 	class URPC_X*                                      RPC;                                           // 0x0060 (0x0008) [0x0000000000000000]               
 	class TArray<struct FScriptDelegate>               Callbacks;                                     // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct TAGame.OnlineGameReservations_TA.ReservationLoadout
-// Size: 0x0058
-struct FReservationLoadout
-{
-	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<int32_t>                              ProductIDs;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.OrbitHitHandler_TA.OrbitCarData
@@ -6406,6 +6449,15 @@ struct FRocketPassTiersData
 	uint64_t                                           EndTimestamp;                                  // 0x0008 (0x0008) [0x0000000000000000]               
 	int32_t                                            PurchasableID;                                 // 0x0010 (0x0004) [0x0000000000000000]               
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame.RocketPassPreviewSet_TA.SetPreviewProductParams
+// Size: 0x000C
+struct FSetPreviewProductParams
+{
+	int32_t                                            SlotIndex;                                     // 0x0000 (0x0004) [0x0000000000000000]               
+	struct FProductHashID                              HashID;                                        // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bUseBaseLoadout : 1;                           // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // ScriptStruct TAGame.RPC_GetSpecialEventCurrency_TA.EventCurrencyData

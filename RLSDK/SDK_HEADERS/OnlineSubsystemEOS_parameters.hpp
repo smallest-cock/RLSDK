@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -23,6 +23,27 @@
 # Parameters
 # ========================================================================================= #
 */
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.ClearCaptureAvailabilityChangeDelegate
+// [0x00020001] 
+struct UOnlineSubsystemEOS_execClearCaptureAvailabilityChangeDelegate_Params
+{
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCaptureAvailabilityChangeDelegate
+// [0x00020001] 
+struct UOnlineSubsystemEOS_execAddCaptureAvailabilityChangeDelegate_Params
+{
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCaptureAvailabilityChange
+// [0x00120001] 
+struct UOnlineSubsystemEOS_execOnCaptureAvailabilityChange_Params
+{
+	uint32_t                                           bCaptureAllowed : 1;                              // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+};
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.EventTextMessageValidated
 // [0x00120001] 
@@ -1608,7 +1629,7 @@ struct UOnlinePlayerInterfaceEOS_execHideKeyboardUI_Params
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.GetPlayerCountry
-// [0x00020001] 
+// [0x00020401] 
 struct UOnlinePlayerInterfaceEOS_execGetPlayerCountry_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    

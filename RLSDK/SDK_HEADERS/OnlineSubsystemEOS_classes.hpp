@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -115,7 +115,7 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineSubsystemEOS
-// 0x0360 (0x03C0 - 0x0720)
+// 0x0378 (0x03C0 - 0x0738)
 class UOnlineSubsystemEOS : public UOnlineSubsystemCommonImpl
 {
 public:
@@ -173,6 +173,7 @@ public:
 	struct FScriptDelegate                             __EventCryptoKeyCreated__Delegate;             // 0x06D8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventTextMessageSigned__Delegate;            // 0x06F0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventTextMessageValidated__Delegate;         // 0x0708 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0720 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
 	static UClass* StaticClass()
@@ -187,6 +188,9 @@ public:
 		return uClassPointer;
 	};
 
+	void ClearCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
+	void AddCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
+	void OnCaptureAvailabilityChange(bool bCaptureAllowed);
 	void EventTextMessageValidated(bool bMessageValid, int32_t RequestID);
 	void EventTextMessageSigned(const class FString& Signature, int32_t RequestID);
 	void EventCryptoKeyCreated(const class FString& EpicAccountId, const class FString& PublicKey);

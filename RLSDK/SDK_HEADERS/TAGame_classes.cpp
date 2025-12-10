@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -6502,6 +6502,27 @@ void APlayerController_TA::HandleDisconnected(class UPsyNetConnection_X* Connect
 	this->ProcessEvent(uFnHandleDisconnected, &HandleDisconnected_Params, nullptr);
 };
 
+// Function TAGame.PlayerController_TA.HandleMatchTypeSet
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class AGameEvent_TA*           GameEvent                      (CPF_Parm)
+
+void APlayerController_TA::HandleMatchTypeSet(class AGameEvent_TA* GameEvent)
+{
+	static UFunction* uFnHandleMatchTypeSet = nullptr;
+
+	if (!uFnHandleMatchTypeSet)
+	{
+		uFnHandleMatchTypeSet = UFunction::FindFunction("Function TAGame.PlayerController_TA.HandleMatchTypeSet");
+	}
+
+	APlayerController_TA_execHandleMatchTypeSet_Params HandleMatchTypeSet_Params;
+	memset(&HandleMatchTypeSet_Params, 0, sizeof(HandleMatchTypeSet_Params));
+	HandleMatchTypeSet_Params.GameEvent = GameEvent;
+
+	this->ProcessEvent(uFnHandleMatchTypeSet, &HandleMatchTypeSet_Params, nullptr);
+};
+
 // Function TAGame.PlayerController_TA.BannedKick
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -8013,6 +8034,27 @@ void APlayerController_TA::HandleReplaceBot(class APRI_TA* InPRI)
 	HandleReplaceBot_Params.InPRI = InPRI;
 
 	this->ProcessEvent(uFnHandleReplaceBot, &HandleReplaceBot_Params, nullptr);
+};
+
+// Function TAGame.PlayerController_TA.ClientNotifyMatchAdminUsed
+// [0x010201C3] (FUNC_Final | FUNC_Defined | FUNC_Net | FUNC_NetReliable | FUNC_Simulated | FUNC_Public | FUNC_NetClient)
+// Parameter Info:
+// class FString                  Message                        (CPF_Parm | CPF_NeedCtorLink)
+
+void APlayerController_TA::ClientNotifyMatchAdminUsed(const class FString& Message)
+{
+	static UFunction* uFnClientNotifyMatchAdminUsed = nullptr;
+
+	if (!uFnClientNotifyMatchAdminUsed)
+	{
+		uFnClientNotifyMatchAdminUsed = UFunction::FindFunction("Function TAGame.PlayerController_TA.ClientNotifyMatchAdminUsed");
+	}
+
+	APlayerController_TA_execClientNotifyMatchAdminUsed_Params ClientNotifyMatchAdminUsed_Params;
+	memset(&ClientNotifyMatchAdminUsed_Params, 0, sizeof(ClientNotifyMatchAdminUsed_Params));
+	memcpy_s(&ClientNotifyMatchAdminUsed_Params.Message, sizeof(ClientNotifyMatchAdminUsed_Params.Message), &Message, sizeof(Message));
+
+	this->ProcessEvent(uFnClientNotifyMatchAdminUsed, &ClientNotifyMatchAdminUsed_Params, nullptr);
 };
 
 // Function TAGame.PlayerController_TA.ClientNotifyVoiceBan
@@ -22191,9 +22233,10 @@ void UExplosionHitHandler_TA::DrawDebugSphere(float Radius, const struct FColor&
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UExplosionHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UExplosionHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -22207,6 +22250,7 @@ void UExplosionHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct F
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -22219,10 +22263,11 @@ void UExplosionHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct F
 // Parameter Info:
 // class AActor*                  Victim                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // float                          DamageScale                    (CPF_OptionalParm | CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UExplosionHitHandler_TA::eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UExplosionHitHandler_TA::eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, float DeltaTime, float DamageScale, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnProcessHit = nullptr;
 
@@ -22235,6 +22280,7 @@ void UExplosionHitHandler_TA::eventProcessHit(class AActor* Victim, const struct
 	memset(&ProcessHit_Params, 0, sizeof(ProcessHit_Params));
 	ProcessHit_Params.Victim = Victim;
 	memcpy_s(&ProcessHit_Params.HitLocation, sizeof(ProcessHit_Params.HitLocation), &HitLocation, sizeof(HitLocation));
+	memcpy_s(&ProcessHit_Params.DeltaTime, sizeof(ProcessHit_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ProcessHit_Params.DamageScale, sizeof(ProcessHit_Params.DamageScale), &DamageScale, sizeof(DamageScale));
 	memcpy_s(&ProcessHit_Params.ContactInfo, sizeof(ProcessHit_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
@@ -22314,9 +22360,10 @@ void UDefaultHitHandler_TA::ApplyImpulseTowardDirection(class ACar_TA* CarHit, f
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UDefaultHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UDefaultHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -22330,6 +22377,7 @@ void UDefaultHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVe
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -22419,9 +22467,10 @@ void UOrbitHitHandler_TA::Init(class UActorComponent_X* ExplosionGoal)
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UOrbitHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UOrbitHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -22435,6 +22484,7 @@ void UOrbitHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVect
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -22511,9 +22561,10 @@ void UJiggleHitHandler_TA::Destroy()
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UJiggleHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UJiggleHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -22527,6 +22578,7 @@ void UJiggleHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVec
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -22586,10 +22638,11 @@ class ABall_TA* UOverrideMaterialsHitHandler_TA::eventFindFirstGameBall()
 // Parameter Info:
 // class AActor*                  Victim                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // float                          DamageScale                    (CPF_OptionalParm | CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UOverrideMaterialsHitHandler_TA::eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UOverrideMaterialsHitHandler_TA::eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, float DeltaTime, float DamageScale, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnProcessHit = nullptr;
 
@@ -22602,6 +22655,7 @@ void UOverrideMaterialsHitHandler_TA::eventProcessHit(class AActor* Victim, cons
 	memset(&ProcessHit_Params, 0, sizeof(ProcessHit_Params));
 	ProcessHit_Params.Victim = Victim;
 	memcpy_s(&ProcessHit_Params.HitLocation, sizeof(ProcessHit_Params.HitLocation), &HitLocation, sizeof(HitLocation));
+	memcpy_s(&ProcessHit_Params.DeltaTime, sizeof(ProcessHit_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ProcessHit_Params.DamageScale, sizeof(ProcessHit_Params.DamageScale), &DamageScale, sizeof(DamageScale));
 	memcpy_s(&ProcessHit_Params.ContactInfo, sizeof(ProcessHit_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
@@ -34486,8 +34540,12 @@ void UGFxData_ShopCatalogue_TA::SetIsNewCatalogue(bool bInNewCatalogue)
 // Function TAGame.GFxData_ShopCatalogue_TA.SetOwnedDeliverableProducts
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
+// class UProductDatabase_TA*     ProductDB                      (CPF_Parm)
+// class UShopsConfig_TA*         InShopConfig                   (CPF_Parm)
+// class UOnlineProductStoreSet_TA* OnlineProductSet               (CPF_Parm | CPF_EditInline)
+// class UCachedUnlockedProducts_TA* OfflineItems                   (CPF_Parm)
 
-void UGFxData_ShopCatalogue_TA::SetOwnedDeliverableProducts()
+void UGFxData_ShopCatalogue_TA::SetOwnedDeliverableProducts(class UProductDatabase_TA* ProductDB, class UShopsConfig_TA* InShopConfig, class UOnlineProductStoreSet_TA* OnlineProductSet, class UCachedUnlockedProducts_TA* OfflineItems)
 {
 	static UFunction* uFnSetOwnedDeliverableProducts = nullptr;
 
@@ -34498,6 +34556,10 @@ void UGFxData_ShopCatalogue_TA::SetOwnedDeliverableProducts()
 
 	UGFxData_ShopCatalogue_TA_execSetOwnedDeliverableProducts_Params SetOwnedDeliverableProducts_Params;
 	memset(&SetOwnedDeliverableProducts_Params, 0, sizeof(SetOwnedDeliverableProducts_Params));
+	SetOwnedDeliverableProducts_Params.ProductDB = ProductDB;
+	SetOwnedDeliverableProducts_Params.InShopConfig = InShopConfig;
+	SetOwnedDeliverableProducts_Params.OnlineProductSet = OnlineProductSet;
+	SetOwnedDeliverableProducts_Params.OfflineItems = OfflineItems;
 
 	this->ProcessEvent(uFnSetOwnedDeliverableProducts, &SetOwnedDeliverableProducts_Params, nullptr);
 };
@@ -35268,29 +35330,36 @@ class TArray<struct FShopTab> UGFxData_Shops_TA::GetAvailableShopTabs()
 	return GetAvailableShopTabs_Params.ReturnValue;
 };
 
-// Function TAGame.GFxData_Shops_TA.CreateTemporaryOnlineProducts
-// [0x00C22003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_HasOutParms | FUNC_HasDefaults)
+// Function TAGame.GFxData_Shops_TA.CreateTemporaryProducts
+// [0x00422401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
-// class UOnlineProductStoreSet_TA* ProductSet                     (CPF_Parm | CPF_EditInline)
+// class UIdenticalProductCache_TA* ProductSet                     (CPF_Parm | CPF_EditInline)
+// class UProductDatabase_TA*     ProductDatabase                (CPF_Parm)
+// uint32_t                       bInjectOfflineProducts         (CPF_Parm)
 // class TArray<struct FShopItem> Items                          (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class TArray<class FName>      IgnoredAttributesForDuplication (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
-void UGFxData_Shops_TA::CreateTemporaryOnlineProducts(class UOnlineProductStoreSet_TA* ProductSet, class TArray<struct FShopItem>& Items)
+void UGFxData_Shops_TA::CreateTemporaryProducts(class UIdenticalProductCache_TA* ProductSet, class UProductDatabase_TA* ProductDatabase, bool bInjectOfflineProducts, class TArray<struct FShopItem>& Items, class TArray<class FName>& IgnoredAttributesForDuplication)
 {
-	static UFunction* uFnCreateTemporaryOnlineProducts = nullptr;
+	static UFunction* uFnCreateTemporaryProducts = nullptr;
 
-	if (!uFnCreateTemporaryOnlineProducts)
+	if (!uFnCreateTemporaryProducts)
 	{
-		uFnCreateTemporaryOnlineProducts = UFunction::FindFunction("Function TAGame.GFxData_Shops_TA.CreateTemporaryOnlineProducts");
+		uFnCreateTemporaryProducts = UFunction::FindFunction("Function TAGame.GFxData_Shops_TA.CreateTemporaryProducts");
 	}
 
-	UGFxData_Shops_TA_execCreateTemporaryOnlineProducts_Params CreateTemporaryOnlineProducts_Params;
-	memset(&CreateTemporaryOnlineProducts_Params, 0, sizeof(CreateTemporaryOnlineProducts_Params));
-	CreateTemporaryOnlineProducts_Params.ProductSet = ProductSet;
-	memcpy_s(&CreateTemporaryOnlineProducts_Params.Items, sizeof(CreateTemporaryOnlineProducts_Params.Items), &Items, sizeof(Items));
+	UGFxData_Shops_TA_execCreateTemporaryProducts_Params CreateTemporaryProducts_Params;
+	memset(&CreateTemporaryProducts_Params, 0, sizeof(CreateTemporaryProducts_Params));
+	CreateTemporaryProducts_Params.ProductSet = ProductSet;
+	CreateTemporaryProducts_Params.ProductDatabase = ProductDatabase;
+	CreateTemporaryProducts_Params.bInjectOfflineProducts = bInjectOfflineProducts;
+	memcpy_s(&CreateTemporaryProducts_Params.Items, sizeof(CreateTemporaryProducts_Params.Items), &Items, sizeof(Items));
+	memcpy_s(&CreateTemporaryProducts_Params.IgnoredAttributesForDuplication, sizeof(CreateTemporaryProducts_Params.IgnoredAttributesForDuplication), &IgnoredAttributesForDuplication, sizeof(IgnoredAttributesForDuplication));
 
-	UGFxData_Shops_TA::StaticClass()->ProcessEvent(uFnCreateTemporaryOnlineProducts, &CreateTemporaryOnlineProducts_Params, nullptr);
+	UGFxData_Shops_TA::StaticClass()->ProcessEvent(uFnCreateTemporaryProducts, &CreateTemporaryProducts_Params, nullptr);
 
-	memcpy_s(&Items, sizeof(Items), &CreateTemporaryOnlineProducts_Params.Items, sizeof(CreateTemporaryOnlineProducts_Params.Items));
+	memcpy_s(&Items, sizeof(Items), &CreateTemporaryProducts_Params.Items, sizeof(CreateTemporaryProducts_Params.Items));
+	memcpy_s(&IgnoredAttributesForDuplication, sizeof(IgnoredAttributesForDuplication), &CreateTemporaryProducts_Params.IgnoredAttributesForDuplication, sizeof(CreateTemporaryProducts_Params.IgnoredAttributesForDuplication));
 };
 
 // Function TAGame.GFxData_Shops_TA.OnGetCrateShopFailed
@@ -37208,6 +37277,32 @@ bool UICanEquip_TA::CanEquip(class TArray<int32_t>& EquippedProducts)
 	return CanEquip_Params.ReturnValue;
 };
 
+// Function TAGame.IdenticalProductCache_TA.ProductHasIdenticalOnlineProduct
+// [0x00024401] (FUNC_Final | FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UProduct_TA*             Product                        (CPF_Parm)
+// class TArray<class UClass*>    AttributesToIgnore             (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+
+bool UIdenticalProductCache_TA::ProductHasIdenticalOnlineProduct(class UProduct_TA* Product, const class TArray<class UClass*>& AttributesToIgnore)
+{
+	static UFunction* uFnProductHasIdenticalOnlineProduct = nullptr;
+
+	if (!uFnProductHasIdenticalOnlineProduct)
+	{
+		uFnProductHasIdenticalOnlineProduct = UFunction::FindFunction("Function TAGame.IdenticalProductCache_TA.ProductHasIdenticalOnlineProduct");
+	}
+
+	UIdenticalProductCache_TA_execProductHasIdenticalOnlineProduct_Params ProductHasIdenticalOnlineProduct_Params;
+	memset(&ProductHasIdenticalOnlineProduct_Params, 0, sizeof(ProductHasIdenticalOnlineProduct_Params));
+	ProductHasIdenticalOnlineProduct_Params.Product = Product;
+	memcpy_s(&ProductHasIdenticalOnlineProduct_Params.AttributesToIgnore, sizeof(ProductHasIdenticalOnlineProduct_Params.AttributesToIgnore), &AttributesToIgnore, sizeof(AttributesToIgnore));
+
+	this->ProcessEvent(uFnProductHasIdenticalOnlineProduct, &ProductHasIdenticalOnlineProduct_Params, nullptr);
+
+	return ProductHasIdenticalOnlineProduct_Params.ReturnValue;
+};
+
 // Function TAGame.IdenticalProductCache_TA.FindProductsWithIdenticalAttributes
 // [0x00024401] (FUNC_Final | FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
@@ -37232,6 +37327,30 @@ class TArray<class UOnlineProduct_TA*> UIdenticalProductCache_TA::FindProductsWi
 	this->ProcessEvent(uFnFindProductsWithIdenticalAttributes, &FindProductsWithIdenticalAttributes_Params, nullptr);
 
 	return FindProductsWithIdenticalAttributes_Params.ReturnValue;
+};
+
+// Function TAGame.IdenticalProductCache_TA.HasProductWithID
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        ProductID                      (CPF_Parm)
+
+bool UIdenticalProductCache_TA::HasProductWithID(int32_t ProductID)
+{
+	static UFunction* uFnHasProductWithID = nullptr;
+
+	if (!uFnHasProductWithID)
+	{
+		uFnHasProductWithID = UFunction::FindFunction("Function TAGame.IdenticalProductCache_TA.HasProductWithID");
+	}
+
+	UIdenticalProductCache_TA_execHasProductWithID_Params HasProductWithID_Params;
+	memset(&HasProductWithID_Params, 0, sizeof(HasProductWithID_Params));
+	memcpy_s(&HasProductWithID_Params.ProductID, sizeof(HasProductWithID_Params.ProductID), &ProductID, sizeof(ProductID));
+
+	this->ProcessEvent(uFnHasProductWithID, &HasProductWithID_Params, nullptr);
+
+	return HasProductWithID_Params.ReturnValue;
 };
 
 // Function TAGame.IdenticalProductCache_TA.FindProduct
@@ -38807,6 +38926,28 @@ void ULocalPlayer_TA::__LocalPlayer_TA__OnCreated_0x1(class UOnlineLegalText_X* 
 	__LocalPlayer_TA__OnCreated_0x1_Params.O = O;
 
 	this->ProcessEvent(uFn__LocalPlayer_TA__OnCreated_0x1, &__LocalPlayer_TA__OnCreated_0x1_Params, nullptr);
+};
+
+// Function TAGame.LocalPlayer_TA.IsValid
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool ULocalPlayer_TA::IsValid()
+{
+	static UFunction* uFnIsValid = nullptr;
+
+	if (!uFnIsValid)
+	{
+		uFnIsValid = UFunction::FindFunction("Function TAGame.LocalPlayer_TA.IsValid");
+	}
+
+	ULocalPlayer_TA_execIsValid_Params IsValid_Params;
+	memset(&IsValid_Params, 0, sizeof(IsValid_Params));
+
+	this->ProcessEvent(uFnIsValid, &IsValid_Params, nullptr);
+
+	return IsValid_Params.ReturnValue;
 };
 
 // Function TAGame.LocalPlayer_TA.ApplyNetworkSettings
@@ -41807,8 +41948,9 @@ int32_t UMTXGarageUtils_TA::FormattedCurrencyToInt(const class FString& PriceStr
 // class TArray<struct FPriceInfo> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class FString                  Country                        (CPF_Parm | CPF_NeedCtorLink)
 // class TArray<class USonyPricingInfo_TA*> PricingInfo                    (CPF_Parm | CPF_NeedCtorLink)
+// class UMtxConfig_TA*           MtxConfig                      (CPF_Parm)
 
-class TArray<struct FPriceInfo> UMTXGarageUtils_TA::GetPlatformPriceItems(const class FString& Country, const class TArray<class USonyPricingInfo_TA*>& PricingInfo)
+class TArray<struct FPriceInfo> UMTXGarageUtils_TA::GetPlatformPriceItems(const class FString& Country, const class TArray<class USonyPricingInfo_TA*>& PricingInfo, class UMtxConfig_TA* MtxConfig)
 {
 	static UFunction* uFnGetPlatformPriceItems = nullptr;
 
@@ -41821,6 +41963,7 @@ class TArray<struct FPriceInfo> UMTXGarageUtils_TA::GetPlatformPriceItems(const 
 	memset(&GetPlatformPriceItems_Params, 0, sizeof(GetPlatformPriceItems_Params));
 	memcpy_s(&GetPlatformPriceItems_Params.Country, sizeof(GetPlatformPriceItems_Params.Country), &Country, sizeof(Country));
 	memcpy_s(&GetPlatformPriceItems_Params.PricingInfo, sizeof(GetPlatformPriceItems_Params.PricingInfo), &PricingInfo, sizeof(PricingInfo));
+	GetPlatformPriceItems_Params.MtxConfig = MtxConfig;
 
 	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnGetPlatformPriceItems, &GetPlatformPriceItems_Params, nullptr);
 
@@ -41877,6 +42020,140 @@ class FString UMTXGarageUtils_TA::GetCurrencyReplacement(const class FString& cu
 	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnGetCurrencyReplacement, &GetCurrencyReplacement_Params, nullptr);
 
 	return GetCurrencyReplacement_Params.ReturnValue;
+};
+
+// Function TAGame.MTXGarageUtils_TA.GetEuroCurrencySymbol
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+
+class FString UMTXGarageUtils_TA::GetEuroCurrencySymbol()
+{
+	static UFunction* uFnGetEuroCurrencySymbol = nullptr;
+
+	if (!uFnGetEuroCurrencySymbol)
+	{
+		uFnGetEuroCurrencySymbol = UFunction::FindFunction("Function TAGame.MTXGarageUtils_TA.GetEuroCurrencySymbol");
+	}
+
+	UMTXGarageUtils_TA_execGetEuroCurrencySymbol_Params GetEuroCurrencySymbol_Params;
+	memset(&GetEuroCurrencySymbol_Params, 0, sizeof(GetEuroCurrencySymbol_Params));
+
+	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnGetEuroCurrencySymbol, &GetEuroCurrencySymbol_Params, nullptr);
+
+	return GetEuroCurrencySymbol_Params.ReturnValue;
+};
+
+// Function TAGame.MTXGarageUtils_TA.GetLevCurrencySymbol
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+
+class FString UMTXGarageUtils_TA::GetLevCurrencySymbol()
+{
+	static UFunction* uFnGetLevCurrencySymbol = nullptr;
+
+	if (!uFnGetLevCurrencySymbol)
+	{
+		uFnGetLevCurrencySymbol = UFunction::FindFunction("Function TAGame.MTXGarageUtils_TA.GetLevCurrencySymbol");
+	}
+
+	UMTXGarageUtils_TA_execGetLevCurrencySymbol_Params GetLevCurrencySymbol_Params;
+	memset(&GetLevCurrencySymbol_Params, 0, sizeof(GetLevCurrencySymbol_Params));
+
+	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnGetLevCurrencySymbol, &GetLevCurrencySymbol_Params, nullptr);
+
+	return GetLevCurrencySymbol_Params.ReturnValue;
+};
+
+// Function TAGame.MTXGarageUtils_TA.IsPriceInDenomination
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  LocalRealPrice                 (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Denomination                   (CPF_Parm | CPF_NeedCtorLink)
+
+bool UMTXGarageUtils_TA::IsPriceInDenomination(const class FString& LocalRealPrice, const class FString& Denomination)
+{
+	static UFunction* uFnIsPriceInDenomination = nullptr;
+
+	if (!uFnIsPriceInDenomination)
+	{
+		uFnIsPriceInDenomination = UFunction::FindFunction("Function TAGame.MTXGarageUtils_TA.IsPriceInDenomination");
+	}
+
+	UMTXGarageUtils_TA_execIsPriceInDenomination_Params IsPriceInDenomination_Params;
+	memset(&IsPriceInDenomination_Params, 0, sizeof(IsPriceInDenomination_Params));
+	memcpy_s(&IsPriceInDenomination_Params.LocalRealPrice, sizeof(IsPriceInDenomination_Params.LocalRealPrice), &LocalRealPrice, sizeof(LocalRealPrice));
+	memcpy_s(&IsPriceInDenomination_Params.Denomination, sizeof(IsPriceInDenomination_Params.Denomination), &Denomination, sizeof(Denomination));
+
+	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnIsPriceInDenomination, &IsPriceInDenomination_Params, nullptr);
+
+	return IsPriceInDenomination_Params.ReturnValue;
+};
+
+// Function TAGame.MTXGarageUtils_TA.GetBulgarianDualCurrencyStrings
+// [0x00422003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// int32_t                        VCAmount                       (CPF_Parm)
+// class FString                  LocalRealPrice                 (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<struct FPriceInfo> PriceInfoItems                 (CPF_Parm | CPF_NeedCtorLink)
+// class UMtxConfig_TA*           MtxConfig                      (CPF_Parm)
+// class FString                  RealPrice1                     (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  RealPrice2                     (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UMTXGarageUtils_TA::GetBulgarianDualCurrencyStrings(int32_t VCAmount, const class FString& LocalRealPrice, const class TArray<struct FPriceInfo>& PriceInfoItems, class UMtxConfig_TA* MtxConfig, class FString& RealPrice1, class FString& RealPrice2)
+{
+	static UFunction* uFnGetBulgarianDualCurrencyStrings = nullptr;
+
+	if (!uFnGetBulgarianDualCurrencyStrings)
+	{
+		uFnGetBulgarianDualCurrencyStrings = UFunction::FindFunction("Function TAGame.MTXGarageUtils_TA.GetBulgarianDualCurrencyStrings");
+	}
+
+	UMTXGarageUtils_TA_execGetBulgarianDualCurrencyStrings_Params GetBulgarianDualCurrencyStrings_Params;
+	memset(&GetBulgarianDualCurrencyStrings_Params, 0, sizeof(GetBulgarianDualCurrencyStrings_Params));
+	memcpy_s(&GetBulgarianDualCurrencyStrings_Params.VCAmount, sizeof(GetBulgarianDualCurrencyStrings_Params.VCAmount), &VCAmount, sizeof(VCAmount));
+	memcpy_s(&GetBulgarianDualCurrencyStrings_Params.LocalRealPrice, sizeof(GetBulgarianDualCurrencyStrings_Params.LocalRealPrice), &LocalRealPrice, sizeof(LocalRealPrice));
+	memcpy_s(&GetBulgarianDualCurrencyStrings_Params.PriceInfoItems, sizeof(GetBulgarianDualCurrencyStrings_Params.PriceInfoItems), &PriceInfoItems, sizeof(PriceInfoItems));
+	GetBulgarianDualCurrencyStrings_Params.MtxConfig = MtxConfig;
+	memcpy_s(&GetBulgarianDualCurrencyStrings_Params.RealPrice1, sizeof(GetBulgarianDualCurrencyStrings_Params.RealPrice1), &RealPrice1, sizeof(RealPrice1));
+	memcpy_s(&GetBulgarianDualCurrencyStrings_Params.RealPrice2, sizeof(GetBulgarianDualCurrencyStrings_Params.RealPrice2), &RealPrice2, sizeof(RealPrice2));
+
+	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnGetBulgarianDualCurrencyStrings, &GetBulgarianDualCurrencyStrings_Params, nullptr);
+
+	memcpy_s(&RealPrice1, sizeof(RealPrice1), &GetBulgarianDualCurrencyStrings_Params.RealPrice1, sizeof(GetBulgarianDualCurrencyStrings_Params.RealPrice1));
+	memcpy_s(&RealPrice2, sizeof(RealPrice2), &GetBulgarianDualCurrencyStrings_Params.RealPrice2, sizeof(GetBulgarianDualCurrencyStrings_Params.RealPrice2));
+};
+
+// Function TAGame.MTXGarageUtils_TA.IsBulgarianDualCurrencyEnabled
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UMtxConfig_TA*           MtxConfig                      (CPF_Parm)
+// class FString                  OnlineCountryCode              (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  ConfigBulgarianCountryCode     (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  LocalRealPrice                 (CPF_Parm | CPF_NeedCtorLink)
+
+bool UMTXGarageUtils_TA::IsBulgarianDualCurrencyEnabled(class UMtxConfig_TA* MtxConfig, const class FString& OnlineCountryCode, const class FString& ConfigBulgarianCountryCode, const class FString& LocalRealPrice)
+{
+	static UFunction* uFnIsBulgarianDualCurrencyEnabled = nullptr;
+
+	if (!uFnIsBulgarianDualCurrencyEnabled)
+	{
+		uFnIsBulgarianDualCurrencyEnabled = UFunction::FindFunction("Function TAGame.MTXGarageUtils_TA.IsBulgarianDualCurrencyEnabled");
+	}
+
+	UMTXGarageUtils_TA_execIsBulgarianDualCurrencyEnabled_Params IsBulgarianDualCurrencyEnabled_Params;
+	memset(&IsBulgarianDualCurrencyEnabled_Params, 0, sizeof(IsBulgarianDualCurrencyEnabled_Params));
+	IsBulgarianDualCurrencyEnabled_Params.MtxConfig = MtxConfig;
+	memcpy_s(&IsBulgarianDualCurrencyEnabled_Params.OnlineCountryCode, sizeof(IsBulgarianDualCurrencyEnabled_Params.OnlineCountryCode), &OnlineCountryCode, sizeof(OnlineCountryCode));
+	memcpy_s(&IsBulgarianDualCurrencyEnabled_Params.ConfigBulgarianCountryCode, sizeof(IsBulgarianDualCurrencyEnabled_Params.ConfigBulgarianCountryCode), &ConfigBulgarianCountryCode, sizeof(ConfigBulgarianCountryCode));
+	memcpy_s(&IsBulgarianDualCurrencyEnabled_Params.LocalRealPrice, sizeof(IsBulgarianDualCurrencyEnabled_Params.LocalRealPrice), &LocalRealPrice, sizeof(LocalRealPrice));
+
+	UMTXGarageUtils_TA::StaticClass()->ProcessEvent(uFnIsBulgarianDualCurrencyEnabled, &IsBulgarianDualCurrencyEnabled_Params, nullptr);
+
+	return IsBulgarianDualCurrencyEnabled_Params.ReturnValue;
 };
 
 // Function TAGame.MTXGarageUtils_TA.HandleImageDownloaded
@@ -42286,10 +42563,11 @@ bool UMTXGarageUtils_TA::FindAnchorPack(struct FMTXPurchaseInfo& AnchorPack, cla
 // Parameter Info:
 // class TArray<struct FMTXPurchaseInfo> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // int32_t                        ExactAmountNeededInVC          (CPF_Parm)
+// EMTXCatalogCategory            Category                       (CPF_Parm)
 // class UMtxConfig_TA*           MtxConfig                      (CPF_Parm)
 // class TArray<struct FMTXPurchaseInfo> PuchaseInfoItems               (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
-class TArray<struct FMTXPurchaseInfo> UMTXGarageUtils_TA::FilterPurchaseInfoItems(int32_t ExactAmountNeededInVC, class UMtxConfig_TA* MtxConfig, class TArray<struct FMTXPurchaseInfo>& PuchaseInfoItems)
+class TArray<struct FMTXPurchaseInfo> UMTXGarageUtils_TA::FilterPurchaseInfoItems(int32_t ExactAmountNeededInVC, EMTXCatalogCategory Category, class UMtxConfig_TA* MtxConfig, class TArray<struct FMTXPurchaseInfo>& PuchaseInfoItems)
 {
 	static UFunction* uFnFilterPurchaseInfoItems = nullptr;
 
@@ -42301,6 +42579,7 @@ class TArray<struct FMTXPurchaseInfo> UMTXGarageUtils_TA::FilterPurchaseInfoItem
 	UMTXGarageUtils_TA_execFilterPurchaseInfoItems_Params FilterPurchaseInfoItems_Params;
 	memset(&FilterPurchaseInfoItems_Params, 0, sizeof(FilterPurchaseInfoItems_Params));
 	memcpy_s(&FilterPurchaseInfoItems_Params.ExactAmountNeededInVC, sizeof(FilterPurchaseInfoItems_Params.ExactAmountNeededInVC), &ExactAmountNeededInVC, sizeof(ExactAmountNeededInVC));
+	memcpy_s(&FilterPurchaseInfoItems_Params.Category, sizeof(FilterPurchaseInfoItems_Params.Category), &Category, sizeof(Category));
 	FilterPurchaseInfoItems_Params.MtxConfig = MtxConfig;
 	memcpy_s(&FilterPurchaseInfoItems_Params.PuchaseInfoItems, sizeof(FilterPurchaseInfoItems_Params.PuchaseInfoItems), &PuchaseInfoItems, sizeof(PuchaseInfoItems));
 
@@ -45299,6 +45578,27 @@ int32_t UOnlineProduct_TA::__OnlineProduct_TA__SortOnlineProductsByQuality_0x2(c
 	return __OnlineProduct_TA__SortOnlineProductsByQuality_0x2_Params.ReturnValue;
 };
 
+// Function TAGame.OnlineProduct_TA.SetRocketPassProductFlag
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// uint32_t                       Value                          (CPF_Parm)
+
+void UOnlineProduct_TA::SetRocketPassProductFlag(bool Value)
+{
+	static UFunction* uFnSetRocketPassProductFlag = nullptr;
+
+	if (!uFnSetRocketPassProductFlag)
+	{
+		uFnSetRocketPassProductFlag = UFunction::FindFunction("Function TAGame.OnlineProduct_TA.SetRocketPassProductFlag");
+	}
+
+	UOnlineProduct_TA_execSetRocketPassProductFlag_Params SetRocketPassProductFlag_Params;
+	memset(&SetRocketPassProductFlag_Params, 0, sizeof(SetRocketPassProductFlag_Params));
+	SetRocketPassProductFlag_Params.Value = Value;
+
+	this->ProcessEvent(uFnSetRocketPassProductFlag, &SetRocketPassProductFlag_Params, nullptr);
+};
+
 // Function TAGame.OnlineProduct_TA.SetTradehold
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -45476,7 +45776,7 @@ void UOnlineProduct_TA::SetProductID(int32_t InProductID)
 };
 
 // Function TAGame.OnlineProduct_TA.GetIsUntradeable
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
@@ -46140,11 +46440,11 @@ bool UOnlineProductStore_TA::HasAnyProducts()
 };
 
 // Function TAGame.OnlineProductStore_TA.GetTempInstanceID
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00020803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_Public)
 // Parameter Info:
 // struct FProductInstanceID      ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 
-struct FProductInstanceID UOnlineProductStore_TA::GetTempInstanceID()
+struct FProductInstanceID UOnlineProductStore_TA::eventGetTempInstanceID()
 {
 	static UFunction* uFnGetTempInstanceID = nullptr;
 
@@ -46153,7 +46453,7 @@ struct FProductInstanceID UOnlineProductStore_TA::GetTempInstanceID()
 		uFnGetTempInstanceID = UFunction::FindFunction("Function TAGame.OnlineProductStore_TA.GetTempInstanceID");
 	}
 
-	UOnlineProductStore_TA_execGetTempInstanceID_Params GetTempInstanceID_Params;
+	UOnlineProductStore_TA_eventGetTempInstanceID_Params GetTempInstanceID_Params;
 	memset(&GetTempInstanceID_Params, 0, sizeof(GetTempInstanceID_Params));
 
 	this->ProcessEvent(uFnGetTempInstanceID, &GetTempInstanceID_Params, nullptr);
@@ -47399,6 +47699,31 @@ void UPersona_TA::EventUpdated(class UPersona_TA* Persona)
 	this->ProcessEvent(uFnEventUpdated, &EventUpdated_Params, nullptr);
 };
 
+// Function TAGame.Personas_TA.CreatePersonaFromID
+// [0x00424803] (FUNC_Final | FUNC_Defined | FUNC_Event | FUNC_HasOptionalParms | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// EPersonaInfoOrigin             Origin                         (CPF_OptionalParm | CPF_Parm)
+// struct FOnlineFriend           FriendData                     (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UPersonas_TA::eventCreatePersonaFromID(EPersonaInfoOrigin Origin, struct FOnlineFriend& FriendData)
+{
+	static UFunction* uFnCreatePersonaFromID = nullptr;
+
+	if (!uFnCreatePersonaFromID)
+	{
+		uFnCreatePersonaFromID = UFunction::FindFunction("Function TAGame.Personas_TA.CreatePersonaFromID");
+	}
+
+	UPersonas_TA_eventCreatePersonaFromID_Params CreatePersonaFromID_Params;
+	memset(&CreatePersonaFromID_Params, 0, sizeof(CreatePersonaFromID_Params));
+	memcpy_s(&CreatePersonaFromID_Params.Origin, sizeof(CreatePersonaFromID_Params.Origin), &Origin, sizeof(Origin));
+	memcpy_s(&CreatePersonaFromID_Params.FriendData, sizeof(CreatePersonaFromID_Params.FriendData), &FriendData, sizeof(FriendData));
+
+	this->ProcessEvent(uFnCreatePersonaFromID, &CreatePersonaFromID_Params, nullptr);
+
+	memcpy_s(&FriendData, sizeof(FriendData), &CreatePersonaFromID_Params.FriendData, sizeof(CreatePersonaFromID_Params.FriendData));
+};
+
 // Function TAGame.Personas_TA.GetRelevantPersonaFromEpicId
 // [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
@@ -47481,7 +47806,7 @@ class UPersona_TA* UPersonas_TA::CreatePersonaFromOnlineFriend(EPersonaInfoOrigi
 };
 
 // Function TAGame.Personas_TA.CreatePersona
-// [0x00844003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Private | FUNC_HasDefaults)
+// [0x00884002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected | FUNC_HasDefaults)
 // Parameter Info:
 // class UPersona_TA*             ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
@@ -47662,7 +47987,7 @@ void UPersonas_TA::HandlePersonaHiddenChanged(class UPersona_TA* Persona)
 };
 
 // Function TAGame.Personas_TA.AddPersona
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
 // Parameter Info:
 // class UPersona_TA*             ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // class UPersona_TA*             Persona                        (CPF_Parm)
@@ -55128,10 +55453,13 @@ class TArray<struct FProductInstanceID> UProductFilter_TA::FilterProducts(struct
 // Parameter Info:
 // class TArray<class UProduct_TA*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // uint32_t                       bIgnoreLockedProducts          (CPF_OptionalParm | CPF_Parm)
+// uint32_t                       bSkipIfOnlineEquivalent        (CPF_OptionalParm | CPF_Parm)
+// class UIdenticalProductCache_TA* OnlineProductSet               (CPF_OptionalParm | CPF_Parm | CPF_EditInline)
+// class TArray<class UClass*>    AttributesToIgnore             (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 // class TArray<class UOnlineProduct_TA*> OnlineProducts                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 // class TArray<int32_t>          OfflineProducts                (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
-class TArray<class UProduct_TA*> UProductFilter_TA::GetDisplayableOfflineProducts(bool bIgnoreLockedProducts, class TArray<class UOnlineProduct_TA*>& OnlineProducts, class TArray<int32_t>& OfflineProducts)
+class TArray<class UProduct_TA*> UProductFilter_TA::GetDisplayableOfflineProducts(bool bIgnoreLockedProducts, bool bSkipIfOnlineEquivalent, class UIdenticalProductCache_TA* OnlineProductSet, const class TArray<class UClass*>& AttributesToIgnore, class TArray<class UOnlineProduct_TA*>& OnlineProducts, class TArray<int32_t>& OfflineProducts)
 {
 	static UFunction* uFnGetDisplayableOfflineProducts = nullptr;
 
@@ -55143,6 +55471,9 @@ class TArray<class UProduct_TA*> UProductFilter_TA::GetDisplayableOfflineProduct
 	UProductFilter_TA_execGetDisplayableOfflineProducts_Params GetDisplayableOfflineProducts_Params;
 	memset(&GetDisplayableOfflineProducts_Params, 0, sizeof(GetDisplayableOfflineProducts_Params));
 	GetDisplayableOfflineProducts_Params.bIgnoreLockedProducts = bIgnoreLockedProducts;
+	GetDisplayableOfflineProducts_Params.bSkipIfOnlineEquivalent = bSkipIfOnlineEquivalent;
+	GetDisplayableOfflineProducts_Params.OnlineProductSet = OnlineProductSet;
+	memcpy_s(&GetDisplayableOfflineProducts_Params.AttributesToIgnore, sizeof(GetDisplayableOfflineProducts_Params.AttributesToIgnore), &AttributesToIgnore, sizeof(AttributesToIgnore));
 	memcpy_s(&GetDisplayableOfflineProducts_Params.OnlineProducts, sizeof(GetDisplayableOfflineProducts_Params.OnlineProducts), &OnlineProducts, sizeof(OnlineProducts));
 	memcpy_s(&GetDisplayableOfflineProducts_Params.OfflineProducts, sizeof(GetDisplayableOfflineProducts_Params.OfflineProducts), &OfflineProducts, sizeof(OfflineProducts));
 
@@ -56130,6 +56461,32 @@ bool UProduct_TA::OwnsRequiredProduct(class TArray<class UOnlineProduct_TA*>& On
 	return OwnsRequiredProduct_Params.ReturnValue;
 };
 
+// Function TAGame.Product_TA.OwnsAnyRequiredProduct
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UIdenticalProductCache_TA* OnlineProducts                 (CPF_Parm | CPF_EditInline)
+// class UCachedUnlockedProducts_TA* OfflineProducts                (CPF_Parm)
+
+bool UProduct_TA::OwnsAnyRequiredProduct(class UIdenticalProductCache_TA* OnlineProducts, class UCachedUnlockedProducts_TA* OfflineProducts)
+{
+	static UFunction* uFnOwnsAnyRequiredProduct = nullptr;
+
+	if (!uFnOwnsAnyRequiredProduct)
+	{
+		uFnOwnsAnyRequiredProduct = UFunction::FindFunction("Function TAGame.Product_TA.OwnsAnyRequiredProduct");
+	}
+
+	UProduct_TA_execOwnsAnyRequiredProduct_Params OwnsAnyRequiredProduct_Params;
+	memset(&OwnsAnyRequiredProduct_Params, 0, sizeof(OwnsAnyRequiredProduct_Params));
+	OwnsAnyRequiredProduct_Params.OnlineProducts = OnlineProducts;
+	OwnsAnyRequiredProduct_Params.OfflineProducts = OfflineProducts;
+
+	this->ProcessEvent(uFnOwnsAnyRequiredProduct, &OwnsAnyRequiredProduct_Params, nullptr);
+
+	return OwnsAnyRequiredProduct_Params.ReturnValue;
+};
+
 // Function TAGame.Product_TA.IsIPAllowed
 // [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
@@ -56678,6 +57035,30 @@ bool UProduct_TA::IsLicensed()
 	this->ProcessEvent(uFnIsLicensed, &IsLicensed_Params, nullptr);
 
 	return IsLicensed_Params.ReturnValue;
+};
+
+// Function TAGame.Product_TA.GetAttributeString
+// [0x00024401] (FUNC_Final | FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class TArray<class UClass*>    AttributesToIgnore             (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+
+class FString UProduct_TA::GetAttributeString(const class TArray<class UClass*>& AttributesToIgnore)
+{
+	static UFunction* uFnGetAttributeString = nullptr;
+
+	if (!uFnGetAttributeString)
+	{
+		uFnGetAttributeString = UFunction::FindFunction("Function TAGame.Product_TA.GetAttributeString");
+	}
+
+	UProduct_TA_execGetAttributeString_Params GetAttributeString_Params;
+	memset(&GetAttributeString_Params, 0, sizeof(GetAttributeString_Params));
+	memcpy_s(&GetAttributeString_Params.AttributesToIgnore, sizeof(GetAttributeString_Params.AttributesToIgnore), &AttributesToIgnore, sizeof(AttributesToIgnore));
+
+	this->ProcessEvent(uFnGetAttributeString, &GetAttributeString_Params, nullptr);
+
+	return GetAttributeString_Params.ReturnValue;
 };
 
 // Function TAGame.Product_TA.IsExactlyDecryptor
@@ -64896,8 +65277,9 @@ class UOnlineProduct_TA* USaveData_TA::GiveOnlineProductDataNoNotify(const struc
 // struct FOnlineProductData      NewProductData                 (CPF_Parm | CPF_NeedCtorLink)
 // class FString                  Message                        (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 // float                          SaveDelayInSeconds             (CPF_OptionalParm | CPF_Parm)
+// uint32_t                       bIsRocketPassProduct           (CPF_OptionalParm | CPF_Parm)
 
-class UOnlineProduct_TA* USaveData_TA::GiveOnlineProductData(const struct FOnlineProductData& NewProductData, const class FString& Message, float SaveDelayInSeconds)
+class UOnlineProduct_TA* USaveData_TA::GiveOnlineProductData(const struct FOnlineProductData& NewProductData, const class FString& Message, float SaveDelayInSeconds, bool bIsRocketPassProduct)
 {
 	static UFunction* uFnGiveOnlineProductData = nullptr;
 
@@ -64911,6 +65293,7 @@ class UOnlineProduct_TA* USaveData_TA::GiveOnlineProductData(const struct FOnlin
 	memcpy_s(&GiveOnlineProductData_Params.NewProductData, sizeof(GiveOnlineProductData_Params.NewProductData), &NewProductData, sizeof(NewProductData));
 	memcpy_s(&GiveOnlineProductData_Params.Message, sizeof(GiveOnlineProductData_Params.Message), &Message, sizeof(Message));
 	memcpy_s(&GiveOnlineProductData_Params.SaveDelayInSeconds, sizeof(GiveOnlineProductData_Params.SaveDelayInSeconds), &SaveDelayInSeconds, sizeof(SaveDelayInSeconds));
+	GiveOnlineProductData_Params.bIsRocketPassProduct = bIsRocketPassProduct;
 
 	this->ProcessEvent(uFnGiveOnlineProductData, &GiveOnlineProductData_Params, nullptr);
 
@@ -65816,6 +66199,27 @@ void USaveData_TA::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function TAGame.SaveData_TA.EventNewViralItemConfig
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UViralItemConfig_TA*     NewViralItemConfig             (CPF_Parm)
+
+void USaveData_TA::EventNewViralItemConfig(class UViralItemConfig_TA* NewViralItemConfig)
+{
+	static UFunction* uFnEventNewViralItemConfig = nullptr;
+
+	if (!uFnEventNewViralItemConfig)
+	{
+		uFnEventNewViralItemConfig = UFunction::FindFunction("Function TAGame.SaveData_TA.EventNewViralItemConfig");
+	}
+
+	USaveData_TA_execEventNewViralItemConfig_Params EventNewViralItemConfig_Params;
+	memset(&EventNewViralItemConfig_Params, 0, sizeof(EventNewViralItemConfig_Params));
+	EventNewViralItemConfig_Params.NewViralItemConfig = NewViralItemConfig;
+
+	this->ProcessEvent(uFnEventNewViralItemConfig, &EventNewViralItemConfig_Params, nullptr);
 };
 
 // Function TAGame.SaveData_TA.EventRedeemedOnlineProducts
@@ -69529,6 +69933,27 @@ void UCarMeshComponentBase_TA::ApplyPaintSettings()
 	memset(&ApplyPaintSettings_Params, 0, sizeof(ApplyPaintSettings_Params));
 
 	this->ProcessEvent(uFnApplyPaintSettings, &ApplyPaintSettings_Params, nullptr);
+};
+
+// Function TAGame.CarMeshComponentBase_TA.WaitForMipLevelsToStream
+// [0x04040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_K2Call)
+// Parameter Info:
+// float                          MaxWaitTime                    (CPF_Parm)
+
+void UCarMeshComponentBase_TA::WaitForMipLevelsToStream(float MaxWaitTime)
+{
+	static UFunction* uFnWaitForMipLevelsToStream = nullptr;
+
+	if (!uFnWaitForMipLevelsToStream)
+	{
+		uFnWaitForMipLevelsToStream = UFunction::FindFunction("Function TAGame.CarMeshComponentBase_TA.WaitForMipLevelsToStream");
+	}
+
+	UCarMeshComponentBase_TA_execWaitForMipLevelsToStream_Params WaitForMipLevelsToStream_Params;
+	memset(&WaitForMipLevelsToStream_Params, 0, sizeof(WaitForMipLevelsToStream_Params));
+	memcpy_s(&WaitForMipLevelsToStream_Params.MaxWaitTime, sizeof(WaitForMipLevelsToStream_Params.MaxWaitTime), &MaxWaitTime, sizeof(MaxWaitTime));
+
+	this->ProcessEvent(uFnWaitForMipLevelsToStream, &WaitForMipLevelsToStream_Params, nullptr);
 };
 
 // Function TAGame.CarMeshComponentBase_TA.OnPaintChanged
@@ -76290,6 +76715,56 @@ void AVoteActor_TA::EventStarted(class AVoteActor_TA* VoteActor)
 	this->ProcessEvent(uFnEventStarted, &EventStarted_Params, nullptr);
 };
 
+// Function TAGame.WebBrowser_TA.CanBrowseURLInternal
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  URL                            (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class FString>    AllowedURLsPattern             (CPF_Parm | CPF_NeedCtorLink)
+
+bool UWebBrowser_TA::CanBrowseURLInternal(const class FString& URL, const class TArray<class FString>& AllowedURLsPattern)
+{
+	static UFunction* uFnCanBrowseURLInternal = nullptr;
+
+	if (!uFnCanBrowseURLInternal)
+	{
+		uFnCanBrowseURLInternal = UFunction::FindFunction("Function TAGame.WebBrowser_TA.CanBrowseURLInternal");
+	}
+
+	UWebBrowser_TA_execCanBrowseURLInternal_Params CanBrowseURLInternal_Params;
+	memset(&CanBrowseURLInternal_Params, 0, sizeof(CanBrowseURLInternal_Params));
+	memcpy_s(&CanBrowseURLInternal_Params.URL, sizeof(CanBrowseURLInternal_Params.URL), &URL, sizeof(URL));
+	memcpy_s(&CanBrowseURLInternal_Params.AllowedURLsPattern, sizeof(CanBrowseURLInternal_Params.AllowedURLsPattern), &AllowedURLsPattern, sizeof(AllowedURLsPattern));
+
+	UWebBrowser_TA::StaticClass()->ProcessEvent(uFnCanBrowseURLInternal, &CanBrowseURLInternal_Params, nullptr);
+
+	return CanBrowseURLInternal_Params.ReturnValue;
+};
+
+// Function TAGame.WebBrowser_TA.CanBrowseURL
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  URL                            (CPF_Parm | CPF_NeedCtorLink)
+
+bool UWebBrowser_TA::CanBrowseURL(const class FString& URL)
+{
+	static UFunction* uFnCanBrowseURL = nullptr;
+
+	if (!uFnCanBrowseURL)
+	{
+		uFnCanBrowseURL = UFunction::FindFunction("Function TAGame.WebBrowser_TA.CanBrowseURL");
+	}
+
+	UWebBrowser_TA_execCanBrowseURL_Params CanBrowseURL_Params;
+	memset(&CanBrowseURL_Params, 0, sizeof(CanBrowseURL_Params));
+	memcpy_s(&CanBrowseURL_Params.URL, sizeof(CanBrowseURL_Params.URL), &URL, sizeof(URL));
+
+	UWebBrowser_TA::StaticClass()->ProcessEvent(uFnCanBrowseURL, &CanBrowseURL_Params, nullptr);
+
+	return CanBrowseURL_Params.ReturnValue;
+};
+
 // Function TAGame.WebBrowser_TA.PageLoaded
 // [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
@@ -78731,6 +79206,27 @@ void APRI_TA::SetReady(bool bNewReady)
 	SetReady_Params.bNewReady = bNewReady;
 
 	this->ProcessEvent(uFnSetReady, &SetReady_Params, nullptr);
+};
+
+// Function TAGame.PRI_TA.NotifyMatchAdminUsed
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class FString                  Message                        (CPF_Parm | CPF_NeedCtorLink)
+
+void APRI_TA::NotifyMatchAdminUsed(const class FString& Message)
+{
+	static UFunction* uFnNotifyMatchAdminUsed = nullptr;
+
+	if (!uFnNotifyMatchAdminUsed)
+	{
+		uFnNotifyMatchAdminUsed = UFunction::FindFunction("Function TAGame.PRI_TA.NotifyMatchAdminUsed");
+	}
+
+	APRI_TA_execNotifyMatchAdminUsed_Params NotifyMatchAdminUsed_Params;
+	memset(&NotifyMatchAdminUsed_Params, 0, sizeof(NotifyMatchAdminUsed_Params));
+	memcpy_s(&NotifyMatchAdminUsed_Params.Message, sizeof(NotifyMatchAdminUsed_Params.Message), &Message, sizeof(Message));
+
+	this->ProcessEvent(uFnNotifyMatchAdminUsed, &NotifyMatchAdminUsed_Params, nullptr);
 };
 
 // Function TAGame.PRI_TA.ServerMatchAdminSetPaused
@@ -83477,6 +83973,34 @@ bool ACar_TA::IsDemolished()
 	return IsDemolished_Params.ReturnValue;
 };
 
+// Function TAGame.Car_TA.GetDemoFxOverride
+// [0x00440103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Private | FUNC_HasOutParms)
+// Parameter Info:
+// class AFXActor_X*              ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class AFXActor_X*              ForcedExplosionFx              (CPF_Parm)
+// struct FDemolishDataExtended   Data                           (CPF_Const | CPF_Parm | CPF_OutParm)
+
+class AFXActor_X* ACar_TA::GetDemoFxOverride(class AFXActor_X* ForcedExplosionFx, struct FDemolishDataExtended& Data)
+{
+	static UFunction* uFnGetDemoFxOverride = nullptr;
+
+	if (!uFnGetDemoFxOverride)
+	{
+		uFnGetDemoFxOverride = UFunction::FindFunction("Function TAGame.Car_TA.GetDemoFxOverride");
+	}
+
+	ACar_TA_execGetDemoFxOverride_Params GetDemoFxOverride_Params;
+	memset(&GetDemoFxOverride_Params, 0, sizeof(GetDemoFxOverride_Params));
+	GetDemoFxOverride_Params.ForcedExplosionFx = ForcedExplosionFx;
+	memcpy_s(&GetDemoFxOverride_Params.Data, sizeof(GetDemoFxOverride_Params.Data), &Data, sizeof(Data));
+
+	this->ProcessEvent(uFnGetDemoFxOverride, &GetDemoFxOverride_Params, nullptr);
+
+	memcpy_s(&Data, sizeof(Data), &GetDemoFxOverride_Params.Data, sizeof(GetDemoFxOverride_Params.Data));
+
+	return GetDemoFxOverride_Params.ReturnValue;
+};
+
 // Function TAGame.Car_TA.FinishDemo
 // [0x00884103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_HasOptionalParms | FUNC_Protected | FUNC_HasDefaults)
 // Parameter Info:
@@ -84664,6 +85188,27 @@ void ACar_TA::SetCarScale(float NewScale)
 	this->ProcessEvent(uFnSetCarScale, &SetCarScale_Params, nullptr);
 };
 
+// Function TAGame.Car_TA.UpdateClubColors
+// [0x00020103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Public)
+// Parameter Info:
+// struct FClubColorSet           NewColor                       (CPF_Parm)
+
+void ACar_TA::UpdateClubColors(const struct FClubColorSet& NewColor)
+{
+	static UFunction* uFnUpdateClubColors = nullptr;
+
+	if (!uFnUpdateClubColors)
+	{
+		uFnUpdateClubColors = UFunction::FindFunction("Function TAGame.Car_TA.UpdateClubColors");
+	}
+
+	ACar_TA_execUpdateClubColors_Params UpdateClubColors_Params;
+	memset(&UpdateClubColors_Params, 0, sizeof(UpdateClubColors_Params));
+	memcpy_s(&UpdateClubColors_Params.NewColor, sizeof(UpdateClubColors_Params.NewColor), &NewColor, sizeof(NewColor));
+
+	this->ProcessEvent(uFnUpdateClubColors, &UpdateClubColors_Params, nullptr);
+};
+
 // Function TAGame.Car_TA.OnClubColorsChanged
 // [0x00080103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Protected)
 // Parameter Info:
@@ -85370,6 +85915,27 @@ bool U____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2____GFxData_Mutators
 	this->ProcessEvent(uFn____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2_0x1, &____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2_0x1_Params, nullptr);
 
 	return ____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2____GFxData_Mutators_TA__SetGameModeMutatorPresets_0x2_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_Mutators_TA.__GFxData_Mutators_TA__OnShellSet_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UPrivateMatchSettingsSave_TA* InSave                         (CPF_Parm)
+
+void UGFxData_Mutators_TA::__GFxData_Mutators_TA__OnShellSet_0x2(class UPrivateMatchSettingsSave_TA* InSave)
+{
+	static UFunction* uFn__GFxData_Mutators_TA__OnShellSet_0x2 = nullptr;
+
+	if (!uFn__GFxData_Mutators_TA__OnShellSet_0x2)
+	{
+		uFn__GFxData_Mutators_TA__OnShellSet_0x2 = UFunction::FindFunction("Function TAGame.GFxData_Mutators_TA.__GFxData_Mutators_TA__OnShellSet_0x2");
+	}
+
+	UGFxData_Mutators_TA_exec__GFxData_Mutators_TA__OnShellSet_0x2_Params __GFxData_Mutators_TA__OnShellSet_0x2_Params;
+	memset(&__GFxData_Mutators_TA__OnShellSet_0x2_Params, 0, sizeof(__GFxData_Mutators_TA__OnShellSet_0x2_Params));
+	__GFxData_Mutators_TA__OnShellSet_0x2_Params.InSave = InSave;
+
+	this->ProcessEvent(uFn__GFxData_Mutators_TA__OnShellSet_0x2, &__GFxData_Mutators_TA__OnShellSet_0x2_Params, nullptr);
 };
 
 // Function TAGame.GFxData_Mutators_TA.__GFxData_Mutators_TA__OnShellSet_0x1
@@ -86595,6 +87161,25 @@ void UGFxData_Mutators_TA::InitMutators(ECustomMatchSettingsType InSettingsType)
 	this->ProcessEvent(uFnInitMutators, &InitMutators_Params, nullptr);
 };
 
+// Function TAGame.GFxData_Mutators_TA.HandleMatchCreatorAdminChanged
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UGFxData_Mutators_TA::HandleMatchCreatorAdminChanged()
+{
+	static UFunction* uFnHandleMatchCreatorAdminChanged = nullptr;
+
+	if (!uFnHandleMatchCreatorAdminChanged)
+	{
+		uFnHandleMatchCreatorAdminChanged = UFunction::FindFunction("Function TAGame.GFxData_Mutators_TA.HandleMatchCreatorAdminChanged");
+	}
+
+	UGFxData_Mutators_TA_execHandleMatchCreatorAdminChanged_Params HandleMatchCreatorAdminChanged_Params;
+	memset(&HandleMatchCreatorAdminChanged_Params, 0, sizeof(HandleMatchCreatorAdminChanged_Params));
+
+	this->ProcessEvent(uFnHandleMatchCreatorAdminChanged, &HandleMatchCreatorAdminChanged_Params, nullptr);
+};
+
 // Function TAGame.GFxData_Mutators_TA.OnShellSet
 // [0x400080802] (FUNC_Defined | FUNC_Event | FUNC_Protected)
 // Parameter Info:
@@ -86681,6 +87266,65 @@ bool UMutatorConfig_TA::IsGameSettingCategoryVisible(const class FName& Category
 	this->ProcessEvent(uFnIsGameSettingCategoryVisible, &IsGameSettingCategoryVisible_Params, nullptr);
 
 	return IsGameSettingCategoryVisible_Params.ReturnValue;
+};
+
+// Function TAGame.PrivateMatchSettingsSave_TA.__bMatchCreatorAdminEnabled__ChangeNotifyFunc
+// [0x00000000] (FUNC_None)
+// Parameter Info:
+
+void UPrivateMatchSettingsSave_TA::__bMatchCreatorAdminEnabled__ChangeNotifyFunc()
+{
+	static UFunction* uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc = nullptr;
+
+	if (!uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc)
+	{
+		uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc = UFunction::FindFunction("Function TAGame.PrivateMatchSettingsSave_TA.__bMatchCreatorAdminEnabled__ChangeNotifyFunc");
+	}
+
+	UPrivateMatchSettingsSave_TA_exec__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params __bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params;
+	memset(&__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params, 0, sizeof(__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params));
+
+	this->ProcessEvent(uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc, &__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params, nullptr);
+};
+
+// Function TAGame.PrivateMatchSettingsSave_TA.SetMatchCreatorAdminEnabled
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// uint32_t                       bValue                         (CPF_Parm)
+
+void UPrivateMatchSettingsSave_TA::SetMatchCreatorAdminEnabled(bool bValue)
+{
+	static UFunction* uFnSetMatchCreatorAdminEnabled = nullptr;
+
+	if (!uFnSetMatchCreatorAdminEnabled)
+	{
+		uFnSetMatchCreatorAdminEnabled = UFunction::FindFunction("Function TAGame.PrivateMatchSettingsSave_TA.SetMatchCreatorAdminEnabled");
+	}
+
+	UPrivateMatchSettingsSave_TA_execSetMatchCreatorAdminEnabled_Params SetMatchCreatorAdminEnabled_Params;
+	memset(&SetMatchCreatorAdminEnabled_Params, 0, sizeof(SetMatchCreatorAdminEnabled_Params));
+	SetMatchCreatorAdminEnabled_Params.bValue = bValue;
+
+	this->ProcessEvent(uFnSetMatchCreatorAdminEnabled, &SetMatchCreatorAdminEnabled_Params, nullptr);
+};
+
+// Function TAGame.PrivateMatchSettingsSave_TA.EventMatchCreatorAdminChanged
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void UPrivateMatchSettingsSave_TA::EventMatchCreatorAdminChanged()
+{
+	static UFunction* uFnEventMatchCreatorAdminChanged = nullptr;
+
+	if (!uFnEventMatchCreatorAdminChanged)
+	{
+		uFnEventMatchCreatorAdminChanged = UFunction::FindFunction("Function TAGame.PrivateMatchSettingsSave_TA.EventMatchCreatorAdminChanged");
+	}
+
+	UPrivateMatchSettingsSave_TA_execEventMatchCreatorAdminChanged_Params EventMatchCreatorAdminChanged_Params;
+	memset(&EventMatchCreatorAdminChanged_Params, 0, sizeof(EventMatchCreatorAdminChanged_Params));
+
+	this->ProcessEvent(uFnEventMatchCreatorAdminChanged, &EventMatchCreatorAdminChanged_Params, nullptr);
 };
 
 // Function TAGame.CustomMatchSettingsSave_TA.GetSettings
@@ -93882,6 +94526,78 @@ void AGameEvent_Soccar_TA::__GameEvent_Soccar_TA__OnGoalsActivationChanged_0x1(c
 	this->ProcessEvent(uFn__GameEvent_Soccar_TA__OnGoalsActivationChanged_0x1, &__GameEvent_Soccar_TA__OnGoalsActivationChanged_0x1_Params, nullptr);
 };
 
+// Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x4
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FName                    TitleId                        (CPF_Parm)
+
+bool AGameEvent_Soccar_TA::__GameEvent_Soccar_TA__CheckStart_0x4(const class FName& TitleId)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__CheckStart_0x4 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__CheckStart_0x4)
+	{
+		uFn__GameEvent_Soccar_TA__CheckStart_0x4 = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x4");
+	}
+
+	AGameEvent_Soccar_TA_exec__GameEvent_Soccar_TA__CheckStart_0x4_Params __GameEvent_Soccar_TA__CheckStart_0x4_Params;
+	memset(&__GameEvent_Soccar_TA__CheckStart_0x4_Params, 0, sizeof(__GameEvent_Soccar_TA__CheckStart_0x4_Params));
+	memcpy_s(&__GameEvent_Soccar_TA__CheckStart_0x4_Params.TitleId, sizeof(__GameEvent_Soccar_TA__CheckStart_0x4_Params.TitleId), &TitleId, sizeof(TitleId));
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__CheckStart_0x4, &__GameEvent_Soccar_TA__CheckStart_0x4_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__CheckStart_0x4_Params.ReturnValue;
+};
+
+// Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x3
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class FName                    ReturnValue                    (CPF_OptionalParm | CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FThistleData            Data                           (CPF_Parm | CPF_NeedCtorLink)
+
+class FName AGameEvent_Soccar_TA::__GameEvent_Soccar_TA__CheckStart_0x3(const struct FThistleData& Data)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__CheckStart_0x3 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__CheckStart_0x3)
+	{
+		uFn__GameEvent_Soccar_TA__CheckStart_0x3 = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x3");
+	}
+
+	AGameEvent_Soccar_TA_exec__GameEvent_Soccar_TA__CheckStart_0x3_Params __GameEvent_Soccar_TA__CheckStart_0x3_Params;
+	memset(&__GameEvent_Soccar_TA__CheckStart_0x3_Params, 0, sizeof(__GameEvent_Soccar_TA__CheckStart_0x3_Params));
+	memcpy_s(&__GameEvent_Soccar_TA__CheckStart_0x3_Params.Data, sizeof(__GameEvent_Soccar_TA__CheckStart_0x3_Params.Data), &Data, sizeof(Data));
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__CheckStart_0x3, &__GameEvent_Soccar_TA__CheckStart_0x3_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__CheckStart_0x3_Params.ReturnValue;
+};
+
+// Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FThistleData            Data                           (CPF_Parm | CPF_NeedCtorLink)
+
+int32_t AGameEvent_Soccar_TA::__GameEvent_Soccar_TA__CheckStart_0x2(const struct FThistleData& Data)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__CheckStart_0x2 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__CheckStart_0x2)
+	{
+		uFn__GameEvent_Soccar_TA__CheckStart_0x2 = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x2");
+	}
+
+	AGameEvent_Soccar_TA_exec__GameEvent_Soccar_TA__CheckStart_0x2_Params __GameEvent_Soccar_TA__CheckStart_0x2_Params;
+	memset(&__GameEvent_Soccar_TA__CheckStart_0x2_Params, 0, sizeof(__GameEvent_Soccar_TA__CheckStart_0x2_Params));
+	memcpy_s(&__GameEvent_Soccar_TA__CheckStart_0x2_Params.Data, sizeof(__GameEvent_Soccar_TA__CheckStart_0x2_Params.Data), &Data, sizeof(Data));
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__CheckStart_0x2, &__GameEvent_Soccar_TA__CheckStart_0x2_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__CheckStart_0x2_Params.ReturnValue;
+};
+
 // Function TAGame.GameEvent_Soccar_TA.__GameEvent_Soccar_TA__CheckStart_0x1
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
@@ -94077,6 +94793,25 @@ void AGameEvent_Soccar_TA::__WaitTimeRemaining__ChangeNotifyFunc()
 	this->ProcessEvent(uFn__WaitTimeRemaining__ChangeNotifyFunc, &__WaitTimeRemaining__ChangeNotifyFunc_Params, nullptr);
 };
 
+// Function TAGame.GameEvent_Soccar_TA.__bThistleMatch__ChangeNotifyFunc
+// [0x00000000] (FUNC_None)
+// Parameter Info:
+
+void AGameEvent_Soccar_TA::__bThistleMatch__ChangeNotifyFunc()
+{
+	static UFunction* uFn__bThistleMatch__ChangeNotifyFunc = nullptr;
+
+	if (!uFn__bThistleMatch__ChangeNotifyFunc)
+	{
+		uFn__bThistleMatch__ChangeNotifyFunc = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.__bThistleMatch__ChangeNotifyFunc");
+	}
+
+	AGameEvent_Soccar_TA_exec__bThistleMatch__ChangeNotifyFunc_Params __bThistleMatch__ChangeNotifyFunc_Params;
+	memset(&__bThistleMatch__ChangeNotifyFunc_Params, 0, sizeof(__bThistleMatch__ChangeNotifyFunc_Params));
+
+	this->ProcessEvent(uFn__bThistleMatch__ChangeNotifyFunc, &__bThistleMatch__ChangeNotifyFunc_Params, nullptr);
+};
+
 // Function TAGame.GameEvent_Soccar_TA.__bCanDropOnlineRewards__ChangeNotifyFunc
 // [0x00000000] (FUNC_None)
 // Parameter Info:
@@ -94094,6 +94829,25 @@ void AGameEvent_Soccar_TA::__bCanDropOnlineRewards__ChangeNotifyFunc()
 	memset(&__bCanDropOnlineRewards__ChangeNotifyFunc_Params, 0, sizeof(__bCanDropOnlineRewards__ChangeNotifyFunc_Params));
 
 	this->ProcessEvent(uFn__bCanDropOnlineRewards__ChangeNotifyFunc, &__bCanDropOnlineRewards__ChangeNotifyFunc_Params, nullptr);
+};
+
+// Function TAGame.GameEvent_Soccar_TA.__bMatchCreatorAdminEnabled__ChangeNotifyFunc
+// [0x00000000] (FUNC_None)
+// Parameter Info:
+
+void AGameEvent_Soccar_TA::__bMatchCreatorAdminEnabled__ChangeNotifyFunc()
+{
+	static UFunction* uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc = nullptr;
+
+	if (!uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc)
+	{
+		uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.__bMatchCreatorAdminEnabled__ChangeNotifyFunc");
+	}
+
+	AGameEvent_Soccar_TA_exec__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params __bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params;
+	memset(&__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params, 0, sizeof(__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params));
+
+	this->ProcessEvent(uFn__bMatchCreatorAdminEnabled__ChangeNotifyFunc, &__bMatchCreatorAdminEnabled__ChangeNotifyFunc_Params, nullptr);
 };
 
 // Function TAGame.GameEvent_Soccar_TA.__bFullClubMatch__ChangeNotifyFunc
@@ -97151,6 +97905,144 @@ void AGameEvent_Soccar_TA::InitMutators()
 	memset(&InitMutators_Params, 0, sizeof(InitMutators_Params));
 
 	this->ProcessEvent(uFnInitMutators, &InitMutators_Params, nullptr);
+};
+
+// Function TAGame.GameEvent_Soccar_TA.SetTeamEventColorsAndName
+// [0x00844003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Private | FUNC_HasDefaults)
+// Parameter Info:
+// class ATeam_TA*                Team                           (CPF_Parm)
+// struct FLinearColor            TeamColor                      (CPF_Parm)
+// struct FLinearColor            TeamColorSecondary             (CPF_Parm)
+// class FString                  TeamName                       (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       SwapColors                     (CPF_OptionalParm | CPF_Parm)
+
+void AGameEvent_Soccar_TA::SetTeamEventColorsAndName(class ATeam_TA* Team, const struct FLinearColor& TeamColor, const struct FLinearColor& TeamColorSecondary, const class FString& TeamName, bool SwapColors)
+{
+	static UFunction* uFnSetTeamEventColorsAndName = nullptr;
+
+	if (!uFnSetTeamEventColorsAndName)
+	{
+		uFnSetTeamEventColorsAndName = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.SetTeamEventColorsAndName");
+	}
+
+	AGameEvent_Soccar_TA_execSetTeamEventColorsAndName_Params SetTeamEventColorsAndName_Params;
+	memset(&SetTeamEventColorsAndName_Params, 0, sizeof(SetTeamEventColorsAndName_Params));
+	SetTeamEventColorsAndName_Params.Team = Team;
+	memcpy_s(&SetTeamEventColorsAndName_Params.TeamColor, sizeof(SetTeamEventColorsAndName_Params.TeamColor), &TeamColor, sizeof(TeamColor));
+	memcpy_s(&SetTeamEventColorsAndName_Params.TeamColorSecondary, sizeof(SetTeamEventColorsAndName_Params.TeamColorSecondary), &TeamColorSecondary, sizeof(TeamColorSecondary));
+	memcpy_s(&SetTeamEventColorsAndName_Params.TeamName, sizeof(SetTeamEventColorsAndName_Params.TeamName), &TeamName, sizeof(TeamName));
+	SetTeamEventColorsAndName_Params.SwapColors = SwapColors;
+
+	this->ProcessEvent(uFnSetTeamEventColorsAndName, &SetTeamEventColorsAndName_Params, nullptr);
+};
+
+// Function TAGame.GameEvent_Soccar_TA.IsTeamFullTitle
+// [0x00C44003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Private | FUNC_HasOutParms | FUNC_HasDefaults)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class TArray<struct FReservationData> TeamMembers                    (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class FName>      TitleIDs                       (CPF_Parm | CPF_NeedCtorLink)
+// class UOnlineGameReservations_TA* Reservations                   (CPF_Parm)
+// class FName                    TeamTitleID                    (CPF_OptionalParm | CPF_Parm | CPF_OutParm)
+
+bool AGameEvent_Soccar_TA::IsTeamFullTitle(const class TArray<struct FReservationData>& TeamMembers, const class TArray<class FName>& TitleIDs, class UOnlineGameReservations_TA* Reservations, class FName& TeamTitleID)
+{
+	static UFunction* uFnIsTeamFullTitle = nullptr;
+
+	if (!uFnIsTeamFullTitle)
+	{
+		uFnIsTeamFullTitle = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.IsTeamFullTitle");
+	}
+
+	AGameEvent_Soccar_TA_execIsTeamFullTitle_Params IsTeamFullTitle_Params;
+	memset(&IsTeamFullTitle_Params, 0, sizeof(IsTeamFullTitle_Params));
+	memcpy_s(&IsTeamFullTitle_Params.TeamMembers, sizeof(IsTeamFullTitle_Params.TeamMembers), &TeamMembers, sizeof(TeamMembers));
+	memcpy_s(&IsTeamFullTitle_Params.TitleIDs, sizeof(IsTeamFullTitle_Params.TitleIDs), &TitleIDs, sizeof(TitleIDs));
+	IsTeamFullTitle_Params.Reservations = Reservations;
+	memcpy_s(&IsTeamFullTitle_Params.TeamTitleID, sizeof(IsTeamFullTitle_Params.TeamTitleID), &TeamTitleID, sizeof(TeamTitleID));
+
+	this->ProcessEvent(uFnIsTeamFullTitle, &IsTeamFullTitle_Params, nullptr);
+
+	memcpy_s(&TeamTitleID, sizeof(TeamTitleID), &IsTeamFullTitle_Params.TeamTitleID, sizeof(IsTeamFullTitle_Params.TeamTitleID));
+
+	return IsTeamFullTitle_Params.ReturnValue;
+};
+
+// Function TAGame.GameEvent_Soccar_TA.IsTeamFullCosmetic
+// [0x00C44003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Private | FUNC_HasOutParms | FUNC_HasDefaults)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class TArray<struct FReservationData> TeamMembers                    (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<int32_t>          CosmeticIDs                    (CPF_Parm | CPF_NeedCtorLink)
+// class UOnlineGameReservations_TA* Reservations                   (CPF_Parm)
+// int32_t                        TeamIndex                      (CPF_OptionalParm | CPF_Parm | CPF_OutParm)
+
+bool AGameEvent_Soccar_TA::IsTeamFullCosmetic(const class TArray<struct FReservationData>& TeamMembers, const class TArray<int32_t>& CosmeticIDs, class UOnlineGameReservations_TA* Reservations, int32_t& TeamIndex)
+{
+	static UFunction* uFnIsTeamFullCosmetic = nullptr;
+
+	if (!uFnIsTeamFullCosmetic)
+	{
+		uFnIsTeamFullCosmetic = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.IsTeamFullCosmetic");
+	}
+
+	AGameEvent_Soccar_TA_execIsTeamFullCosmetic_Params IsTeamFullCosmetic_Params;
+	memset(&IsTeamFullCosmetic_Params, 0, sizeof(IsTeamFullCosmetic_Params));
+	memcpy_s(&IsTeamFullCosmetic_Params.TeamMembers, sizeof(IsTeamFullCosmetic_Params.TeamMembers), &TeamMembers, sizeof(TeamMembers));
+	memcpy_s(&IsTeamFullCosmetic_Params.CosmeticIDs, sizeof(IsTeamFullCosmetic_Params.CosmeticIDs), &CosmeticIDs, sizeof(CosmeticIDs));
+	IsTeamFullCosmetic_Params.Reservations = Reservations;
+	memcpy_s(&IsTeamFullCosmetic_Params.TeamIndex, sizeof(IsTeamFullCosmetic_Params.TeamIndex), &TeamIndex, sizeof(TeamIndex));
+
+	this->ProcessEvent(uFnIsTeamFullCosmetic, &IsTeamFullCosmetic_Params, nullptr);
+
+	memcpy_s(&TeamIndex, sizeof(TeamIndex), &IsTeamFullCosmetic_Params.TeamIndex, sizeof(IsTeamFullCosmetic_Params.TeamIndex));
+
+	return IsTeamFullCosmetic_Params.ReturnValue;
+};
+
+// Function TAGame.GameEvent_Soccar_TA.InitCosmeticTeamsEvent
+// [0x00824003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public | FUNC_HasDefaults)
+// Parameter Info:
+// class TArray<int32_t>          CosmeticIDs                    (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class FName>      TitleIDs                       (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+
+void AGameEvent_Soccar_TA::InitCosmeticTeamsEvent(const class TArray<int32_t>& CosmeticIDs, const class TArray<class FName>& TitleIDs)
+{
+	static UFunction* uFnInitCosmeticTeamsEvent = nullptr;
+
+	if (!uFnInitCosmeticTeamsEvent)
+	{
+		uFnInitCosmeticTeamsEvent = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.InitCosmeticTeamsEvent");
+	}
+
+	AGameEvent_Soccar_TA_execInitCosmeticTeamsEvent_Params InitCosmeticTeamsEvent_Params;
+	memset(&InitCosmeticTeamsEvent_Params, 0, sizeof(InitCosmeticTeamsEvent_Params));
+	memcpy_s(&InitCosmeticTeamsEvent_Params.CosmeticIDs, sizeof(InitCosmeticTeamsEvent_Params.CosmeticIDs), &CosmeticIDs, sizeof(CosmeticIDs));
+	memcpy_s(&InitCosmeticTeamsEvent_Params.TitleIDs, sizeof(InitCosmeticTeamsEvent_Params.TitleIDs), &TitleIDs, sizeof(TitleIDs));
+
+	this->ProcessEvent(uFnInitCosmeticTeamsEvent, &InitCosmeticTeamsEvent_Params, nullptr);
+};
+
+// Function TAGame.GameEvent_Soccar_TA.CanInitCosmeticTeamsEvent
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool AGameEvent_Soccar_TA::CanInitCosmeticTeamsEvent()
+{
+	static UFunction* uFnCanInitCosmeticTeamsEvent = nullptr;
+
+	if (!uFnCanInitCosmeticTeamsEvent)
+	{
+		uFnCanInitCosmeticTeamsEvent = UFunction::FindFunction("Function TAGame.GameEvent_Soccar_TA.CanInitCosmeticTeamsEvent");
+	}
+
+	AGameEvent_Soccar_TA_execCanInitCosmeticTeamsEvent_Params CanInitCosmeticTeamsEvent_Params;
+	memset(&CanInitCosmeticTeamsEvent_Params, 0, sizeof(CanInitCosmeticTeamsEvent_Params));
+
+	this->ProcessEvent(uFnCanInitCosmeticTeamsEvent, &CanInitCosmeticTeamsEvent_Params, nullptr);
+
+	return CanInitCosmeticTeamsEvent_Params.ReturnValue;
 };
 
 // Function TAGame.GameEvent_Soccar_TA.OnClubMatch
@@ -105539,12 +106431,54 @@ bool U__ChallengeManager_TA__AreChallengesComplete_0x1::__ChallengeManager_TA__A
 	return __ChallengeManager_TA__AreChallengesComplete_0x1_Params.ReturnValue;
 };
 
-// Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x2
+// Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x4
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
 // class UChallengeDefault_TA*    C                              (CPF_Parm)
 
-void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x2(class UChallengeDefault_TA* C)
+void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x4(class UChallengeDefault_TA* C)
+{
+	static UFunction* uFn__ChallengeManager_TA__Construct_0x4 = nullptr;
+
+	if (!uFn__ChallengeManager_TA__Construct_0x4)
+	{
+		uFn__ChallengeManager_TA__Construct_0x4 = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x4");
+	}
+
+	UChallengeManager_TA_exec__ChallengeManager_TA__Construct_0x4_Params __ChallengeManager_TA__Construct_0x4_Params;
+	memset(&__ChallengeManager_TA__Construct_0x4_Params, 0, sizeof(__ChallengeManager_TA__Construct_0x4_Params));
+	__ChallengeManager_TA__Construct_0x4_Params.C = C;
+
+	this->ProcessEvent(uFn__ChallengeManager_TA__Construct_0x4, &__ChallengeManager_TA__Construct_0x4_Params, nullptr);
+};
+
+// Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x3
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UChallengeDefaultManager_TA* instance                       (CPF_Parm)
+
+void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x3(class UChallengeDefaultManager_TA* instance)
+{
+	static UFunction* uFn__ChallengeManager_TA__Construct_0x3 = nullptr;
+
+	if (!uFn__ChallengeManager_TA__Construct_0x3)
+	{
+		uFn__ChallengeManager_TA__Construct_0x3 = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x3");
+	}
+
+	UChallengeManager_TA_exec__ChallengeManager_TA__Construct_0x3_Params __ChallengeManager_TA__Construct_0x3_Params;
+	memset(&__ChallengeManager_TA__Construct_0x3_Params, 0, sizeof(__ChallengeManager_TA__Construct_0x3_Params));
+	__ChallengeManager_TA__Construct_0x3_Params.instance = instance;
+
+	this->ProcessEvent(uFn__ChallengeManager_TA__Construct_0x3, &__ChallengeManager_TA__Construct_0x3_Params, nullptr);
+};
+
+// Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__Construct_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UChallengeDefaultManager_TA* instance                       (CPF_Parm)
+
+void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x2(class UChallengeDefaultManager_TA* instance)
 {
 	static UFunction* uFn__ChallengeManager_TA__Construct_0x2 = nullptr;
 
@@ -105555,7 +106489,7 @@ void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x2(class UChallenge
 
 	UChallengeManager_TA_exec__ChallengeManager_TA__Construct_0x2_Params __ChallengeManager_TA__Construct_0x2_Params;
 	memset(&__ChallengeManager_TA__Construct_0x2_Params, 0, sizeof(__ChallengeManager_TA__Construct_0x2_Params));
-	__ChallengeManager_TA__Construct_0x2_Params.C = C;
+	__ChallengeManager_TA__Construct_0x2_Params.instance = instance;
 
 	this->ProcessEvent(uFn__ChallengeManager_TA__Construct_0x2, &__ChallengeManager_TA__Construct_0x2_Params, nullptr);
 };
@@ -105581,6 +106515,27 @@ void UChallengeManager_TA::__ChallengeManager_TA__Construct_0x1(class UChallenge
 	__ChallengeManager_TA__Construct_0x1_Params.C = C;
 
 	this->ProcessEvent(uFn__ChallengeManager_TA__Construct_0x1, &__ChallengeManager_TA__Construct_0x1_Params, nullptr);
+};
+
+// Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__SyncPendingChallengeProgress_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class URPC_X*                  instance                       (CPF_Parm)
+
+void UChallengeManager_TA::__ChallengeManager_TA__SyncPendingChallengeProgress_0x1(class URPC_X* instance)
+{
+	static UFunction* uFn__ChallengeManager_TA__SyncPendingChallengeProgress_0x1 = nullptr;
+
+	if (!uFn__ChallengeManager_TA__SyncPendingChallengeProgress_0x1)
+	{
+		uFn__ChallengeManager_TA__SyncPendingChallengeProgress_0x1 = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__SyncPendingChallengeProgress_0x1");
+	}
+
+	UChallengeManager_TA_exec__ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params __ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params;
+	memset(&__ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params, 0, sizeof(__ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params));
+	__ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params.instance = instance;
+
+	this->ProcessEvent(uFn__ChallengeManager_TA__SyncPendingChallengeProgress_0x1, &__ChallengeManager_TA__SyncPendingChallengeProgress_0x1_Params, nullptr);
 };
 
 // Function TAGame.ChallengeManager_TA.__ChallengeManager_TA__HandleChallengesReceived_0x1
@@ -105833,6 +106788,72 @@ void UChallengeManager_TA::__ChallengeManager_TA__HandlePreLoadMap_0x1(class UCh
 	__ChallengeManager_TA__HandlePreLoadMap_0x1_Params.C = C;
 
 	this->ProcessEvent(uFn__ChallengeManager_TA__HandlePreLoadMap_0x1, &__ChallengeManager_TA__HandlePreLoadMap_0x1_Params, nullptr);
+};
+
+// Function TAGame.ChallengeManager_TA.AreChallengesSynced
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UChallengeManager_TA::AreChallengesSynced()
+{
+	static UFunction* uFnAreChallengesSynced = nullptr;
+
+	if (!uFnAreChallengesSynced)
+	{
+		uFnAreChallengesSynced = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.AreChallengesSynced");
+	}
+
+	UChallengeManager_TA_execAreChallengesSynced_Params AreChallengesSynced_Params;
+	memset(&AreChallengesSynced_Params, 0, sizeof(AreChallengesSynced_Params));
+
+	this->ProcessEvent(uFnAreChallengesSynced, &AreChallengesSynced_Params, nullptr);
+
+	return AreChallengesSynced_Params.ReturnValue;
+};
+
+// Function TAGame.ChallengeManager_TA.IsSuccess
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UChallengeManager_TA::IsSuccess()
+{
+	static UFunction* uFnIsSuccess = nullptr;
+
+	if (!uFnIsSuccess)
+	{
+		uFnIsSuccess = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.IsSuccess");
+	}
+
+	UChallengeManager_TA_execIsSuccess_Params IsSuccess_Params;
+	memset(&IsSuccess_Params, 0, sizeof(IsSuccess_Params));
+
+	this->ProcessEvent(uFnIsSuccess, &IsSuccess_Params, nullptr);
+
+	return IsSuccess_Params.ReturnValue;
+};
+
+// Function TAGame.ChallengeManager_TA.AreChallengesValid
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UChallengeManager_TA::AreChallengesValid()
+{
+	static UFunction* uFnAreChallengesValid = nullptr;
+
+	if (!uFnAreChallengesValid)
+	{
+		uFnAreChallengesValid = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.AreChallengesValid");
+	}
+
+	UChallengeManager_TA_execAreChallengesValid_Params AreChallengesValid_Params;
+	memset(&AreChallengesValid_Params, 0, sizeof(AreChallengesValid_Params));
+
+	this->ProcessEvent(uFnAreChallengesValid, &AreChallengesValid_Params, nullptr);
+
+	return AreChallengesValid_Params.ReturnValue;
 };
 
 // Function TAGame.ChallengeManager_TA.GetLocalPlayer
@@ -106395,6 +107416,27 @@ void UChallengeManager_TA::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function TAGame.ChallengeManager_TA.EventChallengeMangerStateChanged
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UChallengeManager_TA*    Manager                        (CPF_Parm)
+
+void UChallengeManager_TA::EventChallengeMangerStateChanged(class UChallengeManager_TA* Manager)
+{
+	static UFunction* uFnEventChallengeMangerStateChanged = nullptr;
+
+	if (!uFnEventChallengeMangerStateChanged)
+	{
+		uFnEventChallengeMangerStateChanged = UFunction::FindFunction("Function TAGame.ChallengeManager_TA.EventChallengeMangerStateChanged");
+	}
+
+	UChallengeManager_TA_execEventChallengeMangerStateChanged_Params EventChallengeMangerStateChanged_Params;
+	memset(&EventChallengeMangerStateChanged_Params, 0, sizeof(EventChallengeMangerStateChanged_Params));
+	EventChallengeMangerStateChanged_Params.Manager = Manager;
+
+	this->ProcessEvent(uFnEventChallengeMangerStateChanged, &EventChallengeMangerStateChanged_Params, nullptr);
 };
 
 // Function TAGame.ChallengeManager_TA.EventChallengeProgressChanged
@@ -107791,6 +108833,27 @@ void UOnlinePlayer_TA::__OnlinePlayer_TA__InitPlayer_0x1(const class FString& Ma
 	this->ProcessEvent(uFn__OnlinePlayer_TA__InitPlayer_0x1, &__OnlinePlayer_TA__InitPlayer_0x1_Params, nullptr);
 };
 
+// Function TAGame.OnlinePlayer_TA.__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class FName                    instance                       (CPF_Parm)
+
+void UOnlinePlayer_TA::__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1(const class FName& instance)
+{
+	static UFunction* uFn__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1 = nullptr;
+
+	if (!uFn__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1)
+	{
+		uFn__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1 = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1");
+	}
+
+	UOnlinePlayer_TA_exec__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params __OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params;
+	memset(&__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params, 0, sizeof(__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params));
+	memcpy_s(&__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params.instance, sizeof(__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params.instance), &instance, sizeof(instance));
+
+	this->ProcessEvent(uFn__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1, &__OnlinePlayer_TA__CheckMainMenuInitializationFlow_0x1_Params, nullptr);
+};
+
 // Function TAGame.OnlinePlayer_TA.__PsyNetPresence__ChangeNotifyFunc
 // [0x00000000] (FUNC_None)
 // Parameter Info:
@@ -108329,6 +109392,126 @@ void UOnlinePlayer_TA::OnLoginChange(uint8_t LocalUserNum)
 	this->ProcessEvent(uFnOnLoginChange, &OnLoginChange_Params, nullptr);
 };
 
+// Function TAGame.OnlinePlayer_TA.NotifyMainMenuAddedToStage
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlinePlayer_TA::NotifyMainMenuAddedToStage(const struct FScriptDelegate& Callback)
+{
+	static UFunction* uFnNotifyMainMenuAddedToStage = nullptr;
+
+	if (!uFnNotifyMainMenuAddedToStage)
+	{
+		uFnNotifyMainMenuAddedToStage = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.NotifyMainMenuAddedToStage");
+	}
+
+	UOnlinePlayer_TA_execNotifyMainMenuAddedToStage_Params NotifyMainMenuAddedToStage_Params;
+	memset(&NotifyMainMenuAddedToStage_Params, 0, sizeof(NotifyMainMenuAddedToStage_Params));
+	memcpy_s(&NotifyMainMenuAddedToStage_Params.Callback, sizeof(NotifyMainMenuAddedToStage_Params.Callback), &Callback, sizeof(Callback));
+
+	this->ProcessEvent(uFnNotifyMainMenuAddedToStage, &NotifyMainMenuAddedToStage_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.HandleMainMenuAddedToStage
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UOnlinePlayer_TA::HandleMainMenuAddedToStage()
+{
+	static UFunction* uFnHandleMainMenuAddedToStage = nullptr;
+
+	if (!uFnHandleMainMenuAddedToStage)
+	{
+		uFnHandleMainMenuAddedToStage = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.HandleMainMenuAddedToStage");
+	}
+
+	UOnlinePlayer_TA_execHandleMainMenuAddedToStage_Params HandleMainMenuAddedToStage_Params;
+	memset(&HandleMainMenuAddedToStage_Params, 0, sizeof(HandleMainMenuAddedToStage_Params));
+
+	this->ProcessEvent(uFnHandleMainMenuAddedToStage, &HandleMainMenuAddedToStage_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.HandleFTEModalClosed
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UOnlinePlayer_TA::HandleFTEModalClosed()
+{
+	static UFunction* uFnHandleFTEModalClosed = nullptr;
+
+	if (!uFnHandleFTEModalClosed)
+	{
+		uFnHandleFTEModalClosed = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.HandleFTEModalClosed");
+	}
+
+	UOnlinePlayer_TA_execHandleFTEModalClosed_Params HandleFTEModalClosed_Params;
+	memset(&HandleFTEModalClosed_Params, 0, sizeof(HandleFTEModalClosed_Params));
+
+	this->ProcessEvent(uFnHandleFTEModalClosed, &HandleFTEModalClosed_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.HandleFTECompleted
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UOnlinePlayer_TA::HandleFTECompleted()
+{
+	static UFunction* uFnHandleFTECompleted = nullptr;
+
+	if (!uFnHandleFTECompleted)
+	{
+		uFnHandleFTECompleted = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.HandleFTECompleted");
+	}
+
+	UOnlinePlayer_TA_execHandleFTECompleted_Params HandleFTECompleted_Params;
+	memset(&HandleFTECompleted_Params, 0, sizeof(HandleFTECompleted_Params));
+
+	this->ProcessEvent(uFnHandleFTECompleted, &HandleFTECompleted_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.HandleUIStateChanged
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class AGameInfo_GFxMenu_TA*    GameInfoMenu                   (CPF_Parm)
+// EUIMenuState                   UIState                        (CPF_Parm)
+
+void UOnlinePlayer_TA::HandleUIStateChanged(class AGameInfo_GFxMenu_TA* GameInfoMenu, EUIMenuState UIState)
+{
+	static UFunction* uFnHandleUIStateChanged = nullptr;
+
+	if (!uFnHandleUIStateChanged)
+	{
+		uFnHandleUIStateChanged = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.HandleUIStateChanged");
+	}
+
+	UOnlinePlayer_TA_execHandleUIStateChanged_Params HandleUIStateChanged_Params;
+	memset(&HandleUIStateChanged_Params, 0, sizeof(HandleUIStateChanged_Params));
+	HandleUIStateChanged_Params.GameInfoMenu = GameInfoMenu;
+	memcpy_s(&HandleUIStateChanged_Params.UIState, sizeof(HandleUIStateChanged_Params.UIState), &UIState, sizeof(UIState));
+
+	this->ProcessEvent(uFnHandleUIStateChanged, &HandleUIStateChanged_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.CheckMainMenuInitializationFlow
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UOnlinePlayer_TA::CheckMainMenuInitializationFlow()
+{
+	static UFunction* uFnCheckMainMenuInitializationFlow = nullptr;
+
+	if (!uFnCheckMainMenuInitializationFlow)
+	{
+		uFnCheckMainMenuInitializationFlow = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.CheckMainMenuInitializationFlow");
+	}
+
+	UOnlinePlayer_TA_execCheckMainMenuInitializationFlow_Params CheckMainMenuInitializationFlow_Params;
+	memset(&CheckMainMenuInitializationFlow_Params, 0, sizeof(CheckMainMenuInitializationFlow_Params));
+
+	this->ProcessEvent(uFnCheckMainMenuInitializationFlow, &CheckMainMenuInitializationFlow_Params, nullptr);
+};
+
 // Function TAGame.OnlinePlayer_TA.InitPlayer
 // [0x400020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -108365,6 +109548,82 @@ void UOnlinePlayer_TA::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.EventMainMenuAddedToStage
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void UOnlinePlayer_TA::EventMainMenuAddedToStage()
+{
+	static UFunction* uFnEventMainMenuAddedToStage = nullptr;
+
+	if (!uFnEventMainMenuAddedToStage)
+	{
+		uFnEventMainMenuAddedToStage = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.EventMainMenuAddedToStage");
+	}
+
+	UOnlinePlayer_TA_execEventMainMenuAddedToStage_Params EventMainMenuAddedToStage_Params;
+	memset(&EventMainMenuAddedToStage_Params, 0, sizeof(EventMainMenuAddedToStage_Params));
+
+	this->ProcessEvent(uFnEventMainMenuAddedToStage, &EventMainMenuAddedToStage_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.EventFTEModalClosed
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void UOnlinePlayer_TA::EventFTEModalClosed()
+{
+	static UFunction* uFnEventFTEModalClosed = nullptr;
+
+	if (!uFnEventFTEModalClosed)
+	{
+		uFnEventFTEModalClosed = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.EventFTEModalClosed");
+	}
+
+	UOnlinePlayer_TA_execEventFTEModalClosed_Params EventFTEModalClosed_Params;
+	memset(&EventFTEModalClosed_Params, 0, sizeof(EventFTEModalClosed_Params));
+
+	this->ProcessEvent(uFnEventFTEModalClosed, &EventFTEModalClosed_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.EventFTECompleted
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void UOnlinePlayer_TA::EventFTECompleted()
+{
+	static UFunction* uFnEventFTECompleted = nullptr;
+
+	if (!uFnEventFTECompleted)
+	{
+		uFnEventFTECompleted = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.EventFTECompleted");
+	}
+
+	UOnlinePlayer_TA_execEventFTECompleted_Params EventFTECompleted_Params;
+	memset(&EventFTECompleted_Params, 0, sizeof(EventFTECompleted_Params));
+
+	this->ProcessEvent(uFnEventFTECompleted, &EventFTECompleted_Params, nullptr);
+};
+
+// Function TAGame.OnlinePlayer_TA.EventReachedMainMenu
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void UOnlinePlayer_TA::EventReachedMainMenu()
+{
+	static UFunction* uFnEventReachedMainMenu = nullptr;
+
+	if (!uFnEventReachedMainMenu)
+	{
+		uFnEventReachedMainMenu = UFunction::FindFunction("Function TAGame.OnlinePlayer_TA.EventReachedMainMenu");
+	}
+
+	UOnlinePlayer_TA_execEventReachedMainMenu_Params EventReachedMainMenu_Params;
+	memset(&EventReachedMainMenu_Params, 0, sizeof(EventReachedMainMenu_Params));
+
+	this->ProcessEvent(uFnEventReachedMainMenu, &EventReachedMainMenu_Params, nullptr);
 };
 
 // Function TAGame.OnlinePlayer_TA.EventCabinModeSet
@@ -122401,6 +123660,28 @@ void UMatchType_TA::OnInitGameEvent()
 	this->ProcessEvent(uFnOnInitGameEvent, &OnInitGameEvent_Params, nullptr);
 };
 
+// Function TAGame.MatchType_TA.AllowsMatchCreatorAdmin
+// [0x00020000] (FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_TA::AllowsMatchCreatorAdmin()
+{
+	static UFunction* uFnAllowsMatchCreatorAdmin = nullptr;
+
+	if (!uFnAllowsMatchCreatorAdmin)
+	{
+		uFnAllowsMatchCreatorAdmin = UFunction::FindFunction("Function TAGame.MatchType_TA.AllowsMatchCreatorAdmin");
+	}
+
+	UMatchType_TA_execAllowsMatchCreatorAdmin_Params AllowsMatchCreatorAdmin_Params;
+	memset(&AllowsMatchCreatorAdmin_Params, 0, sizeof(AllowsMatchCreatorAdmin_Params));
+
+	this->ProcessEvent(uFnAllowsMatchCreatorAdmin, &AllowsMatchCreatorAdmin_Params, nullptr);
+
+	return AllowsMatchCreatorAdmin_Params.ReturnValue;
+};
+
 // Function TAGame.MatchType_TA.ShouldKickOnMigrate
 // [0x00020000] (FUNC_Public)
 // Parameter Info:
@@ -123001,6 +124282,28 @@ void UMatchType_TA::OnPlayerAddedToTeam()
 	memset(&OnPlayerAddedToTeam_Params, 0, sizeof(OnPlayerAddedToTeam_Params));
 
 	this->ProcessEvent(uFnOnPlayerAddedToTeam, &OnPlayerAddedToTeam_Params, nullptr);
+};
+
+// Function TAGame.MatchType_TA.ShouldDisconnectDuplicateAccounts
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_TA::ShouldDisconnectDuplicateAccounts()
+{
+	static UFunction* uFnShouldDisconnectDuplicateAccounts = nullptr;
+
+	if (!uFnShouldDisconnectDuplicateAccounts)
+	{
+		uFnShouldDisconnectDuplicateAccounts = UFunction::FindFunction("Function TAGame.MatchType_TA.ShouldDisconnectDuplicateAccounts");
+	}
+
+	UMatchType_TA_execShouldDisconnectDuplicateAccounts_Params ShouldDisconnectDuplicateAccounts_Params;
+	memset(&ShouldDisconnectDuplicateAccounts_Params, 0, sizeof(ShouldDisconnectDuplicateAccounts_Params));
+
+	this->ProcessEvent(uFnShouldDisconnectDuplicateAccounts, &ShouldDisconnectDuplicateAccounts_Params, nullptr);
+
+	return ShouldDisconnectDuplicateAccounts_Params.ReturnValue;
 };
 
 // Function TAGame.MatchType_TA.ShouldShowMutators
@@ -125425,6 +126728,28 @@ bool UMatchType_Public_TA::GiveExtraXP()
 	return GiveExtraXP_Params.ReturnValue;
 };
 
+// Function TAGame.MatchType_OnlineFreeplay_TA.AllowsMatchCreatorAdmin
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_OnlineFreeplay_TA::AllowsMatchCreatorAdmin()
+{
+	static UFunction* uFnAllowsMatchCreatorAdmin = nullptr;
+
+	if (!uFnAllowsMatchCreatorAdmin)
+	{
+		uFnAllowsMatchCreatorAdmin = UFunction::FindFunction("Function TAGame.MatchType_OnlineFreeplay_TA.AllowsMatchCreatorAdmin");
+	}
+
+	UMatchType_OnlineFreeplay_TA_execAllowsMatchCreatorAdmin_Params AllowsMatchCreatorAdmin_Params;
+	memset(&AllowsMatchCreatorAdmin_Params, 0, sizeof(AllowsMatchCreatorAdmin_Params));
+
+	this->ProcessEvent(uFnAllowsMatchCreatorAdmin, &AllowsMatchCreatorAdmin_Params, nullptr);
+
+	return AllowsMatchCreatorAdmin_Params.ReturnValue;
+};
+
 // Function TAGame.MatchType_OnlineFreeplay_TA.ShouldSubmitPrivateMatchComplete
 // [0x400020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -125505,6 +126830,28 @@ void UMatchType_OnlineFreeplay_TA::SetGameData()
 	memset(&SetGameData_Params, 0, sizeof(SetGameData_Params));
 
 	this->ProcessEvent(uFnSetGameData, &SetGameData_Params, nullptr);
+};
+
+// Function TAGame.MatchType_Private_TA.AllowsMatchCreatorAdmin
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_Private_TA::AllowsMatchCreatorAdmin()
+{
+	static UFunction* uFnAllowsMatchCreatorAdmin = nullptr;
+
+	if (!uFnAllowsMatchCreatorAdmin)
+	{
+		uFnAllowsMatchCreatorAdmin = UFunction::FindFunction("Function TAGame.MatchType_Private_TA.AllowsMatchCreatorAdmin");
+	}
+
+	UMatchType_Private_TA_execAllowsMatchCreatorAdmin_Params AllowsMatchCreatorAdmin_Params;
+	memset(&AllowsMatchCreatorAdmin_Params, 0, sizeof(AllowsMatchCreatorAdmin_Params));
+
+	this->ProcessEvent(uFnAllowsMatchCreatorAdmin, &AllowsMatchCreatorAdmin_Params, nullptr);
+
+	return AllowsMatchCreatorAdmin_Params.ReturnValue;
 };
 
 // Function TAGame.MatchType_Private_TA.ShouldSubmitPrivateMatchComplete
@@ -127013,6 +128360,28 @@ void UMatchType_FaceIt_TA::OnStartWaitingForPlayers()
 	memset(&OnStartWaitingForPlayers_Params, 0, sizeof(OnStartWaitingForPlayers_Params));
 
 	this->ProcessEvent(uFnOnStartWaitingForPlayers, &OnStartWaitingForPlayers_Params, nullptr);
+};
+
+// Function TAGame.MatchType_Lan_TA.ShouldDisconnectDuplicateAccounts
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_Lan_TA::ShouldDisconnectDuplicateAccounts()
+{
+	static UFunction* uFnShouldDisconnectDuplicateAccounts = nullptr;
+
+	if (!uFnShouldDisconnectDuplicateAccounts)
+	{
+		uFnShouldDisconnectDuplicateAccounts = UFunction::FindFunction("Function TAGame.MatchType_Lan_TA.ShouldDisconnectDuplicateAccounts");
+	}
+
+	UMatchType_Lan_TA_execShouldDisconnectDuplicateAccounts_Params ShouldDisconnectDuplicateAccounts_Params;
+	memset(&ShouldDisconnectDuplicateAccounts_Params, 0, sizeof(ShouldDisconnectDuplicateAccounts_Params));
+
+	this->ProcessEvent(uFnShouldDisconnectDuplicateAccounts, &ShouldDisconnectDuplicateAccounts_Params, nullptr);
+
+	return ShouldDisconnectDuplicateAccounts_Params.ReturnValue;
 };
 
 // Function TAGame.MatchType_Lan_TA.SetGameData
@@ -129179,6 +130548,460 @@ bool U__GameEvent_Soccar_TA__GetClubIDsRecordingCandidates_0x1::__GameEvent_Socc
 	return __GameEvent_Soccar_TA__GetClubIDsRecordingCandidates_0x1_Params.ReturnValue;
 };
 
+// Function TAGame.__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1.__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FReservationData        P                              (CPF_Parm | CPF_NeedCtorLink)
+
+bool U__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1::__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1(const struct FReservationData& P)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1)
+	{
+		uFn__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1 = UFunction::FindFunction("Function TAGame.__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1.__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1");
+	}
+
+	U__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_exec__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params __GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params;
+	memset(&__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params, 0, sizeof(__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params));
+	memcpy_s(&__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params.P, sizeof(__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1, &__GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__InitCosmeticTeamsEvent_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__OnInit_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class AGameEvent_TA*           instance                       (CPF_Parm)
+
+void UOnlineGameReservations_TA::__OnlineGameReservations_TA__OnInit_0x1(class AGameEvent_TA* instance)
+{
+	static UFunction* uFn__OnlineGameReservations_TA__OnInit_0x1 = nullptr;
+
+	if (!uFn__OnlineGameReservations_TA__OnInit_0x1)
+	{
+		uFn__OnlineGameReservations_TA__OnInit_0x1 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__OnInit_0x1");
+	}
+
+	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__OnInit_0x1_Params __OnlineGameReservations_TA__OnInit_0x1_Params;
+	memset(&__OnlineGameReservations_TA__OnInit_0x1_Params, 0, sizeof(__OnlineGameReservations_TA__OnInit_0x1_Params));
+	__OnlineGameReservations_TA__OnInit_0x1_Params.instance = instance;
+
+	this->ProcessEvent(uFn__OnlineGameReservations_TA__OnInit_0x1, &__OnlineGameReservations_TA__OnInit_0x1_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        Id                             (CPF_Parm)
+
+bool UOnlineGameReservations_TA::__OnlineGameReservations_TA__AddLoadout_0x2(int32_t Id)
+{
+	static UFunction* uFn__OnlineGameReservations_TA__AddLoadout_0x2 = nullptr;
+
+	if (!uFn__OnlineGameReservations_TA__AddLoadout_0x2)
+	{
+		uFn__OnlineGameReservations_TA__AddLoadout_0x2 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x2");
+	}
+
+	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__AddLoadout_0x2_Params __OnlineGameReservations_TA__AddLoadout_0x2_Params;
+	memset(&__OnlineGameReservations_TA__AddLoadout_0x2_Params, 0, sizeof(__OnlineGameReservations_TA__AddLoadout_0x2_Params));
+	memcpy_s(&__OnlineGameReservations_TA__AddLoadout_0x2_Params.Id, sizeof(__OnlineGameReservations_TA__AddLoadout_0x2_Params.Id), &Id, sizeof(Id));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_TA__AddLoadout_0x2, &__OnlineGameReservations_TA__AddLoadout_0x2_Params, nullptr);
+
+	return __OnlineGameReservations_TA__AddLoadout_0x2_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        Id                             (CPF_Parm)
+
+int32_t UOnlineGameReservations_TA::__OnlineGameReservations_TA__AddLoadout_0x1(int32_t Id)
+{
+	static UFunction* uFn__OnlineGameReservations_TA__AddLoadout_0x1 = nullptr;
+
+	if (!uFn__OnlineGameReservations_TA__AddLoadout_0x1)
+	{
+		uFn__OnlineGameReservations_TA__AddLoadout_0x1 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x1");
+	}
+
+	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__AddLoadout_0x1_Params __OnlineGameReservations_TA__AddLoadout_0x1_Params;
+	memset(&__OnlineGameReservations_TA__AddLoadout_0x1_Params, 0, sizeof(__OnlineGameReservations_TA__AddLoadout_0x1_Params));
+	memcpy_s(&__OnlineGameReservations_TA__AddLoadout_0x1_Params.Id, sizeof(__OnlineGameReservations_TA__AddLoadout_0x1_Params.Id), &Id, sizeof(Id));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_TA__AddLoadout_0x1, &__OnlineGameReservations_TA__AddLoadout_0x1_Params, nullptr);
+
+	return __OnlineGameReservations_TA__AddLoadout_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.GetMatchInfoMessage
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UServerToServerMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+class UServerToServerMessage_X* UOnlineGameReservations_TA::GetMatchInfoMessage()
+{
+	static UFunction* uFnGetMatchInfoMessage = nullptr;
+
+	if (!uFnGetMatchInfoMessage)
+	{
+		uFnGetMatchInfoMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.GetMatchInfoMessage");
+	}
+
+	UOnlineGameReservations_TA_execGetMatchInfoMessage_Params GetMatchInfoMessage_Params;
+	memset(&GetMatchInfoMessage_Params, 0, sizeof(GetMatchInfoMessage_Params));
+
+	this->ProcessEvent(uFnGetMatchInfoMessage, &GetMatchInfoMessage_Params, nullptr);
+
+	return GetMatchInfoMessage_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.ShouldCheckPlatformRestrictions
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UAddReservationMessagePublic_X* Message                        (CPF_Parm)
+
+bool UOnlineGameReservations_TA::ShouldCheckPlatformRestrictions(class UAddReservationMessagePublic_X* Message)
+{
+	static UFunction* uFnShouldCheckPlatformRestrictions = nullptr;
+
+	if (!uFnShouldCheckPlatformRestrictions)
+	{
+		uFnShouldCheckPlatformRestrictions = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.ShouldCheckPlatformRestrictions");
+	}
+
+	UOnlineGameReservations_TA_execShouldCheckPlatformRestrictions_Params ShouldCheckPlatformRestrictions_Params;
+	memset(&ShouldCheckPlatformRestrictions_Params, 0, sizeof(ShouldCheckPlatformRestrictions_Params));
+	ShouldCheckPlatformRestrictions_Params.Message = Message;
+
+	this->ProcessEvent(uFnShouldCheckPlatformRestrictions, &ShouldCheckPlatformRestrictions_Params, nullptr);
+
+	return ShouldCheckPlatformRestrictions_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.CanAcceptReservations
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UAddReservationMessagePublic_X* Message                        (CPF_Parm)
+
+bool UOnlineGameReservations_TA::CanAcceptReservations(class UAddReservationMessagePublic_X* Message)
+{
+	static UFunction* uFnCanAcceptReservations = nullptr;
+
+	if (!uFnCanAcceptReservations)
+	{
+		uFnCanAcceptReservations = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CanAcceptReservations");
+	}
+
+	UOnlineGameReservations_TA_execCanAcceptReservations_Params CanAcceptReservations_Params;
+	memset(&CanAcceptReservations_Params, 0, sizeof(CanAcceptReservations_Params));
+	CanAcceptReservations_Params.Message = Message;
+
+	this->ProcessEvent(uFnCanAcceptReservations, &CanAcceptReservations_Params, nullptr);
+
+	return CanAcceptReservations_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.GetPrecacheProductIDs
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class TArray<int32_t>          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+
+class TArray<int32_t> UOnlineGameReservations_TA::GetPrecacheProductIDs()
+{
+	static UFunction* uFnGetPrecacheProductIDs = nullptr;
+
+	if (!uFnGetPrecacheProductIDs)
+	{
+		uFnGetPrecacheProductIDs = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.GetPrecacheProductIDs");
+	}
+
+	UOnlineGameReservations_TA_execGetPrecacheProductIDs_Params GetPrecacheProductIDs_Params;
+	memset(&GetPrecacheProductIDs_Params, 0, sizeof(GetPrecacheProductIDs_Params));
+
+	this->ProcessEvent(uFnGetPrecacheProductIDs, &GetPrecacheProductIDs_Params, nullptr);
+
+	return GetPrecacheProductIDs_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.CreateReadyMessage
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UReservationsReadyMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+class UReservationsReadyMessage_X* UOnlineGameReservations_TA::CreateReadyMessage()
+{
+	static UFunction* uFnCreateReadyMessage = nullptr;
+
+	if (!uFnCreateReadyMessage)
+	{
+		uFnCreateReadyMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CreateReadyMessage");
+	}
+
+	UOnlineGameReservations_TA_execCreateReadyMessage_Params CreateReadyMessage_Params;
+	memset(&CreateReadyMessage_Params, 0, sizeof(CreateReadyMessage_Params));
+
+	this->ProcessEvent(uFnCreateReadyMessage, &CreateReadyMessage_Params, nullptr);
+
+	return CreateReadyMessage_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.ClearReservations
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UOnlineGameReservations_TA::ClearReservations()
+{
+	static UFunction* uFnClearReservations = nullptr;
+
+	if (!uFnClearReservations)
+	{
+		uFnClearReservations = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.ClearReservations");
+	}
+
+	UOnlineGameReservations_TA_execClearReservations_Params ClearReservations_Params;
+	memset(&ClearReservations_Params, 0, sizeof(ClearReservations_Params));
+
+	this->ProcessEvent(uFnClearReservations, &ClearReservations_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameReservations_TA.RemoveReservationIndex
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// int32_t                        Index                          (CPF_Parm)
+
+void UOnlineGameReservations_TA::RemoveReservationIndex(int32_t Index)
+{
+	static UFunction* uFnRemoveReservationIndex = nullptr;
+
+	if (!uFnRemoveReservationIndex)
+	{
+		uFnRemoveReservationIndex = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.RemoveReservationIndex");
+	}
+
+	UOnlineGameReservations_TA_execRemoveReservationIndex_Params RemoveReservationIndex_Params;
+	memset(&RemoveReservationIndex_Params, 0, sizeof(RemoveReservationIndex_Params));
+	memcpy_s(&RemoveReservationIndex_Params.Index, sizeof(RemoveReservationIndex_Params.Index), &Index, sizeof(Index));
+
+	this->ProcessEvent(uFnRemoveReservationIndex, &RemoveReservationIndex_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameReservations_TA.AddLoadout
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<int32_t>          ProductIDs                     (CPF_Parm | CPF_NeedCtorLink)
+
+void UOnlineGameReservations_TA::AddLoadout(const struct FUniqueNetId& PlayerID, const class TArray<int32_t>& ProductIDs)
+{
+	static UFunction* uFnAddLoadout = nullptr;
+
+	if (!uFnAddLoadout)
+	{
+		uFnAddLoadout = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.AddLoadout");
+	}
+
+	UOnlineGameReservations_TA_execAddLoadout_Params AddLoadout_Params;
+	memset(&AddLoadout_Params, 0, sizeof(AddLoadout_Params));
+	memcpy_s(&AddLoadout_Params.PlayerID, sizeof(AddLoadout_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&AddLoadout_Params.ProductIDs, sizeof(AddLoadout_Params.ProductIDs), &ProductIDs, sizeof(ProductIDs));
+
+	this->ProcessEvent(uFnAddLoadout, &AddLoadout_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameReservations_TA.AddPlayersFromReservationMessage
+// [0x400880002] (FUNC_Defined | FUNC_Protected | FUNC_HasDefaults)
+// Parameter Info:
+// class TArray<struct FReservationData> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class UAddReservationMessage_X* ReservationMessage             (CPF_Parm)
+// class UIReservationConnection_X* Connection                     (CPF_Parm)
+
+class TArray<struct FReservationData> UOnlineGameReservations_TA::AddPlayersFromReservationMessage(class UAddReservationMessage_X* ReservationMessage, class UIReservationConnection_X* Connection)
+{
+	static UFunction* uFnAddPlayersFromReservationMessage = nullptr;
+
+	if (!uFnAddPlayersFromReservationMessage)
+	{
+		uFnAddPlayersFromReservationMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.AddPlayersFromReservationMessage");
+	}
+
+	UOnlineGameReservations_TA_execAddPlayersFromReservationMessage_Params AddPlayersFromReservationMessage_Params;
+	memset(&AddPlayersFromReservationMessage_Params, 0, sizeof(AddPlayersFromReservationMessage_Params));
+	AddPlayersFromReservationMessage_Params.ReservationMessage = ReservationMessage;
+	AddPlayersFromReservationMessage_Params.Connection = Connection;
+
+	this->ProcessEvent(uFnAddPlayersFromReservationMessage, &AddPlayersFromReservationMessage_Params, nullptr);
+
+	return AddPlayersFromReservationMessage_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.IsServerClubDetailsReplicationEnabled
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UOnlineGameReservations_TA::IsServerClubDetailsReplicationEnabled()
+{
+	static UFunction* uFnIsServerClubDetailsReplicationEnabled = nullptr;
+
+	if (!uFnIsServerClubDetailsReplicationEnabled)
+	{
+		uFnIsServerClubDetailsReplicationEnabled = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.IsServerClubDetailsReplicationEnabled");
+	}
+
+	UOnlineGameReservations_TA_execIsServerClubDetailsReplicationEnabled_Params IsServerClubDetailsReplicationEnabled_Params;
+	memset(&IsServerClubDetailsReplicationEnabled_Params, 0, sizeof(IsServerClubDetailsReplicationEnabled_Params));
+
+	this->ProcessEvent(uFnIsServerClubDetailsReplicationEnabled, &IsServerClubDetailsReplicationEnabled_Params, nullptr);
+
+	return IsServerClubDetailsReplicationEnabled_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.CreateClientReservationMessage
+// [0x400480002] (FUNC_Defined | FUNC_Protected | FUNC_HasOutParms)
+// Parameter Info:
+// class UObject*                 ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FServerReservationData  Reservation                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+class UObject* UOnlineGameReservations_TA::CreateClientReservationMessage(struct FServerReservationData& Reservation, struct FUniqueNetId& PlayerID)
+{
+	static UFunction* uFnCreateClientReservationMessage = nullptr;
+
+	if (!uFnCreateClientReservationMessage)
+	{
+		uFnCreateClientReservationMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CreateClientReservationMessage");
+	}
+
+	UOnlineGameReservations_TA_execCreateClientReservationMessage_Params CreateClientReservationMessage_Params;
+	memset(&CreateClientReservationMessage_Params, 0, sizeof(CreateClientReservationMessage_Params));
+	memcpy_s(&CreateClientReservationMessage_Params.Reservation, sizeof(CreateClientReservationMessage_Params.Reservation), &Reservation, sizeof(Reservation));
+	memcpy_s(&CreateClientReservationMessage_Params.PlayerID, sizeof(CreateClientReservationMessage_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnCreateClientReservationMessage, &CreateClientReservationMessage_Params, nullptr);
+
+	memcpy_s(&Reservation, sizeof(Reservation), &CreateClientReservationMessage_Params.Reservation, sizeof(CreateClientReservationMessage_Params.Reservation));
+	memcpy_s(&PlayerID, sizeof(PlayerID), &CreateClientReservationMessage_Params.PlayerID, sizeof(CreateClientReservationMessage_Params.PlayerID));
+
+	return CreateClientReservationMessage_Params.ReturnValue;
+};
+
+// Function TAGame.OnlineGameReservations_TA.HandleGameEventStarted
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UOnlineGameReservations_TA::HandleGameEventStarted()
+{
+	static UFunction* uFnHandleGameEventStarted = nullptr;
+
+	if (!uFnHandleGameEventStarted)
+	{
+		uFnHandleGameEventStarted = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.HandleGameEventStarted");
+	}
+
+	UOnlineGameReservations_TA_execHandleGameEventStarted_Params HandleGameEventStarted_Params;
+	memset(&HandleGameEventStarted_Params, 0, sizeof(HandleGameEventStarted_Params));
+
+	this->ProcessEvent(uFnHandleGameEventStarted, &HandleGameEventStarted_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameReservations_TA.OnInit
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+
+void UOnlineGameReservations_TA::OnInit()
+{
+	static UFunction* uFnOnInit = nullptr;
+
+	if (!uFnOnInit)
+	{
+		uFnOnInit = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.OnInit");
+	}
+
+	UOnlineGameReservations_TA_execOnInit_Params OnInit_Params;
+	memset(&OnInit_Params, 0, sizeof(OnInit_Params));
+
+	this->ProcessEvent(uFnOnInit, &OnInit_Params, nullptr);
+};
+
+// Function TAGame.__GameEvent_Soccar_TA__IsTeamFullTitle_0x1.__GameEvent_Soccar_TA__IsTeamFullTitle_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FName                    TitleId                        (CPF_Parm)
+
+bool U__GameEvent_Soccar_TA__IsTeamFullTitle_0x1::__GameEvent_Soccar_TA__IsTeamFullTitle_0x1(const class FName& TitleId)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__IsTeamFullTitle_0x1 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__IsTeamFullTitle_0x1)
+	{
+		uFn__GameEvent_Soccar_TA__IsTeamFullTitle_0x1 = UFunction::FindFunction("Function TAGame.__GameEvent_Soccar_TA__IsTeamFullTitle_0x1.__GameEvent_Soccar_TA__IsTeamFullTitle_0x1");
+	}
+
+	U__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_exec__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params __GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params;
+	memset(&__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params, 0, sizeof(__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params));
+	memcpy_s(&__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params.TitleId, sizeof(__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params.TitleId), &TitleId, sizeof(TitleId));
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__IsTeamFullTitle_0x1, &__GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__IsTeamFullTitle_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class APRI_TA*                 PRI                            (CPF_Parm)
+
+void U__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1::__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2(class APRI_TA* PRI)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2)
+	{
+		uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2 = UFunction::FindFunction("Function TAGame.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2");
+	}
+
+	U__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_exec__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params __GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params;
+	memset(&__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params, 0, sizeof(__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params));
+	__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params.PRI = PRI;
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2, &__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x2_Params, nullptr);
+};
+
+// Function TAGame.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class APRI_TA*                 PRI                            (CPF_Parm)
+
+bool U__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1::__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1(class APRI_TA* PRI)
+{
+	static UFunction* uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1 = nullptr;
+
+	if (!uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1)
+	{
+		uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1 = UFunction::FindFunction("Function TAGame.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1.__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1");
+	}
+
+	U__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_exec__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params __GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params;
+	memset(&__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params, 0, sizeof(__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params));
+	__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params.PRI = PRI;
+
+	this->ProcessEvent(uFn__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1, &__GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params, nullptr);
+
+	return __GameEvent_Soccar_TA__SetTeamEventColorsAndName_0x1_Params.ReturnValue;
+};
+
 // Function TAGame.OnlineGameSkill_TA.ClientSetSkill
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -131335,6 +133158,25 @@ void AReplayDirector_TA::HandleGameStateChanged(class AGameEvent_TA* G)
 	HandleGameStateChanged_Params.G = G;
 
 	this->ProcessEvent(uFnHandleGameStateChanged, &HandleGameStateChanged_Params, nullptr);
+};
+
+// Function TAGame.ReplayDirector_TA.HandleMatchAdminCreatorFlagChanged
+// [0x00080103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Protected)
+// Parameter Info:
+
+void AReplayDirector_TA::HandleMatchAdminCreatorFlagChanged()
+{
+	static UFunction* uFnHandleMatchAdminCreatorFlagChanged = nullptr;
+
+	if (!uFnHandleMatchAdminCreatorFlagChanged)
+	{
+		uFnHandleMatchAdminCreatorFlagChanged = UFunction::FindFunction("Function TAGame.ReplayDirector_TA.HandleMatchAdminCreatorFlagChanged");
+	}
+
+	AReplayDirector_TA_execHandleMatchAdminCreatorFlagChanged_Params HandleMatchAdminCreatorFlagChanged_Params;
+	memset(&HandleMatchAdminCreatorFlagChanged_Params, 0, sizeof(HandleMatchAdminCreatorFlagChanged_Params));
+
+	this->ProcessEvent(uFnHandleMatchAdminCreatorFlagChanged, &HandleMatchAdminCreatorFlagChanged_Params, nullptr);
 };
 
 // Function TAGame.ReplayDirector_TA.OnSoccarGameSet
@@ -135472,6 +137314,32 @@ void AGFxHUD_TA::__GFxHUD_TA__HandleServerNameChanged_0x1(const class FString& O
 	this->ProcessEvent(uFn__GFxHUD_TA__HandleServerNameChanged_0x1, &__GFxHUD_TA__HandleServerNameChanged_0x1_Params, nullptr);
 };
 
+// Function TAGame.GFxHUD_TA.__GFxHUD_TA__UpdateMutatorTags_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FMutatorInfo            L                              (CPF_Parm | CPF_NeedCtorLink)
+// struct FMutatorInfo            R                              (CPF_Parm | CPF_NeedCtorLink)
+
+int32_t AGFxHUD_TA::__GFxHUD_TA__UpdateMutatorTags_0x1(const struct FMutatorInfo& L, const struct FMutatorInfo& R)
+{
+	static UFunction* uFn__GFxHUD_TA__UpdateMutatorTags_0x1 = nullptr;
+
+	if (!uFn__GFxHUD_TA__UpdateMutatorTags_0x1)
+	{
+		uFn__GFxHUD_TA__UpdateMutatorTags_0x1 = UFunction::FindFunction("Function TAGame.GFxHUD_TA.__GFxHUD_TA__UpdateMutatorTags_0x1");
+	}
+
+	AGFxHUD_TA_exec__GFxHUD_TA__UpdateMutatorTags_0x1_Params __GFxHUD_TA__UpdateMutatorTags_0x1_Params;
+	memset(&__GFxHUD_TA__UpdateMutatorTags_0x1_Params, 0, sizeof(__GFxHUD_TA__UpdateMutatorTags_0x1_Params));
+	memcpy_s(&__GFxHUD_TA__UpdateMutatorTags_0x1_Params.L, sizeof(__GFxHUD_TA__UpdateMutatorTags_0x1_Params.L), &L, sizeof(L));
+	memcpy_s(&__GFxHUD_TA__UpdateMutatorTags_0x1_Params.R, sizeof(__GFxHUD_TA__UpdateMutatorTags_0x1_Params.R), &R, sizeof(R));
+
+	this->ProcessEvent(uFn__GFxHUD_TA__UpdateMutatorTags_0x1, &__GFxHUD_TA__UpdateMutatorTags_0x1_Params, nullptr);
+
+	return __GFxHUD_TA__UpdateMutatorTags_0x1_Params.ReturnValue;
+};
+
 // Function TAGame.GFxHUD_TA.__GFxHUD_TA__UpdateScoreboardStatNames_0x2
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
@@ -137195,6 +139063,25 @@ void AGFxHUD_TA::HandleMatchTypeSet(class AGameEvent_TA* InGameEvent)
 	this->ProcessEvent(uFnHandleMatchTypeSet, &HandleMatchTypeSet_Params, nullptr);
 };
 
+// Function TAGame.GFxHUD_TA.HandleMatchAdminEnabledChanged
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+
+void AGFxHUD_TA::HandleMatchAdminEnabledChanged()
+{
+	static UFunction* uFnHandleMatchAdminEnabledChanged = nullptr;
+
+	if (!uFnHandleMatchAdminEnabledChanged)
+	{
+		uFnHandleMatchAdminEnabledChanged = UFunction::FindFunction("Function TAGame.GFxHUD_TA.HandleMatchAdminEnabledChanged");
+	}
+
+	AGFxHUD_TA_execHandleMatchAdminEnabledChanged_Params HandleMatchAdminEnabledChanged_Params;
+	memset(&HandleMatchAdminEnabledChanged_Params, 0, sizeof(HandleMatchAdminEnabledChanged_Params));
+
+	this->ProcessEvent(uFnHandleMatchAdminEnabledChanged, &HandleMatchAdminEnabledChanged_Params, nullptr);
+};
+
 // Function TAGame.GFxHUD_TA.SetGameEvent
 // [0x00020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -137385,7 +139272,7 @@ bool AGFxHUD_TA::ShowMutators()
 };
 
 // Function TAGame.GFxHUD_TA.UpdateMutatorTags
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 // class FString                  MatchTags                      (CPF_Parm | CPF_NeedCtorLink)
 
@@ -146841,6 +148728,48 @@ bool U__GFxData_ChallengeManager_TA__UpdateRewardsAvailable_0x1::__GFxData_Chall
 	return __GFxData_ChallengeManager_TA__UpdateRewardsAvailable_0x1_Params.ReturnValue;
 };
 
+// Function TAGame.GFxData_ChallengeFolder_TA.__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UChallenge_TA*           instance                       (CPF_Parm)
+
+void UGFxData_ChallengeFolder_TA::__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2(class UChallenge_TA* instance)
+{
+	static UFunction* uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2 = nullptr;
+
+	if (!uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2)
+	{
+		uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2 = UFunction::FindFunction("Function TAGame.GFxData_ChallengeFolder_TA.__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2");
+	}
+
+	UGFxData_ChallengeFolder_TA_exec__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params __GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params;
+	memset(&__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params, 0, sizeof(__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params));
+	__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params.instance = instance;
+
+	this->ProcessEvent(uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2, &__GFxData_ChallengeFolder_TA__SetFolderProxy_0x2_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ChallengeFolder_TA.__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UChallenge_TA*           instance                       (CPF_Parm)
+
+void UGFxData_ChallengeFolder_TA::__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1(class UChallenge_TA* instance)
+{
+	static UFunction* uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1 = nullptr;
+
+	if (!uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1)
+	{
+		uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1 = UFunction::FindFunction("Function TAGame.GFxData_ChallengeFolder_TA.__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1");
+	}
+
+	UGFxData_ChallengeFolder_TA_exec__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params __GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params;
+	memset(&__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params, 0, sizeof(__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params));
+	__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params.instance = instance;
+
+	this->ProcessEvent(uFn__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1, &__GFxData_ChallengeFolder_TA__SetFolderProxy_0x1_Params, nullptr);
+};
+
 // Function TAGame.GFxData_ChallengeFolder_TA.__GFxData_ChallengeFolder_TA__RemoveSubFolders_0x1
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
@@ -147002,11 +148931,11 @@ class UChallengeManager_TA* UGFxData_ChallengeFolder_TA::GetChallengeManager()
 };
 
 // Function TAGame.GFxData_ChallengeFolder_TA.RefreshNotifies
-// [0x00080002] (FUNC_Defined | FUNC_Protected)
+// [0x00480002] (FUNC_Defined | FUNC_Protected | FUNC_HasOutParms)
 // Parameter Info:
-// class TArray<class UChallenge_TA*> Challenges                     (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class UChallenge_TA*> Challenges                     (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
-void UGFxData_ChallengeFolder_TA::RefreshNotifies(const class TArray<class UChallenge_TA*>& Challenges)
+void UGFxData_ChallengeFolder_TA::RefreshNotifies(class TArray<class UChallenge_TA*>& Challenges)
 {
 	static UFunction* uFnRefreshNotifies = nullptr;
 
@@ -147020,10 +148949,12 @@ void UGFxData_ChallengeFolder_TA::RefreshNotifies(const class TArray<class UChal
 	memcpy_s(&RefreshNotifies_Params.Challenges, sizeof(RefreshNotifies_Params.Challenges), &Challenges, sizeof(Challenges));
 
 	this->ProcessEvent(uFnRefreshNotifies, &RefreshNotifies_Params, nullptr);
+
+	memcpy_s(&Challenges, sizeof(Challenges), &RefreshNotifies_Params.Challenges, sizeof(RefreshNotifies_Params.Challenges));
 };
 
 // Function TAGame.GFxData_ChallengeFolder_TA.GetSortedChallenges
-// [0x00084002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
+// [0x00024002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
 // class TArray<class UChallenge_TA*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class UClass*                  Filter                         (CPF_OptionalParm | CPF_Parm)
@@ -147344,6 +149275,47 @@ void UGFxData_ChallengeFolder_TA::HandleChallengeProgressChanged(class UChalleng
 	this->ProcessEvent(uFnHandleChallengeProgressChanged, &HandleChallengeProgressChanged_Params, nullptr);
 };
 
+// Function TAGame.GFxData_ChallengeFolder_TA.ClearCachedSortedChallenges
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UGFxData_ChallengeFolder_TA::ClearCachedSortedChallenges()
+{
+	static UFunction* uFnClearCachedSortedChallenges = nullptr;
+
+	if (!uFnClearCachedSortedChallenges)
+	{
+		uFnClearCachedSortedChallenges = UFunction::FindFunction("Function TAGame.GFxData_ChallengeFolder_TA.ClearCachedSortedChallenges");
+	}
+
+	UGFxData_ChallengeFolder_TA_execClearCachedSortedChallenges_Params ClearCachedSortedChallenges_Params;
+	memset(&ClearCachedSortedChallenges_Params, 0, sizeof(ClearCachedSortedChallenges_Params));
+
+	this->ProcessEvent(uFnClearCachedSortedChallenges, &ClearCachedSortedChallenges_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ChallengeFolder_TA.GetCachedSortedChallenges
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class TArray<class UChallenge_TA*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+
+class TArray<class UChallenge_TA*> UGFxData_ChallengeFolder_TA::GetCachedSortedChallenges()
+{
+	static UFunction* uFnGetCachedSortedChallenges = nullptr;
+
+	if (!uFnGetCachedSortedChallenges)
+	{
+		uFnGetCachedSortedChallenges = UFunction::FindFunction("Function TAGame.GFxData_ChallengeFolder_TA.GetCachedSortedChallenges");
+	}
+
+	UGFxData_ChallengeFolder_TA_execGetCachedSortedChallenges_Params GetCachedSortedChallenges_Params;
+	memset(&GetCachedSortedChallenges_Params, 0, sizeof(GetCachedSortedChallenges_Params));
+
+	this->ProcessEvent(uFnGetCachedSortedChallenges, &GetCachedSortedChallenges_Params, nullptr);
+
+	return GetCachedSortedChallenges_Params.ReturnValue;
+};
+
 // Function TAGame.GFxData_ChallengeFolder_TA.OnRemoved
 // [0x400080802] (FUNC_Defined | FUNC_Event | FUNC_Protected)
 // Parameter Info:
@@ -147614,6 +149586,119 @@ bool UGFxData_ChallengeManager_TA::__GFxData_ChallengeManager_TA__HasNewDriverCh
 	this->ProcessEvent(uFn__GFxData_ChallengeManager_TA__HasNewDriverChallenges_0x1, &__GFxData_ChallengeManager_TA__HasNewDriverChallenges_0x1_Params, nullptr);
 
 	return __GFxData_ChallengeManager_TA__HasNewDriverChallenges_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_ChallengeManager_TA.ClearIntroModalSaveKey
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UGFxData_ChallengeManager_TA::ClearIntroModalSaveKey()
+{
+	static UFunction* uFnClearIntroModalSaveKey = nullptr;
+
+	if (!uFnClearIntroModalSaveKey)
+	{
+		uFnClearIntroModalSaveKey = UFunction::FindFunction("Function TAGame.GFxData_ChallengeManager_TA.ClearIntroModalSaveKey");
+	}
+
+	UGFxData_ChallengeManager_TA_execClearIntroModalSaveKey_Params ClearIntroModalSaveKey_Params;
+	memset(&ClearIntroModalSaveKey_Params, 0, sizeof(ClearIntroModalSaveKey_Params));
+
+	this->ProcessEvent(uFnClearIntroModalSaveKey, &ClearIntroModalSaveKey_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ChallengeManager_TA.HandleMainMenuAddedToStage
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UGFxData_ChallengeManager_TA::HandleMainMenuAddedToStage()
+{
+	static UFunction* uFnHandleMainMenuAddedToStage = nullptr;
+
+	if (!uFnHandleMainMenuAddedToStage)
+	{
+		uFnHandleMainMenuAddedToStage = UFunction::FindFunction("Function TAGame.GFxData_ChallengeManager_TA.HandleMainMenuAddedToStage");
+	}
+
+	UGFxData_ChallengeManager_TA_execHandleMainMenuAddedToStage_Params HandleMainMenuAddedToStage_Params;
+	memset(&HandleMainMenuAddedToStage_Params, 0, sizeof(HandleMainMenuAddedToStage_Params));
+
+	this->ProcessEvent(uFnHandleMainMenuAddedToStage, &HandleMainMenuAddedToStage_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ChallengeManager_TA.ShowIntroModal
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// uint32_t                       bForce                         (CPF_OptionalParm | CPF_Parm)
+
+bool UGFxData_ChallengeManager_TA::ShowIntroModal(bool bForce)
+{
+	static UFunction* uFnShowIntroModal = nullptr;
+
+	if (!uFnShowIntroModal)
+	{
+		uFnShowIntroModal = UFunction::FindFunction("Function TAGame.GFxData_ChallengeManager_TA.ShowIntroModal");
+	}
+
+	UGFxData_ChallengeManager_TA_execShowIntroModal_Params ShowIntroModal_Params;
+	memset(&ShowIntroModal_Params, 0, sizeof(ShowIntroModal_Params));
+	ShowIntroModal_Params.bForce = bForce;
+
+	this->ProcessEvent(uFnShowIntroModal, &ShowIntroModal_Params, nullptr);
+
+	return ShowIntroModal_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_ChallengeManager_TA.OnShowIntroModal
+// [0x10040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_K2Pure)
+// Parameter Info:
+// class FString                  Title                          (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Description                    (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  ShowcaseImage                  (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  SubText                        (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  SubTitle                       (CPF_Parm | CPF_NeedCtorLink)
+
+void UGFxData_ChallengeManager_TA::OnShowIntroModal(const class FString& Title, const class FString& Description, const class FString& ShowcaseImage, const class FString& SubText, const class FString& SubTitle)
+{
+	static UFunction* uFnOnShowIntroModal = nullptr;
+
+	if (!uFnOnShowIntroModal)
+	{
+		uFnOnShowIntroModal = UFunction::FindFunction("Function TAGame.GFxData_ChallengeManager_TA.OnShowIntroModal");
+	}
+
+	UGFxData_ChallengeManager_TA_execOnShowIntroModal_Params OnShowIntroModal_Params;
+	memset(&OnShowIntroModal_Params, 0, sizeof(OnShowIntroModal_Params));
+	memcpy_s(&OnShowIntroModal_Params.Title, sizeof(OnShowIntroModal_Params.Title), &Title, sizeof(Title));
+	memcpy_s(&OnShowIntroModal_Params.Description, sizeof(OnShowIntroModal_Params.Description), &Description, sizeof(Description));
+	memcpy_s(&OnShowIntroModal_Params.ShowcaseImage, sizeof(OnShowIntroModal_Params.ShowcaseImage), &ShowcaseImage, sizeof(ShowcaseImage));
+	memcpy_s(&OnShowIntroModal_Params.SubText, sizeof(OnShowIntroModal_Params.SubText), &SubText, sizeof(SubText));
+	memcpy_s(&OnShowIntroModal_Params.SubTitle, sizeof(OnShowIntroModal_Params.SubTitle), &SubTitle, sizeof(SubTitle));
+
+	this->ProcessEvent(uFnOnShowIntroModal, &OnShowIntroModal_Params, nullptr);
+};
+
+// Function TAGame.GFxData_ChallengeManager_TA.ShouldTriggerIntroModal
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UGFxData_ChallengeManager_TA::ShouldTriggerIntroModal()
+{
+	static UFunction* uFnShouldTriggerIntroModal = nullptr;
+
+	if (!uFnShouldTriggerIntroModal)
+	{
+		uFnShouldTriggerIntroModal = UFunction::FindFunction("Function TAGame.GFxData_ChallengeManager_TA.ShouldTriggerIntroModal");
+	}
+
+	UGFxData_ChallengeManager_TA_execShouldTriggerIntroModal_Params ShouldTriggerIntroModal_Params;
+	memset(&ShouldTriggerIntroModal_Params, 0, sizeof(ShouldTriggerIntroModal_Params));
+
+	this->ProcessEvent(uFnShouldTriggerIntroModal, &ShouldTriggerIntroModal_Params, nullptr);
+
+	return ShouldTriggerIntroModal_Params.ReturnValue;
 };
 
 // Function TAGame.GFxData_ChallengeManager_TA.HasEventChallenges
@@ -153538,6 +155623,25 @@ void UGFxData_Friends_TA::UpdateFriendAndGroupInfo()
 	this->ProcessEvent(uFnUpdateFriendAndGroupInfo, &UpdateFriendAndGroupInfo_Params, nullptr);
 };
 
+// Function TAGame.GFxData_Friends_TA.OnPersonasUpdateFinished
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void UGFxData_Friends_TA::OnPersonasUpdateFinished()
+{
+	static UFunction* uFnOnPersonasUpdateFinished = nullptr;
+
+	if (!uFnOnPersonasUpdateFinished)
+	{
+		uFnOnPersonasUpdateFinished = UFunction::FindFunction("Function TAGame.GFxData_Friends_TA.OnPersonasUpdateFinished");
+	}
+
+	UGFxData_Friends_TA_execOnPersonasUpdateFinished_Params OnPersonasUpdateFinished_Params;
+	memset(&OnPersonasUpdateFinished_Params, 0, sizeof(OnPersonasUpdateFinished_Params));
+
+	this->ProcessEvent(uFnOnPersonasUpdateFinished, &OnPersonasUpdateFinished_Params, nullptr);
+};
+
 // Function TAGame.GFxData_Friends_TA.HandleFriendsListChanged
 // [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
@@ -153559,6 +155663,46 @@ void UGFxData_Friends_TA::HandleFriendsListChanged(class UOnlinePlayerFriends_X*
 	HandleFriendsListChanged_Params.Error = Error;
 
 	this->ProcessEvent(uFnHandleFriendsListChanged, &HandleFriendsListChanged_Params, nullptr);
+};
+
+// Function TAGame.GFxData_Friends_TA.FillPersonasFirstTime
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
+// Parameter Info:
+// class UOnlineFriendMap_X*      InFriendMap                    (CPF_Parm | CPF_EditInline)
+
+void UGFxData_Friends_TA::FillPersonasFirstTime(class UOnlineFriendMap_X* InFriendMap)
+{
+	static UFunction* uFnFillPersonasFirstTime = nullptr;
+
+	if (!uFnFillPersonasFirstTime)
+	{
+		uFnFillPersonasFirstTime = UFunction::FindFunction("Function TAGame.GFxData_Friends_TA.FillPersonasFirstTime");
+	}
+
+	UGFxData_Friends_TA_execFillPersonasFirstTime_Params FillPersonasFirstTime_Params;
+	memset(&FillPersonasFirstTime_Params, 0, sizeof(FillPersonasFirstTime_Params));
+	FillPersonasFirstTime_Params.InFriendMap = InFriendMap;
+
+	this->ProcessEvent(uFnFillPersonasFirstTime, &FillPersonasFirstTime_Params, nullptr);
+};
+
+// Function TAGame.GFxData_Friends_TA.UpdatePersonasFromBuilder
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
+// Parameter Info:
+
+void UGFxData_Friends_TA::UpdatePersonasFromBuilder()
+{
+	static UFunction* uFnUpdatePersonasFromBuilder = nullptr;
+
+	if (!uFnUpdatePersonasFromBuilder)
+	{
+		uFnUpdatePersonasFromBuilder = UFunction::FindFunction("Function TAGame.GFxData_Friends_TA.UpdatePersonasFromBuilder");
+	}
+
+	UGFxData_Friends_TA_execUpdatePersonasFromBuilder_Params UpdatePersonasFromBuilder_Params;
+	memset(&UpdatePersonasFromBuilder_Params, 0, sizeof(UpdatePersonasFromBuilder_Params));
+
+	this->ProcessEvent(uFnUpdatePersonasFromBuilder, &UpdatePersonasFromBuilder_Params, nullptr);
 };
 
 // Function TAGame.GFxData_Friends_TA.GenerateGroupId
@@ -165476,6 +167620,27 @@ class UError* UOnlineGameParty_TA::GetPartyMessageError(const struct FUniqueNetI
 	return GetPartyMessageError_Params.ReturnValue;
 };
 
+// Function TAGame.OnlineGameParty_TA.HandleSignedChatSent
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UError*                  SentError                      (CPF_Parm)
+
+void UOnlineGameParty_TA::HandleSignedChatSent(class UError* SentError)
+{
+	static UFunction* uFnHandleSignedChatSent = nullptr;
+
+	if (!uFnHandleSignedChatSent)
+	{
+		uFnHandleSignedChatSent = UFunction::FindFunction("Function TAGame.OnlineGameParty_TA.HandleSignedChatSent");
+	}
+
+	UOnlineGameParty_TA_execHandleSignedChatSent_Params HandleSignedChatSent_Params;
+	memset(&HandleSignedChatSent_Params, 0, sizeof(HandleSignedChatSent_Params));
+	HandleSignedChatSent_Params.SentError = SentError;
+
+	this->ProcessEvent(uFnHandleSignedChatSent, &HandleSignedChatSent_Params, nullptr);
+};
+
 // Function TAGame.OnlineGameParty_TA.HandleSignedChatMessage
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -166662,6 +168827,27 @@ void UOnlineGameParty_TA::OnChallengeComplete(class UChallengeManager_TA* Challe
 	OnChallengeComplete_Params.Challenge = Challenge;
 
 	this->ProcessEvent(uFnOnChallengeComplete, &OnChallengeComplete_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameParty_TA.OnChallengeManagerStateChanged
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UChallengeManager_TA*    ChallengeManager               (CPF_Parm)
+
+void UOnlineGameParty_TA::OnChallengeManagerStateChanged(class UChallengeManager_TA* ChallengeManager)
+{
+	static UFunction* uFnOnChallengeManagerStateChanged = nullptr;
+
+	if (!uFnOnChallengeManagerStateChanged)
+	{
+		uFnOnChallengeManagerStateChanged = UFunction::FindFunction("Function TAGame.OnlineGameParty_TA.OnChallengeManagerStateChanged");
+	}
+
+	UOnlineGameParty_TA_execOnChallengeManagerStateChanged_Params OnChallengeManagerStateChanged_Params;
+	memset(&OnChallengeManagerStateChanged_Params, 0, sizeof(OnChallengeManagerStateChanged_Params));
+	OnChallengeManagerStateChanged_Params.ChallengeManager = ChallengeManager;
+
+	this->ProcessEvent(uFnOnChallengeManagerStateChanged, &OnChallengeManagerStateChanged_Params, nullptr);
 };
 
 // Function TAGame.OnlineGameParty_TA.HandleLegacyStatusChanged
@@ -170972,12 +173158,55 @@ void UGFxData_LocalPlayer_TA::HandleEventChallengeProgressChanged(class UChallen
 	this->ProcessEvent(uFnHandleEventChallengeProgressChanged, &HandleEventChallengeProgressChanged_Params, nullptr);
 };
 
-// Function TAGame.GFxData_LocalPlayer_TA.UpdateChallengeProgressForCompetitive
+// Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengeManagerStateChanged
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
 // class UChallengeManager_TA*    Manager                        (CPF_Parm)
 
-void UGFxData_LocalPlayer_TA::UpdateChallengeProgressForCompetitive(class UChallengeManager_TA* Manager)
+void UGFxData_LocalPlayer_TA::HandleEventChallengeManagerStateChanged(class UChallengeManager_TA* Manager)
+{
+	static UFunction* uFnHandleEventChallengeManagerStateChanged = nullptr;
+
+	if (!uFnHandleEventChallengeManagerStateChanged)
+	{
+		uFnHandleEventChallengeManagerStateChanged = UFunction::FindFunction("Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengeManagerStateChanged");
+	}
+
+	UGFxData_LocalPlayer_TA_execHandleEventChallengeManagerStateChanged_Params HandleEventChallengeManagerStateChanged_Params;
+	memset(&HandleEventChallengeManagerStateChanged_Params, 0, sizeof(HandleEventChallengeManagerStateChanged_Params));
+	HandleEventChallengeManagerStateChanged_Params.Manager = Manager;
+
+	this->ProcessEvent(uFnHandleEventChallengeManagerStateChanged, &HandleEventChallengeManagerStateChanged_Params, nullptr);
+};
+
+// Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengesRequiredUpdated
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class TArray<int32_t>          ChallengesRequired             (CPF_Parm | CPF_NeedCtorLink)
+
+void UGFxData_LocalPlayer_TA::HandleEventChallengesRequiredUpdated(const class TArray<int32_t>& ChallengesRequired)
+{
+	static UFunction* uFnHandleEventChallengesRequiredUpdated = nullptr;
+
+	if (!uFnHandleEventChallengesRequiredUpdated)
+	{
+		uFnHandleEventChallengesRequiredUpdated = UFunction::FindFunction("Function TAGame.GFxData_LocalPlayer_TA.HandleEventChallengesRequiredUpdated");
+	}
+
+	UGFxData_LocalPlayer_TA_execHandleEventChallengesRequiredUpdated_Params HandleEventChallengesRequiredUpdated_Params;
+	memset(&HandleEventChallengesRequiredUpdated_Params, 0, sizeof(HandleEventChallengesRequiredUpdated_Params));
+	memcpy_s(&HandleEventChallengesRequiredUpdated_Params.ChallengesRequired, sizeof(HandleEventChallengesRequiredUpdated_Params.ChallengesRequired), &ChallengesRequired, sizeof(ChallengesRequired));
+
+	this->ProcessEvent(uFnHandleEventChallengesRequiredUpdated, &HandleEventChallengesRequiredUpdated_Params, nullptr);
+};
+
+// Function TAGame.GFxData_LocalPlayer_TA.UpdateChallengeProgressForCompetitive
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UChallengeManager_TA*    Manager                        (CPF_Parm)
+// class TArray<int32_t>          ChallengesRequired             (CPF_Parm | CPF_NeedCtorLink)
+
+void UGFxData_LocalPlayer_TA::UpdateChallengeProgressForCompetitive(class UChallengeManager_TA* Manager, const class TArray<int32_t>& ChallengesRequired)
 {
 	static UFunction* uFnUpdateChallengeProgressForCompetitive = nullptr;
 
@@ -170989,6 +173218,7 @@ void UGFxData_LocalPlayer_TA::UpdateChallengeProgressForCompetitive(class UChall
 	UGFxData_LocalPlayer_TA_execUpdateChallengeProgressForCompetitive_Params UpdateChallengeProgressForCompetitive_Params;
 	memset(&UpdateChallengeProgressForCompetitive_Params, 0, sizeof(UpdateChallengeProgressForCompetitive_Params));
 	UpdateChallengeProgressForCompetitive_Params.Manager = Manager;
+	memcpy_s(&UpdateChallengeProgressForCompetitive_Params.ChallengesRequired, sizeof(UpdateChallengeProgressForCompetitive_Params.ChallengesRequired), &ChallengesRequired, sizeof(ChallengesRequired));
 
 	this->ProcessEvent(uFnUpdateChallengeProgressForCompetitive, &UpdateChallengeProgressForCompetitive_Params, nullptr);
 };
@@ -172828,6 +175058,25 @@ void UGFxData_MenuTree_TA::EnterTreeAtRoot(const class FName& InRootID)
 	this->ProcessEvent(uFnEnterTreeAtRoot, &EnterTreeAtRoot_Params, nullptr);
 };
 
+// Function TAGame.GFxData_MenuTree_TA.HandleChallengeManagerStateUpdate
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UGFxData_MenuTree_TA::HandleChallengeManagerStateUpdate()
+{
+	static UFunction* uFnHandleChallengeManagerStateUpdate = nullptr;
+
+	if (!uFnHandleChallengeManagerStateUpdate)
+	{
+		uFnHandleChallengeManagerStateUpdate = UFunction::FindFunction("Function TAGame.GFxData_MenuTree_TA.HandleChallengeManagerStateUpdate");
+	}
+
+	UGFxData_MenuTree_TA_execHandleChallengeManagerStateUpdate_Params HandleChallengeManagerStateUpdate_Params;
+	memset(&HandleChallengeManagerStateUpdate_Params, 0, sizeof(HandleChallengeManagerStateUpdate_Params));
+
+	this->ProcessEvent(uFnHandleChallengeManagerStateUpdate, &HandleChallengeManagerStateUpdate_Params, nullptr);
+};
+
 // Function TAGame.GFxData_MenuTree_TA.OnShellSet
 // [0x400080802] (FUNC_Defined | FUNC_Event | FUNC_Protected)
 // Parameter Info:
@@ -172943,46 +175192,25 @@ bool U__GFxData_MenuTree_TA__JumpToParentBranch_0x1::__GFxData_MenuTree_TA__Jump
 	return __GFxData_MenuTree_TA__JumpToParentBranch_0x1_Params.ReturnValue;
 };
 
-// Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2
+// Function TAGame.__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1.__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
-// struct FProductInstanceID      KeyInstanceID                  (CPF_Parm)
+// class UGFxModal_X*             instance                       (CPF_Parm)
 
-void U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1::__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2(const struct FProductInstanceID& KeyInstanceID)
+void U__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1::__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1(class UGFxModal_X* instance)
 {
-	static UFunction* uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2 = nullptr;
+	static UFunction* uFn__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1 = nullptr;
 
-	if (!uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2)
+	if (!uFn__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1)
 	{
-		uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2 = UFunction::FindFunction("Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2");
+		uFn__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1 = UFunction::FindFunction("Function TAGame.__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1.__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1");
 	}
 
-	U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_exec__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params __GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params;
-	memset(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params, 0, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params));
-	memcpy_s(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params.KeyInstanceID, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params.KeyInstanceID), &KeyInstanceID, sizeof(KeyInstanceID));
+	U__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_exec__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params __GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params;
+	memset(&__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params, 0, sizeof(__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params));
+	__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params.instance = instance;
 
-	this->ProcessEvent(uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2, &__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params, nullptr);
-};
-
-// Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
-// Parameter Info:
-// struct FProductInstanceID      InstanceID                     (CPF_Parm)
-
-void U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1::__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1(const struct FProductInstanceID& InstanceID)
-{
-	static UFunction* uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1 = nullptr;
-
-	if (!uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1)
-	{
-		uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1 = UFunction::FindFunction("Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1");
-	}
-
-	U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_exec__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params __GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params;
-	memset(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params, 0, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params));
-	memcpy_s(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params.InstanceID, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params.InstanceID), &InstanceID, sizeof(InstanceID));
-
-	this->ProcessEvent(uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1, &__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params, nullptr);
+	this->ProcessEvent(uFn__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1, &__GFxData_MTXGarage_TA__HandleTopMenuChange_0x1_Params, nullptr);
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.__GFxData_MTXGarage_TA__GetKeyHashIDs_0x2
@@ -174035,7 +176263,7 @@ void UGFxData_MTXGarage_TA::ForceAllFlags(bool Value)
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.OnGetCatalog
-// [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
+// [0x10020002] (FUNC_Defined | FUNC_Public | FUNC_K2Pure)
 // Parameter Info:
 // uint32_t                       bSuccess                       (CPF_Parm)
 
@@ -174185,6 +176413,25 @@ void UGFxData_MTXGarage_TA::GetCatalog()
 	this->ProcessEvent(uFnGetCatalog, &GetCatalog_Params, nullptr);
 };
 
+// Function TAGame.GFxData_MTXGarage_TA.OnUnlockCompleted
+// [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
+// Parameter Info:
+
+void UGFxData_MTXGarage_TA::OnUnlockCompleted()
+{
+	static UFunction* uFnOnUnlockCompleted = nullptr;
+
+	if (!uFnOnUnlockCompleted)
+	{
+		uFnOnUnlockCompleted = UFunction::FindFunction("Function TAGame.GFxData_MTXGarage_TA.OnUnlockCompleted");
+	}
+
+	UGFxData_MTXGarage_TA_execOnUnlockCompleted_Params OnUnlockCompleted_Params;
+	memset(&OnUnlockCompleted_Params, 0, sizeof(OnUnlockCompleted_Params));
+
+	this->ProcessEvent(uFnOnUnlockCompleted, &OnUnlockCompleted_Params, nullptr);
+};
+
 // Function TAGame.GFxData_MTXGarage_TA.OnUnlockFailed
 // [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
 // Parameter Info:
@@ -174313,6 +176560,31 @@ void UGFxData_MTXGarage_TA::UnlockContainers(const struct FProductHashID& Contai
 	memcpy_s(&UnlockContainers_Params.KeyHashIDs, sizeof(UnlockContainers_Params.KeyHashIDs), &KeyHashIDs, sizeof(KeyHashIDs));
 
 	this->ProcessEvent(uFnUnlockContainers, &UnlockContainers_Params, nullptr);
+};
+
+// Function TAGame.GFxData_MTXGarage_TA.HandleTopMenuChange
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class FName                    PrevMenu                       (CPF_Parm)
+// class FName                    TopMenu                        (CPF_Parm)
+// uint32_t                       bClearingStack                 (CPF_Parm)
+
+void UGFxData_MTXGarage_TA::HandleTopMenuChange(const class FName& PrevMenu, const class FName& TopMenu, bool bClearingStack)
+{
+	static UFunction* uFnHandleTopMenuChange = nullptr;
+
+	if (!uFnHandleTopMenuChange)
+	{
+		uFnHandleTopMenuChange = UFunction::FindFunction("Function TAGame.GFxData_MTXGarage_TA.HandleTopMenuChange");
+	}
+
+	UGFxData_MTXGarage_TA_execHandleTopMenuChange_Params HandleTopMenuChange_Params;
+	memset(&HandleTopMenuChange_Params, 0, sizeof(HandleTopMenuChange_Params));
+	memcpy_s(&HandleTopMenuChange_Params.PrevMenu, sizeof(HandleTopMenuChange_Params.PrevMenu), &PrevMenu, sizeof(PrevMenu));
+	memcpy_s(&HandleTopMenuChange_Params.TopMenu, sizeof(HandleTopMenuChange_Params.TopMenu), &TopMenu, sizeof(TopMenu));
+	HandleTopMenuChange_Params.bClearingStack = bClearingStack;
+
+	this->ProcessEvent(uFnHandleTopMenuChange, &HandleTopMenuChange_Params, nullptr);
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.AnyKeyRestricted
@@ -174583,7 +176855,7 @@ bool UGFxData_MTXGarage_TA::IsBulgarianDualCurrencyEnabled(class FString& LocalR
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.GetRealPrice
-// [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // int32_t                        VCAmount                       (CPF_Parm)
@@ -174744,6 +177016,25 @@ bool UGFxData_MTXGarage_TA::CanStartTransaction()
 	this->ProcessEvent(uFnCanStartTransaction, &CanStartTransaction_Params, nullptr);
 
 	return CanStartTransaction_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_MTXGarage_TA.HandleCountryConfigChanged
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UGFxData_MTXGarage_TA::HandleCountryConfigChanged()
+{
+	static UFunction* uFnHandleCountryConfigChanged = nullptr;
+
+	if (!uFnHandleCountryConfigChanged)
+	{
+		uFnHandleCountryConfigChanged = UFunction::FindFunction("Function TAGame.GFxData_MTXGarage_TA.HandleCountryConfigChanged");
+	}
+
+	UGFxData_MTXGarage_TA_execHandleCountryConfigChanged_Params HandleCountryConfigChanged_Params;
+	memset(&HandleCountryConfigChanged_Params, 0, sizeof(HandleCountryConfigChanged_Params));
+
+	this->ProcessEvent(uFnHandleCountryConfigChanged, &HandleCountryConfigChanged_Params, nullptr);
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.HandleSonyPricingInfoConfigChanged
@@ -174928,6 +177219,48 @@ void UGFxData_MTXGarage_TA::EventCatalogReady(const struct FMTXPurchaseInfo& Inf
 	memcpy_s(&EventCatalogReady_Params.Category, sizeof(EventCatalogReady_Params.Category), &Category, sizeof(Category));
 
 	this->ProcessEvent(uFnEventCatalogReady, &EventCatalogReady_Params, nullptr);
+};
+
+// Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// struct FProductInstanceID      KeyInstanceID                  (CPF_Parm)
+
+void U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1::__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2(const struct FProductInstanceID& KeyInstanceID)
+{
+	static UFunction* uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2 = nullptr;
+
+	if (!uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2)
+	{
+		uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2 = UFunction::FindFunction("Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2");
+	}
+
+	U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_exec__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params __GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params;
+	memset(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params, 0, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params));
+	memcpy_s(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params.KeyInstanceID, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params.KeyInstanceID), &KeyInstanceID, sizeof(KeyInstanceID));
+
+	this->ProcessEvent(uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2, &__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x2_Params, nullptr);
+};
+
+// Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// struct FProductInstanceID      InstanceID                     (CPF_Parm)
+
+void U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1::__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1(const struct FProductInstanceID& InstanceID)
+{
+	static UFunction* uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1 = nullptr;
+
+	if (!uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1)
+	{
+		uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1 = UFunction::FindFunction("Function TAGame.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1.__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1");
+	}
+
+	U__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_exec__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params __GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params;
+	memset(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params, 0, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params));
+	memcpy_s(&__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params.InstanceID, sizeof(__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params.InstanceID), &InstanceID, sizeof(InstanceID));
+
+	this->ProcessEvent(uFn__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1, &__GFxData_MTXGarage_TA__HandleUnlockContainersResponse_0x1_Params, nullptr);
 };
 
 // Function TAGame.__GFxData_MTXGarage_TA__RevealContainerUnlocks_0x1.__GFxData_MTXGarage_TA__RevealContainerUnlocks_0x2
@@ -191677,6 +194010,32 @@ class UGFxData_UserSetting_TA* UGFxData_UserSetting_TA::AddEnumValue(int32_t InV
 	return AddEnumValue_Params.ReturnValue;
 };
 
+// Function TAGame.GFxData_UserSetting_TA.RemoveLocalizedValue
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UGFxData_UserSetting_TA* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  InValue                        (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
+// class FString                  InLabel                        (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
+
+class UGFxData_UserSetting_TA* UGFxData_UserSetting_TA::RemoveLocalizedValue(const class FString& InValue, const class FString& InLabel)
+{
+	static UFunction* uFnRemoveLocalizedValue = nullptr;
+
+	if (!uFnRemoveLocalizedValue)
+	{
+		uFnRemoveLocalizedValue = UFunction::FindFunction("Function TAGame.GFxData_UserSetting_TA.RemoveLocalizedValue");
+	}
+
+	UGFxData_UserSetting_TA_execRemoveLocalizedValue_Params RemoveLocalizedValue_Params;
+	memset(&RemoveLocalizedValue_Params, 0, sizeof(RemoveLocalizedValue_Params));
+	memcpy_s(&RemoveLocalizedValue_Params.InValue, sizeof(RemoveLocalizedValue_Params.InValue), &InValue, sizeof(InValue));
+	memcpy_s(&RemoveLocalizedValue_Params.InLabel, sizeof(RemoveLocalizedValue_Params.InLabel), &InLabel, sizeof(InLabel));
+
+	this->ProcessEvent(uFnRemoveLocalizedValue, &RemoveLocalizedValue_Params, nullptr);
+
+	return RemoveLocalizedValue_Params.ReturnValue;
+};
+
 // Function TAGame.GFxData_UserSetting_TA.AddLocalizedValue
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -199603,6 +201962,29 @@ void UGFxData_Settings_TA::ApplyViewportSettings(const class FString& Resolution
 	this->ProcessEvent(uFnApplyViewportSettings, &ApplyViewportSettings_Params, nullptr);
 };
 
+// Function TAGame.GFxData_Settings_TA.UpdateViewportSettingsOnScreenChange
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// int32_t                        NewWidth                       (CPF_Parm)
+// int32_t                        NewHeight                      (CPF_Parm)
+
+void UGFxData_Settings_TA::UpdateViewportSettingsOnScreenChange(int32_t NewWidth, int32_t NewHeight)
+{
+	static UFunction* uFnUpdateViewportSettingsOnScreenChange = nullptr;
+
+	if (!uFnUpdateViewportSettingsOnScreenChange)
+	{
+		uFnUpdateViewportSettingsOnScreenChange = UFunction::FindFunction("Function TAGame.GFxData_Settings_TA.UpdateViewportSettingsOnScreenChange");
+	}
+
+	UGFxData_Settings_TA_execUpdateViewportSettingsOnScreenChange_Params UpdateViewportSettingsOnScreenChange_Params;
+	memset(&UpdateViewportSettingsOnScreenChange_Params, 0, sizeof(UpdateViewportSettingsOnScreenChange_Params));
+	memcpy_s(&UpdateViewportSettingsOnScreenChange_Params.NewWidth, sizeof(UpdateViewportSettingsOnScreenChange_Params.NewWidth), &NewWidth, sizeof(NewWidth));
+	memcpy_s(&UpdateViewportSettingsOnScreenChange_Params.NewHeight, sizeof(UpdateViewportSettingsOnScreenChange_Params.NewHeight), &NewHeight, sizeof(NewHeight));
+
+	this->ProcessEvent(uFnUpdateViewportSettingsOnScreenChange, &UpdateViewportSettingsOnScreenChange_Params, nullptr);
+};
+
 // Function TAGame.GFxData_Settings_TA.SetRefreshRate
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -199695,6 +202077,53 @@ float UGFxData_Settings_TA::GetMaxFPS(class UGFxData_UserSetting_TA* UserSetting
 	this->ProcessEvent(uFnGetMaxFPS, &GetMaxFPS_Params, nullptr);
 
 	return GetMaxFPS_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_Settings_TA.SetQuickDropOpeningPref
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UGFxData_UserSetting_TA* UserSetting                    (CPF_Parm)
+// uint32_t                       bValue                         (CPF_Parm)
+
+void UGFxData_Settings_TA::SetQuickDropOpeningPref(class UGFxData_UserSetting_TA* UserSetting, bool bValue)
+{
+	static UFunction* uFnSetQuickDropOpeningPref = nullptr;
+
+	if (!uFnSetQuickDropOpeningPref)
+	{
+		uFnSetQuickDropOpeningPref = UFunction::FindFunction("Function TAGame.GFxData_Settings_TA.SetQuickDropOpeningPref");
+	}
+
+	UGFxData_Settings_TA_execSetQuickDropOpeningPref_Params SetQuickDropOpeningPref_Params;
+	memset(&SetQuickDropOpeningPref_Params, 0, sizeof(SetQuickDropOpeningPref_Params));
+	SetQuickDropOpeningPref_Params.UserSetting = UserSetting;
+	SetQuickDropOpeningPref_Params.bValue = bValue;
+
+	this->ProcessEvent(uFnSetQuickDropOpeningPref, &SetQuickDropOpeningPref_Params, nullptr);
+};
+
+// Function TAGame.GFxData_Settings_TA.GetQuickDropOpeningPref
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UGFxData_UserSetting_TA* UserSetting                    (CPF_Parm)
+
+bool UGFxData_Settings_TA::GetQuickDropOpeningPref(class UGFxData_UserSetting_TA* UserSetting)
+{
+	static UFunction* uFnGetQuickDropOpeningPref = nullptr;
+
+	if (!uFnGetQuickDropOpeningPref)
+	{
+		uFnGetQuickDropOpeningPref = UFunction::FindFunction("Function TAGame.GFxData_Settings_TA.GetQuickDropOpeningPref");
+	}
+
+	UGFxData_Settings_TA_execGetQuickDropOpeningPref_Params GetQuickDropOpeningPref_Params;
+	memset(&GetQuickDropOpeningPref_Params, 0, sizeof(GetQuickDropOpeningPref_Params));
+	GetQuickDropOpeningPref_Params.UserSetting = UserSetting;
+
+	this->ProcessEvent(uFnGetQuickDropOpeningPref, &GetQuickDropOpeningPref_Params, nullptr);
+
+	return GetQuickDropOpeningPref_Params.ReturnValue;
 };
 
 // Function TAGame.GFxData_Settings_TA.SetDisplayPartyLeaderLeftModal
@@ -202355,6 +204784,27 @@ void UOnlineStorageSyncManager_TA::NotifyWhenSyncComplete(const struct FScriptDe
 	this->ProcessEvent(uFnNotifyWhenSyncComplete, &NotifyWhenSyncComplete_Params, nullptr);
 };
 
+// Function TAGame.OnlineStorageSyncManager_TA.HandleStorageSyncFail
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UError*                  TaskError                      (CPF_Parm)
+
+void UOnlineStorageSyncManager_TA::HandleStorageSyncFail(class UError* TaskError)
+{
+	static UFunction* uFnHandleStorageSyncFail = nullptr;
+
+	if (!uFnHandleStorageSyncFail)
+	{
+		uFnHandleStorageSyncFail = UFunction::FindFunction("Function TAGame.OnlineStorageSyncManager_TA.HandleStorageSyncFail");
+	}
+
+	UOnlineStorageSyncManager_TA_execHandleStorageSyncFail_Params HandleStorageSyncFail_Params;
+	memset(&HandleStorageSyncFail_Params, 0, sizeof(HandleStorageSyncFail_Params));
+	HandleStorageSyncFail_Params.TaskError = TaskError;
+
+	this->ProcessEvent(uFnHandleStorageSyncFail, &HandleStorageSyncFail_Params, nullptr);
+};
+
 // Function TAGame.OnlineStorageSyncManager_TA.HandleStorageSyncSuccess
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -202514,6 +204964,27 @@ void UOnlineStorageSyncManager_TA::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function TAGame.OnlineStorageSyncManager_TA.EventSyncFailed
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UError*                  TaskError                      (CPF_Parm)
+
+void UOnlineStorageSyncManager_TA::EventSyncFailed(class UError* TaskError)
+{
+	static UFunction* uFnEventSyncFailed = nullptr;
+
+	if (!uFnEventSyncFailed)
+	{
+		uFnEventSyncFailed = UFunction::FindFunction("Function TAGame.OnlineStorageSyncManager_TA.EventSyncFailed");
+	}
+
+	UOnlineStorageSyncManager_TA_execEventSyncFailed_Params EventSyncFailed_Params;
+	memset(&EventSyncFailed_Params, 0, sizeof(EventSyncFailed_Params));
+	EventSyncFailed_Params.TaskError = TaskError;
+
+	this->ProcessEvent(uFnEventSyncFailed, &EventSyncFailed_Params, nullptr);
 };
 
 // Function TAGame.OnlineStorageSyncManager_TA.EventSyncComplete
@@ -207562,6 +210033,27 @@ void UGFxData_PrivateMatch_TA::HandleRegionsSynced(class UGFxData_Regions_TA* Re
 	this->ProcessEvent(uFnHandleRegionsSynced, &HandleRegionsSynced_Params, nullptr);
 };
 
+// Function TAGame.GFxData_PrivateMatch_TA.SetMatchCreatorAdminEnabled
+// [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
+// Parameter Info:
+// uint32_t                       bValue                         (CPF_Parm)
+
+void UGFxData_PrivateMatch_TA::SetMatchCreatorAdminEnabled(bool bValue)
+{
+	static UFunction* uFnSetMatchCreatorAdminEnabled = nullptr;
+
+	if (!uFnSetMatchCreatorAdminEnabled)
+	{
+		uFnSetMatchCreatorAdminEnabled = UFunction::FindFunction("Function TAGame.GFxData_PrivateMatch_TA.SetMatchCreatorAdminEnabled");
+	}
+
+	UGFxData_PrivateMatch_TA_execSetMatchCreatorAdminEnabled_Params SetMatchCreatorAdminEnabled_Params;
+	memset(&SetMatchCreatorAdminEnabled_Params, 0, sizeof(SetMatchCreatorAdminEnabled_Params));
+	SetMatchCreatorAdminEnabled_Params.bValue = bValue;
+
+	this->ProcessEvent(uFnSetMatchCreatorAdminEnabled, &SetMatchCreatorAdminEnabled_Params, nullptr);
+};
+
 // Function TAGame.GFxData_PrivateMatch_TA.SetPublic
 // [0x08820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults | FUNC_K2Override)
 // Parameter Info:
@@ -207754,6 +210246,27 @@ struct FCustomMatchSettings UGFxData_PrivateMatch_TA::GetCustomMatchSettings()
 	this->ProcessEvent(uFnGetCustomMatchSettings, &GetCustomMatchSettings_Params, nullptr);
 
 	return GetCustomMatchSettings_Params.ReturnValue;
+};
+
+// Function TAGame.GFxData_PrivateMatch_TA.HandleSettingsSave
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UPrivateMatchSettingsSave_TA* SettingsObject                 (CPF_Parm)
+
+void UGFxData_PrivateMatch_TA::HandleSettingsSave(class UPrivateMatchSettingsSave_TA* SettingsObject)
+{
+	static UFunction* uFnHandleSettingsSave = nullptr;
+
+	if (!uFnHandleSettingsSave)
+	{
+		uFnHandleSettingsSave = UFunction::FindFunction("Function TAGame.GFxData_PrivateMatch_TA.HandleSettingsSave");
+	}
+
+	UGFxData_PrivateMatch_TA_execHandleSettingsSave_Params HandleSettingsSave_Params;
+	memset(&HandleSettingsSave_Params, 0, sizeof(HandleSettingsSave_Params));
+	HandleSettingsSave_Params.SettingsObject = SettingsObject;
+
+	this->ProcessEvent(uFnHandleSettingsSave, &HandleSettingsSave_Params, nullptr);
 };
 
 // Function TAGame.GFxData_PrivateMatch_TA.OnShellSet
@@ -210564,6 +213077,48 @@ bool UGFxData_Training_TA::__GFxData_Training_TA__UpdateDataFromProgress_0x1(con
 	return __GFxData_Training_TA__UpdateDataFromProgress_0x1_Params.ReturnValue;
 };
 
+// Function TAGame.GFxData_Training_TA.__GFxData_Training_TA__PlayFreeplay_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UGFxModal_X*             instance                       (CPF_Parm)
+
+void UGFxData_Training_TA::__GFxData_Training_TA__PlayFreeplay_0x2(class UGFxModal_X* instance)
+{
+	static UFunction* uFn__GFxData_Training_TA__PlayFreeplay_0x2 = nullptr;
+
+	if (!uFn__GFxData_Training_TA__PlayFreeplay_0x2)
+	{
+		uFn__GFxData_Training_TA__PlayFreeplay_0x2 = UFunction::FindFunction("Function TAGame.GFxData_Training_TA.__GFxData_Training_TA__PlayFreeplay_0x2");
+	}
+
+	UGFxData_Training_TA_exec__GFxData_Training_TA__PlayFreeplay_0x2_Params __GFxData_Training_TA__PlayFreeplay_0x2_Params;
+	memset(&__GFxData_Training_TA__PlayFreeplay_0x2_Params, 0, sizeof(__GFxData_Training_TA__PlayFreeplay_0x2_Params));
+	__GFxData_Training_TA__PlayFreeplay_0x2_Params.instance = instance;
+
+	this->ProcessEvent(uFn__GFxData_Training_TA__PlayFreeplay_0x2, &__GFxData_Training_TA__PlayFreeplay_0x2_Params, nullptr);
+};
+
+// Function TAGame.GFxData_Training_TA.__GFxData_Training_TA__PlayFreeplay_0x1
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// class UGFxModal_X*             instance                       (CPF_Parm)
+
+void UGFxData_Training_TA::__GFxData_Training_TA__PlayFreeplay_0x1(class UGFxModal_X* instance)
+{
+	static UFunction* uFn__GFxData_Training_TA__PlayFreeplay_0x1 = nullptr;
+
+	if (!uFn__GFxData_Training_TA__PlayFreeplay_0x1)
+	{
+		uFn__GFxData_Training_TA__PlayFreeplay_0x1 = UFunction::FindFunction("Function TAGame.GFxData_Training_TA.__GFxData_Training_TA__PlayFreeplay_0x1");
+	}
+
+	UGFxData_Training_TA_exec__GFxData_Training_TA__PlayFreeplay_0x1_Params __GFxData_Training_TA__PlayFreeplay_0x1_Params;
+	memset(&__GFxData_Training_TA__PlayFreeplay_0x1_Params, 0, sizeof(__GFxData_Training_TA__PlayFreeplay_0x1_Params));
+	__GFxData_Training_TA__PlayFreeplay_0x1_Params.instance = instance;
+
+	this->ProcessEvent(uFn__GFxData_Training_TA__PlayFreeplay_0x1, &__GFxData_Training_TA__PlayFreeplay_0x1_Params, nullptr);
+};
+
 // Function TAGame.GFxData_Training_TA.CanUseTrainingUIV2
 // [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
 // Parameter Info:
@@ -210867,6 +213422,27 @@ void UGFxData_Training_TA::PlayFreeplayMap(const class FName& Map)
 	this->ProcessEvent(uFnPlayFreeplayMap, &PlayFreeplayMap_Params, nullptr);
 };
 
+// Function TAGame.GFxData_Training_TA.InternalPlayFreeplay
+// [0x00044003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Private)
+// Parameter Info:
+// uint32_t                       bDisableConfirmation           (CPF_OptionalParm | CPF_Parm)
+
+void UGFxData_Training_TA::InternalPlayFreeplay(bool bDisableConfirmation)
+{
+	static UFunction* uFnInternalPlayFreeplay = nullptr;
+
+	if (!uFnInternalPlayFreeplay)
+	{
+		uFnInternalPlayFreeplay = UFunction::FindFunction("Function TAGame.GFxData_Training_TA.InternalPlayFreeplay");
+	}
+
+	UGFxData_Training_TA_execInternalPlayFreeplay_Params InternalPlayFreeplay_Params;
+	memset(&InternalPlayFreeplay_Params, 0, sizeof(InternalPlayFreeplay_Params));
+	InternalPlayFreeplay_Params.bDisableConfirmation = bDisableConfirmation;
+
+	this->ProcessEvent(uFnInternalPlayFreeplay, &InternalPlayFreeplay_Params, nullptr);
+};
+
 // Function TAGame.GFxData_Training_TA.PlayFreeplay
 // [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
 // Parameter Info:
@@ -210884,6 +213460,28 @@ void UGFxData_Training_TA::PlayFreeplay()
 	memset(&PlayFreeplay_Params, 0, sizeof(PlayFreeplay_Params));
 
 	this->ProcessEvent(uFnPlayFreeplay, &PlayFreeplay_Params, nullptr);
+};
+
+// Function TAGame.GFxData_Training_TA.ShouldShowFastFreeplayConfirmation
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UGFxData_Training_TA::ShouldShowFastFreeplayConfirmation()
+{
+	static UFunction* uFnShouldShowFastFreeplayConfirmation = nullptr;
+
+	if (!uFnShouldShowFastFreeplayConfirmation)
+	{
+		uFnShouldShowFastFreeplayConfirmation = UFunction::FindFunction("Function TAGame.GFxData_Training_TA.ShouldShowFastFreeplayConfirmation");
+	}
+
+	UGFxData_Training_TA_execShouldShowFastFreeplayConfirmation_Params ShouldShowFastFreeplayConfirmation_Params;
+	memset(&ShouldShowFastFreeplayConfirmation_Params, 0, sizeof(ShouldShowFastFreeplayConfirmation_Params));
+
+	this->ProcessEvent(uFnShouldShowFastFreeplayConfirmation, &ShouldShowFastFreeplayConfirmation_Params, nullptr);
+
+	return ShouldShowFastFreeplayConfirmation_Params.ReturnValue;
 };
 
 // Function TAGame.GFxData_Training_TA.PlayTraining
@@ -215858,10 +218456,11 @@ bool UMenuTreeNode_Playlist_TA::HandleLockForGatedPlaylists()
 // Function TAGame.MenuTreeNode_Playlist_TA.SetGatedPlaylistsInfo
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // int32_t                        RequiredLevel                  (CPF_Parm)
 // class TArray<int32_t>          RequiredChallenges             (CPF_Parm | CPF_NeedCtorLink)
 
-void UMenuTreeNode_Playlist_TA::SetGatedPlaylistsInfo(int32_t RequiredLevel, const class TArray<int32_t>& RequiredChallenges)
+bool UMenuTreeNode_Playlist_TA::SetGatedPlaylistsInfo(int32_t RequiredLevel, const class TArray<int32_t>& RequiredChallenges)
 {
 	static UFunction* uFnSetGatedPlaylistsInfo = nullptr;
 
@@ -215876,6 +218475,8 @@ void UMenuTreeNode_Playlist_TA::SetGatedPlaylistsInfo(int32_t RequiredLevel, con
 	memcpy_s(&SetGatedPlaylistsInfo_Params.RequiredChallenges, sizeof(SetGatedPlaylistsInfo_Params.RequiredChallenges), &RequiredChallenges, sizeof(RequiredChallenges));
 
 	this->ProcessEvent(uFnSetGatedPlaylistsInfo, &SetGatedPlaylistsInfo_Params, nullptr);
+
+	return SetGatedPlaylistsInfo_Params.ReturnValue;
 };
 
 // Function TAGame.MenuTreeNode_Playlist_TA.UpdateLock
@@ -216286,6 +218887,27 @@ void UMenuTreePlaylistManager_TA::Init(class UMenuTreeBuilder_TA* InMenuTreeBuil
 	Init_Params.InMenuTreeBuilder = InMenuTreeBuilder;
 
 	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
+// Function TAGame.MenuTreePlaylistManager_TA.EventChallengesRequiredUpdated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class TArray<int32_t>          ChallengesRequired             (CPF_Parm | CPF_NeedCtorLink)
+
+void UMenuTreePlaylistManager_TA::EventChallengesRequiredUpdated(const class TArray<int32_t>& ChallengesRequired)
+{
+	static UFunction* uFnEventChallengesRequiredUpdated = nullptr;
+
+	if (!uFnEventChallengesRequiredUpdated)
+	{
+		uFnEventChallengesRequiredUpdated = UFunction::FindFunction("Function TAGame.MenuTreePlaylistManager_TA.EventChallengesRequiredUpdated");
+	}
+
+	UMenuTreePlaylistManager_TA_execEventChallengesRequiredUpdated_Params EventChallengesRequiredUpdated_Params;
+	memset(&EventChallengesRequiredUpdated_Params, 0, sizeof(EventChallengesRequiredUpdated_Params));
+	memcpy_s(&EventChallengesRequiredUpdated_Params.ChallengesRequired, sizeof(EventChallengesRequiredUpdated_Params.ChallengesRequired), &ChallengesRequired, sizeof(ChallengesRequired));
+
+	this->ProcessEvent(uFnEventChallengesRequiredUpdated, &EventChallengesRequiredUpdated_Params, nullptr);
 };
 
 // Function TAGame.MenuTreePlaylistManager_TA.EventActivePlaylistsUpdated
@@ -226126,7 +228748,7 @@ void URocketPass_TA::HandleAllRequestsCompleted(class UError* instance)
 };
 
 // Function TAGame.RocketPass_TA.RequestAllInfo
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 
 void URocketPass_TA::RequestAllInfo()
@@ -226233,8 +228855,9 @@ void URocketPass_TA::HandleEventConfigChanged()
 // Function TAGame.RocketPass_TA.HandlePsyNetLogout
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
+// class UOnlinePlayer_X*         Player                         (CPF_Parm)
 
-void URocketPass_TA::HandlePsyNetLogout()
+void URocketPass_TA::HandlePsyNetLogout(class UOnlinePlayer_X* Player)
 {
 	static UFunction* uFnHandlePsyNetLogout = nullptr;
 
@@ -226245,6 +228868,7 @@ void URocketPass_TA::HandlePsyNetLogout()
 
 	URocketPass_TA_execHandlePsyNetLogout_Params HandlePsyNetLogout_Params;
 	memset(&HandlePsyNetLogout_Params, 0, sizeof(HandlePsyNetLogout_Params));
+	HandlePsyNetLogout_Params.Player = Player;
 
 	this->ProcessEvent(uFnHandlePsyNetLogout, &HandlePsyNetLogout_Params, nullptr);
 };
@@ -226252,8 +228876,9 @@ void URocketPass_TA::HandlePsyNetLogout()
 // Function TAGame.RocketPass_TA.HandlePsyNetLogin
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
+// class UOnlinePlayer_X*         Player                         (CPF_Parm)
 
-void URocketPass_TA::HandlePsyNetLogin()
+void URocketPass_TA::HandlePsyNetLogin(class UOnlinePlayer_X* Player)
 {
 	static UFunction* uFnHandlePsyNetLogin = nullptr;
 
@@ -226264,69 +228889,87 @@ void URocketPass_TA::HandlePsyNetLogin()
 
 	URocketPass_TA_execHandlePsyNetLogin_Params HandlePsyNetLogin_Params;
 	memset(&HandlePsyNetLogin_Params, 0, sizeof(HandlePsyNetLogin_Params));
+	HandlePsyNetLogin_Params.Player = Player;
 
 	this->ProcessEvent(uFnHandlePsyNetLogin, &HandlePsyNetLogin_Params, nullptr);
 };
 
-// Function TAGame.RocketPass_TA.Construct
-// [0x400020802] (FUNC_Defined | FUNC_Event | FUNC_Public)
+// Function TAGame.RocketPass_TA.HandleOnlineGameSet
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 
-void URocketPass_TA::eventConstruct()
+void URocketPass_TA::HandleOnlineGameSet()
 {
-	static UFunction* uFnConstruct = nullptr;
+	static UFunction* uFnHandleOnlineGameSet = nullptr;
 
-	if (!uFnConstruct)
+	if (!uFnHandleOnlineGameSet)
 	{
-		uFnConstruct = UFunction::FindFunction("Function TAGame.RocketPass_TA.Construct");
+		uFnHandleOnlineGameSet = UFunction::FindFunction("Function TAGame.RocketPass_TA.HandleOnlineGameSet");
 	}
 
-	URocketPass_TA_eventConstruct_Params Construct_Params;
-	memset(&Construct_Params, 0, sizeof(Construct_Params));
+	URocketPass_TA_execHandleOnlineGameSet_Params HandleOnlineGameSet_Params;
+	memset(&HandleOnlineGameSet_Params, 0, sizeof(HandleOnlineGameSet_Params));
 
-	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+	this->ProcessEvent(uFnHandleOnlineGameSet, &HandleOnlineGameSet_Params, nullptr);
 };
 
-// Function TAGame.RocketPass_TA.EventProTierPageSet
+// Function TAGame.RocketPass_TA.EventInfoUpToDate
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
-// int32_t                        InNumProTierPages              (CPF_Parm)
+// class URocketPass_TA*          RocketPass                     (CPF_Parm)
 
-void URocketPass_TA::EventProTierPageSet(int32_t InNumProTierPages)
+void URocketPass_TA::EventInfoUpToDate(class URocketPass_TA* RocketPass)
 {
-	static UFunction* uFnEventProTierPageSet = nullptr;
+	static UFunction* uFnEventInfoUpToDate = nullptr;
 
-	if (!uFnEventProTierPageSet)
+	if (!uFnEventInfoUpToDate)
 	{
-		uFnEventProTierPageSet = UFunction::FindFunction("Function TAGame.RocketPass_TA.EventProTierPageSet");
+		uFnEventInfoUpToDate = UFunction::FindFunction("Function TAGame.RocketPass_TA.EventInfoUpToDate");
 	}
 
-	URocketPass_TA_execEventProTierPageSet_Params EventProTierPageSet_Params;
-	memset(&EventProTierPageSet_Params, 0, sizeof(EventProTierPageSet_Params));
-	memcpy_s(&EventProTierPageSet_Params.InNumProTierPages, sizeof(EventProTierPageSet_Params.InNumProTierPages), &InNumProTierPages, sizeof(InNumProTierPages));
+	URocketPass_TA_execEventInfoUpToDate_Params EventInfoUpToDate_Params;
+	memset(&EventInfoUpToDate_Params, 0, sizeof(EventInfoUpToDate_Params));
+	EventInfoUpToDate_Params.RocketPass = RocketPass;
 
-	this->ProcessEvent(uFnEventProTierPageSet, &EventProTierPageSet_Params, nullptr);
+	this->ProcessEvent(uFnEventInfoUpToDate, &EventInfoUpToDate_Params, nullptr);
 };
 
-// Function TAGame.RocketPass_TA.EventPageAdded
+// Function TAGame.RocketPass_TA.EventUpdateRewardsLockState
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
-// int32_t                        InNumPages                     (CPF_Parm)
 
-void URocketPass_TA::EventPageAdded(int32_t InNumPages)
+void URocketPass_TA::EventUpdateRewardsLockState()
 {
-	static UFunction* uFnEventPageAdded = nullptr;
+	static UFunction* uFnEventUpdateRewardsLockState = nullptr;
 
-	if (!uFnEventPageAdded)
+	if (!uFnEventUpdateRewardsLockState)
 	{
-		uFnEventPageAdded = UFunction::FindFunction("Function TAGame.RocketPass_TA.EventPageAdded");
+		uFnEventUpdateRewardsLockState = UFunction::FindFunction("Function TAGame.RocketPass_TA.EventUpdateRewardsLockState");
 	}
 
-	URocketPass_TA_execEventPageAdded_Params EventPageAdded_Params;
-	memset(&EventPageAdded_Params, 0, sizeof(EventPageAdded_Params));
-	memcpy_s(&EventPageAdded_Params.InNumPages, sizeof(EventPageAdded_Params.InNumPages), &InNumPages, sizeof(InNumPages));
+	URocketPass_TA_execEventUpdateRewardsLockState_Params EventUpdateRewardsLockState_Params;
+	memset(&EventUpdateRewardsLockState_Params, 0, sizeof(EventUpdateRewardsLockState_Params));
 
-	this->ProcessEvent(uFnEventPageAdded, &EventPageAdded_Params, nullptr);
+	this->ProcessEvent(uFnEventUpdateRewardsLockState, &EventUpdateRewardsLockState_Params, nullptr);
+};
+
+// Function TAGame.RocketPass_TA.EventPurchasedPremium
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+
+void URocketPass_TA::EventPurchasedPremium()
+{
+	static UFunction* uFnEventPurchasedPremium = nullptr;
+
+	if (!uFnEventPurchasedPremium)
+	{
+		uFnEventPurchasedPremium = UFunction::FindFunction("Function TAGame.RocketPass_TA.EventPurchasedPremium");
+	}
+
+	URocketPass_TA_execEventPurchasedPremium_Params EventPurchasedPremium_Params;
+	memset(&EventPurchasedPremium_Params, 0, sizeof(EventPurchasedPremium_Params));
+
+	this->ProcessEvent(uFnEventPurchasedPremium, &EventPurchasedPremium_Params, nullptr);
 };
 
 // Function TAGame.RocketPass_TA.EventTiersClaimed
@@ -226741,25 +229384,6 @@ class URocketPassMetrics_TA* UGFxData_RocketPass_TA::GetMetricObject()
 	return GetMetricObject_Params.ReturnValue;
 };
 
-// Function TAGame.GFxData_RocketPass_TA.OnShowSeasonEndMessage
-// [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
-// Parameter Info:
-
-void UGFxData_RocketPass_TA::OnShowSeasonEndMessage()
-{
-	static UFunction* uFnOnShowSeasonEndMessage = nullptr;
-
-	if (!uFnOnShowSeasonEndMessage)
-	{
-		uFnOnShowSeasonEndMessage = UFunction::FindFunction("Function TAGame.GFxData_RocketPass_TA.OnShowSeasonEndMessage");
-	}
-
-	UGFxData_RocketPass_TA_execOnShowSeasonEndMessage_Params OnShowSeasonEndMessage_Params;
-	memset(&OnShowSeasonEndMessage_Params, 0, sizeof(OnShowSeasonEndMessage_Params));
-
-	this->ProcessEvent(uFnOnShowSeasonEndMessage, &OnShowSeasonEndMessage_Params, nullptr);
-};
-
 // Function TAGame.GFxData_RocketPass_TA.HandleError
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -227031,7 +229655,7 @@ void UGFxData_RocketPass_TA::OpenPremium()
 };
 
 // Function TAGame.GFxData_RocketPass_TA.HandleRocketPassConfigChange
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
 // Parameter Info:
 
 void UGFxData_RocketPass_TA::HandleRocketPassConfigChange()
@@ -227096,11 +229720,10 @@ void UGFxData_RocketPass_TA::HandleTopMenuChanged(const class FName& PrevMenu, c
 };
 
 // Function TAGame.GFxData_RocketPass_TA.HandleRocketPassChange
-// [0x20080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_EditorOnly)
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
 // Parameter Info:
-// class URocketPass_TA*          InRocketPass                   (CPF_Parm)
 
-void UGFxData_RocketPass_TA::HandleRocketPassChange(class URocketPass_TA* InRocketPass)
+void UGFxData_RocketPass_TA::HandleRocketPassChange()
 {
 	static UFunction* uFnHandleRocketPassChange = nullptr;
 
@@ -227111,7 +229734,6 @@ void UGFxData_RocketPass_TA::HandleRocketPassChange(class URocketPass_TA* InRock
 
 	UGFxData_RocketPass_TA_execHandleRocketPassChange_Params HandleRocketPassChange_Params;
 	memset(&HandleRocketPassChange_Params, 0, sizeof(HandleRocketPassChange_Params));
-	HandleRocketPassChange_Params.InRocketPass = InRocketPass;
 
 	this->ProcessEvent(uFnHandleRocketPassChange, &HandleRocketPassChange_Params, nullptr);
 };
@@ -227133,50 +229755,6 @@ void UGFxData_RocketPass_TA::eventOnRemoved()
 	memset(&OnRemoved_Params, 0, sizeof(OnRemoved_Params));
 
 	this->ProcessEvent(uFnOnRemoved, &OnRemoved_Params, nullptr);
-};
-
-// Function TAGame.GFxData_RocketPass_TA.HandleUISaveDataSynced
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
-// Parameter Info:
-
-void UGFxData_RocketPass_TA::HandleUISaveDataSynced()
-{
-	static UFunction* uFnHandleUISaveDataSynced = nullptr;
-
-	if (!uFnHandleUISaveDataSynced)
-	{
-		uFnHandleUISaveDataSynced = UFunction::FindFunction("Function TAGame.GFxData_RocketPass_TA.HandleUISaveDataSynced");
-	}
-
-	UGFxData_RocketPass_TA_execHandleUISaveDataSynced_Params HandleUISaveDataSynced_Params;
-	memset(&HandleUISaveDataSynced_Params, 0, sizeof(HandleUISaveDataSynced_Params));
-
-	this->ProcessEvent(uFnHandleUISaveDataSynced, &HandleUISaveDataSynced_Params, nullptr);
-};
-
-// Function TAGame.GFxData_RocketPass_TA.HandleSaveManagerLoaded
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
-// Parameter Info:
-// class USaveGameManager_TA*     Manager                        (CPF_Parm)
-// class USaveData_TA*            SaveData                       (CPF_Parm)
-// class UError*                  Error                          (CPF_Parm)
-
-void UGFxData_RocketPass_TA::HandleSaveManagerLoaded(class USaveGameManager_TA* Manager, class USaveData_TA* SaveData, class UError* Error)
-{
-	static UFunction* uFnHandleSaveManagerLoaded = nullptr;
-
-	if (!uFnHandleSaveManagerLoaded)
-	{
-		uFnHandleSaveManagerLoaded = UFunction::FindFunction("Function TAGame.GFxData_RocketPass_TA.HandleSaveManagerLoaded");
-	}
-
-	UGFxData_RocketPass_TA_execHandleSaveManagerLoaded_Params HandleSaveManagerLoaded_Params;
-	memset(&HandleSaveManagerLoaded_Params, 0, sizeof(HandleSaveManagerLoaded_Params));
-	HandleSaveManagerLoaded_Params.Manager = Manager;
-	HandleSaveManagerLoaded_Params.SaveData = SaveData;
-	HandleSaveManagerLoaded_Params.Error = Error;
-
-	this->ProcessEvent(uFnHandleSaveManagerLoaded, &HandleSaveManagerLoaded_Params, nullptr);
 };
 
 // Function TAGame.GFxData_RocketPass_TA.OnShellSet
@@ -235115,6 +237693,28 @@ class UError* UTextModerationManager_TA::ConvertError(class UEOS_ErrorResponse* 
 	return ConvertError_Params.ReturnValue;
 };
 
+// Function TAGame.TextModerationManager_TA.GetMetrics
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class UTextModerationMetrics_TA* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+
+class UTextModerationMetrics_TA* UTextModerationManager_TA::GetMetrics()
+{
+	static UFunction* uFnGetMetrics = nullptr;
+
+	if (!uFnGetMetrics)
+	{
+		uFnGetMetrics = UFunction::FindFunction("Function TAGame.TextModerationManager_TA.GetMetrics");
+	}
+
+	UTextModerationManager_TA_execGetMetrics_Params GetMetrics_Params;
+	memset(&GetMetrics_Params, 0, sizeof(GetMetrics_Params));
+
+	UTextModerationManager_TA::StaticClass()->ProcessEvent(uFnGetMetrics, &GetMetrics_Params, nullptr);
+
+	return GetMetrics_Params.ReturnValue;
+};
+
 // Function TAGame.TextModerationManager_TA.HandleCryptoKeyRegistered
 // [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
@@ -235485,6 +238085,149 @@ bool U__TextModerationManager_TA__OnKeyFailedToGenerate_0x1::__TextModerationMan
 	this->ProcessEvent(uFn__TextModerationManager_TA__OnKeyFailedToGenerate_0x1, &__TextModerationManager_TA__OnKeyFailedToGenerate_0x1_Params, nullptr);
 
 	return __TextModerationManager_TA__OnKeyFailedToGenerate_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.TextModerationMetrics_TA.QuickChatUsed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  QuickChat                      (CPF_Parm | CPF_NeedCtorLink)
+
+void UTextModerationMetrics_TA::QuickChatUsed(const class FString& QuickChat)
+{
+	static UFunction* uFnQuickChatUsed = nullptr;
+
+	if (!uFnQuickChatUsed)
+	{
+		uFnQuickChatUsed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.QuickChatUsed");
+	}
+
+	UTextModerationMetrics_TA_execQuickChatUsed_Params QuickChatUsed_Params;
+	memset(&QuickChatUsed_Params, 0, sizeof(QuickChatUsed_Params));
+	memcpy_s(&QuickChatUsed_Params.QuickChat, sizeof(QuickChatUsed_Params.QuickChat), &QuickChat, sizeof(QuickChat));
+
+	this->ProcessEvent(uFnQuickChatUsed, &QuickChatUsed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.TextChatFailed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// EChatChannel                   ChatChannel                    (CPF_Parm)
+
+void UTextModerationMetrics_TA::TextChatFailed(EChatChannel ChatChannel)
+{
+	static UFunction* uFnTextChatFailed = nullptr;
+
+	if (!uFnTextChatFailed)
+	{
+		uFnTextChatFailed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.TextChatFailed");
+	}
+
+	UTextModerationMetrics_TA_execTextChatFailed_Params TextChatFailed_Params;
+	memset(&TextChatFailed_Params, 0, sizeof(TextChatFailed_Params));
+	memcpy_s(&TextChatFailed_Params.ChatChannel, sizeof(TextChatFailed_Params.ChatChannel), &ChatChannel, sizeof(ChatChannel));
+
+	this->ProcessEvent(uFnTextChatFailed, &TextChatFailed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.TextChatUsed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// EChatChannel                   ChatChannel                    (CPF_Parm)
+
+void UTextModerationMetrics_TA::TextChatUsed(EChatChannel ChatChannel)
+{
+	static UFunction* uFnTextChatUsed = nullptr;
+
+	if (!uFnTextChatUsed)
+	{
+		uFnTextChatUsed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.TextChatUsed");
+	}
+
+	UTextModerationMetrics_TA_execTextChatUsed_Params TextChatUsed_Params;
+	memset(&TextChatUsed_Params, 0, sizeof(TextChatUsed_Params));
+	memcpy_s(&TextChatUsed_Params.ChatChannel, sizeof(TextChatUsed_Params.ChatChannel), &ChatChannel, sizeof(ChatChannel));
+
+	this->ProcessEvent(uFnTextChatUsed, &TextChatUsed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.MessageValidationFailed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  SenderEpicId                   (CPF_Parm | CPF_NeedCtorLink)
+// EChatValidationFailureReason   Reason                         (CPF_Parm)
+
+void UTextModerationMetrics_TA::MessageValidationFailed(const class FString& SenderEpicId, EChatValidationFailureReason Reason)
+{
+	static UFunction* uFnMessageValidationFailed = nullptr;
+
+	if (!uFnMessageValidationFailed)
+	{
+		uFnMessageValidationFailed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.MessageValidationFailed");
+	}
+
+	UTextModerationMetrics_TA_execMessageValidationFailed_Params MessageValidationFailed_Params;
+	memset(&MessageValidationFailed_Params, 0, sizeof(MessageValidationFailed_Params));
+	memcpy_s(&MessageValidationFailed_Params.SenderEpicId, sizeof(MessageValidationFailed_Params.SenderEpicId), &SenderEpicId, sizeof(SenderEpicId));
+	memcpy_s(&MessageValidationFailed_Params.Reason, sizeof(MessageValidationFailed_Params.Reason), &Reason, sizeof(Reason));
+
+	this->ProcessEvent(uFnMessageValidationFailed, &MessageValidationFailed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.MessageSigningFailed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UTextModerationMetrics_TA::MessageSigningFailed()
+{
+	static UFunction* uFnMessageSigningFailed = nullptr;
+
+	if (!uFnMessageSigningFailed)
+	{
+		uFnMessageSigningFailed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.MessageSigningFailed");
+	}
+
+	UTextModerationMetrics_TA_execMessageSigningFailed_Params MessageSigningFailed_Params;
+	memset(&MessageSigningFailed_Params, 0, sizeof(MessageSigningFailed_Params));
+
+	this->ProcessEvent(uFnMessageSigningFailed, &MessageSigningFailed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.KeyRegistrationFailed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UTextModerationMetrics_TA::KeyRegistrationFailed()
+{
+	static UFunction* uFnKeyRegistrationFailed = nullptr;
+
+	if (!uFnKeyRegistrationFailed)
+	{
+		uFnKeyRegistrationFailed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.KeyRegistrationFailed");
+	}
+
+	UTextModerationMetrics_TA_execKeyRegistrationFailed_Params KeyRegistrationFailed_Params;
+	memset(&KeyRegistrationFailed_Params, 0, sizeof(KeyRegistrationFailed_Params));
+
+	this->ProcessEvent(uFnKeyRegistrationFailed, &KeyRegistrationFailed_Params, nullptr);
+};
+
+// Function TAGame.TextModerationMetrics_TA.CryptoKeyGenerationFailed
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UTextModerationMetrics_TA::CryptoKeyGenerationFailed()
+{
+	static UFunction* uFnCryptoKeyGenerationFailed = nullptr;
+
+	if (!uFnCryptoKeyGenerationFailed)
+	{
+		uFnCryptoKeyGenerationFailed = UFunction::FindFunction("Function TAGame.TextModerationMetrics_TA.CryptoKeyGenerationFailed");
+	}
+
+	UTextModerationMetrics_TA_execCryptoKeyGenerationFailed_Params CryptoKeyGenerationFailed_Params;
+	memset(&CryptoKeyGenerationFailed_Params, 0, sizeof(CryptoKeyGenerationFailed_Params));
+
+	this->ProcessEvent(uFnCryptoKeyGenerationFailed, &CryptoKeyGenerationFailed_Params, nullptr);
 };
 
 // Function TAGame.__TextModerationManager_TA__PreFilterMessage_0x1.__TextModerationManager_TA__PreFilterMessage_0x1
@@ -247459,9 +250202,10 @@ void UAntiAddiction_TA::eventConstruct()
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UApplyVelocityHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UApplyVelocityHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -247475,6 +250219,7 @@ void UApplyVelocityHitHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const stru
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -255126,6 +257871,29 @@ void ABall_Spawner_TA::SpawnFX(class AGameEvent_Soccar_TA* GameEvent)
 	SpawnFX_Params.GameEvent = GameEvent;
 
 	this->ProcessEvent(uFnSpawnFX, &SpawnFX_Params, nullptr);
+};
+
+// Function TAGame.Ball_Spawner_TA.HandleBallAdded
+// [0x00080103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Protected)
+// Parameter Info:
+// class AGameEvent_Soccar_TA*    GameEvent                      (CPF_Parm)
+// class ABall_TA*                Ball                           (CPF_Parm)
+
+void ABall_Spawner_TA::HandleBallAdded(class AGameEvent_Soccar_TA* GameEvent, class ABall_TA* Ball)
+{
+	static UFunction* uFnHandleBallAdded = nullptr;
+
+	if (!uFnHandleBallAdded)
+	{
+		uFnHandleBallAdded = UFunction::FindFunction("Function TAGame.Ball_Spawner_TA.HandleBallAdded");
+	}
+
+	ABall_Spawner_TA_execHandleBallAdded_Params HandleBallAdded_Params;
+	memset(&HandleBallAdded_Params, 0, sizeof(HandleBallAdded_Params));
+	HandleBallAdded_Params.GameEvent = GameEvent;
+	HandleBallAdded_Params.Ball = Ball;
+
+	this->ProcessEvent(uFnHandleBallAdded, &HandleBallAdded_Params, nullptr);
 };
 
 // Function TAGame.Ball_Spawner_TA.HandleGameStateChanged
@@ -264885,7 +267653,7 @@ void UPremiumGaragePreviewSet_TA::SetCarRotations(int32_t Rotation, bool bGamepa
 };
 
 // Function TAGame.PremiumGaragePreviewSet_TA.ExitPremiumGarage
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
 
 void UPremiumGaragePreviewSet_TA::ExitPremiumGarage()
@@ -265037,27 +267805,6 @@ void UPremiumGaragePreviewSet_TA::SetPreviewProduct(int32_t SlotIdx, int32_t Pro
 	this->ProcessEvent(uFnSetPreviewProduct, &SetPreviewProduct_Params, nullptr);
 };
 
-// Function TAGame.PremiumGaragePreviewSet_TA.SetOldLoadout
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
-// Parameter Info:
-// struct FLoadoutData            Loadout                        (CPF_Parm | CPF_NeedCtorLink)
-
-void UPremiumGaragePreviewSet_TA::SetOldLoadout(const struct FLoadoutData& Loadout)
-{
-	static UFunction* uFnSetOldLoadout = nullptr;
-
-	if (!uFnSetOldLoadout)
-	{
-		uFnSetOldLoadout = UFunction::FindFunction("Function TAGame.PremiumGaragePreviewSet_TA.SetOldLoadout");
-	}
-
-	UPremiumGaragePreviewSet_TA_execSetOldLoadout_Params SetOldLoadout_Params;
-	memset(&SetOldLoadout_Params, 0, sizeof(SetOldLoadout_Params));
-	memcpy_s(&SetOldLoadout_Params.Loadout, sizeof(SetOldLoadout_Params.Loadout), &Loadout, sizeof(Loadout));
-
-	this->ProcessEvent(uFnSetOldLoadout, &SetOldLoadout_Params, nullptr);
-};
-
 // Function TAGame.PremiumGaragePreviewSet_TA.HandleCarSwapComplete
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -265122,7 +267869,7 @@ void UPremiumGaragePreviewSet_TA::SwapPremiumCarTo(class UDLCPack_TA* DLCPack, i
 };
 
 // Function TAGame.PremiumGaragePreviewSet_TA.HandleCarPreviewActorAdded
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// [0x00080002] (FUNC_Defined | FUNC_Protected)
 // Parameter Info:
 // class UGameShare_TA*           GameShare                      (CPF_Parm)
 // class ACarPreviewActor_TA*     PreviewActor                   (CPF_Parm)
@@ -269055,9 +271802,10 @@ void UNameplateComponentCar_TA::eventAttached()
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UDemoExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UDemoExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -269071,6 +271819,7 @@ void UDemoExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct 
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -271279,6 +274028,27 @@ void UChallengeDefaultManager_TA::HandleChallengesSynced(class URPC_GetChallenge
 	this->ProcessEvent(uFnHandleChallengesSynced, &HandleChallengesSynced_Params, nullptr);
 };
 
+// Function TAGame.ChallengeDefaultManager_TA.HandleChallengesSyncFail
+// [0x20080003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_EditorOnly)
+// Parameter Info:
+// class URPC_GetChallengeDefault_TA* RPC                            (CPF_Parm)
+
+void UChallengeDefaultManager_TA::HandleChallengesSyncFail(class URPC_GetChallengeDefault_TA* RPC)
+{
+	static UFunction* uFnHandleChallengesSyncFail = nullptr;
+
+	if (!uFnHandleChallengesSyncFail)
+	{
+		uFnHandleChallengesSyncFail = UFunction::FindFunction("Function TAGame.ChallengeDefaultManager_TA.HandleChallengesSyncFail");
+	}
+
+	UChallengeDefaultManager_TA_execHandleChallengesSyncFail_Params HandleChallengesSyncFail_Params;
+	memset(&HandleChallengesSyncFail_Params, 0, sizeof(HandleChallengesSyncFail_Params));
+	HandleChallengesSyncFail_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandleChallengesSyncFail, &HandleChallengesSyncFail_Params, nullptr);
+};
+
 // Function TAGame.ChallengeDefaultManager_TA.ResyncChallenges
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -271357,6 +274127,48 @@ void UChallengeDefaultManager_TA::EventChallengesPushed(const class TArray<int32
 	memcpy_s(&EventChallengesPushed_Params.RemovedChallengeIDs, sizeof(EventChallengesPushed_Params.RemovedChallengeIDs), &RemovedChallengeIDs, sizeof(RemovedChallengeIDs));
 
 	this->ProcessEvent(uFnEventChallengesPushed, &EventChallengesPushed_Params, nullptr);
+};
+
+// Function TAGame.ChallengeDefaultManager_TA.EventChallengesSyncStarted
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UChallengeDefaultManager_TA* Manager                        (CPF_Parm)
+
+void UChallengeDefaultManager_TA::EventChallengesSyncStarted(class UChallengeDefaultManager_TA* Manager)
+{
+	static UFunction* uFnEventChallengesSyncStarted = nullptr;
+
+	if (!uFnEventChallengesSyncStarted)
+	{
+		uFnEventChallengesSyncStarted = UFunction::FindFunction("Function TAGame.ChallengeDefaultManager_TA.EventChallengesSyncStarted");
+	}
+
+	UChallengeDefaultManager_TA_execEventChallengesSyncStarted_Params EventChallengesSyncStarted_Params;
+	memset(&EventChallengesSyncStarted_Params, 0, sizeof(EventChallengesSyncStarted_Params));
+	EventChallengesSyncStarted_Params.Manager = Manager;
+
+	this->ProcessEvent(uFnEventChallengesSyncStarted, &EventChallengesSyncStarted_Params, nullptr);
+};
+
+// Function TAGame.ChallengeDefaultManager_TA.EventChallengesSyncFail
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UChallengeDefaultManager_TA* Manager                        (CPF_Parm)
+
+void UChallengeDefaultManager_TA::EventChallengesSyncFail(class UChallengeDefaultManager_TA* Manager)
+{
+	static UFunction* uFnEventChallengesSyncFail = nullptr;
+
+	if (!uFnEventChallengesSyncFail)
+	{
+		uFnEventChallengesSyncFail = UFunction::FindFunction("Function TAGame.ChallengeDefaultManager_TA.EventChallengesSyncFail");
+	}
+
+	UChallengeDefaultManager_TA_execEventChallengesSyncFail_Params EventChallengesSyncFail_Params;
+	memset(&EventChallengesSyncFail_Params, 0, sizeof(EventChallengesSyncFail_Params));
+	EventChallengesSyncFail_Params.Manager = Manager;
+
+	this->ProcessEvent(uFnEventChallengesSyncFail, &EventChallengesSyncFail_Params, nullptr);
 };
 
 // Function TAGame.ChallengeDefaultManager_TA.EventChallengesSynced
@@ -276159,6 +278971,48 @@ void UCrowdSoundManager_TA::eventTickInit()
 	this->ProcessEvent(uFnTickInit, &TickInit_Params, nullptr);
 };
 
+// Function TAGame.Mutator_Territory_TA.MutateObject
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UObject*                 O                              (CPF_Parm)
+
+void UMutator_Territory_TA::MutateObject(class UObject* O)
+{
+	static UFunction* uFnMutateObject = nullptr;
+
+	if (!uFnMutateObject)
+	{
+		uFnMutateObject = UFunction::FindFunction("Function TAGame.Mutator_Territory_TA.MutateObject");
+	}
+
+	UMutator_Territory_TA_execMutateObject_Params MutateObject_Params;
+	memset(&MutateObject_Params, 0, sizeof(MutateObject_Params));
+	MutateObject_Params.O = O;
+
+	this->ProcessEvent(uFnMutateObject, &MutateObject_Params, nullptr);
+};
+
+// Function TAGame.Mutator_Territory_TA.Init
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class AGameEvent_TA*           GameEvent                      (CPF_Parm)
+
+void UMutator_Territory_TA::Init(class AGameEvent_TA* GameEvent)
+{
+	static UFunction* uFnInit = nullptr;
+
+	if (!uFnInit)
+	{
+		uFnInit = UFunction::FindFunction("Function TAGame.Mutator_Territory_TA.Init");
+	}
+
+	UMutator_Territory_TA_execInit_Params Init_Params;
+	memset(&Init_Params, 0, sizeof(Init_Params));
+	Init_Params.GameEvent = GameEvent;
+
+	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
 // Function TAGame.CrumbTrailMetrics_TA.Completed
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -276742,6 +279596,27 @@ void UDataProductCache_TA::TryAddViralProduct(class USaveData_TA* InData, class 
 	memcpy_s(&TryAddViralProduct_Params.Message, sizeof(TryAddViralProduct_Params.Message), &Message, sizeof(Message));
 
 	this->ProcessEvent(uFnTryAddViralProduct, &TryAddViralProduct_Params, nullptr);
+};
+
+// Function TAGame.DataProductCache_TA.OnNewViralItemConfig
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UViralItemConfig_TA*     NewViralItemConfig             (CPF_Parm)
+
+void UDataProductCache_TA::OnNewViralItemConfig(class UViralItemConfig_TA* NewViralItemConfig)
+{
+	static UFunction* uFnOnNewViralItemConfig = nullptr;
+
+	if (!uFnOnNewViralItemConfig)
+	{
+		uFnOnNewViralItemConfig = UFunction::FindFunction("Function TAGame.DataProductCache_TA.OnNewViralItemConfig");
+	}
+
+	UDataProductCache_TA_execOnNewViralItemConfig_Params OnNewViralItemConfig_Params;
+	memset(&OnNewViralItemConfig_Params, 0, sizeof(OnNewViralItemConfig_Params));
+	OnNewViralItemConfig_Params.NewViralItemConfig = NewViralItemConfig;
+
+	this->ProcessEvent(uFnOnNewViralItemConfig, &OnNewViralItemConfig_Params, nullptr);
 };
 
 // Function TAGame.DataProductCache_TA.SyncDataProducts
@@ -279167,6 +282042,46 @@ void UEOSGameClipsManager_TA::AddInactiveAccount(const class FString& InAccountI
 	memcpy_s(&AddInactiveAccount_Params.InAccountId, sizeof(AddInactiveAccount_Params.InAccountId), &InAccountId, sizeof(InAccountId));
 
 	this->ProcessEvent(uFnAddInactiveAccount, &AddInactiveAccount_Params, nullptr);
+};
+
+// Function TAGame.EOSGameClipsManager_TA.OnCaptureAvailabilityChange
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// uint32_t                       bIsAvailable                   (CPF_Parm)
+
+void UEOSGameClipsManager_TA::OnCaptureAvailabilityChange(bool bIsAvailable)
+{
+	static UFunction* uFnOnCaptureAvailabilityChange = nullptr;
+
+	if (!uFnOnCaptureAvailabilityChange)
+	{
+		uFnOnCaptureAvailabilityChange = UFunction::FindFunction("Function TAGame.EOSGameClipsManager_TA.OnCaptureAvailabilityChange");
+	}
+
+	UEOSGameClipsManager_TA_execOnCaptureAvailabilityChange_Params OnCaptureAvailabilityChange_Params;
+	memset(&OnCaptureAvailabilityChange_Params, 0, sizeof(OnCaptureAvailabilityChange_Params));
+	OnCaptureAvailabilityChange_Params.bIsAvailable = bIsAvailable;
+
+	this->ProcessEvent(uFnOnCaptureAvailabilityChange, &OnCaptureAvailabilityChange_Params, nullptr);
+};
+
+// Function TAGame.EOSGameClipsManager_TA.HandleOnlineSubChanged
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void UEOSGameClipsManager_TA::HandleOnlineSubChanged()
+{
+	static UFunction* uFnHandleOnlineSubChanged = nullptr;
+
+	if (!uFnHandleOnlineSubChanged)
+	{
+		uFnHandleOnlineSubChanged = UFunction::FindFunction("Function TAGame.EOSGameClipsManager_TA.HandleOnlineSubChanged");
+	}
+
+	UEOSGameClipsManager_TA_execHandleOnlineSubChanged_Params HandleOnlineSubChanged_Params;
+	memset(&HandleOnlineSubChanged_Params, 0, sizeof(HandleOnlineSubChanged_Params));
+
+	this->ProcessEvent(uFnHandleOnlineSubChanged, &HandleOnlineSubChanged_Params, nullptr);
 };
 
 // Function TAGame.EOSGameClipsManager_TA.HandleGameStateChanged
@@ -284490,9 +287405,10 @@ void AFXActor_TrainingEditor_TA::PostBeginPlay()
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UFXExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UFXExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -284506,6 +287422,7 @@ void UFXExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FV
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);
@@ -291586,6 +294503,102 @@ void UPostMatchCelebrationPreviewer_TA::Init()
 	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
 };
 
+// Function TAGame.RocketPassPreviewSet_TA.NotifyWhenPreviewCarReady
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        SlotIndex                      (CPF_Parm)
+// struct FProductHashID          HashID                         (CPF_Parm)
+// uint32_t                       bUseBaseLoadout                (CPF_Parm)
+
+void URocketPassPreviewSet_TA::NotifyWhenPreviewCarReady(const struct FScriptDelegate& Callback, int32_t SlotIndex, const struct FProductHashID& HashID, bool bUseBaseLoadout)
+{
+	static UFunction* uFnNotifyWhenPreviewCarReady = nullptr;
+
+	if (!uFnNotifyWhenPreviewCarReady)
+	{
+		uFnNotifyWhenPreviewCarReady = UFunction::FindFunction("Function TAGame.RocketPassPreviewSet_TA.NotifyWhenPreviewCarReady");
+	}
+
+	URocketPassPreviewSet_TA_execNotifyWhenPreviewCarReady_Params NotifyWhenPreviewCarReady_Params;
+	memset(&NotifyWhenPreviewCarReady_Params, 0, sizeof(NotifyWhenPreviewCarReady_Params));
+	memcpy_s(&NotifyWhenPreviewCarReady_Params.Callback, sizeof(NotifyWhenPreviewCarReady_Params.Callback), &Callback, sizeof(Callback));
+	memcpy_s(&NotifyWhenPreviewCarReady_Params.SlotIndex, sizeof(NotifyWhenPreviewCarReady_Params.SlotIndex), &SlotIndex, sizeof(SlotIndex));
+	memcpy_s(&NotifyWhenPreviewCarReady_Params.HashID, sizeof(NotifyWhenPreviewCarReady_Params.HashID), &HashID, sizeof(HashID));
+	NotifyWhenPreviewCarReady_Params.bUseBaseLoadout = bUseBaseLoadout;
+
+	this->ProcessEvent(uFnNotifyWhenPreviewCarReady, &NotifyWhenPreviewCarReady_Params, nullptr);
+};
+
+// Function TAGame.RocketPassPreviewSet_TA.ExitPremiumGarage
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+
+void URocketPassPreviewSet_TA::ExitPremiumGarage()
+{
+	static UFunction* uFnExitPremiumGarage = nullptr;
+
+	if (!uFnExitPremiumGarage)
+	{
+		uFnExitPremiumGarage = UFunction::FindFunction("Function TAGame.RocketPassPreviewSet_TA.ExitPremiumGarage");
+	}
+
+	URocketPassPreviewSet_TA_execExitPremiumGarage_Params ExitPremiumGarage_Params;
+	memset(&ExitPremiumGarage_Params, 0, sizeof(ExitPremiumGarage_Params));
+
+	this->ProcessEvent(uFnExitPremiumGarage, &ExitPremiumGarage_Params, nullptr);
+};
+
+// Function TAGame.RocketPassPreviewSet_TA.HandleCarPreviewActorAdded
+// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UGameShare_TA*           GameShare                      (CPF_Parm)
+// class ACarPreviewActor_TA*     PreviewActor                   (CPF_Parm)
+
+void URocketPassPreviewSet_TA::HandleCarPreviewActorAdded(class UGameShare_TA* GameShare, class ACarPreviewActor_TA* PreviewActor)
+{
+	static UFunction* uFnHandleCarPreviewActorAdded = nullptr;
+
+	if (!uFnHandleCarPreviewActorAdded)
+	{
+		uFnHandleCarPreviewActorAdded = UFunction::FindFunction("Function TAGame.RocketPassPreviewSet_TA.HandleCarPreviewActorAdded");
+	}
+
+	URocketPassPreviewSet_TA_execHandleCarPreviewActorAdded_Params HandleCarPreviewActorAdded_Params;
+	memset(&HandleCarPreviewActorAdded_Params, 0, sizeof(HandleCarPreviewActorAdded_Params));
+	HandleCarPreviewActorAdded_Params.GameShare = GameShare;
+	HandleCarPreviewActorAdded_Params.PreviewActor = PreviewActor;
+
+	this->ProcessEvent(uFnHandleCarPreviewActorAdded, &HandleCarPreviewActorAdded_Params, nullptr);
+};
+
+// Function TAGame.RocketPassPreviewSet_TA.EventPreviewCarReady
+// [0x00140001] (FUNC_Final | FUNC_Private | FUNC_Delegate)
+// Parameter Info:
+// class URocketPassPreviewSet_TA* RocketPassPreviewSet           (CPF_Parm)
+// int32_t                        SlotIndex                      (CPF_Parm)
+// struct FProductHashID          HashID                         (CPF_Parm)
+// uint32_t                       bUseBaseLoadout                (CPF_Parm)
+
+void URocketPassPreviewSet_TA::EventPreviewCarReady(class URocketPassPreviewSet_TA* RocketPassPreviewSet, int32_t SlotIndex, const struct FProductHashID& HashID, bool bUseBaseLoadout)
+{
+	static UFunction* uFnEventPreviewCarReady = nullptr;
+
+	if (!uFnEventPreviewCarReady)
+	{
+		uFnEventPreviewCarReady = UFunction::FindFunction("Function TAGame.RocketPassPreviewSet_TA.EventPreviewCarReady");
+	}
+
+	URocketPassPreviewSet_TA_execEventPreviewCarReady_Params EventPreviewCarReady_Params;
+	memset(&EventPreviewCarReady_Params, 0, sizeof(EventPreviewCarReady_Params));
+	EventPreviewCarReady_Params.RocketPassPreviewSet = RocketPassPreviewSet;
+	memcpy_s(&EventPreviewCarReady_Params.SlotIndex, sizeof(EventPreviewCarReady_Params.SlotIndex), &SlotIndex, sizeof(SlotIndex));
+	memcpy_s(&EventPreviewCarReady_Params.HashID, sizeof(EventPreviewCarReady_Params.HashID), &HashID, sizeof(HashID));
+	EventPreviewCarReady_Params.bUseBaseLoadout = bUseBaseLoadout;
+
+	this->ProcessEvent(uFnEventPreviewCarReady, &EventPreviewCarReady_Params, nullptr);
+};
+
 // Function TAGame.GFxData_MenuSequence_TA.OnSequenceChange
 // [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
 // Parameter Info:
@@ -296580,6 +299593,33 @@ bool UGFxData_MainMenu_TA::SetPreviewProduct(int32_t SlotIndex, const struct FPr
 	return SetPreviewProduct_Params.ReturnValue;
 };
 
+// Function TAGame.GFxData_MainMenu_TA.HandleRocketPassPreviewCarReady
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
+// Parameter Info:
+// class URocketPassPreviewSet_TA* RocketPassPreview              (CPF_Parm)
+// int32_t                        SlotIndex                      (CPF_Parm)
+// struct FProductHashID          HashID                         (CPF_Parm)
+// uint32_t                       bUseBaseLoadout                (CPF_Parm)
+
+void UGFxData_MainMenu_TA::HandleRocketPassPreviewCarReady(class URocketPassPreviewSet_TA* RocketPassPreview, int32_t SlotIndex, const struct FProductHashID& HashID, bool bUseBaseLoadout)
+{
+	static UFunction* uFnHandleRocketPassPreviewCarReady = nullptr;
+
+	if (!uFnHandleRocketPassPreviewCarReady)
+	{
+		uFnHandleRocketPassPreviewCarReady = UFunction::FindFunction("Function TAGame.GFxData_MainMenu_TA.HandleRocketPassPreviewCarReady");
+	}
+
+	UGFxData_MainMenu_TA_execHandleRocketPassPreviewCarReady_Params HandleRocketPassPreviewCarReady_Params;
+	memset(&HandleRocketPassPreviewCarReady_Params, 0, sizeof(HandleRocketPassPreviewCarReady_Params));
+	HandleRocketPassPreviewCarReady_Params.RocketPassPreview = RocketPassPreview;
+	memcpy_s(&HandleRocketPassPreviewCarReady_Params.SlotIndex, sizeof(HandleRocketPassPreviewCarReady_Params.SlotIndex), &SlotIndex, sizeof(SlotIndex));
+	memcpy_s(&HandleRocketPassPreviewCarReady_Params.HashID, sizeof(HandleRocketPassPreviewCarReady_Params.HashID), &HashID, sizeof(HashID));
+	HandleRocketPassPreviewCarReady_Params.bUseBaseLoadout = bUseBaseLoadout;
+
+	this->ProcessEvent(uFnHandleRocketPassPreviewCarReady, &HandleRocketPassPreviewCarReady_Params, nullptr);
+};
+
 // Function TAGame.GFxData_MainMenu_TA.SetPreviewBaseLoadout
 // [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
 // Parameter Info:
@@ -298722,7 +301762,7 @@ void UGFxData_ChallengePage_TA::__GFxData_ChallengePage_TA__CreateSubFolders_0x1
 };
 
 // Function TAGame.GFxData_ChallengePage_TA.GetSortedChallenges
-// [0x400084002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
+// [0x400024002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
 // class TArray<class UChallenge_TA*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class UClass*                  Filter                         (CPF_OptionalParm | CPF_Parm)
@@ -299013,11 +302053,11 @@ bool UGFxData_ChallengeTab_TA::HasBucketChallenge()
 };
 
 // Function TAGame.GFxData_ChallengeTab_TA.RefreshNotifies
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
+// [0x400480002] (FUNC_Defined | FUNC_Protected | FUNC_HasOutParms)
 // Parameter Info:
-// class TArray<class UChallenge_TA*> Challenges                     (CPF_Parm | CPF_NeedCtorLink)
+// class TArray<class UChallenge_TA*> Challenges                     (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 
-void UGFxData_ChallengeTab_TA::RefreshNotifies(const class TArray<class UChallenge_TA*>& Challenges)
+void UGFxData_ChallengeTab_TA::RefreshNotifies(class TArray<class UChallenge_TA*>& Challenges)
 {
 	static UFunction* uFnRefreshNotifies = nullptr;
 
@@ -299031,10 +302071,12 @@ void UGFxData_ChallengeTab_TA::RefreshNotifies(const class TArray<class UChallen
 	memcpy_s(&RefreshNotifies_Params.Challenges, sizeof(RefreshNotifies_Params.Challenges), &Challenges, sizeof(Challenges));
 
 	this->ProcessEvent(uFnRefreshNotifies, &RefreshNotifies_Params, nullptr);
+
+	memcpy_s(&Challenges, sizeof(Challenges), &RefreshNotifies_Params.Challenges, sizeof(RefreshNotifies_Params.Challenges));
 };
 
 // Function TAGame.GFxData_ChallengeTab_TA.GetSortedChallenges
-// [0x400084002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
+// [0x400024002] (FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
 // class TArray<class UChallenge_TA*> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 // class UClass*                  Filter                         (CPF_OptionalParm | CPF_Parm)
@@ -303152,6 +306194,25 @@ void UGFxData_EOSVoiceUser_TA::eventOnShellSet()
 	this->ProcessEvent(uFnOnShellSet, &OnShellSet_Params, nullptr);
 };
 
+// Function TAGame.GFxData_FirstTimeExperience_TA.__bClosedFirstMatchWindow__ChangeNotifyFunc
+// [0x00000000] (FUNC_None)
+// Parameter Info:
+
+void UGFxData_FirstTimeExperience_TA::__bClosedFirstMatchWindow__ChangeNotifyFunc()
+{
+	static UFunction* uFn__bClosedFirstMatchWindow__ChangeNotifyFunc = nullptr;
+
+	if (!uFn__bClosedFirstMatchWindow__ChangeNotifyFunc)
+	{
+		uFn__bClosedFirstMatchWindow__ChangeNotifyFunc = UFunction::FindFunction("Function TAGame.GFxData_FirstTimeExperience_TA.__bClosedFirstMatchWindow__ChangeNotifyFunc");
+	}
+
+	UGFxData_FirstTimeExperience_TA_exec__bClosedFirstMatchWindow__ChangeNotifyFunc_Params __bClosedFirstMatchWindow__ChangeNotifyFunc_Params;
+	memset(&__bClosedFirstMatchWindow__ChangeNotifyFunc_Params, 0, sizeof(__bClosedFirstMatchWindow__ChangeNotifyFunc_Params));
+
+	this->ProcessEvent(uFn__bClosedFirstMatchWindow__ChangeNotifyFunc, &__bClosedFirstMatchWindow__ChangeNotifyFunc_Params, nullptr);
+};
+
 // Function TAGame.GFxData_FirstTimeExperience_TA.HandleFTEChange
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -304793,6 +307854,48 @@ void UGFxData_GameEvent_TA::OnSkipScoreIntro()
 	memset(&OnSkipScoreIntro_Params, 0, sizeof(OnSkipScoreIntro_Params));
 
 	this->ProcessEvent(uFnOnSkipScoreIntro, &OnSkipScoreIntro_Params, nullptr);
+};
+
+// Function TAGame.GFxData_GameEvent_TA.OnActiveMutatorsChanged
+// [0x10020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Pure)
+// Parameter Info:
+
+void UGFxData_GameEvent_TA::OnActiveMutatorsChanged()
+{
+	static UFunction* uFnOnActiveMutatorsChanged = nullptr;
+
+	if (!uFnOnActiveMutatorsChanged)
+	{
+		uFnOnActiveMutatorsChanged = UFunction::FindFunction("Function TAGame.GFxData_GameEvent_TA.OnActiveMutatorsChanged");
+	}
+
+	UGFxData_GameEvent_TA_execOnActiveMutatorsChanged_Params OnActiveMutatorsChanged_Params;
+	memset(&OnActiveMutatorsChanged_Params, 0, sizeof(OnActiveMutatorsChanged_Params));
+
+	this->ProcessEvent(uFnOnActiveMutatorsChanged, &OnActiveMutatorsChanged_Params, nullptr);
+};
+
+// Function TAGame.GFxData_GameEvent_TA.SetActiveMutators
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// class TArray<struct FMutatorInfo> Mutators                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+
+void UGFxData_GameEvent_TA::SetActiveMutators(class TArray<struct FMutatorInfo>& Mutators)
+{
+	static UFunction* uFnSetActiveMutators = nullptr;
+
+	if (!uFnSetActiveMutators)
+	{
+		uFnSetActiveMutators = UFunction::FindFunction("Function TAGame.GFxData_GameEvent_TA.SetActiveMutators");
+	}
+
+	UGFxData_GameEvent_TA_execSetActiveMutators_Params SetActiveMutators_Params;
+	memset(&SetActiveMutators_Params, 0, sizeof(SetActiveMutators_Params));
+	memcpy_s(&SetActiveMutators_Params.Mutators, sizeof(SetActiveMutators_Params.Mutators), &Mutators, sizeof(Mutators));
+
+	this->ProcessEvent(uFnSetActiveMutators, &SetActiveMutators_Params, nullptr);
+
+	memcpy_s(&Mutators, sizeof(Mutators), &SetActiveMutators_Params.Mutators, sizeof(SetActiveMutators_Params.Mutators));
 };
 
 // Function TAGame.GFxData_GameEvent_TA.PostMatchFreeplay
@@ -320726,6 +323829,54 @@ class FString UShopTabsConfig_TA::BuildIdLabel(int32_t ItemID, const class FStri
 	return BuildIdLabel_Params.ReturnValue;
 };
 
+// Function TAGame.ShopTabsConfig_TA.GetInvalidShopRegionWarning
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class UGFxData_ShopCatalogue_TA* Shop                           (CPF_Parm)
+
+class FString UShopTabsConfig_TA::GetInvalidShopRegionWarning(class UGFxData_ShopCatalogue_TA* Shop)
+{
+	static UFunction* uFnGetInvalidShopRegionWarning = nullptr;
+
+	if (!uFnGetInvalidShopRegionWarning)
+	{
+		uFnGetInvalidShopRegionWarning = UFunction::FindFunction("Function TAGame.ShopTabsConfig_TA.GetInvalidShopRegionWarning");
+	}
+
+	UShopTabsConfig_TA_execGetInvalidShopRegionWarning_Params GetInvalidShopRegionWarning_Params;
+	memset(&GetInvalidShopRegionWarning_Params, 0, sizeof(GetInvalidShopRegionWarning_Params));
+	GetInvalidShopRegionWarning_Params.Shop = Shop;
+
+	this->ProcessEvent(uFnGetInvalidShopRegionWarning, &GetInvalidShopRegionWarning_Params, nullptr);
+
+	return GetInvalidShopRegionWarning_Params.ReturnValue;
+};
+
+// Function TAGame.ShopTabsConfig_TA.GetNoShopItemsWarning
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class UGFxData_ShopCatalogue_TA* Shop                           (CPF_Parm)
+
+class FString UShopTabsConfig_TA::GetNoShopItemsWarning(class UGFxData_ShopCatalogue_TA* Shop)
+{
+	static UFunction* uFnGetNoShopItemsWarning = nullptr;
+
+	if (!uFnGetNoShopItemsWarning)
+	{
+		uFnGetNoShopItemsWarning = UFunction::FindFunction("Function TAGame.ShopTabsConfig_TA.GetNoShopItemsWarning");
+	}
+
+	UShopTabsConfig_TA_execGetNoShopItemsWarning_Params GetNoShopItemsWarning_Params;
+	memset(&GetNoShopItemsWarning_Params, 0, sizeof(GetNoShopItemsWarning_Params));
+	GetNoShopItemsWarning_Params.Shop = Shop;
+
+	this->ProcessEvent(uFnGetNoShopItemsWarning, &GetNoShopItemsWarning_Params, nullptr);
+
+	return GetNoShopItemsWarning_Params.ReturnValue;
+};
+
 // Function TAGame.ShopTabsConfig_TA.ValidateShop
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -327211,6 +330362,30 @@ void UGFxData_WebBrowser_TA::OpenBrowserToURL(const class FString& URL, int32_t 
 	this->ProcessEvent(uFnOpenBrowserToURL, &OpenBrowserToURL_Params, nullptr);
 };
 
+// Function TAGame.GFxData_WebBrowser_TA.CanBrowseToURL
+// [0x08020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_K2Override)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  URL                            (CPF_Parm | CPF_NeedCtorLink)
+
+bool UGFxData_WebBrowser_TA::CanBrowseToURL(const class FString& URL)
+{
+	static UFunction* uFnCanBrowseToURL = nullptr;
+
+	if (!uFnCanBrowseToURL)
+	{
+		uFnCanBrowseToURL = UFunction::FindFunction("Function TAGame.GFxData_WebBrowser_TA.CanBrowseToURL");
+	}
+
+	UGFxData_WebBrowser_TA_execCanBrowseToURL_Params CanBrowseToURL_Params;
+	memset(&CanBrowseToURL_Params, 0, sizeof(CanBrowseToURL_Params));
+	memcpy_s(&CanBrowseToURL_Params.URL, sizeof(CanBrowseToURL_Params.URL), &URL, sizeof(URL));
+
+	this->ProcessEvent(uFnCanBrowseToURL, &CanBrowseToURL_Params, nullptr);
+
+	return CanBrowseToURL_Params.ReturnValue;
+};
+
 // Function TAGame.GFxData_WebBrowser_TA.OnShellSet
 // [0x400080802] (FUNC_Defined | FUNC_Event | FUNC_Protected)
 // Parameter Info:
@@ -327685,6 +330860,25 @@ void AGFxHUD_GameEditor_TA::InitGFx()
 	memset(&InitGFx_Params, 0, sizeof(InitGFx_Params));
 
 	this->ProcessEvent(uFnInitGFx, &InitGFx_Params, nullptr);
+};
+
+// Function TAGame.GFxHUD_Soccar_TA.HandleThistleMatch
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+
+void AGFxHUD_Soccar_TA::HandleThistleMatch()
+{
+	static UFunction* uFnHandleThistleMatch = nullptr;
+
+	if (!uFnHandleThistleMatch)
+	{
+		uFnHandleThistleMatch = UFunction::FindFunction("Function TAGame.GFxHUD_Soccar_TA.HandleThistleMatch");
+	}
+
+	AGFxHUD_Soccar_TA_execHandleThistleMatch_Params HandleThistleMatch_Params;
+	memset(&HandleThistleMatch_Params, 0, sizeof(HandleThistleMatch_Params));
+
+	this->ProcessEvent(uFnHandleThistleMatch, &HandleThistleMatch_Params, nullptr);
 };
 
 // Function TAGame.GFxHUD_Soccar_TA.GetSelectedPRI
@@ -333066,6 +336260,28 @@ class TArray<class FName> UMatchmakingViewFilter_UnrankedSports_TA::GetAccessibl
 	return GetAccessiblePlaylists_Params.ReturnValue;
 };
 
+// Function TAGame.MatchType_AdHoc_TA.AllowsMatchCreatorAdmin
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+
+bool UMatchType_AdHoc_TA::AllowsMatchCreatorAdmin()
+{
+	static UFunction* uFnAllowsMatchCreatorAdmin = nullptr;
+
+	if (!uFnAllowsMatchCreatorAdmin)
+	{
+		uFnAllowsMatchCreatorAdmin = UFunction::FindFunction("Function TAGame.MatchType_AdHoc_TA.AllowsMatchCreatorAdmin");
+	}
+
+	UMatchType_AdHoc_TA_execAllowsMatchCreatorAdmin_Params AllowsMatchCreatorAdmin_Params;
+	memset(&AllowsMatchCreatorAdmin_Params, 0, sizeof(AllowsMatchCreatorAdmin_Params));
+
+	this->ProcessEvent(uFnAllowsMatchCreatorAdmin, &AllowsMatchCreatorAdmin_Params, nullptr);
+
+	return AllowsMatchCreatorAdmin_Params.ReturnValue;
+};
+
 // Function TAGame.MatchType_AdHoc_TA.ShouldSubmitPrivateMatchComplete
 // [0x400020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -333543,6 +336759,27 @@ void UMenuSequence_PremiumGarage_TA::HandleEnterComplete()
 	memset(&HandleEnterComplete_Params, 0, sizeof(HandleEnterComplete_Params));
 
 	this->ProcessEvent(uFnHandleEnterComplete, &HandleEnterComplete_Params, nullptr);
+};
+
+// Function TAGame.MenuSequence_PremiumGarage_TA.PreviewSetEnterComplete
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UPremiumGaragePreviewSet_TA* PreviewSet                     (CPF_Parm)
+
+void UMenuSequence_PremiumGarage_TA::PreviewSetEnterComplete(class UPremiumGaragePreviewSet_TA* PreviewSet)
+{
+	static UFunction* uFnPreviewSetEnterComplete = nullptr;
+
+	if (!uFnPreviewSetEnterComplete)
+	{
+		uFnPreviewSetEnterComplete = UFunction::FindFunction("Function TAGame.MenuSequence_PremiumGarage_TA.PreviewSetEnterComplete");
+	}
+
+	UMenuSequence_PremiumGarage_TA_execPreviewSetEnterComplete_Params PreviewSetEnterComplete_Params;
+	memset(&PreviewSetEnterComplete_Params, 0, sizeof(PreviewSetEnterComplete_Params));
+	PreviewSetEnterComplete_Params.PreviewSet = PreviewSet;
+
+	this->ProcessEvent(uFnPreviewSetEnterComplete, &PreviewSetEnterComplete_Params, nullptr);
 };
 
 // Function TAGame.MenuSequence_PremiumGarage_TA.LeaveSequence
@@ -334559,6 +337796,27 @@ void UMutator_Demolish_TA::MutateObject(class UObject* O)
 	this->ProcessEvent(uFnMutateObject, &MutateObject_Params, nullptr);
 };
 
+// Function TAGame.Mutator_Demolish_TA.Init
+// [0x400020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class AGameEvent_TA*           GameEvent                      (CPF_Parm)
+
+void UMutator_Demolish_TA::Init(class AGameEvent_TA* GameEvent)
+{
+	static UFunction* uFnInit = nullptr;
+
+	if (!uFnInit)
+	{
+		uFnInit = UFunction::FindFunction("Function TAGame.Mutator_Demolish_TA.Init");
+	}
+
+	UMutator_Demolish_TA_execInit_Params Init_Params;
+	memset(&Init_Params, 0, sizeof(Init_Params));
+	Init_Params.GameEvent = GameEvent;
+
+	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
 // Function TAGame.Mutator_DisableScoring_TA.MutateObject
 // [0x400020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -335147,48 +338405,6 @@ void UMutator_RespawnTime_TA::Init(class AGameEvent_TA* GameEvent)
 	}
 
 	UMutator_RespawnTime_TA_execInit_Params Init_Params;
-	memset(&Init_Params, 0, sizeof(Init_Params));
-	Init_Params.GameEvent = GameEvent;
-
-	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
-};
-
-// Function TAGame.Mutator_Territory_TA.MutateObject
-// [0x400020002] (FUNC_Defined | FUNC_Public)
-// Parameter Info:
-// class UObject*                 O                              (CPF_Parm)
-
-void UMutator_Territory_TA::MutateObject(class UObject* O)
-{
-	static UFunction* uFnMutateObject = nullptr;
-
-	if (!uFnMutateObject)
-	{
-		uFnMutateObject = UFunction::FindFunction("Function TAGame.Mutator_Territory_TA.MutateObject");
-	}
-
-	UMutator_Territory_TA_execMutateObject_Params MutateObject_Params;
-	memset(&MutateObject_Params, 0, sizeof(MutateObject_Params));
-	MutateObject_Params.O = O;
-
-	this->ProcessEvent(uFnMutateObject, &MutateObject_Params, nullptr);
-};
-
-// Function TAGame.Mutator_Territory_TA.Init
-// [0x400020002] (FUNC_Defined | FUNC_Public)
-// Parameter Info:
-// class AGameEvent_TA*           GameEvent                      (CPF_Parm)
-
-void UMutator_Territory_TA::Init(class AGameEvent_TA* GameEvent)
-{
-	static UFunction* uFnInit = nullptr;
-
-	if (!uFnInit)
-	{
-		uFnInit = UFunction::FindFunction("Function TAGame.Mutator_Territory_TA.Init");
-	}
-
-	UMutator_Territory_TA_execInit_Params Init_Params;
 	memset(&Init_Params, 0, sizeof(Init_Params));
 	Init_Params.GameEvent = GameEvent;
 
@@ -336170,367 +339386,6 @@ void URegionPingCache_TA::Init(class UOnlineGameRegions_TA* OnlineGameRegions)
 	Init_Params.OnlineGameRegions = OnlineGameRegions;
 
 	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__OnInit_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// class AGameEvent_TA*           instance                       (CPF_Parm)
-
-void UOnlineGameReservations_TA::__OnlineGameReservations_TA__OnInit_0x1(class AGameEvent_TA* instance)
-{
-	static UFunction* uFn__OnlineGameReservations_TA__OnInit_0x1 = nullptr;
-
-	if (!uFn__OnlineGameReservations_TA__OnInit_0x1)
-	{
-		uFn__OnlineGameReservations_TA__OnInit_0x1 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__OnInit_0x1");
-	}
-
-	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__OnInit_0x1_Params __OnlineGameReservations_TA__OnInit_0x1_Params;
-	memset(&__OnlineGameReservations_TA__OnInit_0x1_Params, 0, sizeof(__OnlineGameReservations_TA__OnInit_0x1_Params));
-	__OnlineGameReservations_TA__OnInit_0x1_Params.instance = instance;
-
-	this->ProcessEvent(uFn__OnlineGameReservations_TA__OnInit_0x1, &__OnlineGameReservations_TA__OnInit_0x1_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x2
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// int32_t                        Id                             (CPF_Parm)
-
-bool UOnlineGameReservations_TA::__OnlineGameReservations_TA__AddLoadout_0x2(int32_t Id)
-{
-	static UFunction* uFn__OnlineGameReservations_TA__AddLoadout_0x2 = nullptr;
-
-	if (!uFn__OnlineGameReservations_TA__AddLoadout_0x2)
-	{
-		uFn__OnlineGameReservations_TA__AddLoadout_0x2 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x2");
-	}
-
-	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__AddLoadout_0x2_Params __OnlineGameReservations_TA__AddLoadout_0x2_Params;
-	memset(&__OnlineGameReservations_TA__AddLoadout_0x2_Params, 0, sizeof(__OnlineGameReservations_TA__AddLoadout_0x2_Params));
-	memcpy_s(&__OnlineGameReservations_TA__AddLoadout_0x2_Params.Id, sizeof(__OnlineGameReservations_TA__AddLoadout_0x2_Params.Id), &Id, sizeof(Id));
-
-	this->ProcessEvent(uFn__OnlineGameReservations_TA__AddLoadout_0x2, &__OnlineGameReservations_TA__AddLoadout_0x2_Params, nullptr);
-
-	return __OnlineGameReservations_TA__AddLoadout_0x2_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// int32_t                        Id                             (CPF_Parm)
-
-int32_t UOnlineGameReservations_TA::__OnlineGameReservations_TA__AddLoadout_0x1(int32_t Id)
-{
-	static UFunction* uFn__OnlineGameReservations_TA__AddLoadout_0x1 = nullptr;
-
-	if (!uFn__OnlineGameReservations_TA__AddLoadout_0x1)
-	{
-		uFn__OnlineGameReservations_TA__AddLoadout_0x1 = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.__OnlineGameReservations_TA__AddLoadout_0x1");
-	}
-
-	UOnlineGameReservations_TA_exec__OnlineGameReservations_TA__AddLoadout_0x1_Params __OnlineGameReservations_TA__AddLoadout_0x1_Params;
-	memset(&__OnlineGameReservations_TA__AddLoadout_0x1_Params, 0, sizeof(__OnlineGameReservations_TA__AddLoadout_0x1_Params));
-	memcpy_s(&__OnlineGameReservations_TA__AddLoadout_0x1_Params.Id, sizeof(__OnlineGameReservations_TA__AddLoadout_0x1_Params.Id), &Id, sizeof(Id));
-
-	this->ProcessEvent(uFn__OnlineGameReservations_TA__AddLoadout_0x1, &__OnlineGameReservations_TA__AddLoadout_0x1_Params, nullptr);
-
-	return __OnlineGameReservations_TA__AddLoadout_0x1_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.GetMatchInfoMessage
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// class UServerToServerMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-
-class UServerToServerMessage_X* UOnlineGameReservations_TA::GetMatchInfoMessage()
-{
-	static UFunction* uFnGetMatchInfoMessage = nullptr;
-
-	if (!uFnGetMatchInfoMessage)
-	{
-		uFnGetMatchInfoMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.GetMatchInfoMessage");
-	}
-
-	UOnlineGameReservations_TA_execGetMatchInfoMessage_Params GetMatchInfoMessage_Params;
-	memset(&GetMatchInfoMessage_Params, 0, sizeof(GetMatchInfoMessage_Params));
-
-	this->ProcessEvent(uFnGetMatchInfoMessage, &GetMatchInfoMessage_Params, nullptr);
-
-	return GetMatchInfoMessage_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.ShouldCheckPlatformRestrictions
-// [0x400020002] (FUNC_Defined | FUNC_Public)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class UAddReservationMessagePublic_X* Message                        (CPF_Parm)
-
-bool UOnlineGameReservations_TA::ShouldCheckPlatformRestrictions(class UAddReservationMessagePublic_X* Message)
-{
-	static UFunction* uFnShouldCheckPlatformRestrictions = nullptr;
-
-	if (!uFnShouldCheckPlatformRestrictions)
-	{
-		uFnShouldCheckPlatformRestrictions = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.ShouldCheckPlatformRestrictions");
-	}
-
-	UOnlineGameReservations_TA_execShouldCheckPlatformRestrictions_Params ShouldCheckPlatformRestrictions_Params;
-	memset(&ShouldCheckPlatformRestrictions_Params, 0, sizeof(ShouldCheckPlatformRestrictions_Params));
-	ShouldCheckPlatformRestrictions_Params.Message = Message;
-
-	this->ProcessEvent(uFnShouldCheckPlatformRestrictions, &ShouldCheckPlatformRestrictions_Params, nullptr);
-
-	return ShouldCheckPlatformRestrictions_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.CanAcceptReservations
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class UAddReservationMessagePublic_X* Message                        (CPF_Parm)
-
-bool UOnlineGameReservations_TA::CanAcceptReservations(class UAddReservationMessagePublic_X* Message)
-{
-	static UFunction* uFnCanAcceptReservations = nullptr;
-
-	if (!uFnCanAcceptReservations)
-	{
-		uFnCanAcceptReservations = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CanAcceptReservations");
-	}
-
-	UOnlineGameReservations_TA_execCanAcceptReservations_Params CanAcceptReservations_Params;
-	memset(&CanAcceptReservations_Params, 0, sizeof(CanAcceptReservations_Params));
-	CanAcceptReservations_Params.Message = Message;
-
-	this->ProcessEvent(uFnCanAcceptReservations, &CanAcceptReservations_Params, nullptr);
-
-	return CanAcceptReservations_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.GetPrecacheProductIDs
-// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// class TArray<int32_t>          ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-
-class TArray<int32_t> UOnlineGameReservations_TA::GetPrecacheProductIDs()
-{
-	static UFunction* uFnGetPrecacheProductIDs = nullptr;
-
-	if (!uFnGetPrecacheProductIDs)
-	{
-		uFnGetPrecacheProductIDs = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.GetPrecacheProductIDs");
-	}
-
-	UOnlineGameReservations_TA_execGetPrecacheProductIDs_Params GetPrecacheProductIDs_Params;
-	memset(&GetPrecacheProductIDs_Params, 0, sizeof(GetPrecacheProductIDs_Params));
-
-	this->ProcessEvent(uFnGetPrecacheProductIDs, &GetPrecacheProductIDs_Params, nullptr);
-
-	return GetPrecacheProductIDs_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.CreateReadyMessage
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// class UReservationsReadyMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-
-class UReservationsReadyMessage_X* UOnlineGameReservations_TA::CreateReadyMessage()
-{
-	static UFunction* uFnCreateReadyMessage = nullptr;
-
-	if (!uFnCreateReadyMessage)
-	{
-		uFnCreateReadyMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CreateReadyMessage");
-	}
-
-	UOnlineGameReservations_TA_execCreateReadyMessage_Params CreateReadyMessage_Params;
-	memset(&CreateReadyMessage_Params, 0, sizeof(CreateReadyMessage_Params));
-
-	this->ProcessEvent(uFnCreateReadyMessage, &CreateReadyMessage_Params, nullptr);
-
-	return CreateReadyMessage_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.ClearReservations
-// [0x400020002] (FUNC_Defined | FUNC_Public)
-// Parameter Info:
-
-void UOnlineGameReservations_TA::ClearReservations()
-{
-	static UFunction* uFnClearReservations = nullptr;
-
-	if (!uFnClearReservations)
-	{
-		uFnClearReservations = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.ClearReservations");
-	}
-
-	UOnlineGameReservations_TA_execClearReservations_Params ClearReservations_Params;
-	memset(&ClearReservations_Params, 0, sizeof(ClearReservations_Params));
-
-	this->ProcessEvent(uFnClearReservations, &ClearReservations_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.RemoveReservationIndex
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// int32_t                        Index                          (CPF_Parm)
-
-void UOnlineGameReservations_TA::RemoveReservationIndex(int32_t Index)
-{
-	static UFunction* uFnRemoveReservationIndex = nullptr;
-
-	if (!uFnRemoveReservationIndex)
-	{
-		uFnRemoveReservationIndex = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.RemoveReservationIndex");
-	}
-
-	UOnlineGameReservations_TA_execRemoveReservationIndex_Params RemoveReservationIndex_Params;
-	memset(&RemoveReservationIndex_Params, 0, sizeof(RemoveReservationIndex_Params));
-	memcpy_s(&RemoveReservationIndex_Params.Index, sizeof(RemoveReservationIndex_Params.Index), &Index, sizeof(Index));
-
-	this->ProcessEvent(uFnRemoveReservationIndex, &RemoveReservationIndex_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.AddLoadout
-// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// class TArray<int32_t>          ProductIDs                     (CPF_Parm | CPF_NeedCtorLink)
-
-void UOnlineGameReservations_TA::AddLoadout(const struct FUniqueNetId& PlayerID, const class TArray<int32_t>& ProductIDs)
-{
-	static UFunction* uFnAddLoadout = nullptr;
-
-	if (!uFnAddLoadout)
-	{
-		uFnAddLoadout = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.AddLoadout");
-	}
-
-	UOnlineGameReservations_TA_execAddLoadout_Params AddLoadout_Params;
-	memset(&AddLoadout_Params, 0, sizeof(AddLoadout_Params));
-	memcpy_s(&AddLoadout_Params.PlayerID, sizeof(AddLoadout_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&AddLoadout_Params.ProductIDs, sizeof(AddLoadout_Params.ProductIDs), &ProductIDs, sizeof(ProductIDs));
-
-	this->ProcessEvent(uFnAddLoadout, &AddLoadout_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.AddPlayersFromReservationMessage
-// [0x400880002] (FUNC_Defined | FUNC_Protected | FUNC_HasDefaults)
-// Parameter Info:
-// class TArray<struct FReservationData> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-// class UAddReservationMessage_X* ReservationMessage             (CPF_Parm)
-// class UIReservationConnection_X* Connection                     (CPF_Parm)
-
-class TArray<struct FReservationData> UOnlineGameReservations_TA::AddPlayersFromReservationMessage(class UAddReservationMessage_X* ReservationMessage, class UIReservationConnection_X* Connection)
-{
-	static UFunction* uFnAddPlayersFromReservationMessage = nullptr;
-
-	if (!uFnAddPlayersFromReservationMessage)
-	{
-		uFnAddPlayersFromReservationMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.AddPlayersFromReservationMessage");
-	}
-
-	UOnlineGameReservations_TA_execAddPlayersFromReservationMessage_Params AddPlayersFromReservationMessage_Params;
-	memset(&AddPlayersFromReservationMessage_Params, 0, sizeof(AddPlayersFromReservationMessage_Params));
-	AddPlayersFromReservationMessage_Params.ReservationMessage = ReservationMessage;
-	AddPlayersFromReservationMessage_Params.Connection = Connection;
-
-	this->ProcessEvent(uFnAddPlayersFromReservationMessage, &AddPlayersFromReservationMessage_Params, nullptr);
-
-	return AddPlayersFromReservationMessage_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.IsServerClubDetailsReplicationEnabled
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-
-bool UOnlineGameReservations_TA::IsServerClubDetailsReplicationEnabled()
-{
-	static UFunction* uFnIsServerClubDetailsReplicationEnabled = nullptr;
-
-	if (!uFnIsServerClubDetailsReplicationEnabled)
-	{
-		uFnIsServerClubDetailsReplicationEnabled = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.IsServerClubDetailsReplicationEnabled");
-	}
-
-	UOnlineGameReservations_TA_execIsServerClubDetailsReplicationEnabled_Params IsServerClubDetailsReplicationEnabled_Params;
-	memset(&IsServerClubDetailsReplicationEnabled_Params, 0, sizeof(IsServerClubDetailsReplicationEnabled_Params));
-
-	this->ProcessEvent(uFnIsServerClubDetailsReplicationEnabled, &IsServerClubDetailsReplicationEnabled_Params, nullptr);
-
-	return IsServerClubDetailsReplicationEnabled_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.CreateClientReservationMessage
-// [0x400480002] (FUNC_Defined | FUNC_Protected | FUNC_HasOutParms)
-// Parameter Info:
-// class UObject*                 ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FServerReservationData  Reservation                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-
-class UObject* UOnlineGameReservations_TA::CreateClientReservationMessage(struct FServerReservationData& Reservation, struct FUniqueNetId& PlayerID)
-{
-	static UFunction* uFnCreateClientReservationMessage = nullptr;
-
-	if (!uFnCreateClientReservationMessage)
-	{
-		uFnCreateClientReservationMessage = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.CreateClientReservationMessage");
-	}
-
-	UOnlineGameReservations_TA_execCreateClientReservationMessage_Params CreateClientReservationMessage_Params;
-	memset(&CreateClientReservationMessage_Params, 0, sizeof(CreateClientReservationMessage_Params));
-	memcpy_s(&CreateClientReservationMessage_Params.Reservation, sizeof(CreateClientReservationMessage_Params.Reservation), &Reservation, sizeof(Reservation));
-	memcpy_s(&CreateClientReservationMessage_Params.PlayerID, sizeof(CreateClientReservationMessage_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-
-	this->ProcessEvent(uFnCreateClientReservationMessage, &CreateClientReservationMessage_Params, nullptr);
-
-	memcpy_s(&Reservation, sizeof(Reservation), &CreateClientReservationMessage_Params.Reservation, sizeof(CreateClientReservationMessage_Params.Reservation));
-	memcpy_s(&PlayerID, sizeof(PlayerID), &CreateClientReservationMessage_Params.PlayerID, sizeof(CreateClientReservationMessage_Params.PlayerID));
-
-	return CreateClientReservationMessage_Params.ReturnValue;
-};
-
-// Function TAGame.OnlineGameReservations_TA.HandleGameEventStarted
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
-// Parameter Info:
-
-void UOnlineGameReservations_TA::HandleGameEventStarted()
-{
-	static UFunction* uFnHandleGameEventStarted = nullptr;
-
-	if (!uFnHandleGameEventStarted)
-	{
-		uFnHandleGameEventStarted = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.HandleGameEventStarted");
-	}
-
-	UOnlineGameReservations_TA_execHandleGameEventStarted_Params HandleGameEventStarted_Params;
-	memset(&HandleGameEventStarted_Params, 0, sizeof(HandleGameEventStarted_Params));
-
-	this->ProcessEvent(uFnHandleGameEventStarted, &HandleGameEventStarted_Params, nullptr);
-};
-
-// Function TAGame.OnlineGameReservations_TA.OnInit
-// [0x400080002] (FUNC_Defined | FUNC_Protected)
-// Parameter Info:
-
-void UOnlineGameReservations_TA::OnInit()
-{
-	static UFunction* uFnOnInit = nullptr;
-
-	if (!uFnOnInit)
-	{
-		uFnOnInit = UFunction::FindFunction("Function TAGame.OnlineGameReservations_TA.OnInit");
-	}
-
-	UOnlineGameReservations_TA_execOnInit_Params OnInit_Params;
-	memset(&OnInit_Params, 0, sizeof(OnInit_Params));
-
-	this->ProcessEvent(uFnOnInit, &OnInit_Params, nullptr);
 };
 
 // Function TAGame.TourMatchInfoMessage_TA.GetReservation
@@ -347585,9 +350440,10 @@ struct FVector ASplineFocusTarget_TA::GetFocusLocation(class ACar_TA* ForCar)
 // class ACar_TA*                 CarHit                         (CPF_Parm)
 // struct FVector                 HitLocation                    (CPF_Parm)
 // float                          DamageScale                    (CPF_Parm)
+// float                          DeltaTime                      (CPF_Parm)
 // struct FContactInformation     ContactInfo                    (CPF_Const | CPF_Parm | CPF_OutParm)
 
-void UStasisExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, struct FContactInformation& ContactInfo)
+void UStasisExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struct FVector& HitLocation, float DamageScale, float DeltaTime, struct FContactInformation& ContactInfo)
 {
 	static UFunction* uFnApplyImpulse = nullptr;
 
@@ -347601,6 +350457,7 @@ void UStasisExplosionHandler_TA::ApplyImpulse(class ACar_TA* CarHit, const struc
 	ApplyImpulse_Params.CarHit = CarHit;
 	memcpy_s(&ApplyImpulse_Params.HitLocation, sizeof(ApplyImpulse_Params.HitLocation), &HitLocation, sizeof(HitLocation));
 	memcpy_s(&ApplyImpulse_Params.DamageScale, sizeof(ApplyImpulse_Params.DamageScale), &DamageScale, sizeof(DamageScale));
+	memcpy_s(&ApplyImpulse_Params.DeltaTime, sizeof(ApplyImpulse_Params.DeltaTime), &DeltaTime, sizeof(DeltaTime));
 	memcpy_s(&ApplyImpulse_Params.ContactInfo, sizeof(ApplyImpulse_Params.ContactInfo), &ContactInfo, sizeof(ContactInfo));
 
 	this->ProcessEvent(uFnApplyImpulse, &ApplyImpulse_Params, nullptr);

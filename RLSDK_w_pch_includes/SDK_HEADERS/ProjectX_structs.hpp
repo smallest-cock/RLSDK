@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -133,6 +133,14 @@ struct FGFxBlurRect
 	float                                              TopLeftY;                                      // 0x0014 (0x0004) [0x0000000000000000]               
 	float                                              BottomRightX;                                  // 0x0018 (0x0004) [0x0000000000000000]               
 	float                                              BottomRightY;                                  // 0x001C (0x0004) [0x0000000000000000]               
+};
+
+// ScriptStruct ProjectX._Types_X.HTTPRequestCapturedParam
+// Size: 0x0020
+struct FHTTPRequestCapturedParam
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ServerReservationData
@@ -265,22 +273,23 @@ struct FSkillRating
 };
 
 // ScriptStruct ProjectX._Types_X.MigrationReservationData
-// Size: 0x00E0
+// Size: 0x00E8
 struct FMigrationReservationData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                PartyID;                                       // 0x0058 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                            Status;                                        // 0x00A0 (0x0001) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x3];                            // 0x00A1 (0x0003) MISSED OFFSET
-	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A4 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                            Team;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
-	uint8_t                                          UnknownData01[0x3];                            // 0x00A9 (0x0003) MISSED OFFSET
-	struct FSkillRating                                Skill;                                         // 0x00AC (0x0008) [0x0000000000000000]               
-	uint8_t                                          UnknownData02[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
-	class TArray<class FName>                          MapLikes;                                      // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class FName>                          MapDislikes;                                   // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UNetworkEncryptionKey*                       SecurityKey;                                   // 0x00D8 (0x0008) [0x0000000000000000]               
+	uint64_t                                           ClubID;                                        // 0x00A0 (0x0008) [0x0000000000000000]               
+	uint8_t                                            Status;                                        // 0x00A8 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x00A9 (0x0003) MISSED OFFSET
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00AC (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                            Team;                                          // 0x00B0 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x3];                            // 0x00B1 (0x0003) MISSED OFFSET
+	struct FSkillRating                                Skill;                                         // 0x00B4 (0x0008) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x4];                            // 0x00BC (0x0004) MISSED OFFSET
+	class TArray<class FName>                          MapLikes;                                      // 0x00C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       SecurityKey;                                   // 0x00E0 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.ClubReplicationInfo
@@ -325,7 +334,7 @@ struct FReservationData
 	class APlayerReplicationInfo*                      PRI;                                           // 0x00B0 (0x0008) [0x0000000000000000]               
 	uint8_t                                            Team;                                          // 0x00B8 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData02[0x7];                            // 0x00B9 (0x0007) MISSED OFFSET
-	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0001000000000000]               
+	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0000000000000000]               
 	class UAddReservationMessage_X*                    ReservationMessage;                            // 0x00C8 (0x0008) [0x0000000000000000]               
 	class UIReservationConnection_X*                   Connection_Object;                             // 0x00D0 (0x0010) [0x0000000000000000] 
 	class UIReservationConnection_X*                   Connection_Interface;                          // 0x00D0 (0x0010) [0x0000000000000000]               
@@ -1498,11 +1507,13 @@ struct FLocOverride
 };
 
 // ScriptStruct ProjectX.MatchInfoWebService_X.MatchInfoJson
-// Size: 0x0020
+// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FMatchInfoJson
 {
-	class FString                                      Guid;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class FString>                        ip_addresses;                                  // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Guid;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        ip_addresses;                                  // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bIsPlaylistProtected : 1;                      // 0x0020 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.MatchPlayerData_X.MatchSkillUpdate

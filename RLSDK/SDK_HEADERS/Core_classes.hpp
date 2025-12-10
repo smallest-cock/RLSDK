@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.62)
-# Generated with CodeRedGenerator v1.1.5 on 11/20/2025 07:07PM
+# Rocket League SDK (RLSDK) Season 20 (v2.63)
+# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251112.52733.503214
-# Build Date: Nov 12 2025 15:04:30
+# Psyonix Build ID: 251202.62834.504897
+# Build Date: Dec  2 2025 20:20:58
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1444,6 +1444,47 @@ enum class EContentKeyIndex_PrimeUpdate56_2 : uint8_t
 	PrimeUpdate56_1_987C7B7935F7579D4DC0EA99743F8D1C   = 14,
 	PrimeUpdate56_1_CB733CC55DA67D6AFE853A68DC706CA4   = 15,
 	PrimeUpdate56_1_END                                = 16
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate57
+enum class EContentKeyIndex_PrimeUpdate57 : uint8_t
+{
+	PrimeUpdate57_EE5AB153D5CEB4BFFDBEDCD01FDA496D     = 0,
+	PrimeUpdate57_C3F1B67C3E335BDF5947635E35B57FC3     = 1,
+	PrimeUpdate57_C957E61A8A501083F610DC76C760226B     = 2,
+	PrimeUpdate57_8BE923D162C0552F4F13F87C40191C3A     = 3,
+	PrimeUpdate57_88E13336CA73EA19976636CD1FC122B1     = 4,
+	PrimeUpdate57_09BAA3CA54075FBB240817C64A089ADC     = 5,
+	PrimeUpdate57_E2729381E7A54D0421EA45FDFD412C22     = 6,
+	PrimeUpdate57_9B1B037858B80596344329E397A9C4FA     = 7,
+	PrimeUpdate57_393B6BAA79813887F231F8440F7CB09A     = 8,
+	PrimeUpdate57_BAD2B70DBBA2D010CF667F9B063DA1A8     = 9,
+	PrimeUpdate57_6973F185F7F305C4FED77B406408C71F     = 10,
+	PrimeUpdate57_658386F8264D207FAB4499F6E15DF61B     = 11,
+	PrimeUpdate57_145C0C34C82C807512CD96F87BD541B0     = 12,
+	PrimeUpdate57_E4B27FD592AAEC8742AFC933252F04BB     = 13,
+	PrimeUpdate57_9BD6FB91FD7E78075B537C4A91441D80     = 14,
+	PrimeUpdate57_8B9A200098588BC6C32DEEDC0DEA9539     = 15,
+	PrimeUpdate57_F2EB664D7D0199FEF19D99A6F765A64F     = 16,
+	PrimeUpdate57_87AF2B3514656129E1C82567C7CEBF70     = 17,
+	PrimeUpdate57_306C73B9F5BA0CF2718946DA8291275E     = 18,
+	PrimeUpdate57_F1220AA32F763A395F38E9EB619FDB44     = 19,
+	PrimeUpdate57_249FD98E4BA1B52EF059B315064F5A8D     = 20,
+	PrimeUpdate57_CC908A883D25989184244D2483275AAC     = 21,
+	PrimeUpdate57_537B9F851E6A3396907EDB19DE477E91     = 22,
+	PrimeUpdate57_00F6EAA14FAE66FE6E5D494B141742D6     = 23,
+	PrimeUpdate57_47823B257BDEFFFFA69577E633EC850A     = 24,
+	PrimeUpdate57_92D73769B8F6B8DDEACAD18D98F91C0E     = 25,
+	PrimeUpdate57_E29CDC661A12BD09F1D0DD406BCB9269     = 26,
+	PrimeUpdate57_43333190CFD362CC7731FCB9A6726794     = 27,
+	PrimeUpdate57_D4DE636E25B79579CB44A0223FA34643     = 28,
+	PrimeUpdate57_45C6CF3952D0CE201A0C6CCE89C9CB22     = 29,
+	PrimeUpdate57_5194EDEBAD3464C1ED34B9AAE278FEA1     = 30,
+	PrimeUpdate57_C82DF6ABD2CF677D5BAF4A9E72F59C9F     = 31,
+	PrimeUpdate57_4D135E230392BE9E15580016BCCE0506     = 32,
+	PrimeUpdate57_4EB99B76E407CB77A5F815FFC6EC86C2     = 33,
+	PrimeUpdate57_7F859AE48595639FD9B436708D4E3D57     = 34,
+	PrimeUpdate57_END                                  = 35
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_ContinuousIntegration
@@ -3137,7 +3178,10 @@ public:
 	uint32_t                                           TextModeration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
 	uint32_t                                           FilterToggle : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
 	uint32_t                                           DdosPrevention : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
+	uint32_t                                           OunceEnhancements : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
 	uint32_t                                           FastFreeplay : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           MatchAdminMutator : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
+	uint32_t                                           Thistle : 1;                                   // 0x0078 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 
 public:
