@@ -54,7 +54,7 @@ struct FFrame
 
 #define RESULT_DECL void* const Result
 
-using tCallFunction    = void (*)(UObject*, FFrame&, void* const, UFunction*); 
+using tCallFunction    = void (*)(UObject*, FFrame&, void* const, UFunction*);
 using tProcessInternal = void (*)(UObject*, FFrame&, void* const);
 using tProcessEvent    = void (*)(UObject*, UFunction*, void*, void*); // Calling object, Function, Struct ptr with params, Unused result
 
@@ -103,7 +103,7 @@ public:
 
 		/** conversion to "bool" returning TRUE if the iterator is valid. */
 		typedef bool PrivateBooleanType;
-		operator PrivateBooleanType() const { return CurrentLink != NULL ? &PrivateBooleanHelper::Value : NULL; }
+		             operator PrivateBooleanType() const { return CurrentLink != NULL ? &PrivateBooleanHelper::Value : NULL; }
 		bool operator!() const { return !operator PrivateBooleanType(); }
 
 		// Accessors.
@@ -242,8 +242,11 @@ struct FD3D11Texture2D
 // https://github.com/CodeRedModding/UnrealEngine3/blob/main/Development/Src/Engine/Inc/RenderResource.h#L9
 struct FRenderResource
 {
-	TLinkedList<FRenderResource*>* ResourceLink; // was previously a TLinkedList class (not pointer) before RL update v2.54 (7/29/25)
-	BITFIELD                       bInitialized : 1;
+	// NOTE (7/29/25): ResourceLink was previously a TLinkedList instance (not pointer) before RL update v2.54
+	// UPDATE (12/10/25): Apparently it switched back to a whole TLinkedList instance in RL update v2.63 smh
+	TLinkedList<FRenderResource*> ResourceLink;
+
+	BITFIELD bInitialized : 1;
 
 	virtual ~FRenderResource() {}
 };
