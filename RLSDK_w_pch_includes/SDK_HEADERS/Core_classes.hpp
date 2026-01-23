@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1416,12 +1416,11 @@ enum class EContentKeyIndex_PrimeUpdate56 : uint8_t
 	PrimeUpdate56_4F9D85A4DAAC2ADC767DE907A782F6D0     = 23,
 	PrimeUpdate56_F85BF95681F2B190DB7CE719FC4F2D4B     = 24,
 	PrimeUpdate56_72245A3AA2009FDCADE521458E9E03E7     = 25,
-	PrimeUpdate56_E83BEBA1D39472EB242EDB0F36E5D705     = 26,
-	PrimeUpdate56_7885584A2661BF346EA285C88957C5A5     = 27,
-	PrimeUpdate56_A43BAB4FD129D0AB1A42BBD3D1DFFB9F     = 28,
-	PrimeUpdate56_D41F80EA1BEF3C55560464959F9B5FFA     = 29,
-	PrimeUpdate56_92A777E7448F613619B98E4FD3AD056D     = 30,
-	PrimeUpdate56_END                                  = 31
+	PrimeUpdate56_7885584A2661BF346EA285C88957C5A5     = 26,
+	PrimeUpdate56_A43BAB4FD129D0AB1A42BBD3D1DFFB9F     = 27,
+	PrimeUpdate56_D41F80EA1BEF3C55560464959F9B5FFA     = 28,
+	PrimeUpdate56_92A777E7448F613619B98E4FD3AD056D     = 29,
+	PrimeUpdate56_END                                  = 30
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate56
@@ -1466,25 +1465,46 @@ enum class EContentKeyIndex_PrimeUpdate57 : uint8_t
 	PrimeUpdate57_9BD6FB91FD7E78075B537C4A91441D80     = 14,
 	PrimeUpdate57_8B9A200098588BC6C32DEEDC0DEA9539     = 15,
 	PrimeUpdate57_F2EB664D7D0199FEF19D99A6F765A64F     = 16,
-	PrimeUpdate57_87AF2B3514656129E1C82567C7CEBF70     = 17,
-	PrimeUpdate57_306C73B9F5BA0CF2718946DA8291275E     = 18,
-	PrimeUpdate57_F1220AA32F763A395F38E9EB619FDB44     = 19,
-	PrimeUpdate57_249FD98E4BA1B52EF059B315064F5A8D     = 20,
-	PrimeUpdate57_CC908A883D25989184244D2483275AAC     = 21,
-	PrimeUpdate57_537B9F851E6A3396907EDB19DE477E91     = 22,
-	PrimeUpdate57_00F6EAA14FAE66FE6E5D494B141742D6     = 23,
-	PrimeUpdate57_47823B257BDEFFFFA69577E633EC850A     = 24,
-	PrimeUpdate57_92D73769B8F6B8DDEACAD18D98F91C0E     = 25,
-	PrimeUpdate57_E29CDC661A12BD09F1D0DD406BCB9269     = 26,
-	PrimeUpdate57_43333190CFD362CC7731FCB9A6726794     = 27,
-	PrimeUpdate57_D4DE636E25B79579CB44A0223FA34643     = 28,
-	PrimeUpdate57_45C6CF3952D0CE201A0C6CCE89C9CB22     = 29,
-	PrimeUpdate57_5194EDEBAD3464C1ED34B9AAE278FEA1     = 30,
-	PrimeUpdate57_C82DF6ABD2CF677D5BAF4A9E72F59C9F     = 31,
-	PrimeUpdate57_4D135E230392BE9E15580016BCCE0506     = 32,
-	PrimeUpdate57_4EB99B76E407CB77A5F815FFC6EC86C2     = 33,
-	PrimeUpdate57_7F859AE48595639FD9B436708D4E3D57     = 34,
-	PrimeUpdate57_END                                  = 35
+	PrimeUpdate57_306C73B9F5BA0CF2718946DA8291275E     = 17,
+	PrimeUpdate57_249FD98E4BA1B52EF059B315064F5A8D     = 18,
+	PrimeUpdate57_CC908A883D25989184244D2483275AAC     = 19,
+	PrimeUpdate57_537B9F851E6A3396907EDB19DE477E91     = 20,
+	PrimeUpdate57_00F6EAA14FAE66FE6E5D494B141742D6     = 21,
+	PrimeUpdate57_47823B257BDEFFFFA69577E633EC850A     = 22,
+	PrimeUpdate57_92D73769B8F6B8DDEACAD18D98F91C0E     = 23,
+	PrimeUpdate57_E29CDC661A12BD09F1D0DD406BCB9269     = 24,
+	PrimeUpdate57_43333190CFD362CC7731FCB9A6726794     = 25,
+	PrimeUpdate57_D4DE636E25B79579CB44A0223FA34643     = 26,
+	PrimeUpdate57_45C6CF3952D0CE201A0C6CCE89C9CB22     = 27,
+	PrimeUpdate57_5194EDEBAD3464C1ED34B9AAE278FEA1     = 28,
+	PrimeUpdate57_C82DF6ABD2CF677D5BAF4A9E72F59C9F     = 29,
+	PrimeUpdate57_4D135E230392BE9E15580016BCCE0506     = 30,
+	PrimeUpdate57_4EB99B76E407CB77A5F815FFC6EC86C2     = 31,
+	PrimeUpdate57_7F859AE48595639FD9B436708D4E3D57     = 32,
+	PrimeUpdate57_END                                  = 33
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate57
+enum class EContentKeyIndex_PrimeUpdate57_2 : uint8_t
+{
+	PrimeUpdate57_1_4A3D7913BE5BAA142DE1EF49B5047440   = 0,
+	PrimeUpdate57_1_C4A11FD6AD1CA6437D4789332AD521DD   = 1,
+	PrimeUpdate57_1_2AE5E6D5A89A744763E0E156FEB5FFCB   = 2,
+	PrimeUpdate57_1_899D78BFFBA7AEF27F62712C16882652   = 3,
+	PrimeUpdate57_1_8B41D51DCE8E67411A54F3B6CA0D6521   = 4,
+	PrimeUpdate57_1_DACD8BE1E088920351C1C0BA5439235F   = 5,
+	PrimeUpdate57_1_1C6B3221D077D7BC7EE517A006940090   = 6,
+	PrimeUpdate57_1_CE24375404EA7FBD6F0741FFB6EC5248   = 7,
+	PrimeUpdate57_1_33100BDD87C1285DAFEEBDE665231E71   = 8,
+	PrimeUpdate57_1_C4E38ECB2703E100A22CC00863162BE8   = 9,
+	PrimeUpdate57_1_F00B1F4FE1B9D47D8BE9F3B044BA714C   = 10,
+	PrimeUpdate57_1_7E6EB67A68C2852E4846A468B115A085   = 11,
+	PrimeUpdate57_1_FB53C0448C006E63E41BACC063E680AF   = 12,
+	PrimeUpdate57_1_F6D9978DB43CDE9A1C5540B0D191D700   = 13,
+	PrimeUpdate57_1_88292212FCCEA5C66FB9CCF743677B9C   = 14,
+	PrimeUpdate57_1_39B8E2CE7627ADD60BFB4C67B14FA8B8   = 15,
+	PrimeUpdate57_1_849609CDCBB78E31418006D297020E44   = 16,
+	PrimeUpdate57_1_END                                = 17
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_ContinuousIntegration
@@ -1524,6 +1544,9 @@ enum class EDistributionVectorMirrorFlags : uint8_t
 # ========================================================================================= #
 */
 
+template <typename T>
+concept UObjectOrDerived = std::is_base_of_v<UObject, T>;
+
 // Class Core.Object
 // 0x0060
 class UObject
@@ -1544,17 +1567,13 @@ public:
 	class UObject*                                     ObjectArchetype;                               // 0x0058 (0x0008) [0x0000000000021003] (CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Object");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Object");
+        return uClassPointer;
+    }
 
 	static class TArray<class UObject*>* GObjObjects();
 
@@ -1562,7 +1581,7 @@ public:
 	std::string GetNameCPP();
 	std::string GetFullName();
 	class UObject* GetPackageObj();
-	template<typename T> static T* FindObject(const std::string& objectFullName)
+	template<UObjectOrDerived T> static T* FindObject(const std::string& objectFullName)
 	{
 		for (UObject* uObject : *UObject::GObjObjects())
 		{
@@ -1580,10 +1599,14 @@ public:
 	static class UClass* FindClass(const std::string& classFullName);
 	bool IsA(class UClass* uClass);
 	bool IsA(int32_t objInternalInteger);
-	template<typename T> bool IsA()
+	template<UObjectOrDerived T> bool IsA()
 	{
 		return IsA(T::StaticClass());
 	}
+    template <UObjectOrDerived T> T* AsA()
+    {
+        return IsA<T>() ? reinterpret_cast<T*>(this) : nullptr;
+    }
 
 	static struct FRotator RSmoothInterpTo(const struct FRotator& From, const struct FRotator& To, float Lambda, float DeltaTime);
 	static struct FVector VSmoothInterpTo(const struct FVector& From, const struct FVector& To, float Lambda, float DeltaTime);
@@ -1949,7 +1972,7 @@ public:
 	static int32_t FromHex(const class FString& Hex);
 	static uint64_t QMin(uint64_t A, uint64_t B);
 	static uint64_t QMax(uint64_t A, uint64_t B);
-	static uint64_t QSubtract(uint64_t A, uint64_t B);
+	static uint64_t QSubtractNoUnderflow(uint64_t A, uint64_t B);
 	static bool NotEqual_QWordInt(uint64_t A, int32_t B);
 	static bool EqualEqual_QWordInt(uint64_t A, int32_t B);
 	static uint64_t SubtractEqual_QWordQWord(uint64_t B, uint64_t& outA);
@@ -2017,17 +2040,13 @@ public:
 	uint8_t                                          UnknownData00[0x60];                          // 0x0060 (0x0060) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Config_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Config_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2039,17 +2058,13 @@ public:
 	uint8_t                                          UnknownData00[0x60];                          // 0x0060 (0x0060) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ClassTupleCollection_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ClassTupleCollection_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2061,17 +2076,13 @@ public:
 	uint8_t                                          UnknownData00[0x68];                          // 0x0060 (0x0068) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ClassTuple_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ClassTuple_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2083,17 +2094,13 @@ public:
 	uint8_t                                          UnknownData00[0x20];                          // 0x0060 (0x0020) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.SubscriptionCollection_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.SubscriptionCollection_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2105,17 +2112,13 @@ public:
 	uint8_t                                          UnknownData00[0xB0];                          // 0x0060 (0x00B0) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Instance_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Instance_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2127,17 +2130,13 @@ public:
 	uint8_t                                          UnknownData00[0x18];                          // 0x0060 (0x0018) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Global_ORS");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Global_ORS");
+        return uClassPointer;
+    }
 
 };
 
@@ -2148,17 +2147,13 @@ class UUTF8 : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.UTF8");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.UTF8");
+        return uClassPointer;
+    }
 
 	static void DecodeInline(class TArray<uint8_t>& outInput, class FString& outOutput);
 	static class FString Decode(class TArray<uint8_t>& outInput);
@@ -2174,17 +2169,13 @@ public:
 	uint8_t                                          UnknownData00[0x30];                          // 0x0060 (0x0030) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.TextBuffer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.TextBuffer");
+        return uClassPointer;
+    }
 
 };
 
@@ -2196,17 +2187,13 @@ public:
 	struct FPointer                                    VfTable_FExec;                                 // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Subsystem");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Subsystem");
+        return uClassPointer;
+    }
 
 };
 
@@ -2237,17 +2224,13 @@ public:
 	class FString                                      TextureFileCacheExtension;                     // 0x0150 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.System");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.System");
+        return uClassPointer;
+    }
 
 };
 
@@ -2259,17 +2242,13 @@ public:
 	struct FScriptDelegate                             __SubscriberCallback__Delegate;                // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Subscription");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Subscription");
+        return uClassPointer;
+    }
 
 	static void __Subscription__TriggerAll_0x1(class USubscription* S);
 	static class USubscription* GetNone();
@@ -2289,17 +2268,13 @@ public:
 	uint8_t                                          UnknownData00[0x10];                          // 0x0060 (0x0010) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.PropertyChangeDispatcher");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.PropertyChangeDispatcher");
+        return uClassPointer;
+    }
 
 };
 
@@ -2311,17 +2286,13 @@ public:
 	uint8_t                                          UnknownData00[0xB8];                          // 0x0060 (0x00B8) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.PackageMap");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.PackageMap");
+        return uClassPointer;
+    }
 
 };
 
@@ -2332,17 +2303,13 @@ class UObjectUtil : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ObjectUtil");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ObjectUtil");
+        return uClassPointer;
+    }
 
 	static class UClass* FindClass(const class FName& ClassName);
 	static void ClearNaNValues(class UObject* InObject);
@@ -2361,17 +2328,13 @@ public:
 	uint8_t                                          UnknownData00[0x10];                          // 0x0060 (0x0010) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ObjectSerializer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ObjectSerializer");
+        return uClassPointer;
+    }
 
 };
 
@@ -2383,17 +2346,13 @@ public:
 	uint8_t                                          UnknownData00[0x8];                            // 0x0060 (0x0008) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ObjectRedirector");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ObjectRedirector");
+        return uClassPointer;
+    }
 
 };
 
@@ -2405,17 +2364,13 @@ public:
 	uint8_t                                          UnknownData00[0x50];                          // 0x0060 (0x0050) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.MetaData");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.MetaData");
+        return uClassPointer;
+    }
 
 };
 
@@ -2427,17 +2382,13 @@ public:
 	uint8_t                                          UnknownData00[0x188];                        // 0x0060 (0x0188) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Linker");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Linker");
+        return uClassPointer;
+    }
 
 };
 
@@ -2449,17 +2400,13 @@ public:
 	uint8_t                                          UnknownData00[0xC0];                          // 0x01E8 (0x00C0) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.LinkerSave");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.LinkerSave");
+        return uClassPointer;
+    }
 
 };
 
@@ -2471,17 +2418,13 @@ public:
 	uint8_t                                          UnknownData00[0x628];                        // 0x01E8 (0x0628) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.LinkerLoad");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.LinkerLoad");
+        return uClassPointer;
+    }
 
 };
 
@@ -2492,17 +2435,13 @@ class UInterface : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Interface");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Interface");
+        return uClassPointer;
+    }
 
 };
 
@@ -2513,17 +2452,13 @@ class UFileSystem : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.FileSystem");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.FileSystem");
+        return uClassPointer;
+    }
 
 	static bool IsCookedBuild();
 	static void CloseLogFile();
@@ -2553,17 +2488,13 @@ public:
 	uint8_t UnknownData00[0x8];   // 0x0068 (0x0008) DYNAMIC FIELD PADDING
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Field");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Field");
+        return uClassPointer;
+    }
 
 };
 
@@ -2581,17 +2512,13 @@ public:
 	uint8_t UnknownData02[0x7C];  // 0x00B4 (0x007C) DYNAMIC FIELD PADDING
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Struct");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Struct");
+        return uClassPointer;
+    }
 
 };
 
@@ -2603,17 +2530,13 @@ public:
 	uint8_t                                          UnknownData00[0x28];                          // 0x0130 (0x0028) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ScriptStruct");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ScriptStruct");
+        return uClassPointer;
+    }
 
 };
 
@@ -2637,17 +2560,13 @@ public:
 	void* Func;                   // 0x0158 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Function");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Function");
+        return uClassPointer;
+    }
 
 	static bool                                        initialized;
 	static std::unordered_map<std::string, UFunction*> functionCache;
@@ -2667,17 +2586,13 @@ public:
 	uint8_t UnknownData01[0x2C];  // 0x009C (0x002C) DYNAMIC FIELD PADDING
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Property");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Property");
+        return uClassPointer;
+    }
 
 };
 
@@ -2689,17 +2604,13 @@ public:
 	class UStruct* Struct;        // 0x00C8 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.StructProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.StructProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2710,17 +2621,13 @@ class UStrProperty : public UProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.StrProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.StrProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2731,17 +2638,13 @@ class UQWordProperty : public UProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.QWordProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.QWordProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2754,17 +2657,13 @@ public:
 	uint8_t UnknownData00[0x8];   // 0x00D0 (0x0008) DYNAMIC FIELD PADDING
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ObjectProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ObjectProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2775,17 +2674,13 @@ class UComponentProperty : public UObjectProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ComponentProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ComponentProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2797,17 +2692,13 @@ public:
 	class UClass* MetaClass;      // 0x00D8 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ClassProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ClassProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2818,17 +2709,13 @@ class UNameProperty : public UProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.NameProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.NameProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2841,17 +2728,13 @@ public:
 	class UProperty* Value;       // 0x00D0 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.MapProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.MapProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2862,17 +2745,13 @@ class UIntProperty : public UProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.IntProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.IntProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2885,17 +2764,13 @@ public:
 	uint8_t UnknownData00[0x8];   // 0x00D0 (0x0008) DYNAMIC FIELD PADDING
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.InterfaceProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.InterfaceProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2906,17 +2781,13 @@ class UFloatProperty : public UProperty
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.FloatProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.FloatProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2928,17 +2799,13 @@ public:
 	uint8_t                                          UnknownData00[0x10];                          // 0x00C8 (0x0010) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.DelegateProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.DelegateProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2950,17 +2817,13 @@ public:
 	class UEnum* Enum;            // 0x00C8 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ByteProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ByteProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2972,17 +2835,13 @@ public:
 	uint32_t BitMask;             // 0x00C8 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.BoolProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.BoolProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -2994,17 +2853,13 @@ public:
 	class UProperty* Inner;       // 0x00C8 (0x0008)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ArrayProperty");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ArrayProperty");
+        return uClassPointer;
+    }
 
 };
 
@@ -3016,17 +2871,13 @@ public:
 	class TArray<class FName> Names;// 0x0070 (0x0010)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Enum");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Enum");
+        return uClassPointer;
+    }
 
 };
 
@@ -3038,17 +2889,13 @@ public:
 	class FString Value;          // 0x0070 (0x0010)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Const");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Const");
+        return uClassPointer;
+    }
 
 };
 
@@ -3185,17 +3032,13 @@ public:
 	uint8_t                                          UnknownData01[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.FeatureSystem");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.FeatureSystem");
+        return uClassPointer;
+    }
 
 };
 
@@ -3218,17 +3061,13 @@ public:
 	class TArray<class FString>                        ValidGameNames;                                // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Factory");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Factory");
+        return uClassPointer;
+    }
 
 };
 
@@ -3239,17 +3078,13 @@ class UTextBufferFactory : public UFactory
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.TextBufferFactory");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.TextBufferFactory");
+        return uClassPointer;
+    }
 
 };
 
@@ -3264,17 +3099,13 @@ public:
 	uint8_t                                          UnknownData01[0x10];                          // 0x0088 (0x0010) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Exporter");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Exporter");
+        return uClassPointer;
+    }
 
 };
 
@@ -3286,17 +3117,13 @@ public:
 	class FString                                      LocalizationKey;                               // 0x0060 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ErrorType");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ErrorType");
+        return uClassPointer;
+    }
 
 	class UError* CreateError(const class FString& optionalInErrorMessage, int32_t optionalInErrorCode);
 	class FString GetLocalizedMessage();
@@ -3311,17 +3138,13 @@ public:
 	class FString                                      LocalizationSection;                           // 0x0070 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ErrorList");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ErrorList");
+        return uClassPointer;
+    }
 
 	static class UErrorType* GetErrorType(const class FName& Error);
 };
@@ -3335,17 +3158,13 @@ public:
 	class UErrorType*                                  Remove_OutOfBounds;                            // 0x0088 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ArrayErrors");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ArrayErrors");
+        return uClassPointer;
+    }
 
 };
 
@@ -3360,17 +3179,13 @@ public:
 	class FName                                        RetryKey;                                      // 0x007C (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Error");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Error");
+        return uClassPointer;
+    }
 
 	class FString GetDebugMessage();
 	class FString GetLocalizedMessage();
@@ -3385,17 +3200,13 @@ public:
 	struct FScriptDelegate                             __PlaceholderDelegate__Delegate;               // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.DelegateTracker");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.DelegateTracker");
+        return uClassPointer;
+    }
 
 	struct FScriptDelegate RemoveDelegate(int32_t CallbackId);
 	int32_t AddDelegate(const struct FScriptDelegate& Callback);
@@ -3420,17 +3231,13 @@ public:
 	struct FScriptDelegate                             __LogFunc__Delegate;                           // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.DebugDrawer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.DebugDrawer");
+        return uClassPointer;
+    }
 
 	void Reset();
 	void PrintText(const class FString& Text, const struct FColor& optionalInColor);
@@ -3453,17 +3260,13 @@ class UCompression : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Compression");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Compression");
+        return uClassPointer;
+    }
 
 	static bool ZLibCompress(class TArray<uint8_t>& outUncompressed, class TArray<uint8_t>& outOutCompressed);
 };
@@ -3477,17 +3280,13 @@ public:
 	class FName                                        TemplateName;                                  // 0x0068 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Component");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Component");
+        return uClassPointer;
+    }
 
 };
 
@@ -3499,17 +3298,13 @@ public:
 	struct FMap_Mirror                                 Map;                                           // 0x0070 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.StringObjectMap");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.StringObjectMap");
+        return uClassPointer;
+    }
 
 	bool Contains(const class FString& Key);
 	void Remove(const class FString& Key);
@@ -3529,17 +3324,13 @@ public:
 	struct FScriptDelegate                             __PairCallback__Delegate;                      // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.StringMap");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.StringMap");
+        return uClassPointer;
+    }
 
 	void ForEach(const struct FScriptDelegate& Callback);
 	void Append(class UStringMap* Other);
@@ -3578,17 +3369,13 @@ public:
 	struct FScriptDelegate                             __ObjectChangeCallback__Delegate;              // 0x01C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ObjectProvider");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ObjectProvider");
+        return uClassPointer;
+    }
 
 	void SetParent(class UObjectProvider* InParent);
 	void RemoveProxy(class UObjectProvider* InProxy);
@@ -3631,17 +3418,13 @@ public:
 	uint32_t                                           bIsDirty : 1;                                  // 0x0078 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.DistributionVector");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.DistributionVector");
+        return uClassPointer;
+    }
 
 	struct FVector GetVectorValue(float optionalF, int32_t optionalLastExtreme);
 };
@@ -3656,17 +3439,13 @@ public:
 	uint32_t                                           bIsDirty : 1;                                  // 0x0078 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.DistributionFloat");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.DistributionFloat");
+        return uClassPointer;
+    }
 
 	float GetFloatValue(float optionalF);
 };
@@ -3688,17 +3467,13 @@ public:
 	uint32_t                                           ShowErrorCount : 1;                            // 0x00B0 (0x0004) [0x0000000000000000] [0x00000010] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Commandlet");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Commandlet");
+        return uClassPointer;
+    }
 
 	int32_t eventMain(const class FString& Params);
 };
@@ -3711,17 +3486,13 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.HelpCommandlet");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.HelpCommandlet");
+        return uClassPointer;
+    }
 
 	int32_t eventMain(const class FString& Params);
 };
@@ -3734,17 +3505,13 @@ public:
 	struct FPointer                                    BreadcrumbInstance;                            // 0x0060 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Breadcrumbs");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Breadcrumbs");
+        return uClassPointer;
+    }
 
 	void BreadcrumbFloat(const class FString& Category, float Value);
 	void BreadcrumbString(const class FString& Category, const class FString& Value);
@@ -3757,17 +3524,13 @@ class UBase64 : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Base64");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Base64");
+        return uClassPointer;
+    }
 
 	static class TArray<uint8_t> PadAndDecodeString(const class FString& Input);
 	static void DecodeStringInline(const class FString& Input, class TArray<uint8_t>& outOutput);
@@ -3791,17 +3554,13 @@ public:
 	class TArray<struct FScriptWarning>                ScriptWarnings;                                // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.AutomationTest");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.AutomationTest");
+        return uClassPointer;
+    }
 
 };
 
@@ -3820,17 +3579,13 @@ public:
 	struct FScriptDelegate                             __EventDisposed__Delegate;                     // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.AsyncTask");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.AsyncTask");
+        return uClassPointer;
+    }
 
 	void QueCallbacks();
 	static class UAsyncTask* CreateError(class UError* InError);
@@ -3860,17 +3615,13 @@ class UAsyncResult : public UAsyncTask
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.AsyncResult");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.AsyncResult");
+        return uClassPointer;
+    }
 
 };
 
@@ -3881,17 +3632,13 @@ class U_Types_Core : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core._Types_Core");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core._Types_Core");
+        return uClassPointer;
+    }
 
 };
 
@@ -3903,17 +3650,13 @@ public:
 	uint8_t                                          UnknownData00[0x60];                          // 0x0130 (0x0060) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.State");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.State");
+        return uClassPointer;
+    }
 
 };
 
@@ -3925,17 +3668,13 @@ public:
 	uint8_t                                          UnknownData00[0xE8];                          // 0x0060 (0x00E8) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Package");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Package");
+        return uClassPointer;
+    }
 
 };
 
@@ -3947,17 +3686,13 @@ public:
 	uint8_t                                          UnknownData00[0x228];                        // 0x0190 (0x0228) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.Class");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.Class");
+        return uClassPointer;
+    }
 
 };
 
@@ -3971,17 +3706,13 @@ public:
 	class UAsyncTask*                                  Parent;                                        // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.__AsyncTask__All_0x1");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.__AsyncTask__All_0x1");
+        return uClassPointer;
+    }
 
 	void __AsyncTask__All_0x1();
 };
@@ -3993,17 +3724,13 @@ class U_LoggingDoc : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core._LoggingDoc");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core._LoggingDoc");
+        return uClassPointer;
+    }
 
 	static void TestSpecialLogging();
 };
@@ -4015,17 +3742,13 @@ class U_Types_Generated : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core._Types_Generated");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core._Types_Generated");
+        return uClassPointer;
+    }
 
 };
 
@@ -4036,17 +3759,13 @@ class UArrayFuncs : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.ArrayFuncs");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.ArrayFuncs");
+        return uClassPointer;
+    }
 
 	static void GetRandomElement();
 	static void ShuffleArray();
@@ -4059,17 +3778,13 @@ class UIDisposable : public UInterface
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.IDisposable");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.IDisposable");
+        return uClassPointer;
+    }
 
 	void eventDispose();
 };
@@ -4081,17 +3796,13 @@ class URotatorConversions : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.RotatorConversions");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.RotatorConversions");
+        return uClassPointer;
+    }
 
 	static struct FRotatorRadians GetAsRadians(const struct FRotator& InRotator);
 	static struct FRotatorDegrees GetAsDegrees(const struct FRotator& InRotator);
@@ -4104,17 +3815,13 @@ class UTAsyncResult : public UAsyncTask
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class Core.TAsyncResult");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class Core.TAsyncResult");
+        return uClassPointer;
+    }
 
 };
 

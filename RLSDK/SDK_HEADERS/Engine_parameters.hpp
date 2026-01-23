@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -3483,6 +3483,13 @@ struct UEngine_execIsEditor_Params
 struct UEngine_execUseSecurePackets_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.GameEngine.EventTravelMapNotFound
+// [0x00120001] 
+struct UGameEngine_execEventTravelMapNotFound_Params
+{
+	class FString                                      MapName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.GameEngine.HasSecondaryScreenActive
@@ -9877,23 +9884,6 @@ struct APlayerController_eventNotifyDirectorControl_Params
 	uint32_t                                           bNowControlling : 1;                              // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class USeqAct_Interp*                              CurrentMatinee;                                   // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.PlayerController.ServerUnmutePlayer
-// [0x002208C2] 
-struct APlayerController_eventServerUnmutePlayer_Params
-{
-	struct FUniqueNetId                                PlayerNetId;                                      // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class APlayerController*                        Other;                                            // 0x0048 (0x0008) [0x0000000000000000]               
-	// int32_t                                         RemoveIndex;                                      // 0x0050 (0x0004) [0x0000000000000000]               
-};
-
-// Function Engine.PlayerController.ServerMutePlayer
-// [0x002208C2] 
-struct APlayerController_eventServerMutePlayer_Params
-{
-	struct FUniqueNetId                                PlayerNetId;                                      // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class APlayerController*                        Other;                                            // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function Engine.PlayerController.GameplayUnmutePlayer
@@ -37818,10 +37808,12 @@ struct UOnlineSystemInterface_execAddUserOrphanedDelegate_Params
 };
 
 // Function Engine.OnlineSystemInterface.OnUserOrphaned
-// [0x00120000] 
+// [0x00124000] 
 struct UOnlineSystemInterface_execOnUserOrphaned_Params
 {
 	uint8_t                                            ControllerId;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	uint32_t                                           bOrphanedByControllerDisconnection : 1;           // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function Engine.OnlineSystemInterface.ClearControllerChangeDelegate

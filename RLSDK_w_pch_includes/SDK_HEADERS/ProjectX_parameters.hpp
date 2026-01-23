@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1491,14 +1491,6 @@ struct APlayerController_X_exec__PlayerController_X__ReceivedPlayer_0x1_Params
 struct APlayerController_X_execClientSetSeasonReward_Params
 {
 	struct FPlayerSeasonRewardProgress                 Reward;                                           // 0x0000 (0x0050) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function ProjectX.PlayerController_X.ServerUpdateCustomMatchSettings
-// [0x002200C2] 
-struct APlayerController_X_execServerUpdateCustomMatchSettings_Params
-{
-	struct FCustomMatchSettings                        Settings;                                         // 0x0000 (0x0088) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlineGameDedicatedServer_X*             DedicatedServer;                                  // 0x0088 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.PlayerController_X.ServerSetParty
@@ -11420,6 +11412,14 @@ struct UOnlineGameReservations_X_execInitialReservationTimeout_Params
 {
 };
 
+// Function ProjectX.OnlineGameReservations_X.HandleMapNotFound
+// [0x00080003] 
+struct UOnlineGameReservations_X_execHandleMapNotFound_Params
+{
+	class FString                                      MapName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class FString                                   MapFailedMessage;                                 // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // Function ProjectX.OnlineGameReservations_X.NotAllPlayersJoined
 // [0x00080003] 
 struct UOnlineGameReservations_X_execNotAllPlayersJoined_Params
@@ -16877,6 +16877,15 @@ struct UOnlineGameParty_X_execIsMemberLocal_Params
 	bool                                               ReturnValue : 1;                                  // 0x0048 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function ProjectX.OnlineGameParty_X.HasMember
+// [0x00020003] 
+struct UOnlineGameParty_X_execHasMember_Params
+{
+	struct FUniqueNetId                                Member;                                           // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0048 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         MemberIdx;                                        // 0x004C (0x0004) [0x0000000000000000]               
+};
+
 // Function ProjectX.OnlineGameParty_X.HasRemoteMember
 // [0x00020003] 
 struct UOnlineGameParty_X_execHasRemoteMember_Params
@@ -21326,10 +21335,11 @@ struct UOnlinePlayerFriends_X_execSetPlatformRichPresence_Params
 };
 
 // Function ProjectX.OnlinePlayerFriends_X.HandleEpicFriendInviteAccepted
-// [0x00020003] 
+// [0x00820003] 
 struct UOnlinePlayerFriends_X_execHandleEpicFriendInviteAccepted_Params
 {
 	struct FUniqueNetId                                AcceptingPlayerId;                                // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FOnlineFriend                            NewFriend;                                        // 0x0048 (0x0118) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlinePlayerFriends_X.HandleEpicFriendRemoved
@@ -21947,6 +21957,7 @@ struct UOnlinePlayerFriends_X_execEventEpicPlayerUnfriended_Params
 struct UOnlinePlayerFriends_X_execEventEpicFriendInviteAccepted_Params
 {
 	struct FUniqueNetId                                AcceptingPlayerId;                                // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      AcceptingPlayerName;                              // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlinePlayerFriends_X.EventEpicFriendInviteFailed
@@ -27140,6 +27151,14 @@ struct UMatchLog_X_execStart_Params
 {
 };
 
+// Function ProjectX.MatchSetupFailedMessage_X.SetMessageInfo
+// [0x00020003] 
+struct UMatchSetupFailedMessage_X_execSetMessageInfo_Params
+{
+	class FString                                      InInfo;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UMatchSetupFailedMessage_X*                  ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.MaterialEffect_X.GetActiveEffects
 // [0x00020003] 
 struct UMaterialEffect_X_execGetActiveEffects_Params
@@ -28837,6 +28856,15 @@ struct UReservationsMetrics_X_execDsrMissingConnectionError_Params
 // [0x00020003] 
 struct UReservationsMetrics_X_execPlayerCanceled_Params
 {
+};
+
+// Function ProjectX.ReservationsMetrics_X.MapFailedToLoad
+// [0x00020003] 
+struct UReservationsMetrics_X_execMapFailedToLoad_Params
+{
+	int32_t                                            PlaylistId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      MapName;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.ReservationsMetrics_X.NotAllPlayersJoinedError

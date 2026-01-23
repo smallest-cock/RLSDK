@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -353,17 +353,13 @@ public:
 	struct FScriptDelegate                             __EventAdHocDestroyed__Delegate;               // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.AdHocDelegates");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.AdHocDelegates");
+        return uClassPointer;
+    }
 
 	void EventAdHocDestroyed();
 	void EventAdHocFinalized();
@@ -384,17 +380,13 @@ public:
 	class UErrorType*                                  AdHocError;                                    // 0x0080 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.AdHocErrors");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.AdHocErrors");
+        return uClassPointer;
+    }
 
 };
 
@@ -411,17 +403,13 @@ public:
 	struct FScriptDelegate                             Callbacks;                                     // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownload");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownload");
+        return uClassPointer;
+    }
 
 };
 
@@ -441,17 +429,13 @@ public:
 	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x03A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineSubsystemCommonImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineSubsystemCommonImpl");
+        return uClassPointer;
+    }
 
 	void GetRegisteredPlayers(const class FName& SessionName, class TArray<struct FUniqueNetId>& outOutRegisteredPlayers);
 	bool IsPlayerInSession(const class FName& SessionName, const struct FUniqueNetId& PlayerID);
@@ -468,17 +452,13 @@ public:
 	class UOnlineImageDownloaderWeb*                   ImageDownloader;                               // 0x0078 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownloadComponent");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownloadComponent");
+        return uClassPointer;
+    }
 
 	void TriggerAvatarCallbacks(class UAvatarDownload* Avatar);
 	void HandleOnlineImageDownloaded(const struct FOnlineImageDownload& ImageInfo);
@@ -501,17 +481,13 @@ public:
 	struct FMap_Mirror                                 AvatarsPendingImages;                          // 0x0110 (0x0050) [0x0000000000001000] (CPF_Native)  
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownloadMap");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.AvatarDownloadMap");
+        return uClassPointer;
+    }
 
 	bool ContainsImage(const class FString& Key);
 	bool ContainsAvatar(struct FAvatarKey& outKey);
@@ -544,17 +520,13 @@ public:
 	class FName                                        BeaconName;                                    // 0x0064 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.ClientBeaconAddressResolver");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.ClientBeaconAddressResolver");
+        return uClassPointer;
+    }
 
 };
 
@@ -570,17 +542,13 @@ public:
 	uint8_t                                          UnknownData00[0x124];                        // 0x0ACC (0x0124) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.HTTPDownload");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.HTTPDownload");
+        return uClassPointer;
+    }
 
 };
 
@@ -596,17 +564,13 @@ public:
 	class TArray<class FString>                        AllowedRedirectURLs;                           // 0x00B0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.HttpRequestCurl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.HttpRequestCurl");
+        return uClassPointer;
+    }
 
 	bool ProcessRequest();
 	class UHttpRequestInterface* SetHeader(const class FString& HeaderName, const class FString& HeaderValue);
@@ -633,17 +597,13 @@ public:
 	class TArray<uint8_t>                              Payload;                                       // 0x0068 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.HttpResponseCurl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.HttpResponseCurl");
+        return uClassPointer;
+    }
 
 	int32_t GetResponseCode();
 	class FString GetContentAsString();
@@ -666,17 +626,13 @@ public:
 	struct FScriptDelegate                             __ImageDecodedDelegate__Delegate;              // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.ImageDecoder");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.ImageDecoder");
+        return uClassPointer;
+    }
 
 	void RequestDecodeImage(const class FString& RequestURL, EImageType ImageType, const struct FScriptDelegate& FinishedCallback, class TArray<uint8_t>& outImageData);
 	void ImageDecodedDelegate(const class FString& RequestURL, const struct FImageLayout& Image);
@@ -700,17 +656,13 @@ public:
 	int32_t                                            DataPending;                                   // 0x0290 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.InternetLink");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.InternetLink");
+        return uClassPointer;
+    }
 
 	void eventResolveFailed();
 	void eventResolved(const struct FIpAddr& Addr);
@@ -737,17 +689,13 @@ public:
 	class FString                                      RecvBuf;                                       // 0x02C8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.TcpLink");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.TcpLink");
+        return uClassPointer;
+    }
 
 	void eventReceivedBinary(int32_t Count, uint8_t B[255]);
 	void eventReceivedLine(const class FString& Line);
@@ -775,17 +723,13 @@ public:
 	class UMcpServiceConfig*                           McpConfig;                                     // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpServiceBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpServiceBase");
+        return uClassPointer;
+    }
 
 	class FString GetUserAuthURL(const class FString& McpId);
 	class FString GetAppAccessURL();
@@ -801,17 +745,13 @@ public:
 	struct FPointer                                    VfTable_FTickableObject;                       // 0x0078 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.MCPBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.MCPBase");
+        return uClassPointer;
+    }
 
 };
 
@@ -826,17 +766,13 @@ public:
 	uint32_t                                           bBinaryStats : 1;                              // 0x00B0 (0x0004) [0x0000000000004002] [0x00000001] (CPF_Const | CPF_Config)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineEventsInterfaceMcp");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineEventsInterfaceMcp");
+        return uClassPointer;
+    }
 
 	bool UploadMatchmakingStats(const struct FUniqueNetId& UniqueId, class UOnlineMatchmakingStats* MMStats);
 	bool UpdatePlaylistPopulation(int32_t PlaylistId, int32_t NumPlayers);
@@ -856,17 +792,13 @@ public:
 	struct FScriptDelegate                             __OnReadNewsCompleted__Delegate;               // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineNewsInterfaceMcp");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineNewsInterfaceMcp");
+        return uClassPointer;
+    }
 
 	class FString GetNews(uint8_t LocalUserNum, EOnlineNewsType NewsType);
 	void ClearReadNewsCompletedDelegate(const struct FScriptDelegate& ReadGameNewsDelegate);
@@ -892,17 +824,13 @@ public:
 	struct FScriptDelegate                             __OnRequestTitleFileListComplete__Delegate;    // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadBase");
+        return uClassPointer;
+    }
 
 	class FString GetUrlForFile(const class FString& Filename);
 	void ClearRequestTitleFileListCompleteDelegate(const struct FScriptDelegate& RequestTitleFileListDelegate);
@@ -928,17 +856,13 @@ public:
 	int32_t                                            DownloadCount;                                 // 0x0128 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadMcp");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadMcp");
+        return uClassPointer;
+    }
 
 	bool ClearDownloadedFile(const class FString& Filename);
 	bool ClearDownloadedFiles();
@@ -955,17 +879,13 @@ public:
 	class TArray<struct FTitleFileWeb>                 TitleFiles;                                    // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadWeb");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadWeb");
+        return uClassPointer;
+    }
 
 	class FString GetUrlForFile(const class FString& Filename);
 	void OnFileListReceived(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bDidSucceed);
@@ -992,17 +912,13 @@ public:
 	struct FScriptDelegate                             __OnSaveTitleFileComplete__Delegate;           // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.TitleFileDownloadCache");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.TitleFileDownloadCache");
+        return uClassPointer;
+    }
 
 	bool DeleteTitleFile(const class FString& Filename);
 	bool DeleteTitleFiles(float MaxAgeSeconds);
@@ -1038,17 +954,13 @@ public:
 	struct FScriptDelegate                             __OnQueryMessageContentsComplete__Delegate;    // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpMessageBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpMessageBase");
+        return uClassPointer;
+    }
 
 	bool CacheMessageContents(const class FString& MessageId, class TArray<uint8_t>& outMessageContents);
 	void CacheMessage(const struct FMcpMessage& Message);
@@ -1080,17 +992,13 @@ public:
 	class TArray<struct FMcpUncompressMessageRequest>  UncompressMessageRequests;                     // 0x0178 (0x0010) [0x0000000000001000] (CPF_Native)  
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpMessageManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpMessageManager");
+        return uClassPointer;
+    }
 
 	bool CacheMessageContents(const class FString& MessageId, class TArray<uint8_t>& outMessageContents);
 	bool GetMessageByIdW(const class FString& MessageId, struct FMcpMessage& outMessage);
@@ -1130,17 +1038,13 @@ public:
 	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0150 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpUserCloudFileDownload");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpUserCloudFileDownload");
+        return uClassPointer;
+    }
 
 	void ClearAllDelegates();
 	void ClearDeleteUserFileCompleteDelegate(const struct FScriptDelegate& DeleteUserFileCompleteDelegate);
@@ -1198,17 +1102,13 @@ public:
 	int32_t                                            MaxBandwidthHistoryEntries;                    // 0x00A4 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.MeshBeacon");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.MeshBeacon");
+        return uClassPointer;
+    }
 
 	void eventDestroyBeacon();
 };
@@ -1238,17 +1138,13 @@ public:
 	struct FScriptDelegate                             __OnCreateNewSessionRequestReceived__Delegate; // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.MeshBeaconClient");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.MeshBeaconClient");
+        return uClassPointer;
+    }
 
 	bool SendHostNewGameSessionResponse(bool bSuccess, const class FName& SessionName, class UClass* SearchClass, uint8_t& outPlatformSpecificInfo);
 	void OnCreateNewSessionRequestReceived(const class FName& SessionName, class UClass* SearchClass, class TArray<struct FPlayerMember>& outPlayers);
@@ -1278,17 +1174,13 @@ public:
 	struct FScriptDelegate                             __OnReceivedClientCreateNewSessionResult__Delegate;// 0x0178 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.MeshBeaconHost");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.MeshBeaconHost");
+        return uClassPointer;
+    }
 
 	void OnReceivedClientCreateNewSessionResult(bool bSucceeded, const class FName& SessionName, class UClass* SearchClass, uint8_t& outPlatformSpecificInfo);
 	bool RequestClientCreateNewSession(const struct FUniqueNetId& PlayerNetId, const class FName& SessionName, class UClass* SearchClass, class TArray<struct FPlayerMember>& outPlayers);
@@ -1354,17 +1246,13 @@ public:
 	struct FScriptDelegate                             __OnAccountAuthorization__Delegate;            // 0x03B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineAuthInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineAuthInterfaceImpl");
+        return uClassPointer;
+    }
 
 	class UAsyncTask* RequestAccountAuthorization(const struct FUniqueNetId& PlayerID, const struct FScriptDelegate& Callback);
 	void OnAccountAuthorization(const class FString& Token);
@@ -1446,17 +1334,13 @@ public:
 	struct FScriptDelegate                             __OnReceivedLinkedAccount__Delegate;           // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineFriendsInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineFriendsInterfaceImpl");
+        return uClassPointer;
+    }
 
 	bool GetActivePlatformId(uint8_t LocalUserNum, const struct FUniqueNetId& AccountId, struct FUniqueNetId& outPlatformId);
 	bool RequestLinkedAccounts(uint8_t LocalUserNum, const class TArray<struct FUniqueNetId>& AccountIds, const struct FScriptDelegate& Callback);
@@ -1513,17 +1397,13 @@ public:
 	struct FScriptDelegate                             __OnGamePlayersChanged__Delegate;              // 0x0300 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineGameInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineGameInterfaceImpl");
+        return uClassPointer;
+    }
 
 	void ClearGamePlayersChangedDelegate(const struct FScriptDelegate& GamePlayersChangedDelegate);
 	void AddGamePlayersChangedDelegate(const struct FScriptDelegate& GamePlayersChangedDelegate);
@@ -1626,17 +1506,13 @@ public:
 	struct FScriptDelegate                             __EventImageDecoded__Delegate;                 // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineImageDownloaderWeb");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineImageDownloaderWeb");
+        return uClassPointer;
+    }
 
 	static EImageType GetImageType(const class FString& ContentType);
 	void QueueURLForDownload(const class FString& NewURL, const struct FScriptDelegate& InternalCallbackOnComplete, const struct FScriptDelegate& ExternalCallback, bool bSupportSRGB);
@@ -1710,17 +1586,13 @@ public:
 	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlineLobbyInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlineLobbyInterfaceImpl");
+        return uClassPointer;
+    }
 
 	void ClearHostStartPlayTogetherDelegate(const struct FScriptDelegate& InDelegate);
 	void AddHostStartPlayTogetherDelegate(const struct FScriptDelegate& InDelegate);
@@ -1811,17 +1683,13 @@ public:
 	struct FScriptDelegate                             __OnUnderageUserDetected__Delegate;            // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlinePersistentAuthInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlinePersistentAuthInterfaceImpl");
+        return uClassPointer;
+    }
 
 	bool AuthWithNintendoAccountToken(uint8_t LocalUserNum, class FString& outNintendoAccountToken);
 	uint64_t GetTimeUntilAuthExpiration(uint8_t LocalUserNum);
@@ -1875,17 +1743,13 @@ public:
 	struct FScriptDelegate                             __OnPlaylistPopulationDataUpdated__Delegate;   // 0x0130 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlinePlaylistManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlinePlaylistManager");
+        return uClassPointer;
+    }
 
 	void ParseDataCenterId(class TArray<uint8_t>& outData);
 	void OnReadDataCenterIdComplete(bool bWasSuccessful, const class FString& Filename);
@@ -1924,17 +1788,13 @@ public:
 	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlinePurchaseInterfaceImpl");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlinePurchaseInterfaceImpl");
+        return uClassPointer;
+    }
 
 	void ClearMicroTxnResponseDelegate(const struct FScriptDelegate& ResponseMicroTxnDelegate);
 	void AddMicroTxnResponseDelegate(const struct FScriptDelegate& ResponseMicroTxnDelegate);
@@ -1963,17 +1823,13 @@ public:
 	struct FScriptDelegate                             __OnDestroyComplete__Delegate;                 // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.PartyBeacon");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.PartyBeacon");
+        return uClassPointer;
+    }
 
 	void OnDestroyComplete();
 	void eventDestroyBeacon();
@@ -2002,17 +1858,13 @@ public:
 	struct FScriptDelegate                             __OnHostHasCancelled__Delegate;                // 0x01A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.PartyBeaconClient");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.PartyBeaconClient");
+        return uClassPointer;
+    }
 
 	void eventDestroyBeacon();
 	bool CancelReservation(const struct FUniqueNetId& CancellingPartyLeader);
@@ -2048,17 +1900,13 @@ public:
 	struct FScriptDelegate                             __OnClientCancellationReceived__Delegate;      // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.PartyBeaconHost");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.PartyBeaconHost");
+        return uClassPointer;
+    }
 
 	int32_t GetMaxAvailableTeamSize();
 	void GetPartyLeaders(class TArray<struct FUniqueNetId>& outPartyLeaders);
@@ -2093,17 +1941,13 @@ public:
 	uint32_t                                           bAllowed : 1;                                  // 0x00F0 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.TargetUserChatPermChangedEvent");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.TargetUserChatPermChangedEvent");
+        return uClassPointer;
+    }
 
 };
 
@@ -2115,17 +1959,13 @@ public:
 	uint8_t                                          UnknownData00[0x28];                          // 0xB1F0 (0x0028) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.TcpipConnection");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.TcpipConnection");
+        return uClassPointer;
+    }
 
 };
 
@@ -2140,17 +1980,13 @@ public:
 	uint8_t                                          UnknownData01[0x20];                          // 0x02F8 (0x0020) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.TcpNetDriver");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.TcpNetDriver");
+        return uClassPointer;
+    }
 
 };
 
@@ -2172,17 +2008,13 @@ public:
 	struct FMap_Mirror                                 VariableMap;                                   // 0x0110 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.WebRequest");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.WebRequest");
+        return uClassPointer;
+    }
 
 	int32_t GetHexDigit(const class FString& D);
 	void DecodeFormData(const class FString& Data);
@@ -2214,17 +2046,13 @@ public:
 	uint32_t                                           bSentResponse : 1;                             // 0x00E8 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.WebResponse");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.WebResponse");
+        return uClassPointer;
+    }
 
 	bool SentResponse();
 	bool SentText();
@@ -2262,17 +2090,13 @@ public:
 	int32_t                                            Priority;                                      // 0x00C8 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.OnlinePlaylistProvider");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.OnlinePlaylistProvider");
+        return uClassPointer;
+    }
 
 };
 
@@ -2290,17 +2114,13 @@ public:
 	class UOnlinePlaylistManager*                      PlaylistMan;                                   // 0x00F8 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.UIDataStore_OnlinePlaylists");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.UIDataStore_OnlinePlaylists");
+        return uClassPointer;
+    }
 
 	int32_t eventGetMatchTypeForPlaylistId(int32_t PlaylistId);
 	static class UOnlinePlaylistProvider* GetOnlinePlaylistProvider(const class FName& ProviderTag, int32_t PlaylistId, int32_t& outProviderIndex);
@@ -2319,17 +2139,13 @@ public:
 	class FString                                      Path;                                          // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.WebApplication");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.WebApplication");
+        return uClassPointer;
+    }
 
 	void PostQuery(class UWebRequest* Request, class UWebResponse* Response);
 	void Query(class UWebRequest* Request, class UWebResponse* Response);
@@ -2359,17 +2175,13 @@ public:
 	int32_t                                            ConnID;                                        // 0x04A4 (0x0004) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.WebServer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.WebServer");
+        return uClassPointer;
+    }
 
 	class UWebApplication* GetApplication(const class FString& URI, class FString& outSubURI);
 	void eventLostChild(class AActor* C);
@@ -2385,17 +2197,13 @@ class UHelloWeb : public UWebApplication
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.HelloWeb");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.HelloWeb");
+        return uClassPointer;
+    }
 
 	void eventQuery(class UWebRequest* Request, class UWebResponse* Response);
 	void Init();
@@ -2408,17 +2216,13 @@ class UImageServer : public UWebApplication
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.ImageServer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.ImageServer");
+        return uClassPointer;
+    }
 
 	void eventQuery(class UWebRequest* Request, class UWebResponse* Response);
 };
@@ -2434,17 +2238,13 @@ public:
 	class FString                                      AppSecret;                                     // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpServiceConfig");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpServiceConfig");
+        return uClassPointer;
+    }
 
 	class FString GetUserAuthTicket(const class FString& McpId);
 };
@@ -2463,17 +2263,13 @@ public:
 	struct FScriptDelegate                             __OnUpdateChallengeUserRewardComplete__Delegate;// 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobBase");
+        return uClassPointer;
+    }
 
 	void UpdateChallengeUserReward(const class FString& UniqueChallengeId, const class FString& UniqueUserId, int32_t UserReward);
 	void OnUpdateChallengeUserRewardComplete(bool bWasSuccessful, const class FString& UniqueChallengeId, const class FString& UniqueUserId, const class FString& Error);
@@ -2504,17 +2300,13 @@ class UMcpClashMobFileDownload : public UOnlineTitleFileDownloadWeb
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobFileDownload");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobFileDownload");
+        return uClassPointer;
+    }
 
 	class FString GetUrlForFile(const class FString& Filename);
 };
@@ -2541,17 +2333,13 @@ public:
 	class UMcpClashMobFileDownload*                    FileDownloader;                                // 0x0260 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpClashMobManager");
+        return uClassPointer;
+    }
 
 	void OnUpdateChallengeUserRewardHTTPRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
 	void UpdateChallengeUserReward(const class FString& UniqueChallengeId, const class FString& UniqueUserId, int32_t UserReward);
@@ -2595,17 +2383,13 @@ public:
 	struct FScriptDelegate                             __OnAcceptGroupInviteComplete__Delegate;       // 0x0158 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpGroupsBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpGroupsBase");
+        return uClassPointer;
+    }
 
 	void OnAcceptGroupInviteComplete(const class FString& GroupId, bool bWasSuccessful, const class FString& Error);
 	void AcceptGroupInvite(const class FString& UniqueUserId, const class FString& GroupId, bool bShouldAccept);
@@ -2651,17 +2435,13 @@ public:
 	struct FScriptDelegate                             __OnAcceptGroupInviteRequestComplete__Delegate;// 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpGroupsManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpGroupsManager");
+        return uClassPointer;
+    }
 
 	void CacheGroupMember(const class FString& MemberId, const class FString& GroupId, EMcpGroupAcceptState AcceptState);
 	void CacheGroup(const class FString& RequesterId, const struct FMcpGroup& Group);
@@ -2695,17 +2475,13 @@ public:
 	struct FScriptDelegate                             __OnQueryMappingsComplete__Delegate;           // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpIdMappingBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpIdMappingBase");
+        return uClassPointer;
+    }
 
 	void GetIdMappings(const class FString& ExternalType, class TArray<struct FMcpIdMapping>& outIDMappings);
 	void OnQueryMappingsComplete(const class FString& ExternalType, bool bWasSuccessful, const class FString& Error);
@@ -2727,17 +2503,13 @@ public:
 	class TArray<struct FQueryMappingRequest>          QueryMappingRequests;                          // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpIdMappingManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpIdMappingManager");
+        return uClassPointer;
+    }
 
 	void GetIdMappings(const class FString& ExternalType, class TArray<struct FMcpIdMapping>& outIDMappings);
 	void OnQueryMappingsRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
@@ -2758,17 +2530,13 @@ public:
 	struct FScriptDelegate                             __OnDeleteValueComplete__Delegate;             // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpManagedValueManagerBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpManagedValueManagerBase");
+        return uClassPointer;
+    }
 
 	void OnDeleteValueComplete(const class FString& McpId, const class FString& SaveSlot, const class FName& ValueId, bool bWasSuccessful, const class FString& Error);
 	void DeleteValue(const class FString& McpId, const class FString& SaveSlot, const class FName& ValueId);
@@ -2799,17 +2567,13 @@ public:
 	class TArray<struct FValueRequestState>            DeleteValueRequests;                           // 0x0168 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpManagedValueManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpManagedValueManager");
+        return uClassPointer;
+    }
 
 	void OnDeleteValueRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
 	void DeleteValue(const class FString& McpId, const class FString& SaveSlot, const class FName& ValueId);
@@ -2834,17 +2598,13 @@ public:
 	struct FScriptDelegate                             __OnQueryServerTimeComplete__Delegate;         // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpServerTimeBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpServerTimeBase");
+        return uClassPointer;
+    }
 
 	class FString GetLastServerTime();
 	void OnQueryServerTimeComplete(bool bWasSuccessful, const class FString& DateTimeStr, const class FString& Error);
@@ -2862,17 +2622,13 @@ public:
 	class UHttpRequestInterface*                       HTTPRequestServerTime;                         // 0x00C0 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpServerTimeManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpServerTimeManager");
+        return uClassPointer;
+    }
 
 	class FString GetLastServerTime();
 	void OnQueryServerTimeHTTPRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
@@ -2897,17 +2653,13 @@ public:
 	struct FScriptDelegate                             __OnRecordIapComplete__Delegate;               // 0x0160 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpUserInventoryBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpUserInventoryBase");
+        return uClassPointer;
+    }
 
 	void OnRecordIapComplete(const class FString& McpId, const class FString& SaveSlotId, const class TArray<class FString>& UpdatedItemIds, bool bWasSuccessful, const class FString& Error);
 	void RecordIap(const class FString& McpId, const class FString& SaveSlotId, const class FString& Receipt);
@@ -2957,17 +2709,13 @@ public:
 	class TArray<struct FInventoryItemRequestState>    ItemRequests;                                  // 0x0258 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpUserInventoryManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpUserInventoryManager");
+        return uClassPointer;
+    }
 
 	void OnRecordIapRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
 	void RecordIap(const class FString& McpId, const class FString& SaveSlotId, const class FString& Receipt);
@@ -3011,17 +2759,13 @@ public:
 	struct FScriptDelegate                             __OnDeleteUserComplete__Delegate;              // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpUserManagerBase");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpUserManagerBase");
+        return uClassPointer;
+    }
 
 	void OnDeleteUserComplete(bool bWasSuccessful, const class FString& Error);
 	void DeleteUser(const class FString& McpId);
@@ -3058,17 +2802,13 @@ public:
 	class TArray<class UHttpRequestInterface*>         AuthUserRequests;                              // 0x0198 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.McpUserManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.McpUserManager");
+        return uClassPointer;
+    }
 
 	void OnDeleteUserRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bWasSuccessful);
 	void DeleteUser(const class FString& McpId);
@@ -3105,17 +2845,13 @@ public:
 	int32_t                                            ConnID;                                        // 0x0318 (0x0004) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class IpDrv.WebConnection");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class IpDrv.WebConnection");
+        return uClassPointer;
+    }
 
 	bool IsHanging();
 	void Cleanup();

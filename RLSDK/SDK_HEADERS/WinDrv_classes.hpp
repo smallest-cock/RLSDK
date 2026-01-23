@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: WinDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -47,17 +47,13 @@ public:
 	struct FPointer                                    ChildProcHandle;                               // 0x00F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.FacebookWindows");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.FacebookWindows");
+        return uClassPointer;
+    }
 
 	void OnFacebookFriendsRequestComplete(class UHttpRequestInterface* OriginalRequest, class UHttpResponseInterface* Response, bool bDidSucceed);
 	void eventRequestFacebookFriends();
@@ -83,17 +79,13 @@ public:
 	class TArray<uint8_t>                              Payload;                                       // 0x0098 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindows");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindows");
+        return uClassPointer;
+    }
 
 	bool ProcessRequest();
 	class UHttpRequestInterface* SetHeader(const class FString& HeaderName, const class FString& HeaderValue);
@@ -120,17 +112,13 @@ public:
 	class TArray<uint8_t>                              Payload;                                       // 0x0068 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.HttpResponseWindows");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.HttpResponseWindows");
+        return uClassPointer;
+    }
 
 	int32_t GetResponseCode();
 	class FString GetContentAsString();
@@ -155,17 +143,13 @@ public:
 	uint8_t                                          UnknownData02[0x104];                        // 0x02BC (0x0104) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.WindowsClient");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.WindowsClient");
+        return uClassPointer;
+    }
 
 };
 
@@ -177,17 +161,13 @@ public:
 	uint8_t                                          UnknownData00[0x18];                          // 0x0098 (0x0018) MISSED OFFSET
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.XnaForceFeedbackManager");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.XnaForceFeedbackManager");
+        return uClassPointer;
+    }
 
 };
 
@@ -200,17 +180,13 @@ public:
 	class FString                                      AppSecret;                                     // 0x00B8 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindowsMcp");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindowsMcp");
+        return uClassPointer;
+    }
 
 	bool ProcessRequest();
 };

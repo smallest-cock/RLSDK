@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -141,6 +141,31 @@ struct FHTTPRequestCapturedParam
 {
 	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Value;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.NewsTileData
+// Size: 0x00D8 (0x00D4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FNewsTileData
+{
+	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DescriptionHeader;                             // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Description;                                   // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      WebURL;                                        // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CarName;                                       // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ImageURL;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ThumbnailURL;                                  // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      StartTime;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      LinkType;                                      // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      InfoURL;                                       // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EndTime;                                       // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           StartTimeEpoch;                                // 0x00B0 (0x0008) [0x0000000000000000]               
+	uint64_t                                           EndTimeEpoch;                                  // 0x00B8 (0x0008) [0x0000000000000000]               
+	int32_t                                            ShopID;                                        // 0x00C0 (0x0004) [0x0000000000000000]               
+	int32_t                                            ShopItemID;                                    // 0x00C4 (0x0004) [0x0000000000000000]               
+	int32_t                                            ProductID;                                     // 0x00C8 (0x0004) [0x0000000000000000]               
+	int32_t                                            CategoryID;                                    // 0x00CC (0x0004) [0x0000000000000000]               
+	int32_t                                            PlaylistId;                                    // 0x00D0 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x00D4 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.ServerReservationData

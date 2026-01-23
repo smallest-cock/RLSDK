@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 20 (v2.63)
-# Generated with CodeRedGenerator v1.1.5 on 12/09/2025 04:47PM
+# Rocket League SDK (RLSDK) Season 21 (v2.64)
+# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 251202.62834.504897
-# Build Date: Dec  2 2025 20:20:58
+# Psyonix Build ID: 260114.55864.507183
+# Build Date: Jan 14 2026 16:10:28
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -148,17 +148,13 @@ public:
 	class TArray<class FString>                        IgnoreWarningsThatStartWith;                   // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxEngine");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxEngine");
+        return uClassPointer;
+    }
 
 	void UpdateMovieLoadingInfo(struct FLoadingMovieMapInfo& outLoadingInfo);
 	void eventTick(float DeltaTime);
@@ -171,17 +167,13 @@ class UGFxFSCmdHandler : public UObject
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxFSCmdHandler");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxFSCmdHandler");
+        return uClassPointer;
+    }
 
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, const class FString& Cmd, const class FString& Arg);
 };
@@ -195,17 +187,13 @@ public:
 	uint32_t                                           bFakeMobileTouches : 1;                        // 0x00D8 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxInteraction");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxInteraction");
+        return uClassPointer;
+    }
 
 	void DebugInputKey(int32_t ControllerId, const class FName& Key, EInputEvent Event, float AmountDepressed, bool bGamepad);
 	void CloseAllMoviePlayers();
@@ -276,17 +264,13 @@ public:
 	struct FScriptDelegate                             __OnPostAdvance__Delegate;                     // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxMoviePlayer");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxMoviePlayer");
+        return uClassPointer;
+    }
 
 	void SetFullScreen(bool bFullScreen);
 	bool IsHidden();
@@ -379,17 +363,13 @@ public:
 	class TArray<struct FGFxWidgetBinding>             SubWidgetBindings;                             // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxObject");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxObject");
+        return uClassPointer;
+    }
 
 	bool eventWidgetUnloaded(const class FName& WidgetName, const class FName& WidgetPath, class UGFxObject* Widget);
 	bool eventWidgetInitialized(const class FName& WidgetName, const class FName& WidgetPath, class UGFxObject* Widget);
@@ -479,17 +459,13 @@ public:
 	class TArray<class UObject*>                       UserReferences;                                // 0x0090 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxRawData");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxRawData");
+        return uClassPointer;
+    }
 
 };
 
@@ -519,17 +495,13 @@ public:
 	uint64_t                                           ImportTimeStamp;                               // 0x0120 (0x0008) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.SwfMovie");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.SwfMovie");
+        return uClassPointer;
+    }
 
 };
 
@@ -540,17 +512,13 @@ class UFlashMovie : public USwfMovie
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.FlashMovie");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.FlashMovie");
+        return uClassPointer;
+    }
 
 };
 
@@ -563,17 +531,13 @@ public:
 	uint32_t                                           bUnload : 1;                                   // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_CloseMovie");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_CloseMovie");
+        return uClassPointer;
+    }
 
 	bool eventIsValidLevelSequenceObject();
 };
@@ -587,17 +551,13 @@ public:
 	class FString                                      Variable;                                      // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_GetVariable");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_GetVariable");
+        return uClassPointer;
+    }
 
 	bool eventIsValidLevelSequenceObject();
 };
@@ -612,17 +572,13 @@ public:
 	class TArray<struct FASValue>                      Arguments;                                     // 0x0178 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_Invoke");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_Invoke");
+        return uClassPointer;
+    }
 
 	bool eventIsValidLevelSequenceObject();
 };
@@ -647,17 +603,13 @@ public:
 	class TArray<class FName>                          FocusIgnoreKeys;                               // 0x0198 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_OpenMovie");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_OpenMovie");
+        return uClassPointer;
+    }
 
 	bool eventIsValidLevelSequenceObject();
 };
@@ -671,17 +623,13 @@ public:
 	class TArray<class FName>                          CaptureKeys;                                   // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_SetCaptureKeys");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_SetCaptureKeys");
+        return uClassPointer;
+    }
 
 };
 
@@ -694,17 +642,13 @@ public:
 	class FString                                      Variable;                                      // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_SetVariable");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxAction_SetVariable");
+        return uClassPointer;
+    }
 
 	bool eventIsValidLevelSequenceObject();
 };
@@ -720,17 +664,13 @@ public:
 	class UGFxFSCmdHandler_Kismet*                     Handler;                                       // 0x0198 (0x0008) [0x0000000000000000]               
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxEvent_FSCommand");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxEvent_FSCommand");
+        return uClassPointer;
+    }
 
 };
 
@@ -741,17 +681,13 @@ class UGFxFSCmdHandler_Kismet : public UGFxFSCmdHandler
 public:
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxFSCmdHandler_Kismet");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxFSCmdHandler_Kismet");
+        return uClassPointer;
+    }
 
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, const class FString& Cmd, const class FString& Arg);
 };
@@ -764,17 +700,13 @@ public:
 	struct FScriptDelegate                             __EventListener__Delegate;                     // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-	static UClass* StaticClass()
-	{
+    static UClass* StaticClass()
+    {
 		static UClass* uClassPointer = nullptr;
-
 		if (!uClassPointer)
-		{
-			uClassPointer = UObject::FindClass("Class GFxUI.GFxClikWidget");
-		}
-
-		return uClassPointer;
-	};
+            uClassPointer = UObject::FindClass("Class GFxUI.GFxClikWidget");
+        return uClassPointer;
+    }
 
 	void ASRemoveAllEventListeners(const class FString& Event);
 	void AS3AddEventListener(const class FString& Type, class UGFxObject* O, bool optionalUseCapture, int32_t optionalListenerPriority, bool optionalUseWeakReference);
