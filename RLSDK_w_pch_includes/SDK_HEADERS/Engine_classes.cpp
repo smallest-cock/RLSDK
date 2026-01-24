@@ -3,7 +3,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 01/22/2026 04:54PM
+# Generated with CodeRedGenerator v1.1.5 on 01/23/2026 04:39PM
 # ========================================================================================= #
 # File: Engine_classes.cpp
 # ========================================================================================= #
@@ -21340,7 +21340,7 @@ void APlayerController::eventOnEngineInitialTick()
 // struct FRotator                ViewRotation                   (CPF_Const | CPF_Parm | CPF_OutParm)
 // class FString                  GoString                       (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 // class FString                  LocString                      (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-void APlayerController::eventBugItStringCreator(struct FVector& ViewLocation, struct FRotator& ViewRotation, class FString& GoString, class FString& LocString)
+void APlayerController::BugItStringCreator(struct FVector& ViewLocation, struct FRotator& ViewRotation, class FString& GoString, class FString& LocString)
 {
     static UFunction* uFnBugItStringCreator = nullptr;
     if (!uFnBugItStringCreator)
@@ -21365,7 +21365,7 @@ void APlayerController::eventBugItStringCreator(struct FVector& ViewLocation, st
 // [0x00824A03] (FUNC_Final | FUNC_Defined | FUNC_Exec | FUNC_Event | FUNC_HasOptionalParms | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 // class FString                  ScreenShotDescription          (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-void APlayerController::eventBugItAI(const class FString& ScreenShotDescription)
+void APlayerController::BugItAI(const class FString& ScreenShotDescription)
 {
     static UFunction* uFnBugItAI = nullptr;
     if (!uFnBugItAI)
@@ -21397,7 +21397,7 @@ void APlayerController::LogLoc()
 // [0x00824A03] (FUNC_Final | FUNC_Defined | FUNC_Exec | FUNC_Event | FUNC_HasOptionalParms | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 // class FString                  ScreenShotDescription          (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-void APlayerController::eventBugIt(const class FString& ScreenShotDescription)
+void APlayerController::BugIt(const class FString& ScreenShotDescription)
 {
     static UFunction* uFnBugIt = nullptr;
     if (!uFnBugIt)
@@ -39750,7 +39750,7 @@ void UGameViewportClient::ClearProgressMessages()
 // [0x00020A03] (FUNC_Final | FUNC_Defined | FUNC_Exec | FUNC_Event | FUNC_Public)
 // Parameter Info:
 // float                          T                              (CPF_Parm)
-void UGameViewportClient::eventSetProgressTime(float T)
+void UGameViewportClient::SetProgressTime(float T)
 {
     static UFunction* uFnSetProgressTime = nullptr;
     if (!uFnSetProgressTime)

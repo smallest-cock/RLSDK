@@ -60,7 +60,7 @@ struct FFrame
 
 #define RESULT_DECL void* const Result
 
-using tCallFunction    = void (*)(UObject*, FFrame&, void* const, UFunction*);
+using tCallFunction    = void (*)(UObject*, FFrame&, void* const, UFunction*); 
 using tProcessInternal = void (*)(UObject*, FFrame&, void* const);
 using tProcessEvent    = void (*)(UObject*, UFunction*, void*, void*); // Calling object, Function, Struct ptr with params, Unused result
 
@@ -109,7 +109,7 @@ public:
 
 		/** conversion to "bool" returning TRUE if the iterator is valid. */
 		typedef bool PrivateBooleanType;
-		             operator PrivateBooleanType() const { return CurrentLink != NULL ? &PrivateBooleanHelper::Value : NULL; }
+		operator PrivateBooleanType() const { return CurrentLink != NULL ? &PrivateBooleanHelper::Value : NULL; }
 		bool operator!() const { return !operator PrivateBooleanType(); }
 
 		// Accessors.
