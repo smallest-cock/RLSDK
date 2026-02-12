@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 01/23/2026 04:39PM
+# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
@@ -24,6 +24,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <unordered_map>
 
 /*
 # ========================================================================================= #
@@ -801,33 +802,23 @@ private:
 
 public:
 	FName() : FNameEntryId(-1), InstanceNumber(0) {}
-
 	FName(int32_t id) : FNameEntryId(id), InstanceNumber(0) {}
 
-	FName(const ElementPointer nameToFind) : FNameEntryId(-1), InstanceNumber(0)
-	{
-		static std::vector<int32_t> foundNames{};
+	FName(const ElementPointer nameToFind) : FNameEntryId(-1), InstanceNumber(0) {
+        static std::unordered_map<std::wstring, int32_t> s_foundNames{};
 
-		for (int32_t entryId : foundNames)
-		{
-			if (!Names()->at(entryId))
-				continue;
+        auto it = s_foundNames.find(nameToFind);
+        if (it != s_foundNames.end()) {
+            FNameEntryId = it->second;
+            return;
+        }
 
-			if (wcscmp(Names()->at(entryId)->Name, nameToFind) == 0)
-			{
-				FNameEntryId = entryId;
-				return;
-			}
-		}
-
-		for (int32_t i = 0; i < Names()->size(); ++i)
-		{
+		for (int32_t i = 0; i < Names()->size(); ++i) {
 			if (!Names()->at(i))
 				continue;
 
-			if (wcscmp(Names()->at(i)->Name, nameToFind) == 0)
-			{
-				foundNames.push_back(i);
+			if (wcscmp(Names()->at(i)->Name, nameToFind) == 0) {
+                s_foundNames[nameToFind] = i;
 				FNameEntryId = i;
 				return;
 			}
@@ -835,81 +826,82 @@ public:
 	}
 
 	FName(const FName& name) : FNameEntryId(name.FNameEntryId), InstanceNumber(name.InstanceNumber) {}
-
 	~FName() {}
 
 public:
-	static class TArray<class FNameEntry*>* Names()
-	{
+	static class TArray<class FNameEntry*>* Names() {
 		return reinterpret_cast<TArray<FNameEntry*>*>(GNames);
 	}
 
-	int32_t GetDisplayIndex() const
-	{
+	int32_t GetDisplayIndex() const {
 		return FNameEntryId;
 	}
 
-	const FNameEntry GetDisplayNameEntry() const
-	{
+	const FNameEntry GetDisplayNameEntry() const {
 		if (!IsValid())
 			return FNameEntry();
 
 		return *Names()->at(FNameEntryId);
 	}
 
-	FNameEntry* GetEntry()
-	{
+	FNameEntry* GetEntry() {
 		if (!IsValid())
 			return nullptr;
 
 		return Names()->at(FNameEntryId);
 	}
 
-	int32_t GetInstance() const
-	{
+	int32_t GetInstance() const {
 		return InstanceNumber;
 	}
 
-	void SetInstance(int32_t newNumber)
-	{
+	void SetInstance(int32_t newNumber) {
 		InstanceNumber = newNumber;
 	}
 
-	std::string ToString() const
-	{
+	std::string ToString() const {
 		if (!IsValid())
 			return "UnknownName";
 			
 		return GetDisplayNameEntry().ToString();
 	}
 
-	bool IsValid() const
-	{
+	bool IsValid() const {
 		return (FNameEntryId >= 0) && (FNameEntryId <= Names()->size());
 	}
 
-	static FName find(const std::string& str)
-	{
+	static FName find(const std::string& str) {
 		std::wstring wideStr = StringUtils::ToWideString(str);
 		return FName(wideStr.data());
 	}
 
 public:
-	FName& operator=(const FName& other)
-	{
+	FName& operator=(const FName& other) {
 		FNameEntryId = other.FNameEntryId;
 		InstanceNumber = other.InstanceNumber;
 		return *this;
 	}
 
-	bool operator==(const FName& other) const
-	{
+	bool operator==(const FName& other) const {
 		return ((FNameEntryId == other.FNameEntryId) && (InstanceNumber == other.InstanceNumber));
 	}
 
-	bool operator!=(const FName& other) const
-	{
+	bool operator!=(const FName& other) const {
 		return !(*this == other);
+	}
+};
+
+class FNameMemo {
+	FName fName;
+	bool  bCached;
+
+public:
+	FName get(const wchar_t *str) {
+		if (bCached)
+			return fName;
+		fName   = FName{str};
+		bCached = fName.GetDisplayIndex() != -1;
+		return fName;
 	}
 };
 
