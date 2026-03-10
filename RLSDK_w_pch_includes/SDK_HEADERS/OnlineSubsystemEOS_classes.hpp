@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
+# Rocket League SDK (RLSDK) Season 21 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260114.55864.507183
-# Build Date: Jan 14 2026 16:10:28
+# Psyonix Build ID: 260303.78181.511382
+# Build Date: Mar  3 2026 22:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -107,7 +107,7 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineSubsystemEOS
-// 0x0378 (0x03C0 - 0x0738)
+// 0x0380 (0x03C0 - 0x0740)
 class UOnlineSubsystemEOS : public UOnlineSubsystemCommonImpl
 {
 public:
@@ -137,35 +137,37 @@ public:
 	struct FPointer                                    RTCAdminHandle;                                // 0x0480 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    GameClipsHandle;                               // 0x0488 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    EULATrackingHandle;                            // 0x0490 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class TArray<class FName>                          UnlockedDLC;                                   // 0x0498 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FScriptDelegate>               UnlockedDLCDelegates;                          // 0x04A8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FScriptDelegate>               ExternalUIChangeDelegates;                     // 0x04B8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x04C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x04E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerTalking__Delegate;                   // 0x04F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x0510 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0528 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x0540 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x0558 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLinkStatusChange__Delegate;                // 0x0570 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnExternalUIChange__Delegate;                // 0x0588 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnControllerChange__Delegate;                // 0x05A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnConnectionStatusChange__Delegate;          // 0x05B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStorageDeviceChange__Delegate;             // 0x05D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateOnlineAccountCompleted__Delegate;    // 0x05E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x0600 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCloseKickPlayerDialog__Delegate;           // 0x0618 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCommerceDialogClosed__Delegate;            // 0x0630 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnErrorDialogClosed__Delegate;               // 0x0648 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnlockedDLCChange__Delegate;               // 0x0660 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStorePurchaseCompleteDelegate__Delegate;   // 0x0678 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserOrphaned__Delegate;                    // 0x0690 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserRestored__Delegate;                    // 0x06A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerSigningOut__Delegate;                // 0x06C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCryptoKeyCreated__Delegate;             // 0x06D8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTextMessageSigned__Delegate;            // 0x06F0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTextMessageValidated__Delegate;         // 0x0708 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0720 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bLastTickShouldRecordAudioVal : 1;             // 0x0498 (0x0004) [0x0000000000003002] [0x00000001] (CPF_Const | CPF_Native | CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x049C (0x0004) MISSED OFFSET
+	class TArray<class FName>                          UnlockedDLC;                                   // 0x04A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FScriptDelegate>               UnlockedDLCDelegates;                          // 0x04B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FScriptDelegate>               ExternalUIChangeDelegates;                     // 0x04C0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x04D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x04E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnPlayerTalking__Delegate;                   // 0x0500 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x0518 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0530 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x0548 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x0560 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLinkStatusChange__Delegate;                // 0x0578 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnExternalUIChange__Delegate;                // 0x0590 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnControllerChange__Delegate;                // 0x05A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnConnectionStatusChange__Delegate;          // 0x05C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnStorageDeviceChange__Delegate;             // 0x05D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateOnlineAccountCompleted__Delegate;    // 0x05F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x0608 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCloseKickPlayerDialog__Delegate;           // 0x0620 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCommerceDialogClosed__Delegate;            // 0x0638 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnErrorDialogClosed__Delegate;               // 0x0650 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnUnlockedDLCChange__Delegate;               // 0x0668 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnStorePurchaseCompleteDelegate__Delegate;   // 0x0680 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnUserOrphaned__Delegate;                    // 0x0698 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnUserRestored__Delegate;                    // 0x06B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnPlayerSigningOut__Delegate;                // 0x06C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCryptoKeyCreated__Delegate;             // 0x06E0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTextMessageSigned__Delegate;            // 0x06F8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTextMessageValidated__Delegate;         // 0x0710 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0728 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     static UClass* StaticClass()
@@ -207,9 +209,9 @@ public:
 	void AddUserOrphanedDelegate(const struct FScriptDelegate& UserOrphanedDelegate);
 	void OnUserOrphaned(uint8_t ControllerId);
 	void OpenStoreForItemsAsync(uint8_t LocalUserNum, const class TArray<class FString>& Targets, const struct FScriptDelegate& OnStorePurchaseCompleteDelegate);
-	void OnStorePurchaseCompleteDelegate();
-	void OpenStoreForItems(uint8_t LocalUserNum, const class TArray<class FString>& Targets);
+	void OpenStoreForItems(uint8_t LocalUserNum, const class TArray<class FString>& Targets, const struct FScriptDelegate& OnStorePurchaseCompleteDelegate);
 	void OpenStoreForDLC(uint8_t LocalUserNum, const class FName& DLC);
+	void OnStorePurchaseCompleteDelegate();
 	void OpenErrorDialog(uint8_t LocalUserNum, EPS4ErrorDialog ErrorCode);
 	void OpenPS4DisplayMode(uint8_t LocalUserNum, EPS4DisplayMode DisplayMode, const class TArray<class FString>& optionalTargets, int32_t optionalServiceLabel);
 	void ResetControllerColor(int32_t ControllerId);

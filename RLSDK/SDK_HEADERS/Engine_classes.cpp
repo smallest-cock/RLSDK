@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
+# Rocket League SDK (RLSDK) Season 21 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
 # ========================================================================================= #
 # File: Engine_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260114.55864.507183
-# Build Date: Jan 14 2026 16:10:28
+# Psyonix Build ID: 260303.78181.511382
+# Build Date: Mar  3 2026 22:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -39608,6 +39608,23 @@ void UGameViewportClient::DebugSetUISystemEnabled(bool bOldUISystemActive, bool 
 	DebugSetUISystemEnabled_Params.bGFxUISystemActive = bGFxUISystemActive;
 
 	this->ProcessEvent(uFnDebugSetUISystemEnabled, &DebugSetUISystemEnabled_Params, nullptr);
+};
+
+// Function Engine.GameViewportClient.SetEnableHighContrastMode
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// uint32_t                       bInEnable                      (CPF_Parm)
+void UGameViewportClient::SetEnableHighContrastMode(bool bInEnable)
+{
+    static UFunction* uFnSetEnableHighContrastMode = nullptr;
+    if (!uFnSetEnableHighContrastMode)
+        uFnSetEnableHighContrastMode = UFunction::FindFunction("Function Engine.GameViewportClient.SetEnableHighContrastMode");
+
+	UGameViewportClient_execSetEnableHighContrastMode_Params SetEnableHighContrastMode_Params;
+	memset(&SetEnableHighContrastMode_Params, 0, sizeof(SetEnableHighContrastMode_Params));
+	SetEnableHighContrastMode_Params.bInEnable = bInEnable;
+
+	this->ProcessEvent(uFnSetEnableHighContrastMode, &SetEnableHighContrastMode_Params, nullptr);
 };
 
 // Function Engine.GameViewportClient.IsScaleformEnabled
@@ -86370,6 +86387,27 @@ void UOnlineSystemInterface::OpenStoreForItemsAsync(uint8_t LocalUserNum, const 
 	this->ProcessEvent(uFnOpenStoreForItemsAsync, &OpenStoreForItemsAsync_Params, nullptr);
 };
 
+// Function Engine.OnlineSystemInterface.OpenStoreForItems
+// [0x00020000] (FUNC_Public)
+// Parameter Info:
+// uint8_t                        LocalUserNum                   (CPF_Parm)
+// class TArray<class FString>    Targets                        (CPF_Parm | CPF_NeedCtorLink)
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineSystemInterface::OpenStoreForItems(uint8_t LocalUserNum, const class TArray<class FString>& Targets, const struct FScriptDelegate& Callback)
+{
+    static UFunction* uFnOpenStoreForItems = nullptr;
+    if (!uFnOpenStoreForItems)
+        uFnOpenStoreForItems = UFunction::FindFunction("Function Engine.OnlineSystemInterface.OpenStoreForItems");
+
+	UOnlineSystemInterface_execOpenStoreForItems_Params OpenStoreForItems_Params;
+	memset(&OpenStoreForItems_Params, 0, sizeof(OpenStoreForItems_Params));
+	memcpy_s(&OpenStoreForItems_Params.LocalUserNum, sizeof(OpenStoreForItems_Params.LocalUserNum), &LocalUserNum, sizeof(LocalUserNum));
+	memcpy_s(&OpenStoreForItems_Params.Targets, sizeof(OpenStoreForItems_Params.Targets), &Targets, sizeof(Targets));
+	memcpy_s(&OpenStoreForItems_Params.Callback, sizeof(OpenStoreForItems_Params.Callback), &Callback, sizeof(Callback));
+
+	this->ProcessEvent(uFnOpenStoreForItems, &OpenStoreForItems_Params, nullptr);
+};
+
 // Function Engine.OnlineSystemInterface.OnStorePurchaseCompleteDelegate
 // [0x00120000] (FUNC_Public | FUNC_Delegate)
 // Parameter Info:
@@ -86383,25 +86421,6 @@ void UOnlineSystemInterface::OnStorePurchaseCompleteDelegate()
 	memset(&OnStorePurchaseCompleteDelegate_Params, 0, sizeof(OnStorePurchaseCompleteDelegate_Params));
 
 	this->ProcessEvent(uFnOnStorePurchaseCompleteDelegate, &OnStorePurchaseCompleteDelegate_Params, nullptr);
-};
-
-// Function Engine.OnlineSystemInterface.OpenStoreForItems
-// [0x00020000] (FUNC_Public)
-// Parameter Info:
-// uint8_t                        LocalUserNum                   (CPF_Parm)
-// class TArray<class FString>    Targets                        (CPF_Parm | CPF_NeedCtorLink)
-void UOnlineSystemInterface::OpenStoreForItems(uint8_t LocalUserNum, const class TArray<class FString>& Targets)
-{
-    static UFunction* uFnOpenStoreForItems = nullptr;
-    if (!uFnOpenStoreForItems)
-        uFnOpenStoreForItems = UFunction::FindFunction("Function Engine.OnlineSystemInterface.OpenStoreForItems");
-
-	UOnlineSystemInterface_execOpenStoreForItems_Params OpenStoreForItems_Params;
-	memset(&OpenStoreForItems_Params, 0, sizeof(OpenStoreForItems_Params));
-	memcpy_s(&OpenStoreForItems_Params.LocalUserNum, sizeof(OpenStoreForItems_Params.LocalUserNum), &LocalUserNum, sizeof(LocalUserNum));
-	memcpy_s(&OpenStoreForItems_Params.Targets, sizeof(OpenStoreForItems_Params.Targets), &Targets, sizeof(Targets));
-
-	this->ProcessEvent(uFnOpenStoreForItems, &OpenStoreForItems_Params, nullptr);
 };
 
 // Function Engine.OnlineSystemInterface.OpenStoreForDLC
@@ -88832,6 +88851,46 @@ void UUserCloudFileCloudSaveSystemDataBlobStore::GetDataBlobCallbackDelegate(boo
 	this->ProcessEvent(uFnGetDataBlobCallbackDelegate, &GetDataBlobCallbackDelegate_Params, nullptr);
 
 	memcpy_s(&DataBlob, sizeof(DataBlob), &GetDataBlobCallbackDelegate_Params.DataBlob, sizeof(GetDataBlobCallbackDelegate_Params.DataBlob));
+};
+
+// Function Engine.ContentAuthorizationTokenInterface.GetContentAuthorizationToken
+// [0x00422000] (FUNC_Static | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Nonce                          (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UContentAuthorizationTokenInterface::GetContentAuthorizationToken(const struct FScriptDelegate& Callback, class FString& Nonce)
+{
+    static UFunction* uFnGetContentAuthorizationToken = nullptr;
+    if (!uFnGetContentAuthorizationToken)
+        uFnGetContentAuthorizationToken = UFunction::FindFunction("Function Engine.ContentAuthorizationTokenInterface.GetContentAuthorizationToken");
+
+	UContentAuthorizationTokenInterface_execGetContentAuthorizationToken_Params GetContentAuthorizationToken_Params;
+	memset(&GetContentAuthorizationToken_Params, 0, sizeof(GetContentAuthorizationToken_Params));
+	memcpy_s(&GetContentAuthorizationToken_Params.Callback, sizeof(GetContentAuthorizationToken_Params.Callback), &Callback, sizeof(Callback));
+	memcpy_s(&GetContentAuthorizationToken_Params.Nonce, sizeof(GetContentAuthorizationToken_Params.Nonce), &Nonce, sizeof(Nonce));
+
+	UContentAuthorizationTokenInterface::StaticClass()->ProcessEvent(uFnGetContentAuthorizationToken, &GetContentAuthorizationToken_Params, nullptr);
+
+	memcpy_s(&Nonce, sizeof(Nonce), &GetContentAuthorizationToken_Params.Nonce, sizeof(GetContentAuthorizationToken_Params.Nonce));
+	return GetContentAuthorizationToken_Params.ReturnValue;
+};
+
+// Function Engine.ContentAuthorizationTokenInterface.EventGetCATComplete
+// [0x00120000] (FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class FString                  Token                          (CPF_Parm | CPF_NeedCtorLink)
+void UContentAuthorizationTokenInterface::EventGetCATComplete(const class FString& Token)
+{
+    static UFunction* uFnEventGetCATComplete = nullptr;
+    if (!uFnEventGetCATComplete)
+        uFnEventGetCATComplete = UFunction::FindFunction("Function Engine.ContentAuthorizationTokenInterface.EventGetCATComplete");
+
+	UContentAuthorizationTokenInterface_execEventGetCATComplete_Params EventGetCATComplete_Params;
+	memset(&EventGetCATComplete_Params, 0, sizeof(EventGetCATComplete_Params));
+	memcpy_s(&EventGetCATComplete_Params.Token, sizeof(EventGetCATComplete_Params.Token), &Token, sizeof(Token));
+
+	this->ProcessEvent(uFnEventGetCATComplete, &EventGetCATComplete_Params, nullptr);
 };
 
 /*

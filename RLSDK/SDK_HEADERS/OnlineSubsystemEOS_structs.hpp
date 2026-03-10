@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
+# Rocket League SDK (RLSDK) Season 21 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260114.55864.507183
-# Build Date: Jan 14 2026 16:10:28
+# Psyonix Build ID: 260303.78181.511382
+# Build Date: Mar  3 2026 22:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ

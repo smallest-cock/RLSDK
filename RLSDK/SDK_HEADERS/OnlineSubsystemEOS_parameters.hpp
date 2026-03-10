@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
+# Rocket League SDK (RLSDK) Season 21 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260114.55864.507183
-# Build Date: Jan 14 2026 16:10:28
+# Psyonix Build ID: 260303.78181.511382
+# Build Date: Mar  3 2026 22:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -263,12 +263,6 @@ struct UOnlineSubsystemEOS_execOpenStoreForItemsAsync_Params
 	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
-// Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnStorePurchaseCompleteDelegate
-// [0x00120001] 
-struct UOnlineSubsystemEOS_execOnStorePurchaseCompleteDelegate_Params
-{
-};
-
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OpenStoreForItems
 // [0x00020401] 
 struct UOnlineSubsystemEOS_execOpenStoreForItems_Params
@@ -276,6 +270,7 @@ struct UOnlineSubsystemEOS_execOpenStoreForItems_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OpenStoreForDLC
@@ -285,6 +280,12 @@ struct UOnlineSubsystemEOS_execOpenStoreForDLC_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[3];                                      // 0x0001 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FName                                        DLC;                                              // 0x0004 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnStorePurchaseCompleteDelegate
+// [0x00120001] 
+struct UOnlineSubsystemEOS_execOnStorePurchaseCompleteDelegate_Params
+{
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OpenErrorDialog

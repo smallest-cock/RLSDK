@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.64)
-# Generated with CodeRedGenerator v1.1.5 on 02/12/2026 03:48PM
+# Rocket League SDK (RLSDK) Season 21 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260114.55864.507183
-# Build Date: Jan 14 2026 16:10:28
+# Psyonix Build ID: 260303.78181.511382
+# Build Date: Mar  3 2026 22:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -17360,6 +17360,13 @@ struct UGameViewportClient_execDebugSetUISystemEnabled_Params
 {
 	uint32_t                                           bOldUISystemActive : 1;                           // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint32_t                                           bGFxUISystemActive : 1;                           // 0x0004 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+};
+
+// Function Engine.GameViewportClient.SetEnableHighContrastMode
+// [0x00020401] 
+struct UGameViewportClient_execSetEnableHighContrastMode_Params
+{
+	uint32_t                                           bInEnable : 1;                                    // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
 // Function Engine.GameViewportClient.IsScaleformEnabled
@@ -37706,12 +37713,6 @@ struct UOnlineSystemInterface_execOpenStoreForItemsAsync_Params
 	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
-// Function Engine.OnlineSystemInterface.OnStorePurchaseCompleteDelegate
-// [0x00120000] 
-struct UOnlineSystemInterface_execOnStorePurchaseCompleteDelegate_Params
-{
-};
-
 // Function Engine.OnlineSystemInterface.OpenStoreForItems
 // [0x00020000] 
 struct UOnlineSystemInterface_execOpenStoreForItems_Params
@@ -37719,6 +37720,13 @@ struct UOnlineSystemInterface_execOpenStoreForItems_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.OnlineSystemInterface.OnStorePurchaseCompleteDelegate
+// [0x00120000] 
+struct UOnlineSystemInterface_execOnStorePurchaseCompleteDelegate_Params
+{
 };
 
 // Function Engine.OnlineSystemInterface.OpenStoreForDLC
@@ -38815,6 +38823,22 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execGetDataBlobCallbackDelegat
 	class FString                                      BlobName;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              DataBlob;                                         // 0x0028 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function Engine.ContentAuthorizationTokenInterface.GetContentAuthorizationToken
+// [0x00422000] 
+struct UContentAuthorizationTokenInterface_execGetContentAuthorizationToken_Params
+{
+	class FString                                      Nonce;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.ContentAuthorizationTokenInterface.EventGetCATComplete
+// [0x00120000] 
+struct UContentAuthorizationTokenInterface_execEventGetCATComplete_Params
+{
+	class FString                                      Token;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 /*
