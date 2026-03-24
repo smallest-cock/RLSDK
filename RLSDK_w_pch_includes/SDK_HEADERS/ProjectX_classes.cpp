@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -23021,6 +23021,91 @@ void UOnlineGameDedicatedServer_X::PrintDebugInfo(class UDebugDrawer* Drawer)
 	this->ProcessEvent(uFnPrintDebugInfo, &PrintDebugInfo_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.TryEnableDDosPrevention
+// [0x00084003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
+// Parameter Info:
+// class TArray<class FString>    ConnectionIPs                  (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGameDedicatedServer_X::TryEnableDDosPrevention(const class TArray<class FString>& ConnectionIPs)
+{
+    static UFunction* uFnTryEnableDDosPrevention = nullptr;
+    if (!uFnTryEnableDDosPrevention)
+        uFnTryEnableDDosPrevention = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.TryEnableDDosPrevention");
+
+	UOnlineGameDedicatedServer_X_execTryEnableDDosPrevention_Params TryEnableDDosPrevention_Params;
+	memset(&TryEnableDDosPrevention_Params, 0, sizeof(TryEnableDDosPrevention_Params));
+	memcpy_s(&TryEnableDDosPrevention_Params.ConnectionIPs, sizeof(TryEnableDDosPrevention_Params.ConnectionIPs), &ConnectionIPs, sizeof(ConnectionIPs));
+
+	this->ProcessEvent(uFnTryEnableDDosPrevention, &TryEnableDDosPrevention_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.TryDisableDDosPrevention
+// [0x00084003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
+// Parameter Info:
+// uint32_t                       bCheckNetDriverStatus          (CPF_OptionalParm | CPF_Parm)
+void UOnlineGameDedicatedServer_X::TryDisableDDosPrevention(bool bCheckNetDriverStatus)
+{
+    static UFunction* uFnTryDisableDDosPrevention = nullptr;
+    if (!uFnTryDisableDDosPrevention)
+        uFnTryDisableDDosPrevention = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.TryDisableDDosPrevention");
+
+	UOnlineGameDedicatedServer_X_execTryDisableDDosPrevention_Params TryDisableDDosPrevention_Params;
+	memset(&TryDisableDDosPrevention_Params, 0, sizeof(TryDisableDDosPrevention_Params));
+	TryDisableDDosPrevention_Params.bCheckNetDriverStatus = bCheckNetDriverStatus;
+
+	this->ProcessEvent(uFnTryDisableDDosPrevention, &TryDisableDDosPrevention_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionEnabled
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineGameDedicatedServer_X::DDosPreventionEnabled()
+{
+    static UFunction* uFnDDosPreventionEnabled = nullptr;
+    if (!uFnDDosPreventionEnabled)
+        uFnDDosPreventionEnabled = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionEnabled");
+
+	UOnlineGameDedicatedServer_X_execDDosPreventionEnabled_Params DDosPreventionEnabled_Params;
+	memset(&DDosPreventionEnabled_Params, 0, sizeof(DDosPreventionEnabled_Params));
+
+	this->ProcessEvent(uFnDDosPreventionEnabled, &DDosPreventionEnabled_Params, nullptr);
+	return DDosPreventionEnabled_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionTriggered
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineGameDedicatedServer_X::DDosPreventionTriggered()
+{
+    static UFunction* uFnDDosPreventionTriggered = nullptr;
+    if (!uFnDDosPreventionTriggered)
+        uFnDDosPreventionTriggered = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionTriggered");
+
+	UOnlineGameDedicatedServer_X_execDDosPreventionTriggered_Params DDosPreventionTriggered_Params;
+	memset(&DDosPreventionTriggered_Params, 0, sizeof(DDosPreventionTriggered_Params));
+
+	this->ProcessEvent(uFnDDosPreventionTriggered, &DDosPreventionTriggered_Params, nullptr);
+	return DDosPreventionTriggered_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.ShouldStartMatchWithFirewall
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineGameDedicatedServer_X::ShouldStartMatchWithFirewall()
+{
+    static UFunction* uFnShouldStartMatchWithFirewall = nullptr;
+    if (!uFnShouldStartMatchWithFirewall)
+        uFnShouldStartMatchWithFirewall = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.ShouldStartMatchWithFirewall");
+
+	UOnlineGameDedicatedServer_X_execShouldStartMatchWithFirewall_Params ShouldStartMatchWithFirewall_Params;
+	memset(&ShouldStartMatchWithFirewall_Params, 0, sizeof(ShouldStartMatchWithFirewall_Params));
+
+	this->ProcessEvent(uFnShouldStartMatchWithFirewall, &ShouldStartMatchWithFirewall_Params, nullptr);
+	return ShouldStartMatchWithFirewall_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.WaitForLogAttackDetected
 // [0x00040001] (FUNC_Final | FUNC_Private)
 // Parameter Info:
@@ -23081,6 +23166,23 @@ void UOnlineGameDedicatedServer_X::SubscribeToDDoSAttackEvent()
 	memset(&SubscribeToDDoSAttackEvent_Params, 0, sizeof(SubscribeToDDoSAttackEvent_Params));
 
 	this->ProcessEvent(uFnSubscribeToDDoSAttackEvent, &SubscribeToDDoSAttackEvent_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.IsNetDriverUnderAttack
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineGameDedicatedServer_X::IsNetDriverUnderAttack()
+{
+    static UFunction* uFnIsNetDriverUnderAttack = nullptr;
+    if (!uFnIsNetDriverUnderAttack)
+        uFnIsNetDriverUnderAttack = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.IsNetDriverUnderAttack");
+
+	UOnlineGameDedicatedServer_X_execIsNetDriverUnderAttack_Params IsNetDriverUnderAttack_Params;
+	memset(&IsNetDriverUnderAttack_Params, 0, sizeof(IsNetDriverUnderAttack_Params));
+
+	this->ProcessEvent(uFnIsNetDriverUnderAttack, &IsNetDriverUnderAttack_Params, nullptr);
+	return IsNetDriverUnderAttack_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetNetDriverStableConnections
@@ -24901,6 +25003,23 @@ bool UOnlineGameReservations_X::__OnlineGameReservations_X__SetPlayersWithMigrat
 
 	this->ProcessEvent(uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1, &__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params, nullptr);
 	return __OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// struct FPsyNetBeaconPlayerReservation P                              (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGameReservations_X::__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2(const struct FPsyNetBeaconPlayerReservation& P)
+{
+    static UFunction* uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2 = nullptr;
+    if (!uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2)
+        uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2");
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params;
+	memset(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params, 0, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params));
+	memcpy_s(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params.P, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2, &__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1
@@ -59175,6 +59294,21 @@ void UDDoSService_X::SendDDoSServiceStart(const class FString& ServicePort, cons
 	memcpy_s(&SendDDoSServiceStart_Params.DedicatedServerInstanceId, sizeof(SendDDoSServiceStart_Params.DedicatedServerInstanceId), &DedicatedServerInstanceId, sizeof(DedicatedServerInstanceId));
 
 	this->ProcessEvent(uFnSendDDoSServiceStart, &SendDDoSServiceStart_Params, nullptr);
+};
+
+// Function ProjectX.DDoSService_X.ResetDDoSServiceCacheState
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+void UDDoSService_X::ResetDDoSServiceCacheState()
+{
+    static UFunction* uFnResetDDoSServiceCacheState = nullptr;
+    if (!uFnResetDDoSServiceCacheState)
+        uFnResetDDoSServiceCacheState = UFunction::FindFunction("Function ProjectX.DDoSService_X.ResetDDoSServiceCacheState");
+
+	UDDoSService_X_execResetDDoSServiceCacheState_Params ResetDDoSServiceCacheState_Params;
+	memset(&ResetDDoSServiceCacheState_Params, 0, sizeof(ResetDDoSServiceCacheState_Params));
+
+	this->ProcessEvent(uFnResetDDoSServiceCacheState, &ResetDDoSServiceCacheState_Params, nullptr);
 };
 
 // Function ProjectX.DDoSService_X.Init

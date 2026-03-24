@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -5656,10 +5656,16 @@ public:
 	void HandlePsyNetDataLoaded(class UPsyNetStaticData_X* D);
 	void SpinDownDDoSService();
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
+	void TryEnableDDosPrevention(const class TArray<class FString>& optionalConnectionIPs);
+	void TryDisableDDosPrevention(bool optionalBCheckNetDriverStatus);
+	bool DDosPreventionEnabled();
+	bool DDosPreventionTriggered();
+	bool ShouldStartMatchWithFirewall();
 	void WaitForLogAttackDetected();
 	void eventDDoSAttackDetected(const class TArray<class FString>& ConnectionIPs);
 	void ClearDDoSAttackEvent();
 	void SubscribeToDDoSAttackEvent();
+	bool IsNetDriverUnderAttack();
 	class TArray<class FString> GetNetDriverStableConnections();
 	class URPC_RecordMatch_X* SendRecordMatchRPC();
 	void ReportMatch();
@@ -5866,6 +5872,7 @@ public:
 	void __OnlineGameReservations_X__OnInit_0x2(class UIReservationConnection_X* Connection, class UObject* Message);
 	void __OnlineGameReservations_X__OnInit_0x1(class UIReservationConnection_X* Connection, class UObject* Message);
 	bool __OnlineGameReservations_X__SetPlayersWithMigrationData_0x1(const struct FMigrationReservationData& P);
+	void __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2(const struct FPsyNetBeaconPlayerReservation& P);
 	struct FUniqueNetId __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1(const struct FPsyNetBeaconPlayerReservation& P);
 	int32_t __OnlineGameReservations_X__SyncClubDetails_0x3(const struct FReservationData& P);
 	int32_t __OnlineGameReservations_X__SyncClubDetails_0x2(const struct FReservationPlayerData& P);
@@ -10175,9 +10182,10 @@ public:
 	uint32_t                                           bDisableSaveReplays : 1;                       // 0x009C (0x0004) [0x0000004000000001] [0x00100000] (CPF_Edit | CPF_PrivateWrite)
 	uint32_t                                           bOpenDetailsOnFirstTimeClicked : 1;            // 0x009C (0x0004) [0x0000004000000001] [0x00200000] (CPF_Edit | CPF_PrivateWrite)
 	uint32_t                                           bEnforceDDoSPrevention : 1;                    // 0x009C (0x0004) [0x0001004000000001] [0x00400000] (CPF_Edit | CPF_PrivateWrite)
-	uint32_t                                           bAllowStayAsParty : 1;                         // 0x009C (0x0004) [0x0000000000000001] [0x00800000] (CPF_Edit)
-	uint32_t                                           bEnforceEAC : 1;                               // 0x009C (0x0004) [0x0001000000000001] [0x01000000] (CPF_Edit)
-	uint32_t                                           bAllowEACTerminations : 1;                     // 0x009C (0x0004) [0x0001000000000001] [0x02000000] (CPF_Edit)
+	uint32_t                                           bStartMatchWithFirewallProtections : 1;        // 0x009C (0x0004) [0x0001004000000001] [0x00800000] (CPF_Edit | CPF_PrivateWrite)
+	uint32_t                                           bAllowStayAsParty : 1;                         // 0x009C (0x0004) [0x0000000000000001] [0x01000000] (CPF_Edit)
+	uint32_t                                           bEnforceEAC : 1;                               // 0x009C (0x0004) [0x0001000000000001] [0x02000000] (CPF_Edit)
+	uint32_t                                           bAllowEACTerminations : 1;                     // 0x009C (0x0004) [0x0001000000000001] [0x04000000] (CPF_Edit)
 	class FString                                      PlaylistImageURL;                              // 0x00A0 (0x0010) [0x0000004000400001] (CPF_Edit | CPF_NeedCtorLink | CPF_PrivateWrite)
 	class FString                                      PlaylistImageTexture;                          // 0x00B0 (0x0010) [0x0000004000400001] (CPF_Edit | CPF_NeedCtorLink | CPF_PrivateWrite)
 	class FString                                      PlaylistIconActiveURL;                         // 0x00C0 (0x0010) [0x0000004000400001] (CPF_Edit | CPF_NeedCtorLink | CPF_PrivateWrite)
@@ -14291,22 +14299,24 @@ public:
 };
 
 // Class ProjectX.DDoSService_X
-// 0x0068 (0x0060 - 0x00C8)
+// 0x0070 (0x0060 - 0x00D0)
 class UDDoSService_X : public UObject
 {
 public:
-	uint64_t                                           DDoSServiceMessageSentTimestamp;               // 0x0060 (0x0008) [0x0001008000000000] (CPF_ProtectedWrite)
-	int32_t                                            DDoSServiceMessageRetryTime;                   // 0x0068 (0x0004) [0x0001000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
-	class FString                                      DDoSServiceURL;                                // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      DDoSServiceName;                               // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            DDoSServiceVersion;                            // 0x0090 (0x0004) [0x0001000000000000]               
-	uint8_t                                          UnknownData01[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
-	class TArray<class FString>                        CachedClientIPs;                               // 0x0098 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FName                                        DDoSEndProtectionInFlight_Name;                // 0x00A8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class FName                                        DDoSStartProtectionInFlight_Name;              // 0x00B0 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class FName                                        DDoSProtectionEnabled_Name;                    // 0x00B8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class FName                                        DDoSProtectionDisabled_Name;                   // 0x00C0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	uint32_t                                           bDDoSPreventionTriggered : 1;                  // 0x0060 (0x0004) [0x0001004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
+	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
+	uint64_t                                           DDoSServiceMessageSentTimestamp;               // 0x0068 (0x0008) [0x0001008000000000] (CPF_ProtectedWrite)
+	int32_t                                            DDoSServiceMessageRetryTime;                   // 0x0070 (0x0004) [0x0001000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData01[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
+	class FString                                      DDoSServiceURL;                                // 0x0078 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      DDoSServiceName;                               // 0x0088 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            DDoSServiceVersion;                            // 0x0098 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData02[0x4];                            // 0x009C (0x0004) MISSED OFFSET
+	class TArray<class FString>                        CachedClientIPs;                               // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FName                                        DDoSEndProtectionInFlight_Name;                // 0x00B0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class FName                                        DDoSStartProtectionInFlight_Name;              // 0x00B8 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class FName                                        DDoSProtectionEnabled_Name;                    // 0x00C0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class FName                                        DDoSProtectionDisabled_Name;                   // 0x00C8 (0x0008) [0x0001000000000002] (CPF_Const)   
 
 public:
     static UClass* StaticClass()
@@ -14331,6 +14341,7 @@ public:
 	void SendDDosServiceEndInternal(const class FString& ServicePort, const class FString& GamePort, const class FString& DedicatedServerInstanceId, const class FName& NextState);
 	void SendDDoSServiceStartInternal(const class FString& ServicePort, const class FString& GamePort, const class TArray<class FString>& ClientIPs, const class FString& DedicatedServerInstanceId, const class FName& NextState);
 	void SendDDoSServiceStart(const class FString& ServicePort, const class FString& GamePort, const class TArray<class FString>& ClientIPs, const class FString& DedicatedServerInstanceId);
+	void ResetDDoSServiceCacheState();
 	void Init();
 };
 
@@ -15077,8 +15088,9 @@ public:
 	uint32_t                                           bOpenDetailsOnFirstTimeClicked : 1;            // 0x0098 (0x0004) [0x0000000000000001] [0x00400000] (CPF_Edit)
 	uint32_t                                           bAllowStayAsParty : 1;                         // 0x0098 (0x0004) [0x0000000000000001] [0x00800000] (CPF_Edit)
 	uint32_t                                           bEnforceDDoSPrevention : 1;                    // 0x0098 (0x0004) [0x0000000000000001] [0x01000000] (CPF_Edit)
-	uint32_t                                           bEnforceEAC : 1;                               // 0x0098 (0x0004) [0x0001000000000001] [0x02000000] (CPF_Edit)
-	uint32_t                                           bAllowEACTerminations : 1;                     // 0x0098 (0x0004) [0x0001000000000001] [0x04000000] (CPF_Edit)
+	uint32_t                                           bStartMatchWithFirewallProtections : 1;        // 0x0098 (0x0004) [0x0000000000000001] [0x02000000] (CPF_Edit)
+	uint32_t                                           bEnforceEAC : 1;                               // 0x0098 (0x0004) [0x0001000000000001] [0x04000000] (CPF_Edit)
+	uint32_t                                           bAllowEACTerminations : 1;                     // 0x0098 (0x0004) [0x0001000000000001] [0x08000000] (CPF_Edit)
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 	class FString                                      PlaylistImageURL;                              // 0x00A0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class FString                                      PlaylistImageTexture;                          // 0x00B0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)

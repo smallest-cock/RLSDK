@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -31193,6 +31193,7 @@ struct ACar_TA_execUpdateDodgeAvailable_Params
 // [0x00040103] 
 struct ACar_TA_execHandleAirActivateCountChanged_Params
 {
+	class ACarComponent_AirActivate_TA*                CarComponent;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.Car_TA.HandleDodgeComponentAdded
@@ -45847,10 +45848,10 @@ struct UMatchType_TA_execInit_Params
 // [0x00042003] 
 struct UPhysicsMetrics_TA_execResimMetricDataToString_Params
 {
-	struct FResimMetricData                            InData;                                           // 0x0000 (0x001C) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class FString                                      ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class FString                                   Output;                                           // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FResimMetricData                            InData;                                           // 0x0000 (0x0024) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class FString                                   Output;                                           // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.PhysicsMetrics_TA.ClientResimCorrectionEvents
@@ -45859,13 +45860,21 @@ struct UPhysicsMetrics_TA_execClientResimCorrectionEvents_Params
 {
 	class TArray<struct FResimMetricData>              ResimEvents;                                      // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      MatchGUID;                                        // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            PlayerCount;                                      // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	float                                              TotalTimePlayed;                                  // 0x0024 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            MaxResimFrames;                                   // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            MinResimFrames;                                   // 0x002C (0x0004) [0x0000000000000080] (CPF_Parm)    
+	float                                              AvgCorrectionEventsPerSecond;                     // 0x0030 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	float                                              AvgResimFramesPerSecond;                          // 0x0034 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.PhysicsMetrics_TA.SendClientCorrectionMetrics
 // [0x00020003] 
 struct UPhysicsMetrics_TA_execSendClientCorrectionMetrics_Params
 {
-	// int32_t                                         I;                                                // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              MatchTotalSecondsPlayed;                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            PlayerCount;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	// int32_t                                         I;                                                // 0x0008 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.PhysicsMetrics_TA.AddCorrection
@@ -45876,7 +45885,27 @@ struct UPhysicsMetrics_TA_execAddCorrection_Params
 	int32_t                                            InNumResimFrames;                                 // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         GameStateNameIndex;                               // 0x000C (0x0004) [0x0000000000000000]               
 	// class U__PhysicsMetrics_TA__AddCorrection_0x1*  _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
-	// struct FResimMetricData                         StructInitializer_0x1;                            // 0x0018 (0x001C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	// struct FResimMetricData                         StructInitializer_0x1;                            // 0x0018 (0x0024) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+};
+
+// Function TAGame.PhysicsMetrics_TA.Construct
+// [0x400820802] 
+struct UPhysicsMetrics_TA_eventConstruct_Params
+{
+	// struct FResimMetricData                         StructInitializer_0x1;                            // 0x0000 (0x0024) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.GetReservationPlayerCounts
+// [0x00020003] 
+struct UOnlineGameDedicatedServer_TA_execGetReservationPlayerCounts_Params
+{
+	int32_t                                            NumPlayersTeam1;                                  // 0x0000 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            NumPlayersInGameTeam1;                            // 0x0004 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            NumPlayersTeam2;                                  // 0x0008 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            NumPlayersInGameTeam2;                            // 0x000C (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            MaxPlayers;                                       // 0x0010 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            BackfillAmount1;                                  // 0x0014 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            BackfillAmount2;                                  // 0x0018 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleActiveRoundChanged
@@ -46198,6 +46227,7 @@ struct UOnlineGameDedicatedServer_TA_execHandleGameEventStarted_Params
 {
 	class AGameEvent_Soccar_TA*                        GameEvent;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// uint32_t                                        bDDoSPreventionEnabledOnPlaylist : 1;             // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bFirewallStartsEnabledOnPlaylist : 1;             // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleGameInitialized
@@ -82358,8 +82388,8 @@ struct U__Personas_TA__GetOrCreateAndLink_0x1_exec__Personas_TA__GetOrCreateAndL
 // [0x00020003] 
 struct U__PhysicsMetrics_TA__AddCorrection_0x1_exec__PhysicsMetrics_TA__AddCorrection_0x1_Params
 {
-	struct FResimMetricData                            E;                                                // 0x0000 (0x001C) [0x0000000000000080] (CPF_Parm)    
-	bool                                               ReturnValue : 1;                                  // 0x001C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FResimMetricData                            E;                                                // 0x0000 (0x0024) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0024 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__PlatformMetrics_TA__DispatchAndRemove_0x1.__PlatformMetrics_TA__DispatchAndRemove_0x1
@@ -112177,14 +112207,6 @@ struct UGFxData_ConnectionStats_TA_eventOnRemoved_Params
 // [0x400080802] 
 struct UGFxData_ConnectionStats_TA_eventOnShellSet_Params
 {
-};
-
-// Function TAGame.ProfilePCSave_TA.__ProfilePCSave_TA__GetVersionDelegates_0x2
-// [0x40040003] 
-struct UProfilePCSave_TA_exec__ProfilePCSave_TA__GetVersionDelegates_0x2_Params
-{
-	class UObject*                                     SaveObj;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// class TArray<struct FPlayerBinding>             StandardBindings;                                 // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProfilePCSave_TA.__ProfilePCSave_TA__GetVersionDelegates_0x1

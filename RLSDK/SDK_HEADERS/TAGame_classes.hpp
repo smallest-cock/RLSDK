@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -17881,7 +17881,7 @@ public:
 	void OnDodgeCounterReplicated();
 	int32_t GetEverlastingDodges();
 	void UpdateDodgeAvailable();
-	void HandleAirActivateCountChanged();
+	void HandleAirActivateCountChanged(class ACarComponent_AirActivate_TA* CarComponent);
 	void HandleDodgeComponentAdded(class ACarComponent_Dodge_TA* AirActivateComponent);
 	void HandleDoubleJumpComponentAdded(class ACarComponent_DoubleJump_TA* AirActivateComponent);
 	void SetupFlipResetFxActor();
@@ -24008,11 +24008,17 @@ public:
 };
 
 // Class TAGame.PhysicsMetrics_TA
-// 0x0010 (0x0080 - 0x0090)
+// 0x0028 (0x0080 - 0x00A8)
 class UPhysicsMetrics_TA : public UMetricsGroup_X
 {
 public:
 	class TArray<struct FResimMetricData>              CorrectionEvents;                              // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TotalCorrectionEvents;                         // 0x0090 (0x0004) [0x0000000000000000]               
+	int32_t                                            TotalResimFrames;                              // 0x0094 (0x0004) [0x0000000000000000]               
+	int32_t                                            GlobalMinResimFrames;                          // 0x0098 (0x0004) [0x0000000000000000]               
+	int32_t                                            GlobalMaxResimFrames;                          // 0x009C (0x0004) [0x0000000000000000]               
+	float                                              AverageCorrectionEventsPerSecond;              // 0x00A0 (0x0004) [0x0000000000000000]               
+	float                                              AverageResimFramesPerSecond;                   // 0x00A4 (0x0004) [0x0000000000000000]               
 
 public:
     static UClass* StaticClass()
@@ -24024,9 +24030,10 @@ public:
     }
 
 	static class FString ResimMetricDataToString(const struct FResimMetricData& InData);
-	void ClientResimCorrectionEvents(const class FString& MatchGUID, class TArray<struct FResimMetricData>& outResimEvents);
-	void SendClientCorrectionMetrics();
+	void ClientResimCorrectionEvents(const class FString& MatchGUID, int32_t PlayerCount, float TotalTimePlayed, int32_t MaxResimFrames, int32_t MinResimFrames, float AvgCorrectionEventsPerSecond, float AvgResimFramesPerSecond, class TArray<struct FResimMetricData>& outResimEvents);
+	void SendClientCorrectionMetrics(float MatchTotalSecondsPlayed, int32_t PlayerCount);
 	void AddCorrection(const class FName& InGameStateName, int32_t InNumResimFrames);
+	void eventConstruct();
 };
 
 // Class TAGame.OnlineGameDedicatedServer_TA
@@ -24056,6 +24063,7 @@ public:
         return uClassPointer;
     }
 
+	void GetReservationPlayerCounts(int32_t& outNumPlayersTeam1, int32_t& outNumPlayersInGameTeam1, int32_t& outNumPlayersTeam2, int32_t& outNumPlayersInGameTeam2, int32_t& outMaxPlayers, int32_t& outBackfillAmount1, int32_t& outBackfillAmount2);
 	void HandleActiveRoundChanged(class AGameEvent_Soccar_TA* GameEvent);
 	int32_t GetTeamScore(int32_t TeamIdx);
 	void ShutdownDDoSPreventionService();
@@ -59923,7 +59931,6 @@ public:
         return uClassPointer;
     }
 
-	void __ProfilePCSave_TA__GetVersionDelegates_0x2(class UObject* SaveObj);
 	void __ProfilePCSave_TA__GetVersionDelegates_0x1(class UObject* SaveObj);
 	void GetVersionDelegates(class TArray<struct FScriptDelegate>& outVersionDelegates);
 	void OnCreate();

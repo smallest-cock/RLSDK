@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -69817,7 +69817,8 @@ void ACar_TA::UpdateDodgeAvailable()
 // Function TAGame.Car_TA.HandleAirActivateCountChanged
 // [0x00040103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Private)
 // Parameter Info:
-void ACar_TA::HandleAirActivateCountChanged()
+// class ACarComponent_AirActivate_TA* CarComponent                   (CPF_Parm)
+void ACar_TA::HandleAirActivateCountChanged(class ACarComponent_AirActivate_TA* CarComponent)
 {
     static UFunction* uFnHandleAirActivateCountChanged = nullptr;
     if (!uFnHandleAirActivateCountChanged)
@@ -69825,6 +69826,7 @@ void ACar_TA::HandleAirActivateCountChanged()
 
 	ACar_TA_execHandleAirActivateCountChanged_Params HandleAirActivateCountChanged_Params;
 	memset(&HandleAirActivateCountChanged_Params, 0, sizeof(HandleAirActivateCountChanged_Params));
+	HandleAirActivateCountChanged_Params.CarComponent = CarComponent;
 
 	this->ProcessEvent(uFnHandleAirActivateCountChanged, &HandleAirActivateCountChanged_Params, nullptr);
 };
@@ -101512,8 +101514,14 @@ class FString UPhysicsMetrics_TA::ResimMetricDataToString(const struct FResimMet
 // [0x00440003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasOutParms)
 // Parameter Info:
 // class FString                  MatchGUID                      (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        PlayerCount                    (CPF_Parm)
+// float                          TotalTimePlayed                (CPF_Parm)
+// int32_t                        MaxResimFrames                 (CPF_Parm)
+// int32_t                        MinResimFrames                 (CPF_Parm)
+// float                          AvgCorrectionEventsPerSecond   (CPF_Parm)
+// float                          AvgResimFramesPerSecond        (CPF_Parm)
 // class TArray<struct FResimMetricData> ResimEvents                    (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-void UPhysicsMetrics_TA::ClientResimCorrectionEvents(const class FString& MatchGUID, class TArray<struct FResimMetricData>& ResimEvents)
+void UPhysicsMetrics_TA::ClientResimCorrectionEvents(const class FString& MatchGUID, int32_t PlayerCount, float TotalTimePlayed, int32_t MaxResimFrames, int32_t MinResimFrames, float AvgCorrectionEventsPerSecond, float AvgResimFramesPerSecond, class TArray<struct FResimMetricData>& ResimEvents)
 {
     static UFunction* uFnClientResimCorrectionEvents = nullptr;
     if (!uFnClientResimCorrectionEvents)
@@ -101522,6 +101530,12 @@ void UPhysicsMetrics_TA::ClientResimCorrectionEvents(const class FString& MatchG
 	UPhysicsMetrics_TA_execClientResimCorrectionEvents_Params ClientResimCorrectionEvents_Params;
 	memset(&ClientResimCorrectionEvents_Params, 0, sizeof(ClientResimCorrectionEvents_Params));
 	memcpy_s(&ClientResimCorrectionEvents_Params.MatchGUID, sizeof(ClientResimCorrectionEvents_Params.MatchGUID), &MatchGUID, sizeof(MatchGUID));
+	memcpy_s(&ClientResimCorrectionEvents_Params.PlayerCount, sizeof(ClientResimCorrectionEvents_Params.PlayerCount), &PlayerCount, sizeof(PlayerCount));
+	memcpy_s(&ClientResimCorrectionEvents_Params.TotalTimePlayed, sizeof(ClientResimCorrectionEvents_Params.TotalTimePlayed), &TotalTimePlayed, sizeof(TotalTimePlayed));
+	memcpy_s(&ClientResimCorrectionEvents_Params.MaxResimFrames, sizeof(ClientResimCorrectionEvents_Params.MaxResimFrames), &MaxResimFrames, sizeof(MaxResimFrames));
+	memcpy_s(&ClientResimCorrectionEvents_Params.MinResimFrames, sizeof(ClientResimCorrectionEvents_Params.MinResimFrames), &MinResimFrames, sizeof(MinResimFrames));
+	memcpy_s(&ClientResimCorrectionEvents_Params.AvgCorrectionEventsPerSecond, sizeof(ClientResimCorrectionEvents_Params.AvgCorrectionEventsPerSecond), &AvgCorrectionEventsPerSecond, sizeof(AvgCorrectionEventsPerSecond));
+	memcpy_s(&ClientResimCorrectionEvents_Params.AvgResimFramesPerSecond, sizeof(ClientResimCorrectionEvents_Params.AvgResimFramesPerSecond), &AvgResimFramesPerSecond, sizeof(AvgResimFramesPerSecond));
 	memcpy_s(&ClientResimCorrectionEvents_Params.ResimEvents, sizeof(ClientResimCorrectionEvents_Params.ResimEvents), &ResimEvents, sizeof(ResimEvents));
 
 	this->ProcessEvent(uFnClientResimCorrectionEvents, &ClientResimCorrectionEvents_Params, nullptr);
@@ -101532,7 +101546,9 @@ void UPhysicsMetrics_TA::ClientResimCorrectionEvents(const class FString& MatchG
 // Function TAGame.PhysicsMetrics_TA.SendClientCorrectionMetrics
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
-void UPhysicsMetrics_TA::SendClientCorrectionMetrics()
+// float                          MatchTotalSecondsPlayed        (CPF_Parm)
+// int32_t                        PlayerCount                    (CPF_Parm)
+void UPhysicsMetrics_TA::SendClientCorrectionMetrics(float MatchTotalSecondsPlayed, int32_t PlayerCount)
 {
     static UFunction* uFnSendClientCorrectionMetrics = nullptr;
     if (!uFnSendClientCorrectionMetrics)
@@ -101540,6 +101556,8 @@ void UPhysicsMetrics_TA::SendClientCorrectionMetrics()
 
 	UPhysicsMetrics_TA_execSendClientCorrectionMetrics_Params SendClientCorrectionMetrics_Params;
 	memset(&SendClientCorrectionMetrics_Params, 0, sizeof(SendClientCorrectionMetrics_Params));
+	memcpy_s(&SendClientCorrectionMetrics_Params.MatchTotalSecondsPlayed, sizeof(SendClientCorrectionMetrics_Params.MatchTotalSecondsPlayed), &MatchTotalSecondsPlayed, sizeof(MatchTotalSecondsPlayed));
+	memcpy_s(&SendClientCorrectionMetrics_Params.PlayerCount, sizeof(SendClientCorrectionMetrics_Params.PlayerCount), &PlayerCount, sizeof(PlayerCount));
 
 	this->ProcessEvent(uFnSendClientCorrectionMetrics, &SendClientCorrectionMetrics_Params, nullptr);
 };
@@ -101561,6 +101579,58 @@ void UPhysicsMetrics_TA::AddCorrection(const class FName& InGameStateName, int32
 	memcpy_s(&AddCorrection_Params.InNumResimFrames, sizeof(AddCorrection_Params.InNumResimFrames), &InNumResimFrames, sizeof(InNumResimFrames));
 
 	this->ProcessEvent(uFnAddCorrection, &AddCorrection_Params, nullptr);
+};
+
+// Function TAGame.PhysicsMetrics_TA.Construct
+// [0x400820802] (FUNC_Defined | FUNC_Event | FUNC_Public | FUNC_HasDefaults)
+// Parameter Info:
+void UPhysicsMetrics_TA::eventConstruct()
+{
+    static UFunction* uFnConstruct = nullptr;
+    if (!uFnConstruct)
+        uFnConstruct = UFunction::FindFunction("Function TAGame.PhysicsMetrics_TA.Construct");
+
+	UPhysicsMetrics_TA_eventConstruct_Params Construct_Params;
+	memset(&Construct_Params, 0, sizeof(Construct_Params));
+
+	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.GetReservationPlayerCounts
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// int32_t                        NumPlayersTeam1                (CPF_Parm | CPF_OutParm)
+// int32_t                        NumPlayersInGameTeam1          (CPF_Parm | CPF_OutParm)
+// int32_t                        NumPlayersTeam2                (CPF_Parm | CPF_OutParm)
+// int32_t                        NumPlayersInGameTeam2          (CPF_Parm | CPF_OutParm)
+// int32_t                        MaxPlayers                     (CPF_Parm | CPF_OutParm)
+// int32_t                        BackfillAmount1                (CPF_Parm | CPF_OutParm)
+// int32_t                        BackfillAmount2                (CPF_Parm | CPF_OutParm)
+void UOnlineGameDedicatedServer_TA::GetReservationPlayerCounts(int32_t& NumPlayersTeam1, int32_t& NumPlayersInGameTeam1, int32_t& NumPlayersTeam2, int32_t& NumPlayersInGameTeam2, int32_t& MaxPlayers, int32_t& BackfillAmount1, int32_t& BackfillAmount2)
+{
+    static UFunction* uFnGetReservationPlayerCounts = nullptr;
+    if (!uFnGetReservationPlayerCounts)
+        uFnGetReservationPlayerCounts = UFunction::FindFunction("Function TAGame.OnlineGameDedicatedServer_TA.GetReservationPlayerCounts");
+
+	UOnlineGameDedicatedServer_TA_execGetReservationPlayerCounts_Params GetReservationPlayerCounts_Params;
+	memset(&GetReservationPlayerCounts_Params, 0, sizeof(GetReservationPlayerCounts_Params));
+	memcpy_s(&GetReservationPlayerCounts_Params.NumPlayersTeam1, sizeof(GetReservationPlayerCounts_Params.NumPlayersTeam1), &NumPlayersTeam1, sizeof(NumPlayersTeam1));
+	memcpy_s(&GetReservationPlayerCounts_Params.NumPlayersInGameTeam1, sizeof(GetReservationPlayerCounts_Params.NumPlayersInGameTeam1), &NumPlayersInGameTeam1, sizeof(NumPlayersInGameTeam1));
+	memcpy_s(&GetReservationPlayerCounts_Params.NumPlayersTeam2, sizeof(GetReservationPlayerCounts_Params.NumPlayersTeam2), &NumPlayersTeam2, sizeof(NumPlayersTeam2));
+	memcpy_s(&GetReservationPlayerCounts_Params.NumPlayersInGameTeam2, sizeof(GetReservationPlayerCounts_Params.NumPlayersInGameTeam2), &NumPlayersInGameTeam2, sizeof(NumPlayersInGameTeam2));
+	memcpy_s(&GetReservationPlayerCounts_Params.MaxPlayers, sizeof(GetReservationPlayerCounts_Params.MaxPlayers), &MaxPlayers, sizeof(MaxPlayers));
+	memcpy_s(&GetReservationPlayerCounts_Params.BackfillAmount1, sizeof(GetReservationPlayerCounts_Params.BackfillAmount1), &BackfillAmount1, sizeof(BackfillAmount1));
+	memcpy_s(&GetReservationPlayerCounts_Params.BackfillAmount2, sizeof(GetReservationPlayerCounts_Params.BackfillAmount2), &BackfillAmount2, sizeof(BackfillAmount2));
+
+	this->ProcessEvent(uFnGetReservationPlayerCounts, &GetReservationPlayerCounts_Params, nullptr);
+
+	memcpy_s(&NumPlayersTeam1, sizeof(NumPlayersTeam1), &GetReservationPlayerCounts_Params.NumPlayersTeam1, sizeof(GetReservationPlayerCounts_Params.NumPlayersTeam1));
+	memcpy_s(&NumPlayersInGameTeam1, sizeof(NumPlayersInGameTeam1), &GetReservationPlayerCounts_Params.NumPlayersInGameTeam1, sizeof(GetReservationPlayerCounts_Params.NumPlayersInGameTeam1));
+	memcpy_s(&NumPlayersTeam2, sizeof(NumPlayersTeam2), &GetReservationPlayerCounts_Params.NumPlayersTeam2, sizeof(GetReservationPlayerCounts_Params.NumPlayersTeam2));
+	memcpy_s(&NumPlayersInGameTeam2, sizeof(NumPlayersInGameTeam2), &GetReservationPlayerCounts_Params.NumPlayersInGameTeam2, sizeof(GetReservationPlayerCounts_Params.NumPlayersInGameTeam2));
+	memcpy_s(&MaxPlayers, sizeof(MaxPlayers), &GetReservationPlayerCounts_Params.MaxPlayers, sizeof(GetReservationPlayerCounts_Params.MaxPlayers));
+	memcpy_s(&BackfillAmount1, sizeof(BackfillAmount1), &GetReservationPlayerCounts_Params.BackfillAmount1, sizeof(GetReservationPlayerCounts_Params.BackfillAmount1));
+	memcpy_s(&BackfillAmount2, sizeof(BackfillAmount2), &GetReservationPlayerCounts_Params.BackfillAmount2, sizeof(GetReservationPlayerCounts_Params.BackfillAmount2));
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.HandleActiveRoundChanged
@@ -247196,23 +247266,6 @@ void UGFxData_ConnectionStats_TA::eventOnShellSet()
 	memset(&OnShellSet_Params, 0, sizeof(OnShellSet_Params));
 
 	this->ProcessEvent(uFnOnShellSet, &OnShellSet_Params, nullptr);
-};
-
-// Function TAGame.ProfilePCSave_TA.__ProfilePCSave_TA__GetVersionDelegates_0x2
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// class UObject*                 SaveObj                        (CPF_Parm)
-void UProfilePCSave_TA::__ProfilePCSave_TA__GetVersionDelegates_0x2(class UObject* SaveObj)
-{
-    static UFunction* uFn__ProfilePCSave_TA__GetVersionDelegates_0x2 = nullptr;
-    if (!uFn__ProfilePCSave_TA__GetVersionDelegates_0x2)
-        uFn__ProfilePCSave_TA__GetVersionDelegates_0x2 = UFunction::FindFunction("Function TAGame.ProfilePCSave_TA.__ProfilePCSave_TA__GetVersionDelegates_0x2");
-
-	UProfilePCSave_TA_exec__ProfilePCSave_TA__GetVersionDelegates_0x2_Params __ProfilePCSave_TA__GetVersionDelegates_0x2_Params;
-	memset(&__ProfilePCSave_TA__GetVersionDelegates_0x2_Params, 0, sizeof(__ProfilePCSave_TA__GetVersionDelegates_0x2_Params));
-	__ProfilePCSave_TA__GetVersionDelegates_0x2_Params.SaveObj = SaveObj;
-
-	this->ProcessEvent(uFn__ProfilePCSave_TA__GetVersionDelegates_0x2, &__ProfilePCSave_TA__GetVersionDelegates_0x2_Params, nullptr);
 };
 
 // Function TAGame.ProfilePCSave_TA.__ProfilePCSave_TA__GetVersionDelegates_0x1

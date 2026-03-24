@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -9856,6 +9856,41 @@ struct UOnlineGameDedicatedServer_X_execPrintDebugInfo_Params
 	class UDebugDrawer*                                Drawer;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.TryEnableDDosPrevention
+// [0x00084003] 
+struct UOnlineGameDedicatedServer_X_execTryEnableDDosPrevention_Params
+{
+	class TArray<class FString>                        ConnectionIPs;                                    // 0x0000 (0x0010) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.TryDisableDDosPrevention
+// [0x00084003] 
+struct UOnlineGameDedicatedServer_X_execTryDisableDDosPrevention_Params
+{
+	uint32_t                                           bCheckNetDriverStatus : 1;                        // 0x0000 (0x0004) [0x0001000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionEnabled
+// [0x00080003] 
+struct UOnlineGameDedicatedServer_X_execDDosPreventionEnabled_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.DDosPreventionTriggered
+// [0x00080003] 
+struct UOnlineGameDedicatedServer_X_execDDosPreventionTriggered_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.ShouldStartMatchWithFirewall
+// [0x00080003] 
+struct UOnlineGameDedicatedServer_X_execShouldStartMatchWithFirewall_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.WaitForLogAttackDetected
 // [0x00040001] 
 struct UOnlineGameDedicatedServer_X_execWaitForLogAttackDetected_Params
@@ -9879,6 +9914,13 @@ struct UOnlineGameDedicatedServer_X_execClearDDoSAttackEvent_Params
 // [0x00080401] 
 struct UOnlineGameDedicatedServer_X_execSubscribeToDDoSAttackEvent_Params
 {
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.IsNetDriverUnderAttack
+// [0x00020401] 
+struct UOnlineGameDedicatedServer_X_execIsNetDriverUnderAttack_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetNetDriverStableConnections
@@ -10704,6 +10746,13 @@ struct UOnlineGameReservations_X_exec__OnlineGameReservations_X__SetPlayersWithM
 {
 	struct FMigrationReservationData                   P;                                                // 0x0000 (0x0108) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0108 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2
+// [0x40040003] 
+struct UOnlineGameReservations_X_exec__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2_Params
+{
+	struct FPsyNetBeaconPlayerReservation              P;                                                // 0x0000 (0x00B8) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x1
@@ -25998,6 +26047,12 @@ struct UDDoSService_X_execSendDDoSServiceStart_Params
 	class FString                                      GamePort;                                         // 0x0010 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<class FString>                        ClientIPs;                                        // 0x0020 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      DedicatedServerInstanceId;                        // 0x0030 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.DDoSService_X.ResetDDoSServiceCacheState
+// [0x00020003] 
+struct UDDoSService_X_execResetDDoSServiceCacheState_Params
+{
 };
 
 // Function ProjectX.DDoSService_X.Init

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 21 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 03/10/2026 04:15PM
+# Rocket League SDK (RLSDK) Season 22 (v2.67)
+# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260303.78181.511382
-# Build Date: Mar  3 2026 22:09:07
+# Psyonix Build ID: 260316.80791.512269
+# Build Date: Mar 16 2026 23:04:23
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -2651,7 +2651,7 @@ struct FMTXPurchaseInfo
 };
 
 // ScriptStruct TAGame.PhysicsMetrics_TA.ResimMetricData
-// Size: 0x001C
+// Size: 0x0024
 struct FResimMetricData
 {
 	class FName                                        GameStateName;                                 // 0x0000 (0x0008) [0x0000000000000000]               
@@ -2660,6 +2660,8 @@ struct FResimMetricData
 	int32_t                                            MinNumResimFramesPerEvent;                     // 0x0010 (0x0004) [0x0000000000000000]               
 	int32_t                                            MaxNumResimFramesPerEvent;                     // 0x0014 (0x0004) [0x0000000000000000]               
 	float                                              AverageNumResimFramesPerEvent;                 // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              AverageCorrectionEventsPerSecond;              // 0x001C (0x0004) [0x0000000000000000]               
+	float                                              AverageResimFramesPerSecond;                   // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.PlatformMetrics_TA.PlatformMetricData
