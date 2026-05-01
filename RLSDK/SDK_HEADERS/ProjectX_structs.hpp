@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -155,7 +155,7 @@ struct FImageContent
 };
 
 // ScriptStruct ProjectX._Types_X.NewsContent
-// Size: 0x00F8 (0x00F4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x00D8 (0x00D4 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FNewsContent
 {
 	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -166,19 +166,16 @@ struct FNewsContent
 	class FString                                      CarName;                                       // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FImageContent>                 Image;                                         // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FImageContent>                 Thumbnail;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      StartTime;                                     // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      LinkType;                                      // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      InfoURL;                                       // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      InfoButtonText;                                // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      EndTime;                                       // 0x00C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint64_t                                           StartTimeEpoch;                                // 0x00D0 (0x0008) [0x0000000000000000]               
-	uint64_t                                           EndTimeEpoch;                                  // 0x00D8 (0x0008) [0x0000000000000000]               
-	int32_t                                            ShopID;                                        // 0x00E0 (0x0004) [0x0000000000000000]               
-	int32_t                                            ShopItemID;                                    // 0x00E4 (0x0004) [0x0000000000000000]               
-	int32_t                                            ProductID;                                     // 0x00E8 (0x0004) [0x0000000000000000]               
-	int32_t                                            CategoryID;                                    // 0x00EC (0x0004) [0x0000000000000000]               
-	int32_t                                            PlaylistId;                                    // 0x00F0 (0x0004) [0x0000000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x00F4 (0x0004) PADDING FOR MINALIGNMENT
+	class FString                                      LinkType;                                      // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      InfoURL;                                       // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      InfoButtonText;                                // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EventFolderID;                                 // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            ShopID;                                        // 0x00C0 (0x0004) [0x0000000000000000]               
+	int32_t                                            ShopItemID;                                    // 0x00C4 (0x0004) [0x0000000000000000]               
+	int32_t                                            ProductID;                                     // 0x00C8 (0x0004) [0x0000000000000000]               
+	int32_t                                            CategoryID;                                    // 0x00CC (0x0004) [0x0000000000000000]               
+	int32_t                                            PlaylistId;                                    // 0x00D0 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x00D4 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX._Types_X.NewsPlacement
@@ -189,11 +186,11 @@ struct FNewsPlacement
 };
 
 // ScriptStruct ProjectX._Types_X.NewsTileData
-// Size: 0x0108
+// Size: 0x00E8
 struct FNewsTileData
 {
-	struct FNewsContent                                ContentFields;                                 // 0x0000 (0x00F8) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FNewsPlacement>                Placements;                                    // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FNewsContent                                ContentFields;                                 // 0x0000 (0x00D8) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FNewsPlacement>                Placements;                                    // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct ProjectX._Types_X.ServerReservationData
@@ -2367,6 +2364,15 @@ struct FCachedDataRequest
 	uint32_t                                           bZipResponse : 1;                              // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX.ServerPlayerIdCache_X.PlayerIdLink
+// Size: 0x0068
+struct FPlayerIdLink
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicAccountId;                                 // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      ProductUserId;                                 // 0x0058 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 /*

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -2546,6 +2546,413 @@ void UOnlineSubsystemEOS::OnMicroTxnResponse(bool bAuthorized, uint64_t OrderId)
 	memcpy_s(&OnMicroTxnResponse_Params.OrderId, sizeof(OnMicroTxnResponse_Params.OrderId), &OrderId, sizeof(OrderId));
 
 	this->ProcessEvent(uFnOnMicroTxnResponse, &OnMicroTxnResponse_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.ReceiveMessage
+// [0x00420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  EncodedMessage                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UOnlineAntiCheatInterfaceEOS::ReceiveMessage(class FString& EncodedMessage, struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnReceiveMessage = nullptr;
+    if (!uFnReceiveMessage)
+        uFnReceiveMessage = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.ReceiveMessage");
+
+	UOnlineAntiCheatInterfaceEOS_execReceiveMessage_Params ReceiveMessage_Params;
+	memset(&ReceiveMessage_Params, 0, sizeof(ReceiveMessage_Params));
+	memcpy_s(&ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage), &EncodedMessage, sizeof(EncodedMessage));
+	memcpy_s(&ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnReceiveMessage, &ReceiveMessage_Params, nullptr);
+
+	memcpy_s(&EncodedMessage, sizeof(EncodedMessage), &ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage));
+	memcpy_s(&PlayerID, sizeof(PlayerID), &ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID));
+	return ReceiveMessage_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EndSession
+// [0x00020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineAntiCheatInterfaceEOS::EndSession()
+{
+    static UFunction* uFnEndSession = nullptr;
+    if (!uFnEndSession)
+        uFnEndSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EndSession");
+
+	UOnlineAntiCheatInterfaceEOS_execEndSession_Params EndSession_Params;
+	memset(&EndSession_Params, 0, sizeof(EndSession_Params));
+
+	this->ProcessEvent(uFnEndSession, &EndSession_Params, nullptr);
+	return EndSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.BeginSession
+// [0x00024400] (FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// float                          RegisterTimeoutSeconds         (CPF_OptionalParm | CPF_Parm)
+bool UOnlineAntiCheatInterfaceEOS::BeginSession(float RegisterTimeoutSeconds)
+{
+    static UFunction* uFnBeginSession = nullptr;
+    if (!uFnBeginSession)
+        uFnBeginSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.BeginSession");
+
+	UOnlineAntiCheatInterfaceEOS_execBeginSession_Params BeginSession_Params;
+	memset(&BeginSession_Params, 0, sizeof(BeginSession_Params));
+	memcpy_s(&BeginSession_Params.RegisterTimeoutSeconds, sizeof(BeginSession_Params.RegisterTimeoutSeconds), &RegisterTimeoutSeconds, sizeof(RegisterTimeoutSeconds));
+
+	this->ProcessEvent(uFnBeginSession, &BeginSession_Params, nullptr);
+	return BeginSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.Init
+// [0x00020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+void UOnlineAntiCheatInterfaceEOS::Init()
+{
+    static UFunction* uFnInit = nullptr;
+    if (!uFnInit)
+        uFnInit = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.Init");
+
+	UOnlineAntiCheatInterfaceEOS_execInit_Params Init_Params;
+	memset(&Init_Params, 0, sizeof(Init_Params));
+
+	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EventMessageGenerated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class FString                  EncodedMessage                 (CPF_Parm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineAntiCheatInterfaceEOS::EventMessageGenerated(const class FString& EncodedMessage, const struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnEventMessageGenerated = nullptr;
+    if (!uFnEventMessageGenerated)
+        uFnEventMessageGenerated = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EventMessageGenerated");
+
+	UOnlineAntiCheatInterfaceEOS_execEventMessageGenerated_Params EventMessageGenerated_Params;
+	memset(&EventMessageGenerated_Params, 0, sizeof(EventMessageGenerated_Params));
+	memcpy_s(&EventMessageGenerated_Params.EncodedMessage, sizeof(EventMessageGenerated_Params.EncodedMessage), &EncodedMessage, sizeof(EncodedMessage));
+	memcpy_s(&EventMessageGenerated_Params.PlayerID, sizeof(EventMessageGenerated_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnEventMessageGenerated, &EventMessageGenerated_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReportPlayer
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// class FString                  ProductUserId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+void UOnlineAntiCheatClientInterfaceEOS::ReportPlayer(class FString& ProductUserId)
+{
+    static UFunction* uFnReportPlayer = nullptr;
+    if (!uFnReportPlayer)
+        uFnReportPlayer = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReportPlayer");
+
+	UOnlineAntiCheatClientInterfaceEOS_execReportPlayer_Params ReportPlayer_Params;
+	memset(&ReportPlayer_Params, 0, sizeof(ReportPlayer_Params));
+	memcpy_s(&ReportPlayer_Params.ProductUserId, sizeof(ReportPlayer_Params.ProductUserId), &ProductUserId, sizeof(ProductUserId));
+
+	this->ProcessEvent(uFnReportPlayer, &ReportPlayer_Params, nullptr);
+
+	memcpy_s(&ProductUserId, sizeof(ProductUserId), &ReportPlayer_Params.ProductUserId, sizeof(ReportPlayer_Params.ProductUserId));
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReceiveMessage
+// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  EncodedMessage                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UOnlineAntiCheatClientInterfaceEOS::ReceiveMessage(class FString& EncodedMessage, struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnReceiveMessage = nullptr;
+    if (!uFnReceiveMessage)
+        uFnReceiveMessage = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReceiveMessage");
+
+	UOnlineAntiCheatClientInterfaceEOS_execReceiveMessage_Params ReceiveMessage_Params;
+	memset(&ReceiveMessage_Params, 0, sizeof(ReceiveMessage_Params));
+	memcpy_s(&ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage), &EncodedMessage, sizeof(EncodedMessage));
+	memcpy_s(&ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnReceiveMessage, &ReceiveMessage_Params, nullptr);
+
+	memcpy_s(&EncodedMessage, sizeof(EncodedMessage), &ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage));
+	memcpy_s(&PlayerID, sizeof(PlayerID), &ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID));
+	return ReceiveMessage_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.IsAntiCheatEnabled
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineAntiCheatClientInterfaceEOS::IsAntiCheatEnabled()
+{
+    static UFunction* uFnIsAntiCheatEnabled = nullptr;
+    if (!uFnIsAntiCheatEnabled)
+        uFnIsAntiCheatEnabled = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.IsAntiCheatEnabled");
+
+	UOnlineAntiCheatClientInterfaceEOS_execIsAntiCheatEnabled_Params IsAntiCheatEnabled_Params;
+	memset(&IsAntiCheatEnabled_Params, 0, sizeof(IsAntiCheatEnabled_Params));
+
+	this->ProcessEvent(uFnIsAntiCheatEnabled, &IsAntiCheatEnabled_Params, nullptr);
+	return IsAntiCheatEnabled_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EndSession
+// [0x400020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineAntiCheatClientInterfaceEOS::EndSession()
+{
+    static UFunction* uFnEndSession = nullptr;
+    if (!uFnEndSession)
+        uFnEndSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EndSession");
+
+	UOnlineAntiCheatClientInterfaceEOS_execEndSession_Params EndSession_Params;
+	memset(&EndSession_Params, 0, sizeof(EndSession_Params));
+
+	this->ProcessEvent(uFnEndSession, &EndSession_Params, nullptr);
+	return EndSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.BeginSession
+// [0x400024400] (FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// float                          RegisterTimeoutSeconds         (CPF_OptionalParm | CPF_Parm)
+bool UOnlineAntiCheatClientInterfaceEOS::BeginSession(float RegisterTimeoutSeconds)
+{
+    static UFunction* uFnBeginSession = nullptr;
+    if (!uFnBeginSession)
+        uFnBeginSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.BeginSession");
+
+	UOnlineAntiCheatClientInterfaceEOS_execBeginSession_Params BeginSession_Params;
+	memset(&BeginSession_Params, 0, sizeof(BeginSession_Params));
+	memcpy_s(&BeginSession_Params.RegisterTimeoutSeconds, sizeof(BeginSession_Params.RegisterTimeoutSeconds), &RegisterTimeoutSeconds, sizeof(RegisterTimeoutSeconds));
+
+	this->ProcessEvent(uFnBeginSession, &BeginSession_Params, nullptr);
+	return BeginSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.Init
+// [0x400020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+void UOnlineAntiCheatClientInterfaceEOS::Init()
+{
+    static UFunction* uFnInit = nullptr;
+    if (!uFnInit)
+        uFnInit = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.Init");
+
+	UOnlineAntiCheatClientInterfaceEOS_execInit_Params Init_Params;
+	memset(&Init_Params, 0, sizeof(Init_Params));
+
+	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventPlayerReportComplete
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class FString                  ProductUserId                  (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       bSuccess                       (CPF_Parm)
+void UOnlineAntiCheatClientInterfaceEOS::EventPlayerReportComplete(const class FString& ProductUserId, bool bSuccess)
+{
+    static UFunction* uFnEventPlayerReportComplete = nullptr;
+    if (!uFnEventPlayerReportComplete)
+        uFnEventPlayerReportComplete = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventPlayerReportComplete");
+
+	UOnlineAntiCheatClientInterfaceEOS_execEventPlayerReportComplete_Params EventPlayerReportComplete_Params;
+	memset(&EventPlayerReportComplete_Params, 0, sizeof(EventPlayerReportComplete_Params));
+	memcpy_s(&EventPlayerReportComplete_Params.ProductUserId, sizeof(EventPlayerReportComplete_Params.ProductUserId), &ProductUserId, sizeof(ProductUserId));
+	EventPlayerReportComplete_Params.bSuccess = bSuccess;
+
+	this->ProcessEvent(uFnEventPlayerReportComplete, &EventPlayerReportComplete_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventClientIntegrityViolation
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// EClientIntegrityViolation      Violation                      (CPF_Parm)
+// class FString                  Message                        (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineAntiCheatClientInterfaceEOS::EventClientIntegrityViolation(EClientIntegrityViolation Violation, const class FString& Message)
+{
+    static UFunction* uFnEventClientIntegrityViolation = nullptr;
+    if (!uFnEventClientIntegrityViolation)
+        uFnEventClientIntegrityViolation = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventClientIntegrityViolation");
+
+	UOnlineAntiCheatClientInterfaceEOS_execEventClientIntegrityViolation_Params EventClientIntegrityViolation_Params;
+	memset(&EventClientIntegrityViolation_Params, 0, sizeof(EventClientIntegrityViolation_Params));
+	memcpy_s(&EventClientIntegrityViolation_Params.Violation, sizeof(EventClientIntegrityViolation_Params.Violation), &Violation, sizeof(Violation));
+	memcpy_s(&EventClientIntegrityViolation_Params.Message, sizeof(EventClientIntegrityViolation_Params.Message), &Message, sizeof(Message));
+
+	this->ProcessEvent(uFnEventClientIntegrityViolation, &EventClientIntegrityViolation_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.ReceiveMessage
+// [0x400420400] (FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  EncodedMessage                 (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UOnlineAntiCheatServerInterfaceEOS::ReceiveMessage(class FString& EncodedMessage, struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnReceiveMessage = nullptr;
+    if (!uFnReceiveMessage)
+        uFnReceiveMessage = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.ReceiveMessage");
+
+	UOnlineAntiCheatServerInterfaceEOS_execReceiveMessage_Params ReceiveMessage_Params;
+	memset(&ReceiveMessage_Params, 0, sizeof(ReceiveMessage_Params));
+	memcpy_s(&ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage), &EncodedMessage, sizeof(EncodedMessage));
+	memcpy_s(&ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnReceiveMessage, &ReceiveMessage_Params, nullptr);
+
+	memcpy_s(&EncodedMessage, sizeof(EncodedMessage), &ReceiveMessage_Params.EncodedMessage, sizeof(ReceiveMessage_Params.EncodedMessage));
+	memcpy_s(&PlayerID, sizeof(PlayerID), &ReceiveMessage_Params.PlayerID, sizeof(ReceiveMessage_Params.PlayerID));
+	return ReceiveMessage_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.UnregisterClient
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UOnlineAntiCheatServerInterfaceEOS::UnregisterClient(struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnUnregisterClient = nullptr;
+    if (!uFnUnregisterClient)
+        uFnUnregisterClient = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.UnregisterClient");
+
+	UOnlineAntiCheatServerInterfaceEOS_execUnregisterClient_Params UnregisterClient_Params;
+	memset(&UnregisterClient_Params, 0, sizeof(UnregisterClient_Params));
+	memcpy_s(&UnregisterClient_Params.PlayerID, sizeof(UnregisterClient_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnUnregisterClient, &UnregisterClient_Params, nullptr);
+
+	memcpy_s(&PlayerID, sizeof(PlayerID), &UnregisterClient_Params.PlayerID, sizeof(UnregisterClient_Params.PlayerID));
+	return UnregisterClient_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.RegisterClient
+// [0x00420401] (FUNC_Final | FUNC_Native | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// uint32_t                       bProtected                     (CPF_Parm)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  ProductUserId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+bool UOnlineAntiCheatServerInterfaceEOS::RegisterClient(bool bProtected, struct FUniqueNetId& PlayerID, class FString& ProductUserId)
+{
+    static UFunction* uFnRegisterClient = nullptr;
+    if (!uFnRegisterClient)
+        uFnRegisterClient = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.RegisterClient");
+
+	UOnlineAntiCheatServerInterfaceEOS_execRegisterClient_Params RegisterClient_Params;
+	memset(&RegisterClient_Params, 0, sizeof(RegisterClient_Params));
+	RegisterClient_Params.bProtected = bProtected;
+	memcpy_s(&RegisterClient_Params.PlayerID, sizeof(RegisterClient_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&RegisterClient_Params.ProductUserId, sizeof(RegisterClient_Params.ProductUserId), &ProductUserId, sizeof(ProductUserId));
+
+	this->ProcessEvent(uFnRegisterClient, &RegisterClient_Params, nullptr);
+
+	memcpy_s(&PlayerID, sizeof(PlayerID), &RegisterClient_Params.PlayerID, sizeof(RegisterClient_Params.PlayerID));
+	memcpy_s(&ProductUserId, sizeof(ProductUserId), &RegisterClient_Params.ProductUserId, sizeof(RegisterClient_Params.ProductUserId));
+	return RegisterClient_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EndSession
+// [0x400020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineAntiCheatServerInterfaceEOS::EndSession()
+{
+    static UFunction* uFnEndSession = nullptr;
+    if (!uFnEndSession)
+        uFnEndSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EndSession");
+
+	UOnlineAntiCheatServerInterfaceEOS_execEndSession_Params EndSession_Params;
+	memset(&EndSession_Params, 0, sizeof(EndSession_Params));
+
+	this->ProcessEvent(uFnEndSession, &EndSession_Params, nullptr);
+	return EndSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.BeginSession
+// [0x400024400] (FUNC_Native | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// float                          RegisterTimeoutSeconds         (CPF_OptionalParm | CPF_Parm)
+bool UOnlineAntiCheatServerInterfaceEOS::BeginSession(float RegisterTimeoutSeconds)
+{
+    static UFunction* uFnBeginSession = nullptr;
+    if (!uFnBeginSession)
+        uFnBeginSession = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.BeginSession");
+
+	UOnlineAntiCheatServerInterfaceEOS_execBeginSession_Params BeginSession_Params;
+	memset(&BeginSession_Params, 0, sizeof(BeginSession_Params));
+	memcpy_s(&BeginSession_Params.RegisterTimeoutSeconds, sizeof(BeginSession_Params.RegisterTimeoutSeconds), &RegisterTimeoutSeconds, sizeof(RegisterTimeoutSeconds));
+
+	this->ProcessEvent(uFnBeginSession, &BeginSession_Params, nullptr);
+	return BeginSession_Params.ReturnValue;
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.Init
+// [0x400020400] (FUNC_Native | FUNC_Public)
+// Parameter Info:
+void UOnlineAntiCheatServerInterfaceEOS::Init()
+{
+    static UFunction* uFnInit = nullptr;
+    if (!uFnInit)
+        uFnInit = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.Init");
+
+	UOnlineAntiCheatServerInterfaceEOS_execInit_Params Init_Params;
+	memset(&Init_Params, 0, sizeof(Init_Params));
+
+	this->ProcessEvent(uFnInit, &Init_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientAuthStatusChanged
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// EClientAuthStatus              AuthStatus                     (CPF_Parm)
+void UOnlineAntiCheatServerInterfaceEOS::EventClientAuthStatusChanged(const struct FUniqueNetId& PlayerID, EClientAuthStatus AuthStatus)
+{
+    static UFunction* uFnEventClientAuthStatusChanged = nullptr;
+    if (!uFnEventClientAuthStatusChanged)
+        uFnEventClientAuthStatusChanged = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientAuthStatusChanged");
+
+	UOnlineAntiCheatServerInterfaceEOS_execEventClientAuthStatusChanged_Params EventClientAuthStatusChanged_Params;
+	memset(&EventClientAuthStatusChanged_Params, 0, sizeof(EventClientAuthStatusChanged_Params));
+	memcpy_s(&EventClientAuthStatusChanged_Params.PlayerID, sizeof(EventClientAuthStatusChanged_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&EventClientAuthStatusChanged_Params.AuthStatus, sizeof(EventClientAuthStatusChanged_Params.AuthStatus), &AuthStatus, sizeof(AuthStatus));
+
+	this->ProcessEvent(uFnEventClientAuthStatusChanged, &EventClientAuthStatusChanged_Params, nullptr);
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientActionRequired
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// EClientActionCode              ActionCode                     (CPF_Parm)
+// EClientActionReason            ActionReason                   (CPF_Parm)
+// class FString                  Message                        (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineAntiCheatServerInterfaceEOS::EventClientActionRequired(const struct FUniqueNetId& PlayerID, EClientActionCode ActionCode, EClientActionReason ActionReason, const class FString& Message)
+{
+    static UFunction* uFnEventClientActionRequired = nullptr;
+    if (!uFnEventClientActionRequired)
+        uFnEventClientActionRequired = UFunction::FindFunction("Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientActionRequired");
+
+	UOnlineAntiCheatServerInterfaceEOS_execEventClientActionRequired_Params EventClientActionRequired_Params;
+	memset(&EventClientActionRequired_Params, 0, sizeof(EventClientActionRequired_Params));
+	memcpy_s(&EventClientActionRequired_Params.PlayerID, sizeof(EventClientActionRequired_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&EventClientActionRequired_Params.ActionCode, sizeof(EventClientActionRequired_Params.ActionCode), &ActionCode, sizeof(ActionCode));
+	memcpy_s(&EventClientActionRequired_Params.ActionReason, sizeof(EventClientActionRequired_Params.ActionReason), &ActionReason, sizeof(ActionReason));
+	memcpy_s(&EventClientActionRequired_Params.Message, sizeof(EventClientActionRequired_Params.Message), &Message, sizeof(Message));
+
+	this->ProcessEvent(uFnEventClientActionRequired, &EventClientActionRequired_Params, nullptr);
 };
 
 // Function OnlineSubsystemEOS.OnlineAuthInterfaceEOS.RequiresAuthTicket

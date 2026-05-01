@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -7463,6 +7463,23 @@ void UOnlinePlayer_X::HandlePsyNetDisconnect(class UPsyNetConnection_X* Connecti
 	this->ProcessEvent(uFnHandlePsyNetDisconnect, &HandlePsyNetDisconnect_Params, nullptr);
 };
 
+// Function ProjectX.OnlinePlayer_X.HandlePsyNetConnected
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UPsyNetConnection_X*     Connection                     (CPF_Parm)
+void UOnlinePlayer_X::HandlePsyNetConnected(class UPsyNetConnection_X* Connection)
+{
+    static UFunction* uFnHandlePsyNetConnected = nullptr;
+    if (!uFnHandlePsyNetConnected)
+        uFnHandlePsyNetConnected = UFunction::FindFunction("Function ProjectX.OnlinePlayer_X.HandlePsyNetConnected");
+
+	UOnlinePlayer_X_execHandlePsyNetConnected_Params HandlePsyNetConnected_Params;
+	memset(&HandlePsyNetConnected_Params, 0, sizeof(HandlePsyNetConnected_Params));
+	HandlePsyNetConnected_Params.Connection = Connection;
+
+	this->ProcessEvent(uFnHandlePsyNetConnected, &HandlePsyNetConnected_Params, nullptr);
+};
+
 // Function ProjectX.OnlinePlayer_X.UpdatePsyNetEnabled
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -7699,27 +7716,6 @@ void UOnlinePlayer_X::EventLoginComplete(class UOnlinePlayer_X* Player, class UE
 	this->ProcessEvent(uFnEventLoginComplete, &EventLoginComplete_Params, nullptr);
 };
 
-// Function ProjectX.EpicFriendsPlugin_X.__EpicFriendsPlugin_X__Unblock_0x1
-// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// class UEOS_ManageBlockListResponse* R                              (CPF_Parm)
-// class UError*                  E                              (CPF_Parm)
-// int32_t                        ResponseCode                   (CPF_Parm)
-void UEpicFriendsPlugin_X::__EpicFriendsPlugin_X__Unblock_0x1(class UEOS_ManageBlockListResponse* R, class UError* E, int32_t ResponseCode)
-{
-    static UFunction* uFn__EpicFriendsPlugin_X__Unblock_0x1 = nullptr;
-    if (!uFn__EpicFriendsPlugin_X__Unblock_0x1)
-        uFn__EpicFriendsPlugin_X__Unblock_0x1 = UFunction::FindFunction("Function ProjectX.EpicFriendsPlugin_X.__EpicFriendsPlugin_X__Unblock_0x1");
-
-	UEpicFriendsPlugin_X_exec__EpicFriendsPlugin_X__Unblock_0x1_Params __EpicFriendsPlugin_X__Unblock_0x1_Params;
-	memset(&__EpicFriendsPlugin_X__Unblock_0x1_Params, 0, sizeof(__EpicFriendsPlugin_X__Unblock_0x1_Params));
-	__EpicFriendsPlugin_X__Unblock_0x1_Params.R = R;
-	__EpicFriendsPlugin_X__Unblock_0x1_Params.E = E;
-	memcpy_s(&__EpicFriendsPlugin_X__Unblock_0x1_Params.ResponseCode, sizeof(__EpicFriendsPlugin_X__Unblock_0x1_Params.ResponseCode), &ResponseCode, sizeof(ResponseCode));
-
-	this->ProcessEvent(uFn__EpicFriendsPlugin_X__Unblock_0x1, &__EpicFriendsPlugin_X__Unblock_0x1_Params, nullptr);
-};
-
 // Function ProjectX.EpicFriendsPlugin_X.__EpicFriendsPlugin_X__GetBlockList_0x1
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
@@ -7911,7 +7907,7 @@ bool UEpicFriendsPlugin_X::GetBlockList()
 };
 
 // Function ProjectX.EpicFriendsPlugin_X.Unblock
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // struct FUniqueNetId            UserId                         (CPF_Parm | CPF_NeedCtorLink)
@@ -13511,6 +13507,29 @@ void UGFxDataStore_X::SetStringValue(const class FName& Table, int32_t Row, cons
 	memcpy_s(&SetStringValue_Params.Value, sizeof(SetStringValue_Params.Value), &Value, sizeof(Value));
 
 	this->ProcessEvent(uFnSetStringValue, &SetStringValue_Params, nullptr);
+};
+
+// Function ProjectX.GFxDataStore_X.SetSQWordValue
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// class FName                    Table                          (CPF_Parm)
+// int32_t                        Row                            (CPF_Parm)
+// class FName                    Column                         (CPF_Parm)
+// int64_t                        Value                          (CPF_Parm)
+void UGFxDataStore_X::SetSQWordValue(const class FName& Table, int32_t Row, const class FName& Column, int64_t Value)
+{
+    static UFunction* uFnSetSQWordValue = nullptr;
+    if (!uFnSetSQWordValue)
+        uFnSetSQWordValue = UFunction::FindFunction("Function ProjectX.GFxDataStore_X.SetSQWordValue");
+
+	UGFxDataStore_X_execSetSQWordValue_Params SetSQWordValue_Params;
+	memset(&SetSQWordValue_Params, 0, sizeof(SetSQWordValue_Params));
+	memcpy_s(&SetSQWordValue_Params.Table, sizeof(SetSQWordValue_Params.Table), &Table, sizeof(Table));
+	memcpy_s(&SetSQWordValue_Params.Row, sizeof(SetSQWordValue_Params.Row), &Row, sizeof(Row));
+	memcpy_s(&SetSQWordValue_Params.Column, sizeof(SetSQWordValue_Params.Column), &Column, sizeof(Column));
+	memcpy_s(&SetSQWordValue_Params.Value, sizeof(SetSQWordValue_Params.Value), &Value, sizeof(Value));
+
+	this->ProcessEvent(uFnSetSQWordValue, &SetSQWordValue_Params, nullptr);
 };
 
 // Function ProjectX.GFxDataStore_X.SetQWordValue
@@ -23570,6 +23589,25 @@ void UOnlineGameDedicatedServer_X::CheckStartShutdown(int32_t GameTimeRemaining)
 	this->ProcessEvent(uFnCheckStartShutdown, &CheckStartShutdown_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.AllowMigrationMessageReconcile
+// [0x00080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UMigrationStartedMessage_X* Message                        (CPF_Parm)
+bool UOnlineGameDedicatedServer_X::AllowMigrationMessageReconcile(class UMigrationStartedMessage_X* Message)
+{
+    static UFunction* uFnAllowMigrationMessageReconcile = nullptr;
+    if (!uFnAllowMigrationMessageReconcile)
+        uFnAllowMigrationMessageReconcile = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.AllowMigrationMessageReconcile");
+
+	UOnlineGameDedicatedServer_X_execAllowMigrationMessageReconcile_Params AllowMigrationMessageReconcile_Params;
+	memset(&AllowMigrationMessageReconcile_Params, 0, sizeof(AllowMigrationMessageReconcile_Params));
+	AllowMigrationMessageReconcile_Params.Message = Message;
+
+	this->ProcessEvent(uFnAllowMigrationMessageReconcile, &AllowMigrationMessageReconcile_Params, nullptr);
+	return AllowMigrationMessageReconcile_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.AllowServerMigration
 // [0x00080002] (FUNC_Defined | FUNC_Protected)
 // Parameter Info:
@@ -25001,6 +25039,23 @@ bool UOnlineGameReservations_X::__OnlineGameReservations_X__SetPlayersWithMigrat
 
 	this->ProcessEvent(uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1, &__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params, nullptr);
 	return __OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// struct FPsyNetBeaconPlayerReservation P                              (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGameReservations_X::__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3(const struct FPsyNetBeaconPlayerReservation& P)
+{
+    static UFunction* uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3 = nullptr;
+    if (!uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3)
+        uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3");
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params;
+	memset(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params, 0, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params));
+	memcpy_s(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params.P, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3, &__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x2
@@ -27243,7 +27298,7 @@ void UOnlineGameReservations_X::SetPlayersWithMigrationData(const class TArray<s
 };
 
 // Function ProjectX.OnlineGameReservations_X.GetMigrationReservationData
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
 // class TArray<struct FMigrationReservationData> ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 class TArray<struct FMigrationReservationData> UOnlineGameReservations_X::GetMigrationReservationData()
@@ -27308,6 +27363,21 @@ void UOnlineGameReservations_X::HandleNewServerConnectionInfo(class UConnectionI
 	this->ProcessEvent(uFnHandleNewServerConnectionInfo, &HandleNewServerConnectionInfo_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameReservations_X.OnMigrationStarted
+// [0x00080002] (FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+void UOnlineGameReservations_X::OnMigrationStarted()
+{
+    static UFunction* uFnOnMigrationStarted = nullptr;
+    if (!uFnOnMigrationStarted)
+        uFnOnMigrationStarted = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.OnMigrationStarted");
+
+	UOnlineGameReservations_X_execOnMigrationStarted_Params OnMigrationStarted_Params;
+	memset(&OnMigrationStarted_Params, 0, sizeof(OnMigrationStarted_Params));
+
+	this->ProcessEvent(uFnOnMigrationStarted, &OnMigrationStarted_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGameReservations_X.HandleMigrationStartedMessage
 // [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly)
 // Parameter Info:
@@ -27359,6 +27429,36 @@ void UOnlineGameReservations_X::SetJoinNameAndPassword(const class FString& InJo
 	memcpy_s(&SetJoinNameAndPassword_Params.InJoinPassword, sizeof(SetJoinNameAndPassword_Params.InJoinPassword), &InJoinPassword, sizeof(InJoinPassword));
 
 	this->ProcessEvent(uFnSetJoinNameAndPassword, &SetJoinNameAndPassword_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameReservations_X.HandleMigrationTimeout
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+void UOnlineGameReservations_X::HandleMigrationTimeout()
+{
+    static UFunction* uFnHandleMigrationTimeout = nullptr;
+    if (!uFnHandleMigrationTimeout)
+        uFnHandleMigrationTimeout = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.HandleMigrationTimeout");
+
+	UOnlineGameReservations_X_execHandleMigrationTimeout_Params HandleMigrationTimeout_Params;
+	memset(&HandleMigrationTimeout_Params, 0, sizeof(HandleMigrationTimeout_Params));
+
+	this->ProcessEvent(uFnHandleMigrationTimeout, &HandleMigrationTimeout_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameReservations_X.NotifyMigrationInfoReceived
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+void UOnlineGameReservations_X::NotifyMigrationInfoReceived()
+{
+    static UFunction* uFnNotifyMigrationInfoReceived = nullptr;
+    if (!uFnNotifyMigrationInfoReceived)
+        uFnNotifyMigrationInfoReceived = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.NotifyMigrationInfoReceived");
+
+	UOnlineGameReservations_X_execNotifyMigrationInfoReceived_Params NotifyMigrationInfoReceived_Params;
+	memset(&NotifyMigrationInfoReceived_Params, 0, sizeof(NotifyMigrationInfoReceived_Params));
+
+	this->ProcessEvent(uFnNotifyMigrationInfoReceived, &NotifyMigrationInfoReceived_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.HandleServerMigrationMessage
@@ -30333,6 +30433,21 @@ void UPrivilegeCheck_X::CheckPsyNetComplete(class UError* ConnectionError)
 	this->ProcessEvent(uFnCheckPsyNetComplete, &CheckPsyNetComplete_Params, nullptr);
 };
 
+// Function ProjectX.PrivilegeCheck_X.CheckAntiCheat
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+void UPrivilegeCheck_X::CheckAntiCheat()
+{
+    static UFunction* uFnCheckAntiCheat = nullptr;
+    if (!uFnCheckAntiCheat)
+        uFnCheckAntiCheat = UFunction::FindFunction("Function ProjectX.PrivilegeCheck_X.CheckAntiCheat");
+
+	UPrivilegeCheck_X_execCheckAntiCheat_Params CheckAntiCheat_Params;
+	memset(&CheckAntiCheat_Params, 0, sizeof(CheckAntiCheat_Params));
+
+	this->ProcessEvent(uFnCheckAntiCheat, &CheckAntiCheat_Params, nullptr);
+};
+
 // Function ProjectX.PrivilegeCheck_X.CheckPsyNet
 // [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
 // Parameter Info:
@@ -30395,6 +30510,23 @@ class UPrivilegeCheck_X* UPrivilegeCheck_X::RequirePrivilege(EFeaturePrivilege P
 
 	this->ProcessEvent(uFnRequirePrivilege, &RequirePrivilege_Params, nullptr);
 	return RequirePrivilege_Params.ReturnValue;
+};
+
+// Function ProjectX.PrivilegeCheck_X.RequireAntiCheat
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UPrivilegeCheck_X*       ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+class UPrivilegeCheck_X* UPrivilegeCheck_X::RequireAntiCheat()
+{
+    static UFunction* uFnRequireAntiCheat = nullptr;
+    if (!uFnRequireAntiCheat)
+        uFnRequireAntiCheat = UFunction::FindFunction("Function ProjectX.PrivilegeCheck_X.RequireAntiCheat");
+
+	UPrivilegeCheck_X_execRequireAntiCheat_Params RequireAntiCheat_Params;
+	memset(&RequireAntiCheat_Params, 0, sizeof(RequireAntiCheat_Params));
+
+	this->ProcessEvent(uFnRequireAntiCheat, &RequireAntiCheat_Params, nullptr);
+	return RequireAntiCheat_Params.ReturnValue;
 };
 
 // Function ProjectX.PrivilegeCheck_X.RequirePsyNet
@@ -37573,6 +37705,23 @@ struct FGuid UOnlineGameParty_X::ResolveGuids(struct FGuid& A, struct FGuid& B)
 	memcpy_s(&A, sizeof(A), &ResolveGuids_Params.A, sizeof(ResolveGuids_Params.A));
 	memcpy_s(&B, sizeof(B), &ResolveGuids_Params.B, sizeof(ResolveGuids_Params.B));
 	return ResolveGuids_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameParty_X.IsPartyAntiCheatEnabled
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UOnlineGameParty_X::IsPartyAntiCheatEnabled()
+{
+    static UFunction* uFnIsPartyAntiCheatEnabled = nullptr;
+    if (!uFnIsPartyAntiCheatEnabled)
+        uFnIsPartyAntiCheatEnabled = UFunction::FindFunction("Function ProjectX.OnlineGameParty_X.IsPartyAntiCheatEnabled");
+
+	UOnlineGameParty_X_execIsPartyAntiCheatEnabled_Params IsPartyAntiCheatEnabled_Params;
+	memset(&IsPartyAntiCheatEnabled_Params, 0, sizeof(IsPartyAntiCheatEnabled_Params));
+
+	this->ProcessEvent(uFnIsPartyAntiCheatEnabled, &IsPartyAntiCheatEnabled_Params, nullptr);
+	return IsPartyAntiCheatEnabled_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameParty_X.GetMemberName
@@ -46131,6 +46280,46 @@ void UOnlineGamePrivileges_X::TryToUseUGC(int32_t ControllerId, const struct FSc
 	this->ProcessEvent(uFnTryToUseUGC, &TryToUseUGC_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGamePrivileges_X.AddAntiCheatCheck
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UPrivilegeCheck_X*       ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class UPrivilegeCheck_X*       Check                          (CPF_Parm)
+class UPrivilegeCheck_X* UOnlineGamePrivileges_X::AddAntiCheatCheck(class UPrivilegeCheck_X* Check)
+{
+    static UFunction* uFnAddAntiCheatCheck = nullptr;
+    if (!uFnAddAntiCheatCheck)
+        uFnAddAntiCheatCheck = UFunction::FindFunction("Function ProjectX.OnlineGamePrivileges_X.AddAntiCheatCheck");
+
+	UOnlineGamePrivileges_X_execAddAntiCheatCheck_Params AddAntiCheatCheck_Params;
+	memset(&AddAntiCheatCheck_Params, 0, sizeof(AddAntiCheatCheck_Params));
+	AddAntiCheatCheck_Params.Check = Check;
+
+	this->ProcessEvent(uFnAddAntiCheatCheck, &AddAntiCheatCheck_Params, nullptr);
+	return AddAntiCheatCheck_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivileges_X.TryToPlayOnlineWithAntiCheat
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// int32_t                        ControllerId                   (CPF_Parm)
+// int32_t                        PlaylistId                     (CPF_Parm)
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGamePrivileges_X::TryToPlayOnlineWithAntiCheat(int32_t ControllerId, int32_t PlaylistId, const struct FScriptDelegate& Callback)
+{
+    static UFunction* uFnTryToPlayOnlineWithAntiCheat = nullptr;
+    if (!uFnTryToPlayOnlineWithAntiCheat)
+        uFnTryToPlayOnlineWithAntiCheat = UFunction::FindFunction("Function ProjectX.OnlineGamePrivileges_X.TryToPlayOnlineWithAntiCheat");
+
+	UOnlineGamePrivileges_X_execTryToPlayOnlineWithAntiCheat_Params TryToPlayOnlineWithAntiCheat_Params;
+	memset(&TryToPlayOnlineWithAntiCheat_Params, 0, sizeof(TryToPlayOnlineWithAntiCheat_Params));
+	memcpy_s(&TryToPlayOnlineWithAntiCheat_Params.ControllerId, sizeof(TryToPlayOnlineWithAntiCheat_Params.ControllerId), &ControllerId, sizeof(ControllerId));
+	memcpy_s(&TryToPlayOnlineWithAntiCheat_Params.PlaylistId, sizeof(TryToPlayOnlineWithAntiCheat_Params.PlaylistId), &PlaylistId, sizeof(PlaylistId));
+	memcpy_s(&TryToPlayOnlineWithAntiCheat_Params.Callback, sizeof(TryToPlayOnlineWithAntiCheat_Params.Callback), &Callback, sizeof(Callback));
+
+	this->ProcessEvent(uFnTryToPlayOnlineWithAntiCheat, &TryToPlayOnlineWithAntiCheat_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGamePrivileges_X.AddPlayOnlineChecks
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -48235,6 +48424,25 @@ void U__OnlineGameReservations_X__RecordReservation_0x1::__OnlineGameReservation
 	memcpy_s(&__OnlineGameReservations_X__RecordReservation_0x1_Params.P, sizeof(__OnlineGameReservations_X__RecordReservation_0x1_Params.P), &P, sizeof(P));
 
 	this->ProcessEvent(uFn__OnlineGameReservations_X__RecordReservation_0x1, &__OnlineGameReservations_X__RecordReservation_0x1_Params, nullptr);
+};
+
+// Function ProjectX.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FReservationData        P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2::__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3(const struct FReservationData& P)
+{
+    static UFunction* uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3 = nullptr;
+    if (!uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3)
+        uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3 = UFunction::FindFunction("Function ProjectX.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3");
+
+	U__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2_exec__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params __OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params;
+	memset(&__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params, 0, sizeof(__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params));
+	memcpy_s(&__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params.P, sizeof(__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3, &__OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params, nullptr);
+	return __OnlineGameReservations_X__SetPlayersWithMigrationData_0x3_Params.ReturnValue;
 };
 
 // Function ProjectX.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2
@@ -60495,6 +60703,27 @@ void U__EOSHelpers_X__RequestClientAuthToken_0x1::__EOSHelpers_X__RequestClientA
 	this->ProcessEvent(uFn__EOSHelpers_X__RequestClientAuthToken_0x1, &__EOSHelpers_X__RequestClientAuthToken_0x1_Params, nullptr);
 };
 
+// Function ProjectX.__EpicFriendsPlugin_X__Unblock_0x1.__EpicFriendsPlugin_X__Unblock_0x1
+// [0x20020003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_EditorOnly)
+// Parameter Info:
+// class UEOS_ManageBlockListResponse* R                              (CPF_Parm)
+// class UError*                  E                              (CPF_Parm)
+// int32_t                        ResponseCode                   (CPF_Parm)
+void U__EpicFriendsPlugin_X__Unblock_0x1::__EpicFriendsPlugin_X__Unblock_0x1(class UEOS_ManageBlockListResponse* R, class UError* E, int32_t ResponseCode)
+{
+    static UFunction* uFn__EpicFriendsPlugin_X__Unblock_0x1 = nullptr;
+    if (!uFn__EpicFriendsPlugin_X__Unblock_0x1)
+        uFn__EpicFriendsPlugin_X__Unblock_0x1 = UFunction::FindFunction("Function ProjectX.__EpicFriendsPlugin_X__Unblock_0x1.__EpicFriendsPlugin_X__Unblock_0x1");
+
+	U__EpicFriendsPlugin_X__Unblock_0x1_exec__EpicFriendsPlugin_X__Unblock_0x1_Params __EpicFriendsPlugin_X__Unblock_0x1_Params;
+	memset(&__EpicFriendsPlugin_X__Unblock_0x1_Params, 0, sizeof(__EpicFriendsPlugin_X__Unblock_0x1_Params));
+	__EpicFriendsPlugin_X__Unblock_0x1_Params.R = R;
+	__EpicFriendsPlugin_X__Unblock_0x1_Params.E = E;
+	memcpy_s(&__EpicFriendsPlugin_X__Unblock_0x1_Params.ResponseCode, sizeof(__EpicFriendsPlugin_X__Unblock_0x1_Params.ResponseCode), &ResponseCode, sizeof(ResponseCode));
+
+	this->ProcessEvent(uFn__EpicFriendsPlugin_X__Unblock_0x1, &__EpicFriendsPlugin_X__Unblock_0x1_Params, nullptr);
+};
+
 // Function ProjectX.Explosion_X.InternalMuteExplosion
 // [0x00880103] (FUNC_Final | FUNC_Defined | FUNC_Simulated | FUNC_Protected | FUNC_HasDefaults)
 // Parameter Info:
@@ -64512,6 +64741,93 @@ void USystemMetrics_X::RecordSpecs()
 	this->ProcessEvent(uFnRecordSpecs, &RecordSpecs_Params, nullptr);
 };
 
+// Function ProjectX.OnlinePlayerPermissions_X.HasPermission
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+// EOnlinePlayerPermission        Permission                     (CPF_Parm)
+bool UOnlinePlayerPermissions_X::HasPermission(const struct FUniqueNetId& PlayerID, EOnlinePlayerPermission Permission)
+{
+    static UFunction* uFnHasPermission = nullptr;
+    if (!uFnHasPermission)
+        uFnHasPermission = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.HasPermission");
+
+	UOnlinePlayerPermissions_X_execHasPermission_Params HasPermission_Params;
+	memset(&HasPermission_Params, 0, sizeof(HasPermission_Params));
+	memcpy_s(&HasPermission_Params.PlayerID, sizeof(HasPermission_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&HasPermission_Params.Permission, sizeof(HasPermission_Params.Permission), &Permission, sizeof(Permission));
+
+	this->ProcessEvent(uFnHasPermission, &HasPermission_Params, nullptr);
+	return HasPermission_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlinePlayerPermissions_X.HandlePlayerPermissions
+// [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly)
+// Parameter Info:
+// class URPC_GetPlayerPermissions_X* RPC                            (CPF_Parm)
+void UOnlinePlayerPermissions_X::HandlePlayerPermissions(class URPC_GetPlayerPermissions_X* RPC)
+{
+    static UFunction* uFnHandlePlayerPermissions = nullptr;
+    if (!uFnHandlePlayerPermissions)
+        uFnHandlePlayerPermissions = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.HandlePlayerPermissions");
+
+	UOnlinePlayerPermissions_X_execHandlePlayerPermissions_Params HandlePlayerPermissions_Params;
+	memset(&HandlePlayerPermissions_Params, 0, sizeof(HandlePlayerPermissions_Params));
+	HandlePlayerPermissions_Params.RPC = RPC;
+
+	this->ProcessEvent(uFnHandlePlayerPermissions, &HandlePlayerPermissions_Params, nullptr);
+};
+
+// Function ProjectX.OnlinePlayerPermissions_X.SendRequest
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+void UOnlinePlayerPermissions_X::SendRequest()
+{
+    static UFunction* uFnSendRequest = nullptr;
+    if (!uFnSendRequest)
+        uFnSendRequest = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.SendRequest");
+
+	UOnlinePlayerPermissions_X_execSendRequest_Params SendRequest_Params;
+	memset(&SendRequest_Params, 0, sizeof(SendRequest_Params));
+
+	this->ProcessEvent(uFnSendRequest, &SendRequest_Params, nullptr);
+};
+
+// Function ProjectX.OnlinePlayerPermissions_X.SyncPermissions
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+void UOnlinePlayerPermissions_X::SyncPermissions(const struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnSyncPermissions = nullptr;
+    if (!uFnSyncPermissions)
+        uFnSyncPermissions = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.SyncPermissions");
+
+	UOnlinePlayerPermissions_X_execSyncPermissions_Params SyncPermissions_Params;
+	memset(&SyncPermissions_Params, 0, sizeof(SyncPermissions_Params));
+	memcpy_s(&SyncPermissions_Params.PlayerID, sizeof(SyncPermissions_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnSyncPermissions, &SyncPermissions_Params, nullptr);
+};
+
+// Function ProjectX.OnlinePlayerPermissions_X.EventUpdated
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class UOnlinePlayerPermissions_X* Permissions                    (CPF_Parm)
+void UOnlinePlayerPermissions_X::EventUpdated(class UOnlinePlayerPermissions_X* Permissions)
+{
+    static UFunction* uFnEventUpdated = nullptr;
+    if (!uFnEventUpdated)
+        uFnEventUpdated = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.EventUpdated");
+
+	UOnlinePlayerPermissions_X_execEventUpdated_Params EventUpdated_Params;
+	memset(&EventUpdated_Params, 0, sizeof(EventUpdated_Params));
+	EventUpdated_Params.Permissions = Permissions;
+
+	this->ProcessEvent(uFnEventUpdated, &EventUpdated_Params, nullptr);
+};
+
 // Function ProjectX.RPC_UpdatePlayerPlaylist_X.SetNumLocalPlayers
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -64687,91 +65003,92 @@ void UServerExploitManager_X::SubmitReport(const struct FUniqueNetId& PlayerID, 
 	this->ProcessEvent(uFnSubmitReport, &SubmitReport_Params, nullptr);
 };
 
-// Function ProjectX.OnlinePlayerPermissions_X.HasPermission
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Function ProjectX.ServerPlayerIdCache_X.GetEpicIdFromPlayerId
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
-// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-// EOnlinePlayerPermission        Permission                     (CPF_Parm)
-bool UOnlinePlayerPermissions_X::HasPermission(const struct FUniqueNetId& PlayerID, EOnlinePlayerPermission Permission)
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+class FString UServerPlayerIdCache_X::GetEpicIdFromPlayerId(struct FUniqueNetId& PlayerID)
 {
-    static UFunction* uFnHasPermission = nullptr;
-    if (!uFnHasPermission)
-        uFnHasPermission = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.HasPermission");
+    static UFunction* uFnGetEpicIdFromPlayerId = nullptr;
+    if (!uFnGetEpicIdFromPlayerId)
+        uFnGetEpicIdFromPlayerId = UFunction::FindFunction("Function ProjectX.ServerPlayerIdCache_X.GetEpicIdFromPlayerId");
 
-	UOnlinePlayerPermissions_X_execHasPermission_Params HasPermission_Params;
-	memset(&HasPermission_Params, 0, sizeof(HasPermission_Params));
-	memcpy_s(&HasPermission_Params.PlayerID, sizeof(HasPermission_Params.PlayerID), &PlayerID, sizeof(PlayerID));
-	memcpy_s(&HasPermission_Params.Permission, sizeof(HasPermission_Params.Permission), &Permission, sizeof(Permission));
+	UServerPlayerIdCache_X_execGetEpicIdFromPlayerId_Params GetEpicIdFromPlayerId_Params;
+	memset(&GetEpicIdFromPlayerId_Params, 0, sizeof(GetEpicIdFromPlayerId_Params));
+	memcpy_s(&GetEpicIdFromPlayerId_Params.PlayerID, sizeof(GetEpicIdFromPlayerId_Params.PlayerID), &PlayerID, sizeof(PlayerID));
 
-	this->ProcessEvent(uFnHasPermission, &HasPermission_Params, nullptr);
-	return HasPermission_Params.ReturnValue;
+	this->ProcessEvent(uFnGetEpicIdFromPlayerId, &GetEpicIdFromPlayerId_Params, nullptr);
+
+	memcpy_s(&PlayerID, sizeof(PlayerID), &GetEpicIdFromPlayerId_Params.PlayerID, sizeof(GetEpicIdFromPlayerId_Params.PlayerID));
+	return GetEpicIdFromPlayerId_Params.ReturnValue;
 };
 
-// Function ProjectX.OnlinePlayerPermissions_X.HandlePlayerPermissions
-// [0x20040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_EditorOnly)
+// Function ProjectX.ServerPlayerIdCache_X.GetProductUserIdFromEpicId
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
-// class URPC_GetPlayerPermissions_X* RPC                            (CPF_Parm)
-void UOnlinePlayerPermissions_X::HandlePlayerPermissions(class URPC_GetPlayerPermissions_X* RPC)
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  EpicAccountId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+class FString UServerPlayerIdCache_X::GetProductUserIdFromEpicId(class FString& EpicAccountId)
 {
-    static UFunction* uFnHandlePlayerPermissions = nullptr;
-    if (!uFnHandlePlayerPermissions)
-        uFnHandlePlayerPermissions = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.HandlePlayerPermissions");
+    static UFunction* uFnGetProductUserIdFromEpicId = nullptr;
+    if (!uFnGetProductUserIdFromEpicId)
+        uFnGetProductUserIdFromEpicId = UFunction::FindFunction("Function ProjectX.ServerPlayerIdCache_X.GetProductUserIdFromEpicId");
 
-	UOnlinePlayerPermissions_X_execHandlePlayerPermissions_Params HandlePlayerPermissions_Params;
-	memset(&HandlePlayerPermissions_Params, 0, sizeof(HandlePlayerPermissions_Params));
-	HandlePlayerPermissions_Params.RPC = RPC;
+	UServerPlayerIdCache_X_execGetProductUserIdFromEpicId_Params GetProductUserIdFromEpicId_Params;
+	memset(&GetProductUserIdFromEpicId_Params, 0, sizeof(GetProductUserIdFromEpicId_Params));
+	memcpy_s(&GetProductUserIdFromEpicId_Params.EpicAccountId, sizeof(GetProductUserIdFromEpicId_Params.EpicAccountId), &EpicAccountId, sizeof(EpicAccountId));
 
-	this->ProcessEvent(uFnHandlePlayerPermissions, &HandlePlayerPermissions_Params, nullptr);
+	this->ProcessEvent(uFnGetProductUserIdFromEpicId, &GetProductUserIdFromEpicId_Params, nullptr);
+
+	memcpy_s(&EpicAccountId, sizeof(EpicAccountId), &GetProductUserIdFromEpicId_Params.EpicAccountId, sizeof(GetProductUserIdFromEpicId_Params.EpicAccountId));
+	return GetProductUserIdFromEpicId_Params.ReturnValue;
 };
 
-// Function ProjectX.OnlinePlayerPermissions_X.SendRequest
-// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Function ProjectX.ServerPlayerIdCache_X.GetProductUserIdFromPlayerId
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
-void UOnlinePlayerPermissions_X::SendRequest()
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+class FString UServerPlayerIdCache_X::GetProductUserIdFromPlayerId(struct FUniqueNetId& PlayerID)
 {
-    static UFunction* uFnSendRequest = nullptr;
-    if (!uFnSendRequest)
-        uFnSendRequest = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.SendRequest");
+    static UFunction* uFnGetProductUserIdFromPlayerId = nullptr;
+    if (!uFnGetProductUserIdFromPlayerId)
+        uFnGetProductUserIdFromPlayerId = UFunction::FindFunction("Function ProjectX.ServerPlayerIdCache_X.GetProductUserIdFromPlayerId");
 
-	UOnlinePlayerPermissions_X_execSendRequest_Params SendRequest_Params;
-	memset(&SendRequest_Params, 0, sizeof(SendRequest_Params));
+	UServerPlayerIdCache_X_execGetProductUserIdFromPlayerId_Params GetProductUserIdFromPlayerId_Params;
+	memset(&GetProductUserIdFromPlayerId_Params, 0, sizeof(GetProductUserIdFromPlayerId_Params));
+	memcpy_s(&GetProductUserIdFromPlayerId_Params.PlayerID, sizeof(GetProductUserIdFromPlayerId_Params.PlayerID), &PlayerID, sizeof(PlayerID));
 
-	this->ProcessEvent(uFnSendRequest, &SendRequest_Params, nullptr);
+	this->ProcessEvent(uFnGetProductUserIdFromPlayerId, &GetProductUserIdFromPlayerId_Params, nullptr);
+
+	memcpy_s(&PlayerID, sizeof(PlayerID), &GetProductUserIdFromPlayerId_Params.PlayerID, sizeof(GetProductUserIdFromPlayerId_Params.PlayerID));
+	return GetProductUserIdFromPlayerId_Params.ReturnValue;
 };
 
-// Function ProjectX.OnlinePlayerPermissions_X.SyncPermissions
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Function ProjectX.ServerPlayerIdCache_X.RegisterPlayer
+// [0x00420003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasOutParms)
 // Parameter Info:
-// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
-void UOnlinePlayerPermissions_X::SyncPermissions(const struct FUniqueNetId& PlayerID)
+// struct FUniqueNetId            PlayerID                       (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  EpicAccountId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+// class FString                  ProductUserId                  (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+void UServerPlayerIdCache_X::RegisterPlayer(struct FUniqueNetId& PlayerID, class FString& EpicAccountId, class FString& ProductUserId)
 {
-    static UFunction* uFnSyncPermissions = nullptr;
-    if (!uFnSyncPermissions)
-        uFnSyncPermissions = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.SyncPermissions");
+    static UFunction* uFnRegisterPlayer = nullptr;
+    if (!uFnRegisterPlayer)
+        uFnRegisterPlayer = UFunction::FindFunction("Function ProjectX.ServerPlayerIdCache_X.RegisterPlayer");
 
-	UOnlinePlayerPermissions_X_execSyncPermissions_Params SyncPermissions_Params;
-	memset(&SyncPermissions_Params, 0, sizeof(SyncPermissions_Params));
-	memcpy_s(&SyncPermissions_Params.PlayerID, sizeof(SyncPermissions_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	UServerPlayerIdCache_X_execRegisterPlayer_Params RegisterPlayer_Params;
+	memset(&RegisterPlayer_Params, 0, sizeof(RegisterPlayer_Params));
+	memcpy_s(&RegisterPlayer_Params.PlayerID, sizeof(RegisterPlayer_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+	memcpy_s(&RegisterPlayer_Params.EpicAccountId, sizeof(RegisterPlayer_Params.EpicAccountId), &EpicAccountId, sizeof(EpicAccountId));
+	memcpy_s(&RegisterPlayer_Params.ProductUserId, sizeof(RegisterPlayer_Params.ProductUserId), &ProductUserId, sizeof(ProductUserId));
 
-	this->ProcessEvent(uFnSyncPermissions, &SyncPermissions_Params, nullptr);
-};
+	this->ProcessEvent(uFnRegisterPlayer, &RegisterPlayer_Params, nullptr);
 
-// Function ProjectX.OnlinePlayerPermissions_X.EventUpdated
-// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
-// Parameter Info:
-// class UOnlinePlayerPermissions_X* Permissions                    (CPF_Parm)
-void UOnlinePlayerPermissions_X::EventUpdated(class UOnlinePlayerPermissions_X* Permissions)
-{
-    static UFunction* uFnEventUpdated = nullptr;
-    if (!uFnEventUpdated)
-        uFnEventUpdated = UFunction::FindFunction("Function ProjectX.OnlinePlayerPermissions_X.EventUpdated");
-
-	UOnlinePlayerPermissions_X_execEventUpdated_Params EventUpdated_Params;
-	memset(&EventUpdated_Params, 0, sizeof(EventUpdated_Params));
-	EventUpdated_Params.Permissions = Permissions;
-
-	this->ProcessEvent(uFnEventUpdated, &EventUpdated_Params, nullptr);
+	memcpy_s(&PlayerID, sizeof(PlayerID), &RegisterPlayer_Params.PlayerID, sizeof(RegisterPlayer_Params.PlayerID));
+	memcpy_s(&EpicAccountId, sizeof(EpicAccountId), &RegisterPlayer_Params.EpicAccountId, sizeof(RegisterPlayer_Params.EpicAccountId));
+	memcpy_s(&ProductUserId, sizeof(ProductUserId), &RegisterPlayer_Params.ProductUserId, sizeof(RegisterPlayer_Params.ProductUserId));
 };
 
 // Function ProjectX.RPC_CheckReplacementDedicatedServer_X.GetServerAddress
@@ -67184,6 +67501,25 @@ struct FPsyNetBeaconReservation UPsyNetService_CreatePrivate_X::GetReservation()
 
 	this->ProcessEvent(uFnGetReservation, &GetReservation_Params, nullptr);
 	return GetReservation_Params.ReturnValue;
+};
+
+// Function ProjectX.AntiCheatManager_X.GetAntiCheatError
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UError*                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int32_t                        PlaylistId                     (CPF_Parm)
+class UError* UAntiCheatManager_X::GetAntiCheatError(int32_t PlaylistId)
+{
+    static UFunction* uFnGetAntiCheatError = nullptr;
+    if (!uFnGetAntiCheatError)
+        uFnGetAntiCheatError = UFunction::FindFunction("Function ProjectX.AntiCheatManager_X.GetAntiCheatError");
+
+	UAntiCheatManager_X_execGetAntiCheatError_Params GetAntiCheatError_Params;
+	memset(&GetAntiCheatError_Params, 0, sizeof(GetAntiCheatError_Params));
+	memcpy_s(&GetAntiCheatError_Params.PlaylistId, sizeof(GetAntiCheatError_Params.PlaylistId), &PlaylistId, sizeof(PlaylistId));
+
+	this->ProcessEvent(uFnGetAntiCheatError, &GetAntiCheatError_Params, nullptr);
+	return GetAntiCheatError_Params.ReturnValue;
 };
 
 // Function ProjectX.RPC_GetPlayerSkill_X.SetPlayerID
@@ -70960,6 +71296,25 @@ class TArray<class FString> UStringUtil_X::SplitStringIntoMaxSizePieces(const cl
 	return SplitStringIntoMaxSizePieces_Params.ReturnValue;
 };
 
+// Function ProjectX.StringUtil_X.MessageCanBeCorruptedOnConversion
+// [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  Message                        (CPF_Parm | CPF_NeedCtorLink)
+bool UStringUtil_X::MessageCanBeCorruptedOnConversion(const class FString& Message)
+{
+    static UFunction* uFnMessageCanBeCorruptedOnConversion = nullptr;
+    if (!uFnMessageCanBeCorruptedOnConversion)
+        uFnMessageCanBeCorruptedOnConversion = UFunction::FindFunction("Function ProjectX.StringUtil_X.MessageCanBeCorruptedOnConversion");
+
+	UStringUtil_X_execMessageCanBeCorruptedOnConversion_Params MessageCanBeCorruptedOnConversion_Params;
+	memset(&MessageCanBeCorruptedOnConversion_Params, 0, sizeof(MessageCanBeCorruptedOnConversion_Params));
+	memcpy_s(&MessageCanBeCorruptedOnConversion_Params.Message, sizeof(MessageCanBeCorruptedOnConversion_Params.Message), &Message, sizeof(Message));
+
+	UStringUtil_X::StaticClass()->ProcessEvent(uFnMessageCanBeCorruptedOnConversion, &MessageCanBeCorruptedOnConversion_Params, nullptr);
+	return MessageCanBeCorruptedOnConversion_Params.ReturnValue;
+};
+
 // Function ProjectX.StringUtil_X.IsStringEmptyOrWhiteSpace
 // [0x00022003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Public)
 // Parameter Info:
@@ -71258,6 +71613,82 @@ void UUdpLanServer_X::eventConstruct()
 	memset(&Construct_Params, 0, sizeof(Construct_Params));
 
 	this->ProcessEvent(uFnConstruct, &Construct_Params, nullptr);
+};
+
+// Function ProjectX.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPlayerIdLink           P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1::__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1(const struct FPlayerIdLink& P)
+{
+    static UFunction* uFn__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1 = nullptr;
+    if (!uFn__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1)
+        uFn__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1 = UFunction::FindFunction("Function ProjectX.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1");
+
+	U__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_exec__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params __ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params;
+	memset(&__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params, 0, sizeof(__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params));
+	memcpy_s(&__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params.P, sizeof(__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1, &__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params, nullptr);
+	return __ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPlayerIdLink           P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1::__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1(const struct FPlayerIdLink& P)
+{
+    static UFunction* uFn__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1 = nullptr;
+    if (!uFn__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1)
+        uFn__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1 = UFunction::FindFunction("Function ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1");
+
+	U__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_exec__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params __ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params;
+	memset(&__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params, 0, sizeof(__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params));
+	memcpy_s(&__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params.P, sizeof(__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1, &__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params, nullptr);
+	return __ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPlayerIdLink           P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1::__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1(const struct FPlayerIdLink& P)
+{
+    static UFunction* uFn__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1 = nullptr;
+    if (!uFn__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1)
+        uFn__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1 = UFunction::FindFunction("Function ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1");
+
+	U__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_exec__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params __ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params;
+	memset(&__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params, 0, sizeof(__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params));
+	memcpy_s(&__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params.P, sizeof(__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1, &__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params, nullptr);
+	return __ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.__ServerPlayerIdCache_X__RegisterPlayer_0x1.__ServerPlayerIdCache_X__RegisterPlayer_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPlayerIdLink           P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__ServerPlayerIdCache_X__RegisterPlayer_0x1::__ServerPlayerIdCache_X__RegisterPlayer_0x1(const struct FPlayerIdLink& P)
+{
+    static UFunction* uFn__ServerPlayerIdCache_X__RegisterPlayer_0x1 = nullptr;
+    if (!uFn__ServerPlayerIdCache_X__RegisterPlayer_0x1)
+        uFn__ServerPlayerIdCache_X__RegisterPlayer_0x1 = UFunction::FindFunction("Function ProjectX.__ServerPlayerIdCache_X__RegisterPlayer_0x1.__ServerPlayerIdCache_X__RegisterPlayer_0x1");
+
+	U__ServerPlayerIdCache_X__RegisterPlayer_0x1_exec__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params __ServerPlayerIdCache_X__RegisterPlayer_0x1_Params;
+	memset(&__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params, 0, sizeof(__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params));
+	memcpy_s(&__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params.P, sizeof(__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__ServerPlayerIdCache_X__RegisterPlayer_0x1, &__ServerPlayerIdCache_X__RegisterPlayer_0x1_Params, nullptr);
+	return __ServerPlayerIdCache_X__RegisterPlayer_0x1_Params.ReturnValue;
 };
 
 /*

@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: Core_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -7685,6 +7685,304 @@ int32_t UObject::FromHex(const class FString& Hex)
 
 	UObject::StaticClass()->ProcessEvent(uFnFromHex, &FromHex_Params, nullptr);
 	return FromHex_Params.ReturnValue;
+};
+
+// Function Core.Object.SQWordMin
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::SQWordMin(int64_t A, int64_t B)
+{
+    static UFunction* uFnSQWordMin = nullptr;
+    if (!uFnSQWordMin)
+        uFnSQWordMin = UFunction::FindFunction("Function Core.Object.SQWordMin");
+
+	UObject_execSQWordMin_Params SQWordMin_Params;
+	memset(&SQWordMin_Params, 0, sizeof(SQWordMin_Params));
+	memcpy_s(&SQWordMin_Params.A, sizeof(SQWordMin_Params.A), &A, sizeof(A));
+	memcpy_s(&SQWordMin_Params.B, sizeof(SQWordMin_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnSQWordMin, &SQWordMin_Params, nullptr);
+	return SQWordMin_Params.ReturnValue;
+};
+
+// Function Core.Object.SQWordMax
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::SQWordMax(int64_t A, int64_t B)
+{
+    static UFunction* uFnSQWordMax = nullptr;
+    if (!uFnSQWordMax)
+        uFnSQWordMax = UFunction::FindFunction("Function Core.Object.SQWordMax");
+
+	UObject_execSQWordMax_Params SQWordMax_Params;
+	memset(&SQWordMax_Params, 0, sizeof(SQWordMax_Params));
+	memcpy_s(&SQWordMax_Params.A, sizeof(SQWordMax_Params.A), &A, sizeof(A));
+	memcpy_s(&SQWordMax_Params.B, sizeof(SQWordMax_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnSQWordMax, &SQWordMax_Params, nullptr);
+	return SQWordMax_Params.ReturnValue;
+};
+
+// Function Core.Object.SubtractEqual_SQWordSQWord
+// [0x00423401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        B                              (CPF_Parm)
+// int64_t                        A                              (CPF_Parm | CPF_OutParm)
+int64_t UObject::SubtractEqual_SQWordSQWord(int64_t B, int64_t& A)
+{
+    static UFunction* uFnSubtractEqual_SQWordSQWord = nullptr;
+    if (!uFnSubtractEqual_SQWordSQWord)
+        uFnSubtractEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.SubtractEqual_SQWordSQWord");
+
+	UObject_execSubtractEqual_SQWordSQWord_Params SubtractEqual_SQWordSQWord_Params;
+	memset(&SubtractEqual_SQWordSQWord_Params, 0, sizeof(SubtractEqual_SQWordSQWord_Params));
+	memcpy_s(&SubtractEqual_SQWordSQWord_Params.B, sizeof(SubtractEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+	memcpy_s(&SubtractEqual_SQWordSQWord_Params.A, sizeof(SubtractEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+
+	UObject::StaticClass()->ProcessEvent(uFnSubtractEqual_SQWordSQWord, &SubtractEqual_SQWordSQWord_Params, nullptr);
+
+	memcpy_s(&A, sizeof(A), &SubtractEqual_SQWordSQWord_Params.A, sizeof(SubtractEqual_SQWordSQWord_Params.A));
+	return SubtractEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.AddEqual_SQWordSQWord
+// [0x00423401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public | FUNC_HasOutParms)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        B                              (CPF_Parm)
+// int64_t                        A                              (CPF_Parm | CPF_OutParm)
+int64_t UObject::AddEqual_SQWordSQWord(int64_t B, int64_t& A)
+{
+    static UFunction* uFnAddEqual_SQWordSQWord = nullptr;
+    if (!uFnAddEqual_SQWordSQWord)
+        uFnAddEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.AddEqual_SQWordSQWord");
+
+	UObject_execAddEqual_SQWordSQWord_Params AddEqual_SQWordSQWord_Params;
+	memset(&AddEqual_SQWordSQWord_Params, 0, sizeof(AddEqual_SQWordSQWord_Params));
+	memcpy_s(&AddEqual_SQWordSQWord_Params.B, sizeof(AddEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+	memcpy_s(&AddEqual_SQWordSQWord_Params.A, sizeof(AddEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+
+	UObject::StaticClass()->ProcessEvent(uFnAddEqual_SQWordSQWord, &AddEqual_SQWordSQWord_Params, nullptr);
+
+	memcpy_s(&A, sizeof(A), &AddEqual_SQWordSQWord_Params.A, sizeof(AddEqual_SQWordSQWord_Params.A));
+	return AddEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.NotEqual_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::NotEqual_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnNotEqual_SQWordSQWord = nullptr;
+    if (!uFnNotEqual_SQWordSQWord)
+        uFnNotEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.NotEqual_SQWordSQWord");
+
+	UObject_execNotEqual_SQWordSQWord_Params NotEqual_SQWordSQWord_Params;
+	memset(&NotEqual_SQWordSQWord_Params, 0, sizeof(NotEqual_SQWordSQWord_Params));
+	memcpy_s(&NotEqual_SQWordSQWord_Params.A, sizeof(NotEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&NotEqual_SQWordSQWord_Params.B, sizeof(NotEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnNotEqual_SQWordSQWord, &NotEqual_SQWordSQWord_Params, nullptr);
+	return NotEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.EqualEqual_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::EqualEqual_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnEqualEqual_SQWordSQWord = nullptr;
+    if (!uFnEqualEqual_SQWordSQWord)
+        uFnEqualEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.EqualEqual_SQWordSQWord");
+
+	UObject_execEqualEqual_SQWordSQWord_Params EqualEqual_SQWordSQWord_Params;
+	memset(&EqualEqual_SQWordSQWord_Params, 0, sizeof(EqualEqual_SQWordSQWord_Params));
+	memcpy_s(&EqualEqual_SQWordSQWord_Params.A, sizeof(EqualEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&EqualEqual_SQWordSQWord_Params.B, sizeof(EqualEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnEqualEqual_SQWordSQWord, &EqualEqual_SQWordSQWord_Params, nullptr);
+	return EqualEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.GreaterEqual_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::GreaterEqual_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnGreaterEqual_SQWordSQWord = nullptr;
+    if (!uFnGreaterEqual_SQWordSQWord)
+        uFnGreaterEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.GreaterEqual_SQWordSQWord");
+
+	UObject_execGreaterEqual_SQWordSQWord_Params GreaterEqual_SQWordSQWord_Params;
+	memset(&GreaterEqual_SQWordSQWord_Params, 0, sizeof(GreaterEqual_SQWordSQWord_Params));
+	memcpy_s(&GreaterEqual_SQWordSQWord_Params.A, sizeof(GreaterEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&GreaterEqual_SQWordSQWord_Params.B, sizeof(GreaterEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnGreaterEqual_SQWordSQWord, &GreaterEqual_SQWordSQWord_Params, nullptr);
+	return GreaterEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.LessEqual_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::LessEqual_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnLessEqual_SQWordSQWord = nullptr;
+    if (!uFnLessEqual_SQWordSQWord)
+        uFnLessEqual_SQWordSQWord = UFunction::FindFunction("Function Core.Object.LessEqual_SQWordSQWord");
+
+	UObject_execLessEqual_SQWordSQWord_Params LessEqual_SQWordSQWord_Params;
+	memset(&LessEqual_SQWordSQWord_Params, 0, sizeof(LessEqual_SQWordSQWord_Params));
+	memcpy_s(&LessEqual_SQWordSQWord_Params.A, sizeof(LessEqual_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&LessEqual_SQWordSQWord_Params.B, sizeof(LessEqual_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnLessEqual_SQWordSQWord, &LessEqual_SQWordSQWord_Params, nullptr);
+	return LessEqual_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Greater_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::Greater_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnGreater_SQWordSQWord = nullptr;
+    if (!uFnGreater_SQWordSQWord)
+        uFnGreater_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Greater_SQWordSQWord");
+
+	UObject_execGreater_SQWordSQWord_Params Greater_SQWordSQWord_Params;
+	memset(&Greater_SQWordSQWord_Params, 0, sizeof(Greater_SQWordSQWord_Params));
+	memcpy_s(&Greater_SQWordSQWord_Params.A, sizeof(Greater_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Greater_SQWordSQWord_Params.B, sizeof(Greater_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnGreater_SQWordSQWord, &Greater_SQWordSQWord_Params, nullptr);
+	return Greater_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Less_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+bool UObject::Less_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnLess_SQWordSQWord = nullptr;
+    if (!uFnLess_SQWordSQWord)
+        uFnLess_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Less_SQWordSQWord");
+
+	UObject_execLess_SQWordSQWord_Params Less_SQWordSQWord_Params;
+	memset(&Less_SQWordSQWord_Params, 0, sizeof(Less_SQWordSQWord_Params));
+	memcpy_s(&Less_SQWordSQWord_Params.A, sizeof(Less_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Less_SQWordSQWord_Params.B, sizeof(Less_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnLess_SQWordSQWord, &Less_SQWordSQWord_Params, nullptr);
+	return Less_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Subtract_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::Subtract_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnSubtract_SQWordSQWord = nullptr;
+    if (!uFnSubtract_SQWordSQWord)
+        uFnSubtract_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Subtract_SQWordSQWord");
+
+	UObject_execSubtract_SQWordSQWord_Params Subtract_SQWordSQWord_Params;
+	memset(&Subtract_SQWordSQWord_Params, 0, sizeof(Subtract_SQWordSQWord_Params));
+	memcpy_s(&Subtract_SQWordSQWord_Params.A, sizeof(Subtract_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Subtract_SQWordSQWord_Params.B, sizeof(Subtract_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnSubtract_SQWordSQWord, &Subtract_SQWordSQWord_Params, nullptr);
+	return Subtract_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Add_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::Add_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnAdd_SQWordSQWord = nullptr;
+    if (!uFnAdd_SQWordSQWord)
+        uFnAdd_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Add_SQWordSQWord");
+
+	UObject_execAdd_SQWordSQWord_Params Add_SQWordSQWord_Params;
+	memset(&Add_SQWordSQWord_Params, 0, sizeof(Add_SQWordSQWord_Params));
+	memcpy_s(&Add_SQWordSQWord_Params.A, sizeof(Add_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Add_SQWordSQWord_Params.B, sizeof(Add_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnAdd_SQWordSQWord, &Add_SQWordSQWord_Params, nullptr);
+	return Add_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Divide_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::Divide_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnDivide_SQWordSQWord = nullptr;
+    if (!uFnDivide_SQWordSQWord)
+        uFnDivide_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Divide_SQWordSQWord");
+
+	UObject_execDivide_SQWordSQWord_Params Divide_SQWordSQWord_Params;
+	memset(&Divide_SQWordSQWord_Params, 0, sizeof(Divide_SQWordSQWord_Params));
+	memcpy_s(&Divide_SQWordSQWord_Params.A, sizeof(Divide_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Divide_SQWordSQWord_Params.B, sizeof(Divide_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnDivide_SQWordSQWord, &Divide_SQWordSQWord_Params, nullptr);
+	return Divide_SQWordSQWord_Params.ReturnValue;
+};
+
+// Function Core.Object.Multiply_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::Multiply_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnMultiply_SQWordSQWord = nullptr;
+    if (!uFnMultiply_SQWordSQWord)
+        uFnMultiply_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Multiply_SQWordSQWord");
+
+	UObject_execMultiply_SQWordSQWord_Params Multiply_SQWordSQWord_Params;
+	memset(&Multiply_SQWordSQWord_Params, 0, sizeof(Multiply_SQWordSQWord_Params));
+	memcpy_s(&Multiply_SQWordSQWord_Params.A, sizeof(Multiply_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Multiply_SQWordSQWord_Params.B, sizeof(Multiply_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnMultiply_SQWordSQWord, &Multiply_SQWordSQWord_Params, nullptr);
+	return Multiply_SQWordSQWord_Params.ReturnValue;
 };
 
 // Function Core.Object.QMin

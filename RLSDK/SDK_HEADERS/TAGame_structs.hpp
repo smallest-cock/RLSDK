@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1377,6 +1377,7 @@ struct FProfileCameraSettings
 	float                                              TransitionSpeed;                               // 0x0018 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bUnconstrainRotation : 1;                      // 0x001C (0x0004) [0x0001000000000000] [0x00000001] 
 	uint32_t                                           bAutoRecenter : 1;                             // 0x001C (0x0004) [0x0001000000000000] [0x00000002] 
+	uint32_t                                           bFreeLookSmoothing : 1;                        // 0x001C (0x0004) [0x0001000000000000] [0x00000004] 
 };
 
 // ScriptStruct TAGame._Types_TA.StatEventScore
@@ -1555,6 +1556,16 @@ struct FPaintWithOverride
 {
 	class UProductPaint_TA*                            PaintToOverride;                               // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<class UProductOverride_TA*>           Overrides;                                     // 0x0008 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
+};
+
+// ScriptStruct TAGame._Types_TA.DemoSpawnSelectionData
+// Size: 0x0008
+struct FDemoSpawnSelectionData
+{
+	uint8_t                                            SpawnPreference;                               // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                            SelectionState;                                // 0x0001 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x2];                            // 0x0002 (0x0002) MISSED OFFSET
+	int32_t                                            PercentageTimeLeft;                            // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame._Types_TA.PlayerActorIDPair
@@ -2651,7 +2662,7 @@ struct FMTXPurchaseInfo
 };
 
 // ScriptStruct TAGame.PhysicsMetrics_TA.ResimMetricData
-// Size: 0x0024
+// Size: 0x001C
 struct FResimMetricData
 {
 	class FName                                        GameStateName;                                 // 0x0000 (0x0008) [0x0000000000000000]               
@@ -2660,8 +2671,6 @@ struct FResimMetricData
 	int32_t                                            MinNumResimFramesPerEvent;                     // 0x0010 (0x0004) [0x0000000000000000]               
 	int32_t                                            MaxNumResimFramesPerEvent;                     // 0x0014 (0x0004) [0x0000000000000000]               
 	float                                              AverageNumResimFramesPerEvent;                 // 0x0018 (0x0004) [0x0000000000000000]               
-	float                                              AverageCorrectionEventsPerSecond;              // 0x001C (0x0004) [0x0000000000000000]               
-	float                                              AverageResimFramesPerSecond;                   // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.PlatformMetrics_TA.PlatformMetricData
@@ -3352,7 +3361,7 @@ struct FArenaStatSound
 };
 
 // ScriptStruct TAGame.StatFactory_TA.StatEventCollection
-// Size: 0x0228
+// Size: 0x0248
 struct FStatEventCollection
 {
 	class UStatEvent_TA*                               Win;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -3424,6 +3433,10 @@ struct FStatEventCollection
 	class UStatEvent_TA*                               KeepUpDenial;                                  // 0x0210 (0x0008) [0x0001000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               KeepUpClear;                                   // 0x0218 (0x0008) [0x0001000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               FlipReset;                                     // 0x0220 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialFlipReset;                               // 0x0228 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BellyFlipReset;                                // 0x0230 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialBellyFlipReset;                          // 0x0238 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxFlipResetStreak;                            // 0x0240 (0x0008) [0x0001000000000001] (CPF_Edit)    
 };
 
 // ScriptStruct TAGame.AssetAttribute_ChangeProductDrawScale_TA.ProductSlotNewDrawScale
@@ -6935,6 +6948,189 @@ struct FViewData
 	uint64_t                                           StartTimestamp;                                // 0x0008 (0x0008) [0x0000000000000000]               
 	uint64_t                                           EndTimestamp;                                  // 0x0010 (0x0008) [0x0000000000000000]               
 	class TArray<struct FInteractableData>             InteractableMetrics;                           // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.StatsSocketEvent
+// Size: 0x0020
+struct FStatsSocketEvent
+{
+	class FString                                      Event;                                         // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Data;                                          // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.PlayerDataPacket
+// Size: 0x0018
+struct FPlayerDataPacket
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Shortcut;                                      // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamNum;                                       // 0x0014 (0x0004) [0x0001000000000000]               
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.PlayerUpdateState
+// Size: 0x0078
+struct FPlayerUpdateState
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      PrimaryID;                                     // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Shortcut;                                      // 0x0020 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamNum;                                       // 0x0024 (0x0004) [0x0001000000000000]               
+	int32_t                                            Score;                                         // 0x0028 (0x0004) [0x0001000000000000]               
+	int32_t                                            Goals;                                         // 0x002C (0x0004) [0x0001000000000000]               
+	int32_t                                            Shots;                                         // 0x0030 (0x0004) [0x0001000000000000]               
+	int32_t                                            Assists;                                       // 0x0034 (0x0004) [0x0001000000000000]               
+	int32_t                                            Saves;                                         // 0x0038 (0x0004) [0x0001000000000000]               
+	int32_t                                            Touches;                                       // 0x003C (0x0004) [0x0001000000000000]               
+	int32_t                                            CarTouches;                                    // 0x0040 (0x0004) [0x0001000000000000]               
+	int32_t                                            Demos;                                         // 0x0044 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bOnWall : 1;                                   // 0x0048 (0x0004) [0x0021000000000000] [0x00000001] 
+	uint32_t                                           bOnGround : 1;                                 // 0x0048 (0x0004) [0x0021000000000000] [0x00000002] 
+	uint32_t                                           bPowersliding : 1;                             // 0x0048 (0x0004) [0x0021000000000000] [0x00000004] 
+	uint32_t                                           bDemolished : 1;                               // 0x0048 (0x0004) [0x0021000000000000] [0x00000008] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x004C (0x0004) MISSED OFFSET
+	struct FPlayerDataPacket                           Attacker;                                      // 0x0050 (0x0018) [0x0021000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bHasCar : 1;                                   // 0x0068 (0x0004) [0x0021000000000000] [0x00000001] 
+	float                                              Speed;                                         // 0x006C (0x0004) [0x0021000000000000]               
+	int32_t                                            Boost;                                         // 0x0070 (0x0004) [0x0021000000000000]               
+	uint32_t                                           bBoosting : 1;                                 // 0x0074 (0x0004) [0x0021000000000000] [0x00000001] 
+	uint32_t                                           bSupersonic : 1;                               // 0x0074 (0x0004) [0x0021000000000000] [0x00000002] 
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.TeamUpdateState
+// Size: 0x0038
+struct FTeamUpdateState
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TeamNum;                                       // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            Score;                                         // 0x0014 (0x0004) [0x0001000000000000]               
+	class FString                                      ColorPrimary;                                  // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      ColorSecondary;                                // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.BallUpdateState
+// Size: 0x0008
+struct FBallUpdateState
+{
+	float                                              Speed;                                         // 0x0000 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamNum;                                       // 0x0004 (0x0004) [0x0001000000000000]               
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.GameUpdateState
+// Size: 0x0070
+struct FGameUpdateState
+{
+	class TArray<struct FTeamUpdateState>              Teams;                                         // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TimeSeconds;                                   // 0x0010 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0014 (0x0004) [0x0001000000000000] [0x00000001] 
+	int32_t                                            frame;                                         // 0x0018 (0x0004) [0x0021000000000000]               
+	float                                              Elapsed;                                       // 0x001C (0x0004) [0x0021000000000000]               
+	struct FBallUpdateState                            Ball;                                          // 0x0020 (0x0008) [0x0001000000000000]               
+	uint32_t                                           bReplay : 1;                                   // 0x0028 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint32_t                                           bHasWinner : 1;                                // 0x0028 (0x0004) [0x0001000000000000] [0x00000002] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x002C (0x0004) MISSED OFFSET
+	class FString                                      Winner;                                        // 0x0030 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Arena;                                         // 0x0040 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bHasTarget : 1;                                // 0x0050 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint8_t                                          UnknownData01[0x4];                            // 0x0054 (0x0004) MISSED OFFSET
+	struct FPlayerDataPacket                           Target;                                        // 0x0058 (0x0018) [0x0021000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.UpdateStateData
+// Size: 0x0090
+struct FUpdateStateData
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FPlayerUpdateState>            Players;                                       // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FGameUpdateState                            Game;                                          // 0x0020 (0x0070) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.BallLastTouchData
+// Size: 0x0020 (0x001C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FBallLastTouchData
+{
+	struct FPlayerDataPacket                           Player;                                        // 0x0000 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	float                                              Speed;                                         // 0x0018 (0x0004) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.GoalScoreDataEvent
+// Size: 0x0078
+struct FGoalScoreDataEvent
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	float                                              GoalSpeed;                                     // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            GoalTime;                                      // 0x0014 (0x0004) [0x0001000000000000]               
+	struct FVector                                     ImpactLocation;                                // 0x0018 (0x000C) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0024 (0x0004) MISSED OFFSET
+	struct FPlayerDataPacket                           Scorer;                                        // 0x0028 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FPlayerDataPacket                           Assister;                                      // 0x0040 (0x0018) [0x0021000000400000] (CPF_NeedCtorLink)
+	struct FBallLastTouchData                          BallLastTouch;                                 // 0x0058 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.StatTickerEvent
+// Size: 0x0060
+struct FStatTickerEvent
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      EventName;                                     // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Type;                                          // 0x0020 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FPlayerDataPacket                           MainTarget;                                    // 0x0030 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FPlayerDataPacket                           SecondaryTarget;                               // 0x0048 (0x0018) [0x0021000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.MatchWinnerEvent
+// Size: 0x0018 (0x0014 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FMatchWinnerEvent
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            WinnerTeamNum;                                 // 0x0010 (0x0004) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.MatchGUIDEvent
+// Size: 0x0010
+struct FMatchGUIDEvent
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.BallPreHitData
+// Size: 0x0014
+struct FBallPreHitData
+{
+	float                                              PreHitSpeed;                                   // 0x0000 (0x0004) [0x0001000000000000]               
+	float                                              PostHitSpeed;                                  // 0x0004 (0x0004) [0x0001000000000000]               
+	struct FVector                                     Location;                                      // 0x0008 (0x000C) [0x0001000000000000]               
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.CrossbarHitData
+// Size: 0x0048
+struct FCrossbarHitData
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FVector                                     BallLocation;                                  // 0x0010 (0x000C) [0x0001000000000000]               
+	float                                              BallSpeed;                                     // 0x001C (0x0004) [0x0001000000000000]               
+	float                                              ImpactForce;                                   // 0x0020 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0024 (0x0004) MISSED OFFSET
+	struct FBallLastTouchData                          BallLastTouch;                                 // 0x0028 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame._StatsAPITypes_TA.ClockUpdatedEvent
+// Size: 0x0018
+struct FClockUpdatedEvent
+{
+	class FString                                      MatchGUID;                                     // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TimeSeconds;                                   // 0x0010 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0014 (0x0004) [0x0001000000000000] [0x00000001] 
+};
+
+// ScriptStruct TAGame.AntiCheatMessenger_TA.AntiCheatMessage
+// Size: 0x0018
+struct FAntiCheatMessage
+{
+	int32_t                                            MessageId;                                     // 0x0000 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
+	class TArray<class FString>                        MessageParts;                                  // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata

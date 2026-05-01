@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: Core_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -3276,6 +3276,132 @@ struct UObject_execFromHex_Params
 {
 	class FString                                      Hex;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.SQWordMin
+// [0x00022401] 
+struct UObject_execSQWordMin_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.SQWordMax
+// [0x00022401] 
+struct UObject_execSQWordMax_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.SubtractEqual_SQWordSQWord
+// [0x00423401] 
+struct UObject_execSubtractEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.AddEqual_SQWordSQWord
+// [0x00423401] 
+struct UObject_execAddEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.NotEqual_SQWordSQWord
+// [0x00023401] 
+struct UObject_execNotEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.EqualEqual_SQWordSQWord
+// [0x00023401] 
+struct UObject_execEqualEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.GreaterEqual_SQWordSQWord
+// [0x00023401] 
+struct UObject_execGreaterEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.LessEqual_SQWordSQWord
+// [0x00023401] 
+struct UObject_execLessEqual_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Greater_SQWordSQWord
+// [0x00023401] 
+struct UObject_execGreater_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Less_SQWordSQWord
+// [0x00023401] 
+struct UObject_execLess_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Subtract_SQWordSQWord
+// [0x00023401] 
+struct UObject_execSubtract_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Add_SQWordSQWord
+// [0x00023401] 
+struct UObject_execAdd_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Divide_SQWordSQWord
+// [0x00023401] 
+struct UObject_execDivide_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.Multiply_SQWordSQWord
+// [0x00023401] 
+struct UObject_execMultiply_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.Object.QMin

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1574,6 +1574,27 @@ enum class EContentKeyIndex_ContinuousIntegration : uint8_t
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate58
+enum class EContentKeyIndex_PrimeUpdate58_2 : uint8_t
+{
+	PrimeUpdate58_1_CF3B2A3A9A8039EC649A6BAAA7371772   = 0,
+	PrimeUpdate58_1_ACBF1B48AA08E857E4DD311C0D0C36DF   = 1,
+	PrimeUpdate58_1_313D351B5D987AF464199FC8F38E9A9C   = 2,
+	PrimeUpdate58_1_9BBA739BE3D366AC8DF23C8242576770   = 3,
+	PrimeUpdate58_1_61175F3C73C9AC4B87B15551BD766313   = 4,
+	PrimeUpdate58_1_CA00D5EA176DD2DF25408D80EFF99ADE   = 5,
+	PrimeUpdate58_1_BC9055AC14E8C1527D9997B47F774977   = 6,
+	PrimeUpdate58_1_FC6C77F454164D3D37A0B76D50662CF9   = 7,
+	PrimeUpdate58_1_D9AD7360BBF1B3C388E62C997FCD5511   = 8,
+	PrimeUpdate58_1_7267B5B2B936B8A51F85CB8285E0718C   = 9,
+	PrimeUpdate58_1_88F0C39FCB74847F134AC16A74936D60   = 10,
+	PrimeUpdate58_1_480030AA8F608828CD4492CA4E04E1FE   = 11,
+	PrimeUpdate58_1_629192747BBE6AF1AA366B286DA6FB61   = 12,
+	PrimeUpdate58_1_4586F6D6CA8BF044A8EE210F53C7EBB3   = 13,
+	PrimeUpdate58_1_64E0EA7D393651CAA9B405C0DDC587CC   = 14,
+	PrimeUpdate58_1_END                                = 15
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate58
 enum class EContentKeyIndex_PrimeUpdate58 : uint8_t
 {
 	PrimeUpdate58_E7E3C36245058DF613343523909109DA     = 0,
@@ -2057,6 +2078,20 @@ public:
 	static int32_t Rand(int32_t Max);
 	static struct FColor FromHexColor(const class FString& Hex);
 	static int32_t FromHex(const class FString& Hex);
+	static int64_t SQWordMin(int64_t A, int64_t B);
+	static int64_t SQWordMax(int64_t A, int64_t B);
+	static int64_t SubtractEqual_SQWordSQWord(int64_t B, int64_t& outA);
+	static int64_t AddEqual_SQWordSQWord(int64_t B, int64_t& outA);
+	static bool NotEqual_SQWordSQWord(int64_t A, int64_t B);
+	static bool EqualEqual_SQWordSQWord(int64_t A, int64_t B);
+	static bool GreaterEqual_SQWordSQWord(int64_t A, int64_t B);
+	static bool LessEqual_SQWordSQWord(int64_t A, int64_t B);
+	static bool Greater_SQWordSQWord(int64_t A, int64_t B);
+	static bool Less_SQWordSQWord(int64_t A, int64_t B);
+	static int64_t Subtract_SQWordSQWord(int64_t A, int64_t B);
+	static int64_t Add_SQWordSQWord(int64_t A, int64_t B);
+	static int64_t Divide_SQWordSQWord(int64_t A, int64_t B);
+	static int64_t Multiply_SQWordSQWord(int64_t A, int64_t B);
 	static uint64_t QMin(uint64_t A, uint64_t B);
 	static uint64_t QMax(uint64_t A, uint64_t B);
 	static uint64_t QSubtractNoUnderflow(uint64_t A, uint64_t B);
@@ -2718,6 +2753,23 @@ public:
 
 };
 
+// Class Core.SQWordProperty
+// 0x0000 (0x00C8 - 0x00C8)
+class USQWordProperty : public UProperty
+{
+public:
+
+public:
+    static UClass* StaticClass()
+    {
+		static UClass* uClassPointer = nullptr;
+		if (!uClassPointer)
+            uClassPointer = UObject::FindClass("Class Core.SQWordProperty");
+        return uClassPointer;
+    }
+
+};
+
 // Class Core.QWordProperty
 // 0x0000 (0x00C8 - 0x00C8)
 class UQWordProperty : public UProperty
@@ -3091,40 +3143,42 @@ public:
 	uint32_t                                           DynamicLogos : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
 	uint32_t                                           XETagging : 1;                                 // 0x0074 (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
 	uint32_t                                           PlayMenuV4 : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
-	uint32_t                                           DemoUpgrades : 1;                              // 0x0074 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
-	uint32_t                                           QuickChatTimeStamp : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
-	uint32_t                                           SoccarPong : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
-	uint32_t                                           OnlineFreeplay : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           MatchmakingSubRegion : 1;                      // 0x0078 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
-	uint32_t                                           CrossbarSFX : 1;                               // 0x0078 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           RugbyIteration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
-	uint32_t                                           ChallengesV2 : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
-	uint32_t                                           PossessionExpanded : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
-	uint32_t                                           TargetFind : 1;                                // 0x0078 (0x0004) [0x0000000040000000] [0x00000100] (CPF_DataBinding)
-	uint32_t                                           KeepUp : 1;                                    // 0x0078 (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
-	uint32_t                                           RocketPassUpgrades : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
-	uint32_t                                           PentathlonTournaments : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00002000] (CPF_DataBinding)
-	uint32_t                                           DemolishUpdates : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
-	uint32_t                                           ViralItem : 1;                                 // 0x0078 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
-	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
-	uint32_t                                           AttackerDemoFX : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
-	uint32_t                                           NewDriverChallengesV2 : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00040000] (CPF_DataBinding)
-	uint32_t                                           TextModeration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
-	uint32_t                                           FilterToggle : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
-	uint32_t                                           DdosPrevention : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
-	uint32_t                                           OunceEnhancements : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
-	uint32_t                                           FastFreeplay : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
-	uint32_t                                           MatchAdminMutator : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
-	uint32_t                                           Thistle : 1;                                   // 0x0078 (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
-	uint32_t                                           DemoFXMutator : 1;                             // 0x0078 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
-	uint32_t                                           OffProdHandling : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
-	uint32_t                                           CustomTrainingSettings : 1;                    // 0x0078 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
-	uint32_t                                           FlipResetIndicator : 1;                        // 0x007C (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           NewsOverhaul : 1;                              // 0x007C (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           QueueMenuChanges : 1;                          // 0x007C (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
-	uint32_t                                           VisibleMMR : 1;                                // 0x007C (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint32_t                                           OverrideBoostSound : 1;                        // 0x007C (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
-	uint32_t                                           SettingsExport : 1;                            // 0x007C (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           QuickChatTimeStamp : 1;                        // 0x0074 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
+	uint32_t                                           SoccarPong : 1;                                // 0x0074 (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
+	uint32_t                                           OnlineFreeplay : 1;                            // 0x0074 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
+	uint32_t                                           MatchmakingSubRegion : 1;                      // 0x0078 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           CrossbarSFX : 1;                               // 0x0078 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           RugbyIteration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
+	uint32_t                                           ChallengesV2 : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
+	uint32_t                                           PossessionExpanded : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000040] (CPF_DataBinding)
+	uint32_t                                           TargetFind : 1;                                // 0x0078 (0x0004) [0x0000000040000000] [0x00000080] (CPF_DataBinding)
+	uint32_t                                           KeepUp : 1;                                    // 0x0078 (0x0004) [0x0000000040000000] [0x00000200] (CPF_DataBinding)
+	uint32_t                                           RocketPassUpgrades : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x00000800] (CPF_DataBinding)
+	uint32_t                                           PentathlonTournaments : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
+	uint32_t                                           DemolishUpdates : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00002000] (CPF_DataBinding)
+	uint32_t                                           ViralItem : 1;                                 // 0x0078 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
+	uint32_t                                           ThankYouMessage : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
+	uint32_t                                           AttackerDemoFX : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
+	uint32_t                                           NewDriverChallengesV2 : 1;                     // 0x0078 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
+	uint32_t                                           TextModeration : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00100000] (CPF_DataBinding)
+	uint32_t                                           FilterToggle : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x00200000] (CPF_DataBinding)
+	uint32_t                                           DdosPrevention : 1;                            // 0x0078 (0x0004) [0x0000000040000000] [0x00400000] (CPF_DataBinding)
+	uint32_t                                           OunceEnhancements : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x00800000] (CPF_DataBinding)
+	uint32_t                                           FastFreeplay : 1;                              // 0x0078 (0x0004) [0x0000000040000000] [0x01000000] (CPF_DataBinding)
+	uint32_t                                           MatchAdminMutator : 1;                         // 0x0078 (0x0004) [0x0000000040000000] [0x02000000] (CPF_DataBinding)
+	uint32_t                                           Thistle : 1;                                   // 0x0078 (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           DemoFXMutator : 1;                             // 0x0078 (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
+	uint32_t                                           OffProdHandling : 1;                           // 0x0078 (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t                                           CustomTrainingSettings : 1;                    // 0x0078 (0x0004) [0x0000000040000000] [0x20000000] (CPF_DataBinding)
+	uint32_t                                           FlipResetIndicator : 1;                        // 0x0078 (0x0004) [0x0000000040000000] [0x80000000] (CPF_DataBinding)
+	uint32_t                                           NewsOverhaul : 1;                              // 0x007C (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           QueueMenuChanges : 1;                          // 0x007C (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           VisibleMMR : 1;                                // 0x007C (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           EasyAntiCheat : 1;                             // 0x007C (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
+	uint32_t                                           OverrideBoostSound : 1;                        // 0x007C (0x0004) [0x0000000040000000] [0x00000010] (CPF_DataBinding)
+	uint32_t                                           SettingsExport : 1;                            // 0x007C (0x0004) [0x0000000040000000] [0x00000020] (CPF_DataBinding)
+	uint32_t                                           FreeplayTeamColors : 1;                        // 0x007C (0x0004) [0x0000000040000000] [0x00000400] (CPF_DataBinding)
+	uint32_t                                           StatsAPI : 1;                                  // 0x007C (0x0004) [0x0000000040000000] [0x00001000] (CPF_DataBinding)
 
 public:
     static UClass* StaticClass()

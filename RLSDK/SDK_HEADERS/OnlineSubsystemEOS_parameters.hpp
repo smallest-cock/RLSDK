@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1100,6 +1100,172 @@ struct UOnlineSubsystemEOS_execOnMicroTxnResponse_Params
 	uint32_t                                           bAuthorized : 1;                                  // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	uint64_t                                           OrderId;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.ReceiveMessage
+// [0x00420400] 
+struct UOnlineAntiCheatInterfaceEOS_execReceiveMessage_Params
+{
+	class FString                                      EncodedMessage;                                   // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0010 (0x0048) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EndSession
+// [0x00020400] 
+struct UOnlineAntiCheatInterfaceEOS_execEndSession_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.BeginSession
+// [0x00024400] 
+struct UOnlineAntiCheatInterfaceEOS_execBeginSession_Params
+{
+	float                                              RegisterTimeoutSeconds;                           // 0x0000 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.Init
+// [0x00020400] 
+struct UOnlineAntiCheatInterfaceEOS_execInit_Params
+{
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS.EventMessageGenerated
+// [0x00120001] 
+struct UOnlineAntiCheatInterfaceEOS_execEventMessageGenerated_Params
+{
+	class FString                                      EncodedMessage;                                   // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0010 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReportPlayer
+// [0x00420401] 
+struct UOnlineAntiCheatClientInterfaceEOS_execReportPlayer_Params
+{
+	class FString                                      ProductUserId;                                    // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.ReceiveMessage
+// [0x400420400] 
+struct UOnlineAntiCheatClientInterfaceEOS_execReceiveMessage_Params
+{
+	class FString                                      EncodedMessage;                                   // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0010 (0x0048) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.IsAntiCheatEnabled
+// [0x00020401] 
+struct UOnlineAntiCheatClientInterfaceEOS_execIsAntiCheatEnabled_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EndSession
+// [0x400020400] 
+struct UOnlineAntiCheatClientInterfaceEOS_execEndSession_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.BeginSession
+// [0x400024400] 
+struct UOnlineAntiCheatClientInterfaceEOS_execBeginSession_Params
+{
+	float                                              RegisterTimeoutSeconds;                           // 0x0000 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.Init
+// [0x400020400] 
+struct UOnlineAntiCheatClientInterfaceEOS_execInit_Params
+{
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventPlayerReportComplete
+// [0x00120001] 
+struct UOnlineAntiCheatClientInterfaceEOS_execEventPlayerReportComplete_Params
+{
+	class FString                                      ProductUserId;                                    // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bSuccess : 1;                                     // 0x0010 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS.EventClientIntegrityViolation
+// [0x00120001] 
+struct UOnlineAntiCheatClientInterfaceEOS_execEventClientIntegrityViolation_Params
+{
+	uint8_t                                            Violation;                                        // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      Message;                                          // 0x0008 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.ReceiveMessage
+// [0x400420400] 
+struct UOnlineAntiCheatServerInterfaceEOS_execReceiveMessage_Params
+{
+	class FString                                      EncodedMessage;                                   // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0010 (0x0048) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.UnregisterClient
+// [0x00420401] 
+struct UOnlineAntiCheatServerInterfaceEOS_execUnregisterClient_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0048 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.RegisterClient
+// [0x00420401] 
+struct UOnlineAntiCheatServerInterfaceEOS_execRegisterClient_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class FString                                      ProductUserId;                                    // 0x0048 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	uint32_t                                           bProtected : 1;                                   // 0x0058 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x005C (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EndSession
+// [0x400020400] 
+struct UOnlineAntiCheatServerInterfaceEOS_execEndSession_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.BeginSession
+// [0x400024400] 
+struct UOnlineAntiCheatServerInterfaceEOS_execBeginSession_Params
+{
+	float                                              RegisterTimeoutSeconds;                           // 0x0000 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.Init
+// [0x400020400] 
+struct UOnlineAntiCheatServerInterfaceEOS_execInit_Params
+{
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientAuthStatusChanged
+// [0x00120001] 
+struct UOnlineAntiCheatServerInterfaceEOS_execEventClientAuthStatusChanged_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            AuthStatus;                                       // 0x0048 (0x0001) [0x0001000000000080] (CPF_Parm)    
+};
+
+// Function OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS.EventClientActionRequired
+// [0x00120001] 
+struct UOnlineAntiCheatServerInterfaceEOS_execEventClientActionRequired_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            ActionCode;                                       // 0x0048 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                            ActionReason;                                     // 0x0049 (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[6];                                      // 0x004A (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      Message;                                          // 0x0050 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineAuthInterfaceEOS.RequiresAuthTicket

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -247,7 +247,8 @@ enum class EHighContrastRenderingID : uint8_t
 	HighContrastRenderingID_Team0                      = 0,
 	HighContrastRenderingID_Team1                      = 1,
 	HighContrastRenderingID_Neutral                    = 2,
-	HighContrastRenderingID_END                        = 3
+	HighContrastRenderingID_Ball                       = 3,
+	HighContrastRenderingID_END                        = 4
 };
 
 // Enum Engine.Actor.ECollisionType
@@ -7424,6 +7425,7 @@ public:
         return uClassPointer;
     }
 
+	void SetHighContrastRenderingID(EHighContrastRenderingID InRenderingID);
 	void SetCastShadow(bool bNewCastShadow, bool bNewCastDynamicShadow);
 	EGJKResult ClosestPointOnComponentToComponent(class UPrimitiveComponent*& outOtherComponent, struct FVector& outPointOnComponentA, struct FVector& outPointOnComponentB);
 	EGJKResult ClosestPointOnComponentToPoint(struct FVector& outPOI, struct FVector& outExtent, struct FVector& outOutPointA, struct FVector& outOutPointB);

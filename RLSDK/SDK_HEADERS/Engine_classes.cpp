@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.67)
-# Generated with CodeRedGenerator v1.1.5 on 03/23/2026 06:35PM
+# Rocket League SDK (RLSDK) Season 22 (v2.66)
+# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
 # ========================================================================================= #
 # File: Engine_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260316.80791.512269
-# Build Date: Mar 16 2026 23:04:23
+# Psyonix Build ID: 260420.86069.515605
+# Build Date: Apr 21 2026 02:08:59
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -16830,6 +16830,23 @@ void UHeightFogComponent::SetEnabled(bool bSetEnabled)
 	SetEnabled_Params.bSetEnabled = bSetEnabled;
 
 	this->ProcessEvent(uFnSetEnabled, &SetEnabled_Params, nullptr);
+};
+
+// Function Engine.PrimitiveComponent.SetHighContrastRenderingID
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// EHighContrastRenderingID       InRenderingID                  (CPF_Parm)
+void UPrimitiveComponent::SetHighContrastRenderingID(EHighContrastRenderingID InRenderingID)
+{
+    static UFunction* uFnSetHighContrastRenderingID = nullptr;
+    if (!uFnSetHighContrastRenderingID)
+        uFnSetHighContrastRenderingID = UFunction::FindFunction("Function Engine.PrimitiveComponent.SetHighContrastRenderingID");
+
+	UPrimitiveComponent_execSetHighContrastRenderingID_Params SetHighContrastRenderingID_Params;
+	memset(&SetHighContrastRenderingID_Params, 0, sizeof(SetHighContrastRenderingID_Params));
+	memcpy_s(&SetHighContrastRenderingID_Params.InRenderingID, sizeof(SetHighContrastRenderingID_Params.InRenderingID), &InRenderingID, sizeof(InRenderingID));
+
+	this->ProcessEvent(uFnSetHighContrastRenderingID, &SetHighContrastRenderingID_Params, nullptr);
 };
 
 // Function Engine.PrimitiveComponent.SetCastShadow
