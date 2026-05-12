@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -63241,12 +63241,21 @@ struct UOnlineGameParty_TA_execEventPartyMemberLoadoutChange_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
-// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x2
+// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x4
 // [0x40040003] 
-struct URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x2_Params
+struct URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x4_Params
 {
 	struct FPlayerLoadoutData                          L;                                                // 0x0000 (0x00C8) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x00C8 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x3
+// [0x40840003] 
+struct URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x3_Params
+{
+	struct FPersonaDataId                              C;                                                // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FPersonaDataId                           P;                                                // 0x0060 (0x0058) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x1
@@ -63345,10 +63354,10 @@ struct URecentPlayers_TA_execFilterFriends_Params
 struct URecentPlayers_TA_execUpdateFromOnline_Params
 {
 	class TArray<struct FOnlineFriend>                 OnlineRecents;                                    // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FPersonaDataId>             RecentPlayerIds;                                  // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FPersonaDataId>             MapLocal_0x1;                                     // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FPersonaDataId>             IntersectLocal_0x2;                               // 0x0030 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FPlayerLoadoutData>         FilterLocal_0x3;                                  // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FPersonaDataId>             MapLocal_0x1;                                     // 0x0010 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class U__RecentPlayers_TA__UpdateFromOnline_0x2* _0x2;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FPersonaDataId>             FilterLocal_0x3;                                  // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FPlayerLoadoutData>         FilterLocal_0x4;                                  // 0x0038 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.RecentPlayers_TA.GetGameIDPlayedWith
@@ -114679,6 +114688,15 @@ struct UPersonaSave_TA_execSetRecentPlayers_Params
 	class TArray<struct FPlayerGameID>                 Games;                                            // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 };
 
+// Function TAGame.__RecentPlayers_TA__UpdateFromOnline_0x2.__RecentPlayers_TA__UpdateFromOnline_0x2
+// [0x00020003] 
+struct U__RecentPlayers_TA__UpdateFromOnline_0x2_exec__RecentPlayers_TA__UpdateFromOnline_0x2_Params
+{
+	struct FPersonaDataId                              P;                                                // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1* _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
+};
+
 // Function TAGame.OtherPlayerProfile_TA.Clear
 // [0x00020003] 
 struct UOtherPlayerProfile_TA_execClear_Params
@@ -131966,6 +131984,14 @@ struct U__TargetFindConfig_TA__IsActiveForPlaylist_0x1_exec__TargetFindConfig_TA
 {
 	int32_t                                            P;                                                // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1
+// [0x00020003] 
+struct U____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_exec____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params
+{
+	struct FPersonaDataId                              C;                                                // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__RPC_NewsSendInteractionEvents_TA__SetInteractionEvents_0x1.__RPC_NewsSendInteractionEvents_TA__SetInteractionEvents_0x1

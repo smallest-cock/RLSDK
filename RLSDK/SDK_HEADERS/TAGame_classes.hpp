@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -30646,7 +30646,8 @@ public:
         return uClassPointer;
     }
 
-	bool __RecentPlayers_TA__UpdateFromOnline_0x2(const struct FPlayerLoadoutData& L);
+	bool __RecentPlayers_TA__UpdateFromOnline_0x4(const struct FPlayerLoadoutData& L);
+	bool __RecentPlayers_TA__UpdateFromOnline_0x3(const struct FPersonaDataId& C);
 	struct FPersonaDataId __RecentPlayers_TA__UpdateFromOnline_0x1(const struct FOnlineFriend& RP);
 	void __RecentPlayers_TA__SetPersonaSave_0x1();
 	bool __RecentPlayers_TA__OnRecentsChanged_0x1(const struct FPlayerGameID& G);
@@ -60896,6 +60897,25 @@ public:
 	void SetRecentPlayers(class TArray<struct FPersonaDataId>& outRecents, class TArray<struct FPlayerGameID>& outGames);
 };
 
+// Class TAGame.__RecentPlayers_TA__UpdateFromOnline_0x2
+// 0x0010 (0x0060 - 0x0070)
+class U__RecentPlayers_TA__UpdateFromOnline_0x2 : public UObject
+{
+public:
+	class TArray<struct FPersonaDataId>                RecentPlayerIds;                               // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+public:
+    static UClass* StaticClass()
+    {
+		static UClass* uClassPointer = nullptr;
+		if (!uClassPointer)
+            uClassPointer = UObject::FindClass("Class TAGame.__RecentPlayers_TA__UpdateFromOnline_0x2");
+        return uClassPointer;
+    }
+
+	bool __RecentPlayers_TA__UpdateFromOnline_0x2(const struct FPersonaDataId& P);
+};
+
 // Class TAGame.OtherPlayerProfile_TA
 // 0x0020 (0x0070 - 0x0090)
 class UOtherPlayerProfile_TA : public UComponent
@@ -76764,6 +76784,25 @@ public:
     }
 
 	bool __TargetFindConfig_TA__IsActiveForPlaylist_0x1(int32_t P);
+};
+
+// Class TAGame.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1
+// 0x0058 (0x0060 - 0x00B8)
+class U____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1 : public UObject
+{
+public:
+	struct FPersonaDataId                              P;                                             // 0x0060 (0x0058) [0x0000000000400000] (CPF_NeedCtorLink)
+
+public:
+    static UClass* StaticClass()
+    {
+		static UClass* uClassPointer = nullptr;
+		if (!uClassPointer)
+            uClassPointer = UObject::FindClass("Class TAGame.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1");
+        return uClassPointer;
+    }
+
+	bool ____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1(const struct FPersonaDataId& C);
 };
 
 // Class TAGame.__RPC_NewsSendInteractionEvents_TA__SetInteractionEvents_0x1

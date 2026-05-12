@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1514,13 +1514,30 @@ struct APlayerController_X_execServerDestroy_Params
 {
 };
 
+// Function ProjectX.PlayerController_X.ClientSetPendingProgressMessage
+// [0x010241C3] 
+struct APlayerController_X_execClientSetPendingProgressMessage_Params
+{
+	class FString                                      Reason;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Title;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class UErrorType*                               Error;                                            // 0x0020 (0x0008) [0x0000000000000000]               
+};
+
+// Function ProjectX.PlayerController_X.CloseConnectionWithReason
+// [0x00024003] 
+struct APlayerController_X_execCloseConnectionWithReason_Params
+{
+	class FString                                      Reason;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Title;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class U__PlayerController_X__CloseConnectionWithReason_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+};
+
 // Function ProjectX.PlayerController_X.KickPlayerForReason
 // [0x010241C3] 
 struct APlayerController_X_execKickPlayerForReason_Params
 {
 	class FString                                      Reason;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Title;                                            // 0x0010 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class UErrorType*                               Error;                                            // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.PlayerController_X.ClientNetLag
@@ -30609,6 +30626,12 @@ struct UPlayerActivityMetrics_X_execMatchActivity_Params
 	float                                              TimeActive;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              TimeInactive;                                     // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            PlaylistId;                                       // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1.__PlayerController_X__CloseConnectionWithReason_0x1
+// [0x00020003] 
+struct U__PlayerController_X__CloseConnectionWithReason_0x1_exec__PlayerController_X__CloseConnectionWithReason_0x1_Params
+{
 };
 
 // Function ProjectX.PostProcessManager_X.GetNextPostProcessOverride

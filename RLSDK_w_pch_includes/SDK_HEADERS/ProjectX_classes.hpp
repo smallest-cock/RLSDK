@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1336,7 +1336,7 @@ public:
 	class APawn*                                       OldPawnReference;                              // 0x07F8 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class AActor*                                      LockedDebugActor;                              // 0x0800 (0x0008) [0x0000000000002000] (CPF_Transient)
 	uint32_t                                           bPausedForExternalUI : 1;                      // 0x0808 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x080C (0x0004) MISSED OFFSET
+	float                                              CloseConnectionDelay;                          // 0x080C (0x0004) [0x0000000000000002] (CPF_Const)   
 	class UNetConnection*                              NetConnection;                                 // 0x0810 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventReceivedPRI__Delegate;                  // 0x0818 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventPawnChange__Delegate;                   // 0x0830 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -1363,6 +1363,8 @@ public:
 	void ServerSetParty(const struct FUniqueNetId& MemberId, const struct FUniqueNetId& NewPartyID);
 	void DisconnectSplitScreenPlayer(class UPlayer* P);
 	void ServerDestroy();
+	void ClientSetPendingProgressMessage(const class FString& Reason, const class FString& optionalTitle);
+	void CloseConnectionWithReason(const class FString& Reason, const class FString& optionalTitle);
 	void KickPlayerForReason(const class FString& Reason, const class FString& optionalTitle);
 	void ClientNetLag(float PktLag, float PktVariance, float PktLoss, float PktDup, float PktSpike);
 	void ServerNetLag(float PktLag, float PktVariance, float PktLoss, float PktDup, float PktSpike);
@@ -19223,6 +19225,25 @@ public:
         return uClassPointer;
     }
 
+};
+
+// Class ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1
+// 0x0010 (0x0060 - 0x0070)
+class U__PlayerController_X__CloseConnectionWithReason_0x1 : public UObject
+{
+public:
+	class FString                                      Reason;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+public:
+    static UClass* StaticClass()
+    {
+		static UClass* uClassPointer = nullptr;
+		if (!uClassPointer)
+            uClassPointer = UObject::FindClass("Class ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1");
+        return uClassPointer;
+    }
+
+	void __PlayerController_X__CloseConnectionWithReason_0x1();
 };
 
 // Class ProjectX.PostProcessManager_X

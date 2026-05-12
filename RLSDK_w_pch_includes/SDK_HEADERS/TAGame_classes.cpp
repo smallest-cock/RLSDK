@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -139579,23 +139579,42 @@ void UOnlineGameParty_TA::EventPartyMemberLoadoutChange(const struct FUniqueNetI
 	this->ProcessEvent(uFnEventPartyMemberLoadoutChange, &EventPartyMemberLoadoutChange_Params, nullptr);
 };
 
-// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x2
+// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x4
 // [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
 // Parameter Info:
 // bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // struct FPlayerLoadoutData      L                              (CPF_Parm | CPF_NeedCtorLink)
-bool URecentPlayers_TA::__RecentPlayers_TA__UpdateFromOnline_0x2(const struct FPlayerLoadoutData& L)
+bool URecentPlayers_TA::__RecentPlayers_TA__UpdateFromOnline_0x4(const struct FPlayerLoadoutData& L)
 {
-    static UFunction* uFn__RecentPlayers_TA__UpdateFromOnline_0x2 = nullptr;
-    if (!uFn__RecentPlayers_TA__UpdateFromOnline_0x2)
-        uFn__RecentPlayers_TA__UpdateFromOnline_0x2 = UFunction::FindFunction("Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x2");
+    static UFunction* uFn__RecentPlayers_TA__UpdateFromOnline_0x4 = nullptr;
+    if (!uFn__RecentPlayers_TA__UpdateFromOnline_0x4)
+        uFn__RecentPlayers_TA__UpdateFromOnline_0x4 = UFunction::FindFunction("Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x4");
 
-	URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x2_Params __RecentPlayers_TA__UpdateFromOnline_0x2_Params;
-	memset(&__RecentPlayers_TA__UpdateFromOnline_0x2_Params, 0, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x2_Params));
-	memcpy_s(&__RecentPlayers_TA__UpdateFromOnline_0x2_Params.L, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x2_Params.L), &L, sizeof(L));
+	URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x4_Params __RecentPlayers_TA__UpdateFromOnline_0x4_Params;
+	memset(&__RecentPlayers_TA__UpdateFromOnline_0x4_Params, 0, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x4_Params));
+	memcpy_s(&__RecentPlayers_TA__UpdateFromOnline_0x4_Params.L, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x4_Params.L), &L, sizeof(L));
 
-	this->ProcessEvent(uFn__RecentPlayers_TA__UpdateFromOnline_0x2, &__RecentPlayers_TA__UpdateFromOnline_0x2_Params, nullptr);
-	return __RecentPlayers_TA__UpdateFromOnline_0x2_Params.ReturnValue;
+	this->ProcessEvent(uFn__RecentPlayers_TA__UpdateFromOnline_0x4, &__RecentPlayers_TA__UpdateFromOnline_0x4_Params, nullptr);
+	return __RecentPlayers_TA__UpdateFromOnline_0x4_Params.ReturnValue;
+};
+
+// Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x3
+// [0x40840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults | FUNC_Lambda)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPersonaDataId          C                              (CPF_Parm | CPF_NeedCtorLink)
+bool URecentPlayers_TA::__RecentPlayers_TA__UpdateFromOnline_0x3(const struct FPersonaDataId& C)
+{
+    static UFunction* uFn__RecentPlayers_TA__UpdateFromOnline_0x3 = nullptr;
+    if (!uFn__RecentPlayers_TA__UpdateFromOnline_0x3)
+        uFn__RecentPlayers_TA__UpdateFromOnline_0x3 = UFunction::FindFunction("Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x3");
+
+	URecentPlayers_TA_exec__RecentPlayers_TA__UpdateFromOnline_0x3_Params __RecentPlayers_TA__UpdateFromOnline_0x3_Params;
+	memset(&__RecentPlayers_TA__UpdateFromOnline_0x3_Params, 0, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x3_Params));
+	memcpy_s(&__RecentPlayers_TA__UpdateFromOnline_0x3_Params.C, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x3_Params.C), &C, sizeof(C));
+
+	this->ProcessEvent(uFn__RecentPlayers_TA__UpdateFromOnline_0x3, &__RecentPlayers_TA__UpdateFromOnline_0x3_Params, nullptr);
+	return __RecentPlayers_TA__UpdateFromOnline_0x3_Params.ReturnValue;
 };
 
 // Function TAGame.RecentPlayers_TA.__RecentPlayers_TA__UpdateFromOnline_0x1
@@ -252679,6 +252698,25 @@ void UPersonaSave_TA::SetRecentPlayers(class TArray<struct FPersonaDataId>& Rece
 	memcpy_s(&Games, sizeof(Games), &SetRecentPlayers_Params.Games, sizeof(SetRecentPlayers_Params.Games));
 };
 
+// Function TAGame.__RecentPlayers_TA__UpdateFromOnline_0x2.__RecentPlayers_TA__UpdateFromOnline_0x2
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPersonaDataId          P                              (CPF_Parm | CPF_NeedCtorLink)
+bool U__RecentPlayers_TA__UpdateFromOnline_0x2::__RecentPlayers_TA__UpdateFromOnline_0x2(const struct FPersonaDataId& P)
+{
+    static UFunction* uFn__RecentPlayers_TA__UpdateFromOnline_0x2 = nullptr;
+    if (!uFn__RecentPlayers_TA__UpdateFromOnline_0x2)
+        uFn__RecentPlayers_TA__UpdateFromOnline_0x2 = UFunction::FindFunction("Function TAGame.__RecentPlayers_TA__UpdateFromOnline_0x2.__RecentPlayers_TA__UpdateFromOnline_0x2");
+
+	U__RecentPlayers_TA__UpdateFromOnline_0x2_exec__RecentPlayers_TA__UpdateFromOnline_0x2_Params __RecentPlayers_TA__UpdateFromOnline_0x2_Params;
+	memset(&__RecentPlayers_TA__UpdateFromOnline_0x2_Params, 0, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x2_Params));
+	memcpy_s(&__RecentPlayers_TA__UpdateFromOnline_0x2_Params.P, sizeof(__RecentPlayers_TA__UpdateFromOnline_0x2_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__RecentPlayers_TA__UpdateFromOnline_0x2, &__RecentPlayers_TA__UpdateFromOnline_0x2_Params, nullptr);
+	return __RecentPlayers_TA__UpdateFromOnline_0x2_Params.ReturnValue;
+};
+
 // Function TAGame.OtherPlayerProfile_TA.Clear
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -290863,6 +290901,25 @@ bool U__TargetFindConfig_TA__IsActiveForPlaylist_0x1::__TargetFindConfig_TA__IsA
 
 	this->ProcessEvent(uFn__TargetFindConfig_TA__IsActiveForPlaylist_0x1, &__TargetFindConfig_TA__IsActiveForPlaylist_0x1_Params, nullptr);
 	return __TargetFindConfig_TA__IsActiveForPlaylist_0x1_Params.ReturnValue;
+};
+
+// Function TAGame.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// struct FPersonaDataId          C                              (CPF_Parm | CPF_NeedCtorLink)
+bool U____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1::____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1(const struct FPersonaDataId& C)
+{
+    static UFunction* uFn____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1 = nullptr;
+    if (!uFn____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1)
+        uFn____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1 = UFunction::FindFunction("Function TAGame.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1.____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1");
+
+	U____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_exec____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params ____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params;
+	memset(&____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params, 0, sizeof(____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params));
+	memcpy_s(&____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params.C, sizeof(____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params.C), &C, sizeof(C));
+
+	this->ProcessEvent(uFn____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1, &____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params, nullptr);
+	return ____RecentPlayers_TA__UpdateFromOnline_0x2____RecentPlayers_TA__UpdateFromOnline_0x2_0x1_Params.ReturnValue;
 };
 
 // Function TAGame.__RPC_NewsSendInteractionEvents_TA__SetInteractionEvents_0x1.__RPC_NewsSendInteractionEvents_TA__SetInteractionEvents_0x1

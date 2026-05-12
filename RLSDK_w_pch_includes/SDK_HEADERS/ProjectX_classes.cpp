@@ -2,13 +2,13 @@
 
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.66)
-# Generated with CodeRedGenerator v1.1.5 on 04/30/2026 10:41PM
+# Rocket League SDK (RLSDK) Season 22 (v2.69)
+# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260420.86069.515605
-# Build Date: Apr 21 2026 02:08:59
+# Psyonix Build ID: 260506.26700.517210
+# Build Date: May  6 2026 07:48:39
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -3513,6 +3513,44 @@ void APlayerController_X::ServerDestroy()
 	memset(&ServerDestroy_Params, 0, sizeof(ServerDestroy_Params));
 
 	this->ProcessEvent(uFnServerDestroy, &ServerDestroy_Params, nullptr);
+};
+
+// Function ProjectX.PlayerController_X.ClientSetPendingProgressMessage
+// [0x010241C3] (FUNC_Final | FUNC_Defined | FUNC_Net | FUNC_NetReliable | FUNC_Simulated | FUNC_HasOptionalParms | FUNC_Public | FUNC_NetClient)
+// Parameter Info:
+// class FString                  Reason                         (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Title                          (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+void APlayerController_X::ClientSetPendingProgressMessage(const class FString& Reason, const class FString& Title)
+{
+    static UFunction* uFnClientSetPendingProgressMessage = nullptr;
+    if (!uFnClientSetPendingProgressMessage)
+        uFnClientSetPendingProgressMessage = UFunction::FindFunction("Function ProjectX.PlayerController_X.ClientSetPendingProgressMessage");
+
+	APlayerController_X_execClientSetPendingProgressMessage_Params ClientSetPendingProgressMessage_Params;
+	memset(&ClientSetPendingProgressMessage_Params, 0, sizeof(ClientSetPendingProgressMessage_Params));
+	memcpy_s(&ClientSetPendingProgressMessage_Params.Reason, sizeof(ClientSetPendingProgressMessage_Params.Reason), &Reason, sizeof(Reason));
+	memcpy_s(&ClientSetPendingProgressMessage_Params.Title, sizeof(ClientSetPendingProgressMessage_Params.Title), &Title, sizeof(Title));
+
+	this->ProcessEvent(uFnClientSetPendingProgressMessage, &ClientSetPendingProgressMessage_Params, nullptr);
+};
+
+// Function ProjectX.PlayerController_X.CloseConnectionWithReason
+// [0x00024003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// class FString                  Reason                         (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Title                          (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+void APlayerController_X::CloseConnectionWithReason(const class FString& Reason, const class FString& Title)
+{
+    static UFunction* uFnCloseConnectionWithReason = nullptr;
+    if (!uFnCloseConnectionWithReason)
+        uFnCloseConnectionWithReason = UFunction::FindFunction("Function ProjectX.PlayerController_X.CloseConnectionWithReason");
+
+	APlayerController_X_execCloseConnectionWithReason_Params CloseConnectionWithReason_Params;
+	memset(&CloseConnectionWithReason_Params, 0, sizeof(CloseConnectionWithReason_Params));
+	memcpy_s(&CloseConnectionWithReason_Params.Reason, sizeof(CloseConnectionWithReason_Params.Reason), &Reason, sizeof(Reason));
+	memcpy_s(&CloseConnectionWithReason_Params.Title, sizeof(CloseConnectionWithReason_Params.Title), &Title, sizeof(Title));
+
+	this->ProcessEvent(uFnCloseConnectionWithReason, &CloseConnectionWithReason_Params, nullptr);
 };
 
 // Function ProjectX.PlayerController_X.KickPlayerForReason
@@ -69639,6 +69677,21 @@ void UPlayerActivityMetrics_X::MatchActivity(float TimeActive, float TimeInactiv
 	memcpy_s(&MatchActivity_Params.PlaylistId, sizeof(MatchActivity_Params.PlaylistId), &PlaylistId, sizeof(PlaylistId));
 
 	this->ProcessEvent(uFnMatchActivity, &MatchActivity_Params, nullptr);
+};
+
+// Function ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1.__PlayerController_X__CloseConnectionWithReason_0x1
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+void U__PlayerController_X__CloseConnectionWithReason_0x1::__PlayerController_X__CloseConnectionWithReason_0x1()
+{
+    static UFunction* uFn__PlayerController_X__CloseConnectionWithReason_0x1 = nullptr;
+    if (!uFn__PlayerController_X__CloseConnectionWithReason_0x1)
+        uFn__PlayerController_X__CloseConnectionWithReason_0x1 = UFunction::FindFunction("Function ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1.__PlayerController_X__CloseConnectionWithReason_0x1");
+
+	U__PlayerController_X__CloseConnectionWithReason_0x1_exec__PlayerController_X__CloseConnectionWithReason_0x1_Params __PlayerController_X__CloseConnectionWithReason_0x1_Params;
+	memset(&__PlayerController_X__CloseConnectionWithReason_0x1_Params, 0, sizeof(__PlayerController_X__CloseConnectionWithReason_0x1_Params));
+
+	this->ProcessEvent(uFn__PlayerController_X__CloseConnectionWithReason_0x1, &__PlayerController_X__CloseConnectionWithReason_0x1_Params, nullptr);
 };
 
 // Function ProjectX.PostProcessManager_X.GetNextPostProcessOverride
