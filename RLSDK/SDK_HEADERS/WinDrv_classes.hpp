@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: WinDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -38,6 +39,18 @@
 # ========================================================================================= #
 */
 
+
+#ifndef STATIC_CLASS_GETTER
+#define STATIC_CLASS_GETTER(classPtr)                                                                                                      \
+    static UClass *StaticClass() {                                                                                                         \
+        static UClass *uClassPointer = nullptr;                                                                                            \
+                                                                                                                                           \
+        if (!uClassPointer)                                                                                                                \
+            uClassPointer = (classPtr);                                                                                                    \
+        return uClassPointer;                                                                                                              \
+    }
+#endif 
+
 // Class WinDrv.FacebookWindows
 // 0x0010 (0x00E8 - 0x00F8)
 class UFacebookWindows : public UFacebookIntegration
@@ -47,14 +60,7 @@ public:
 	struct FPointer                                    ChildProcHandle;                               // 0x00F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.FacebookWindows");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.FacebookWindows"))
 	void OnFacebookFriendsRequestComplete(class UHttpRequestInterface* OriginalRequest, class UHttpResponseInterface* Response, bool bDidSucceed);
 	void eventRequestFacebookFriends();
 	void OnFacebookMeRequestComplete(class UHttpRequestInterface* OriginalRequest, class UHttpResponseInterface* Response, bool bDidSucceed);
@@ -79,14 +85,7 @@ public:
 	class TArray<uint8_t>                              Payload;                                       // 0x0098 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindows");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.HttpRequestWindows"))
 	bool ProcessRequest();
 	class UHttpRequestInterface* SetHeader(const class FString& HeaderName, const class FString& HeaderValue);
 	class UHttpRequestInterface* SetContentAsString(const class FString& ContentString);
@@ -112,14 +111,7 @@ public:
 	class TArray<uint8_t>                              Payload;                                       // 0x0068 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.HttpResponseWindows");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.HttpResponseWindows"))
 	int32_t GetResponseCode();
 	class FString GetContentAsString();
 	void GetContent(class TArray<uint8_t>& outContent);
@@ -143,14 +135,7 @@ public:
 	uint8_t                                          UnknownData02[0x104];                        // 0x02BC (0x0104) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.WindowsClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.WindowsClient"))
 };
 
 // Class WinDrv.XnaForceFeedbackManager
@@ -161,14 +146,7 @@ public:
 	uint8_t                                          UnknownData00[0x18];                          // 0x0098 (0x0018) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.XnaForceFeedbackManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.XnaForceFeedbackManager"))
 };
 
 // Class WinDrv.HttpRequestWindowsMcp
@@ -180,14 +158,7 @@ public:
 	class FString                                      AppSecret;                                     // 0x00B8 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class WinDrv.HttpRequestWindowsMcp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.HttpRequestWindowsMcp"))
 	bool ProcessRequest();
 };
 

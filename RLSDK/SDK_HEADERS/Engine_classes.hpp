@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -24,110 +25,318 @@
 # ========================================================================================= #
 */
 
+#ifndef CONST_MINFLOORZ
 #define CONST_MINFLOORZ                                   0.7
+#endif
+#ifndef CONST_ACTORMAXSTEPHEIGHT
 #define CONST_ACTORMAXSTEPHEIGHT                          35.0
+#endif
+#ifndef CONST_RBSTATE_LOCATIONSCALE
 #define CONST_RBSTATE_LOCATIONSCALE                       100.0
+#endif
+#ifndef CONST_RBSTATE_QUATBITS
 #define CONST_RBSTATE_QUATBITS                            18
+#endif
+#ifndef CONST_RBSTATE_LINVELSCALE
 #define CONST_RBSTATE_LINVELSCALE                         100.0
+#endif
+#ifndef CONST_RBSTATE_ANGVELSCALE
 #define CONST_RBSTATE_ANGVELSCALE                         10000.0
+#endif
+#ifndef CONST_RB_None
 #define CONST_RB_None                                     0x00
+#endif
+#ifndef CONST_RB_NeedsUpdate
 #define CONST_RB_NeedsUpdate                              0x01
+#endif
+#ifndef CONST_RB_Sleeping
 #define CONST_RB_Sleeping                                 0x02
+#endif
+#ifndef CONST_REP_RBLOCATION_ERROR_TOLERANCE_SQ
 #define CONST_REP_RBLOCATION_ERROR_TOLERANCE_SQ           16.0f
+#endif
+#ifndef CONST_TRACEFLAG_ForceController
 #define CONST_TRACEFLAG_ForceController                   16
+#endif
+#ifndef CONST_TRACEFLAG_Blocking
 #define CONST_TRACEFLAG_Blocking                          8
+#endif
+#ifndef CONST_TRACEFLAG_SkipMovers
 #define CONST_TRACEFLAG_SkipMovers                        4
+#endif
+#ifndef CONST_TRACEFLAG_PhysicsVolumes
 #define CONST_TRACEFLAG_PhysicsVolumes                    2
+#endif
+#ifndef CONST_TRACEFLAG_Bullet
 #define CONST_TRACEFLAG_Bullet                            1
+#endif
+#ifndef CONST_SDPG_NumBits
 #define CONST_SDPG_NumBits                                3
+#endif
+#ifndef CONST_BLOCKEDPATHCOST
 #define CONST_BLOCKEDPATHCOST                             10000000
+#endif
+#ifndef CONST_LATENT_MOVETOWARD
 #define CONST_LATENT_MOVETOWARD                           503
+#endif
+#ifndef CONST_INFINITE_PATH_COST
 #define CONST_INFINITE_PATH_COST                          10000000
+#endif
+#ifndef CONST_MAX_ACTIVE_CAMERA_ANIMS
 #define CONST_MAX_ACTIVE_CAMERA_ANIMS                     8
+#endif
+#ifndef CONST_GET_SAVE_SLOT_INVALID
 #define CONST_GET_SAVE_SLOT_INVALID                       -1
+#endif
+#ifndef CONST_GET_SAVE_SLOT_ERROR
 #define CONST_GET_SAVE_SLOT_ERROR                         -2
+#endif
+#ifndef CONST_COMMON_DATA_SAVE_SLOT_INDEX
 #define CONST_COMMON_DATA_SAVE_SLOT_INDEX                 -1
+#endif
+#ifndef CONST_SAVE_SYSTEM_VERSION_KEY
 #define CONST_SAVE_SYSTEM_VERSION_KEY                     "CloudSaveSystemVersion"
+#endif
+#ifndef CONST_SAVE_DATA_BLOB_NAME_KEY
 #define CONST_SAVE_DATA_BLOB_NAME_KEY                     "DataBlobName"
+#endif
+#ifndef CONST_DATA_STORE_ID_KEY
 #define CONST_DATA_STORE_ID_KEY                           "DataStoreID"
+#endif
+#ifndef CONST_NUM_SAVE_SLOTS_KEY
 #define CONST_NUM_SAVE_SLOTS_KEY                          "NumSaveSlots"
+#endif
+#ifndef CONST_DEFAULT_SIZE_X
 #define CONST_DEFAULT_SIZE_X                              1024
+#endif
+#ifndef CONST_DEFAULT_SIZE_Y
 #define CONST_DEFAULT_SIZE_Y                              768
+#endif
+#ifndef CONST_MAX_SUPPORTED_GAMEPADS
 #define CONST_MAX_SUPPORTED_GAMEPADS                      4
+#endif
+#ifndef CONST_MaxHistory
 #define CONST_MaxHistory                                  16
+#endif
+#ifndef CONST_COVERLINK_DangerDist
 #define CONST_COVERLINK_DangerDist                        1536.f
+#endif
+#ifndef CONST_COVERLINK_EdgeExposureDot
 #define CONST_COVERLINK_EdgeExposureDot                   0.85f
+#endif
+#ifndef CONST_COVERLINK_EdgeCheckDot
 #define CONST_COVERLINK_EdgeCheckDot                      0.25f
+#endif
+#ifndef CONST_COVERLINK_ExposureDot
 #define CONST_COVERLINK_ExposureDot                       0.4f
+#endif
+#ifndef CONST_EpochYear
 #define CONST_EpochYear                                   1970
+#endif
+#ifndef CONST_SecondsInMinute
 #define CONST_SecondsInMinute                             60
+#endif
+#ifndef CONST_SecondsInHour
 #define CONST_SecondsInHour                               3600
+#endif
+#ifndef CONST_SecondsInDay
 #define CONST_SecondsInDay                                86400
+#endif
+#ifndef CONST_SecondsInMonth
 #define CONST_SecondsInMonth                              2629743
+#endif
+#ifndef CONST_SecondsInYear
 #define CONST_SecondsInYear                               31556926
+#endif
+#ifndef CONST_NULLCHARACTER
 #define CONST_NULLCHARACTER                               127
+#endif
+#ifndef CONST_FSM_DEFAULTRECYCLETIME
 #define CONST_FSM_DEFAULTRECYCLETIME                      0.2
+#endif
+#ifndef CONST_HeaderFlags_NoEventStrings
 #define CONST_HeaderFlags_NoEventStrings                  1
+#endif
+#ifndef CONST_GAMEEVENT_MATCH_STARTED
 #define CONST_GAMEEVENT_MATCH_STARTED                     0
+#endif
+#ifndef CONST_GAMEEVENT_MATCH_ENDED
 #define CONST_GAMEEVENT_MATCH_ENDED                       1
+#endif
+#ifndef CONST_GAMEEVENT_ROUND_STARTED
 #define CONST_GAMEEVENT_ROUND_STARTED                     2
+#endif
+#ifndef CONST_GAMEEVENT_ROUND_ENDED
 #define CONST_GAMEEVENT_ROUND_ENDED                       3
+#endif
+#ifndef CONST_GAMEEVENT_GAME_CLASS
 #define CONST_GAMEEVENT_GAME_CLASS                        6
+#endif
+#ifndef CONST_GAMEEVENT_GAME_OPTION_URL
 #define CONST_GAMEEVENT_GAME_OPTION_URL                   7
+#endif
+#ifndef CONST_GAMEEVENT_GAME_MAPNAME
 #define CONST_GAMEEVENT_GAME_MAPNAME                      8
+#endif
+#ifndef CONST_GAMEEVENT_MEMORYUSAGE_POLL
 #define CONST_GAMEEVENT_MEMORYUSAGE_POLL                  35
+#endif
+#ifndef CONST_GAMEEVENT_FRAMERATE_POLL
 #define CONST_GAMEEVENT_FRAMERATE_POLL                    36
+#endif
+#ifndef CONST_GAMEEVENT_NETWORKUSAGEIN_POLL
 #define CONST_GAMEEVENT_NETWORKUSAGEIN_POLL               37
+#endif
+#ifndef CONST_GAMEEVENT_NETWORKUSAGEOUT_POLL
 #define CONST_GAMEEVENT_NETWORKUSAGEOUT_POLL              38
+#endif
+#ifndef CONST_GAMEEVENT_PING_POLL
 #define CONST_GAMEEVENT_PING_POLL                         39
+#endif
+#ifndef CONST_GAMEEVENT_RENDERTHREAD_POLL
 #define CONST_GAMEEVENT_RENDERTHREAD_POLL                 40
+#endif
+#ifndef CONST_GAMEEVENT_GAMETHREAD_POLL
 #define CONST_GAMEEVENT_GAMETHREAD_POLL                   41
+#endif
+#ifndef CONST_GAMEEVENT_GPUFRAMETIME_POLL
 #define CONST_GAMEEVENT_GPUFRAMETIME_POLL                 42
+#endif
+#ifndef CONST_GAMEEVENT_FRAMETIME_POLL
 #define CONST_GAMEEVENT_FRAMETIME_POLL                    43
+#endif
+#ifndef CONST_GAMEEVENT_TEAM_CREATED
 #define CONST_GAMEEVENT_TEAM_CREATED                      50
+#endif
+#ifndef CONST_GAMEEVENT_TEAM_GAME_SCORE
 #define CONST_GAMEEVENT_TEAM_GAME_SCORE                   51
+#endif
+#ifndef CONST_GAMEEVENT_TEAM_MATCH_WON
 #define CONST_GAMEEVENT_TEAM_MATCH_WON                    4
+#endif
+#ifndef CONST_GAMEEVENT_TEAM_ROUND_WON
 #define CONST_GAMEEVENT_TEAM_ROUND_WON                    5
+#endif
+#ifndef CONST_GAMEEVENT_TEAM_ROUND_STALEMATE
 #define CONST_GAMEEVENT_TEAM_ROUND_STALEMATE              52
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_LOGIN
 #define CONST_GAMEEVENT_PLAYER_LOGIN                      100
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_LOGOUT
 #define CONST_GAMEEVENT_PLAYER_LOGOUT                     101
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_SPAWN
 #define CONST_GAMEEVENT_PLAYER_SPAWN                      102
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_MATCH_WON
 #define CONST_GAMEEVENT_PLAYER_MATCH_WON                  103
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_KILL
 #define CONST_GAMEEVENT_PLAYER_KILL                       104
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_LOCATION_POLL
 #define CONST_GAMEEVENT_PLAYER_LOCATION_POLL              105
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_TEAMCHANGE
 #define CONST_GAMEEVENT_PLAYER_TEAMCHANGE                 106
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_KILL_STREAK
 #define CONST_GAMEEVENT_PLAYER_KILL_STREAK                107
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_DEATH
 #define CONST_GAMEEVENT_PLAYER_DEATH                      108
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_ROUND_WON
 #define CONST_GAMEEVENT_PLAYER_ROUND_WON                  109
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_ROUND_STALEMATE
 #define CONST_GAMEEVENT_PLAYER_ROUND_STALEMATE            110
+#endif
+#ifndef CONST_GAMEEVENT_WEAPON_DAMAGE
 #define CONST_GAMEEVENT_WEAPON_DAMAGE                     150
+#endif
+#ifndef CONST_GAMEEVENT_WEAPON_DAMAGE_MELEE
 #define CONST_GAMEEVENT_WEAPON_DAMAGE_MELEE               151
+#endif
+#ifndef CONST_GAMEEVENT_WEAPON_FIRED
 #define CONST_GAMEEVENT_WEAPON_FIRED                      152
+#endif
+#ifndef CONST_GAMEEVENT_PLAYER_KILL_NORMAL
 #define CONST_GAMEEVENT_PLAYER_KILL_NORMAL                200
+#endif
+#ifndef CONST_GAMEEVENT_GENERIC_PARAM_LIST_START
 #define CONST_GAMEEVENT_GENERIC_PARAM_LIST_START          300
+#endif
+#ifndef CONST_GAMEEVENT_GENERIC_PARAM_LIST_END
 #define CONST_GAMEEVENT_GENERIC_PARAM_LIST_END            400
+#endif
+#ifndef CONST_GAMEEVENT_GAME_SPECIFIC
 #define CONST_GAMEEVENT_GAME_SPECIFIC                     1000
+#endif
+#ifndef CONST_GAMEEVENT_MAX_EVENTID
 #define CONST_GAMEEVENT_MAX_EVENTID                       0x0000FFFF
+#endif
+#ifndef CONST_SCENEFILTER_None
 #define CONST_SCENEFILTER_None                            0x00000000
+#endif
+#ifndef CONST_SCENEFILTER_IncludeTransient
 #define CONST_SCENEFILTER_IncludeTransient                0x00000001
+#endif
+#ifndef CONST_SCENEFILTER_InputProcessorOnly
 #define CONST_SCENEFILTER_InputProcessorOnly              0x00000002
+#endif
+#ifndef CONST_SCENEFILTER_PausersOnly
 #define CONST_SCENEFILTER_PausersOnly                     0x00000004
+#endif
+#ifndef CONST_SCENEFILTER_PrimitiveUsersOnly
 #define CONST_SCENEFILTER_PrimitiveUsersOnly              0x00000008
+#endif
+#ifndef CONST_SCENEFILTER_UsesPostProcessing
 #define CONST_SCENEFILTER_UsesPostProcessing              0x00000010
+#endif
+#ifndef CONST_SCENEFILTER_ReceivesFocus
 #define CONST_SCENEFILTER_ReceivesFocus                   0x00000020
+#endif
+#ifndef CONST_SCENEFILTER_Any
 #define CONST_SCENEFILTER_Any                             0xFFFFFFFF
+#endif
+#ifndef CONST_MAX_INSTANCES_PER_CLASS
 #define CONST_MAX_INSTANCES_PER_CLASS                     5
+#endif
+#ifndef CONST_MAX_BOOKMARK_NUMBER
 #define CONST_MAX_BOOKMARK_NUMBER                         10
+#endif
+#ifndef CONST_MAXCLIENTUPDATEINTERVAL
 #define CONST_MAXCLIENTUPDATEINTERVAL                     0.25
+#endif
+#ifndef CONST_CLIENTADJUSTUPDATECOST
 #define CONST_CLIENTADJUSTUPDATECOST                      180.0
+#endif
+#ifndef CONST_MAXNEARZEROVELOCITYSQUARED
 #define CONST_MAXNEARZEROVELOCITYSQUARED                  9.0
+#endif
+#ifndef CONST_MAXPOSITIONERRORSQUARED
 #define CONST_MAXPOSITIONERRORSQUARED                     3.0
+#endif
+#ifndef CONST_MAX_AIGROUP_NUMBER
 #define CONST_MAX_AIGROUP_NUMBER                          10
+#endif
+#ifndef CONST_LINECHECK_GRANULARITY
 #define CONST_LINECHECK_GRANULARITY                       768.f
+#endif
+#ifndef CONST_NUM_PATHFINDING_PARAMS
 #define CONST_NUM_PATHFINDING_PARAMS                      9
+#endif
+#ifndef CONST_NumBreadCrumbs
 #define CONST_NumBreadCrumbs                              10
+#endif
+#ifndef CONST_PROCBUILDING_VERSION
 #define CONST_PROCBUILDING_VERSION                        1
+#endif
+#ifndef CONST_ROOF_MINZ
 #define CONST_ROOF_MINZ                                   0.7
+#endif
 
 /*
 # ========================================================================================= #
@@ -1976,7 +2185,8 @@ enum class EConsoleType : uint8_t
 	CONSOLE_Prospero                                   = 16,
 	CONSOLE_Scorpio                                    = 17,
 	CONSOLE_Ounce                                      = 18,
-	CONSOLE_END                                        = 19
+	CONSOLE_Edmonton                                   = 19,
+	CONSOLE_END                                        = 20
 };
 
 // Enum Engine.WorldInfo.EPreferredLightmapType
@@ -3604,6 +3814,18 @@ enum class EStatsFetchType : uint8_t
 # ========================================================================================= #
 */
 
+
+#ifndef STATIC_CLASS_GETTER
+#define STATIC_CLASS_GETTER(classPtr)                                                                                                      \
+    static UClass *StaticClass() {                                                                                                         \
+        static UClass *uClassPointer = nullptr;                                                                                            \
+                                                                                                                                           \
+        if (!uClassPointer)                                                                                                                \
+            uClassPointer = (classPtr);                                                                                                    \
+        return uClassPointer;                                                                                                              \
+    }
+#endif 
+
 // Class Engine.ScriptGroup_ORS
 // 0x0008 (0x0060 - 0x0068)
 class UScriptGroup_ORS : public UObject
@@ -3612,14 +3834,7 @@ public:
 	class UObject*                                     GroupOwner;                                    // 0x0060 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ScriptGroup_ORS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ScriptGroup_ORS"))
 	void ClearTimerClass(class UClass* EventClass);
 	void ClearTimer(class UObject* Event);
 	void SetGameTimer(class UObject* Event, float Delay, const struct FTimerOptions& optionalOptions);
@@ -3808,14 +4023,7 @@ public:
 	class TArray<class UClass*>                        IgnoredTouchClasses;                           // 0x0258 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Actor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Actor"))
 	class USpriteComponent* GetActorSpriteComponent();
 	class UActorComponent* GetComponent(class UClass* ComponentClass);
 	class AActor* SpawnInstance(class AActor* optionalSpawnOwner, const class FName& optionalSpawnTag, const struct FVector& optionalSpawnLocation, const struct FRotator& optionalSpawnRotation, bool optionalBNoCollisionFail);
@@ -4081,14 +4289,7 @@ class AInfo : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Info");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Info"))
 };
 
 // Class Engine.ZoneInfo
@@ -4101,14 +4302,7 @@ public:
 	uint32_t                                           bSoftKillZ : 1;                                // 0x0270 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ZoneInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ZoneInfo"))
 };
 
 // Class Engine.WorldInfo
@@ -4307,14 +4501,7 @@ public:
 	struct FScriptDelegate                             __DemoPlayTimeDilation__ChangeNotify;          // 0x0B38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WorldInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WorldInfo"))
 	void __DemoPlayTimeDilation__ChangeNotifyFunc();
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	bool NeedsLightingRebuild();
@@ -4366,6 +4553,7 @@ public:
 	static bool IsPlayInPreview();
 	static bool IsPlayInEditor();
 	static bool IsWithGFx();
+	static bool IsSteamDeck();
 	static bool IsEpicGamesStoreBuild();
 	static class FString GetConsoleTypeName(EConsoleType ConsoleType);
 	static EConsoleType GetConsoleType();
@@ -4405,14 +4593,7 @@ public:
 	struct FScriptDelegate                             __OnFindDLCComplete__Delegate;                 // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DownloadableContentEnumerator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DownloadableContentEnumerator"))
 	void TriggerFindDLCDelegates();
 	void InstallDLC(const class FString& DLCName);
 	void InstallAllDLC();
@@ -4438,14 +4619,7 @@ public:
 	struct FScriptDelegate                             __OnRefreshComplete__Delegate;                 // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DownloadableContentManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DownloadableContentManager"))
 	void OnRefreshComplete();
 	void AddPackagesToFullyLoad(const class FString& Filename);
 	void RefreshDLCEnumComplete();
@@ -4741,14 +4915,7 @@ public:
 	struct FScriptDelegate                             __EventPreLaunchURL__Delegate;                 // 0x0940 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Engine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Engine"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	float GetPlatformMapLoadTime(EOnlinePlatform Platform);
 	static bool IsFeatureEnabled(const class FName& FeatureName);
@@ -4841,14 +5008,7 @@ public:
 	struct FScriptDelegate                             __EventTravelMapNotFound__Delegate;            // 0x0B48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameEngine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameEngine"))
 	void EventTravelMapNotFound(const class FString& MapName);
 	static bool HasSecondaryScreenActive();
 	static class UDownloadableContentManager* GetDLCManager();
@@ -4865,14 +5025,7 @@ class UEngineBaseTypes : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EngineBaseTypes");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EngineBaseTypes"))
 };
 
 // Class Engine.ISetParameter
@@ -4882,14 +5035,7 @@ class UISetParameter : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ISetParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ISetParameter"))
 	void SetActorParameter(const class FName& Key, class AActor* Value);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
 	void SetVectorParameter(const class FName& Key, const struct FVector& Value);
@@ -4904,14 +5050,7 @@ class U_Types_Engine : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine._Types_Engine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine._Types_Engine"))
 };
 
 // Class Engine.Brush
@@ -4931,14 +5070,7 @@ public:
 	class TArray<struct FGeomSelection>                SavedSelections;                               // 0x0288 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Brush");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Brush"))
 };
 
 // Class Engine.BrushShape
@@ -4948,14 +5080,7 @@ class ABrushShape : public ABrush
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BrushShape");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BrushShape"))
 };
 
 // Class Engine.Volume
@@ -4969,14 +5094,7 @@ public:
 	uint32_t                                           bPawnsOnly : 1;                                // 0x02A0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Volume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Volume"))
 	void eventProcessActorSetVolume(class AActor* Other);
 	void eventCollisionChanged();
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -4995,14 +5113,7 @@ public:
 	uint32_t                                           bBlockCamera : 1;                              // 0x02A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BlockingVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BlockingVolume"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -5015,14 +5126,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x02B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicBlockingVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicBlockingVolume"))
 	void ApplyCheckpointRecord(struct ADynamicBlockingVolume_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ADynamicBlockingVolume_FCheckpointRecord& outRecord);
 	void eventPostBeginPlay();
@@ -5038,14 +5142,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x02B8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CullDistanceVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CullDistanceVolume"))
 };
 
 // Class Engine.LevelGridVolume
@@ -5063,14 +5160,7 @@ public:
 	struct FKConvexElem                                CellConvexElem;                                // 0x02D0 (0x0080) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelGridVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelGridVolume"))
 };
 
 // Class Engine.LevelStreamingVolume
@@ -5089,14 +5179,7 @@ public:
 	float                                              TestVolumeDistance;                            // 0x02C0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreamingVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingVolume"))
 	void ApplyCheckpointRecord(struct ALevelStreamingVolume_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ALevelStreamingVolume_FCheckpointRecord& outRecord);
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -5110,14 +5193,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightmassCharacterIndirectDetailVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightmassCharacterIndirectDetailVolume"))
 };
 
 // Class Engine.LightmassImportanceVolume
@@ -5128,14 +5204,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightmassImportanceVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightmassImportanceVolume"))
 };
 
 // Class Engine.MassiveLODOverrideVolume
@@ -5146,14 +5215,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MassiveLODOverrideVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MassiveLODOverrideVolume"))
 };
 
 // Class Engine.PathBlockingVolume
@@ -5164,14 +5226,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathBlockingVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathBlockingVolume"))
 };
 
 // Class Engine.PhysicsVolume
@@ -5196,14 +5251,7 @@ public:
 	class APhysicsVolume*                              NextPhysicsVolume;                             // 0x02D0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicsVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicsVolume"))
 	void NotifyPawnBecameViewTarget(class APawn* P, class APlayerController* PC);
 	void ModifyPlayer(class APawn* PlayerPawn);
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
@@ -5225,14 +5273,7 @@ class ADefaultPhysicsVolume : public APhysicsVolume
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DefaultPhysicsVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DefaultPhysicsVolume"))
 	void eventDestroyed();
 };
 
@@ -5244,14 +5285,7 @@ public:
 	float                                              GravityZ;                                      // 0x02D8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GravityVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GravityVolume"))
 };
 
 // Class Engine.PortalVolume
@@ -5263,14 +5297,7 @@ public:
 	class TArray<class APortalTeleporter*>             Portals;                                       // 0x02A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PortalVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PortalVolume"))
 };
 
 // Class Engine.PostProcessVolume
@@ -5286,14 +5313,7 @@ public:
 	class APostProcessVolume*                          NextLowerPriorityVolume;                       // 0x0418 (0x0008) [0x0000000001002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PostProcessVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PostProcessVolume"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -5307,14 +5327,7 @@ public:
 	class TArray<class AActor*>                        OverrideInvisibleActors;                       // 0x02B8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrecomputedVisibilityOverrideVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrecomputedVisibilityOverrideVolume"))
 };
 
 // Class Engine.PrecomputedVisibilityVolume
@@ -5325,14 +5338,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrecomputedVisibilityVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrecomputedVisibilityVolume"))
 };
 
 // Class Engine.ReverbVolume
@@ -5349,14 +5355,7 @@ public:
 	class AReverbVolume*                               NextLowerPriorityVolume;                       // 0x02E8 (0x0008) [0x0000000001002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ReverbVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ReverbVolume"))
 };
 
 // Class Engine.TriggerVolume
@@ -5367,14 +5366,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TriggerVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TriggerVolume"))
 };
 
 // Class Engine.DynamicSMActor
@@ -5397,14 +5389,7 @@ public:
 	struct FVector                                     ReplicatedMeshScale3D;                         // 0x02BC (0x000C) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicSMActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicSMActor"))
 	void SetLightEnvironmentToNotBeDynamic();
 	void eventDetach(class AActor* Other);
 	void eventAttach(class AActor* Other);
@@ -5441,14 +5426,7 @@ public:
 	class UAudioComponent*                             AmbientSoundComponent;                         // 0x0310 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpActor"))
 	void ApplyCheckpointRecord(struct AInterpActor_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct AInterpActor_FCheckpointRecord& outRecord);
 	bool ShouldSaveForCheckpoint();
@@ -5479,14 +5457,7 @@ public:
 	uint32_t                                           bCurrentlyActive : 1;                          // 0x0278 (0x0004) [0x0000000100000020] [0x00000004] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Emitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Emitter"))
 	void HideSelf();
 	void ApplyCheckpointRecord(struct AEmitter_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct AEmitter_FCheckpointRecord& outRecord);
@@ -5515,14 +5486,7 @@ public:
 	class TArray<class UParticleSystemComponent*>      ParticleSystemComponents;                      // 0x0280 (0x0010) [0x000000000448000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticEmitterCollectionActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticEmitterCollectionActor"))
 };
 
 // Class Engine.EmitterPool
@@ -5545,14 +5509,7 @@ public:
 	class TArray<class UMaterialInstanceConstant*>     FreeMatInstConsts;                             // 0x02C8 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EmitterPool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EmitterPool"))
 	class UParticleSystemComponent* SpawnEmitterCustomLifetime(class UParticleSystem* EmitterTemplate, bool optionalBSkipAutoActivate);
 	class UParticleSystemComponent* SpawnEmitterMeshAttachment(class UParticleSystem* EmitterTemplate, class USkeletalMeshComponent* Mesh, const class FName& AttachPointName, bool optionalBAttachToSocket, const struct FVector& optionalRelativeLoc, const struct FRotator& optionalRelativeRot);
 	class UParticleSystemComponent* SpawnEmitter(class UParticleSystem* EmitterTemplate, const struct FVector& SpawnLocation, const struct FRotator& optionalSpawnRotation, class AActor* optionalAttachToActor, class AActor* optionalInInstigator, int32_t optionalMaxDLEPooledReuses, bool optionalBInheritScaleFromBase);
@@ -5608,14 +5565,7 @@ public:
 	class TArray<struct FKismetDrawTextInfo>           KismetTextInfo;                                // 0x02F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HUD");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HUD"))
 	void eventOnLostFocusPause(bool bEnable);
 	void NotifyBindPostProcessEffects();
 	static class UFont* GetFontSizeIndex(int32_t FontSize);
@@ -5687,14 +5637,7 @@ public:
 	class FString                                      CommandStringToExec;                           // 0x0328 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AutoTestManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AutoTestManager"))
 	float CalcTravelTheWorldTime(int32_t NumTravelLocations, int32_t NumRotations);
 	void PrintOutTravelWorldTimes(int32_t TotalTimeInSeconds);
 	void SetIncrementsForLoops(float NumTravelLocations);
@@ -5733,14 +5676,7 @@ public:
 	float                                              AutoSelectHeight;                              // 0x027C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverGroup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverGroup"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void ToggleGroup();
 	void DisableGroup();
@@ -5760,14 +5696,7 @@ public:
 	uint32_t                                           bWantsAsyncWrites : 1;                         // 0x0284 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FileWriter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FileWriter"))
 	void eventDestroyed();
 	void Logf(const class FString& logString);
 	void CloseFile();
@@ -5781,14 +5710,7 @@ class AFileLog : public AFileWriter
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FileLog");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FileLog"))
 	void CloseLog();
 	void OpenLog(const class FString& LogFilename, const class FString& optionalExtension, bool optionalBUnique);
 };
@@ -5890,14 +5812,7 @@ public:
 	struct FScriptDelegate                             __NameSanitizedDelegate__Delegate;             // 0x0470 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameInfo"))
 	void eventClientMapLoadFail(const struct FUniqueNetId& PlayerID, const class FString& MapName);
 	void ClearOnlineDelegates();
 	void InitCrowdPopulationManager();
@@ -6053,14 +5968,7 @@ public:
 	uint32_t                                           bUserAdded : 1;                                // 0x0280 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Mutator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Mutator"))
 	void ScoreKill(class AController* Killer, class AController* Killed);
 	void ScoreObjective(class APlayerReplicationInfo* Scorer, int32_t Score);
 	bool CheckEndGame(class APlayerReplicationInfo* Winner, const class FString& Reason);
@@ -6096,14 +6004,7 @@ public:
 	int32_t                                            RouteIndexOffset;                              // 0x028C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Route");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Route"))
 	int32_t MoveOntoRoutePath(class APawn* P, ERouteDirection optionalRouteDirection, float optionalDistFudgeFactor);
 	int32_t ResolveRouteIndex(int32_t Idx, ERouteDirection RouteDirection, uint8_t& outOut_bComplete, uint8_t& outOut_bReverse);
 };
@@ -6116,14 +6017,7 @@ public:
 	class UWindPointSourceComponent*                   Component;                                     // 0x0268 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WindPointSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WindPointSource"))
 };
 
 // Class Engine.Keypoint
@@ -6134,14 +6028,7 @@ public:
 	class USpriteComponent*                            SpriteComp;                                    // 0x0268 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Keypoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Keypoint"))
 };
 
 // Class Engine.TargetPoint
@@ -6153,14 +6040,7 @@ public:
 	int32_t                                            SpawnRefCount;                                 // 0x0278 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TargetPoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TargetPoint"))
 };
 
 // Class Engine.MaterialInstanceActor
@@ -6171,14 +6051,7 @@ public:
 	class UMaterialInstanceConstant*                   MatInst;                                       // 0x0268 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInstanceActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInstanceActor"))
 };
 
 // Class Engine.MatineeActor
@@ -6200,14 +6073,7 @@ public:
 	float                                              ClientSidePositionErrorTolerance;              // 0x0348 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MatineeActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MatineeActor"))
 	void CheckPriorityRefresh();
 	void eventUpdate();
 	void AddAIGroupActor(class UInterpGroupInstAI* AIGroupInst);
@@ -6275,14 +6141,7 @@ public:
 	float                                              LastAnchoredPawnTime;                          // 0x0380 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavigationPoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavigationPoint"))
 	class FString eventGetDebugAbbrev();
 	void ApplyCheckpointRecord(struct ANavigationPoint_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ANavigationPoint_FCheckpointRecord& outRecord);
@@ -6346,14 +6205,7 @@ public:
 	ECoverLocationDescription                          LocationDescription;                           // 0x0420 (0x0001) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverLink");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverLink"))
 	class FString eventGetDebugAbbrev();
 	ECoverLocationDescription GetLocationDescription(int32_t SlotIdx);
 	class FString eventGetDebugString(int32_t SlotIdx);
@@ -6405,14 +6257,7 @@ public:
 	class AController*                                 CurrentUser;                                   // 0x0388 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicAnchor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicAnchor"))
 };
 
 // Class Engine.LiftCenter
@@ -6429,14 +6274,7 @@ public:
 	class ATrigger*                                    LiftTrigger;                                   // 0x03A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LiftCenter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LiftCenter"))
 	bool ProceedWithMove(class APawn* Other);
 	bool eventSuggestMovePreparation(class APawn* Other);
 	class AActor* eventSpecialHandling(class APawn* Other);
@@ -6453,14 +6291,7 @@ public:
 	uint32_t                                           bExitOnly : 1;                                 // 0x0390 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LiftExit");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LiftExit"))
 	bool eventSuggestMovePreparation(class APawn* Other);
 	void WaitForLift(class APawn* Other);
 	bool CanBeReachedFromLiftBy(class APawn* Other);
@@ -6474,14 +6305,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0384 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathNode"))
 	class FString eventGetDebugAbbrev();
 };
 
@@ -6494,14 +6318,7 @@ public:
 	float                                              StartingHeight;                                // 0x038C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.VolumePathNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.VolumePathNode"))
 };
 
 // Class Engine.PlayerStart
@@ -6518,14 +6335,7 @@ public:
 	int32_t                                            SelectionIndex;                                // 0x0394 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlayerStart");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlayerStart"))
 	void eventPostRenderFor(class APlayerController* PC, class UCanvas* Canvas, const struct FVector& CameraPosition, const struct FVector& CameraDir);
 	void OnToggle(class USeqAct_Toggle* Action);
 };
@@ -6539,14 +6349,7 @@ public:
 	class APortalTeleporter*                           MyPortal;                                      // 0x0388 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PortalMarker");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PortalMarker"))
 	bool CanTeleport(class AActor* A);
 };
 
@@ -6602,14 +6405,7 @@ public:
 	struct FVector                                     DebugPathStartLocation;                        // 0x0498 (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Pylon");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Pylon"))
 	bool CanReachPylon(class APylon* DestPylon, class AController* C);
 	void OnToggle(class USeqAct_Toggle* Action);
 	bool eventIsEnabled();
@@ -6632,14 +6428,7 @@ public:
 	uint32_t                                           bOpen : 1;                                     // 0x04A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AISwitchablePylon");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AISwitchablePylon"))
 	bool eventIsEnabled();
 	void eventSetEnabled(bool bEnabled);
 	void PostBeginPlay();
@@ -6654,14 +6443,7 @@ public:
 	uint32_t                                           bMoving : 1;                                   // 0x04A8 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicPylon");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicPylon"))
 	void eventStoppedMoving();
 	void eventStartedMoving();
 	void FlushDynamicEdges();
@@ -6687,14 +6469,7 @@ public:
 	float                                              LastFired;                                     // 0x03B0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Teleporter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Teleporter"))
 	class AActor* eventSpecialHandling(class APawn* Other);
 	void eventPostTouch(class AActor* Other);
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
@@ -6711,14 +6486,7 @@ public:
 	class FString                                      Text;                                          // 0x0268 (0x0010) [0x0000001000400001] (CPF_Edit | CPF_NeedCtorLink | CPF_NotForConsole)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Note");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Note"))
 };
 
 // Class Engine.RigidBodyBase
@@ -6728,14 +6496,7 @@ class ARigidBodyBase : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RigidBodyBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RigidBodyBase"))
 };
 
 // Class Engine.SceneCaptureActor
@@ -6746,14 +6507,7 @@ public:
 	class USceneCaptureComponent*                      SceneCapture;                                  // 0x0268 (0x0008) [0x000000000408000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureActor"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -6765,14 +6519,7 @@ public:
 	class UDrawFrustumComponent*                       DrawFrustum;                                   // 0x0270 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCapture2DActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCapture2DActor"))
 };
 
 // Class Engine.SceneCaptureCubeMapActor
@@ -6784,14 +6531,7 @@ public:
 	class UMaterialInstanceConstant*                   CubeMaterialInst;                              // 0x0278 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureCubeMapActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureCubeMapActor"))
 };
 
 // Class Engine.SceneCaptureReflectActor
@@ -6803,14 +6543,7 @@ public:
 	class UMaterialInstanceConstant*                   ReflectMaterialInst;                           // 0x0278 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureReflectActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureReflectActor"))
 };
 
 // Class Engine.SceneCapturePortalActor
@@ -6820,14 +6553,7 @@ class ASceneCapturePortalActor : public ASceneCaptureReflectActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCapturePortalActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCapturePortalActor"))
 };
 
 // Class Engine.PortalTeleporter
@@ -6844,14 +6570,7 @@ public:
 	uint32_t                                           bCanTeleportVehicles : 1;                      // 0x0298 (0x0004) [0x0000000000000000] [0x00000004] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PortalTeleporter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PortalTeleporter"))
 	class UTextureRenderTarget2D* CreatePortalTexture();
 	struct FVector TransformHitLocation(const struct FVector& HitLocation);
 	struct FVector TransformVectorDir(const struct FVector& V);
@@ -6865,14 +6584,7 @@ class AStaticMeshActorBase : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshActorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshActorBase"))
 };
 
 // Class Engine.StaticMeshActor
@@ -6891,14 +6603,7 @@ public:
 	class TArray<struct FPreCombinedStaticMeshActor>   PreCombinedStaticMeshActors;                   // 0x0278 (0x0010) [0x0000000800420003] (CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshActor"))
 	void eventPreBeginPlay();
 };
 
@@ -6911,14 +6616,7 @@ public:
 	int32_t                                            MaxStaticMeshComponents;                       // 0x0278 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshCollectionActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshCollectionActor"))
 };
 
 // Class Engine.StaticMeshActorBasedOnExtremeContent
@@ -6931,14 +6629,7 @@ public:
 	class TArray<struct FSMMaterialSetterDatum>        NonExtremeContent;                             // 0x0280 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshActorBasedOnExtremeContent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshActorBasedOnExtremeContent"))
 	void SetMaterialBasedOnExtremeContent();
 	void eventPostBeginPlay();
 };
@@ -6953,14 +6644,7 @@ public:
 	float                                              AITriggerDelay;                                // 0x0274 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Trigger");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Trigger"))
 	void ApplyCheckpointRecord(struct ATrigger_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ATrigger_FCheckpointRecord& outRecord);
 	bool ShouldSaveForCheckpoint();
@@ -6977,14 +6661,7 @@ class ATrigger_PawnsOnly : public ATrigger
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Trigger_PawnsOnly");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Trigger_PawnsOnly"))
 };
 
 // Class Engine.ActorComponent
@@ -7004,14 +6681,7 @@ public:
 	ETickingGroup                                      TickGroup;                                     // 0x009C (0x0001) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorComponent"))
 	class APlayerController* GetFirstLocalViewer();
 	void SetLocalViewer(class APlayerController* NewLocalViewer);
 	void ClearLocalViewers();
@@ -7115,14 +6785,7 @@ public:
 	struct FScriptDelegate                             __OnQueueSubtitles__Delegate;                  // 0x02F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AudioComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AudioComponent"))
 	void eventOcclusionChanged(bool bNowOccluded);
 	void OnQueueSubtitles(const class TArray<struct FSubtitleCue>& Subtitles, float CueDuration);
 	void OnAudioFinished(class UAudioComponent* AC);
@@ -7149,14 +6812,7 @@ public:
 	class TArray<struct FInterpPointOnSpline>          Points;                                        // 0x0310 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineAudioComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineAudioComponent"))
 };
 
 // Class Engine.MultiCueSplineAudioComponent
@@ -7168,14 +6824,7 @@ public:
 	int32_t                                            CurrentSlotIndex;                              // 0x0330 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MultiCueSplineAudioComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MultiCueSplineAudioComponent"))
 };
 
 // Class Engine.SimpleSplineAudioComponent
@@ -7196,14 +6845,7 @@ public:
 	class USoundNode*                                  NotifyBufferFinishedHook;                      // 0x0350 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SimpleSplineAudioComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SimpleSplineAudioComponent"))
 };
 
 // Class Engine.SimpleSplineNonLoopAudioComponent
@@ -7223,14 +6865,7 @@ public:
 	float                                              NextSoundTime;                                 // 0x037C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SimpleSplineNonLoopAudioComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SimpleSplineNonLoopAudioComponent"))
 };
 
 // Class Engine.GroupComponent_ORS
@@ -7249,14 +6884,7 @@ public:
 	struct FScriptDelegate                             __ComponentCondition__Delegate;                // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GroupComponent_ORS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GroupComponent_ORS"))
 	static void DiffComponents(class TArray<struct FComponentTemplate>& outSetA, class TArray<struct FComponentTemplate>& outSetB, class TArray<struct FComponentTemplate>& outOnlyInSetA, class TArray<struct FComponentTemplate>& outCommonToBothSets, class TArray<struct FComponentTemplate>& outOnlyInSetB);
 	void SetParent(class UObject* NewParentGroup);
 	void RemoveComponents(class TArray<struct FComponentTemplate>& outComponentsToRemove);
@@ -7287,14 +6915,7 @@ public:
 	float                                              StartDistance;                                 // 0x00B8 (0x0004) [0x0000000200000003] (CPF_Edit | CPF_Const | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HeightFogComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HeightFogComponent"))
 	void SetEnabled(bool bSetEnabled);
 };
 
@@ -7417,14 +7038,7 @@ public:
 	float                                              ScriptRigidBodyCollisionThreshold;             // 0x0254 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrimitiveComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrimitiveComponent"))
 	void SetHighContrastRenderingID(EHighContrastRenderingID InRenderingID);
 	void SetCastShadow(bool bNewCastShadow, bool bNewCastDynamicShadow);
 	EGJKResult ClosestPointOnComponentToComponent(class UPrimitiveComponent*& outOtherComponent, struct FVector& outPointOnComponentA, struct FVector& outPointOnComponentB);
@@ -7487,14 +7101,7 @@ public:
 	class FName                                        SpriteCategoryName;                            // 0x0264 (0x0008) [0x0000000800000000] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ArrowComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ArrowComponent"))
 };
 
 // Class Engine.BrushComponent
@@ -7510,14 +7117,7 @@ public:
 	uint32_t                                           bBlockComplexCollisionTrace : 1;               // 0x02CC (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BrushComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BrushComponent"))
 };
 
 // Class Engine.CameraConeComponent
@@ -7527,14 +7127,7 @@ class UCameraConeComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraConeComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraConeComponent"))
 };
 
 // Class Engine.CylinderComponent
@@ -7550,14 +7143,7 @@ public:
 	uint32_t                                           bAlwaysRenderIfSelected : 1;                   // 0x0264 (0x0004) [0x0000000000000002] [0x00000004] (CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CylinderComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CylinderComponent"))
 	struct FVector GetExtent();
 	void SetCylinderSize(float NewRadius, float NewHeight);
 };
@@ -7576,14 +7162,7 @@ public:
 	uint32_t                                           bDrawOnlyIfSelected : 1;                       // 0x0274 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawBoxComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawBoxComponent"))
 };
 
 // Class Engine.DrawCapsuleComponent
@@ -7601,14 +7180,7 @@ public:
 	uint32_t                                           bDrawOnlyIfSelected : 1;                       // 0x0270 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawCapsuleComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawCapsuleComponent"))
 };
 
 // Class Engine.DrawConeComponent
@@ -7622,14 +7194,7 @@ public:
 	int32_t                                            ConeSides;                                     // 0x0264 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawConeComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawConeComponent"))
 };
 
 // Class Engine.DrawCylinderComponent
@@ -7650,14 +7215,7 @@ public:
 	uint32_t                                           bDrawOnlyIfSelected : 1;                       // 0x027C (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawCylinderComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawCylinderComponent"))
 };
 
 // Class Engine.DrawFrustumComponent
@@ -7674,14 +7232,7 @@ public:
 	class UTexture*                                    Texture;                                       // 0x0270 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawFrustumComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawFrustumComponent"))
 };
 
 // Class Engine.DrawQuadComponent
@@ -7694,14 +7245,7 @@ public:
 	float                                              Height;                                        // 0x0264 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawQuadComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawQuadComponent"))
 };
 
 // Class Engine.DrawSphereComponent
@@ -7719,14 +7263,7 @@ public:
 	uint32_t                                           bDrawOnlyIfSelected : 1;                       // 0x0270 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawSphereComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawSphereComponent"))
 };
 
 // Class Engine.DrawPylonRadiusComponent
@@ -7737,14 +7274,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawPylonRadiusComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawPylonRadiusComponent"))
 };
 
 // Class Engine.DrawSoundRadiusComponent
@@ -7755,14 +7285,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawSoundRadiusComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawSoundRadiusComponent"))
 };
 
 // Class Engine.LevelGridVolumeRenderingComponent
@@ -7772,14 +7295,7 @@ class ULevelGridVolumeRenderingComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelGridVolumeRenderingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelGridVolumeRenderingComponent"))
 };
 
 // Class Engine.LineBatchComponent
@@ -7794,14 +7310,7 @@ public:
 	float                                              DefaultLifeTime;                               // 0x0288 (0x0004) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LineBatchComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LineBatchComponent"))
 };
 
 // Class Engine.ModelComponent
@@ -7816,14 +7325,7 @@ public:
 	class TArray<struct FPointer>                      Elements;                                      // 0x0278 (0x0010) [0x0000000000803002] (CPF_Const | CPF_Native | CPF_Transient | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ModelComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ModelComponent"))
 };
 
 // Class Engine.SpriteComponent
@@ -7841,14 +7343,7 @@ public:
 	class FName                                        SpriteCategoryName;                            // 0x0278 (0x0008) [0x0000000800000000] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpriteComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpriteComponent"))
 	void SetSpriteAndUV(class UTexture2D* NewSprite, int32_t NewU, int32_t NewUL, int32_t NewV, int32_t NewVL);
 	void SetUV(int32_t NewU, int32_t NewUL, int32_t NewV, int32_t NewVL);
 	void SetSprite(class UTexture2D* NewSprite);
@@ -7874,14 +7369,7 @@ public:
 	struct FMatrix                                     LocalToWorld;                                  // 0x00D0 (0x0040) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RadialBlurComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RadialBlurComponent"))
 	void OnUpdatePropertyBlurOpacity();
 	void OnUpdatePropertyBlurFalloffExponent();
 	void OnUpdatePropertyBlurScale();
@@ -7926,14 +7414,7 @@ public:
 	class TArray<struct FPointer>                      PostProcessProxies;                            // 0x00F0 (0x0010) [0x0000000001203002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureComponent"))
 	void ForceRecapture();
 	void SetEnabled(bool bEnable);
 	void SetFrameRate(float NewFrameRate);
@@ -7954,14 +7435,7 @@ public:
 	struct FMatrix                                     ProjMatrix;                                    // 0x0160 (0x0040) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCapture2DComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCapture2DComponent"))
 	void SetView(const struct FVector& NewLocation, const struct FRotator& NewRotation);
 	void SetCaptureParameters(class UTextureRenderTarget2D* optionalNewTextureTarget, float optionalNewFOV, float optionalNewNearPlane, float optionalNewFarPlane);
 };
@@ -7982,14 +7456,7 @@ public:
 	float                                              FadingIntervalTime;                            // 0x0128 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCapture2DHitMaskComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCapture2DHitMaskComponent"))
 	void SetFadingStartTimeSinceHit(float InFadingStartTimeSinceHit);
 	void SetCaptureParameters(const struct FVector& InMaskPosition, float InMaskRadius, const struct FVector& InStartupPosition, bool bOnlyWhenFacing);
 	void SetCaptureTargetTexture(class UTextureRenderTarget2D* InTextureTarget);
@@ -8008,14 +7475,7 @@ public:
 	struct FPointer                                    RenderThreadCubeCustomPPContext;               // 0x0120 (0x0008) [0x0000000000003000] (CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureCubeMapComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureCubeMapComponent"))
 };
 
 // Class Engine.SceneCapturePortalComponent
@@ -8029,14 +7489,7 @@ public:
 	class AActor*                                      ViewDestination;                               // 0x0110 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCapturePortalComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCapturePortalComponent"))
 	void SetCaptureParameters(class UTextureRenderTarget2D* optionalNewTextureTarget, float optionalNewScaleFOV, class AActor* optionalNewViewDest);
 };
 
@@ -8049,14 +7502,7 @@ public:
 	float                                              ScaleFOV;                                      // 0x0108 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SceneCaptureReflectComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SceneCaptureReflectComponent"))
 };
 
 // Class Engine.WindDirectionalSourceComponent
@@ -8072,14 +7518,7 @@ public:
 	float                                              Speed;                                         // 0x00B4 (0x0004) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WindDirectionalSourceComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WindDirectionalSourceComponent"))
 };
 
 // Class Engine.WindPointSourceComponent
@@ -8091,14 +7530,7 @@ public:
 	float                                              Radius;                                        // 0x00C0 (0x0004) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WindPointSourceComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WindPointSourceComponent"))
 };
 
 // Class Engine.ActorFactory
@@ -8116,14 +7548,7 @@ public:
 	uint32_t                                           bShowInEditorQuickMenu : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactory"))
 	void eventPostCreateActor(class AActor* NewActor, class USeqAct_ActorFactory* optionalActorFactoryData);
 };
 
@@ -8136,14 +7561,7 @@ public:
 	class UClass*                                      ActorClass;                                    // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryActor"))
 };
 
 // Class Engine.ActorFactoryAI
@@ -8158,14 +7576,7 @@ public:
 	int32_t                                            TeamIndex;                                     // 0x00C0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAI"))
 };
 
 // Class Engine.ActorFactoryAmbientSound
@@ -8177,14 +7588,7 @@ public:
 	class USoundCue*                                   AmbientSoundCue;                               // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSound"))
 };
 
 // Class Engine.ActorFactoryAmbientSoundMovable
@@ -8194,14 +7598,7 @@ class UActorFactoryAmbientSoundMovable : public UActorFactoryAmbientSound
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSoundMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSoundMovable"))
 };
 
 // Class Engine.ActorFactoryAmbientSoundSimple
@@ -8213,14 +7610,7 @@ public:
 	class USoundNodeWave*                              SoundNodeWave;                                 // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSoundSimple");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSoundSimple"))
 };
 
 // Class Engine.ActorFactoryAmbientSoundNonLoop
@@ -8230,14 +7620,7 @@ class UActorFactoryAmbientSoundNonLoop : public UActorFactoryAmbientSoundSimple
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSoundNonLoop");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSoundNonLoop"))
 };
 
 // Class Engine.ActorFactoryAmbientSoundSimpleToggleable
@@ -8247,14 +7630,7 @@ class UActorFactoryAmbientSoundSimpleToggleable : public UActorFactoryAmbientSou
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSoundSimpleToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSoundSimpleToggleable"))
 };
 
 // Class Engine.ActorFactoryAmbientSoundNonLoopingToggleable
@@ -8264,14 +7640,7 @@ class UActorFactoryAmbientSoundNonLoopingToggleable : public UActorFactoryAmbien
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryAmbientSoundNonLoopingToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryAmbientSoundNonLoopingToggleable"))
 };
 
 // Class Engine.ActorFactoryApexDestructible
@@ -8288,14 +7657,7 @@ public:
 	class UApexDestructibleAsset*                      DestructibleAsset;                             // 0x00B0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryApexDestructible");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryApexDestructible"))
 };
 
 // Class Engine.ActorFactoryArchetype
@@ -8307,14 +7669,7 @@ public:
 	class AActor*                                      ArchetypeActor;                                // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryArchetype");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryArchetype"))
 };
 
 // Class Engine.ActorFactoryCoverLink
@@ -8325,14 +7680,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryCoverLink");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryCoverLink"))
 };
 
 // Class Engine.ActorFactoryDominantDirectionalLight
@@ -8343,14 +7691,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryDominantDirectionalLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryDominantDirectionalLight"))
 };
 
 // Class Engine.ActorFactoryDominantDirectionalLightMovable
@@ -8361,14 +7702,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryDominantDirectionalLightMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryDominantDirectionalLightMovable"))
 };
 
 // Class Engine.ActorFactoryDynamicSM
@@ -8387,14 +7721,7 @@ public:
 	ECollisionType                                     CollisionType;                                 // 0x00B8 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryDynamicSM");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryDynamicSM"))
 };
 
 // Class Engine.ActorFactoryMover
@@ -8405,14 +7732,7 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x00B9 (0x0007) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryMover");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryMover"))
 };
 
 // Class Engine.ActorFactoryRigidBody
@@ -8434,14 +7754,7 @@ public:
 	float                                              StayUprightMaxTorque;                          // 0x00E8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryRigidBody");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryRigidBody"))
 };
 
 // Class Engine.ActorFactoryEmitter
@@ -8453,14 +7766,7 @@ public:
 	class UParticleSystem*                             ParticleSystem;                                // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryEmitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryEmitter"))
 };
 
 // Class Engine.ActorFactoryFracturedStaticMesh
@@ -8473,14 +7779,7 @@ public:
 	struct FVector                                     DrawScale3D;                                   // 0x00A8 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryFracturedStaticMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryFracturedStaticMesh"))
 };
 
 // Class Engine.ActorFactoryLensFlare
@@ -8492,14 +7791,7 @@ public:
 	class ULensFlare*                                  LensFlareObject;                               // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryLensFlare");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryLensFlare"))
 };
 
 // Class Engine.ActorFactoryLight
@@ -8510,14 +7802,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryLight"))
 };
 
 // Class Engine.ActorFactoryPathNode
@@ -8528,14 +7813,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryPathNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryPathNode"))
 };
 
 // Class Engine.ActorFactoryPhysicsAsset
@@ -8555,14 +7833,7 @@ public:
 	struct FVector                                     DrawScale3D;                                   // 0x00C0 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryPhysicsAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryPhysicsAsset"))
 };
 
 // Class Engine.ActorFactoryPlayerStart
@@ -8573,14 +7844,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryPlayerStart");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryPlayerStart"))
 };
 
 // Class Engine.ActorFactoryPylon
@@ -8591,14 +7855,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryPylon");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryPylon"))
 };
 
 // Class Engine.ActorFactorySkeletalMesh
@@ -8612,14 +7869,7 @@ public:
 	class FName                                        AnimSequenceName;                              // 0x00B0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactorySkeletalMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactorySkeletalMesh"))
 };
 
 // Class Engine.ActorFactoryStaticMesh
@@ -8632,14 +7882,7 @@ public:
 	struct FVector                                     DrawScale3D;                                   // 0x00A8 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryStaticMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryStaticMesh"))
 };
 
 // Class Engine.ActorFactoryTrigger
@@ -8650,14 +7893,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryTrigger");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryTrigger"))
 };
 
 // Class Engine.AkBank
@@ -8670,14 +7906,7 @@ public:
 	struct FBankLoadState                              LoadState;                                     // 0x0064 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AkBank");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AkBank"))
 };
 
 // Class Engine.AkBaseSoundObject
@@ -8687,14 +7916,7 @@ class UAkBaseSoundObject : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AkBaseSoundObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AkBaseSoundObject"))
 };
 
 // Class Engine.AkEvent
@@ -8705,14 +7927,7 @@ public:
 	class UAkBank*                                     RequiredBank;                                  // 0x0060 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AkEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AkEvent"))
 };
 
 // Class Engine.SoundCue
@@ -8738,14 +7953,7 @@ public:
 	class FName                                        SoundGroup;                                    // 0x0108 (0x0008) [0x0000000020000000]  CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundCue");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundCue"))
 	float GetCueDuration();
 };
 
@@ -8757,14 +7965,7 @@ public:
 	struct FMultiMap_Mirror                            ObjectArchetypeMap;                            // 0x0070 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ArchetypePool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ArchetypePool"))
 	class AActor* SpawnClass(class UClass* InClass, class AActor* optionalSpawnOwner, const struct FVector& optionalSpawnLocation, const struct FRotator& optionalSpawnRotation, bool optionalBNoCollisionFail);
 	class AActor* SpawnArchetype(class AActor* InArchetype, class AActor* optionalSpawnOwner, const struct FVector& optionalSpawnLocation, const struct FRotator& optionalSpawnRotation, bool optionalBNoCollisionFail);
 	class UObject* InstanceClass(class UClass* InClass);
@@ -8781,14 +7982,7 @@ public:
 	class TArray<class FString>                        HiddenLevels;                                  // 0x0078 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BookMark");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BookMark"))
 };
 
 // Class Engine.BookMark2D
@@ -8800,14 +7994,7 @@ public:
 	struct FIntPoint                                   Location;                                      // 0x0064 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BookMark2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BookMark2D"))
 };
 
 // Class Engine.KismetBookMark
@@ -8819,14 +8006,7 @@ public:
 	class FString                                      BookMarkSequencePathName;                      // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KismetBookMark");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KismetBookMark"))
 };
 
 // Class Engine.Canvas
@@ -8855,14 +8035,7 @@ public:
 	class UTexture2D*                                  DefaultTexture;                                // 0x00C0 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Canvas");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Canvas"))
 	void DrawDebugGraph(const class FString& Title, float ValueX, float ValueY, float UL_X, float UL_Y, float W, float H, const struct FVector2D& RangeX, const struct FVector2D& RangeY);
 	void DrawTextureDoubleLineW(const struct FVector& StartPoint, const struct FVector& EndPoint, float Perc, float Spacing, float Width, const struct FColor& LineColor, const struct FColor& AltLineColor, class UTexture* Tex, float U, float V, float UL, float VL);
 	void DrawTextureLineW(const struct FVector& StartPoint, const struct FVector& EndPoint, float Perc, float Width, const struct FColor& LineColor, class UTexture* LineTexture, float U, float V, float UL, float VL);
@@ -8911,14 +8084,7 @@ public:
 	uint8_t                                          UnknownData00[0x40];                          // 0x0060 (0x0040) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Channel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Channel"))
 };
 
 // Class Engine.ActorChannel
@@ -8929,14 +8095,7 @@ public:
 	uint8_t                                          UnknownData00[0x80];                          // 0x00A0 (0x0080) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorChannel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorChannel"))
 };
 
 // Class Engine.ControlChannel
@@ -8947,14 +8106,7 @@ public:
 	uint8_t                                          UnknownData00[0x18];                          // 0x00A0 (0x0018) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ControlChannel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ControlChannel"))
 };
 
 // Class Engine.FileChannel
@@ -8965,14 +8117,7 @@ public:
 	uint8_t                                          UnknownData00[0x228];                        // 0x00A0 (0x0228) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FileChannel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FileChannel"))
 };
 
 // Class Engine.VoiceChannel
@@ -8983,14 +8128,7 @@ public:
 	uint8_t                                          UnknownData00[0x10];                          // 0x00A0 (0x0010) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.VoiceChannel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.VoiceChannel"))
 };
 
 // Class Engine.Controller
@@ -9070,14 +8208,7 @@ public:
 	struct FVector                                     NavMeshPath_SearchExtent_Modifier;             // 0x0468 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Controller");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Controller"))
 	bool eventGeneratePathToLocation(const struct FVector& Goal, float optionalWithinDistance, bool optionalBAllowPartialPath);
 	bool eventGeneratePathToActor(class AActor* Goal, float optionalWithinDistance, bool optionalBAllowPartialPath);
 	void eventInterpolationFinished(class USeqAct_Interp* InterpAction);
@@ -9319,14 +8450,7 @@ public:
 	struct FScriptDelegate                             __InputMatchDelegate__Delegate;                // 0x07D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlayerController");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlayerController"))
 	bool LimitSpectatorVelocity();
 	void Jump();
 	void FindGoodView();
@@ -9685,14 +8809,7 @@ public:
 	class FString                                      OwnCamera;                                     // 0x0070 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CheatManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CheatManager"))
 	void AnalyticsEndSession();
 	void AnalyticsStartSession();
 	void GetAnalyticsUserId();
@@ -9793,14 +8910,7 @@ public:
 	float                                              ButtonRepeatDelay;                             // 0x0074 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Client");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Client"))
 };
 
 // Class Engine.ClipPadEntry
@@ -9812,14 +8922,7 @@ public:
 	class FString                                      Text;                                          // 0x0070 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ClipPadEntry");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ClipPadEntry"))
 };
 
 // Class Engine.CloudSaveSystem
@@ -9841,14 +8944,7 @@ public:
 	struct FScriptDelegate                             __SaveSystemCallback__Delegate;                // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudSaveSystem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudSaveSystem"))
 	bool GetKeyValue(int32_t SaveSlot, const class FString& KeyName, EPlatformInterfaceDataType Type, struct FPlatformInterfaceDelegateResult& outValue);
 	bool GetDataStoreIDAndBlobNameForSaveSlot(int32_t SaveSlot, class FString& outDataStoreID, class FString& outDataBlobName);
 	bool SetKeyValue(int32_t SaveSlot, const class FString& KeyName, struct FPlatformInterfaceData& outValue);
@@ -9881,14 +8977,7 @@ public:
 	float                                              PlaybackDuration;                              // 0x0060 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CodecMovie");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CodecMovie"))
 };
 
 // Class Engine.CodecMovieBink
@@ -9899,14 +8988,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CodecMovieBink");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CodecMovieBink"))
 };
 
 // Class Engine.CodecMovieFallback
@@ -9918,14 +9000,7 @@ public:
 	float                                              CurrentTime;                                   // 0x0068 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CodecMovieFallback");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CodecMovieFallback"))
 };
 
 // Class Engine.ControllerLayoutStack
@@ -9944,14 +9019,7 @@ public:
 	int32_t                                            ControllerLayoutPriority_Menu;                 // 0x00A4 (0x0004) [0x0001000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ControllerLayoutStack");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ControllerLayoutStack"))
 	void Empty();
 	void Pop(int32_t ControllerId, const class FName& InControllerLayout);
 	void Push(int32_t ControllerId, const class FName& InControllerLayout, int32_t optionalPriority);
@@ -9966,14 +9034,7 @@ public:
 	class TArray<struct FPresetGeneratedPoint>         Points;                                        // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CurveEdPresetCurve");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CurveEdPresetCurve"))
 };
 
 // Class Engine.CustomPropertyItemHandler
@@ -9983,14 +9044,7 @@ class UCustomPropertyItemHandler : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CustomPropertyItemHandler");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CustomPropertyItemHandler"))
 };
 
 // Class Engine.DateTime
@@ -10009,14 +9063,7 @@ public:
 	ETimeZone                                          TimeZone;                                      // 0x0084 (0x0001) [0x0000004040000000] (CPF_DataBinding | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DateTime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DateTime"))
 	class UDateTime* AddSeconds(int32_t Amount);
 	class UDateTime* AddMinutes(int32_t Amount);
 	class UDateTime* AddHours(int32_t Amount);
@@ -10047,14 +9094,7 @@ public:
 	float                                              Constant;                                      // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatConstant");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatConstant"))
 };
 
 // Class Engine.DistributionFloatParameterBase
@@ -10071,14 +9111,7 @@ public:
 	EDistributionParamMode                             ParamMode;                                     // 0x00A0 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatParameterBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatParameterBase"))
 };
 
 // Class Engine.DistributionFloatConstantCurve
@@ -10090,14 +9123,7 @@ public:
 	struct FInterpCurveFloat                           ConstantCurve;                                 // 0x0080 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatConstantCurve");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatConstantCurve"))
 };
 
 // Class Engine.DistributionFloatUniform
@@ -10110,14 +9136,7 @@ public:
 	float                                              Max;                                           // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatUniform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatUniform"))
 };
 
 // Class Engine.DistributionFloatUniformCurve
@@ -10129,14 +9148,7 @@ public:
 	struct FInterpCurveVector2D                        ConstantCurve;                                 // 0x0080 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatUniformCurve");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatUniformCurve"))
 };
 
 // Class Engine.DistributionFloatUniformRange
@@ -10152,14 +9164,7 @@ public:
 	uint32_t                                           bMirrorMaxMin : 1;                             // 0x0090 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatUniformRange");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatUniformRange"))
 };
 
 // Class Engine.DistributionVectorConstant
@@ -10173,14 +9178,7 @@ public:
 	EDistributionVectorLockFlags                       LockedAxes;                                    // 0x0090 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorConstant");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorConstant"))
 };
 
 // Class Engine.DistributionVectorParameterBase
@@ -10197,14 +9195,7 @@ public:
 	EDistributionParamMode                             ParamModes[3];                                 // 0x00D0 (0x0003) [0x0000000000080009] (CPF_Edit | CPF_ExportObject | CPF_Component)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorParameterBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorParameterBase"))
 };
 
 // Class Engine.DistributionVectorConstantCurveBase
@@ -10218,14 +9209,7 @@ public:
 	EDistributionVectorLockFlags                       LockedAxes;                                    // 0x009C (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorConstantCurveBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorConstantCurveBase"))
 };
 
 // Class Engine.DistributionVectorConstantCurve
@@ -10237,14 +9221,7 @@ public:
 	struct FInterpCurveVector                          Curve;                                         // 0x00A0 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorConstantCurve");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorConstantCurve"))
 };
 
 // Class Engine.DistributionVectorUniform
@@ -10261,14 +9238,7 @@ public:
 	EDistributionVectorMirrorFlags                     MirrorFlags[3];                                // 0x009D (0x0003) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorUniform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorUniform"))
 };
 
 // Class Engine.DistributionVectorUniformCurve
@@ -10285,14 +9255,7 @@ public:
 	EDistributionVectorMirrorFlags                     MirrorFlags[3];                                // 0x009E (0x0003) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorUniformCurve");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorUniformCurve"))
 };
 
 // Class Engine.DistributionVectorUniformRange
@@ -10307,14 +9270,7 @@ public:
 	struct FVector                                     MinLow;                                        // 0x00A4 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorUniformRange");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorUniformRange"))
 };
 
 // Class Engine.Download
@@ -10325,14 +9281,7 @@ public:
 	uint8_t                                          UnknownData00[0xA50];                        // 0x0060 (0x0A50) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Download");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Download"))
 };
 
 // Class Engine.ChannelDownload
@@ -10343,14 +9292,7 @@ public:
 	uint8_t                                          UnknownData00[0x8];                            // 0x0AB0 (0x0008) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ChannelDownload");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ChannelDownload"))
 };
 
 // Class Engine.EdCoordSystem
@@ -10362,14 +9304,7 @@ public:
 	class FString                                      Desc;                                          // 0x00A0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EdCoordSystem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EdCoordSystem"))
 };
 
 // Class Engine.EditorLinkSelectionInterface
@@ -10379,14 +9314,7 @@ class UEditorLinkSelectionInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EditorLinkSelectionInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EditorLinkSelectionInterface"))
 };
 
 // Class Engine.EngineShare
@@ -10396,14 +9324,7 @@ class UEngineShare : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EngineShare");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EngineShare"))
 	void eventInit();
 	static class FString GetPsyVersionNumber();
 	static class UEngineShare* GetInstance(class UClass* optionalType);
@@ -10416,14 +9337,7 @@ class UEngineTypes : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EngineTypes");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EngineTypes"))
 };
 
 // Class Engine.FaceFXAnimSet
@@ -10440,14 +9354,7 @@ public:
 	int32_t                                            NumLoadErrors;                                 // 0x00B0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FaceFXAnimSet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FaceFXAnimSet"))
 };
 
 // Class Engine.FaceFXAsset
@@ -10466,14 +9373,7 @@ public:
 	int32_t                                            NumLoadErrors;                                 // 0x00D0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FaceFXAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FaceFXAsset"))
 	void UnmountFaceFXAnimSet(class UFaceFXAnimSet* AnimSet);
 	void MountFaceFXAnimSet(class UFaceFXAnimSet* AnimSet);
 };
@@ -10491,14 +9391,7 @@ public:
 	class UErrorType*                                  FPE_Unknown;                                   // 0x00A8 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FeaturePrivilegeErrors");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FeaturePrivilegeErrors"))
 };
 
 // Class Engine.Font
@@ -10525,14 +9418,7 @@ public:
 	int32_t                                            VerticalOffsetOverride;                        // 0x01B8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Font");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Font"))
 	void GetStringHeightAndWidth(class FString& outInString, int32_t& outHeight, int32_t& outWidth);
 	float GetMaxCharHeight();
 	float GetAuthoredViewportHeight(float ViewportHeight);
@@ -10549,14 +9435,7 @@ public:
 	class TArray<float>                                ResolutionTestTable;                           // 0x01C0 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MultiFont");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MultiFont"))
 	int32_t GetResolutionTestTableIndex(float HeightTest);
 };
 
@@ -10568,14 +9447,7 @@ public:
 	struct FFontImportOptionsData                      Data;                                          // 0x0060 (0x00B0) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FontImportOptions");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FontImportOptions"))
 };
 
 // Class Engine.ForceFeedbackManager
@@ -10598,14 +9470,7 @@ public:
 	float                                              EnabledTimeRemaining;                          // 0x0094 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFeedbackManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFeedbackManager"))
 	void PauseWaveform(bool optionalBPause);
 	void StopForceFeedbackWaveform(class UForceFeedbackWaveform* optionalWaveForm);
 	void PlayForceFeedbackWaveform(class UForceFeedbackWaveform* WaveForm, class AActor* WaveInstigator);
@@ -10623,14 +9488,7 @@ public:
 	float                                              MaxWaveformDistance;                           // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFeedbackWaveform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFeedbackWaveform"))
 };
 
 // Class Engine.GameplayEvents
@@ -10653,14 +9511,7 @@ public:
 	class TArray<class FString>                        SoundCueArray;                                 // 0x0200 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEvents");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEvents"))
 	class FString eventGetFilename();
 	void CloseStatsFile();
 	bool OpenStatsFile(const class FString& Filename);
@@ -10674,14 +9525,7 @@ public:
 	class TArray<class UGameplayEventsHandler*>        RegisteredHandlers;                            // 0x0210 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEventsReader");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEventsReader"))
 	float GetSessionDuration();
 	float GetSessionEnd();
 	float GetSessionStart();
@@ -10707,14 +9551,7 @@ public:
 	class AGameInfo*                                   Game;                                          // 0x0210 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEventsWriterBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEventsWriterBase"))
 	int32_t RecordCoverLinkFireLinks(class ACoverLink* Link, class AController* Player);
 	void RecordAIPathFail(class AController* AI, const class FString& Reason, const struct FVector& Dest);
 	void LogSystemPollEvents();
@@ -10750,14 +9587,7 @@ class UGameplayEventsUploadAnalytics : public UGameplayEventsWriterBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEventsUploadAnalytics");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEventsUploadAnalytics"))
 	int32_t RecordCoverLinkFireLinks(class ACoverLink* Link, class AController* Player);
 	void RecordAIPathFail(class AController* AI, const class FString& Reason, const struct FVector& Dest);
 	class UGenericParamListStatEntry* GetGenericParamListEntry();
@@ -10787,14 +9617,7 @@ class UGameplayEventsWriter : public UGameplayEventsWriterBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEventsWriter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEventsWriter"))
 	int32_t RecordCoverLinkFireLinks(class ACoverLink* Link, class AController* Player);
 	void RecordAIPathFail(class AController* AI, const class FString& Reason, const struct FVector& Dest);
 	class UGenericParamListStatEntry* GetGenericParamListEntry();
@@ -10833,14 +9656,7 @@ public:
 	class UGameplayEventsReader*                       Reader;                                        // 0x0080 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameplayEventsHandler");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameplayEventsHandler"))
 	void RemoveFilter(int32_t EventID);
 	void AddFilter(int32_t EventID);
 	void eventResolveGroupFilters();
@@ -10858,14 +9674,7 @@ public:
 	class UGameplayEventsWriter*                       Writer;                                        // 0x0068 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GenericParamListStatEntry");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GenericParamListStatEntry"))
 	void CommitToDisk();
 	bool GetString(const class FName& ParamName, class FString& outOut_string);
 	bool GetVector(const class FName& ParamName, struct FVector& outOut_vector);
@@ -10885,14 +9694,7 @@ public:
 	uint8_t                                          UnknownData00[0x60];                          // 0x0060 (0x0060) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GuidCache");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GuidCache"))
 };
 
 // Class Engine.HttpBaseInterface
@@ -10902,14 +9704,7 @@ class UHttpBaseInterface : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HttpBaseInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HttpBaseInterface"))
 	void GetContent(class TArray<uint8_t>& outContent);
 	class FString GetURL();
 	int32_t GetContentLength();
@@ -10927,14 +9722,7 @@ public:
 	struct FScriptDelegate                             __OnProcessRequestComplete__Delegate;          // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HttpRequestInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HttpRequestInterface"))
 	class UHttpRequestInterface* SetProcessRequestCompleteDelegate(const struct FScriptDelegate& ProcessRequestCompleteDelegate);
 	void OnProcessRequestComplete(class UHttpRequestInterface* OriginalRequest, class UHttpResponseInterface* InHttpResponse, bool bDidSucceed);
 	bool ProcessRequest();
@@ -10953,14 +9741,7 @@ class UHttpResponseInterface : public UHttpBaseInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HttpResponseInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HttpResponseInterface"))
 	bool IsContentCompressed();
 	class FString GetContentAsString();
 	int32_t GetResponseCode();
@@ -10983,14 +9764,7 @@ public:
 	struct FScriptDelegate                             __OnAllTitleFilesCompleted__Delegate;          // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.IniLocPatcher");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.IniLocPatcher"))
 	class FString UpdateLocFileName(const class FString& Filename);
 	void ClearCachedFiles();
 	void ClearReadFileDelegate(const struct FScriptDelegate& ReadTitleFileCompleteDelegate);
@@ -11017,14 +9791,7 @@ class UInterface_NavigationHandle : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_NavigationHandle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_NavigationHandle"))
 	void eventNotifyPathChanged();
 };
 
@@ -11035,14 +9802,7 @@ class UInterface_Speaker : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_Speaker");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_Speaker"))
 	void eventSpeak(class USoundCue* Cue);
 };
 
@@ -11055,14 +9815,7 @@ public:
 	int32_t                                            ActiveTab;                                     // 0x0070 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpCurveEdSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpCurveEdSetup"))
 };
 
 // Class Engine.InterpTrack
@@ -11090,14 +9843,7 @@ public:
 	uint32_t                                           bIsCollapsed : 1;                              // 0x00C0 (0x0004) [0x0000000800000000] [0x00000100] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrack");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrack"))
 };
 
 // Class Engine.JsonObject
@@ -11112,14 +9858,7 @@ public:
 	uint32_t                                           bArray : 1;                                    // 0x0120 (0x0004) [0x0000000000001000] [0x00000001] (CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.JsonObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.JsonObject"))
 	static class UJsonObject* DecodeJson(const class FString& Str);
 	static class FString EncodeJson(class UJsonObject* Root);
 	void SetBoolValue(const class FString& Key, bool Value);
@@ -11145,14 +9884,7 @@ public:
 	struct FKAggregateGeom                             AggGeom;                                       // 0x0070 (0x0050) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KMeshProps");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KMeshProps"))
 };
 
 // Class Engine.LevelBase
@@ -11163,14 +9895,7 @@ public:
 	uint8_t                                          UnknownData00[0x78];                          // 0x0060 (0x0078) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelBase"))
 };
 
 // Class Engine.Level
@@ -11184,14 +9909,7 @@ public:
 	uint8_t                                          UnknownData01[0x300];                        // 0x0200 (0x0300) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Level");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Level"))
 };
 
 // Class Engine.PendingLevel
@@ -11202,14 +9920,7 @@ public:
 	uint8_t                                          UnknownData00[0x50];                          // 0x00D8 (0x0050) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PendingLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PendingLevel"))
 };
 
 // Class Engine.DemoPlayPendingLevel
@@ -11219,14 +9930,7 @@ class UDemoPlayPendingLevel : public UPendingLevel
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DemoPlayPendingLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DemoPlayPendingLevel"))
 };
 
 // Class Engine.NetPendingLevel
@@ -11236,14 +9940,7 @@ class UNetPendingLevel : public UPendingLevel
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetPendingLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetPendingLevel"))
 };
 
 // Class Engine.LevelStreaming
@@ -11279,14 +9976,7 @@ public:
 	int32_t                                            GridPosition[3];                               // 0x0108 (0x000C) [0x0000000000020003] (CPF_Edit | CPF_Const | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreaming");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreaming"))
 };
 
 // Class Engine.LevelStreamingAlwaysLoaded
@@ -11298,14 +9988,7 @@ public:
 	uint32_t                                           bIsProceduralBuildingLODLevel : 1;             // 0x0118 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreamingAlwaysLoaded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingAlwaysLoaded"))
 };
 
 // Class Engine.LevelStreamingDistance
@@ -11318,14 +10001,7 @@ public:
 	float                                              MaxDistance;                                   // 0x0124 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreamingDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingDistance"))
 };
 
 // Class Engine.LevelStreamingKismet
@@ -11336,14 +10012,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0114 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreamingKismet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingKismet"))
 };
 
 // Class Engine.LevelStreamingPersistent
@@ -11354,14 +10023,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0114 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LevelStreamingPersistent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingPersistent"))
 };
 
 // Class Engine.LightmappedSurfaceCollection
@@ -11373,14 +10035,7 @@ public:
 	class TArray<int32_t>                              Surfaces;                                      // 0x0068 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightmappedSurfaceCollection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightmappedSurfaceCollection"))
 };
 
 // Class Engine.LightmassLevelSettings
@@ -11403,14 +10058,7 @@ public:
 	float                                              MaxOcclusionDistance;                          // 0x008C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightmassLevelSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightmassLevelSettings"))
 };
 
 // Class Engine.LightmassPrimitiveSettingsObject
@@ -11421,14 +10069,7 @@ public:
 	struct FLightmassPrimitiveSettings                 LightmassSettings;                             // 0x0060 (0x001C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightmassPrimitiveSettingsObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightmassPrimitiveSettingsObject"))
 };
 
 // Class Engine.LinkedAccountDetails
@@ -11438,14 +10079,7 @@ class ULinkedAccountDetails : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LinkedAccountDetails");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LinkedAccountDetails"))
 };
 
 // Class Engine.MapInfo
@@ -11455,14 +10089,7 @@ class UMapInfo : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MapInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MapInfo"))
 };
 
 // Class Engine.Model
@@ -11473,14 +10100,7 @@ public:
 	uint8_t                                          UnknownData00[0xD50];                        // 0x0060 (0x0D50) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Model");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Model"))
 };
 
 // Class Engine.MusicTrackDataStructures
@@ -11490,14 +10110,7 @@ class UMusicTrackDataStructures : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MusicTrackDataStructures");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MusicTrackDataStructures"))
 };
 
 // Class Engine.NavigationMeshBase
@@ -11508,14 +10121,7 @@ public:
 	uint8_t                                          UnknownData00[0x340];                        // 0x0060 (0x0340) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavigationMeshBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavigationMeshBase"))
 };
 
 // Class Engine.NetDriver
@@ -11551,14 +10157,7 @@ public:
 	uint8_t                                          UnknownData05[0x78];                          // 0x0220 (0x0078) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetDriver");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetDriver"))
 };
 
 // Class Engine.DemoRecDriver
@@ -11576,14 +10175,7 @@ public:
 	uint8_t                                          UnknownData03[0x8];                            // 0x0388 (0x0008) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DemoRecDriver");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DemoRecDriver"))
 };
 
 // Class Engine.NetworkEncryptionKey
@@ -11597,14 +10189,7 @@ public:
 	class TArray<uint8_t>                              SessionId;                                     // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetworkEncryptionKey");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetworkEncryptionKey"))
 	static class UNetworkEncryptionKey* Generate();
 };
 
@@ -11616,14 +10201,7 @@ public:
 	class TArray<class UObject*>                       ReferencedObjects;                             // 0x0060 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ObjectReferencer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ObjectReferencer"))
 };
 
 // Class Engine.OnlineAuthInterface
@@ -11633,14 +10211,7 @@ class UOnlineAuthInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineAuthInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineAuthInterface"))
 	class UAsyncTask* RequestAccountAuthorization(const struct FUniqueNetId& PlayerID, const struct FScriptDelegate& Callback);
 	void OnAccountAuthorization(const class FString& Token);
 	void OnLoginChanged(bool bLoggedIn);
@@ -11719,14 +10290,7 @@ class UOnlineEventTracker : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineEventTracker");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineEventTracker"))
 	bool eventRaiseEvent(const class FString& EventName, const class TArray<class FString>& EventParams);
 	void eventShutDown();
 	void eventInit();
@@ -11739,14 +10303,7 @@ class UOnlineFriendsInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineFriendsInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineFriendsInterface"))
 	bool GetActivePlatformId(uint8_t LocalUserNum, const struct FUniqueNetId& AccountId, struct FUniqueNetId& outPlatformId);
 	bool RequestLinkedAccounts(uint8_t LocalUserNum, const class TArray<struct FUniqueNetId>& AccountIds, const struct FScriptDelegate& Callback);
 	void OnReceivedLinkedAccount(bool bSuccess, const class TArray<struct FLinkedAccountData>& LinkedAccountData);
@@ -11759,14 +10316,7 @@ class UOnlineLobbySettings : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineLobbySettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineLobbySettings"))
 };
 
 // Class Engine.OnlineMatchmakingStats
@@ -11776,14 +10326,7 @@ class UOnlineMatchmakingStats : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineMatchmakingStats");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineMatchmakingStats"))
 	void StopTimer(struct FMMStats_Timer& outTimer);
 	void StartTimer(struct FMMStats_Timer& outTimer);
 };
@@ -11795,14 +10338,7 @@ class UOnlinePersistentAuthInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePersistentAuthInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePersistentAuthInterface"))
 	bool AuthWithNintendoAccountToken(uint8_t LocalUserNum, class FString& outNintendoAccountToken);
 	uint64_t GetTimeUntilAuthExpiration(uint8_t LocalUserNum);
 	class UDateTime* GetAuthExpirationTimestamp(uint8_t LocalUserNum);
@@ -11838,14 +10374,7 @@ public:
 	int32_t                                            DeviceID;                                      // 0x0094 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePlayerStorage");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePlayerStorage"))
 	void SetDefaultVersionNumber();
 	int32_t GetVersionNumber();
 	void AppendVersionToSettings();
@@ -11890,14 +10419,7 @@ public:
 	class TArray<struct FIdToStringMapping>            OwnerMappings;                                 // 0x00B8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineProfileSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineProfileSettings"))
 	void eventModifyAvailableProfileSettings();
 	void AppendVersionToReadIds();
 	void eventSetToDefaults();
@@ -11914,14 +10436,7 @@ public:
 	class TArray<struct FUniqueNetId>                  AdditionalPlayerIds;                           // 0x0060 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineSessionManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSessionManager"))
 	bool eventCanCrossplayTextChat();
 	class TArray<struct FUniqueNetId> eventGetRemoteSessionPlayerIds();
 	void RemovePlayerFromSession(const struct FUniqueNetId& PlayerID);
@@ -11936,14 +10451,7 @@ public:
 	class TArray<struct FStringIdToStringMapping>      ViewIdMappings;                                // 0x0060 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineStats");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineStats"))
 	class FName GetViewName(int32_t ViewId);
 	bool GetViewId(const class FName& ViewName, int32_t& outViewId);
 };
@@ -11966,14 +10474,7 @@ public:
 	class FString                                      LeaderboardName;                               // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineStatsRead");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineStatsRead"))
 	int32_t GetRankForPlayer(const struct FUniqueNetId& PlayerID);
 	void AddPlayer(const class FString& PlayerName, const struct FUniqueNetId& PlayerID);
 	bool IsStatZero(const struct FUniqueNetId& PlayerID, int32_t StatColumnNo);
@@ -11999,14 +10500,7 @@ public:
 	struct FScriptDelegate                             __OnStatsWriteComplete__Delegate;              // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineStatsWrite");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineStatsWrite"))
 	void DecrementIntStat(int32_t StatId, int32_t optionalDecBy);
 	void DecrementFloatStat(int32_t StatId, float optionalDecBy);
 	void IncrementIntStat(int32_t StatId, int32_t optionalIncBy);
@@ -12105,14 +10599,7 @@ public:
 	struct FScriptDelegate                             __OnSystemUserControllerPairingChanged__Delegate;// 0x0360 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineSubsystem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSubsystem"))
 	bool TriggerScreenshot();
 	static EOnlineFriendState OnlineFriendStateFromString(const class FString& State);
 	EInputPlatformType GetControllerPlatform(int32_t LocalPlayerNum);
@@ -12152,6 +10639,7 @@ public:
 	void SetSessionGameplayMode(int32_t GameplayMode);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	static EOnlinePlatform GetOnlinePlatformFromName(const class FString& PlatformName);
+	static class FString GetOSVersionString();
 	static class FString GetNativePlatformName();
 	static class FString GetPlatformName(EOnlinePlatform PlatformType);
 	static class FString ReplacePlatformServiceName(const class FString& ReplString);
@@ -12221,14 +10709,7 @@ class UORS : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ORS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ORS"))
 	void ClearAllTimers(class UObject* Object);
 	static void RemoveObjectFromAny(class UObject* Object);
 	static void DestroyObject(class UObject* Object);
@@ -12249,14 +10730,7 @@ public:
 	uint8_t                                          UnknownData00[0x8];                            // 0x0118 (0x0008) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PackageMapLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PackageMapLevel"))
 };
 
 // Class Engine.PackageMapSeekFree
@@ -12266,14 +10740,7 @@ class UPackageMapSeekFree : public UPackageMapLevel
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PackageMapSeekFree");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PackageMapSeekFree"))
 };
 
 // Class Engine.PatchScriptCommandlet
@@ -12284,14 +10751,7 @@ public:
 	uint8_t                                          UnknownData00[0xC];                            // 0x00B4 (0x000C) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PatchScriptCommandlet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PatchScriptCommandlet"))
 };
 
 // Class Engine.PitchTekSettings
@@ -12331,14 +10791,7 @@ public:
 	struct FPitchTekTextureDecalSettings               CarPositionSettings;                           // 0x0178 (0x0020) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PitchTekSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PitchTekSettings"))
 };
 
 // Class Engine.PlatformAccountSettings
@@ -12353,14 +10806,7 @@ public:
 	struct FScriptDelegate                             __EventAccountSettingsChanged__Delegate;       // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlatformAccountSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlatformAccountSettings"))
 	void EventAccountSettingsChanged(class UPlatformAccountSettings* AccountSettings);
 };
 
@@ -12374,14 +10820,7 @@ public:
 	struct FScriptDelegate                             __DownloadStatus__ChangeNotify;                // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlatformBlockListStatus");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlatformBlockListStatus"))
 	void __DownloadStatus__ChangeNotifyFunc();
 	void eventSetStatus(EBlockListDownloadStatus InStatus);
 };
@@ -12395,14 +10834,7 @@ public:
 	struct FScriptDelegate                             __PlatformInterfaceDelegate__Delegate;         // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlatformInterfaceBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlatformInterfaceBase"))
 	void ClearDelegate(int32_t DelegateType, const struct FScriptDelegate& InDelegate);
 	void AddDelegate(int32_t DelegateType, const struct FScriptDelegate& InDelegate);
 	static class UInAppMessageBase* GetInAppMessageInterface();
@@ -12428,14 +10860,7 @@ public:
 	class FString                                      LastErrorSolution;                             // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MicroTransactionBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MicroTransactionBase"))
 	int32_t eventGetProductIndex(const class FString& Identifier);
 	bool eventBeginPurchase(int32_t Index);
 	bool eventIsAllowedToMakePurchases();
@@ -12450,14 +10875,7 @@ class UMicroTransactionProxy : public UMicroTransactionBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MicroTransactionProxy");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MicroTransactionProxy"))
 };
 
 // Class Engine.PlatformURL
@@ -12469,14 +10887,7 @@ public:
 	struct FScriptDelegate                             __URL__ChangeNotify;                           // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlatformURL");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlatformURL"))
 	void __URL__ChangeNotifyFunc();
 	void eventSetURL(const class FString& InURL);
 };
@@ -12501,14 +10912,7 @@ public:
 	struct FScriptDelegate                             __EventReceivedController__Delegate;           // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Player");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Player"))
 	void SwitchController(class APlayerController* PC);
 	void HandleTeamChanged(class APlayerReplicationInfo* PRI);
 	void HandlePRIRemoved(class APlayerReplicationInfo* PRI);
@@ -12560,14 +10964,7 @@ public:
 	struct FScriptDelegate                             __bForceDefaultPostProcessChain__ChangeNotify; // 0x04B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LocalPlayer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LocalPlayer"))
 	void __bForceDefaultPostProcessChain__ChangeNotifyFunc();
 	void Cleanup(bool optionalBExit);
 	void eventExit();
@@ -12621,14 +11018,7 @@ public:
 	float                                              BadConnectionReceiveTimeThreshold;             // 0xB1EC (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetConnection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetConnection"))
 };
 
 // Class Engine.ChildConnection
@@ -12639,14 +11029,7 @@ public:
 	class UNetConnection*                              Parent;                                        // 0xB1F0 (0x0008) [0x0000000000202002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ChildConnection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ChildConnection"))
 };
 
 // Class Engine.DemoRecConnection
@@ -12656,14 +11039,7 @@ class UDemoRecConnection : public UNetConnection
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DemoRecConnection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DemoRecConnection"))
 };
 
 // Class Engine.Polys
@@ -12674,14 +11050,7 @@ public:
 	uint8_t                                          UnknownData00[0x18];                          // 0x0060 (0x0018) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Polys");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Polys"))
 };
 
 // Class Engine.PostProcessChain
@@ -12692,14 +11061,7 @@ public:
 	class TArray<class UPostProcessEffect*>            Effects;                                       // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PostProcessChain");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PostProcessChain"))
 	class UPostProcessEffect* FindPostProcessEffect(const class FName& EffectName);
 };
 
@@ -12722,14 +11084,7 @@ public:
 	ESceneDepthPriorityGroup                           SceneDPG;                                      // 0x0084 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PostProcessEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PostProcessEffect"))
 };
 
 // Class Engine.AmbientOcclusionEffect
@@ -12762,14 +11117,7 @@ public:
 	float                                              HistoryWeightConvergenceTime;                  // 0x00E0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientOcclusionEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientOcclusionEffect"))
 };
 
 // Class Engine.BlurEffect
@@ -12781,14 +11129,7 @@ public:
 	int32_t                                            BlurKernelSize;                                // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.BlurEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BlurEffect"))
 };
 
 // Class Engine.DOFEffect
@@ -12809,14 +11150,7 @@ public:
 	struct FVector                                     FocusPosition;                                 // 0x00A8 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DOFEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DOFEffect"))
 };
 
 // Class Engine.DOFAndBloomEffect
@@ -12838,14 +11172,7 @@ public:
 	class UTexture2D*                                  BokehTexture;                                  // 0x00D8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DOFAndBloomEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DOFAndBloomEffect"))
 };
 
 // Class Engine.DOFBloomMotionBlurEffect
@@ -12860,14 +11187,7 @@ public:
 	float                                              CameraTranslationThreshold;                    // 0x00F0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DOFBloomMotionBlurEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DOFBloomMotionBlurEffect"))
 };
 
 // Class Engine.UberPostProcessEffect
@@ -12904,14 +11224,7 @@ public:
 	float                                              SceneHDRTonemapperScale;                       // 0x0190 (0x0004) [0x0000000020000000]  CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UberPostProcessEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UberPostProcessEffect"))
 };
 
 // Class Engine.DwTriovizImplEffect
@@ -12922,14 +11235,7 @@ public:
 	uint8_t                                          UnknownData00[0x3];                            // 0x0085 (0x0003) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DwTriovizImplEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DwTriovizImplEffect"))
 };
 
 // Class Engine.MaterialEffect
@@ -12941,14 +11247,7 @@ public:
 	class UMaterialInterface*                          Material;                                      // 0x0088 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialEffect"))
 };
 
 // Class Engine.MotionBlurEffect
@@ -12964,14 +11263,7 @@ public:
 	float                                              CameraTranslationThreshold;                    // 0x0098 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MotionBlurEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MotionBlurEffect"))
 };
 
 // Class Engine.PrimitiveComponentFactory
@@ -12989,14 +11281,7 @@ public:
 	uint32_t                                           CastShadow : 1;                                // 0x0060 (0x0004) [0x0000000000000001] [0x00000080] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrimitiveComponentFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrimitiveComponentFactory"))
 };
 
 // Class Engine.MeshComponentFactory
@@ -13008,14 +11293,7 @@ public:
 	class TArray<class UMaterialInterface*>            Materials;                                     // 0x0068 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MeshComponentFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MeshComponentFactory"))
 };
 
 // Class Engine.StaticMeshComponentFactory
@@ -13026,14 +11304,7 @@ public:
 	class UStaticMesh*                                 StaticMesh;                                    // 0x0078 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshComponentFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshComponentFactory"))
 };
 
 // Class Engine.ProcessReplayCommandlet
@@ -13044,14 +11315,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ProcessReplayCommandlet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ProcessReplayCommandlet"))
 };
 
 // Class Engine.ReachSpec
@@ -13080,14 +11344,7 @@ public:
 	class AActor*                                      BlockedBy;                                     // 0x00C0 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ReachSpec"))
 	bool IsBlockedFor(class APawn* P);
 	struct FVector GetDirection();
 	class ANavigationPoint* GetEnd();
@@ -13101,14 +11358,7 @@ class UAdvancedReachSpec : public UReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AdvancedReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AdvancedReachSpec"))
 };
 
 // Class Engine.CeilingReachSpec
@@ -13118,14 +11368,7 @@ class UCeilingReachSpec : public UReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CeilingReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CeilingReachSpec"))
 };
 
 // Class Engine.ForcedReachSpec
@@ -13135,14 +11378,7 @@ class UForcedReachSpec : public UReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForcedReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForcedReachSpec"))
 };
 
 // Class Engine.CoverSlipReachSpec
@@ -13153,14 +11389,7 @@ public:
 	uint8_t                                            SpecDirection;                                 // 0x00C8 (0x0001) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverSlipReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverSlipReachSpec"))
 };
 
 // Class Engine.FloorToCeilingReachSpec
@@ -13170,14 +11399,7 @@ class UFloorToCeilingReachSpec : public UForcedReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FloorToCeilingReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FloorToCeilingReachSpec"))
 };
 
 // Class Engine.MantleReachSpec
@@ -13188,14 +11410,7 @@ public:
 	uint32_t                                           bClimbUp : 1;                                  // 0x00C8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MantleReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MantleReachSpec"))
 };
 
 // Class Engine.SlotToSlotReachSpec
@@ -13206,14 +11421,7 @@ public:
 	uint8_t                                            SpecDirection;                                 // 0x00C8 (0x0001) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SlotToSlotReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SlotToSlotReachSpec"))
 };
 
 // Class Engine.SwatTurnReachSpec
@@ -13224,14 +11432,7 @@ public:
 	uint8_t                                            SpecDirection;                                 // 0x00C8 (0x0001) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SwatTurnReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SwatTurnReachSpec"))
 };
 
 // Class Engine.WallTransReachSpec
@@ -13241,14 +11442,7 @@ class UWallTransReachSpec : public UForcedReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WallTransReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WallTransReachSpec"))
 };
 
 // Class Engine.ProscribedReachSpec
@@ -13258,14 +11452,7 @@ class UProscribedReachSpec : public UReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ProscribedReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ProscribedReachSpec"))
 };
 
 // Class Engine.TeleportReachSpec
@@ -13275,14 +11462,7 @@ class UTeleportReachSpec : public UReachSpec
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TeleportReachSpec");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TeleportReachSpec"))
 };
 
 // Class Engine.SavedMove
@@ -13323,14 +11503,7 @@ public:
 	struct FVector                                     RootMotionInterpCurveLastValue;                // 0x010C (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SavedMove");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SavedMove"))
 	class FString GetDebugString();
 	static EDoubleClickDir SetFlags(uint8_t Flags, class APlayerController* PC);
 	uint8_t CompressedFlags();
@@ -13354,14 +11527,7 @@ public:
 	class FString                                      Description;                                   // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SaveGameSummary");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SaveGameSummary"))
 };
 
 // Class Engine.ScriptViewportClient
@@ -13372,14 +11538,7 @@ public:
 	struct FPointer                                    VfTable_FViewportClient;                       // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ScriptViewportClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ScriptViewportClient"))
 };
 
 // Class Engine.GameViewportClient
@@ -13433,14 +11592,7 @@ public:
 	struct FScriptDelegate                             __EventGampadDisconnected__Delegate;           // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameViewportClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameViewportClient"))
 	void eventSetHardwareMouseCursorVisibility(bool bIsVisible);
 	void DebugSetUISystemEnabled(bool bOldUISystemActive, bool bGFxUISystemActive);
 	void SetEnableHighContrastMode(bool bInEnable);
@@ -13517,14 +11669,7 @@ public:
 	uint8_t                                          UnknownData00[0x30];                          // 0x0060 (0x0030) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Selection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Selection"))
 };
 
 // Class Engine.ServerCommandlet
@@ -13535,14 +11680,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ServerCommandlet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ServerCommandlet"))
 };
 
 // Class Engine.Settings
@@ -13556,14 +11694,7 @@ public:
 	class TArray<struct FSettingsPropertyPropertyMetaData> PropertyMappings;                              // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Settings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Settings"))
 	void UpdateFromURL(class AGameInfo* Game, class FString& outURL);
 	void BuildURL(class FString& outURL);
 	void AppendContextsToURL(class FString& outURL);
@@ -13641,14 +11772,7 @@ public:
 	int32_t                                            MaxPingBytes;                                  // 0x0150 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineGameSearch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameSearch"))
 	class UOnlineGameSettings* eventCreateOnlineGameSettings();
 	void eventSortSearchResults();
 	void SetSkillOverride(int32_t LeaderboardId, class TArray<struct FUniqueNetId>& outPlayers);
@@ -13690,14 +11814,7 @@ public:
 	class FString                                      Payload;                                       // 0x0138 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineGameSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameSettings"))
 };
 
 // Class Engine.ShaderCache
@@ -13708,14 +11825,7 @@ public:
 	uint8_t                                          UnknownData00[0x78];                          // 0x0060 (0x0078) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ShaderCache");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ShaderCache"))
 };
 
 // Class Engine.ShadowMap1D
@@ -13726,14 +11836,7 @@ public:
 	uint8_t                                          UnknownData00[0x68];                          // 0x0060 (0x0068) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ShadowMap1D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ShadowMap1D"))
 };
 
 // Class Engine.ShadowMap2D
@@ -13751,14 +11854,7 @@ public:
 	int32_t                                            InstanceIndex;                                 // 0x0098 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ShadowMap2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ShadowMap2D"))
 };
 
 // Class Engine.SmokeTestCommandlet
@@ -13769,14 +11865,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SmokeTestCommandlet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SmokeTestCommandlet"))
 };
 
 // Class Engine.SpeechRecognition
@@ -13798,14 +11887,7 @@ public:
 	struct FPointer                                    FnxVoiceData;                                  // 0x0120 (0x0008) [0x0000000000201002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeechRecognition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeechRecognition"))
 };
 
 // Class Engine.StaticMesh
@@ -13839,14 +11921,7 @@ public:
 	uint8_t                                          UnknownData05[0x8C];                          // 0x0174 (0x008C) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMesh"))
 };
 
 // Class Engine.Surface
@@ -13856,14 +11931,7 @@ class USurface : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Surface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Surface"))
 	float GetSurfaceHeight();
 	float GetSurfaceWidth();
 };
@@ -14005,14 +12073,7 @@ public:
 	struct FColor                                      MobileLandscapeMonochomeLayerColors[4];        // 0x0264 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInterface"))
 	void WaitForMipLevelsToStream(float MaxWaitSeconds);
 	class UMaterialInstance* GetOrCreateInstance();
 	void SetForceMipLevelsToBeResident(bool OverrideForceMiplevelsToBeResident, bool bForceMiplevelsToBeResidentValue, float ForceDuration, int32_t optionalCinematicTextureGroups);
@@ -14058,14 +12119,7 @@ public:
 	int32_t                                            PreCachedPhysDataVersion;                      // 0x0120 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_BodySetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_BodySetup"))
 };
 
 // Class Engine.FracturedStaticMesh
@@ -14105,14 +12159,7 @@ public:
 	uint8_t                                          UnknownData01[0x34];                          // 0x02BC (0x0034) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedStaticMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedStaticMesh"))
 };
 
 // Class Engine.ParticleSystem
@@ -14170,14 +12217,7 @@ public:
 	class TArray<struct FLODSoloTrack>                 SoloTracking;                                  // 0x0180 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleSystem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleSystem"))
 	float GetMaxLifespan(float InComponentDelay);
 	bool SetLODDistance(int32_t LODLevelIndex, float InDistance);
 	void SetCurrentLODMethod(EParticleSystemLODMethod InMethod);
@@ -14237,14 +12277,7 @@ public:
 	int32_t                                            RequiredCreationFlags;                         // 0x014C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Texture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Texture"))
 };
 
 // Class Engine.Texture2D
@@ -14294,14 +12327,7 @@ public:
 	float                                              Timer;                                         // 0x027C (0x0004) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Texture2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Texture2D"))
 	static class UTexture2D* Create(int32_t InSizeX, int32_t InSizeY, EPixelFormat optionalInFormat);
 	void SetForceMipLevelsToBeResident(float Seconds, int32_t optionalCinematicTextureGroups);
 };
@@ -14314,14 +12340,7 @@ public:
 	uint8_t                                          UnknownData00[0x8];                            // 0x0280 (0x0008) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightMapTexture2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightMapTexture2D"))
 };
 
 // Class Engine.ShadowMapTexture2D
@@ -14332,14 +12351,7 @@ public:
 	int32_t                                            ShadowmapFlags;                                // 0x0280 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ShadowMapTexture2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ShadowMapTexture2D"))
 };
 
 // Class Engine.TickEventBase
@@ -14352,14 +12364,7 @@ public:
 	int32_t                                            Count;                                         // 0x0068 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TickEventBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TickEventBase"))
 };
 
 // Class Engine.FrameTick
@@ -14370,14 +12375,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FrameTick");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FrameTick"))
 };
 
 // Class Engine.GameTick
@@ -14388,14 +12386,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameTick");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameTick"))
 };
 
 // Class Engine.TranslationContext
@@ -14406,14 +12397,7 @@ public:
 	class TArray<class UTranslatorTag*>                TranslatorTags;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TranslationContext");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TranslationContext"))
 	bool RegisterTranslatorTag(class UTranslatorTag* InTagHandler);
 };
 
@@ -14425,14 +12409,7 @@ public:
 	class FName                                        Tag;                                           // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TranslatorTag");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TranslatorTag"))
 	class FString Translate(const class FString& InArgument);
 };
 
@@ -14443,14 +12420,7 @@ class UStringsTag : public UTranslatorTag
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StringsTag");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StringsTag"))
 	class FString Translate(const class FString& InArgument);
 };
 
@@ -14462,14 +12432,7 @@ public:
 	class TArray<class FString>                        BadCapsLocContexts;                            // 0x0060 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIRoot");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIRoot"))
 	static class FString SafeCaps(const class FString& StringToCap);
 	static class UOnlinePlayerInterfaceEx* GetOnlinePlayerInterfaceEx();
 	static class UOnlinePlayerInterface* GetOnlinePlayerInterface();
@@ -14491,14 +12454,7 @@ public:
 	struct FScriptDelegate                             __OnInitialize__Delegate;                      // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interaction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interaction"))
 	void NotifyPlayerRemoved(int32_t PlayerIndex, class ULocalPlayer* RemovedPlayer);
 	void NotifyPlayerAdded(int32_t PlayerIndex, class ULocalPlayer* AddedPlayer);
 	void NotifyGameSessionEnded();
@@ -14540,14 +12496,7 @@ public:
 	struct FUIAxisEmulationData                        AxisInputEmulation[4];                         // 0x01B0 (0x0060) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIInteraction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIInteraction"))
 	void NotifyGameSessionEnded();
 	static ENATType eventGetNATType();
 	static int32_t GetConnectedGamepadCount(const class TArray<uint32_t>& optionalControllerConnectionStatusOverrides);
@@ -14574,14 +12523,7 @@ class UUIManager : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIManager"))
 	int32_t FindLocalPlayerIndex(class UPlayer* P);
 	void NotifyPlayerRemoved(int32_t PlayerIndex, class ULocalPlayer* RemovedPlayer);
 	void NotifyPlayerAdded(int32_t PlayerIndex, class ULocalPlayer* AddedPlayer);
@@ -14598,14 +12540,7 @@ public:
 	class UForceFeedbackWaveform*                      TheWaveForm;                                   // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WaveFormBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WaveFormBase"))
 };
 
 // Class Engine.World
@@ -14616,14 +12551,7 @@ public:
 	uint8_t                                          UnknownData00[0x358];                        // 0x0060 (0x0358) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.World");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.World"))
 };
 
 // Class Engine.EnvironmentVolume
@@ -14637,14 +12565,7 @@ public:
 	uint32_t                                           bSplitNavMesh : 1;                             // 0x02B8 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EnvironmentVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EnvironmentVolume"))
 	void SetSplitNavMesh(bool bNewValue);
 };
 
@@ -14657,14 +12578,7 @@ public:
 	struct FPointer                                    VfTable_IInterface_NavMeshPathObject;          // 0x02A8 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TestSplittingVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TestSplittingVolume"))
 };
 
 // Class Engine.AIController
@@ -14683,14 +12597,7 @@ public:
 	class AActor*                                      ScriptedFocus;                                 // 0x0498 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AIController");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AIController"))
 	void OnAIMoveToActor(class USeqAct_AIMoveToActor* Action);
 	void eventSetTeam(int32_t inTeamIdx);
 	void DisplayDebug(class AHUD* HUD, float& outOut_YL, float& outOut_YPos);
@@ -14710,14 +12617,7 @@ public:
 	struct FPointer                                    VfTable_IInterface_NavigationHandle;           // 0x0268 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CrowdAgentBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CrowdAgentBase"))
 	void eventNotifyPathChanged();
 };
 
@@ -14728,14 +12628,7 @@ class ACrowdPopulationManagerBase : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CrowdPopulationManagerBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CrowdPopulationManagerBase"))
 };
 
 // Class Engine.PathTargetPoint
@@ -14745,14 +12638,7 @@ class APathTargetPoint : public AKeypoint
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathTargetPoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathTargetPoint"))
 	bool ShouldBeHiddenBySHOW_NavigationNodes();
 };
 
@@ -14766,14 +12652,7 @@ public:
 	uint32_t                                           bPreserveInternalGeo : 1;                      // 0x0270 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshObstacle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshObstacle"))
 	void ApplyCheckpointRecord(struct ANavMeshObstacle_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ANavMeshObstacle_FCheckpointRecord& outRecord);
 	void SetEnabled(bool bInEnabled);
@@ -14792,14 +12671,7 @@ public:
 	struct FPointer                                    VfTable_IInterface_NavMeshPathObject;          // 0x0268 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PylonSeed");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PylonSeed"))
 };
 
 // Class Engine.CoverGroupRenderingComponent
@@ -14809,14 +12681,7 @@ class UCoverGroupRenderingComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverGroupRenderingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverGroupRenderingComponent"))
 };
 
 // Class Engine.MeshComponent
@@ -14829,14 +12694,7 @@ public:
 	class TArray<class UMaterialInterface*>            InvisiTekMaterials;                            // 0x0270 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MeshComponent"))
 	void PrepMeshForThumbnail(const struct FRotator& InRotation, const struct FVector& InDrawScale3D);
 	void ForceMipLevelsToBeResident();
 	void SetActorParameter(const class FName& Key, class AActor* Value);
@@ -14885,14 +12743,7 @@ public:
 	struct FLightmassPrimitiveSettings                 LightmassSettings;                             // 0x02E4 (0x001C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticMeshComponent"))
 	bool LineCheckUVs(const struct FVector& TraceEnd, const struct FVector& TraceStart, struct FVector2D& outOutUVs);
 	bool CanBecomeDynamic();
 	void SetForceStaticDecals(bool bInForceStaticDecals);
@@ -14914,14 +12765,7 @@ public:
 	uint32_t                                           bShowWhenNotSelected : 1;                      // 0x0338 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverMeshComponent"))
 };
 
 // Class Engine.NavMeshRenderingComponent
@@ -14931,14 +12775,7 @@ class UNavMeshRenderingComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshRenderingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshRenderingComponent"))
 };
 
 // Class Engine.PathRenderingComponent
@@ -14948,14 +12785,7 @@ class UPathRenderingComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathRenderingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathRenderingComponent"))
 };
 
 // Class Engine.RouteRenderingComponent
@@ -14965,14 +12795,7 @@ class URouteRenderingComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RouteRenderingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RouteRenderingComponent"))
 };
 
 // Class Engine.AICommandBase
@@ -14982,14 +12805,7 @@ class UAICommandBase : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AICommandBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AICommandBase"))
 	static int32_t eventGetUtility(class AAIController* InAI);
 };
 
@@ -15002,14 +12818,7 @@ public:
 	class UInterface_NavMeshPathObstacle*              PathObstacleRef_Interface;                     // 0x0068 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AutoNavMeshPathObstacleUnregister");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AutoNavMeshPathObstacleUnregister"))
 };
 
 // Class Engine.Interface_NavMeshPathObject
@@ -15019,14 +12828,7 @@ class UInterface_NavMeshPathObject : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_NavMeshPathObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_NavMeshPathObject"))
 };
 
 // Class Engine.Interface_NavMeshPathSwitch
@@ -15036,14 +12838,7 @@ class UInterface_NavMeshPathSwitch : public UInterface_NavMeshPathObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_NavMeshPathSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_NavMeshPathSwitch"))
 	bool eventAIActivateSwitch(class AAIController* AI);
 };
 
@@ -15054,14 +12849,7 @@ class UInterface_NavMeshPathObstacle : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_NavMeshPathObstacle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_NavMeshPathObstacle"))
 };
 
 // Class Engine.Interface_PylonGeometryProvider
@@ -15071,14 +12859,7 @@ class UInterface_PylonGeometryProvider : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_PylonGeometryProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_PylonGeometryProvider"))
 };
 
 // Class Engine.Interface_RVO
@@ -15088,14 +12869,7 @@ class UInterface_RVO : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Interface_RVO");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Interface_RVO"))
 };
 
 // Class Engine.NavigationHandle
@@ -15128,14 +12902,7 @@ public:
 	float                                              BreadCrumbDistanceInterval;                    // 0x01A4 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavigationHandle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavigationHandle"))
 	static bool GetClosestPointOnMesh(float SearchRadius, struct FVector& outSearchPoint);
 	void DrawBreadCrumbs(bool optionalBPersistent);
 	static bool StaticGetValidatedAnchorPosition(const struct FVector& StartCheckBaseLocation, const struct FVector& Extent, struct FVector& outOut_NewAnchorLoc);
@@ -15195,14 +12962,7 @@ public:
 	int32_t                                            NumNodesProcessed;                             // 0x0068 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_Filter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_Filter"))
 	class FString eventGetDumpString();
 };
 
@@ -15215,14 +12975,7 @@ public:
 	int32_t                                            MinDistancePathShouldBe;                       // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoalFilter_MinPathDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoalFilter_MinPathDistance"))
 	static bool MustBeLongerPathThan(class UNavMeshGoal_GenericFilterContainer* FilterContainer, int32_t InMinDistancePathShouldBe);
 };
 
@@ -15235,14 +12988,7 @@ public:
 	float                                              DistanceToCheck;                               // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoalFilter_NotNearOtherAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoalFilter_NotNearOtherAI"))
 	static bool NotNearOtherAI(class UNavMeshGoal_GenericFilterContainer* FilterContainer, float InDistanceToCheck);
 };
 
@@ -15256,14 +13002,7 @@ public:
 	struct FVector                                     OutOfViewLocation;                             // 0x0078 (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoalFilter_OutOfViewFrom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoalFilter_OutOfViewFrom"))
 	static bool MustBeHiddenFromThisPoint(class UNavMeshGoal_GenericFilterContainer* FilterContainer, const struct FVector& InOutOfViewLocation);
 };
 
@@ -15278,14 +13017,7 @@ public:
 	float                                              Epsilon;                                       // 0x0088 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoalFilter_OutSideOfDotProductWedge");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoalFilter_OutSideOfDotProductWedge"))
 	static bool OutsideOfDotProductWedge(class UNavMeshGoal_GenericFilterContainer* FilterContainer, const struct FVector& InLocation, const struct FRotator& InRotation, float InEpsilon);
 };
 
@@ -15298,14 +13030,7 @@ public:
 	struct FVector                                     OverrideExtentToCheck;                         // 0x0070 (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoalFilter_PolyEncompassesAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoalFilter_PolyEncompassesAI"))
 	static bool MakeSureAIFits(class UNavMeshGoal_GenericFilterContainer* FilterContainer, const struct FVector& optionalInOverrideExtentToCheck);
 };
 
@@ -15321,14 +13046,7 @@ public:
 	float                                              AddedHeuristicCost;                            // 0x0074 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPathConstraint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPathConstraint"))
 	class FString eventGetDumpString();
 	void eventRecycle();
 };
@@ -15341,14 +13059,7 @@ public:
 	struct FVector                                     Direction;                                     // 0x0078 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_AlongLine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_AlongLine"))
 	void Recycle();
 	static bool AlongLine(class UNavigationHandle* NavHandle, const struct FVector& Dir);
 };
@@ -15360,14 +13071,7 @@ class UNavMeshPath_EnforceTwoWayEdges : public UNavMeshPathConstraint
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_EnforceTwoWayEdges");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_EnforceTwoWayEdges"))
 	static bool EnforceTwoWayEdges(class UNavigationHandle* NavHandle);
 };
 
@@ -15383,14 +13087,7 @@ public:
 	float                                              Penalty;                                       // 0x008C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_MinDistBetweenSpecsOfType");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_MinDistBetweenSpecsOfType"))
 	void Recycle();
 	static bool EnforceMinDist(class UNavigationHandle* NavHandle, float InMinDist, ENavMeshEdgeType InEdgeType, const struct FVector& optionalLastLocation, float optionalInPenalty);
 };
@@ -15403,14 +13100,7 @@ public:
 	class ACoverLink*                                  TestLink;                                      // 0x0078 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_SameCoverLink");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_SameCoverLink"))
 	void Recycle();
 	static void SameCoverLink(class UNavigationHandle* NavHandle, class ACoverLink* InLink);
 };
@@ -15426,14 +13116,7 @@ public:
 	struct FVector                                     GoalPoint;                                     // 0x0088 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_Toward");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_Toward"))
 	void Recycle();
 	static bool eventTowardPoint(class UNavigationHandle* NavHandle, const struct FVector& Point);
 	static bool TowardGoal(class UNavigationHandle* NavHandle, class AActor* Goal);
@@ -15452,14 +13135,7 @@ public:
 	struct FVector                                     EnvelopeTestPoint;                             // 0x0088 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_WithinDistanceEnvelope");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_WithinDistanceEnvelope"))
 	void Recycle();
 	static bool StayWithinEnvelopeToLoc(class UNavigationHandle* NavHandle, const struct FVector& InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool optionalBInSoft, float optionalInSoftStartPenalty, bool optionalBOnlyTossOutSpecsThatLeave);
 };
@@ -15474,14 +13150,7 @@ public:
 	float                                              SoftStartPenalty;                              // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPath_WithinTraversalDist");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPath_WithinTraversalDist"))
 	void Recycle();
 	static bool DontExceedMaxDist(class UNavigationHandle* NavHandle, float InMaxTraversalDist, bool optionalBInSoft);
 };
@@ -15500,14 +13169,7 @@ public:
 	int32_t                                            MaxOpenListSize;                               // 0x0078 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshPathGoalEvaluator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshPathGoalEvaluator"))
 	class FString eventGetDumpString();
 	void eventRecycle();
 };
@@ -15528,14 +13190,7 @@ public:
 	struct FPointer                                    PartialGoal;                                   // 0x00A0 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_At");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_At"))
 	void Recycle();
 	static bool eventAtLocation(class UNavigationHandle* NavHandle, const struct FVector& GoalLocation, float optionalDist, bool optionalBReturnPartial, bool optionalBInWeightPartialByDist);
 	static bool AtActor(class UNavigationHandle* NavHandle, class AActor* GoalActor, float optionalDist, bool optionalBReturnPartial, bool optionalBInWeightPartialByDist);
@@ -15553,14 +13208,7 @@ public:
 	struct FPointer                                    CachedAnchorPoly;                              // 0x00E0 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_ClosestActorInList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_ClosestActorInList"))
 	void RecycleInternal();
 	void eventRecycle();
 	static class UNavMeshGoal_ClosestActorInList* ClosestActorInList(class UNavigationHandle* NavHandle, class TArray<struct FBiasedGoalActor>& outInGoalList);
@@ -15578,14 +13226,7 @@ public:
 	class TArray<struct FVector>                       SeedLocations;                                 // 0x00A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_GenericFilterContainer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_GenericFilterContainer"))
 	void Recycle();
 	struct FVector GetGoalPoint();
 	class UNavMeshGoal_Filter* GetFilterOfType(class UClass* Filter_Class);
@@ -15602,14 +13243,7 @@ public:
 	struct FPointer                                    PartialGoal;                                   // 0x0080 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_Null");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_Null"))
 	void Recycle();
 	void RecycleNative();
 	static bool GoUntilBust(class UNavigationHandle* NavHandle, int32_t optionalInMaxPathVisits);
@@ -15624,14 +13258,7 @@ public:
 	struct FVector                                     OverrideExtentToCheck;                         // 0x0080 (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_PolyEncompassesAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_PolyEncompassesAI"))
 	void Recycle();
 	static bool MakeSureAIFits(class UNavigationHandle* NavHandle, const struct FVector& optionalInOverrideExtentToCheck);
 };
@@ -15647,14 +13274,7 @@ public:
 	struct FPointer                                    PartialGoal;                                   // 0x0088 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_Random");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_Random"))
 	void Recycle();
 	void RecycleNative();
 	static bool FindRandom(class UNavigationHandle* NavHandle, int32_t optionalInMinDist, int32_t optionalInMaxPathVisits);
@@ -15672,14 +13292,7 @@ public:
 	struct FVector                                     EnvelopeTestPoint;                             // 0x008C (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshGoal_WithinDistanceEnvelope");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshGoal_WithinDistanceEnvelope"))
 	void Recycle();
 	static bool GoalWithinEnvelopeToLoc(class UNavigationHandle* NavHandle, const struct FVector& InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, float optionalInMinTraversalDist);
 };
@@ -15694,14 +13307,7 @@ public:
 	class UPathConstraint*                             NextConstraint;                                // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathConstraint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathConstraint"))
 	class FString eventGetDumpString();
 	void eventRecycle();
 };
@@ -15714,14 +13320,7 @@ public:
 	struct FVector                                     Direction;                                     // 0x0070 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_AlongLine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_AlongLine"))
 	void Recycle();
 	static bool AlongLine(class APawn* P, const struct FVector& Dir);
 };
@@ -15737,14 +13336,7 @@ public:
 	int32_t                                            MoveFlags;                                     // 0x007C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_AvoidInEscapableNodes");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_AvoidInEscapableNodes"))
 	void Recycle();
 	static bool DontGetStuck(class APawn* P);
 	void CachePawnReacFlags(class APawn* P);
@@ -15760,14 +13352,7 @@ public:
 	class UClass*                                      ReachSpecClass;                                // 0x0080 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_MinDistBetweenSpecsOfType");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_MinDistBetweenSpecsOfType"))
 	void Recycle();
 	static bool EnforceMinDist(class APawn* P, float InMinDist, class UClass* InSpecClass, const struct FVector& optionalLastLocation);
 };
@@ -15780,14 +13365,7 @@ public:
 	class AActor*                                      GoalActor;                                     // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_TowardGoal");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_TowardGoal"))
 	void Recycle();
 	static bool TowardGoal(class APawn* P, class AActor* Goal);
 };
@@ -15800,14 +13378,7 @@ public:
 	struct FVector                                     GoalPoint;                                     // 0x0070 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_TowardPoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_TowardPoint"))
 	void Recycle();
 	static bool TowardPoint(class APawn* P, const struct FVector& Point);
 };
@@ -15825,14 +13396,7 @@ public:
 	struct FVector                                     EnvelopeTestPoint;                             // 0x0080 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_WithinDistanceEnvelope");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_WithinDistanceEnvelope"))
 	void Recycle();
 	static bool StayWithinEnvelopeToLoc(class APawn* P, const struct FVector& InEnvelopeTestPoint, float InMaxDistance, float InMinDistance, bool optionalBInSoft, float optionalInSoftStartPenalty, bool optionalBOnlyTossOutSpecsThatLeave);
 };
@@ -15847,14 +13411,7 @@ public:
 	float                                              SoftStartPenalty;                              // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Path_WithinTraversalDist");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Path_WithinTraversalDist"))
 	void Recycle();
 	static bool DontExceedMaxDist(class APawn* P, float InMaxTraversalDist, bool optionalBInSoft);
 };
@@ -15870,14 +13427,7 @@ public:
 	int32_t                                            CacheIdx;                                      // 0x0074 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathGoalEvaluator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathGoalEvaluator"))
 	class FString eventGetDumpString();
 	void eventRecycle();
 };
@@ -15892,14 +13442,7 @@ public:
 	uint32_t                                           bKeepPartial : 1;                              // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Goal_AtActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Goal_AtActor"))
 	void Recycle();
 	static bool AtActor(class APawn* P, class AActor* Goal, float optionalDist, bool optionalBReturnPartial);
 };
@@ -15911,14 +13454,7 @@ class UGoal_Null : public UPathGoalEvaluator
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Goal_Null");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Goal_Null"))
 	void Recycle();
 	static bool GoUntilBust(class APawn* P, int32_t optionalInMaxPathVisits);
 };
@@ -15946,14 +13482,7 @@ public:
 	float                                              SavedCurrentTime;                              // 0x02C8 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActor"))
 	bool eventCreateForceField(class UAnimNotify_ForceField* AnimNotifyData);
 	void SkelMeshActorOnParticleSystemFinished(class UParticleSystemComponent* PSC);
 	bool eventPlayParticleEffect(class UAnimNotify_PlayParticleEffect* AnimNotifyData);
@@ -15993,14 +13522,7 @@ public:
 	class TArray<struct FSkelMaterialSetterDatum>      NonExtremeContent;                             // 0x02E0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActorBasedOnExtremeContent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActorBasedOnExtremeContent"))
 	void SetMaterialBasedOnExtremeContent();
 	void eventPostBeginPlay();
 };
@@ -16013,14 +13535,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02CC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActorSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActorSpawnable"))
 };
 
 // Class Engine.SkeletalMeshCinematicActor
@@ -16031,14 +13546,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02CC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshCinematicActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshCinematicActor"))
 };
 
 // Class Engine.SkeletalMeshActorMAT
@@ -16049,14 +13557,7 @@ public:
 	class TArray<class UAnimNodeSlot*>                 SlotNodes;                                     // 0x02D0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActorMAT");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActorMAT"))
 	void eventSetSkelControlScale(const class FName& SkelControlName, float Scale);
 	void eventSetMorphWeight(const class FName& MorphNodeName, float MorphWeight);
 	void eventFinishAnimControl(class UInterpGroup* InInterpGroup);
@@ -16094,14 +13595,7 @@ public:
 	struct FRotator                                    RootMeshRotation;                              // 0x015C (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HeadTrackingComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HeadTrackingComponent"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm
@@ -16115,14 +13609,7 @@ public:
 	EAnimationCompressionFormat                        RotationCompressionFormat;                     // 0x0075 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_Automatic
@@ -16141,14 +13628,7 @@ public:
 	uint32_t                                           bRaiseMaxErrorToExisting : 1;                  // 0x007C (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_Automatic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_Automatic"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_BitwiseCompressOnly
@@ -16159,14 +13639,7 @@ public:
 	uint8_t                                          UnknownData00[0x2];                            // 0x0076 (0x0002) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_BitwiseCompressOnly");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_BitwiseCompressOnly"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_LeastDestructive
@@ -16177,14 +13650,7 @@ public:
 	uint8_t                                          UnknownData00[0x2];                            // 0x0076 (0x0002) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_LeastDestructive");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_LeastDestructive"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_RemoveEverySecondKey
@@ -16197,14 +13663,7 @@ public:
 	uint32_t                                           bStartAtSecondKey : 1;                         // 0x007C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveEverySecondKey");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveEverySecondKey"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys
@@ -16223,14 +13682,7 @@ public:
 	uint32_t                                           bActuallyFilterLinearKeys : 1;                 // 0x0090 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_PerTrackCompression
@@ -16261,14 +13713,7 @@ public:
 	struct FPointer                                    PerReductionCachedData;                        // 0x00F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_PerTrackCompression");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_PerTrackCompression"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_RemoveTrivialKeys
@@ -16281,14 +13726,7 @@ public:
 	float                                              MaxAngleDiff;                                  // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveTrivialKeys");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveTrivialKeys"))
 };
 
 // Class Engine.AnimationCompressionAlgorithm_RevertToRaw
@@ -16299,14 +13737,7 @@ public:
 	uint8_t                                          UnknownData00[0x2];                            // 0x0076 (0x0002) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RevertToRaw");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RevertToRaw"))
 };
 
 // Class Engine.AnimMetaData
@@ -16316,14 +13747,7 @@ class UAnimMetaData : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimMetaData");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimMetaData"))
 };
 
 // Class Engine.AnimMetaData_SkelControl
@@ -16336,14 +13760,7 @@ public:
 	class FName                                        SkelControlName;                               // 0x0074 (0x0008) [0x0000000020000000]  CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimMetaData_SkelControl");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimMetaData_SkelControl"))
 };
 
 // Class Engine.AnimMetaData_SkelControlKeyFrame
@@ -16355,14 +13772,7 @@ public:
 	class TArray<struct FTimeModifier>                 KeyFrames;                                     // 0x0080 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimMetaData_SkelControlKeyFrame");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimMetaData_SkelControlKeyFrame"))
 };
 
 // Class Engine.AnimNotify
@@ -16373,14 +13783,7 @@ public:
 	struct FColor                                      NotifyColor;                                   // 0x0060 (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify"))
 	bool FindNextNotifyOfClass(class UAnimNodeSequence* AnimSeqInstigator, class UClass* NotifyClass, struct FAnimNotifyEvent& outOutEvent);
 };
 
@@ -16395,14 +13798,7 @@ public:
 	class FName                                        BoneName;                                      // 0x0074 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_AkEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_AkEvent"))
 };
 
 // Class Engine.AnimNotify_CameraEffect
@@ -16414,14 +13810,7 @@ public:
 	class UClass*                                      CameraLensEffect;                              // 0x0068 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_CameraEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_CameraEffect"))
 };
 
 // Class Engine.AnimNotify_ClothingMaxDistanceScale
@@ -16437,14 +13826,7 @@ public:
 	float                                              Duration;                                      // 0x0074 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_ClothingMaxDistanceScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_ClothingMaxDistanceScale"))
 };
 
 // Class Engine.AnimNotify_Footstep
@@ -16456,14 +13838,7 @@ public:
 	int32_t                                            FootDown;                                      // 0x0068 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Footstep");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Footstep"))
 };
 
 // Class Engine.AnimNotify_ForceField
@@ -16478,14 +13853,7 @@ public:
 	class FName                                        BoneName;                                      // 0x007C (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_ForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_ForceField"))
 };
 
 // Class Engine.AnimNotify_Kismet
@@ -16497,14 +13865,7 @@ public:
 	class FName                                        NotifyName;                                    // 0x0068 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Kismet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Kismet"))
 };
 
 // Class Engine.AnimNotify_PlayParticleEffect
@@ -16525,14 +13886,7 @@ public:
 	class FName                                        BoneSocketModuleActorName;                     // 0x0090 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_PlayParticleEffect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_PlayParticleEffect"))
 };
 
 // Class Engine.AnimNotify_Rumble
@@ -16547,14 +13901,7 @@ public:
 	float                                              EffectRadius;                                  // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Rumble");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Rumble"))
 };
 
 // Class Engine.AnimNotify_Script
@@ -16568,14 +13915,7 @@ public:
 	class FName                                        NotifyEndName;                                 // 0x0078 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Script");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Script"))
 };
 
 // Class Engine.AnimNotify_Scripted
@@ -16586,14 +13926,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Scripted");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Scripted"))
 	void eventNotifyEnd(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
 	void eventNotify(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
 };
@@ -16606,14 +13939,7 @@ public:
 	class TArray<struct FScalarParameterInterpStruct>  ScalarParameterInterpArray;                    // 0x0068 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_PawnMaterialParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_PawnMaterialParam"))
 	void eventNotify(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
 };
 
@@ -16637,14 +13963,7 @@ public:
 	class UCameraShake*                                ShakeParams;                                   // 0x00B8 (0x0008) [0x0000000004400009] (CPF_Edit | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_ViewShake");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_ViewShake"))
 	void eventNotify(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
 };
 
@@ -16663,14 +13982,7 @@ public:
 	float                                              PitchMultiplier;                               // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Sound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Sound"))
 };
 
 // Class Engine.AnimNotify_Trails
@@ -16701,14 +14013,7 @@ public:
 	class UAnimNodeSequence*                           AnimNodeSeq;                                   // 0x00D0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_Trails");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_Trails"))
 	int32_t GetNumSteps(int32_t InLastTrailIndex);
 };
 
@@ -16727,14 +14032,7 @@ public:
 	class USkeletalMeshComponent*                      SkelComponent;                                 // 0x0088 (0x0008) [0x000000000428200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimObject"))
 };
 
 // Class Engine.AnimNode
@@ -16771,14 +14069,7 @@ public:
 	class TArray<struct FCurveKey>                     LastUpdatedAnimMorphKeys;                      // 0x0120 (0x0010) [0x0000000800422001] (CPF_Edit | CPF_Transient | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNode"))
 	void ReplayAnim();
 	void StopAnim();
 	void PlayAnim(bool optionalBLoop, float optionalRate, float optionalStartTime);
@@ -16798,14 +14089,7 @@ public:
 	EAlphaBlendType                                    BlendType;                                     // 0x0144 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendBase"))
 	void ReplayAnim();
 	void StopAnim();
 	void PlayAnim(bool optionalBLoop, float optionalRate, float optionalStartTime);
@@ -16822,14 +14106,7 @@ public:
 	EBlendType                                         RotationBlendType;                             // 0x0160 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNode_MultiBlendPerBone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNode_MultiBlendPerBone"))
 	void SetMaskWeight(int32_t MaskIndex, float DesiredWeight, float BlendTime);
 };
 
@@ -16855,14 +14132,7 @@ public:
 	int32_t                                            CurrentProfileIndex;                           // 0x01A0 (0x0004) [0x0000000000020003] (CPF_Edit | CPF_Const | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeAimOffset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeAimOffset"))
 	void SetActiveProfileByIndex(int32_t ProfileIndex);
 	void SetActiveProfileByName(const class FName& ProfileName);
 };
@@ -16879,14 +14149,7 @@ public:
 	uint32_t                                           bSkipBlendWhenNotRendered : 1;                 // 0x0154 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlend"))
 	void SetBlendTarget(float BlendTarget, float BlendTime);
 };
 
@@ -16898,14 +14161,7 @@ public:
 	uint32_t                                           bPassThroughWhenNotRendered : 1;               // 0x0158 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeAdditiveBlending");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeAdditiveBlending"))
 	void SetBlendTarget(float BlendTarget, float BlendTime);
 };
 
@@ -16921,14 +14177,7 @@ public:
 	class TArray<uint8_t>                              LocalToCompReqBones;                           // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendPerBone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendPerBone"))
 	void SetBlendTarget(float BlendTarget, float BlendTime);
 };
 
@@ -16942,14 +14191,7 @@ public:
 	float                                              PendingBlendOutTimeOneShot;                    // 0x0164 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeCrossfader");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeCrossfader"))
 	class UAnimNodeSequence* GetActiveChild();
 	class FName GetAnimName();
 	void BlendToLoopingAnim(const class FName& AnimSeqName, float optionalBlendInTime, float optionalRate);
@@ -16965,14 +14207,7 @@ public:
 	float                                              CustomPendingBlendOutTime;                     // 0x015C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodePlayCustomAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodePlayCustomAnim"))
 	void SetRootBoneAxisOption(ERootBoneAxis optionalAxisX, ERootBoneAxis optionalAxisY, ERootBoneAxis optionalAxisZ);
 	class UAnimNodeSequence* GetCustomAnimNodeSeq();
 	void SetActorAnimEndNotification(bool bNewStatus);
@@ -16995,14 +14230,7 @@ public:
 	uint32_t                                           bUseAcceleration : 1;                          // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendDirectional");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendDirectional"))
 };
 
 // Class Engine.AnimNodeBlendList
@@ -17021,14 +14249,7 @@ public:
 	int32_t                                            EditorActiveChildIndex;                        // 0x0168 (0x0004) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendList"))
 	void SetActiveChild(int32_t ChildIndex, float BlendTime);
 };
 
@@ -17048,14 +14269,7 @@ public:
 	class AActor*                                      CachedBase;                                    // 0x0190 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendByBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendByBase"))
 };
 
 // Class Engine.AnimNodeBlendByPhysics
@@ -17066,14 +14280,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x016C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendByPhysics");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendByPhysics"))
 };
 
 // Class Engine.AnimNodeBlendByPosture
@@ -17084,14 +14291,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x016C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendByPosture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendByPosture"))
 };
 
 // Class Engine.AnimNodeBlendByProperty
@@ -17118,14 +14318,7 @@ public:
 	float                                              BlendToChild2Time;                             // 0x01B8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendByProperty");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendByProperty"))
 };
 
 // Class Engine.AnimNodeBlendBySpeed
@@ -17147,14 +14340,7 @@ public:
 	float                                              BlendDelayRemaining;                           // 0x01A4 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendBySpeed");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendBySpeed"))
 };
 
 // Class Engine.AnimNodeRandom
@@ -17169,14 +14355,7 @@ public:
 	uint32_t                                           bPickedPendingChildIndex : 1;                  // 0x018C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeRandom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeRandom"))
 };
 
 // Class Engine.AnimNodeBlendMultiBone
@@ -17189,14 +14368,7 @@ public:
 	class TArray<uint8_t>                              SourceRequiredBones;                           // 0x0158 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeBlendMultiBone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendMultiBone"))
 	void SetTargetStartBone(int32_t TargetIdx, const class FName& StartBoneName, float optionalPerBoneIncrease);
 };
 
@@ -17209,14 +14381,7 @@ public:
 	uint32_t                                           bEnableMirroring : 1;                          // 0x0148 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeMirror");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeMirror"))
 };
 
 // Class Engine.AnimNodeScalePlayRate
@@ -17228,14 +14393,7 @@ public:
 	float                                              ScaleByValue;                                  // 0x0148 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeScalePlayRate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeScalePlayRate"))
 };
 
 // Class Engine.AnimNodeScaleRateBySpeed
@@ -17247,14 +14405,7 @@ public:
 	float                                              BaseSpeed;                                     // 0x0150 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeScaleRateBySpeed");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeScaleRateBySpeed"))
 };
 
 // Class Engine.AnimNodeSlot
@@ -17276,14 +14427,7 @@ public:
 	float                                              BlendTimeToGo;                                 // 0x0168 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeSlot");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeSlot"))
 	void TickChildWeights(float DeltaSeconds);
 	void SetRootBoneRotationOption(ERootRotationOption optionalAxisX, ERootRotationOption optionalAxisY, ERootRotationOption optionalAxisZ);
 	void SetRootBoneAxisOption(ERootBoneAxis optionalAxisX, ERootBoneAxis optionalAxisY, ERootBoneAxis optionalAxisZ);
@@ -17306,14 +14450,7 @@ public:
 	class TArray<struct FSynchGroup>                   Groups;                                        // 0x0148 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeSynch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeSynch"))
 	void SetGroupRateScale(const class FName& GroupName, float NewRateScale);
 	float GetRelativePosition(const class FName& GroupName);
 	void ForceRelativePosition(const class FName& GroupName, float RelativePosition);
@@ -17367,14 +14504,7 @@ public:
 	class TArray<class UAnimNode*>                     AnimTickArray;                                 // 0x0290 (0x0010) [0x0000000000600000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimTree");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimTree"))
 	int32_t GetGroupIndex(const class FName& GroupName);
 	float GetGroupRateScale(const class FName& GroupName);
 	void SetGroupRateScale(const class FName& GroupName, float NewRateScale);
@@ -17437,14 +14567,7 @@ public:
 	class TArray<class USkelControlBase*>              MetaDataSkelControlList;                       // 0x0198 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeSequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeSequence"))
 	void SetRootBoneRotationOption(ERootRotationOption optionalAxisX, ERootRotationOption optionalAxisY, ERootRotationOption optionalAxisZ);
 	void SetRootBoneAxisOption(ERootBoneAxis optionalAxisX, ERootBoneAxis optionalAxisY, ERootBoneAxis optionalAxisZ);
 	float GetTimeLeft();
@@ -17469,14 +14592,7 @@ public:
 	class TArray<struct FAnimBlendInfo>                Anims;                                         // 0x01A8 (0x0010) [0x0000000004400049] (CPF_Edit | CPF_ExportObject | CPF_EditFixedSize | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeSequenceBlendBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeSequenceBlendBase"))
 };
 
 // Class Engine.AnimNodeSequenceBlendByAim
@@ -17500,14 +14616,7 @@ public:
 	class FName                                        AnimName_RD;                                   // 0x0220 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeSequenceBlendByAim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeSequenceBlendByAim"))
 	void CheckAnimsUpToDate();
 };
 
@@ -17529,14 +14638,7 @@ public:
 	class FString                                      ObjComment;                                    // 0x00B8 (0x0010) [0x0000000800400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNodeFrame");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeFrame"))
 };
 
 // Class Engine.MorphNodeBase
@@ -17548,14 +14650,7 @@ public:
 	uint32_t                                           bDrawSlider : 1;                               // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeBase"))
 };
 
 // Class Engine.MorphNodeMultiPose
@@ -17569,14 +14664,7 @@ public:
 	class TArray<float>                                Weights;                                       // 0x00C0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeMultiPose");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeMultiPose"))
 	bool UpdateMorphTarget(class UMorphTarget* Target, float InWeight);
 	void RemoveMorphTarget(const class FName& MorphTargetName);
 	bool AddMorphTarget(const class FName& MorphTargetName, float optionalInWeight);
@@ -17593,14 +14681,7 @@ public:
 	float                                              Weight;                                        // 0x00B0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodePose");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodePose"))
 	void SetMorphTarget(const class FName& MorphTargetName);
 };
 
@@ -17613,14 +14694,7 @@ public:
 	class TArray<struct FMorphNodeConn>                NodeConns;                                     // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeWeightBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeWeightBase"))
 };
 
 // Class Engine.MorphNodeWeight
@@ -17631,14 +14705,7 @@ public:
 	float                                              NodeWeight;                                    // 0x00B0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeWeight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeWeight"))
 	void SetNodeWeight(float NewWeight);
 };
 
@@ -17664,14 +14731,7 @@ public:
 	class TArray<struct FBoneAngleMorph>               WeightArray;                                   // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeWeightByBoneAngle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeWeightByBoneAngle"))
 };
 
 // Class Engine.MorphNodeWeightByBoneRotation
@@ -17693,14 +14753,7 @@ public:
 	class UMaterialInstanceConstant*                   MaterialInstanceConstant;                      // 0x00E8 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphNodeWeightByBoneRotation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeWeightByBoneRotation"))
 };
 
 // Class Engine.SkelControlBase
@@ -17740,14 +14793,7 @@ public:
 	int32_t                                            ControlPosY;                                   // 0x00FC (0x0004) [0x0000000020000000]  CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlBase"))
 	float GetControlMetadataWeight();
 	void eventTickSkelControl(float DeltaTime, class USkeletalMeshComponent* SkelComp);
 	void SetSkelControlStrength(float NewStrength, float InBlendTime);
@@ -17774,14 +14820,7 @@ public:
 	float                                              MaxAngleSteps;                                 // 0x0148 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControl_CCD_IK");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControl_CCD_IK"))
 };
 
 // Class Engine.SkelControl_Multiply
@@ -17792,14 +14831,7 @@ public:
 	float                                              Multiplier;                                    // 0x0100 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControl_Multiply");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControl_Multiply"))
 };
 
 // Class Engine.SkelControl_TwistBone
@@ -17811,14 +14843,7 @@ public:
 	float                                              TwistAngleScale;                               // 0x0108 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControl_TwistBone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControl_TwistBone"))
 };
 
 // Class Engine.SkelControlLimb
@@ -17848,14 +14873,7 @@ public:
 	class FName                                        StretchRollBoneName;                           // 0x0150 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlLimb");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlLimb"))
 };
 
 // Class Engine.SkelControlFootPlacement
@@ -17875,14 +14893,7 @@ public:
 	float                                              MaxFootOrientAdjust;                           // 0x0178 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlFootPlacement");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlFootPlacement"))
 };
 
 // Class Engine.SkelControlLookAt
@@ -17927,14 +14938,7 @@ public:
 	int32_t                                            ControlBoneIndex;                              // 0x0198 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlLookAt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlLookAt"))
 	bool CanLookAtPoint(const struct FVector& PointLoc, bool optionalBDrawDebugInfo, bool optionalBDebugUsePersistentLines, bool optionalBDebugFlushLinesFirst);
 	void SetLookAtAlpha(float DesiredAlpha, float DesiredBlendTime);
 	void InterpolateTargetLocation(float DeltaTime);
@@ -17960,14 +14964,7 @@ public:
 	class FName                                        RotationSpaceBoneName;                         // 0x0128 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlSingleBone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlSingleBone"))
 };
 
 // Class Engine.SkelControlHandlebars
@@ -17983,14 +14980,7 @@ public:
 	int32_t                                            SteerWheelBoneIndex;                           // 0x0140 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlHandlebars");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlHandlebars"))
 };
 
 // Class Engine.SkelControlWheel
@@ -18009,14 +14999,7 @@ public:
 	uint32_t                                           bInvertWheelSteering : 1;                      // 0x0144 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlWheel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlWheel"))
 };
 
 // Class Engine.SkelControlSpline
@@ -18033,14 +15016,7 @@ public:
 	float                                              StartSplineTension;                            // 0x0110 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlSpline");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlSpline"))
 };
 
 // Class Engine.SkelControlTrail
@@ -18065,14 +15041,7 @@ public:
 	struct FMatrix                                     OldLocalToWorld;                               // 0x0140 (0x0040) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkelControlTrail");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlTrail"))
 };
 
 // Class Engine.AnimSequence
@@ -18118,14 +15087,7 @@ public:
 	float                                              UseScore;                                      // 0x0198 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimSequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimSequence"))
 	float GetNotifyTimeByClass(class UClass* NotifyClass, float optionalPlayRate, float optionalStartPosition, class UAnimNotify*& outOut_Notify, float& outOut_Duration);
 };
 
@@ -18149,14 +15111,7 @@ public:
 	class FName                                        BestRatioSkelMeshName;                         // 0x0180 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimSet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimSet"))
 };
 
 // Class Engine.MorphTarget
@@ -18169,14 +15124,7 @@ public:
 	class FName                                        ScalarParameterName;                           // 0x0074 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphTarget");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphTarget"))
 };
 
 // Class Engine.MorphTargetSet
@@ -18189,14 +15137,7 @@ public:
 	struct FArray_Mirror                               RawWedgePointIndices;                          // 0x0078 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphTargetSet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphTargetSet"))
 	class UMorphTarget* FindMorphTarget(const class FName& MorphTargetName);
 };
 
@@ -18207,14 +15148,7 @@ class UMorphWeightSequence : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MorphWeightSequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphWeightSequence"))
 };
 
 // Class Engine.DecalActorBase
@@ -18226,14 +15160,7 @@ public:
 	class UDecalComponent*                             Decal;                                         // 0x0270 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalActorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalActorBase"))
 };
 
 // Class Engine.DecalActor
@@ -18243,14 +15170,7 @@ class ADecalActor : public ADecalActorBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalActor"))
 };
 
 // Class Engine.DecalActorMovable
@@ -18260,14 +15180,7 @@ class ADecalActorMovable : public ADecalActorBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalActorMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalActorMovable"))
 };
 
 // Class Engine.DecalManager
@@ -18285,14 +15198,7 @@ public:
 	class TArray<struct FActiveDecalInfo>              ActiveDecals;                                  // 0x0298 (0x0010) [0x0000000000480000] (CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalManager"))
 	class UDecalComponent* SpawnDecal(class UMaterialInterface* DecalMaterial, const struct FVector& DecalLocation, const struct FRotator& DecalOrientation, float Width, float Height, float Thickness, bool bNoClip, float optionalDecalRotation, class UPrimitiveComponent* optionalHitComponent, bool optionalBProjectOnTerrain, bool optionalBProjectOnSkeletalMeshes, const class FName& optionalHitBone, int32_t optionalHitNodeIndex, int32_t optionalHitLevelIndex, float optionalInDecalLifeSpan, int32_t optionalInFracturedStaticMeshComponentIndex, float optionalInDepthBias, const struct FVector2D& optionalInBlendRange);
 	class UDecalComponent* GetPooledComponent();
 	static void SetDecalParameters(class UDecalComponent* TheDecal, class UMaterialInterface* DecalMaterial, const struct FVector& DecalLocation, const struct FRotator& DecalOrientation, float Width, float Height, float Thickness, bool bNoClip, float DecalRotation, class UPrimitiveComponent* HitComponent, bool bProjectOnTerrain, bool bProjectOnSkeletalMeshes, const class FName& HitBone, int32_t HitNodeIndex, int32_t HitLevelIndex, int32_t InFracturedStaticMeshComponentIndex, float DepthBias, const struct FVector2D& BlendRange);
@@ -18366,14 +15272,7 @@ public:
 	struct FMatrix                                     ParentRelLocRotMatrix;                         // 0x03A0 (0x0040) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalComponent"))
 	class UMaterialInstance* GetOrCreateDecalMaterialInstance();
 	void SetActorParameter(const class FName& Key, class AActor* Value);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
@@ -18395,14 +15294,7 @@ public:
 	class UMaterialInterface*                          DecalMaterial;                                 // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryDecal");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryDecal"))
 };
 
 // Class Engine.ActorFactoryDecalMovable
@@ -18412,14 +15304,7 @@ class UActorFactoryDecalMovable : public UActorFactoryDecal
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryDecalMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryDecalMovable"))
 };
 
 // Class Engine.Material
@@ -18533,14 +15418,7 @@ public:
 	class TArray<struct FGuid>                         ReferencedTextureGuids;                        // 0x08C8 (0x0010) [0x0000000800400002] (CPF_Const | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Material");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Material"))
 	bool GetFontParameterValue(const class FName& ParameterName, class UFont*& outOutFontValue, int32_t& outOutFontPage);
 	bool GetTextureParameterValue(const class FName& ParameterName, class UTexture*& outOutValue);
 	bool GetScalarParameterValue(const class FName& ParameterName, float& outOutValue);
@@ -18555,14 +15433,7 @@ class UDecalMaterial : public UMaterial
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DecalMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DecalMaterial"))
 };
 
 // Class Engine.FogVolumeDensityInfo
@@ -18575,14 +15446,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x0278 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeDensityInfo"))
 	void ApplyCheckpointRecord(struct AFogVolumeDensityInfo_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct AFogVolumeDensityInfo_FCheckpointRecord& outRecord);
 	bool ShouldSaveForCheckpoint();
@@ -18599,14 +15463,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x027C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeConeDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeConeDensityInfo"))
 };
 
 // Class Engine.FogVolumeConstantDensityInfo
@@ -18617,14 +15474,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x027C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeConstantDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeConstantDensityInfo"))
 };
 
 // Class Engine.FogVolumeLinearHalfspaceDensityInfo
@@ -18635,14 +15485,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x027C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeLinearHalfspaceDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeLinearHalfspaceDensityInfo"))
 };
 
 // Class Engine.FogVolumeSphericalDensityInfo
@@ -18653,14 +15496,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x027C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeSphericalDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeSphericalDensityInfo"))
 };
 
 // Class Engine.ExponentialHeightFogComponent
@@ -18682,14 +15518,7 @@ public:
 	struct FColor                                      LightInscatteringColor;                        // 0x00C8 (0x0004) [0x0000000200000003] (CPF_Edit | CPF_Const | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ExponentialHeightFogComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ExponentialHeightFogComponent"))
 	void SetEnabled(bool bSetEnabled);
 };
 
@@ -18712,14 +15541,7 @@ public:
 	class TArray<class AActor*>                        FogVolumeActors;                               // 0x00E0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeDensityComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeDensityComponent"))
 	void SetEnabled(bool bSetEnabled);
 };
 
@@ -18737,14 +15559,7 @@ public:
 	class UDrawLightConeComponent*                     PreviewCone;                                   // 0x0118 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeConeDensityComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeConeDensityComponent"))
 };
 
 // Class Engine.FogVolumeConstantDensityComponent
@@ -18755,14 +15570,7 @@ public:
 	float                                              Density;                                       // 0x00F0 (0x0004) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeConstantDensityComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeConstantDensityComponent"))
 };
 
 // Class Engine.FogVolumeLinearHalfspaceDensityComponent
@@ -18775,14 +15583,7 @@ public:
 	struct FPlane                                      HalfspacePlane;                                // 0x0100 (0x0010) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeLinearHalfspaceDensityComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeLinearHalfspaceDensityComponent"))
 };
 
 // Class Engine.FogVolumeSphericalDensityComponent
@@ -18797,14 +15598,7 @@ public:
 	class UDrawLightRadiusComponent*                   PreviewSphereRadius;                           // 0x0108 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FogVolumeSphericalDensityComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeSphericalDensityComponent"))
 };
 
 // Class Engine.ActorFactoryFogVolumeConstantDensityInfo
@@ -18817,14 +15611,7 @@ public:
 	uint32_t                                           bNothingSelected : 1;                          // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryFogVolumeConstantDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryFogVolumeConstantDensityInfo"))
 };
 
 // Class Engine.ActorFactoryFogVolumeLinearHalfspaceDensityInfo
@@ -18835,14 +15622,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryFogVolumeLinearHalfspaceDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryFogVolumeLinearHalfspaceDensityInfo"))
 };
 
 // Class Engine.ActorFactoryFogVolumeSphericalDensityInfo
@@ -18853,14 +15633,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryFogVolumeSphericalDensityInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryFogVolumeSphericalDensityInfo"))
 };
 
 // Class Engine.ApexDestructibleActor
@@ -18881,14 +15654,7 @@ public:
 	class TArray<class UParticleSystem*>               FractureParticleEffects;                       // 0x02B8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexDestructibleActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexDestructibleActor"))
 	void OnSetMaterial(class USeqAct_SetMaterial* Action);
 	void eventPostBeginPlay();
 	void CacheFractureEffects();
@@ -18919,14 +15685,7 @@ public:
 	class UMaterialInterface*                          MI_LoseChunkPreviousMaterial;                  // 0x02E8 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedStaticMeshActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedStaticMeshActor"))
 	void eventSetLoseChunkReplacementMaterial();
 	void eventHideFragmentsToMaximizeMemoryUsage();
 	void eventHideOneFragment();
@@ -18967,14 +15726,7 @@ public:
 	float                                              LastImpactSoundTime;                           // 0x0324 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedStaticMeshPart");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedStaticMeshPart"))
 	void eventBreakOffPartsInRadius(const struct FVector& Origin, float Radius, float RBStrength, bool bWantPhysChunksAndParticles);
 	void eventExplode();
 	void eventFellOutOfWorld();
@@ -19000,14 +15752,7 @@ public:
 	class TArray<class AFracturedStaticMeshActor*>     ActorsWithDeferredPartsToSpawn;                // 0x02A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FractureManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FractureManager"))
 	void Tick(float DeltaTime);
 	void eventReturnPartActor(class AFracturedStaticMeshPart* Part);
 	class AFracturedStaticMeshPart* eventSpawnPartActor(class AFracturedStaticMeshActor* Parent, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation);
@@ -19035,14 +15780,7 @@ public:
 	class UImageBasedReflectionComponent*              ImageReflectionComponent;                      // 0x0278 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageReflection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageReflection"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void eventReplicatedEvent(const class FName& VarName);
 	void eventPostBeginPlay();
@@ -19057,14 +15795,7 @@ public:
 	float                                              ColorRange;                                    // 0x0284 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageReflectionSceneCapture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageReflectionSceneCapture"))
 };
 
 // Class Engine.ImageReflectionShadowPlane
@@ -19077,14 +15808,7 @@ public:
 	class UImageReflectionShadowPlaneComponent*        ReflectionShadowComponent;                     // 0x0270 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageReflectionShadowPlane");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageReflectionShadowPlane"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void eventReplicatedEvent(const class FName& VarName);
 	void eventPostBeginPlay();
@@ -19099,14 +15823,7 @@ public:
 	class UTexture2D*                                  ReflectionTexture;                             // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageReflectionComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageReflectionComponent"))
 };
 
 // Class Engine.ImageReflectionShadowPlaneComponent
@@ -19119,14 +15836,7 @@ public:
 	struct FPlane                                      ReflectionPlane;                               // 0x0260 (0x0010) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageReflectionShadowPlaneComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageReflectionShadowPlaneComponent"))
 	void SetEnabled(bool bSetEnabled);
 };
 
@@ -19143,14 +15853,7 @@ public:
 	uint32_t                                           bAssetChanged : 1;                             // 0x029C (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexComponentBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexComponentBase"))
 };
 
 // Class Engine.ApexDynamicComponent
@@ -19161,14 +15864,7 @@ public:
 	struct FPointer                                    ComponentDynamicResources;                     // 0x02A0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexDynamicComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexDynamicComponent"))
 };
 
 // Class Engine.ApexStaticComponent
@@ -19178,14 +15874,7 @@ class UApexStaticComponent : public UApexComponentBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexStaticComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexStaticComponent"))
 };
 
 // Class Engine.ApexStaticDestructibleComponent
@@ -19200,14 +15889,7 @@ public:
 	uint32_t                                           bIsThumbnailComponent : 1;                     // 0x02B8 (0x0004) [0x0000000000001000] [0x00000001] (CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexStaticDestructibleComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexStaticDestructibleComponent"))
 };
 
 // Class Engine.FracturedBaseComponent
@@ -19228,14 +15910,7 @@ public:
 	int32_t                                            bResetStaticMesh;                              // 0x0328 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedBaseComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedBaseComponent"))
 	int32_t GetNumVisibleFragments();
 	int32_t GetNumFragments();
 	bool IsFragmentVisible(int32_t FragmentIndex);
@@ -19256,14 +15931,7 @@ public:
 	uint32_t                                           bFragmentTransformsChanged : 1;                // 0x0358 (0x0004) [0x0000000000002002] [0x00000002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedSkinnedMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedSkinnedMeshComponent"))
 };
 
 // Class Engine.FracturedStaticMeshComponent
@@ -19286,14 +15954,7 @@ public:
 	class UFracturedSkinnedMeshComponent*              SkinnedComponent;                              // 0x0378 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedStaticMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedStaticMeshComponent"))
 	class UPhysicalMaterial* GetFracturedMeshPhysMaterial();
 	void RecreatePhysState();
 	class TArray<int32_t> GetBoundaryHiddenFragments(const class TArray<int32_t>& AdditionalVisibleFragments);
@@ -19319,14 +15980,7 @@ public:
 	struct FLinearColor                                ReflectionColor;                               // 0x0310 (0x0010) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ImageBasedReflectionComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ImageBasedReflectionComponent"))
 	void OnUpdatePropertyReflectionColor();
 	void UpdateImageReflectionParameters();
 	void SetEnabled(bool bSetEnabled);
@@ -19350,14 +16004,7 @@ public:
 	uint32_t                                           bDontResolveInstancedLightmaps : 1;            // 0x0368 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InstancedStaticMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InstancedStaticMeshComponent"))
 };
 
 // Class Engine.SplineMeshComponent
@@ -19370,14 +16017,7 @@ public:
 	uint32_t                                           bSmoothInterpRollScale : 1;                    // 0x0364 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineMeshComponent"))
 };
 
 // Class Engine.ApexAsset
@@ -19392,14 +16032,7 @@ public:
 	class FString                                      SourceFileTimestamp;                           // 0x00A0 (0x0010) [0x0000000800420003] (CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexAsset"))
 };
 
 // Class Engine.ApexClothingAsset
@@ -19436,14 +16069,7 @@ public:
 	float                                              SpeedThresholdOnRest;                          // 0x0124 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexClothingAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexClothingAsset"))
 };
 
 // Class Engine.ApexDestructibleAsset
@@ -19465,14 +16091,7 @@ public:
 	struct FNxDestructibleParameters                   DestructibleParameters;                        // 0x0110 (0x00F0) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexDestructibleAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexDestructibleAsset"))
 };
 
 // Class Engine.ApexGenericAsset
@@ -19484,14 +16103,7 @@ public:
 	class TArray<class UMaterialInterface*>            Materials;                                     // 0x00B8 (0x0010) [0x0000000800400043] (CPF_Edit | CPF_Const | CPF_EditFixedSize | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexGenericAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexGenericAsset"))
 };
 
 // Class Engine.InterpFilter
@@ -19502,14 +16114,7 @@ public:
 	class FString                                      Caption;                                       // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpFilter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpFilter"))
 };
 
 // Class Engine.InterpFilter_Classes
@@ -19521,14 +16126,7 @@ public:
 	class TArray<class UClass*>                        TrackClasses;                                  // 0x0078 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpFilter_Classes");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpFilter_Classes"))
 };
 
 // Class Engine.InterpFilter_Custom
@@ -19539,14 +16137,7 @@ public:
 	class TArray<class UInterpGroup*>                  GroupsToInclude;                               // 0x0070 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpFilter_Custom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpFilter_Custom"))
 };
 
 // Class Engine.InterpGroup
@@ -19567,14 +16158,7 @@ public:
 	uint32_t                                           bIsSelected : 1;                               // 0x0098 (0x0004) [0x0000000000002000] [0x00000010] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroup"))
 };
 
 // Class Engine.InterpGroupAI
@@ -19593,14 +16177,7 @@ public:
 	uint32_t                                           bRefreshStageMarkGroup : 1;                    // 0x00B0 (0x0004) [0x0000000800002000] [0x00000020] (CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupAI"))
 };
 
 // Class Engine.InterpGroupCamera
@@ -19614,14 +16191,7 @@ public:
 	float                                              CompressTolerance;                             // 0x00E8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupCamera");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupCamera"))
 };
 
 // Class Engine.InterpGroupDirector
@@ -19632,14 +16202,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupDirector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupDirector"))
 };
 
 // Class Engine.InterpGroupInst
@@ -19653,14 +16216,7 @@ public:
 	struct FPointer                                    CachedCamOverridePostProcess;                  // 0x0080 (0x0008) [0x0000000000003000] (CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupInst");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupInst"))
 };
 
 // Class Engine.InterpGroupInstAI
@@ -19678,14 +16234,7 @@ public:
 	class AActor*                                      StageMarkActor;                                // 0x00A0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupInstAI");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupInstAI"))
 };
 
 // Class Engine.InterpGroupInstCamera
@@ -19695,14 +16244,7 @@ class UInterpGroupInstCamera : public UInterpGroupInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupInstCamera");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupInstCamera"))
 };
 
 // Class Engine.InterpGroupInstDirector
@@ -19712,14 +16254,7 @@ class UInterpGroupInstDirector : public UInterpGroupInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpGroupInstDirector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupInstDirector"))
 };
 
 // Class Engine.InterpTrackBoolProp
@@ -19732,14 +16267,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x00D8 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackBoolProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackBoolProp"))
 };
 
 // Class Engine.InterpTrackDirector
@@ -19752,14 +16280,7 @@ public:
 	uint32_t                                           bSimulateCameraCutsOnClients : 1;              // 0x00D8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackDirector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackDirector"))
 };
 
 // Class Engine.InterpTrackEvent
@@ -19774,14 +16295,7 @@ public:
 	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackEvent"))
 };
 
 // Class Engine.InterpTrackFaceFX
@@ -19796,14 +16310,7 @@ public:
 	class TArray<struct FFaceFXSoundCueKey>            FaceFXSoundCueKeys;                            // 0x00F0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFaceFX");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFaceFX"))
 };
 
 // Class Engine.InterpTrackFloatBase
@@ -19816,14 +16323,7 @@ public:
 	float                                              CurveTension;                                  // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFloatBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFloatBase"))
 };
 
 // Class Engine.InterpTrackAnimControl
@@ -19839,14 +16339,7 @@ public:
 	uint32_t                                           bSkipAnimNotifiers : 1;                        // 0x0110 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackAnimControl");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackAnimControl"))
 };
 
 // Class Engine.InterpTrackFade
@@ -19858,14 +16351,7 @@ public:
 	uint32_t                                           bPersistFade : 1;                              // 0x00E8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFade");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFade"))
 };
 
 // Class Engine.InterpTrackFloatMaterialParam
@@ -19880,14 +16366,7 @@ public:
 	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFloatMaterialParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFloatMaterialParam"))
 };
 
 // Class Engine.InterpTrackFloatParticleParam
@@ -19899,14 +16378,7 @@ public:
 	class FName                                        ParamName;                                     // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFloatParticleParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFloatParticleParam"))
 };
 
 // Class Engine.InterpTrackFloatProp
@@ -19918,14 +16390,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x00E8 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackFloatProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFloatProp"))
 };
 
 // Class Engine.InterpTrackMorphWeight
@@ -19937,14 +16402,7 @@ public:
 	class FName                                        MorphNodeName;                                 // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackMorphWeight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackMorphWeight"))
 };
 
 // Class Engine.InterpTrackMoveAxis
@@ -19958,14 +16416,7 @@ public:
 	struct FInterpLookupTrack                          LookupTrack;                                   // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackMoveAxis");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackMoveAxis"))
 };
 
 // Class Engine.InterpTrackSkelControlScale
@@ -19977,14 +16428,7 @@ public:
 	class FName                                        SkelControlName;                               // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackSkelControlScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackSkelControlScale"))
 };
 
 // Class Engine.InterpTrackSkelControlStrength
@@ -19996,14 +16440,7 @@ public:
 	class FName                                        SkelControlName;                               // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackSkelControlStrength");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackSkelControlStrength"))
 };
 
 // Class Engine.InterpTrackSlomo
@@ -20014,14 +16451,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackSlomo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackSlomo"))
 };
 
 // Class Engine.InterpTrackHeadTracking
@@ -20043,14 +16473,7 @@ public:
 	class TArray<class FName>                          TargetBoneNames;                               // 0x0110 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackHeadTracking");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackHeadTracking"))
 };
 
 // Class Engine.InterpTrackLinearColorBase
@@ -20063,14 +16486,7 @@ public:
 	float                                              CurveTension;                                  // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackLinearColorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackLinearColorBase"))
 };
 
 // Class Engine.InterpTrackLinearColorProp
@@ -20082,14 +16498,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x00E8 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackLinearColorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackLinearColorProp"))
 };
 
 // Class Engine.InterpTrackMove
@@ -20115,14 +16524,7 @@ public:
 	EInterpTrackMoveRotMode                            RotMode;                                       // 0x011D (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackMove");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackMove"))
 };
 
 // Class Engine.InterpTrackNotify
@@ -20138,14 +16540,7 @@ public:
 	class TArray<struct FNotifyTrackKey>               NotifyTrack;                                   // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackNotify");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackNotify"))
 };
 
 // Class Engine.InterpTrackParticleReplay
@@ -20159,14 +16554,7 @@ public:
 	float                                              FixedTimeStep;                                 // 0x00DC (0x0004) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackParticleReplay");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackParticleReplay"))
 };
 
 // Class Engine.InterpTrackToggle
@@ -20183,14 +16571,7 @@ public:
 	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackToggle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackToggle"))
 };
 
 // Class Engine.InterpTrackVectorBase
@@ -20203,14 +16584,7 @@ public:
 	float                                              CurveTension;                                  // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackVectorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVectorBase"))
 };
 
 // Class Engine.InterpTrackAudioMaster
@@ -20221,14 +16595,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackAudioMaster");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackAudioMaster"))
 };
 
 // Class Engine.InterpTrackColorProp
@@ -20240,14 +16607,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x00E8 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackColorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackColorProp"))
 };
 
 // Class Engine.InterpTrackColorScale
@@ -20258,14 +16618,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackColorScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackColorScale"))
 };
 
 // Class Engine.InterpTrackSound
@@ -20281,14 +16634,7 @@ public:
 	uint32_t                                           bTreatAsDialogue : 1;                          // 0x00F8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackSound"))
 };
 
 // Class Engine.InterpTrackVectorMaterialParam
@@ -20303,14 +16649,7 @@ public:
 	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackVectorMaterialParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVectorMaterialParam"))
 };
 
 // Class Engine.InterpTrackVectorProp
@@ -20322,14 +16661,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x00E8 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackVectorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVectorProp"))
 };
 
 // Class Engine.InterpTrackVisibility
@@ -20344,14 +16676,7 @@ public:
 	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackVisibility");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVisibility"))
 };
 
 // Class Engine.InterpTrackInst
@@ -20361,14 +16686,7 @@ class UInterpTrackInst : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInst");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInst"))
 };
 
 // Class Engine.InterpTrackInstAnimControl
@@ -20381,14 +16699,7 @@ public:
 	struct FRotator                                    InitRotation;                                  // 0x0070 (0x000C) [0x0000000800002000] (CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstAnimControl");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstAnimControl"))
 };
 
 // Class Engine.InterpTrackInstAudioMaster
@@ -20398,14 +16709,7 @@ class UInterpTrackInstAudioMaster : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstAudioMaster");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstAudioMaster"))
 };
 
 // Class Engine.InterpTrackInstColorScale
@@ -20415,14 +16719,7 @@ class UInterpTrackInstColorScale : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstColorScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstColorScale"))
 };
 
 // Class Engine.InterpTrackInstDirector
@@ -20434,14 +16731,7 @@ public:
 	struct FRenderingPerformanceOverrides              OldRenderingOverrides;                         // 0x0068 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstDirector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstDirector"))
 };
 
 // Class Engine.InterpTrackInstEvent
@@ -20452,14 +16742,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstEvent"))
 };
 
 // Class Engine.InterpTrackInstFaceFX
@@ -20471,14 +16754,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0064 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstFaceFX");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstFaceFX"))
 };
 
 // Class Engine.InterpTrackInstFade
@@ -20488,14 +16764,7 @@ class UInterpTrackInstFade : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstFade");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstFade"))
 };
 
 // Class Engine.InterpTrackInstFloatMaterialParam
@@ -20507,14 +16776,7 @@ public:
 	class UInterpTrackFloatMaterialParam*              InstancedTrack;                                // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstFloatMaterialParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstFloatMaterialParam"))
 };
 
 // Class Engine.InterpTrackInstFloatParticleParam
@@ -20525,14 +16787,7 @@ public:
 	float                                              ResetFloat;                                    // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstFloatParticleParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstFloatParticleParam"))
 };
 
 // Class Engine.InterpTrackInstHeadTracking
@@ -20547,14 +16802,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x00D0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstHeadTracking");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstHeadTracking"))
 };
 
 // Class Engine.InterpTrackInstMorphWeight
@@ -20564,14 +16812,7 @@ class UInterpTrackInstMorphWeight : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstMorphWeight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstMorphWeight"))
 };
 
 // Class Engine.InterpTrackInstMove
@@ -20586,14 +16827,7 @@ public:
 	struct FQuat                                       InitialQuat;                                   // 0x00C0 (0x0010) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstMove");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstMove"))
 };
 
 // Class Engine.InterpTrackInstNotify
@@ -20604,14 +16838,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstNotify");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstNotify"))
 };
 
 // Class Engine.InterpTrackInstParticleReplay
@@ -20622,14 +16849,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstParticleReplay");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstParticleReplay"))
 };
 
 // Class Engine.InterpTrackInstProperty
@@ -20641,14 +16861,7 @@ public:
 	class UObject*                                     PropertyOuterObjectInst;                       // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstProperty");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstProperty"))
 };
 
 // Class Engine.InterpTrackInstBoolProp
@@ -20661,14 +16874,7 @@ public:
 	uint32_t                                           ResetBool : 1;                                 // 0x007C (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstBoolProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstBoolProp"))
 };
 
 // Class Engine.InterpTrackInstColorProp
@@ -20680,14 +16886,7 @@ public:
 	struct FColor                                      ResetColor;                                    // 0x0078 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstColorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstColorProp"))
 };
 
 // Class Engine.InterpTrackInstFloatProp
@@ -20701,14 +16900,7 @@ public:
 	struct FPointer                                    DistributionProp;                              // 0x0080 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstFloatProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstFloatProp"))
 };
 
 // Class Engine.InterpTrackInstLinearColorProp
@@ -20720,14 +16912,7 @@ public:
 	struct FLinearColor                                ResetColor;                                    // 0x0078 (0x0010) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstLinearColorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstLinearColorProp"))
 };
 
 // Class Engine.InterpTrackInstVectorProp
@@ -20739,14 +16924,7 @@ public:
 	struct FVector                                     ResetVector;                                   // 0x0078 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstVectorProp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstVectorProp"))
 };
 
 // Class Engine.InterpTrackInstSkelControlScale
@@ -20756,14 +16934,7 @@ class UInterpTrackInstSkelControlScale : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstSkelControlScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstSkelControlScale"))
 };
 
 // Class Engine.InterpTrackInstSkelControlStrength
@@ -20774,14 +16945,7 @@ public:
 	uint32_t                                           bSavedControlledByAnimMetaData : 1;            // 0x0060 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstSkelControlStrength");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstSkelControlStrength"))
 };
 
 // Class Engine.InterpTrackInstSlomo
@@ -20792,14 +16956,7 @@ public:
 	float                                              OldTimeDilation;                               // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstSlomo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstSlomo"))
 };
 
 // Class Engine.InterpTrackInstSound
@@ -20812,14 +16969,7 @@ public:
 	class UAudioComponent*                             PlayAudioComp;                                 // 0x0068 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstSound"))
 };
 
 // Class Engine.InterpTrackInstToggle
@@ -20833,14 +16983,7 @@ public:
 	uint32_t                                           bSavedActiveState : 1;                         // 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstToggle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstToggle"))
 };
 
 // Class Engine.InterpTrackInstVectorMaterialParam
@@ -20852,14 +16995,7 @@ public:
 	class UInterpTrackVectorMaterialParam*             InstancedTrack;                                // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstVectorMaterialParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstVectorMaterialParam"))
 };
 
 // Class Engine.InterpTrackInstVisibility
@@ -20872,14 +17008,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0064 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpTrackInstVisibility");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstVisibility"))
 };
 
 // Class Engine.MaterialExpression
@@ -20910,14 +17039,7 @@ public:
 	class TArray<struct FExpressionOutput>             Outputs;                                       // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpression");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpression"))
 };
 
 // Class Engine.MaterialExpressionAbs
@@ -20928,14 +17050,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAbs");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAbs"))
 };
 
 // Class Engine.MaterialExpressionActorWorldPosition
@@ -20945,14 +17060,7 @@ class UMaterialExpressionActorWorldPosition : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionActorWorldPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionActorWorldPosition"))
 };
 
 // Class Engine.MaterialExpressionAdd
@@ -20964,14 +17072,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAdd");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAdd"))
 };
 
 // Class Engine.MaterialExpressionAppendVector
@@ -20983,14 +17084,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAppendVector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAppendVector"))
 };
 
 // Class Engine.MaterialExpressionAtan
@@ -21001,14 +17095,7 @@ public:
 	struct FExpressionInput                            A;                                             // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAtan");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAtan"))
 };
 
 // Class Engine.MaterialExpressionAtan2
@@ -21020,14 +17107,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAtan2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAtan2"))
 };
 
 // Class Engine.MaterialExpressionBumpOffset
@@ -21042,14 +17122,7 @@ public:
 	float                                              ReferencePlane;                                // 0x016C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionBumpOffset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionBumpOffset"))
 };
 
 // Class Engine.MaterialExpressionCameraVector
@@ -21059,14 +17132,7 @@ class UMaterialExpressionCameraVector : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCameraVector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCameraVector"))
 };
 
 // Class Engine.MaterialExpressionCameraWorldPosition
@@ -21076,14 +17142,7 @@ class UMaterialExpressionCameraWorldPosition : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCameraWorldPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCameraWorldPosition"))
 };
 
 // Class Engine.MaterialExpressionCeil
@@ -21094,14 +17153,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCeil");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCeil"))
 };
 
 // Class Engine.MaterialExpressionClamp
@@ -21114,14 +17166,7 @@ public:
 	struct FExpressionInput                            Max;                                           // 0x0130 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionClamp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionClamp"))
 };
 
 // Class Engine.MaterialExpressionComment
@@ -21136,14 +17181,7 @@ public:
 	class FString                                      Text;                                          // 0x00D0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionComment");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionComment"))
 };
 
 // Class Engine.MaterialExpressionComponentMask
@@ -21158,14 +17196,7 @@ public:
 	uint32_t                                           A : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionComponentMask");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionComponentMask"))
 };
 
 // Class Engine.MaterialExpressionConstant
@@ -21176,14 +17207,7 @@ public:
 	float                                              R;                                             // 0x00C0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstant");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstant"))
 };
 
 // Class Engine.MaterialExpressionConstant2Vector
@@ -21195,14 +17219,7 @@ public:
 	float                                              G;                                             // 0x00C4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstant2Vector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstant2Vector"))
 };
 
 // Class Engine.MaterialExpressionConstant3Vector
@@ -21215,14 +17232,7 @@ public:
 	float                                              B;                                             // 0x00C8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstant3Vector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstant3Vector"))
 };
 
 // Class Engine.MaterialExpressionConstant4Vector
@@ -21236,14 +17246,7 @@ public:
 	float                                              A;                                             // 0x00CC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstant4Vector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstant4Vector"))
 };
 
 // Class Engine.MaterialExpressionConstantBiasScale
@@ -21256,14 +17259,7 @@ public:
 	float                                              Scale;                                         // 0x00FC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstantBiasScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstantBiasScale"))
 };
 
 // Class Engine.MaterialExpressionConstantClamp
@@ -21276,14 +17272,7 @@ public:
 	float                                              Max;                                           // 0x00FC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionConstantClamp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionConstantClamp"))
 };
 
 // Class Engine.MaterialExpressionCosine
@@ -21295,14 +17284,7 @@ public:
 	float                                              Period;                                        // 0x00F8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCosine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCosine"))
 };
 
 // Class Engine.MaterialExpressionCrossProduct
@@ -21314,14 +17296,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCrossProduct");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCrossProduct"))
 };
 
 // Class Engine.MaterialExpressionCustom
@@ -21336,14 +17311,7 @@ public:
 	class TArray<struct FCustomInput>                  Inputs;                                        // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCustom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCustom"))
 };
 
 // Class Engine.MaterialExpressionCustomTexture
@@ -21354,14 +17322,7 @@ public:
 	class UTexture*                                    Texture;                                       // 0x00C0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionCustomTexture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionCustomTexture"))
 };
 
 // Class Engine.MaterialExpressionDepthBiasedAlpha
@@ -21375,14 +17336,7 @@ public:
 	struct FExpressionInput                            Bias;                                          // 0x0100 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDepthBiasedAlpha");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDepthBiasedAlpha"))
 };
 
 // Class Engine.MaterialExpressionDepthBiasedBlend
@@ -21397,14 +17351,7 @@ public:
 	struct FExpressionInput                            Bias;                                          // 0x0138 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDepthBiasedBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDepthBiasedBlend"))
 };
 
 // Class Engine.MaterialExpressionDepthOfFieldFunction
@@ -21417,14 +17364,7 @@ public:
 	struct FExpressionInput                            Depth;                                         // 0x00C8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDepthOfFieldFunction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDepthOfFieldFunction"))
 };
 
 // Class Engine.MaterialExpressionDeriveNormalZ
@@ -21435,14 +17375,7 @@ public:
 	struct FExpressionInput                            InXY;                                          // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDeriveNormalZ");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDeriveNormalZ"))
 };
 
 // Class Engine.MaterialExpressionDesaturation
@@ -21455,14 +17388,7 @@ public:
 	struct FLinearColor                                LuminanceFactors;                              // 0x0130 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDesaturation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDesaturation"))
 };
 
 // Class Engine.MaterialExpressionDestColor
@@ -21472,14 +17398,7 @@ class UMaterialExpressionDestColor : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDestColor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDestColor"))
 };
 
 // Class Engine.MaterialExpressionDestDepth
@@ -21490,14 +17409,7 @@ public:
 	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDestDepth");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDestDepth"))
 };
 
 // Class Engine.MaterialExpressionDistance
@@ -21509,14 +17421,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDistance"))
 };
 
 // Class Engine.MaterialExpressionDivide
@@ -21528,14 +17433,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDivide");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDivide"))
 };
 
 // Class Engine.MaterialExpressionDotProduct
@@ -21547,14 +17445,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDotProduct");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDotProduct"))
 };
 
 // Class Engine.MaterialExpressionDynamicParameter
@@ -21565,14 +17456,7 @@ public:
 	class TArray<class FString>                        ParamNames;                                    // 0x00C0 (0x0010) [0x0000000000400041] (CPF_Edit | CPF_EditFixedSize | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDynamicParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDynamicParameter"))
 };
 
 // Class Engine.MaterialExpressionMeshEmitterDynamicParameter
@@ -21582,14 +17466,7 @@ class UMaterialExpressionMeshEmitterDynamicParameter : public UMaterialExpressio
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMeshEmitterDynamicParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMeshEmitterDynamicParameter"))
 };
 
 // Class Engine.MaterialExpressionEffectsIntensity
@@ -21599,14 +17476,7 @@ class UMaterialExpressionEffectsIntensity : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionEffectsIntensity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionEffectsIntensity"))
 };
 
 // Class Engine.MaterialExpressionFloor
@@ -21617,14 +17487,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFloor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFloor"))
 };
 
 // Class Engine.MaterialExpressionFluidNormal
@@ -21635,14 +17498,7 @@ public:
 	struct FExpressionInput                            Coordinates;                                   // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFluidNormal");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFluidNormal"))
 };
 
 // Class Engine.MaterialExpressionFmod
@@ -21654,14 +17510,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFmod");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFmod"))
 };
 
 // Class Engine.MaterialExpressionFoliageImpulseDirection
@@ -21671,14 +17520,7 @@ class UMaterialExpressionFoliageImpulseDirection : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFoliageImpulseDirection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFoliageImpulseDirection"))
 };
 
 // Class Engine.MaterialExpressionFoliageNormalizedRotationAxisAndAngle
@@ -21688,14 +17530,7 @@ class UMaterialExpressionFoliageNormalizedRotationAxisAndAngle : public UMateria
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFoliageNormalizedRotationAxisAndAngle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFoliageNormalizedRotationAxisAndAngle"))
 };
 
 // Class Engine.MaterialExpressionFontSample
@@ -21707,14 +17542,7 @@ public:
 	int32_t                                            FontTexturePage;                               // 0x00C8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFontSample");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFontSample"))
 };
 
 // Class Engine.MaterialExpressionFontSampleParameter
@@ -21728,14 +17556,7 @@ public:
 	class FName                                        Group;                                         // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFontSampleParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFontSampleParameter"))
 };
 
 // Class Engine.MaterialExpressionFrac
@@ -21746,14 +17567,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFrac");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFrac"))
 };
 
 // Class Engine.MaterialExpressionFresnel
@@ -21766,14 +17580,7 @@ public:
 	struct FExpressionInput                            Normal;                                        // 0x00C8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFresnel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFresnel"))
 };
 
 // Class Engine.MaterialExpressionFunctionInput
@@ -21793,14 +17600,7 @@ public:
 	int32_t                                            SortPriority;                                  // 0x0144 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFunctionInput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFunctionInput"))
 };
 
 // Class Engine.MaterialExpressionFunctionOutput
@@ -21817,14 +17617,7 @@ public:
 	struct FGuid                                       Id;                                            // 0x0124 (0x0010) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFunctionOutput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFunctionOutput"))
 };
 
 // Class Engine.MaterialExpressionGameObjectParameter
@@ -21835,14 +17628,7 @@ public:
 	EGameObjectShaderParameterType                     GameObjectShaderParamType;                     // 0x00C0 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionGameObjectParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionGameObjectParameter"))
 };
 
 // Class Engine.MaterialExpressionGameParameter
@@ -21853,14 +17639,7 @@ public:
 	EGameShaderParameterType                           GameShaderParamType;                           // 0x00C0 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionGameParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionGameParameter"))
 };
 
 // Class Engine.MaterialExpressionIf
@@ -21875,14 +17654,7 @@ public:
 	struct FExpressionInput                            ALessThanB;                                    // 0x01A0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionIf");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionIf"))
 };
 
 // Class Engine.MaterialExpressionLandscapeLayerBlend
@@ -21894,14 +17666,7 @@ public:
 	struct FGuid                                       ExpressionGUID;                                // 0x00D0 (0x0010) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLandscapeLayerBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLandscapeLayerBlend"))
 };
 
 // Class Engine.MaterialExpressionLensFlareIntensity
@@ -21911,14 +17676,7 @@ class UMaterialExpressionLensFlareIntensity : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLensFlareIntensity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLensFlareIntensity"))
 };
 
 // Class Engine.MaterialExpressionLensFlareOcclusion
@@ -21928,14 +17686,7 @@ class UMaterialExpressionLensFlareOcclusion : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLensFlareOcclusion");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLensFlareOcclusion"))
 };
 
 // Class Engine.MaterialExpressionLensFlareRadialDistance
@@ -21945,14 +17696,7 @@ class UMaterialExpressionLensFlareRadialDistance : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLensFlareRadialDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLensFlareRadialDistance"))
 };
 
 // Class Engine.MaterialExpressionLensFlareRayDistance
@@ -21962,14 +17706,7 @@ class UMaterialExpressionLensFlareRayDistance : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLensFlareRayDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLensFlareRayDistance"))
 };
 
 // Class Engine.MaterialExpressionLensFlareSourceDistance
@@ -21979,14 +17716,7 @@ class UMaterialExpressionLensFlareSourceDistance : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLensFlareSourceDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLensFlareSourceDistance"))
 };
 
 // Class Engine.MaterialExpressionLightmapUVs
@@ -21996,14 +17726,7 @@ class UMaterialExpressionLightmapUVs : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLightmapUVs");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLightmapUVs"))
 };
 
 // Class Engine.MaterialExpressionLightmassReplace
@@ -22015,14 +17738,7 @@ public:
 	struct FExpressionInput                            Lightmass;                                     // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLightmassReplace");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLightmassReplace"))
 };
 
 // Class Engine.MaterialExpressionLightVector
@@ -22032,14 +17748,7 @@ class UMaterialExpressionLightVector : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLightVector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLightVector"))
 };
 
 // Class Engine.MaterialExpressionLinearInterpolate
@@ -22052,14 +17761,7 @@ public:
 	struct FExpressionInput                            Alpha;                                         // 0x0130 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionLinearInterpolate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionLinearInterpolate"))
 };
 
 // Class Engine.MaterialExpressionMaterialFunctionCall
@@ -22072,14 +17774,7 @@ public:
 	class TArray<struct FFunctionExpressionOutput>     FunctionOutputs;                               // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMaterialFunctionCall");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMaterialFunctionCall"))
 };
 
 // Class Engine.MaterialExpressionMax
@@ -22091,14 +17786,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMax");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMax"))
 };
 
 // Class Engine.MaterialExpressionMeshEmitterVertexColor
@@ -22108,14 +17796,7 @@ class UMaterialExpressionMeshEmitterVertexColor : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMeshEmitterVertexColor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMeshEmitterVertexColor"))
 };
 
 // Class Engine.MaterialExpressionMin
@@ -22127,14 +17808,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMin");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMin"))
 };
 
 // Class Engine.MaterialExpressionMultiply
@@ -22146,14 +17820,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMultiply");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMultiply"))
 };
 
 // Class Engine.MaterialExpressionMusicAnalysisParameter
@@ -22164,14 +17831,7 @@ public:
 	EMusicAnalysisShaderParameterType                  MusicAnalysisShaderParamType;                  // 0x00C0 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMusicAnalysisParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMusicAnalysisParameter"))
 };
 
 // Class Engine.MaterialExpressionNormalize
@@ -22182,14 +17842,7 @@ public:
 	struct FExpressionInput                            VectorInput;                                   // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionNormalize");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionNormalize"))
 };
 
 // Class Engine.MaterialExpressionObjectOrientation
@@ -22199,14 +17852,7 @@ class UMaterialExpressionObjectOrientation : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionObjectOrientation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionObjectOrientation"))
 };
 
 // Class Engine.MaterialExpressionObjectRadius
@@ -22216,14 +17862,7 @@ class UMaterialExpressionObjectRadius : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionObjectRadius");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionObjectRadius"))
 };
 
 // Class Engine.MaterialExpressionObjectWorldPosition
@@ -22233,14 +17872,7 @@ class UMaterialExpressionObjectWorldPosition : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionObjectWorldPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionObjectWorldPosition"))
 };
 
 // Class Engine.MaterialExpressionOcclusionPercentage
@@ -22250,14 +17882,7 @@ class UMaterialExpressionOcclusionPercentage : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionOcclusionPercentage");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionOcclusionPercentage"))
 };
 
 // Class Engine.MaterialExpressionOneMinus
@@ -22268,14 +17893,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionOneMinus");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionOneMinus"))
 };
 
 // Class Engine.MaterialExpressionPanner
@@ -22289,14 +17907,7 @@ public:
 	float                                              SpeedY;                                        // 0x0134 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionPanner");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPanner"))
 };
 
 // Class Engine.MaterialExpressionParameter
@@ -22309,14 +17920,7 @@ public:
 	class FName                                        Group;                                         // 0x00D8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionParameter"))
 };
 
 // Class Engine.MaterialExpressionScalarParameter
@@ -22330,14 +17934,7 @@ public:
 	float                                              MaxParameterValue;                             // 0x00EC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionScalarParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionScalarParameter"))
 };
 
 // Class Engine.MaterialExpressionStaticBoolParameter
@@ -22351,14 +17948,7 @@ public:
 	struct FPointer                                    InstanceOverride;                              // 0x00E8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionStaticBoolParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticBoolParameter"))
 };
 
 // Class Engine.MaterialExpressionStaticSwitchParameter
@@ -22370,14 +17960,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x0128 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionStaticSwitchParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticSwitchParameter"))
 };
 
 // Class Engine.MaterialExpressionStaticComponentMaskParameter
@@ -22394,14 +17977,7 @@ public:
 	struct FPointer                                    InstanceOverride;                              // 0x0120 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionStaticComponentMaskParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticComponentMaskParameter"))
 };
 
 // Class Engine.MaterialExpressionVectorParameter
@@ -22415,14 +17991,7 @@ public:
 	struct FLinearColor                                MaxParameterValue;                             // 0x0104 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionVectorParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionVectorParameter"))
 };
 
 // Class Engine.MaterialExpressionVectorParameterReference
@@ -22433,14 +18002,7 @@ public:
 	class FName                                        ReferencedParameter;                           // 0x00E0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionVectorParameterReference");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionVectorParameterReference"))
 };
 
 // Class Engine.MaterialExpressionParticleMacroUV
@@ -22451,14 +18013,7 @@ public:
 	uint32_t                                           bUseViewSpace : 1;                             // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionParticleMacroUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionParticleMacroUV"))
 };
 
 // Class Engine.MaterialExpressionPerInstanceRandom
@@ -22468,14 +18023,7 @@ class UMaterialExpressionPerInstanceRandom : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionPerInstanceRandom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPerInstanceRandom"))
 };
 
 // Class Engine.MaterialExpressionPitchTekTextureSample
@@ -22487,14 +18035,7 @@ public:
 	EPitchTekTextureType                               PitchTekTextureType;                           // 0x00F8 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionPitchTekTextureSample");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPitchTekTextureSample"))
 };
 
 // Class Engine.MaterialExpressionPixelDepth
@@ -22505,14 +18046,7 @@ public:
 	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionPixelDepth");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPixelDepth"))
 };
 
 // Class Engine.MaterialExpressionPower
@@ -22524,14 +18058,7 @@ public:
 	struct FExpressionInput                            Exponent;                                      // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionPower");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPower"))
 };
 
 // Class Engine.MaterialExpressionQualitySwitch
@@ -22544,14 +18071,7 @@ public:
 	struct FExpressionInput                            HandheldQuality;                               // 0x0130 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionQualitySwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionQualitySwitch"))
 };
 
 // Class Engine.MaterialExpressionReflectionVector
@@ -22561,14 +18081,7 @@ class UMaterialExpressionReflectionVector : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionReflectionVector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionReflectionVector"))
 };
 
 // Class Engine.MaterialExpressionRotateAboutAxis
@@ -22581,14 +18094,7 @@ public:
 	struct FExpressionInput                            Position;                                      // 0x0130 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionRotateAboutAxis");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionRotateAboutAxis"))
 };
 
 // Class Engine.MaterialExpressionRotator
@@ -22603,14 +18109,7 @@ public:
 	float                                              Speed;                                         // 0x0138 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionRotator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionRotator"))
 };
 
 // Class Engine.MaterialExpressionSceneDepth
@@ -22622,14 +18121,7 @@ public:
 	uint32_t                                           bNormalize : 1;                                // 0x00F8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSceneDepth");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSceneDepth"))
 };
 
 // Class Engine.MaterialExpressionSceneTexture
@@ -22643,14 +18135,7 @@ public:
 	uint32_t                                           ScreenAlign : 1;                               // 0x00FC (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSceneTexture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSceneTexture"))
 };
 
 // Class Engine.MaterialExpressionScreenPosition
@@ -22661,14 +18146,7 @@ public:
 	uint32_t                                           ScreenAlign : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionScreenPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionScreenPosition"))
 };
 
 // Class Engine.MaterialExpressionScreenSize
@@ -22678,14 +18156,7 @@ class UMaterialExpressionScreenSize : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionScreenSize");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionScreenSize"))
 };
 
 // Class Engine.MaterialExpressionSine
@@ -22697,14 +18168,7 @@ public:
 	float                                              Period;                                        // 0x00F8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSine"))
 };
 
 // Class Engine.MaterialExpressionSphereMask
@@ -22720,14 +18184,7 @@ public:
 	float                                              HardnessPercent;                               // 0x01A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSphereMask");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSphereMask"))
 };
 
 // Class Engine.MaterialExpressionSquareRoot
@@ -22738,14 +18195,7 @@ public:
 	struct FExpressionInput                            Input;                                         // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSquareRoot");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSquareRoot"))
 };
 
 // Class Engine.MaterialExpressionStaticBool
@@ -22756,14 +18206,7 @@ public:
 	uint32_t                                           Value : 1;                                     // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionStaticBool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticBool"))
 };
 
 // Class Engine.MaterialExpressionStaticSwitch
@@ -22779,14 +18222,7 @@ public:
 	struct FExpressionInput                            Value;                                         // 0x0138 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionStaticSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticSwitch"))
 };
 
 // Class Engine.MaterialExpressionSubtract
@@ -22798,14 +18234,7 @@ public:
 	struct FExpressionInput                            B;                                             // 0x00F8 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionSubtract");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSubtract"))
 };
 
 // Class Engine.MaterialExpressionTerrainLayerCoords
@@ -22821,14 +18250,7 @@ public:
 	float                                              MappingPanV;                                   // 0x00D0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerCoords");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerCoords"))
 };
 
 // Class Engine.MaterialExpressionTerrainLayerSwitch
@@ -22844,14 +18266,7 @@ public:
 	struct FGuid                                       ExpressionGUID;                                // 0x0144 (0x0010) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerSwitch"))
 };
 
 // Class Engine.MaterialExpressionTerrainLayerWeight
@@ -22867,14 +18282,7 @@ public:
 	struct FGuid                                       ExpressionGUID;                                // 0x0144 (0x0010) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerWeight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTerrainLayerWeight"))
 };
 
 // Class Engine.MaterialExpressionTexelSize
@@ -22884,14 +18292,7 @@ class UMaterialExpressionTexelSize : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTexelSize");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTexelSize"))
 };
 
 // Class Engine.MaterialExpressionTextureCoordinate
@@ -22906,14 +18307,7 @@ public:
 	uint32_t                                           UnMirrorV : 1;                                 // 0x00CC (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureCoordinate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureCoordinate"))
 };
 
 // Class Engine.MaterialExpressionTextureObject
@@ -22924,14 +18318,7 @@ public:
 	class UTexture*                                    Texture;                                       // 0x00C0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureObject"))
 };
 
 // Class Engine.MaterialExpressionTextureSample
@@ -22944,14 +18331,7 @@ public:
 	struct FExpressionInput                            TextureObject;                                 // 0x0100 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSample");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSample"))
 };
 
 // Class Engine.MaterialExpressionDepthBiasBlend
@@ -22964,14 +18344,7 @@ public:
 	struct FExpressionInput                            Bias;                                          // 0x0140 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionDepthBiasBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDepthBiasBlend"))
 };
 
 // Class Engine.MaterialExpressionFlipBookSample
@@ -22981,14 +18354,7 @@ class UMaterialExpressionFlipBookSample : public UMaterialExpressionTextureSampl
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionFlipBookSample");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionFlipBookSample"))
 };
 
 // Class Engine.MaterialExpressionMeshSubUV
@@ -22998,14 +18364,7 @@ class UMaterialExpressionMeshSubUV : public UMaterialExpressionTextureSample
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMeshSubUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMeshSubUV"))
 };
 
 // Class Engine.MaterialExpressionMeshSubUVBlend
@@ -23015,14 +18374,7 @@ class UMaterialExpressionMeshSubUVBlend : public UMaterialExpressionMeshSubUV
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionMeshSubUVBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionMeshSubUVBlend"))
 };
 
 // Class Engine.MaterialExpressionParticleSubUV
@@ -23032,14 +18384,7 @@ class UMaterialExpressionParticleSubUV : public UMaterialExpressionTextureSample
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionParticleSubUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionParticleSubUV"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameter
@@ -23052,14 +18397,7 @@ public:
 	class FName                                        Group;                                         // 0x0150 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameter"))
 };
 
 // Class Engine.MaterialExpressionTextureObjectParameter
@@ -23069,14 +18407,7 @@ class UMaterialExpressionTextureObjectParameter : public UMaterialExpressionText
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureObjectParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureObjectParameter"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameter2D
@@ -23086,14 +18417,7 @@ class UMaterialExpressionTextureSampleParameter2D : public UMaterialExpressionTe
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameter2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameter2D"))
 };
 
 // Class Engine.MaterialExpressionAntialiasedTextureMask
@@ -23105,14 +18429,7 @@ public:
 	ETextureColorChannel                               Channel;                                       // 0x015C (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionAntialiasedTextureMask");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionAntialiasedTextureMask"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterFlipbook
@@ -23122,14 +18439,7 @@ class UMaterialExpressionTextureSampleParameterFlipbook : public UMaterialExpres
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterFlipbook");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterFlipbook"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV
@@ -23139,14 +18449,7 @@ class UMaterialExpressionTextureSampleParameterMeshSubUV : public UMaterialExpre
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUV"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterMeshSubUVBlend
@@ -23156,14 +18459,7 @@ class UMaterialExpressionTextureSampleParameterMeshSubUVBlend : public UMaterial
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUVBlend");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMeshSubUVBlend"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterSubUV
@@ -23173,14 +18469,7 @@ class UMaterialExpressionTextureSampleParameterSubUV : public UMaterialExpressio
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterSubUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterSubUV"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterCube
@@ -23190,14 +18479,7 @@ class UMaterialExpressionTextureSampleParameterCube : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterCube");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterCube"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterMovie
@@ -23207,14 +18489,7 @@ class UMaterialExpressionTextureSampleParameterMovie : public UMaterialExpressio
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMovie");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterMovie"))
 };
 
 // Class Engine.MaterialExpressionTextureSampleParameterNormal
@@ -23225,14 +18500,7 @@ public:
 	struct FPointer                                    InstanceOverride;                              // 0x0158 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterNormal");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureSampleParameterNormal"))
 };
 
 // Class Engine.MaterialExpressionTime
@@ -23243,14 +18511,7 @@ public:
 	uint32_t                                           bIgnorePause : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTime"))
 };
 
 // Class Engine.MaterialExpressionTransform
@@ -23263,14 +18524,7 @@ public:
 	EMaterialVectorCoordTransform                      TransformType;                                 // 0x00F9 (0x0001) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTransform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTransform"))
 };
 
 // Class Engine.MaterialExpressionTransformPosition
@@ -23283,14 +18537,7 @@ public:
 	EMaterialPositionTransform                         TransformType;                                 // 0x00F9 (0x0001) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTransformPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTransformPosition"))
 };
 
 // Class Engine.MaterialExpressionTwoSidedSign
@@ -23300,14 +18547,7 @@ class UMaterialExpressionTwoSidedSign : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionTwoSidedSign");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTwoSidedSign"))
 };
 
 // Class Engine.MaterialExpressionVertexColor
@@ -23317,14 +18557,7 @@ class UMaterialExpressionVertexColor : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionVertexColor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionVertexColor"))
 };
 
 // Class Engine.MaterialExpressionWindDirectionAndSpeed
@@ -23334,14 +18567,7 @@ class UMaterialExpressionWindDirectionAndSpeed : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionWindDirectionAndSpeed");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionWindDirectionAndSpeed"))
 };
 
 // Class Engine.MaterialExpressionWorldNormal
@@ -23351,14 +18577,7 @@ class UMaterialExpressionWorldNormal : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionWorldNormal");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionWorldNormal"))
 };
 
 // Class Engine.MaterialExpressionWorldPosition
@@ -23368,14 +18587,7 @@ class UMaterialExpressionWorldPosition : public UMaterialExpression
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialExpressionWorldPosition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionWorldPosition"))
 };
 
 // Class Engine.MaterialFunction
@@ -23394,14 +18606,7 @@ public:
 	class TArray<class UMaterialExpressionComment*>    FunctionEditorComments;                        // 0x00B0 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialFunction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialFunction"))
 };
 
 // Class Engine.MaterialInstance
@@ -23430,14 +18635,7 @@ public:
 	struct FGuid                                       ParentLightingGuid;                            // 0x0308 (0x0010) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInstance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInstance"))
 	void SetVectorParameterValues(const class FString& optionalPrefix, class TArray<struct FVectorParameterValue>& outVectorParamValues);
 	void SetTextureParameterValues(const class FString& optionalPrefix, class TArray<struct FTextureParameterValue>& outTextureParamValues);
 	void SetScalarParameterValues(const class FString& optionalPrefix, class TArray<struct FScalarParameterValue>& outScalarParamValues);
@@ -23465,14 +18663,7 @@ public:
 	class TArray<struct FVectorParameterValue>         VectorParameterValues;                         // 0x0350 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInstanceConstant");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInstanceConstant"))
 	void SetActorParameter(const class FName& Key, class AActor* Value);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
 	void SetVectorParameter(const class FName& Key, const struct FVector& V);
@@ -23503,14 +18694,7 @@ public:
 	int32_t                                            DataWeightmapSize;                             // 0x0368 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeMaterialInstanceConstant");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeMaterialInstanceConstant"))
 };
 
 // Class Engine.MaterialInstanceTimeVarying
@@ -23527,14 +18711,7 @@ public:
 	class TArray<struct FLinearColorParameterValueOverTime> LinearColorParameterValues;                    // 0x0360 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInstanceTimeVarying");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInstanceTimeVarying"))
 	bool CheckForVectorParameterConflicts(const class FName& ParameterName);
 	float GetMaxDurationFromAllParameters();
 	void ClearParameterValues();
@@ -23576,14 +18753,7 @@ public:
 	class ACamera*                                     BaseCamera;                                    // 0x02B0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EmitterCameraLensEffectBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EmitterCameraLensEffectBase"))
 	void UpdateLocation(float CamFOVDeg, struct FVector& outCamLoc, struct FRotator& outCamRot);
 	void ActivateLensEffect();
 	void PostBeginPlay();
@@ -23599,14 +18769,7 @@ class AParticleEventManager : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleEventManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleEventManager"))
 	void eventHandleParticleModuleEventSendToGame(class UParticleModuleEventSendToGame* InEvent, struct FVector& outInCollideDirection, struct FVector& outInHitLocation, struct FVector& outInHitNormal, class FName& outInBoneName);
 };
 
@@ -23685,14 +18848,7 @@ public:
 	struct FScriptDelegate                             __OnSystemFinished__Delegate;                  // 0x03C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleSystemComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleSystemComponent"))
 	void Warmup();
 	void SetParameters(class TArray<struct FParticleSysParam>& outParams);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
@@ -23757,14 +18913,7 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x00A1 (0x0007) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatParticleParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatParticleParameter"))
 };
 
 // Class Engine.DistributionVectorParticleParameter
@@ -23775,14 +18924,7 @@ public:
 	uint8_t                                          UnknownData00[0x5];                            // 0x00D3 (0x0005) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorParticleParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorParticleParameter"))
 };
 
 // Class Engine.DistributionVectorConstantCurveParticleParameter
@@ -23797,14 +18939,7 @@ public:
 	uint32_t                                           bIsEditingCurve : 1;                           // 0x00B4 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionVectorConstantCurveParticleParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorConstantCurveParticleParameter"))
 };
 
 // Class Engine.ParticleEmitter
@@ -23829,14 +18964,7 @@ public:
 	float                                              MediumDetailSpawnRateScale;                    // 0x0094 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleEmitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleEmitter"))
 	float GetMaxLifespan(float InComponentDelay);
 	bool IsEmitterEnabled();
 };
@@ -23848,14 +18976,7 @@ class UParticleSpriteEmitter : public UParticleEmitter
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleSpriteEmitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleSpriteEmitter"))
 };
 
 // Class Engine.ParticleLODLevel
@@ -23879,14 +19000,7 @@ public:
 	int32_t                                            PeakActiveParticles;                           // 0x00E8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleLODLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleLODLevel"))
 };
 
 // Class Engine.ParticleModule
@@ -23911,14 +19025,7 @@ public:
 	struct FColor                                      ModuleEditorColor;                             // 0x0068 (0x0004) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModule"))
 };
 
 // Class Engine.ParticleModuleAccelerationBase
@@ -23930,14 +19037,7 @@ public:
 	uint32_t                                           bAlwaysInWorldSpace : 1;                       // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAccelerationBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAccelerationBase"))
 };
 
 // Class Engine.ParticleModuleAcceleration
@@ -23950,14 +19050,7 @@ public:
 	uint32_t                                           bApplyOwnerScale : 1;                          // 0x00A0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAcceleration");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAcceleration"))
 };
 
 // Class Engine.ParticleModuleAccelerationOverLifetime
@@ -23969,14 +19062,7 @@ public:
 	struct FRawDistributionVector                      AccelOverLife;                                 // 0x0078 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAccelerationOverLifetime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAccelerationOverLifetime"))
 };
 
 // Class Engine.ParticleModuleAttractorBase
@@ -23987,14 +19073,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorBase"))
 };
 
 // Class Engine.ParticleModuleAttractorBoneSocket
@@ -24021,14 +19100,7 @@ public:
 	class USkeletalMesh*                               EditorSkelMesh;                                // 0x0190 (0x0008) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorBoneSocket");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorBoneSocket"))
 };
 
 // Class Engine.ParticleModuleAttractorLine
@@ -24042,14 +19114,7 @@ public:
 	struct FRawDistributionFloat                       Strength;                                      // 0x00B0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorLine");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorLine"))
 };
 
 // Class Engine.ParticleModuleAttractorParticle
@@ -24070,14 +19135,7 @@ public:
 	int32_t                                            LastSelIndex;                                  // 0x00D4 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorParticle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorParticle"))
 };
 
 // Class Engine.ParticleModuleAttractorPoint
@@ -24094,14 +19152,7 @@ public:
 	uint32_t                                           bUseWorldSpacePosition : 1;                    // 0x00E8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorPoint");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorPoint"))
 };
 
 // Class Engine.ParticleModuleAttractorSkelVertSurface
@@ -24132,14 +19183,7 @@ public:
 	class TArray<int32_t>                              ValidMaterialIndices;                          // 0x01B0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleAttractorSkelVertSurface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorSkelVertSurface"))
 };
 
 // Class Engine.ParticleModuleBeamBase
@@ -24150,14 +19194,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleBeamBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleBeamBase"))
 };
 
 // Class Engine.ParticleModuleBeamModifier
@@ -24177,14 +19214,7 @@ public:
 	struct FRawDistributionFloat                       Strength;                                      // 0x00D8 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleBeamModifier");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleBeamModifier"))
 };
 
 // Class Engine.ParticleModuleBeamNoise
@@ -24216,14 +19246,7 @@ public:
 	struct FRawDistributionFloat                       NoiseScale;                                    // 0x0138 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleBeamNoise");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleBeamNoise"))
 };
 
 // Class Engine.ParticleModuleBeamSource
@@ -24244,14 +19267,7 @@ public:
 	struct FRawDistributionFloat                       SourceStrength;                                // 0x00D0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleBeamSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleBeamSource"))
 };
 
 // Class Engine.ParticleModuleBeamTarget
@@ -24276,14 +19292,7 @@ public:
 	float                                              LockRadius;                                    // 0x0108 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleBeamTarget");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleBeamTarget"))
 };
 
 // Class Engine.ParticleModuleCameraBase
@@ -24294,14 +19303,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleCameraBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCameraBase"))
 };
 
 // Class Engine.ParticleModuleCameraOffset
@@ -24314,14 +19316,7 @@ public:
 	EParticleCameraOffsetUpdateMethod                  UpdateMethod;                                  // 0x009C (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleCameraOffset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCameraOffset"))
 };
 
 // Class Engine.ParticleModuleCollisionBase
@@ -24332,14 +19327,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleCollisionBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCollisionBase"))
 };
 
 // Class Engine.ParticleModuleCollision
@@ -24377,14 +19365,7 @@ public:
 	class TArray<struct FParticleAttractorCollisionAction> ParticleAttractorCollisionActions;             // 0x0178 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleCollision");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCollision"))
 };
 
 // Class Engine.ParticleModuleCollisionActor
@@ -24396,14 +19377,7 @@ public:
 	uint32_t                                           bCheckPawnCollisions : 1;                      // 0x0198 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleCollisionActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCollisionActor"))
 };
 
 // Class Engine.ParticleModuleColorBase
@@ -24414,14 +19388,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColorBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorBase"))
 };
 
 // Class Engine.ParticleModuleColor
@@ -24434,14 +19401,7 @@ public:
 	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColor"))
 };
 
 // Class Engine.ParticleModuleColor_Seeded
@@ -24453,14 +19413,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00C8 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColor_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColor_Seeded"))
 };
 
 // Class Engine.ParticleModuleColorByParameter
@@ -24472,14 +19425,7 @@ public:
 	struct FColor                                      DefaultColor;                                  // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColorByParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorByParameter"))
 };
 
 // Class Engine.ParticleModuleColorOverLife
@@ -24492,14 +19438,7 @@ public:
 	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColorOverLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorOverLife"))
 };
 
 // Class Engine.ParticleModuleColorScaleOverDensity
@@ -24511,14 +19450,7 @@ public:
 	struct FRawDistributionFloat                       AlphaScaleOverDensity;                         // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColorScaleOverDensity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorScaleOverDensity"))
 };
 
 // Class Engine.ParticleModuleColorScaleOverLife
@@ -24531,14 +19463,7 @@ public:
 	uint32_t                                           bEmitterTime : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleColorScaleOverLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorScaleOverLife"))
 };
 
 // Class Engine.ParticleModuleEventBase
@@ -24549,14 +19474,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventBase"))
 };
 
 // Class Engine.ParticleModuleEventGenerator
@@ -24567,14 +19485,7 @@ public:
 	class TArray<struct FParticleEvent_GenerateInfo>   Events;                                        // 0x0070 (0x0010) [0x0000000002400009] (CPF_Edit | CPF_ExportObject | CPF_NeedCtorLink | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventGenerator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventGenerator"))
 };
 
 // Class Engine.ParticleModuleEventReceiverBase
@@ -24587,14 +19498,7 @@ public:
 	class FName                                        EventName;                                     // 0x0074 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventReceiverBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventReceiverBase"))
 };
 
 // Class Engine.ParticleModuleEventReceiverKillParticles
@@ -24606,14 +19510,7 @@ public:
 	uint32_t                                           bStopSpawning : 1;                             // 0x0080 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventReceiverKillParticles");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventReceiverKillParticles"))
 };
 
 // Class Engine.ParticleModuleEventReceiverSpawn
@@ -24630,14 +19527,7 @@ public:
 	struct FRawDistributionVector                      InheritVelocityScale;                          // 0x00B0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventReceiverSpawn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventReceiverSpawn"))
 };
 
 // Class Engine.ParticleModuleKillBase
@@ -24648,14 +19538,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleKillBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleKillBase"))
 };
 
 // Class Engine.ParticleModuleKillBox
@@ -24670,14 +19553,7 @@ public:
 	uint32_t                                           bAxisAlignedAndFixedSize : 1;                  // 0x00C0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleKillBox");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleKillBox"))
 };
 
 // Class Engine.ParticleModuleKillHeight
@@ -24691,14 +19567,7 @@ public:
 	uint32_t                                           bApplyPSysScale : 1;                           // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleKillHeight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleKillHeight"))
 };
 
 // Class Engine.ParticleModuleLifetimeBase
@@ -24709,14 +19578,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLifetimeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLifetimeBase"))
 };
 
 // Class Engine.ParticleModuleLifetime
@@ -24727,14 +19589,7 @@ public:
 	struct FRawDistributionFloat                       LifeTime;                                      // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLifetime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLifetime"))
 };
 
 // Class Engine.ParticleModuleLifetime_Seeded
@@ -24745,14 +19600,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0098 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLifetime_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLifetime_Seeded"))
 };
 
 // Class Engine.ParticleModuleLocationBase
@@ -24763,14 +19611,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationBase"))
 };
 
 // Class Engine.ParticleModuleLocation
@@ -24783,14 +19624,7 @@ public:
 	float                                              DistributeThreshold;                           // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocation"))
 };
 
 // Class Engine.ParticleModuleLocation_Seeded
@@ -24801,14 +19635,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00A0 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocation_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocation_Seeded"))
 };
 
 // Class Engine.ParticleModuleLocationWorldOffset
@@ -24818,14 +19645,7 @@ class UParticleModuleLocationWorldOffset : public UParticleModuleLocation
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationWorldOffset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationWorldOffset"))
 };
 
 // Class Engine.ParticleModuleLocationWorldOffset_Seeded
@@ -24836,14 +19656,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00A0 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationWorldOffset_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationWorldOffset_Seeded"))
 };
 
 // Class Engine.ParticleModuleLocationBoneSocket
@@ -24865,14 +19678,7 @@ public:
 	float                                              LastUpdateTime;                                // 0x00A8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationBoneSocket");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationBoneSocket"))
 };
 
 // Class Engine.ParticleModuleLocationDirect
@@ -24886,14 +19692,7 @@ public:
 	struct FRawDistributionVector                      Direction;                                     // 0x00E8 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationDirect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationDirect"))
 };
 
 // Class Engine.ParticleModuleLocationEmitter
@@ -24910,14 +19709,7 @@ public:
 	float                                              InheritSourceRotationScale;                    // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationEmitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationEmitter"))
 };
 
 // Class Engine.ParticleModuleLocationEmitterDirect
@@ -24928,14 +19720,7 @@ public:
 	class FName                                        EmitterName;                                   // 0x0070 (0x0008) [0x0000000002000009] (CPF_Edit | CPF_ExportObject | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationEmitterDirect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationEmitterDirect"))
 };
 
 // Class Engine.ParticleModuleLocationPrimitiveBase
@@ -24956,14 +19741,7 @@ public:
 	struct FRawDistributionVector                      StartLocation;                                 // 0x00A0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveBase"))
 };
 
 // Class Engine.ParticleModuleLocationPrimitiveCylinder
@@ -24979,14 +19757,7 @@ public:
 	ECylinderHeightAxis                                HeightAxis;                                    // 0x0120 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveCylinder");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveCylinder"))
 };
 
 // Class Engine.ParticleModuleLocationPrimitiveCylinder_Seeded
@@ -24998,14 +19769,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0128 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveCylinder_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveCylinder_Seeded"))
 };
 
 // Class Engine.ParticleModuleLocationPrimitiveSphere
@@ -25016,14 +19780,7 @@ public:
 	struct FRawDistributionFloat                       StartRadius;                                   // 0x00C8 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveSphere");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveSphere"))
 };
 
 // Class Engine.ParticleModuleLocationPrimitiveSphere_Seeded
@@ -25034,14 +19791,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00F0 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveSphere_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationPrimitiveSphere_Seeded"))
 };
 
 // Class Engine.ParticleModuleLocationSkelVertSurface
@@ -25066,14 +19816,7 @@ public:
 	class TArray<int32_t>                              ValidMaterialIndices;                          // 0x00C0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationSkelVertSurface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationSkelVertSurface"))
 };
 
 // Class Engine.ParticleModuleLocationStaticVertSurface
@@ -25097,14 +19840,7 @@ public:
 	class TArray<int32_t>                              ValidMaterialIndices;                          // 0x00B0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleLocationStaticVertSurface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleLocationStaticVertSurface"))
 };
 
 // Class Engine.ParticleModuleSourceMovement
@@ -25115,14 +19851,7 @@ public:
 	struct FRawDistributionVector                      SourceMovementScale;                           // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSourceMovement");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSourceMovement"))
 };
 
 // Class Engine.ParticleModuleMaterialBase
@@ -25133,14 +19862,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMaterialBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMaterialBase"))
 };
 
 // Class Engine.ParticleModuleMaterialByParameter
@@ -25152,14 +19874,7 @@ public:
 	class TArray<class UMaterialInterface*>            DefaultMaterials;                              // 0x0080 (0x0010) [0x0000000000400041] (CPF_Edit | CPF_EditFixedSize | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMaterialByParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMaterialByParameter"))
 };
 
 // Class Engine.ParticleModuleMeshMaterial
@@ -25170,14 +19885,7 @@ public:
 	class TArray<class UMaterialInterface*>            MeshMaterials;                                 // 0x0070 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshMaterial"))
 };
 
 // Class Engine.ParticleModuleOrbitBase
@@ -25189,14 +19897,7 @@ public:
 	uint32_t                                           bUseEmitterTime : 1;                           // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleOrbitBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleOrbitBase"))
 };
 
 // Class Engine.ParticleModuleOrbit
@@ -25217,14 +19918,7 @@ public:
 	struct FOrbitOptions                               RotationRateOptions;                           // 0x0108 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleOrbit");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleOrbit"))
 };
 
 // Class Engine.ParticleModuleOrientationBase
@@ -25235,14 +19929,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleOrientationBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleOrientationBase"))
 };
 
 // Class Engine.ParticleModuleOrientationAxisLock
@@ -25253,14 +19940,7 @@ public:
 	EParticleAxisLock                                  LockAxisFlags;                                 // 0x0070 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleOrientationAxisLock");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleOrientationAxisLock"))
 };
 
 // Class Engine.ParticleModuleParameterBase
@@ -25271,14 +19951,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleParameterBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleParameterBase"))
 };
 
 // Class Engine.ParticleModuleParameterDynamic
@@ -25291,14 +19964,7 @@ public:
 	uint32_t                                           bUsesVelocity : 1;                             // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleParameterDynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleParameterDynamic"))
 };
 
 // Class Engine.ParticleModuleParameterDynamic_Seeded
@@ -25309,14 +19975,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0088 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleParameterDynamic_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleParameterDynamic_Seeded"))
 };
 
 // Class Engine.ParticleModuleRequired
@@ -25373,14 +20032,7 @@ public:
 	struct FVector                                     NormalsCylinderDirection;                      // 0x0114 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRequired");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRequired"))
 };
 
 // Class Engine.ParticleModuleRotationBase
@@ -25391,14 +20043,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationBase"))
 };
 
 // Class Engine.ParticleModuleMeshRotation
@@ -25410,14 +20055,7 @@ public:
 	uint32_t                                           bInheritParent : 1;                            // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotation"))
 };
 
 // Class Engine.ParticleModuleMeshRotation_Seeded
@@ -25429,14 +20067,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00A0 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotation_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotation_Seeded"))
 };
 
 // Class Engine.ParticleModuleRotation
@@ -25447,14 +20078,7 @@ public:
 	struct FRawDistributionFloat                       StartRotation;                                 // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotation"))
 };
 
 // Class Engine.ParticleModuleRotation_Seeded
@@ -25465,14 +20089,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0098 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotation_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotation_Seeded"))
 };
 
 // Class Engine.ParticleModuleRotationOverLifetime
@@ -25484,14 +20101,7 @@ public:
 	uint32_t                                           Scale : 1;                                     // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationOverLifetime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationOverLifetime"))
 };
 
 // Class Engine.ParticleModuleRotationRateBase
@@ -25502,14 +20112,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationRateBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationRateBase"))
 };
 
 // Class Engine.ParticleModuleMeshRotationRate
@@ -25520,14 +20123,7 @@ public:
 	struct FRawDistributionVector                      StartRotationRate;                             // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotationRate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotationRate"))
 };
 
 // Class Engine.ParticleModuleMeshRotationRate_Seeded
@@ -25538,14 +20134,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0098 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotationRate_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotationRate_Seeded"))
 };
 
 // Class Engine.ParticleModuleMeshRotationRateMultiplyLife
@@ -25556,14 +20145,7 @@ public:
 	struct FRawDistributionVector                      LifeMultiplier;                                // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotationRateMultiplyLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotationRateMultiplyLife"))
 };
 
 // Class Engine.ParticleModuleMeshRotationRateOverLife
@@ -25575,14 +20157,7 @@ public:
 	uint32_t                                           bScaleRotRate : 1;                             // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleMeshRotationRateOverLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotationRateOverLife"))
 };
 
 // Class Engine.ParticleModuleRotationRate
@@ -25593,14 +20168,7 @@ public:
 	struct FRawDistributionFloat                       StartRotationRate;                             // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationRate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationRate"))
 };
 
 // Class Engine.ParticleModuleRotationRate_Seeded
@@ -25611,14 +20179,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0098 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationRate_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationRate_Seeded"))
 };
 
 // Class Engine.ParticleModuleRotationRateMultiplyLife
@@ -25629,14 +20190,7 @@ public:
 	struct FRawDistributionFloat                       LifeMultiplier;                                // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleRotationRateMultiplyLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationRateMultiplyLife"))
 };
 
 // Class Engine.ParticleModuleSizeBase
@@ -25647,14 +20201,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeBase"))
 };
 
 // Class Engine.ParticleModuleSize
@@ -25665,14 +20212,7 @@ public:
 	struct FRawDistributionVector                      StartSize;                                     // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSize");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSize"))
 };
 
 // Class Engine.ParticleModuleSize_Seeded
@@ -25683,14 +20223,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x0098 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSize_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSize_Seeded"))
 };
 
 // Class Engine.ParticleModuleSizeMultiplyLife
@@ -25704,14 +20237,7 @@ public:
 	uint32_t                                           MultiplyZ : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeMultiplyLife");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeMultiplyLife"))
 };
 
 // Class Engine.ParticleModuleSizeMultiplyVelocity
@@ -25727,14 +20253,7 @@ public:
 	struct FVector                                     CapMinSize;                                    // 0x00A8 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeMultiplyVelocity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeMultiplyVelocity"))
 };
 
 // Class Engine.ParticleModuleSizeScale
@@ -25748,14 +20267,7 @@ public:
 	uint32_t                                           EnableZ : 1;                                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeScale");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeScale"))
 };
 
 // Class Engine.ParticleModuleSizeScaleByTime
@@ -25769,14 +20281,7 @@ public:
 	uint32_t                                           bEnableZ : 1;                                  // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeScaleByTime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeScaleByTime"))
 };
 
 // Class Engine.ParticleModuleSizeScaleOverDensity
@@ -25787,14 +20292,7 @@ public:
 	struct FRawDistributionVector                      SizeScaleOverDensity;                          // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSizeScaleOverDensity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeScaleOverDensity"))
 };
 
 // Class Engine.ParticleModuleSpawnBase
@@ -25807,14 +20305,7 @@ public:
 	uint32_t                                           bProcessBurstList : 1;                         // 0x0070 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSpawnBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSpawnBase"))
 };
 
 // Class Engine.ParticleModuleSpawn
@@ -25830,14 +20321,7 @@ public:
 	class TArray<struct FParticleBurst>                BurstList;                                     // 0x00D0 (0x0010) [0x0000000002400009] (CPF_Edit | CPF_ExportObject | CPF_NeedCtorLink | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSpawn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSpawn"))
 };
 
 // Class Engine.ParticleModuleSpawnPerUnit
@@ -25858,14 +20342,7 @@ public:
 	float                                              MinFrameDistance;                              // 0x00B4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSpawnPerUnit");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSpawnPerUnit"))
 };
 
 // Class Engine.ParticleModuleStoreSpawnTimeBase
@@ -25876,14 +20353,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleStoreSpawnTimeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleStoreSpawnTimeBase"))
 };
 
 // Class Engine.ParticleModuleStoreSpawnTime
@@ -25893,14 +20363,7 @@ class UParticleModuleStoreSpawnTime : public UParticleModuleStoreSpawnTimeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleStoreSpawnTime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleStoreSpawnTime"))
 };
 
 // Class Engine.ParticleModuleSubUVBase
@@ -25911,14 +20374,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSubUVBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUVBase"))
 };
 
 // Class Engine.ParticleModuleSubUV
@@ -25930,14 +20386,7 @@ public:
 	uint32_t                                           bUseRealTime : 1;                              // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSubUV");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUV"))
 };
 
 // Class Engine.ParticleModuleSubUVMovie
@@ -25952,14 +20401,7 @@ public:
 	int32_t                                            StartingFrame;                                 // 0x00D0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSubUVMovie");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUVMovie"))
 };
 
 // Class Engine.ParticleModuleSubUVDirect
@@ -25971,14 +20413,7 @@ public:
 	struct FRawDistributionVector                      SubUVSize;                                     // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSubUVDirect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUVDirect"))
 };
 
 // Class Engine.ParticleModuleSubUVSelect
@@ -25989,14 +20424,7 @@ public:
 	struct FRawDistributionVector                      SubImageSelect;                                // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleSubUVSelect");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUVSelect"))
 };
 
 // Class Engine.ParticleModuleTrailBase
@@ -26007,14 +20435,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTrailBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTrailBase"))
 };
 
 // Class Engine.ParticleModuleTrailSource
@@ -26034,14 +20455,7 @@ public:
 	class TArray<struct FVector>                       SourceOffsetDefaults;                          // 0x00B0 (0x0010) [0x0000000000400041] (CPF_Edit | CPF_EditFixedSize | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTrailSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTrailSource"))
 };
 
 // Class Engine.ParticleModuleTrailSpawn
@@ -26053,14 +20467,7 @@ public:
 	float                                              MinSpawnVelocity;                              // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTrailSpawn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTrailSpawn"))
 };
 
 // Class Engine.ParticleModuleTrailTaper
@@ -26073,14 +20480,7 @@ public:
 	struct FRawDistributionFloat                       TaperFactor;                                   // 0x0078 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTrailTaper");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTrailTaper"))
 };
 
 // Class Engine.ParticleModuleTypeDataBase
@@ -26091,14 +20491,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataBase"))
 };
 
 // Class Engine.ParticleModuleTypeDataAnimTrail
@@ -26121,14 +20514,7 @@ public:
 	float                                              TangentTessellationScalar;                     // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataAnimTrail");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataAnimTrail"))
 };
 
 // Class Engine.ParticleModuleTypeDataApex
@@ -26140,14 +20526,7 @@ public:
 	class UApexGenericAsset*                           ApexEmitter;                                   // 0x0078 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataApex");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataApex"))
 };
 
 // Class Engine.ParticleModuleTypeDataBeam
@@ -26172,14 +20551,7 @@ public:
 	uint32_t                                           RenderTessellation : 1;                        // 0x014C (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataBeam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataBeam"))
 };
 
 // Class Engine.ParticleModuleTypeDataBeam2
@@ -26209,14 +20581,7 @@ public:
 	struct FRawDistributionFloat                       TaperScale;                                    // 0x00F0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataBeam2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataBeam2"))
 };
 
 // Class Engine.ParticleModuleTypeDataMesh
@@ -26241,14 +20606,7 @@ public:
 	float                                              Yaw;                                           // 0x0090 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataMesh"))
 };
 
 // Class Engine.ParticleModuleTypeDataMeshPhysX
@@ -26265,14 +20623,7 @@ public:
 	float                                              ZOffset;                                       // 0x00B8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataMeshPhysX");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataMeshPhysX"))
 };
 
 // Class Engine.ParticleModuleTypeDataPhysX
@@ -26284,14 +20635,7 @@ public:
 	struct FPhysXEmitterVerticalLodProperties          VerticalLod;                                   // 0x0078 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataPhysX");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataPhysX"))
 };
 
 // Class Engine.ParticleModuleTypeDataRibbon
@@ -26322,14 +20666,7 @@ public:
 	float                                              TangentTessellationScalar;                     // 0x0094 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataRibbon");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataRibbon"))
 };
 
 // Class Engine.ParticleModuleTypeDataTrail
@@ -26347,14 +20684,7 @@ public:
 	struct FVector                                     SpawnDistance;                                 // 0x00A0 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataTrail");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataTrail"))
 };
 
 // Class Engine.ParticleModuleTypeDataTrail2
@@ -26377,14 +20707,7 @@ public:
 	uint32_t                                           RenderTessellation : 1;                        // 0x008C (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleTypeDataTrail2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataTrail2"))
 };
 
 // Class Engine.ParticleModuleUberBase
@@ -26396,14 +20719,7 @@ public:
 	class TArray<class FName>                          RequiredModules;                               // 0x0070 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberBase"))
 };
 
 // Class Engine.ParticleModuleUberLTISIVCL
@@ -26419,14 +20735,7 @@ public:
 	struct FRawDistributionFloat                       AlphaOverLife;                                 // 0x0148 (0x0028) [0x0000000002480009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCL");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCL"))
 };
 
 // Class Engine.ParticleModuleUberLTISIVCLIL
@@ -26443,14 +20752,7 @@ public:
 	struct FRawDistributionVector                      StartLocation;                                 // 0x0170 (0x0028) [0x0000000002480009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCLIL");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCLIL"))
 };
 
 // Class Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR
@@ -26474,14 +20776,7 @@ public:
 	struct FRawDistributionFloat                       StartRotationRate;                             // 0x01F0 (0x0028) [0x0000000002480009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_NoClear)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberLTISIVCLILIRSSBLIRR"))
 };
 
 // Class Engine.ParticleModuleUberRainDrops
@@ -26519,14 +20814,7 @@ public:
 	struct FVector                                     StartLocationMax;                              // 0x00FC (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberRainDrops");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberRainDrops"))
 };
 
 // Class Engine.ParticleModuleUberRainImpacts
@@ -26563,14 +20851,7 @@ public:
 	struct FRawDistributionFloat                       AlphaOverLife;                                 // 0x01F8 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberRainImpacts");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberRainImpacts"))
 };
 
 // Class Engine.ParticleModuleUberRainSplashA
@@ -26591,14 +20872,7 @@ public:
 	struct FRawDistributionFloat                       AlphaOverLife;                                 // 0x0150 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberRainSplashA");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberRainSplashA"))
 };
 
 // Class Engine.ParticleModuleUberRainSplashB
@@ -26618,14 +20892,7 @@ public:
 	struct FRawDistributionFloat                       StartRotationRate;                             // 0x0150 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleUberRainSplashB");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleUberRainSplashB"))
 };
 
 // Class Engine.ParticleModuleVelocityBase
@@ -26638,14 +20905,7 @@ public:
 	uint32_t                                           bApplyOwnerScale : 1;                          // 0x0070 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocityBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityBase"))
 };
 
 // Class Engine.ParticleModuleVelocity
@@ -26658,14 +20918,7 @@ public:
 	struct FRawDistributionFloat                       StartVelocityRadial;                           // 0x00A0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocity"))
 };
 
 // Class Engine.ParticleModuleVelocity_Seeded
@@ -26676,14 +20929,7 @@ public:
 	struct FParticleRandomSeedInfo                     RandomSeedInfo;                                // 0x00C8 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocity_Seeded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocity_Seeded"))
 };
 
 // Class Engine.ParticleModuleVelocityCone
@@ -26697,14 +20943,7 @@ public:
 	struct FVector                                     Direction;                                     // 0x00C8 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocityCone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityCone"))
 };
 
 // Class Engine.ParticleModuleVelocityInheritParent
@@ -26717,14 +20956,7 @@ public:
 	float                                              MaxAddedVelocity;                              // 0x00A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocityInheritParent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityInheritParent"))
 };
 
 // Class Engine.ParticleModuleVelocityOverLifetime
@@ -26737,14 +20969,7 @@ public:
 	uint32_t                                           Absolute : 1;                                  // 0x00A0 (0x0004) [0x0000000000000009] [0x00000001] (CPF_Edit | CPF_ExportObject)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleVelocityOverLifetime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityOverLifetime"))
 };
 
 // Class Engine.ParticleModuleWorldForcesBase
@@ -26755,14 +20980,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleWorldForcesBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleWorldForcesBase"))
 };
 
 // Class Engine.ParticleModulePhysicsVolumes
@@ -26774,14 +20992,7 @@ public:
 	EParticleLevelInfluenceType                        LevelInfluenceType;                            // 0x0098 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModulePhysicsVolumes");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModulePhysicsVolumes"))
 };
 
 // Class Engine.ParticleModuleWorldAttractor
@@ -26794,14 +21005,7 @@ public:
 	struct FRawDistributionFloat                       AttractorInfluence;                            // 0x0078 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleWorldAttractor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleWorldAttractor"))
 };
 
 // Class Engine.ParticleModuleEventSendToGame
@@ -26811,14 +21015,7 @@ class UParticleModuleEventSendToGame : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleModuleEventSendToGame");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventSendToGame"))
 	void DoEvent(struct FVector& outInCollideDirection, struct FVector& outInHitLocation, struct FVector& outInHitNormal, class FName& outInBoneName);
 };
 
@@ -26832,14 +21029,7 @@ public:
 	class TArray<struct FParticleSystemReplayFrame>    Frames;                                        // 0x0068 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleSystemReplay");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleSystemReplay"))
 };
 
 // Class Engine.PhysXParticleSystem
@@ -26882,14 +21072,7 @@ public:
 	struct FPointer                                    PSys;                                          // 0x00C8 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysXParticleSystem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysXParticleSystem"))
 };
 
 // Class Engine.KActor
@@ -26928,14 +21111,7 @@ public:
 	struct FRotator                                    InitialRotation;                               // 0x03AC (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KActor"))
 	void Reset();
 	void OnTeleport(class USeqAct_Teleport* inAction);
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -26959,14 +21135,7 @@ public:
 	float                                              MaxImpulseSpeed;                               // 0x03C0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KActorFromStatic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KActorFromStatic"))
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
 	void eventBump(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitNormal);
 	void ReceiveImpulse(class APawn* Other, const struct FVector& HitLocation, const struct FVector& HitNormal);
@@ -26988,14 +21157,7 @@ public:
 	uint32_t                                           bScalingToZero : 1;                            // 0x03B8 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KActorSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KActorSpawnable"))
 	void ResetComponents();
 	void eventRecycleInternal();
 	void Recycle();
@@ -27016,14 +21178,7 @@ public:
 	class UPhysicsAsset*                               ReplicatedPhysAsset;                           // 0x0280 (0x0008) [0x0000000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KAsset"))
 	void DoKismetAttachment(class AActor* Attachment, class USeqAct_AttachToActor* Action);
 	void OnTeleport(class USeqAct_Teleport* inAction);
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -27049,14 +21204,7 @@ public:
 	class AActor*                                      PulleyPivotActor2;                             // 0x0298 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ConstraintActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ConstraintActor"))
 	void OnToggleConstraintDrive(class USeqAct_ToggleConstraintDrive* Action);
 	void OnToggle(class USeqAct_Toggle* Action);
 	void OnDestroy(class USeqAct_Destroy* Action);
@@ -27080,14 +21228,7 @@ public:
 	uint8_t                                            ImpulseCount;                                  // 0x0280 (0x0001) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_LineImpulseActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_LineImpulseActor"))
 	void eventReplicatedEvent(const class FName& VarName);
 	void OnToggle(class USeqAct_Toggle* inAction);
 	void FireLineImpulse();
@@ -27103,14 +21244,7 @@ public:
 	uint8_t                                            ImpulseCount;                                  // 0x0278 (0x0001) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_RadialImpulseActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_RadialImpulseActor"))
 	void eventReplicatedEvent(const class FName& VarName);
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
@@ -27124,14 +21258,7 @@ public:
 	float                                              ThrustStrength;                                // 0x026C (0x0004) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_Thruster");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_Thruster"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -27154,14 +21281,7 @@ public:
 	struct FMatineeRawDistributionFloat                DragRadius;                                    // 0x0340 (0x0030) [0x0000000200480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WorldAttractor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WorldAttractor"))
 	void OnSetWorldAttractorParam(class USeqAct_SetWorldAttractorParam* Action);
 };
 
@@ -27173,14 +21293,7 @@ public:
 	class UMaterialInterface*                          LimitMaterial;                                 // 0x0258 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ConstraintDrawComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ConstraintDrawComponent"))
 };
 
 // Class Engine.RB_RadialImpulseComponent
@@ -27197,14 +21310,7 @@ public:
 	class UDrawSphereComponent*                        PreviewSphere;                                 // 0x0268 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_RadialImpulseComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_RadialImpulseComponent"))
 	void FireImpulse(const struct FVector& Origin);
 };
 
@@ -27233,14 +21339,7 @@ public:
 	struct FVector                                     Location;                                      // 0x0108 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_Handle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_Handle"))
 	struct FQuat GetOrientation();
 	void SetOrientation(struct FQuat& outNewOrientation);
 	void UpdateSmoothLocation(struct FVector& outNewLocation);
@@ -27275,14 +21374,7 @@ public:
 	float                                              DampMaxForce;                                  // 0x0104 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_Spring");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_Spring"))
 	void Clear();
 	void SetComponents(class UPrimitiveComponent* InComponent1, const class FName& InBoneName1, const struct FVector& Position1, class UPrimitiveComponent* InComponent2, const class FName& InBoneName2, const struct FVector& Position2);
 };
@@ -27298,14 +21390,7 @@ public:
 	struct FRBCollisionChannelContainer                ClothingRBCollideWithChannels;                 // 0x00CC (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryApexClothing");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryApexClothing"))
 };
 
 // Class Engine.ApexDestructibleDamageParameters
@@ -27316,14 +21401,7 @@ public:
 	class TArray<struct FDamagePair>                   DamageMap;                                     // 0x0060 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexDestructibleDamageParameters");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexDestructibleDamageParameters"))
 };
 
 // Class Engine.FractureMaterial
@@ -27335,14 +21413,7 @@ public:
 	class USoundCue*                                   FractureSound;                                 // 0x0068 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FractureMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FractureMaterial"))
 };
 
 // Class Engine.PhysicalMaterial
@@ -27377,14 +21448,7 @@ public:
 	class UPhysicalMaterialPropertyBase*               PhysicalMaterialProperty;                      // 0x00E0 (0x0008) [0x0000000004400009] (CPF_Edit | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicalMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicalMaterial"))
 	class UPhysicalMaterialPropertyBase* GetPhysicalMaterialProperty(class UClass* DesiredClass);
 	void FindFractureSounds(class USoundCue*& outOutSoundExplosion, class USoundCue*& outOutSoundSingle);
 	struct FPhysEffectInfo FindPhysEffectInfo(EPhysEffectType Type);
@@ -27397,14 +21461,7 @@ class UPhysicalMaterialPropertyBase : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicalMaterialPropertyBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicalMaterialPropertyBase"))
 };
 
 // Class Engine.PhysicsAsset
@@ -27420,14 +21477,7 @@ public:
 	class UPhysicsAssetInstance*                       DefaultInstance;                               // 0x00E8 (0x0008) [0x000000000440000A] (CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicsAsset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicsAsset"))
 	int32_t FindBodyIndex(const class FName& BodyName);
 };
 
@@ -27451,14 +21501,7 @@ public:
 	uint32_t                                           bInitBodies : 1;                               // 0x00F8 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicsAssetInstance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicsAssetInstance"))
 	class URB_ConstraintInstance* FindConstraintInstance(const class FName& ConName, class UPhysicsAsset* InAsset);
 	class URB_BodyInstance* FindBodyInstance(const class FName& BodyName, class UPhysicsAsset* InAsset);
 	void SetFullAnimWeightBonesFixed(bool bNewFixed, class USkeletalMeshComponent* SkelMesh);
@@ -27486,14 +21529,7 @@ public:
 	int32_t                                            ParticlePercentage;                            // 0x0060 (0x0004) [0x0000000000005000] (CPF_Native | CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PhysicsLODVerticalEmitter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicsLODVerticalEmitter"))
 };
 
 // Class Engine.RB_BodyInstance
@@ -27535,14 +21571,7 @@ public:
 	float                                              InstanceDampingScale;                          // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_BodyInstance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_BodyInstance"))
 	void UpdateDampingProperties();
 	void UpdateMassProperties(class URB_BodySetup* Setup);
 	void SetContactReportForceThreshold(float Threshold);
@@ -27601,14 +21630,7 @@ public:
 	struct FPointer                                    DummyKinActor;                                 // 0x00D8 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ConstraintInstance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ConstraintInstance"))
 	void MoveKinActorTransform(struct FMatrix& outNewTM);
 	void SetLinearLimitSize(float NewLimitSize);
 	void SetAngularDOFLimitScale(float InSwing1LimitScale, float InSwing2LimitScale, float InTwistLimitScale, class URB_ConstraintSetup* InSetup);
@@ -27671,14 +21693,7 @@ public:
 	float                                              PulleyRatio;                                   // 0x0120 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ConstraintSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ConstraintSetup"))
 };
 
 // Class Engine.RB_BSJointSetup
@@ -27689,14 +21704,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_BSJointSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_BSJointSetup"))
 };
 
 // Class Engine.RB_DistanceJointSetup
@@ -27707,14 +21715,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_DistanceJointSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_DistanceJointSetup"))
 };
 
 // Class Engine.RB_HingeSetup
@@ -27725,14 +21726,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_HingeSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_HingeSetup"))
 };
 
 // Class Engine.RB_PrismaticSetup
@@ -27743,14 +21737,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_PrismaticSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_PrismaticSetup"))
 };
 
 // Class Engine.RB_PulleyJointSetup
@@ -27761,14 +21748,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_PulleyJointSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_PulleyJointSetup"))
 };
 
 // Class Engine.RB_SkelJointSetup
@@ -27779,14 +21759,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_SkelJointSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_SkelJointSetup"))
 };
 
 // Class Engine.RB_StayUprightSetup
@@ -27797,14 +21770,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_StayUprightSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_StayUprightSetup"))
 };
 
 // Class Engine.NxGenericForceFieldBrush
@@ -27838,14 +21804,7 @@ public:
 	struct FPointer                                    LinearKernel;                                  // 0x0380 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxGenericForceFieldBrush");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxGenericForceFieldBrush"))
 };
 
 // Class Engine.RB_ForceFieldExcludeVolume
@@ -27858,14 +21817,7 @@ public:
 	int32_t                                            SceneIndex;                                    // 0x02AC (0x0004) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ForceFieldExcludeVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ForceFieldExcludeVolume"))
 };
 
 // Class Engine.NxForceField
@@ -27886,14 +21838,7 @@ public:
 	int32_t                                            SceneIndex;                                    // 0x02B8 (0x0004) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceField"))
 	void OnToggle(class USeqAct_Toggle* inAction);
 	void DoInitRBPhys();
 };
@@ -27917,14 +21862,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02E8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxCylindricalForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxCylindricalForceField"))
 };
 
 // Class Engine.NxCylindricalForceFieldCapsule
@@ -27935,14 +21873,7 @@ public:
 	class UDrawCapsuleComponent*                       RenderComponent;                               // 0x02F0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxCylindricalForceFieldCapsule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxCylindricalForceFieldCapsule"))
 	void DoInitRBPhys();
 };
 
@@ -27976,14 +21907,7 @@ public:
 	struct FPointer                                    LinearKernel;                                  // 0x0378 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldGeneric");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldGeneric"))
 	void DoInitRBPhys();
 };
 
@@ -28003,14 +21927,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02E0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldRadial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldRadial"))
 	void DoInitRBPhys();
 };
 
@@ -28037,14 +21954,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x0300 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldTornado");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldTornado"))
 	void DoInitRBPhys();
 };
 
@@ -28072,14 +21982,7 @@ public:
 	struct FPointer                                    LinearKernel;                                  // 0x0358 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxGenericForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxGenericForceField"))
 };
 
 // Class Engine.NxGenericForceFieldBox
@@ -28091,14 +21994,7 @@ public:
 	struct FVector                                     BoxExtent;                                     // 0x0368 (0x000C) [0x0000000200000001] (CPF_Edit | CPF_Interp)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxGenericForceFieldBox");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxGenericForceFieldBox"))
 	void DoInitRBPhys();
 };
 
@@ -28112,14 +22008,7 @@ public:
 	float                                              CapsuleRadius;                                 // 0x036C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxGenericForceFieldCapsule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxGenericForceFieldCapsule"))
 };
 
 // Class Engine.NxRadialForceField
@@ -28136,14 +22025,7 @@ public:
 	struct FPointer                                    LinearKernel;                                  // 0x02D8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxRadialForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxRadialForceField"))
 };
 
 // Class Engine.NxRadialCustomForceField
@@ -28156,14 +22038,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02E8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxRadialCustomForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxRadialCustomForceField"))
 };
 
 // Class Engine.NxTornadoAngularForceField
@@ -28187,14 +22062,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxTornadoAngularForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxTornadoAngularForceField"))
 };
 
 // Class Engine.NxTornadoAngularForceFieldCapsule
@@ -28205,14 +22073,7 @@ public:
 	class UDrawCapsuleComponent*                       RenderComponent;                               // 0x02F8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxTornadoAngularForceFieldCapsule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxTornadoAngularForceFieldCapsule"))
 };
 
 // Class Engine.NxTornadoForceField
@@ -28234,14 +22095,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02E8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxTornadoForceField");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxTornadoForceField"))
 };
 
 // Class Engine.NxTornadoForceFieldCapsule
@@ -28252,14 +22106,7 @@ public:
 	class UDrawCapsuleComponent*                       RenderComponent;                               // 0x02F0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxTornadoForceFieldCapsule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxTornadoForceFieldCapsule"))
 };
 
 // Class Engine.NxForceFieldSpawnable
@@ -28270,14 +22117,7 @@ public:
 	class UNxForceFieldComponent*                      ForceFieldComponent;                           // 0x0268 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldSpawnable"))
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
@@ -28304,14 +22144,7 @@ public:
 	struct FRBCollisionChannelContainer                CollideWithChannels;                           // 0x0298 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_CylindricalForceActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_CylindricalForceActor"))
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
@@ -28336,14 +22169,7 @@ public:
 	struct FRBCollisionChannelContainer                CollideWithChannels;                           // 0x0288 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_RadialForceActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_RadialForceActor"))
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
 
@@ -28369,14 +22195,7 @@ public:
 	struct FPointer                                    RBPhysScene;                                   // 0x02C0 (0x0008) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldComponent"))
 	void DoInitRBPhys();
 };
 
@@ -28398,14 +22217,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldCylindricalComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldCylindricalComponent"))
 };
 
 // Class Engine.NxForceFieldGenericComponent
@@ -28435,14 +22247,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x0370 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldGenericComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldGenericComponent"))
 };
 
 // Class Engine.NxForceFieldRadialComponent
@@ -28458,14 +22263,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02D8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldRadialComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldRadialComponent"))
 };
 
 // Class Engine.NxForceFieldTornadoComponent
@@ -28488,14 +22286,7 @@ public:
 	struct FPointer                                    Kernel;                                        // 0x02F8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NxForceFieldTornadoComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NxForceFieldTornadoComponent"))
 };
 
 // Class Engine.ForceFieldShape
@@ -28505,14 +22296,7 @@ class UForceFieldShape : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFieldShape");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFieldShape"))
 	class UPrimitiveComponent* eventGetDrawComponent();
 	void eventFillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset);
 	void eventFillByCapsule(float Height, float Radius);
@@ -28528,14 +22312,7 @@ public:
 	class UDrawBoxComponent*                           Shape;                                         // 0x0060 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFieldShapeBox");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFieldShapeBox"))
 	class UPrimitiveComponent* eventGetDrawComponent();
 	void eventFillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset);
 	void eventFillByCapsule(float Height, float Radius);
@@ -28552,14 +22329,7 @@ public:
 	class UDrawCapsuleComponent*                       Shape;                                         // 0x0060 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFieldShapeCapsule");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFieldShapeCapsule"))
 	class UPrimitiveComponent* eventGetDrawComponent();
 	void eventFillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset);
 	void eventFillByCapsule(float Height, float Radius);
@@ -28577,14 +22347,7 @@ public:
 	class UDrawSphereComponent*                        Shape;                                         // 0x0060 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForceFieldShapeSphere");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForceFieldShapeSphere"))
 	class UPrimitiveComponent* eventGetDrawComponent();
 	void eventFillByCylinder(float BottomRadius, float TopRadius, float Height, float HeightOffset);
 	void eventFillByCapsule(float Height, float Radius);
@@ -28611,14 +22374,7 @@ public:
 	uint8_t                                          UnknownData01[0x50];                          // 0x0318 (0x0050) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrefabInstance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrefabInstance"))
 };
 
 // Class Engine.Prefab
@@ -28636,14 +22392,7 @@ public:
 	uint32_t                                           bAutoUpdatePrefabInstances : 1;                // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Prefab");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Prefab"))
 };
 
 // Class Engine.SequenceObject
@@ -28673,14 +22422,7 @@ public:
 	class USequenceObject*                             PIESequenceObject;                             // 0x00D0 (0x0008) [0x0000000C00002000] (CPF_Transient | CPF_NonTransactional | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceObject"))
 	static int32_t eventGetObjClassVersion();
 	bool eventShouldClearNameOnPasting();
 	bool eventIsPastingIntoLevelSequenceAllowed();
@@ -28706,14 +22448,7 @@ public:
 	class UMaterial*                                   FillMaterial;                                  // 0x00F8 (0x0008) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceFrame");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceFrame"))
 };
 
 // Class Engine.SequenceFrameWrapped
@@ -28723,14 +22458,7 @@ class USequenceFrameWrapped : public USequenceFrame
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceFrameWrapped");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceFrameWrapped"))
 };
 
 // Class Engine.SequenceOp
@@ -28766,14 +22494,7 @@ public:
 	int32_t                                            SearchTag;                                     // 0x013C (0x0004) [0x0000000000202002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceOp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceOp"))
 	void ForceActivateOutput(int32_t OutputIdx);
 	void ForceActivateInput(int32_t InputIdx);
 	class AController* GetController(class AActor* TheActor);
@@ -28814,14 +22535,7 @@ public:
 	float                                              DefaultViewZoom;                               // 0x01C8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Sequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Sequence"))
 	void SetEnabled(bool bInEnabled);
 	void Reset();
 	void FindSeqObjectsByName(const class FString& SeqObjName, bool bCheckComment, bool optionalBRecursive, bool optionalBUseFullLevelName, class TArray<class USequenceObject*>& outOutputObjects);
@@ -28837,14 +22551,7 @@ public:
 	class APrefabInstance*                             OwnerPrefab;                                   // 0x01D0 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrefabSequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrefabSequence"))
 	class APrefabInstance* GetOwnerPrefab();
 	void SetOwnerPrefab(class APrefabInstance* InOwner);
 };
@@ -28857,14 +22564,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x01CC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrefabSequenceContainer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrefabSequenceContainer"))
 };
 
 // Class Engine.SequenceAction
@@ -28878,14 +22578,7 @@ public:
 	class TArray<class UObject*>                       Targets;                                       // 0x0150 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceAction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceAction"))
 };
 
 // Class Engine.SeqAct_ActivateRemoteEvent
@@ -28898,14 +22591,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0170 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ActivateRemoteEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ActivateRemoteEvent"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -28920,14 +22606,7 @@ public:
 	class TArray<struct FPointer>                      LinkedOutputs;                                 // 0x0178 (0x0010) [0x0000000000003000] (CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AndGate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AndGate"))
 };
 
 // Class Engine.SeqAct_ApplySoundNode
@@ -28939,14 +22618,7 @@ public:
 	class USoundNode*                                  ApplyNode;                                     // 0x0168 (0x0008) [0x0000000004000001] (CPF_Edit | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ApplySoundNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ApplySoundNode"))
 };
 
 // Class Engine.SeqAct_AttachToEvent
@@ -28957,14 +22629,7 @@ public:
 	uint32_t                                           bPreferController : 1;                         // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AttachToEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AttachToEvent"))
 };
 
 // Class Engine.SeqAct_CameraFade
@@ -28983,14 +22648,7 @@ public:
 	class TArray<class APlayerController*>             CachedPCs;                                     // 0x0180 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CameraFade");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CameraFade"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29021,14 +22679,7 @@ public:
 	float                                              RemainingTime;                                 // 0x0198 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CameraLookAt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CameraLookAt"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29050,14 +22701,7 @@ public:
 	class AActor*                                      LocationActor;                                 // 0x0180 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CameraShake");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CameraShake"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29072,14 +22716,7 @@ public:
 	ECollisionType                                     CollisionType;                                 // 0x0164 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ChangeCollision");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ChangeCollision"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29090,14 +22727,7 @@ class USeqAct_CommitMapChange : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CommitMapChange");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CommitMapChange"))
 };
 
 // Class Engine.SeqAct_ConvertToString
@@ -29111,14 +22741,7 @@ public:
 	int32_t                                            NumberOfInputs;                                // 0x0178 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ConvertToString");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ConvertToString"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29132,14 +22755,7 @@ public:
 	struct FKismetDrawTextInfo                         DrawTextInfo;                                  // 0x0168 (0x0040) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_DrawText");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_DrawText"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29151,14 +22767,7 @@ public:
 	class FString                                      OutputLabel;                                   // 0x0160 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_FinishSequence");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_FinishSequence"))
 };
 
 // Class Engine.SeqAct_Gate
@@ -29171,14 +22780,7 @@ public:
 	int32_t                                            CurrentCloseCount;                             // 0x0168 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Gate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Gate"))
 };
 
 // Class Engine.SeqAct_GetDistance
@@ -29189,14 +22791,7 @@ public:
 	float                                              Distance;                                      // 0x0160 (0x0004) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_GetDistance");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_GetDistance"))
 };
 
 // Class Engine.SeqAct_GetLocationAndRotation
@@ -29210,14 +22805,7 @@ public:
 	class FName                                        SocketOrBoneName;                              // 0x0184 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_GetLocationAndRotation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_GetLocationAndRotation"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29229,14 +22817,7 @@ public:
 	class FName                                        PropertyName;                                  // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_GetProperty");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_GetProperty"))
 };
 
 // Class Engine.SeqAct_GetVectorComponents
@@ -29250,14 +22831,7 @@ public:
 	float                                              Z;                                             // 0x0174 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_GetVectorComponents");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_GetVectorComponents"))
 };
 
 // Class Engine.SeqAct_GetVelocity
@@ -29269,14 +22843,7 @@ public:
 	struct FVector                                     VelocityVect;                                  // 0x0164 (0x000C) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_GetVelocity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_GetVelocity"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29299,14 +22866,7 @@ public:
 	uint8_t                                          UnknownData01[0x50];                          // 0x01B8 (0x0050) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_HeadTrackingControl");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_HeadTrackingControl"))
 	void eventActivated();
 	static int32_t eventGetObjClassVersion();
 };
@@ -29320,14 +22880,7 @@ public:
 	uint32_t                                           bObjectFound : 1;                              // 0x0160 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_IsInObjectList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_IsInObjectList"))
 };
 
 // Class Engine.SeqAct_Latent
@@ -29340,14 +22893,7 @@ public:
 	float                                              LatentActivationTime;                          // 0x0174 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Latent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Latent"))
 	bool eventUpdate(float DeltaTime);
 	void AbortFor(class AActor* latentActor);
 };
@@ -29375,14 +22921,7 @@ public:
 	float                                              RemainingDelay;                                // 0x01D4 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ActorFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ActorFactory"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29393,14 +22932,7 @@ class USeqAct_ActorFactoryEx : public USeqAct_ActorFactory
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ActorFactoryEx");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ActorFactoryEx"))
 };
 
 // Class Engine.SeqAct_AIMoveToActor
@@ -29418,14 +22950,7 @@ public:
 	int32_t                                            LastDestinationChoice;                         // 0x01A0 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AIMoveToActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AIMoveToActor"))
 	class AActor* PickDestination(class AActor* Requestor);
 	static int32_t eventGetObjClassVersion();
 };
@@ -29443,14 +22968,7 @@ public:
 	float                                              RemainingTime;                                 // 0x0188 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Delay");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Delay"))
 	void ResetDelayActive();
 	void Reset();
 };
@@ -29466,14 +22984,7 @@ public:
 	float                                              NextLinkTime;                                  // 0x0184 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_DelaySwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_DelaySwitch"))
 };
 
 // Class Engine.SeqAct_ForceGarbageCollection
@@ -29483,14 +22994,7 @@ class USeqAct_ForceGarbageCollection : public USeqAct_Latent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ForceGarbageCollection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ForceGarbageCollection"))
 };
 
 // Class Engine.SeqAct_Interp
@@ -29533,14 +23037,7 @@ public:
 	float                                              ConstantCameraAnimRate;                        // 0x0284 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Interp");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Interp"))
 	static int32_t eventGetObjClassVersion();
 	void Reset();
 	void AddPlayerToDirectorTracks(class APlayerController* PC);
@@ -29557,14 +23054,7 @@ public:
 	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0178 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_LevelStreamingBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelStreamingBase"))
 };
 
 // Class Engine.SeqAct_LevelStreaming
@@ -29578,14 +23068,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_LevelStreaming");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelStreaming"))
 };
 
 // Class Engine.SeqAct_MultiLevelStreaming
@@ -29599,14 +23082,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_MultiLevelStreaming");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_MultiLevelStreaming"))
 };
 
 // Class Engine.SeqAct_LevelVisibility
@@ -29619,14 +23095,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_LevelVisibility");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelVisibility"))
 };
 
 // Class Engine.SeqAct_PlaySound
@@ -29647,14 +23116,7 @@ public:
 	float                                              BeforeEndTime;                                 // 0x019C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_PlaySound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PlaySound"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29669,14 +23131,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_PrepareMapChange");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PrepareMapChange"))
 };
 
 // Class Engine.SeqAct_SetDOFParams
@@ -29704,14 +23159,7 @@ public:
 	struct FVector                                     OldFocusPosition;                              // 0x01C4 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetDOFParams");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetDOFParams"))
 };
 
 // Class Engine.SeqAct_SetMotionBlurParams
@@ -29725,14 +23173,7 @@ public:
 	float                                              OldMotionBlurAmount;                           // 0x0184 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMotionBlurParams");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMotionBlurParams"))
 };
 
 // Class Engine.SeqAct_StreamInTextures
@@ -29754,14 +23195,7 @@ public:
 	int32_t                                            SelectedCinematicTextureGroups;                // 0x01B4 (0x0004) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_StreamInTextures");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_StreamInTextures"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29774,14 +23208,7 @@ public:
 	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0188 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_WaitForLevelsVisible");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_WaitForLevelsVisible"))
 	void eventActivated();
 	bool CheckLevelsVisible();
 };
@@ -29799,14 +23226,7 @@ public:
 	class FString                                      LogMessage;                                    // 0x0178 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Log");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Log"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29822,14 +23242,7 @@ public:
 	float                                              RemainingScreenShotDelay;                      // 0x01B0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_FeatureTest");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_FeatureTest"))
 };
 
 // Class Engine.SeqAct_ModifyCover
@@ -29843,14 +23256,7 @@ public:
 	uint32_t                                           bManualAdjustPlayersOnly : 1;                  // 0x0174 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ModifyCover");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ModifyCover"))
 };
 
 // Class Engine.SeqAct_ParticleEventGenerator
@@ -29870,14 +23276,7 @@ public:
 	struct FVector                                     EventNormal;                                   // 0x01A8 (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ParticleEventGenerator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ParticleEventGenerator"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29898,14 +23297,7 @@ public:
 	class AActor*                                      UserDefinedSpaceActor;                         // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_PlayCameraAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PlayCameraAnim"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -29921,14 +23313,7 @@ public:
 	class UAkEvent*                                    AkEventToPlay;                                 // 0x0190 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_PlayFaceFXAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PlayFaceFXAnim"))
 };
 
 // Class Engine.SeqAct_PlayMusicTrack
@@ -29939,14 +23324,7 @@ public:
 	struct FMusicTrackStruct                           MusicTrack;                                    // 0x0160 (0x0030) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_PlayMusicTrack");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PlayMusicTrack"))
 };
 
 // Class Engine.SeqAct_Possess
@@ -29958,14 +23336,7 @@ public:
 	uint32_t                                           bKillOldPawn : 1;                              // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Possess");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Possess"))
 };
 
 // Class Engine.SeqAct_RangeSwitch
@@ -29976,14 +23347,7 @@ public:
 	class TArray<struct FSwitchRange>                  Ranges;                                        // 0x0160 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_RangeSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_RangeSwitch"))
 };
 
 // Class Engine.SeqAct_SetActiveAnimChild
@@ -29996,14 +23360,7 @@ public:
 	float                                              BlendTime;                                     // 0x016C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetActiveAnimChild");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetActiveAnimChild"))
 };
 
 // Class Engine.SeqAct_SetApexClothingParam
@@ -30014,14 +23371,7 @@ public:
 	uint32_t                                           bEnableApexClothingSimulation : 1;             // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetApexClothingParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetApexClothingParam"))
 };
 
 // Class Engine.SeqAct_SetBlockRigidBody
@@ -30031,14 +23381,7 @@ class USeqAct_SetBlockRigidBody : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetBlockRigidBody");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetBlockRigidBody"))
 };
 
 // Class Engine.SeqAct_SetCameraTarget
@@ -30050,14 +23393,7 @@ public:
 	struct FViewTargetTransitionParams                 TransitionParams;                              // 0x0168 (0x0010) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetCameraTarget");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetCameraTarget"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30070,14 +23406,7 @@ public:
 	int32_t                                            MaterialIndex;                                 // 0x0168 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMaterial"))
 };
 
 // Class Engine.SeqAct_SetMatInstScalarParam
@@ -30090,14 +23419,7 @@ public:
 	float                                              ScalarValue;                                   // 0x0170 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMatInstScalarParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMatInstScalarParam"))
 };
 
 // Class Engine.SeqAct_SetMesh
@@ -30113,14 +23435,7 @@ public:
 	uint32_t                                           bAllowDecalsToReattach : 1;                    // 0x0174 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMesh"))
 };
 
 // Class Engine.SeqAct_SetPhysics
@@ -30131,14 +23446,7 @@ public:
 	EPhysics                                           newPhysics;                                    // 0x0160 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetPhysics");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetPhysics"))
 };
 
 // Class Engine.SeqAct_SetRigidBodyIgnoreVehicles
@@ -30148,14 +23456,7 @@ class USeqAct_SetRigidBodyIgnoreVehicles : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetRigidBodyIgnoreVehicles");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetRigidBodyIgnoreVehicles"))
 };
 
 // Class Engine.SeqAct_SetSequenceVariable
@@ -30165,14 +23466,7 @@ class USeqAct_SetSequenceVariable : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetSequenceVariable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetSequenceVariable"))
 };
 
 // Class Engine.SeqAct_AccessObjectList
@@ -30184,14 +23478,7 @@ public:
 	int32_t                                            ObjectIndex;                                   // 0x0168 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AccessObjectList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AccessObjectList"))
 };
 
 // Class Engine.SeqAct_AddFloat
@@ -30205,14 +23492,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AddFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AddFloat"))
 };
 
 // Class Engine.SeqAct_AddInt
@@ -30226,14 +23506,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AddInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AddInt"))
 };
 
 // Class Engine.SeqAct_CastToFloat
@@ -30245,14 +23518,7 @@ public:
 	float                                              FloatResult;                                   // 0x0164 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CastToFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CastToFloat"))
 };
 
 // Class Engine.SeqAct_CastToInt
@@ -30265,14 +23531,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x0168 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_CastToInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_CastToInt"))
 };
 
 // Class Engine.SeqAct_DivideFloat
@@ -30286,14 +23545,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_DivideFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_DivideFloat"))
 };
 
 // Class Engine.SeqAct_DivideInt
@@ -30307,14 +23559,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_DivideInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_DivideInt"))
 };
 
 // Class Engine.SeqAct_ModifyObjectList
@@ -30325,14 +23570,7 @@ public:
 	int32_t                                            ListEntriesCount;                              // 0x0160 (0x0004) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ModifyObjectList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ModifyObjectList"))
 };
 
 // Class Engine.SeqAct_MultiplyFloat
@@ -30346,14 +23584,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_MultiplyFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_MultiplyFloat"))
 };
 
 // Class Engine.SeqAct_MultiplyInt
@@ -30367,14 +23598,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_MultiplyInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_MultiplyInt"))
 };
 
 // Class Engine.SeqAct_SetBool
@@ -30385,14 +23609,7 @@ public:
 	uint32_t                                           DefaultValue : 1;                              // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetBool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetBool"))
 };
 
 // Class Engine.SeqAct_SetFloat
@@ -30405,14 +23622,7 @@ public:
 	class TArray<float>                                Value;                                         // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetFloat"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30426,14 +23636,7 @@ public:
 	class TArray<int32_t>                              Value;                                         // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetInt"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30450,14 +23653,7 @@ public:
 	class UObject*                                     Target;                                        // 0x0180 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetLocation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetLocation"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30470,14 +23666,7 @@ public:
 	class UObject*                                     Value;                                         // 0x0168 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetObject"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30490,14 +23679,7 @@ public:
 	class FString                                      Value;                                         // 0x0170 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetString");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetString"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30512,14 +23694,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SubtractFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SubtractFloat"))
 };
 
 // Class Engine.SeqAct_SubtractInt
@@ -30533,14 +23708,7 @@ public:
 	int32_t                                            IntResult;                                     // 0x016C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SubtractInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SubtractInt"))
 };
 
 // Class Engine.SeqAct_SetVectorComponents
@@ -30554,14 +23722,7 @@ public:
 	float                                              Z;                                             // 0x0174 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetVectorComponents");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetVectorComponents"))
 };
 
 // Class Engine.SeqAct_SetWorldAttractorParam
@@ -30583,14 +23744,7 @@ public:
 	struct FRawDistributionFloat                       Strength;                                      // 0x01C8 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetWorldAttractorParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetWorldAttractorParam"))
 };
 
 // Class Engine.SeqAct_Switch
@@ -30606,14 +23760,7 @@ public:
 	class TArray<int32_t>                              Indices;                                       // 0x0170 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Switch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Switch"))
 };
 
 // Class Engine.SeqAct_RandomSwitch
@@ -30624,14 +23771,7 @@ public:
 	class TArray<int32_t>                              AutoDisabledIndices;                           // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_RandomSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_RandomSwitch"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30644,14 +23784,7 @@ public:
 	float                                              Time;                                          // 0x0164 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Timer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Timer"))
 };
 
 // Class Engine.SeqAct_Toggle
@@ -30661,14 +23794,7 @@ class USeqAct_Toggle : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Toggle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Toggle"))
 };
 
 // Class Engine.SeqAct_Trace
@@ -30686,14 +23812,7 @@ public:
 	struct FVector                                     HitLocation;                                   // 0x0194 (0x000C) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Trace");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Trace"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30704,14 +23823,7 @@ class USequenceCondition : public USequenceOp
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceCondition");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceCondition"))
 };
 
 // Class Engine.SeqCond_CompareBool
@@ -30722,14 +23834,7 @@ public:
 	uint32_t                                           bResult : 1;                                   // 0x0140 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_CompareBool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_CompareBool"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30742,14 +23847,7 @@ public:
 	float                                              ValueB;                                        // 0x0144 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_CompareFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_CompareFloat"))
 };
 
 // Class Engine.SeqCond_CompareInt
@@ -30761,14 +23859,7 @@ public:
 	int32_t                                            ValueB;                                        // 0x0144 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_CompareInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_CompareInt"))
 };
 
 // Class Engine.SeqCond_CompareObject
@@ -30778,14 +23869,7 @@ class USeqCond_CompareObject : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_CompareObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_CompareObject"))
 };
 
 // Class Engine.SeqCond_GetServerType
@@ -30795,14 +23879,7 @@ class USeqCond_GetServerType : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_GetServerType");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_GetServerType"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30816,14 +23893,7 @@ public:
 	int32_t                                            ValueB;                                        // 0x0148 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_Increment");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_Increment"))
 };
 
 // Class Engine.SeqCond_IncrementFloat
@@ -30836,14 +23906,7 @@ public:
 	float                                              ValueB;                                        // 0x0148 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IncrementFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IncrementFloat"))
 };
 
 // Class Engine.SeqCond_IsAlive
@@ -30853,14 +23916,7 @@ class USeqCond_IsAlive : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsAlive");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsAlive"))
 };
 
 // Class Engine.SeqCond_IsBenchmarking
@@ -30870,14 +23926,7 @@ class USeqCond_IsBenchmarking : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsBenchmarking");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsBenchmarking"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30888,14 +23937,7 @@ class USeqCond_IsConsole : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsConsole");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsConsole"))
 };
 
 // Class Engine.SeqCond_IsInCombat
@@ -30905,14 +23947,7 @@ class USeqCond_IsInCombat : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsInCombat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsInCombat"))
 };
 
 // Class Engine.SeqCond_IsLoggedIn
@@ -30923,14 +23958,7 @@ public:
 	int32_t                                            NumNeededLoggedIn;                             // 0x0140 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsLoggedIn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsLoggedIn"))
 	bool eventCheckLogins();
 };
 
@@ -30941,14 +23969,7 @@ class USeqCond_IsPIE : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsPIE");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsPIE"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -30959,14 +23980,7 @@ class USeqCond_IsSameTeam : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_IsSameTeam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_IsSameTeam"))
 };
 
 // Class Engine.SeqCond_MatureLanguage
@@ -30976,14 +23990,7 @@ class USeqCond_MatureLanguage : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_MatureLanguage");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_MatureLanguage"))
 };
 
 // Class Engine.SeqCond_ShowGore
@@ -30993,14 +24000,7 @@ class USeqCond_ShowGore : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_ShowGore");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_ShowGore"))
 };
 
 // Class Engine.SeqCond_SwitchBase
@@ -31010,14 +24010,7 @@ class USeqCond_SwitchBase : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_SwitchBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_SwitchBase"))
 	void eventRemoveValueEntry(int32_t RemoveIndex);
 	void eventInsertValueEntry(int32_t InsertIndex);
 	bool eventIsFallThruEnabled(int32_t ValueIndex);
@@ -31032,14 +24025,7 @@ public:
 	class TArray<struct FSwitchClassInfo>              ClassArray;                                    // 0x0140 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_SwitchClass");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_SwitchClass"))
 	void eventRemoveValueEntry(int32_t RemoveIndex);
 	void eventInsertValueEntry(int32_t InsertIndex);
 	bool eventIsFallThruEnabled(int32_t ValueIndex);
@@ -31054,14 +24040,7 @@ public:
 	class TArray<struct FSwitchObjectCase>             SupportedValues;                               // 0x0140 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_SwitchObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_SwitchObject"))
 	void eventRemoveValueEntry(int32_t RemoveIndex);
 	void eventInsertValueEntry(int32_t InsertIndex);
 	bool eventIsFallThruEnabled(int32_t ValueIndex);
@@ -31075,14 +24054,7 @@ class USeqCond_SwitchPlatform : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqCond_SwitchPlatform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_SwitchPlatform"))
 };
 
 // Class Engine.SequenceEvent
@@ -31106,14 +24078,7 @@ public:
 	int32_t                                            MaxWidth;                                      // 0x0178 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceEvent"))
 	void eventToggled();
 	void Reset();
 	bool CheckActivate(class AActor* InOriginator, class AActor* InInstigator, bool optionalBTest, bool optionalBPushTop, class TArray<int32_t>& outActivateIndices);
@@ -31129,14 +24094,7 @@ public:
 	float                                              MaxSightDistance;                              // 0x0180 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_AISeeEnemy");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_AISeeEnemy"))
 };
 
 // Class Engine.SeqEvent_AnalogInput
@@ -31150,14 +24108,7 @@ public:
 	class TArray<class FName>                          InputNames;                                    // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_AnalogInput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_AnalogInput"))
 };
 
 // Class Engine.SeqEvent_AnimNotify
@@ -31169,14 +24120,7 @@ public:
 	class FName                                        NotifyName;                                    // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_AnimNotify");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_AnimNotify"))
 };
 
 // Class Engine.SeqEvent_Console
@@ -31189,14 +24133,7 @@ public:
 	class FString                                      EventDesc;                                     // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Console");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Console"))
 };
 
 // Class Engine.SeqEvent_ConstraintBroken
@@ -31207,14 +24144,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_ConstraintBroken");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_ConstraintBroken"))
 };
 
 // Class Engine.SeqEvent_Destroyed
@@ -31225,14 +24155,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Destroyed");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Destroyed"))
 };
 
 // Class Engine.SeqEvent_Input
@@ -31246,14 +24169,7 @@ public:
 	class TArray<class FName>                          InputNames;                                    // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Input");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Input"))
 };
 
 // Class Engine.SeqEvent_LevelBeginning
@@ -31264,14 +24180,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_LevelBeginning");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_LevelBeginning"))
 };
 
 // Class Engine.SeqEvent_LevelLoaded
@@ -31282,14 +24191,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_LevelLoaded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_LevelLoaded"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -31301,14 +24203,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_LevelStartup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_LevelStartup"))
 };
 
 // Class Engine.SeqEvent_Mover
@@ -31320,14 +24215,7 @@ public:
 	float                                              StayOpenTime;                                  // 0x0180 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Mover");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Mover"))
 	void NotifyFinishedOpen();
 	void NotifyDetached(class AActor* Other);
 	void NotifyAttached(class AActor* Other);
@@ -31351,14 +24239,7 @@ public:
 	uint32_t                                           UseRelfectedImpactVector : 1;                  // 0x01B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_ParticleEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_ParticleEvent"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -31372,14 +24253,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_RemoteEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_RemoteEvent"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -31392,14 +24266,7 @@ public:
 	float                                              MinCollisionVelocity;                          // 0x0180 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_RigidBodyCollision");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_RigidBodyCollision"))
 };
 
 // Class Engine.SeqEvent_SeeDeath
@@ -31410,14 +24277,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_SeeDeath");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_SeeDeath"))
 };
 
 // Class Engine.SeqEvent_SequenceActivated
@@ -31429,14 +24289,7 @@ public:
 	class FString                                      InputLabel;                                    // 0x0180 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_SequenceActivated");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_SequenceActivated"))
 };
 
 // Class Engine.SeqEvent_Touch
@@ -31452,14 +24305,7 @@ public:
 	class TArray<class AActor*>                        TouchedList;                                   // 0x01A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Touch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Touch"))
 	static int32_t eventGetObjClassVersion();
 	void eventToggled();
 	bool CheckUnTouchActivate(class AActor* InOriginator, class AActor* InInstigator, bool optionalBTest);
@@ -31478,14 +24324,7 @@ public:
 	int32_t                                            AllowedTouchpadIndex;                          // 0x018C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_TouchInput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_TouchInput"))
 };
 
 // Class Engine.SeqEvent_Used
@@ -31502,14 +24341,7 @@ public:
 	class TArray<class UClass*>                        IgnoredClassProximityTypes;                    // 0x01B0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Used");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Used"))
 };
 
 // Class Engine.SequenceVariable
@@ -31520,14 +24352,7 @@ public:
 	class FName                                        VarName;                                       // 0x00D8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SequenceVariable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SequenceVariable"))
 };
 
 // Class Engine.InterpData
@@ -31551,14 +24376,7 @@ public:
 	class UInterpGroupDirector*                        CachedDirectorGroup;                           // 0x0148 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpData");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpData"))
 };
 
 // Class Engine.SeqVar_Bool
@@ -31569,14 +24387,7 @@ public:
 	int32_t                                            bValue;                                        // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Bool");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Bool"))
 };
 
 // Class Engine.SeqVar_External
@@ -31588,14 +24399,7 @@ public:
 	class FString                                      VariableLabel;                                 // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_External");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_External"))
 };
 
 // Class Engine.SeqVar_Float
@@ -31606,14 +24410,7 @@ public:
 	float                                              FloatValue;                                    // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Float");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Float"))
 };
 
 // Class Engine.SeqVar_RandomFloat
@@ -31626,14 +24423,7 @@ public:
 	float                                              Max;                                           // 0x00EC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_RandomFloat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_RandomFloat"))
 };
 
 // Class Engine.SeqVar_Int
@@ -31644,14 +24434,7 @@ public:
 	int32_t                                            IntValue;                                      // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Int");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Int"))
 };
 
 // Class Engine.SeqVar_RandomInt
@@ -31664,14 +24447,7 @@ public:
 	int32_t                                            Max;                                           // 0x00EC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_RandomInt");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_RandomInt"))
 };
 
 // Class Engine.SeqVar_Named
@@ -31684,14 +24460,7 @@ public:
 	uint32_t                                           bStatusIsOk : 1;                               // 0x00F0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Named");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Named"))
 };
 
 // Class Engine.SeqVar_Object
@@ -31705,14 +24474,7 @@ public:
 	class TArray<class UClass*>                        SupportedClasses;                              // 0x00F8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Object");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Object"))
 	void SetObjectValue(class UObject* NewValue);
 	class UObject* GetObjectValueW();
 };
@@ -31725,14 +24487,7 @@ public:
 	class UClass*                                      PawnClass;                                     // 0x0108 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Character");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Character"))
 };
 
 // Class Engine.SeqVar_Group
@@ -31746,14 +24501,7 @@ public:
 	class TArray<class UObject*>                       Actors;                                        // 0x0118 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Group");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Group"))
 };
 
 // Class Engine.SeqVar_ObjectList
@@ -31764,14 +24512,7 @@ public:
 	class TArray<class UObject*>                       ObjList;                                       // 0x0108 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_ObjectList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_ObjectList"))
 	void SetObjectValue(class UObject* NewValue);
 	class UObject* GetObjectValueW();
 };
@@ -31788,14 +24529,7 @@ public:
 	uint32_t                                           bCollidingOnly : 1;                            // 0x0130 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_ObjectVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_ObjectVolume"))
 };
 
 // Class Engine.SeqVar_Player
@@ -31808,14 +24542,7 @@ public:
 	int32_t                                            PlayerIdx;                                     // 0x011C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Player");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Player"))
 	class UObject* GetObjectValueW();
 	void UpdatePlayersList();
 };
@@ -31828,14 +24555,7 @@ public:
 	class FString                                      StrValue;                                      // 0x00E0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_String");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_String"))
 };
 
 // Class Engine.SeqVar_Vector
@@ -31846,14 +24566,7 @@ public:
 	struct FVector                                     VectValue;                                     // 0x00E0 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Vector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Vector"))
 };
 
 // Class Engine.AmbientSound
@@ -31867,14 +24580,7 @@ public:
 	class UAudioComponent*                             AudioComponent;                                // 0x0278 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSound"))
 };
 
 // Class Engine.AmbientSoundMovable
@@ -31884,14 +24590,7 @@ class AAmbientSoundMovable : public AAmbientSound
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundMovable"))
 };
 
 // Class Engine.AmbientSoundSimple
@@ -31904,14 +24603,7 @@ public:
 	class USoundNodeAmbient*                           SoundNodeInstance;                             // 0x0290 (0x0008) [0x000000000440000A] (CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSimple");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSimple"))
 };
 
 // Class Engine.AmbientSoundNonLoop
@@ -31921,14 +24613,7 @@ class AAmbientSoundNonLoop : public AAmbientSoundSimple
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundNonLoop");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundNonLoop"))
 };
 
 // Class Engine.AmbientSoundSimpleToggleable
@@ -31945,14 +24630,7 @@ public:
 	float                                              FadeOutVolumeLevel;                            // 0x02A8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSimpleToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSimpleToggleable"))
 	void ApplyCheckpointRecord(struct AAmbientSoundSimpleToggleable_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct AAmbientSoundSimpleToggleable_FCheckpointRecord& outRecord);
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -31970,14 +24648,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02AC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundNonLoopingToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundNonLoopingToggleable"))
 };
 
 // Class Engine.AmbientSoundSpline
@@ -31991,14 +24662,7 @@ public:
 	struct FVector                                     TestPoint;                                     // 0x0290 (0x000C) [0x0000000800000000] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSpline");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSpline"))
 };
 
 // Class Engine.AmbientSoundSimpleSpline
@@ -32010,14 +24674,7 @@ public:
 	int32_t                                            EditedSlot;                                    // 0x02A0 (0x0004) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSimpleSpline");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSimpleSpline"))
 };
 
 // Class Engine.AmbientSoundSplineMultiCue
@@ -32029,14 +24686,7 @@ public:
 	int32_t                                            EditedSlot;                                    // 0x02A0 (0x0004) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSplineMultiCue");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSplineMultiCue"))
 };
 
 // Class Engine.DistributionFloatSoundParameter
@@ -32047,14 +24697,7 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x00A1 (0x0007) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DistributionFloatSoundParameter");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatSoundParameter"))
 };
 
 // Class Engine.SoundNode
@@ -32067,14 +24710,7 @@ public:
 	class TArray<class USoundNode*>                    ChildNodes;                                    // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNode"))
 };
 
 // Class Engine.ForcedLoopSoundNode
@@ -32084,14 +24720,7 @@ class UForcedLoopSoundNode : public USoundNode
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ForcedLoopSoundNode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ForcedLoopSoundNode"))
 };
 
 // Class Engine.SoundNodeAmbient
@@ -32117,14 +24746,7 @@ public:
 	class TArray<struct FAmbientSoundSlot>             SoundSlots;                                    // 0x00A8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeAmbient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeAmbient"))
 };
 
 // Class Engine.SoundNodeAmbientNonLoop
@@ -32137,14 +24759,7 @@ public:
 	struct FRawDistributionFloat                       DelayTime;                                     // 0x00C0 (0x0028) [0x0000000020480000] (CPF_Component | CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeAmbientNonLoop");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeAmbientNonLoop"))
 };
 
 // Class Engine.SoundNodeAmbientNonLoopToggle
@@ -32154,14 +24769,7 @@ class USoundNodeAmbientNonLoopToggle : public USoundNodeAmbientNonLoop
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeAmbientNonLoopToggle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeAmbientNonLoopToggle"))
 };
 
 // Class Engine.SoundNodeAttenuation
@@ -32183,14 +24791,7 @@ public:
 	float                                              LPFRadiusMax;                                  // 0x0094 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeAttenuation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeAttenuation"))
 };
 
 // Class Engine.SoundNodeAttenuationAndGain
@@ -32217,14 +24818,7 @@ public:
 	float                                              LPFRadiusMax;                                  // 0x00A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeAttenuationAndGain");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeAttenuationAndGain"))
 };
 
 // Class Engine.SoundNodeConcatenator
@@ -32235,14 +24829,7 @@ public:
 	class TArray<float>                                InputVolume;                                   // 0x0078 (0x0010) [0x0000000000400049] (CPF_Edit | CPF_ExportObject | CPF_EditFixedSize | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeConcatenator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeConcatenator"))
 };
 
 // Class Engine.SoundNodeConcatenatorRadio
@@ -32252,14 +24839,7 @@ class USoundNodeConcatenatorRadio : public USoundNode
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeConcatenatorRadio");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeConcatenatorRadio"))
 };
 
 // Class Engine.SoundNodeDelay
@@ -32272,14 +24852,7 @@ public:
 	struct FRawDistributionFloat                       DelayDuration;                                 // 0x0080 (0x0028) [0x0000000020480000] (CPF_Component | CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeDelay");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeDelay"))
 };
 
 // Class Engine.SoundNodeDistanceCrossFade
@@ -32290,14 +24863,7 @@ public:
 	class TArray<struct FDistanceDatum>                CrossFadeInput;                                // 0x0078 (0x0010) [0x0000000000480049] (CPF_Edit | CPF_ExportObject | CPF_EditFixedSize | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeDistanceCrossFade");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeDistanceCrossFade"))
 };
 
 // Class Engine.SoundNodeDoppler
@@ -32308,14 +24874,7 @@ public:
 	float                                              DopplerIntensity;                              // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeDoppler");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeDoppler"))
 };
 
 // Class Engine.SoundNodeEnveloper
@@ -32334,14 +24893,7 @@ public:
 	class UDistributionFloatConstantCurve*             PitchInterpCurve;                              // 0x0098 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeEnveloper");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeEnveloper"))
 };
 
 // Class Engine.SoundNodeLooping
@@ -32356,14 +24908,7 @@ public:
 	struct FRawDistributionFloat                       LoopCount;                                     // 0x0088 (0x0028) [0x0000000020480000] (CPF_Component | CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeLooping");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeLooping"))
 };
 
 // Class Engine.SoundNodeMature
@@ -32373,14 +24918,7 @@ class USoundNodeMature : public USoundNode
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeMature");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeMature"))
 };
 
 // Class Engine.SoundNodeMixer
@@ -32391,14 +24929,7 @@ public:
 	class TArray<float>                                InputVolume;                                   // 0x0078 (0x0010) [0x0000000000400049] (CPF_Edit | CPF_ExportObject | CPF_EditFixedSize | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeMixer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeMixer"))
 };
 
 // Class Engine.SoundNodeModulator
@@ -32414,14 +24945,7 @@ public:
 	struct FRawDistributionFloat                       VolumeModulation;                              // 0x00B0 (0x0028) [0x0000000020480000] (CPF_Component | CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeModulator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeModulator"))
 };
 
 // Class Engine.SoundNodeModulatorContinuous
@@ -32433,14 +24957,7 @@ public:
 	struct FRawDistributionFloat                       VolumeModulation;                              // 0x00A0 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeModulatorContinuous");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeModulatorContinuous"))
 };
 
 // Class Engine.SoundNodeOscillator
@@ -32465,14 +24982,7 @@ public:
 	struct FRawDistributionFloat                       Center;                                        // 0x0118 (0x0028) [0x0000000020480000] (CPF_Component | CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeOscillator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeOscillator"))
 };
 
 // Class Engine.SoundNodeRandom
@@ -32487,14 +24997,7 @@ public:
 	int32_t                                            NumRandomUsed;                                 // 0x00A0 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeRandom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeRandom"))
 };
 
 // Class Engine.SoundNodeWave
@@ -32548,14 +25051,7 @@ public:
 	class FString                                      SourceFileTimestamp;                           // 0x04A8 (0x0010) [0x0000000800420003] (CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeWave");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeWave"))
 	void eventGeneratePCMData(int32_t SamplesNeeded, class TArray<uint8_t>& outBuffer);
 };
 
@@ -32569,14 +25065,7 @@ public:
 	int32_t                                            MaxGenerateSamples;                            // 0x04CC (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeWaveStreaming");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeWaveStreaming"))
 	void eventGeneratePCMData(int32_t SamplesNeeded, class TArray<uint8_t>& outBuffer);
 	int32_t eventAvailableAudioBytes();
 	void eventResetAudio();
@@ -32592,14 +25081,7 @@ public:
 	class FName                                        WaveParameterName;                             // 0x0078 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundNodeWaveParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundNodeWaveParam"))
 };
 
 // Class Engine.LandscapeProxy
@@ -32635,14 +25117,7 @@ public:
 	int32_t                                            NumSubsections;                                // 0x03B0 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeProxy");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeProxy"))
 };
 
 // Class Engine.Landscape
@@ -32655,14 +25130,7 @@ public:
 	class TArray<struct FLandscapeLayerInfo>           LayerInfos;                                    // 0x03C8 (0x0010) [0x0000000020400000] (CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Landscape");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Landscape"))
 };
 
 // Class Engine.Terrain
@@ -32722,14 +25190,7 @@ public:
 	struct FGuid                                       LightingGuid;                                  // 0x039C (0x0010) [0x0000000800000002] (CPF_Const | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Terrain");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Terrain"))
 	void eventPostBeginPlay();
 	void CalcLayerBounds();
 };
@@ -32748,14 +25209,7 @@ public:
 	class ULandscapeInfo*                              TargetLandscapeInfo;                           // 0x0280 (0x0008) [0x0000000800022001] (CPF_Edit | CPF_Transient | CPF_EditConst | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeGizmoActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeGizmoActor"))
 };
 
 // Class Engine.LandscapeGizmoActiveActor
@@ -32783,14 +25237,7 @@ public:
 	class TArray<class FName>                          LayerNames;                                    // 0x03A8 (0x0010) [0x0000000800420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeGizmoActiveActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeGizmoActiveActor"))
 };
 
 // Class Engine.LandscapeComponent
@@ -32831,14 +25278,7 @@ public:
 	int32_t                                            LODBias;                                       // 0x037C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeComponent"))
 };
 
 // Class Engine.LandscapeGizmoRenderComponent
@@ -32848,14 +25288,7 @@ class ULandscapeGizmoRenderComponent : public UPrimitiveComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeGizmoRenderComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeGizmoRenderComponent"))
 };
 
 // Class Engine.LandscapeHeightfieldCollisionComponent
@@ -32878,14 +25311,7 @@ public:
 	uint32_t                                           bHeightFieldDataHasHole : 1;                   // 0x036C (0x0004) [0x0000000800002000] [0x00000002] (CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeHeightfieldCollisionComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeHeightfieldCollisionComponent"))
 };
 
 // Class Engine.TerrainComponent
@@ -32913,14 +25339,7 @@ public:
 	uint32_t                                           bDisplayCollisionLevel : 1;                    // 0x02F0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TerrainComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TerrainComponent"))
 };
 
 // Class Engine.LandscapeInfo
@@ -32943,14 +25362,7 @@ public:
 	uint32_t                                           bIsValid : 1;                                  // 0x0360 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeInfo"))
 };
 
 // Class Engine.LandscapeLayerInfoObject
@@ -32964,14 +25376,7 @@ public:
 	uint32_t                                           bNoWeightBlend : 1;                            // 0x0074 (0x0004) [0x0000000800000000] [0x00000001] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LandscapeLayerInfoObject");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeLayerInfoObject"))
 };
 
 // Class Engine.TerrainWeightMapTexture
@@ -32983,14 +25388,7 @@ public:
 	class TArray<struct FPointer>                      WeightedMaterials;                             // 0x0288 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TerrainWeightMapTexture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TerrainWeightMapTexture"))
 };
 
 // Class Engine.TerrainLayerSetup
@@ -33001,14 +25399,7 @@ public:
 	class TArray<struct FTerrainFilteredMaterial>      Materials;                                     // 0x0060 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TerrainLayerSetup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TerrainLayerSetup"))
 	void PostBeginPlay();
 };
 
@@ -33030,14 +25421,7 @@ public:
 	float                                              DisplacementScale;                             // 0x00C8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TerrainMaterial");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TerrainMaterial"))
 };
 
 // Class Engine.DataStoreClient
@@ -33052,14 +25436,7 @@ public:
 	class TArray<struct FPlayerDataStoreGroup>         PlayerDataStores;                              // 0x00B0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DataStoreClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DataStoreClient"))
 	void DebugDumpDataStoreInfo(bool bVerbose);
 	void eventNotifyGameSessionEnded();
 	class UClass* FindDataStoreClass(class UClass* RequiredMetaClass);
@@ -33111,14 +25488,7 @@ public:
 	class TArray<int32_t>                              AutoCompleteIndices;                           // 0x02A8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Console");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Console"))
 	void eventOutputText(const class FString& Text);
 	void UpdateCompleteIndices();
 	void BuildRuntimeAutoCompleteList(bool optionalBForce);
@@ -33145,14 +25515,7 @@ public:
 	class TArray<struct FTouchTracker>                 CurrentTouches;                                // 0x01A0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Input");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Input"))
 	void SetBind(const class FString& Command, class FName& outBindName);
 	class FString GetBind(class FName& outKey);
 	void ResetInput();
@@ -33224,14 +25587,7 @@ public:
 	float                                              AutoUnlockTurnTime;                            // 0x02F4 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlayerInput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlayerInput"))
 	void PreClientTravel(const class FString& PendingURL, ETravelType TravelType, bool bIsSeamlessTravel);
 	void ClientInitInputSystem();
 	void InitInputSystem();
@@ -33260,14 +25616,7 @@ class UPlayerManagerInteraction : public UInteraction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlayerManagerInteraction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlayerManagerInteraction"))
 };
 
 // Class Engine.UISceneClient
@@ -33285,14 +25634,7 @@ public:
 	uint32_t                                           bEnablePostProcess : 1;                        // 0x0118 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UISceneClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UISceneClient"))
 	void eventInitializeSceneClient();
 	struct FMatrix GetInverseCanvasToScreen();
 	struct FMatrix GetCanvasToScreen();
@@ -33307,14 +25649,7 @@ public:
 	class TArray<struct FSoundEventMapping>            SoundEventBindings;                            // 0x0060 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UISoundTheme");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UISoundTheme"))
 	void eventProcessSoundEvent(const class FName& SoundEventName, class APlayerController* optionalSoundOwner);
 };
 
@@ -33325,14 +25660,7 @@ class UUIDataStoreSubscriber : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStoreSubscriber");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStoreSubscriber"))
 	void ClearBoundDataStores();
 	void GetBoundDataStores(class TArray<class UUIDataStore*>& outOut_BoundDataStores);
 	void NotifyDataStoreValueUpdated(class UUIDataStore* SourceDataStore, bool bValuesInvalidated, const class FName& PropertyTag, class UUIDataProvider* SourceProvider, int32_t ArrayIndex);
@@ -33348,14 +25676,7 @@ class UUIDataStorePublisher : public UUIDataStoreSubscriber
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStorePublisher");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStorePublisher"))
 	bool SaveSubscriberValue(int32_t optionalBindingIndex, class TArray<class UUIDataStore*>& outOut_BoundDataStores);
 };
 
@@ -33366,14 +25687,7 @@ class UUIDataProvider : public UUIRoot
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider"))
 };
 
 // Class Engine.UIDataProvider_OnlinePlayerDataBase
@@ -33384,14 +25698,7 @@ public:
 	int32_t                                            PlayerControllerId;                            // 0x0070 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerDataBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerDataBase"))
 	void eventOnUnregister();
 	void eventOnRegister(class ULocalPlayer* InPlayer);
 };
@@ -33411,14 +25718,7 @@ public:
 	class FString                                      LastInviteFrom;                                // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlineFriendMessages");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlineFriendMessages"))
 	void OnGameInviteReceived(uint8_t LocalUserNum, const class FString& InviterName);
 	void OnLoginChange(uint8_t LocalUserNum);
 	void OnFriendMessageReceived(uint8_t LocalUserNum, const struct FUniqueNetId& SendingPlayer, const class FString& SendingNick, const class FString& Message);
@@ -33451,14 +25751,7 @@ public:
 	class FString                                      BusyText;                                      // 0x0158 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlineFriends");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlineFriends"))
 	void eventRefreshFriendsList();
 	void OnLoginChange(uint8_t LocalUserNum);
 	void OnFriendsReadComplete(bool bWasSuccessful);
@@ -33483,14 +25776,7 @@ public:
 	class FString                                      IsPlayingThisGameCol;                          // 0x00F8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlinePartyChatList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlinePartyChatList"))
 	void eventRefreshMembersList();
 	void OnLoginChange(uint8_t LocalUserNum);
 	void eventOnUnregister();
@@ -33513,14 +25799,7 @@ public:
 	int32_t                                            DeviceStorageSizeNeeded;                       // 0x00A0 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerStorage");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerStorage"))
 	void OnExternalUIChange(bool bIsOpening);
 	void OnStorageDeviceChange();
 	void OnDeviceSelectionComplete(bool bWasSuccessful);
@@ -33545,14 +25824,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlineProfileSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlineProfileSettings"))
 	void OnStorageDeviceChange();
 	void RefreshStorageData();
 	void ClearReadCompleteDelegate(class UOnlinePlayerInterface* PlayerInterface, uint8_t LocalUserNum);
@@ -33571,14 +25843,7 @@ public:
 	class TArray<struct FAchievementDetails>           Achievements;                                  // 0x0078 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_PlayerAchievements");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_PlayerAchievements"))
 	void UpdateAchievements();
 	void OnLoginChange(uint8_t LocalUserNum);
 	void eventOnUnregister();
@@ -33604,14 +25869,7 @@ public:
 	class TArray<class FName>                          Values;                                        // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerStorageArray");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_OnlinePlayerStorageArray"))
 };
 
 // Class Engine.UIDataProvider_SettingsArray
@@ -33627,14 +25885,7 @@ public:
 	class TArray<struct FIdToStringMapping>            Values;                                        // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_SettingsArray");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_SettingsArray"))
 };
 
 // Class Engine.UIDataStore
@@ -33647,14 +25898,7 @@ public:
 	struct FScriptDelegate                             __OnDataStoreValueUpdated__Delegate;           // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore"))
 	class UDataStoreClient* GetDataStoreClient();
 	void eventRefreshSubscribers(const class FName& optionalPropertyTag, bool optionalBInvalidateValues, class UUIDataProvider* optionalSourceProvider, int32_t optionalArrayIndex);
 	bool NotifyGameSessionEnded();
@@ -33676,14 +25920,7 @@ public:
 	struct FMultiMap_Mirror                            ResourceProviders;                             // 0x00C0 (0x0050) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_DynamicResource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_DynamicResource"))
 	void eventUnregistered(class ULocalPlayer* PlayerOwner);
 	void eventRegistered(class ULocalPlayer* PlayerOwner);
 	void OnLoginChange(uint8_t LocalUserNum);
@@ -33698,14 +25935,7 @@ class UUIDataStore_Fonts : public UUIDataStore
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_Fonts");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_Fonts"))
 };
 
 // Class Engine.UIDataStore_GameResource
@@ -33717,14 +25947,7 @@ public:
 	struct FMultiMap_Mirror                            ListElementProviders;                          // 0x00B0 (0x0050) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_GameResource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_GameResource"))
 	bool GetResourceProviders(const class FName& ProviderTag, class TArray<class UUIResourceDataProvider*>& outOut_Providers);
 	int32_t FindProviderTypeIndex(const class FName& ProviderTag);
 };
@@ -33739,14 +25962,7 @@ public:
 	class TArray<class UUIDataProvider_MenuItem*>      DynamicProviders;                              // 0x0158 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_MenuItems");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_MenuItems"))
 	void eventUnregistered(class ULocalPlayer* PlayerOwner);
 	void eventRegistered(class ULocalPlayer* PlayerOwner);
 	void OnGameSettingsChanged(class UUIDataProvider* SourceProvider, const class FName& optionalPropTag);
@@ -33760,14 +25976,7 @@ public:
 	struct FScriptDelegate                             __OnRefreshDataFieldValue__Delegate;           // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_GameState");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_GameState"))
 	bool NotifyGameSessionEnded();
 	void OnRefreshDataFieldValue();
 };
@@ -33780,14 +25989,7 @@ public:
 	class TArray<struct FRegistryKeyValuePair>         RegistryData;                                  // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_Registry");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_Registry"))
 	void eventSetData(const class FString& Key, const class FString& Value);
 	bool eventGetData(const class FString& Key, class FString& outOut_Data);
 };
@@ -33799,14 +26001,7 @@ class UUIDataStore_Remote : public UUIDataStore
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_Remote");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_Remote"))
 };
 
 // Class Engine.UIDataStore_OnlineGameSearch
@@ -33823,14 +26018,7 @@ public:
 	int32_t                                            ActiveSearchIndex;                             // 0x00D4 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_OnlineGameSearch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_OnlineGameSearch"))
 	void ClearAllSearchResults();
 	void eventMoveToPrevious(bool optionalBInvalidateExistingSearchResults);
 	void eventMoveToNext(bool optionalBInvalidateExistingSearchResults);
@@ -33879,14 +26067,7 @@ public:
 	class UUIDataProvider_OnlinePartyChatList*         PartyChatProvider;                             // 0x0190 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_OnlinePlayerData");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_OnlinePlayerData"))
 	class UOnlinePlayerStorage* eventGetCachedPlayerStorage(int32_t ControllerId);
 	class UOnlineProfileSettings* eventGetCachedPlayerProfile(int32_t ControllerId);
 	void ClearDelegates();
@@ -33917,14 +26098,7 @@ public:
 	class UOnlinePlayerInterface*                      PlayerInterface_Interface;                     // 0x0128 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_OnlineStats");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_OnlineStats"))
 	static void SortResultsByRank(class UOnlineStatsRead* StatsToSort);
 	void OnReadComplete(bool bWasSuccessful);
 	bool eventShowGamercard(uint8_t ConrollerIndex, int32_t ListIndex);
@@ -33940,14 +26114,7 @@ class UUIDataStore_Settings : public UUIDataStore
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_Settings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_Settings"))
 };
 
 // Class Engine.UIDataStore_OnlineGameSettings
@@ -33960,14 +26127,7 @@ public:
 	int32_t                                            SelectedIndex;                                 // 0x00B8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_OnlineGameSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_OnlineGameSettings"))
 	void eventUnregistered(class ULocalPlayer* PlayerOwner);
 	void eventRegistered(class ULocalPlayer* PlayerOwner);
 	void eventMoveToPrevious();
@@ -33986,14 +26146,7 @@ class UUIDataStore_StringBase : public UUIDataStore
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_StringBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_StringBase"))
 };
 
 // Class Engine.UIDataStore_InputAlias
@@ -34005,14 +26158,7 @@ public:
 	uint8_t                                          UnknownData00[0x50];                          // 0x00B0 (0x0050) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_InputAlias");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_InputAlias"))
 	bool HasAliasMappingForPlatform(const class FName& DesiredAlias, EInputPlatformType DesiredPlatform);
 	int32_t FindInputAliasIndex(const class FName& DesiredAlias);
 	bool GetAliasInputKeyDataByIndex(int32_t AliasIndex, EInputPlatformType optionalOverridePlatform, struct FRawInputKeyEventData& outOut_InputKeyData);
@@ -34033,14 +26179,7 @@ public:
 	int32_t                                            PlayerIndex;                                   // 0x0100 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataStore_StringAliasMap");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataStore_StringAliasMap"))
 	int32_t GetStringWithFieldName(const class FString& FieldName, class FString& outMappedString);
 	int32_t FindMappingWithFieldName(const class FString& optionalFieldName, const class FString& optionalSetName);
 	class ULocalPlayer* GetPlayerOwner();
@@ -34055,14 +26194,7 @@ public:
 	struct FScriptDelegate                             __CanSupportComplexPropertyType__Delegate;     // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIPropertyDataProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIPropertyDataProvider"))
 	bool CanSupportComplexPropertyType(class UProperty* UnsupportedProperty);
 };
 
@@ -34075,14 +26207,7 @@ public:
 	uint32_t                                           bIsAListRow : 1;                               // 0x00A0 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_Settings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_Settings"))
 };
 
 // Class Engine.UIResourceDataProvider
@@ -34093,14 +26218,7 @@ public:
 	uint32_t                                           bSkipDuringEnumeration : 1;                    // 0x0098 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIResourceDataProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIResourceDataProvider"))
 	void eventInitializeProvider(bool bIsEditor);
 };
 
@@ -34135,14 +26253,7 @@ public:
 	class FString                                      IniName;                                       // 0x0140 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIDataProvider_MenuItem");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_MenuItem"))
 };
 
 // Class Engine.UIResourceCombinationProvider
@@ -34154,14 +26265,7 @@ public:
 	class UUIDataProvider_OnlineProfileSettings*       ProfileProvider;                               // 0x0078 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIResourceCombinationProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIResourceCombinationProvider"))
 	void ClearProviderReferences();
 	void eventInitializeProvider(bool bIsEditor, class UUIResourceDataProvider* InStaticResourceProvider, class UUIDataProvider_OnlineProfileSettings* InProfileProvider);
 };
@@ -34187,14 +26291,7 @@ public:
 	class TArray<class FName>                          AxisInputKeys;                                 // 0x01A0 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameUISceneClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameUISceneClient"))
 	int32_t FindLocalPlayerIndex(class UPlayer* P);
 	void NotifyPlayerRemoved(int32_t PlayerIndex, class ULocalPlayer* RemovedPlayer);
 	void NotifyPlayerAdded(int32_t PlayerIndex, class ULocalPlayer* AddedPlayer);
@@ -34213,14 +26310,7 @@ class UScene : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Scene");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Scene"))
 };
 
 // Class Engine.InstancedFoliageActor
@@ -34233,14 +26323,7 @@ public:
 	class TArray<class UInstancedStaticMeshComponent*> InstancedStaticMeshComponents;                 // 0x02C0 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InstancedFoliageActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InstancedFoliageActor"))
 };
 
 // Class Engine.InteractiveFoliageActor
@@ -34264,14 +26347,7 @@ public:
 	float                                              Mass;                                          // 0x02E0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InteractiveFoliageActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InteractiveFoliageActor"))
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
 };
 
@@ -34283,14 +26359,7 @@ public:
 	struct FPointer                                    FoliageSceneProxy;                             // 0x0300 (0x0008) [0x0000000000201002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InteractiveFoliageComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InteractiveFoliageComponent"))
 };
 
 // Class Engine.ActorFactoryInteractiveFoliage
@@ -34301,14 +26370,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactoryInteractiveFoliage");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryInteractiveFoliage"))
 };
 
 // Class Engine.InstancedFoliageSettings
@@ -34381,14 +26443,7 @@ public:
 	int32_t                                            DisplayOrder;                                  // 0x00C4 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InstancedFoliageSettings");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InstancedFoliageSettings"))
 };
 
 // Class Engine.FluidInfluenceActor
@@ -34403,14 +26458,7 @@ public:
 	uint32_t                                           bToggled : 1;                                  // 0x0280 (0x0004) [0x0000000100000020] [0x00000002] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FluidInfluenceActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidInfluenceActor"))
 	void eventReplicatedEvent(const class FName& VarName);
 	void OnToggle(class USeqAct_Toggle* inAction);
 };
@@ -34424,14 +26472,7 @@ public:
 	class UParticleSystem*                             ProjectileEntryEffect;                         // 0x0270 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FluidSurfaceActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidSurfaceActor"))
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
 };
 
@@ -34442,14 +26483,7 @@ class AFluidSurfaceActorMovable : public AFluidSurfaceActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FluidSurfaceActorMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidSurfaceActorMovable"))
 };
 
 // Class Engine.FluidInfluenceComponent
@@ -34488,14 +26522,7 @@ public:
 	class AFluidSurfaceActor*                          CurrentFluidActor;                             // 0x02C0 (0x0008) [0x0000000000003000] (CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FluidInfluenceComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidInfluenceComponent"))
 };
 
 // Class Engine.FluidSurfaceComponent
@@ -34559,14 +26586,7 @@ public:
 	struct FPointer                                    FluidSimulation;                               // 0x0350 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FluidSurfaceComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidSurfaceComponent"))
 	void SetSimulationPosition(const struct FVector& WorldPos);
 	void SetDetailPosition(const struct FVector& WorldPos);
 	void ApplyForce(const struct FVector& WorldPos, float Strength, float Radius, bool optionalBImpulse);
@@ -34580,14 +26600,7 @@ public:
 	class USpeedTreeComponent*                         SpeedTreeComponent;                            // 0x0268 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeedTreeActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeedTreeActor"))
 };
 
 // Class Engine.SpeedTreeComponent
@@ -34624,14 +26637,7 @@ public:
 	struct FLightmassPrimitiveSettings                 LightmassSettings;                             // 0x0330 (0x001C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeedTreeComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeedTreeComponent"))
 	void SetMaterial(ESpeedTreeMeshType MeshType, class UMaterialInterface* Material);
 	class UMaterialInterface* GetMaterial(ESpeedTreeMeshType MeshType);
 };
@@ -34645,14 +26651,7 @@ public:
 	class USpeedTree*                                  SpeedTree;                                     // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeedTreeActorFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeedTreeActorFactory"))
 };
 
 // Class Engine.SpeedTreeComponentFactory
@@ -34664,14 +26663,7 @@ public:
 	class USpeedTreeComponent*                         SpeedTreeComponent;                            // 0x0068 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeedTreeComponentFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeedTreeComponentFactory"))
 };
 
 // Class Engine.SpeedTree
@@ -34695,14 +26687,7 @@ public:
 	struct FGuid                                       LightingGuid;                                  // 0x00B8 (0x0010) [0x0000000800000002] (CPF_Const | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpeedTree");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpeedTree"))
 };
 
 // Class Engine.LensFlareSource
@@ -34714,14 +26699,7 @@ public:
 	uint32_t                                           bCurrentlyActive : 1;                          // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LensFlareSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LensFlareSource"))
 	void SetActorParameter(const class FName& ParameterName, class AActor* Param);
 	void SetExtColorParameter(const class FName& ParameterName, float Red, float Green, float Blue, float Alpha);
 	void SetColorParameter(const class FName& ParameterName, const struct FLinearColor& Param);
@@ -34762,14 +26740,7 @@ public:
 	float                                              NextTraceTime;                                 // 0x02B8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LensFlareComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LensFlareComponent"))
 	class UMaterialInstanceConstant* CreateAndSetMaterialInstanceConstant(int32_t ElementIndex);
 	void SetMaterial(int32_t ElementIndex, class UMaterialInterface* Material);
 	class UMaterialInterface* GetMaterial(int32_t ElementIndex);
@@ -34809,14 +26780,7 @@ public:
 	class UTexture2D*                                  ThumbnailImage;                                // 0x02C8 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LensFlare");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LensFlare"))
 };
 
 // Class Engine.TextureFlipBook
@@ -34846,14 +26810,7 @@ public:
 	struct FPointer                                    ReleaseResourcesFence;                         // 0x02C0 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureFlipBook");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureFlipBook"))
 	void SetCurrentFrame(int32_t Row, int32_t Col);
 	void Stop();
 	void Pause();
@@ -34871,14 +26828,7 @@ public:
 	int32_t                                            DestSizeY;                                     // 0x0168 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Texture2DComposite");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Texture2DComposite"))
 	void ResetSourceRegions();
 	void UpdateCompositeTexture(int32_t NumMipsToGenerate);
 	bool SourceTexturesFullyStreamedIn();
@@ -34897,14 +26847,7 @@ public:
 	uint32_t                                           bIsResolveTarget : 1;                          // 0x0160 (0x0004) [0x0000000000003000] [0x00000001] (CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Texture2DDynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Texture2DDynamic"))
 	static class UTexture2DDynamic* Create(int32_t InSizeX, int32_t InSizeY, EPixelFormat optionalInFormat, bool optionalInIsResolveTarget);
 	void UpdateMipFromPNG(int32_t MipIdx, class TArray<uint8_t>& outMipData);
 	void UpdateMipFromImageData(int32_t MipIdx, struct FImageLayout& outImageData);
@@ -34933,14 +26876,7 @@ public:
 	class UTexture2D*                                  FaceNegZ;                                      // 0x0190 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureCube");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureCube"))
 };
 
 // Class Engine.TextureMovie
@@ -34967,14 +26903,7 @@ public:
 	struct FPointer                                    ReleaseCodecFence;                             // 0x01D0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureMovie");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureMovie"))
 	void Stop();
 	void Pause();
 	void Play();
@@ -34991,14 +26920,7 @@ public:
 	float                                              TargetGamma;                                   // 0x0154 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureRenderTarget");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureRenderTarget"))
 };
 
 // Class Engine.TextureRenderTarget2D
@@ -35019,14 +26941,7 @@ public:
 	struct FScriptDelegate                             __EventResourceUpdated__Delegate;              // 0x0180 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureRenderTarget2D");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureRenderTarget2D"))
 	static class UTextureRenderTarget2D* Create(int32_t InSizeX, int32_t InSizeY, EPixelFormat optionalInFormat, const struct FLinearColor& optionalInClearColor, bool optionalBOnlyRenderOnce);
 	void EventResourceUpdated(class UTextureRenderTarget2D* RenderTarget);
 };
@@ -35042,14 +26957,7 @@ public:
 	struct FScriptDelegate                             __Render__Delegate;                            // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ScriptedTexture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ScriptedTexture"))
 	void Render(class UCanvas* C);
 };
 
@@ -35062,14 +26970,7 @@ public:
 	EPixelFormat                                       Format;                                        // 0x015C (0x0001) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TextureRenderTargetCube");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TextureRenderTargetCube"))
 };
 
 // Class Engine.AudioDevice
@@ -35126,14 +27027,7 @@ public:
 	float                                              LastUpdateTime;                                // 0x03A0 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AudioDevice");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AudioDevice"))
 	class USoundClass* FindSoundClass(const class FName& SoundClassName);
 	bool SetSoundMode(const class FName& NewModeGroup, const class FName& optionalNewModeValue);
 };
@@ -35150,14 +27044,7 @@ public:
 	uint8_t                                          UnknownData00[0x50];                          // 0x0098 (0x0050) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundClass");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundClass"))
 };
 
 // Class Engine.SoundMode
@@ -35175,14 +27062,7 @@ public:
 	float                                              FadeOutTime;                                   // 0x00AC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SoundMode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SoundMode"))
 };
 
 // Class Engine.Pawn
@@ -35358,14 +27238,7 @@ public:
 	struct FVector                                     RootMotionInterpCurveLastValue;                // 0x0508 (0x000C) [0x0000000000000020] (CPF_Net)     
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Pawn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Pawn"))
 	void OnSetVelocity(class USeqAct_SetVelocity* Action);
 	void eventSpeak(class USoundCue* Cue);
 	void SetScalarParameterInterp(struct FScalarParameterInterpStruct& outScalarParameterInterp);
@@ -35537,14 +27410,7 @@ public:
 	class USkeletalMesh*                               PreviewMesh;                                   // 0x0518 (0x0008) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MatineePawn");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MatineePawn"))
 };
 
 // Class Engine.Scout
@@ -35587,14 +27453,7 @@ public:
 	float                                              MaxMantleFallTime;                             // 0x05AC (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Scout");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Scout"))
 	void eventPreBeginPlay();
 };
 
@@ -35607,14 +27466,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Light");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Light"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void eventReplicatedEvent(const class FName& VarName);
 };
@@ -35627,14 +27479,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DirectionalLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DirectionalLight"))
 };
 
 // Class Engine.DirectionalLightToggleable
@@ -35644,14 +27489,7 @@ class ADirectionalLightToggleable : public ADirectionalLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DirectionalLightToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DirectionalLightToggleable"))
 };
 
 // Class Engine.DominantDirectionalLight
@@ -35661,14 +27499,7 @@ class ADominantDirectionalLight : public ADirectionalLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantDirectionalLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantDirectionalLight"))
 };
 
 // Class Engine.DominantDirectionalLightMovable
@@ -35678,14 +27509,7 @@ class ADominantDirectionalLightMovable : public ADominantDirectionalLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantDirectionalLightMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantDirectionalLightMovable"))
 };
 
 // Class Engine.PointLight
@@ -35696,14 +27520,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PointLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PointLight"))
 };
 
 // Class Engine.DominantPointLight
@@ -35713,14 +27530,7 @@ class ADominantPointLight : public APointLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantPointLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantPointLight"))
 };
 
 // Class Engine.PointLightMovable
@@ -35730,14 +27540,7 @@ class APointLightMovable : public APointLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PointLightMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PointLightMovable"))
 };
 
 // Class Engine.PointLightToggleable
@@ -35747,14 +27550,7 @@ class APointLightToggleable : public APointLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PointLightToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PointLightToggleable"))
 	void ApplyCheckpointRecord(struct APointLightToggleable_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct APointLightToggleable_FCheckpointRecord& outRecord);
 	bool ShouldSaveForCheckpoint();
@@ -35768,14 +27564,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkyLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkyLight"))
 };
 
 // Class Engine.SkyLightToggleable
@@ -35785,14 +27574,7 @@ class ASkyLightToggleable : public ASkyLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkyLightToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkyLightToggleable"))
 };
 
 // Class Engine.SpotLight
@@ -35803,14 +27585,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpotLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpotLight"))
 };
 
 // Class Engine.DominantSpotLight
@@ -35820,14 +27595,7 @@ class ADominantSpotLight : public ASpotLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantSpotLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantSpotLight"))
 };
 
 // Class Engine.GeneratedMeshAreaLight
@@ -35837,14 +27605,7 @@ class AGeneratedMeshAreaLight : public ASpotLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GeneratedMeshAreaLight");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GeneratedMeshAreaLight"))
 };
 
 // Class Engine.SpotLightMovable
@@ -35854,14 +27615,7 @@ class ASpotLightMovable : public ASpotLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpotLightMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpotLightMovable"))
 };
 
 // Class Engine.SpotLightToggleable
@@ -35871,14 +27625,7 @@ class ASpotLightToggleable : public ASpotLight
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpotLightToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpotLightToggleable"))
 	void ApplyCheckpointRecord(struct ASpotLightToggleable_FCheckpointRecord& outRecord);
 	void CreateCheckpointRecord(struct ASpotLightToggleable_FCheckpointRecord& outRecord);
 	bool ShouldSaveForCheckpoint();
@@ -35894,14 +27641,7 @@ public:
 	int32_t                                            MaxLightComponents;                            // 0x0288 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticLightCollectionActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticLightCollectionActor"))
 };
 
 // Class Engine.LightComponent
@@ -35963,14 +27703,7 @@ public:
 	float                                              ReflectionSpecularBrightness;                  // 0x01C0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightComponent"))
 	void OnUpdatePropertyLightColor();
 	void OnUpdatePropertyBrightness();
 	void OnUpdatePropertyOcclusionMaskDarkness();
@@ -35997,14 +27730,7 @@ public:
 	struct FLightmassDirectionalLightSettings          LightmassSettings;                             // 0x01D8 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DirectionalLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DirectionalLightComponent"))
 	void OnUpdatePropertyBrightness();
 	void OnUpdatePropertyLightColor();
 };
@@ -36019,14 +27745,7 @@ public:
 	struct FArray_Mirror                               DominantLightShadowMap;                        // 0x02A0 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantDirectionalLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantDirectionalLightComponent"))
 };
 
 // Class Engine.PointLightComponent
@@ -36051,14 +27770,7 @@ public:
 	float                                              MaxShadowDistanceToCastInLightDirection;       // 0x0260 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PointLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PointLightComponent"))
 	void OnUpdatePropertyBrightness();
 	void OnUpdatePropertyLightColor();
 	void SetTranslation(const struct FVector& NewTranslation);
@@ -36072,14 +27784,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0264 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantPointLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantPointLightComponent"))
 };
 
 // Class Engine.SpotLightComponent
@@ -36097,14 +27802,7 @@ public:
 	struct FRotator                                    Rotation;                                      // 0x0288 (0x000C) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SpotLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SpotLightComponent"))
 	void SetRotation(const struct FRotator& NewRotation);
 };
 
@@ -36118,14 +27816,7 @@ public:
 	struct FArray_Mirror                               DominantLightShadowMap;                        // 0x0350 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DominantSpotLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DominantSpotLightComponent"))
 };
 
 // Class Engine.SkyLightComponent
@@ -36138,14 +27829,7 @@ public:
 	struct FColor                                      LowerColor;                                    // 0x01CC (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkyLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkyLightComponent"))
 };
 
 // Class Engine.SphericalHarmonicLightComponent
@@ -36158,14 +27842,7 @@ public:
 	uint32_t                                           bRenderBeforeModShadows : 1;                   // 0x0260 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SphericalHarmonicLightComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SphericalHarmonicLightComponent"))
 };
 
 // Class Engine.LightEnvironmentComponent
@@ -36184,14 +27861,7 @@ public:
 	class TArray<class UPrimitiveComponent*>           AffectedComponents;                            // 0x00B0 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightEnvironmentComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightEnvironmentComponent"))
 	bool IsEnabled();
 	void SetEnabled(bool bNewEnabled);
 };
@@ -36240,14 +27910,7 @@ public:
 	class TArray<class ULightComponent*>               OverriddenLightComponents;                     // 0x0160 (0x0010) [0x000000000448000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicLightEnvironmentComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicLightEnvironmentComponent"))
 	struct FLinearColor GetLightIntensity();
 	void ResetEnvironment();
 };
@@ -36264,14 +27927,7 @@ public:
 	uint32_t                                           bAllowDLESharing : 1;                          // 0x0188 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ParticleLightEnvironmentComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleLightEnvironmentComponent"))
 };
 
 // Class Engine.DrawLightConeComponent
@@ -36281,14 +27937,7 @@ class UDrawLightConeComponent : public UDrawConeComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawLightConeComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawLightConeComponent"))
 };
 
 // Class Engine.DrawLightRadiusComponent
@@ -36299,14 +27948,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DrawLightRadiusComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DrawLightRadiusComponent"))
 };
 
 // Class Engine.LightFunction
@@ -36319,14 +27961,7 @@ public:
 	float                                              DisabledBrightness;                            // 0x0074 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.LightFunction");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LightFunction"))
 };
 
 // Class Engine.SkeletalMeshComponent
@@ -36558,14 +28193,7 @@ public:
 	float                                              ComponentDroppedDeltaTime;                     // 0x07AC (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshComponent"))
 	bool GetSocketOrBoneWorldLocationAndRotation(const class FName& SocketOrBoneName, struct FVector& outOutLoc, struct FRotator& outOutRot);
 	void Warmup(float WarmupTime);
 	void SetMaterial(int32_t ElementIndex, class UMaterialInterface* Material);
@@ -36837,14 +28465,7 @@ public:
 	uint32_t                                           bUseClothingAssetMaterial : 1;                 // 0x04F0 (0x0004) [0x0000000000000003] [0x00000001] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMesh"))
 	struct FVector GetSocketRelativeLocation(const class FName& InSocketName);
 	bool HasSocket(const class FName& InSocketName);
 };
@@ -36866,14 +28487,7 @@ public:
 	class UParticleSystem*                             PreviewParticleSystem;                         // 0x00B0 (0x0008) [0x0000000800000001] (CPF_Edit | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshSocket");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshSocket"))
 };
 
 // Class Engine.SplineActor
@@ -36896,14 +28510,7 @@ public:
 	struct FInterpCurveFloat                           SplineVelocityOverTime;                        // 0x02C0 (0x0018) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineActor"))
 	void OnToggleHidden(class USeqAct_ToggleHidden* Action);
 	void OnToggle(class USeqAct_Toggle* inAction);
 	void GetAllConnectedSplineActors(class TArray<class ASplineActor*>& outOutSet);
@@ -36941,14 +28548,7 @@ public:
 	float                                              MeshMaxDrawDistance;                           // 0x0330 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineLoftActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineLoftActor"))
 	void UpdateSplineParams();
 	void ClearLoftMesh();
 };
@@ -36961,14 +28561,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0334 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineLoftActorMovable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineLoftActorMovable"))
 };
 
 // Class Engine.SplineComponent
@@ -36986,14 +28579,7 @@ public:
 	struct FInterpCurveFloat                           SplineReparamTable;                            // 0x0288 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineComponent"))
 	float GetDistanceAlongSpline(const struct FVector& Location, bool optionalBClamp);
 	struct FVector GetTangentAtDistanceAlongSpline(float Distance);
 	struct FVector GetLocationAtDistanceAlongSpline(float Distance);
@@ -37050,14 +28636,7 @@ public:
 	int32_t                                            BuildingInstanceVersion;                       // 0x03C8 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ProcBuilding");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ProcBuilding"))
 	int32_t FindEdgeForTopLevelScope(int32_t TopLevelScopeIndex, EScopeEdge Edge);
 	void BreakFractureComponent(class UFracturedStaticMeshComponent* Comp, const struct FVector& BoxMin, const struct FVector& BoxMax);
 	void GetAllGroupedProcBuildings(class TArray<class AProcBuilding*>& outOutSet);
@@ -37073,14 +28652,7 @@ class AProcBuilding_SimpleLODActor : public AStaticMeshActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ProcBuilding_SimpleLODActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ProcBuilding_SimpleLODActor"))
 };
 
 // Class Engine.PBRuleNodeBase
@@ -37097,14 +28669,7 @@ public:
 	int32_t                                            DrawHeight;                                    // 0x0090 (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeBase"))
 };
 
 // Class Engine.PBRuleNodeAlternate
@@ -37121,14 +28686,7 @@ public:
 	uint32_t                                           bEqualSizeAB : 1;                              // 0x00A4 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeAlternate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeAlternate"))
 };
 
 // Class Engine.PBRuleNodeComment
@@ -37145,14 +28703,7 @@ public:
 	struct FColor                                      FillColor;                                     // 0x00AC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeComment");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeComment"))
 };
 
 // Class Engine.PBRuleNodeCorner
@@ -37174,14 +28725,7 @@ public:
 	float                                              RoundCurvature;                                // 0x00C4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeCorner");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeCorner"))
 };
 
 // Class Engine.PBRuleNodeCycle
@@ -37197,14 +28741,7 @@ public:
 	uint32_t                                           bFixRepeatSize : 1;                            // 0x00A4 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeCycle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeCycle"))
 };
 
 // Class Engine.PBRuleNodeEdgeAngle
@@ -37218,14 +28755,7 @@ public:
 	class TArray<struct FRBEdgeAngleInfo>              Angles;                                        // 0x00A0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeEdgeAngle");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeEdgeAngle"))
 };
 
 // Class Engine.PBRuleNodeEdgeMesh
@@ -37238,14 +28768,7 @@ public:
 	float                                              MainXPullIn;                                   // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeEdgeMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeEdgeMesh"))
 };
 
 // Class Engine.PBRuleNodeExtractTopBottom
@@ -37260,14 +28783,7 @@ public:
 	float                                              ExtractNotBottomZ;                             // 0x00A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeExtractTopBottom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeExtractTopBottom"))
 };
 
 // Class Engine.PBRuleNodeLODQuad
@@ -37279,14 +28795,7 @@ public:
 	float                                              MassiveLODDistanceScale;                       // 0x0098 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeLODQuad");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeLODQuad"))
 };
 
 // Class Engine.PBRuleNodeMesh
@@ -37301,14 +28810,7 @@ public:
 	uint32_t                                           bBlockAll : 1;                                 // 0x00F8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeMesh");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeMesh"))
 	int32_t PickRandomBuildingMesh();
 };
 
@@ -37320,14 +28822,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeOcclusion");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeOcclusion"))
 };
 
 // Class Engine.PBRuleNodeQuad
@@ -37344,14 +28839,7 @@ public:
 	uint32_t                                           bDisableMaterialRepeat : 1;                    // 0x00B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeQuad");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeQuad"))
 };
 
 // Class Engine.PBRuleNodeRandom
@@ -37365,14 +28853,7 @@ public:
 	int32_t                                            MaxNumExecuted;                                // 0x00A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeRandom");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeRandom"))
 };
 
 // Class Engine.PBRuleNodeRepeat
@@ -37386,14 +28867,7 @@ public:
 	float                                              RepeatMaxSize;                                 // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeRepeat");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeRepeat"))
 };
 
 // Class Engine.PBRuleNodeSize
@@ -37408,14 +28882,7 @@ public:
 	uint32_t                                           bUseTopLevelScopeSize : 1;                     // 0x00A0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeSize");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeSize"))
 };
 
 // Class Engine.PBRuleNodeSplit
@@ -37429,14 +28896,7 @@ public:
 	class TArray<struct FRBSplitInfo>                  SplitSetup;                                    // 0x00A0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeSplit");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeSplit"))
 };
 
 // Class Engine.PBRuleNodeSubRuleset
@@ -37448,14 +28908,7 @@ public:
 	class UProcBuildingRuleset*                        SubRuleset;                                    // 0x0098 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeSubRuleset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeSubRuleset"))
 };
 
 // Class Engine.PBRuleNodeTransform
@@ -37469,14 +28922,7 @@ public:
 	class UDistributionVector*                         Scale;                                         // 0x00A8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeTransform");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeTransform"))
 };
 
 // Class Engine.PBRuleNodeVariation
@@ -37488,14 +28934,7 @@ public:
 	uint32_t                                           bVariationOfScopeOnLeft : 1;                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeVariation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeVariation"))
 };
 
 // Class Engine.PBRuleNodeWindowWall
@@ -37515,14 +28954,7 @@ public:
 	class UMaterialInterface*                          Material;                                      // 0x00B8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PBRuleNodeWindowWall");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeWindowWall"))
 };
 
 // Class Engine.ProcBuildingRuleset
@@ -37554,14 +28986,7 @@ public:
 	class TArray<class UPBRuleNodeComment*>            Comments;                                      // 0x00D8 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ProcBuildingRuleset");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ProcBuildingRuleset"))
 };
 
 // Class Engine.ReplicationInfo
@@ -37571,14 +28996,7 @@ class AReplicationInfo : public AInfo
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ReplicationInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ReplicationInfo"))
 };
 
 // Class Engine.GameReplicationInfo
@@ -37603,14 +29021,7 @@ public:
 	class TArray<class APlayerReplicationInfo*>        InactivePRIArray;                              // 0x02C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.GameReplicationInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.GameReplicationInfo"))
 	bool eventShouldShowGore();
 	bool IsCoopMultiplayerGame();
 	bool IsMultiplayerGame();
@@ -37673,14 +29084,7 @@ public:
 	struct FScriptDelegate                             __EventTeamChanged__Delegate;                  // 0x03F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlayerReplicationInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlayerReplicationInfo"))
 	void UnregisterPlayerFromSession();
 	void RegisterPlayerWithSession();
 	bool IsInvalidName();
@@ -37728,14 +29132,7 @@ public:
 	class UGroupComponent_ORS*                         RegistryGroup;                                 // 0x0288 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TeamInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TeamInfo"))
 	uint8_t GetTeamNum();
 	class FString GetHumanReadableName();
 	void RemoveFromTeam(class AController* Other);
@@ -37799,14 +29196,7 @@ public:
 	class ADynamicCameraActor*                         AnimCameraActor;                               // 0x05B0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Camera");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Camera"))
 	void SetCameraFade(bool bNewEnableFading, const struct FColor& optionalNewFadeColor, const struct FVector2D& optionalNewFadeAlpha, float optionalNewFadeTime, bool optionalBNewFadeAudio);
 	void StopCameraAnim(class UCameraAnimInst* AnimInst, bool optionalBImmediate);
 	void StopAllCameraAnimsByType(class UCameraAnim* Anim, bool optionalBImmediate);
@@ -37860,14 +29250,7 @@ public:
 	class UStaticMeshComponent*                        MeshComp;                                      // 0x03F0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraActor"))
 	void DisplayDebug(class AHUD* HUD, float& outOut_YL, float& outOut_YPos);
 	void GetCameraView(float DeltaTime, struct FTPOV& outOutPOV);
 };
@@ -37879,14 +29262,7 @@ class ADynamicCameraActor : public ACameraActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicCameraActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicCameraActor"))
 };
 
 // Class Engine.CameraAnim
@@ -37903,14 +29279,7 @@ public:
 	float                                              BaseFOV;                                       // 0x01FC (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraAnim"))
 };
 
 // Class Engine.CameraAnimInst
@@ -37947,14 +29316,7 @@ public:
 	struct FVector                                     LastCameraLoc;                                 // 0x026C (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraAnimInst");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraAnimInst"))
 	void SetPlaySpace(ECameraAnimPlaySpace NewSpace, const struct FRotator& optionalUserPlaySpace);
 	void ApplyTransientScaling(float Scalar);
 	void Stop(bool optionalBImmediate);
@@ -37982,14 +29344,7 @@ public:
 	float                                              TargetAlpha;                                   // 0x0080 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraModifier");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraModifier"))
 	void UpdateAlpha(class ACamera* Camera, float DeltaTime);
 	bool ProcessViewRotation(class AActor* ViewTarget, float DeltaTime, struct FRotator& outOut_ViewRotation, struct FRotator& outOut_DeltaRot);
 	void ToggleModifier();
@@ -38012,14 +29367,7 @@ public:
 	float                                              SplitScreenShakeScale;                         // 0x0098 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraModifier_CameraShake");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraModifier_CameraShake"))
 	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV& outOutPOV);
 	void UpdateCameraShake(float DeltaTime, struct FCameraShakeInstance& outShake, struct FTPOV& outOutPOV);
 	void RemoveAllCameraShakes();
@@ -38052,14 +29400,7 @@ public:
 	float                                              RandomAnimSegmentDuration;                     // 0x00E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CameraShake");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CameraShake"))
 	class APlayerController* GetAPC();
 	void ToggleShake(bool bShake);
 	void eventOnPropertyChanged();
@@ -38080,14 +29421,7 @@ class UCloudStorageUpgradeHelper : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudStorageUpgradeHelper");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudStorageUpgradeHelper"))
 	void eventGetCloudUpgradeKeys(class TArray<class FString>& outCloudKeys);
 	void eventHandleLocalKeyValue(class FString& outCloudKeyName, struct FPlatformInterfaceData& outCloudValue, int32_t& outBShouldMoveToCloud, int32_t& outBShouldDeleteLocalKey);
 	void eventHandleLocalDocument(class FString& outDocName, int32_t& outBShouldMoveToCloud, int32_t& outBShouldDeleteLocalFile);
@@ -38104,14 +29438,7 @@ public:
 	class FString                                      UserId;                                        // 0x0090 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnalyticEventsBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnalyticEventsBase"))
 	void eventSendCachedEvents();
 	void eventLogCurrencyGivenEvent(const class FString& GameCurrencyType, int32_t GameCurrencyAmount);
 	void eventLogCurrencyPurchaseEvent(const class FString& GameCurrencyType, int32_t GameCurrencyAmount, const class FString& RealCurrencyType, float RealMoneyCost, const class FString& PaymentProvider);
@@ -38141,14 +29468,7 @@ public:
 	class TArray<class UAnalyticEventsBase*>           AnalyticsProviders;                            // 0x00B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MultiProviderAnalytics");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MultiProviderAnalytics"))
 	void eventSendCachedEvents();
 	void eventLogCurrencyGivenEvent(const class FString& GameCurrencyType, int32_t GameCurrencyAmount);
 	void eventLogCurrencyPurchaseEvent(const class FString& GameCurrencyType, int32_t GameCurrencyAmount, const class FString& RealCurrencyType, float RealMoneyCost, const class FString& PaymentProvider);
@@ -38178,14 +29498,7 @@ public:
 	struct FScriptDelegate                             __OnReceivedRemoteNotification__Delegate;      // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AppNotificationsBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AppNotificationsBase"))
 	void DebugLogNotification(struct FNotificationInfo& outNotification);
 	void OnReceivedRemoteNotification(bool bWasAppActive, struct FNotificationInfo& outNotification);
 	void OnReceivedLocalNotification(bool bWasAppActive, struct FNotificationInfo& outNotification);
@@ -38204,14 +29517,7 @@ public:
 	uint32_t                                           bSuppressDelegateCalls : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudStorageBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudStorageBase"))
 	bool eventUpgradeLocalStorageToCloud(class UCloudStorageUpgradeHelper* UpgradeHelper, bool optionalBForceSearchAgain);
 	bool eventResolveConflictWithVersionIndex(int32_t Index);
 	bool eventResolveConflictWithNewestDocument();
@@ -38250,14 +29556,7 @@ public:
 	class TArray<struct FFacebookFriend>               FriendsList;                                   // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FacebookIntegration");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FacebookIntegration"))
 	void eventDisconnect();
 	void eventFacebookDialog(const class FString& Action, const class TArray<class FString>& ParamKeysAndValues);
 	void eventFacebookRequest(const class FString& GraphRequest, const class FString& optionalHTTPMethod, const class TArray<class FString>& optionalParamKeysAndValues);
@@ -38273,14 +29572,7 @@ class UInAppMessageBase : public UPlatformInterfaceBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InAppMessageBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InAppMessageBase"))
 	bool eventShowInAppEmailUI(const class FString& optionalInitialSubject, const class FString& optionalInitialMessage);
 	bool eventShowInAppSMSUI(const class FString& optionalInitialMessage);
 	void eventInit();
@@ -38294,14 +29586,7 @@ public:
 	uint32_t                                           bShouldPauseWhileAdOpen : 1;                   // 0x0088 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InGameAdManager");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InGameAdManager"))
 	void SetPauseWhileAdOpen(bool bShouldPause);
 	void ForceCloseAd();
 	void HideBanner();
@@ -38316,14 +29601,7 @@ class UTwitterIntegrationBase : public UPlatformInterfaceBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TwitterIntegrationBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TwitterIntegrationBase"))
 	bool eventTwitterRequest(const class FString& URL, const class TArray<class FString>& ParamKeysAndValues, ETwitterRequestMethod RequestMethod, int32_t AccountIndex);
 	class FString eventGetAccountId(int32_t AccountIndex);
 	class FString eventGetAccountName(int32_t AccountIndex);
@@ -38347,14 +29625,7 @@ public:
 	class TArray<uint8_t>                              BinaryResponse;                                // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PlatformInterfaceWebResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PlatformInterfaceWebResponse"))
 	class FString GetHeaderValue(const class FString& HeaderName);
 	void GetHeader(int32_t HeaderIndex, class FString& outHeader, class FString& outValue);
 	int32_t GetNumHeaders();
@@ -38368,14 +29639,7 @@ public:
 	uint8_t                                          UnknownData00[0x10];                          // 0x0060 (0x0010) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetDriverSecurity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetDriverSecurity"))
 };
 
 // Class Engine.NetConnectionEncryptor
@@ -38386,14 +29650,7 @@ public:
 	uint8_t                                          UnknownData00[0xA8];                          // 0x0060 (0x00A8) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NetConnectionEncryptor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NetConnectionEncryptor"))
 };
 
 // Class Engine.__GameInfo__Login_0x1
@@ -38404,14 +29661,7 @@ public:
 	class APlayerController*                           NewPlayer;                                     // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.__GameInfo__Login_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.__GameInfo__Login_0x1"))
 	void __GameInfo__Login_0x1(const class FString& Original, const class FString& Sanitized);
 };
 
@@ -38423,14 +29673,7 @@ public:
 	class UObject*                                     ObjOuter;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.__ScriptGroup_ORS__CreateObjects_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.__ScriptGroup_ORS__CreateObjects_0x1"))
 	void __ScriptGroup_ORS__CreateObjects_0x1(class UClass* C);
 };
 
@@ -38442,14 +29685,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_HitWall");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_HitWall"))
 };
 
 // Class Engine.SeqAct_Destroy
@@ -38462,14 +29698,7 @@ public:
 	class TArray<class UClass*>                        IgnoreBasedClasses;                            // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Destroy");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Destroy"))
 };
 
 // Class Engine.SeqAct_Teleport
@@ -38483,14 +29712,7 @@ public:
 	class TArray<class AVolume*>                       TeleportVolumes;                               // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_Teleport");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Teleport"))
 	static int32_t eventGetObjClassVersion();
 	static bool ShouldTeleport(class AActor* TestActor, const struct FVector& TeleportLocation, float optionalTeleportDist, const class TArray<class AVolume*>& optionalVolumes);
 };
@@ -38505,14 +29727,7 @@ public:
 	uint32_t                                           bVelocityRelativeToActorRotation : 1;          // 0x0170 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetVelocity");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetVelocity"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -38526,14 +29741,7 @@ public:
 	class TArray<class UClass*>                        IgnoreBasedClasses;                            // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleHidden");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleHidden"))
 };
 
 // Class Engine.SeqAct_AttachToActor
@@ -38550,14 +29758,7 @@ public:
 	struct FRotator                                    RelativeRotation;                              // 0x0178 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AttachToActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AttachToActor"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -38569,14 +29770,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_MobileTouch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_MobileTouch"))
 };
 
 // Class Engine.ApexDestructibleActorSpawnable
@@ -38586,14 +29780,7 @@ class AApexDestructibleActorSpawnable : public AApexDestructibleActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ApexDestructibleActorSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexDestructibleActorSpawnable"))
 };
 
 // Class Engine.EmitterSpawnable
@@ -38605,14 +29792,7 @@ public:
 	class UParticleSystem*                             ParticleTemplate;                              // 0x0280 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EmitterSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EmitterSpawnable"))
 	void eventReplicatedEvent(const class FName& VarName);
 	void eventSetTemplate(class UParticleSystem* NewTemplate, bool optionalBDestroyOnFinish);
 };
@@ -38624,14 +29804,7 @@ class AKAssetSpawnable : public AKAsset
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.KAssetSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KAssetSpawnable"))
 };
 
 // Class Engine.ActorFactorySkeletalMeshCinematic
@@ -38641,14 +29814,7 @@ class UActorFactorySkeletalMeshCinematic : public UActorFactorySkeletalMesh
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactorySkeletalMeshCinematic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactorySkeletalMeshCinematic"))
 };
 
 // Class Engine.ActorFactorySkeletalMeshMAT
@@ -38658,14 +29824,7 @@ class UActorFactorySkeletalMeshMAT : public UActorFactorySkeletalMesh
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ActorFactorySkeletalMeshMAT");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactorySkeletalMeshMAT"))
 };
 
 // Class Engine.SeqAct_ToggleGodMode
@@ -38675,14 +29834,7 @@ class USeqAct_ToggleGodMode : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleGodMode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleGodMode"))
 };
 
 // Class Engine.SplineComponentSimplified
@@ -38692,14 +29844,7 @@ class USplineComponentSimplified : public USplineComponent
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SplineComponentSimplified");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineComponentSimplified"))
 };
 
 // Class Engine.AmbientSoundSimpleSplineNonLoop
@@ -38710,14 +29855,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AmbientSoundSimpleSplineNonLoop");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AmbientSoundSimpleSplineNonLoop"))
 };
 
 // Class Engine.AnimNotify_PlayFaceFXAnim
@@ -38734,14 +29872,7 @@ public:
 	float                                              PlayFrequency;                                 // 0x00A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.AnimNotify_PlayFaceFXAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNotify_PlayFaceFXAnim"))
 	void eventNotify(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
 };
 
@@ -38752,14 +29883,7 @@ class UOnlineTitleFileCacheInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineTitleFileCacheInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineTitleFileCacheInterface"))
 	bool DeleteTitleFile(const class FString& Filename);
 	bool DeleteTitleFiles(float MaxAgeSeconds);
 	bool ClearCachedFile(const class FString& Filename);
@@ -38785,14 +29909,7 @@ class UOnlineTitleFileInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineTitleFileInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineTitleFileInterface"))
 	void ClearRequestTitleFileListCompleteDelegate(const struct FScriptDelegate& RequestTitleFileListDelegate);
 	void AddRequestTitleFileListCompleteDelegate(const struct FScriptDelegate& RequestTitleFileListDelegate);
 	void OnRequestTitleFileListComplete(bool bWasSuccessful, const class TArray<class FString>& ResultStr);
@@ -38814,14 +29931,7 @@ class UUserCloudFileInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UserCloudFileInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UserCloudFileInterface"))
 	void ClearAllDelegates();
 	void ClearDeleteUserFileCompleteDelegate(const struct FScriptDelegate& DeleteUserFileCompleteDelegate);
 	void AddDeleteUserFileCompleteDelegate(const struct FScriptDelegate& DeleteUserFileCompleteDelegate);
@@ -38853,14 +29963,7 @@ public:
 	class FString                                      HttpRequestClassName;                          // 0x0060 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HttpFactory");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HttpFactory"))
 	static class UHttpRequestInterface* CreateRequest();
 };
 
@@ -38871,14 +29974,7 @@ class UCloudSaveSystemKVSInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudSaveSystemKVSInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudSaveSystemKVSInterface"))
 	bool WriteKeyValue(int32_t SaveSlotIndex, const class FString& KeyName, struct FPlatformInterfaceData& outValue);
 	bool ReadKeyValue(int32_t SaveSlotIndex, const class FString& KeyName, EPlatformInterfaceDataType Type, struct FPlatformInterfaceDelegateResult& outValue);
 };
@@ -38890,14 +29986,7 @@ class UCloudSaveSystemDataBlobStoreInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudSaveSystemDataBlobStoreInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudSaveSystemDataBlobStoreInterface"))
 	bool DeleteDataBlob(const class FString& StorageID, const class FString& BlobName, const struct FScriptDelegate& InDeleteDataBlobCallback);
 	void DeleteDataBlobCallbackDelegate(bool bWasSucessfull, const class FString& StorageID, const class FString& BlobName, const class FString& Error);
 	void SetDataBlob(const class FString& StorageID, const class FString& BlobName, const struct FScriptDelegate& InSetDataBlobCallback, class TArray<uint8_t>& outDataBlob);
@@ -38914,14 +30003,7 @@ public:
 	class UCloudStorageBase*                           CloudStorage;                                  // 0x0060 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CloudStorageBaseCloudSaveSystemKVS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudStorageBaseCloudSaveSystemKVS"))
 	class FString GenerateKeyNameForSaveSlot(int32_t SaveSlotIndex, const class FString& KeyName);
 	bool WriteKeyValue(int32_t SaveSlotIndex, const class FString& KeyName, struct FPlatformInterfaceData& outValue);
 	bool ReadKeyValue(int32_t SaveSlotIndex, const class FString& KeyName, EPlatformInterfaceDataType Type, struct FPlatformInterfaceDelegateResult& outValue);
@@ -38938,14 +30020,7 @@ public:
 	float                                              InterpTime;                                    // 0x02B4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ColorScaleVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ColorScaleVolume"))
 	void eventUnTouch(class AActor* Other);
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
 };
@@ -38957,14 +30032,7 @@ class UOnlineGameInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineGameInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameInterface"))
 	void ClearGamePlayersChangedDelegate(const struct FScriptDelegate& GamePlayersChangedDelegate);
 	void AddGamePlayersChangedDelegate(const struct FScriptDelegate& GamePlayersChangedDelegate);
 	void OnGamePlayersChanged(const class FName& SessionName, const class TArray<struct FUniqueNetId>& Players);
@@ -39055,14 +30123,7 @@ class UOnlinePlayerInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePlayerInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePlayerInterface"))
 	bool ReadBlockList(uint8_t LocalUserNum);
 	void GetBlockList(uint8_t LocalUserNum, class TArray<struct FOnlineFriend>& outOutBlockList);
 	void AddPlayerUnblockedDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& Delegate);
@@ -39273,14 +30334,7 @@ class UOnlinePlayerInterfaceEx : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePlayerInterfaceEx");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePlayerInterfaceEx"))
 	bool WordFilterSanitizeString(const class FString& Comment, const struct FScriptDelegate& SanitizeDelegate, const struct FUniqueNetId& optionalPlayerID);
 	void OnSanitizeStringComplete(const struct FWordFilterResult& Result);
 	bool RecordPlayersRecentlyMetKeys(uint8_t LocalUserNum, class TArray<struct FFriendHistoryKey>& outPlayerKeys);
@@ -39329,14 +30383,7 @@ public:
 	class TArray<struct FCoverReplicationInfo>         CoverReplicationData;                          // 0x0268 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.CoverReplicator");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverReplicator"))
 	void ClientReceiveLinkDisabledState(int32_t Index, class ACoverLink* Link, bool bLinkDisabled);
 	void ServerSendLinkDisabledState(int32_t Index);
 	void NotifyLinkDisabledStateChange(class ACoverLink* Link);
@@ -39366,14 +30413,7 @@ class UOnlineCommunityContentInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineCommunityContentInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineCommunityContentInterface"))
 	void DownloadAllWorkshopData(const struct FScriptDelegate& Callback);
 	void OnDownloadedWorkshopData(bool bSuccess, class TArray<struct FDownloadedWorkshopData>& outItems);
 	void RateContent(uint8_t PlayerNum, int32_t NewRating, struct FCommunityContentFile& outFileToRate);
@@ -39410,14 +30450,7 @@ class UOnlineGameDVRInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineGameDVRInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameDVRInterface"))
 	bool CancelRecordingEvent(uint8_t LocalUserNum, const class FString& EventName);
 	bool RecordPreviousTimespan(uint8_t LocalUserNum, const class FString& EventName, float Duration);
 	bool EndRecordingEvent(uint8_t LocalUserNum, const class FString& EventName);
@@ -39441,14 +30474,7 @@ class USharedCloudFileInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SharedCloudFileInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SharedCloudFileInterface"))
 	void ClearWriteSharedFileCompleteDelegate(const struct FScriptDelegate& WriteSharedFileCompleteDelegate);
 	void AddWriteSharedFileCompleteDelegate(const struct FScriptDelegate& WriteSharedFileCompleteDelegate);
 	bool WriteSharedFile(const class FString& UserId, const class FString& Filename, class TArray<uint8_t>& outContents);
@@ -39469,14 +30495,7 @@ class UOnlineSocialInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineSocialInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSocialInterface"))
 	void ClearPostLinkCompleted(uint8_t LocalUserNum, const struct FScriptDelegate& PostLinkDelegate);
 	void AddPostLinkCompleted(uint8_t LocalUserNum, const struct FScriptDelegate& PostLinkDelegate);
 	void OnPostLinkCompleted(uint8_t LocalUserNum, bool bWasSuccessful);
@@ -39498,14 +30517,7 @@ class UOnlinePartyChatInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePartyChatInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePartyChatInterface"))
 	bool IsInPartyChat(uint8_t LocalUserNum);
 	bool ShowCommunitySessionsUI(uint8_t LocalUserNum);
 	bool ShowVoiceChannelUI(uint8_t LocalUserNum);
@@ -39533,14 +30545,7 @@ class UOnlineNewsInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineNewsInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineNewsInterface"))
 	class FString GetNews(uint8_t LocalUserNum, EOnlineNewsType NewsType);
 	void ClearReadNewsCompletedDelegate(const struct FScriptDelegate& ReadNewsDelegate);
 	void AddReadNewsCompletedDelegate(const struct FScriptDelegate& ReadNewsDelegate);
@@ -39555,14 +30560,7 @@ class UOnlineStatsInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineStatsInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineStatsInterface"))
 	bool RegisterStatGuid(const struct FUniqueNetId& PlayerID, class FString& outClientStatGuid);
 	class FString GetClientStatGuid();
 	void ClearRegisterHostStatGuidCompleteDelegateDelegate(const struct FScriptDelegate& RegisterHostStatGuidCompleteDelegate);
@@ -39593,14 +30591,7 @@ class UOnlineGameClipsInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineGameClipsInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameClipsInterface"))
 	void NotifyEventClipErrorOccurred(const struct FScriptDelegate& InCallback);
 	void EventClipErrorOccurred(const class FString& InEpicAccountId, int32_t ClipId, class UErrorType* InErrorType);
 	void NotifyEventGeneralErrorOccurred(const struct FScriptDelegate& InCallback);
@@ -39636,14 +30627,7 @@ class UOnlineVoiceInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineVoiceInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineVoiceInterface"))
 	bool SetVoiceReceiveVolume(float VoiceVolume);
 	bool UnmuteAll(uint8_t LocalUserNum);
 	bool MuteAll(uint8_t LocalUserNum, bool bAllowFriends);
@@ -39679,14 +30663,7 @@ class UOnlineContentInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineContentInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineContentInterface"))
 	bool ClearSaveGames(uint8_t LocalUserNum);
 	bool DeleteSaveGame(uint8_t LocalUserNum, int32_t DeviceID, const class FString& FriendlyName, const class FString& Filename);
 	void ClearWriteSaveGameDataComplete(uint8_t LocalUserNum, const struct FScriptDelegate& WriteSaveGameDataCompleteDelegate);
@@ -39733,14 +30710,7 @@ class UOnlineLobbyInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineLobbyInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineLobbyInterface"))
 	void ClearHostStartPlayTogetherDelegate(const struct FScriptDelegate& InDelegate);
 	void AddHostStartPlayTogetherDelegate(const struct FScriptDelegate& InDelegate);
 	void OnHostStartPlayTogether(uint8_t LocalUserNum);
@@ -39813,14 +30783,7 @@ class UOnlinePurchaseInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePurchaseInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePurchaseInterface"))
 	void ClearMicroTxnResponseDelegate(const struct FScriptDelegate& ResponseMicroTxnDelegate);
 	void AddMicroTxnResponseDelegate(const struct FScriptDelegate& ResponseMicroTxnDelegate);
 	void OnMicroTxnResponse(bool bAuthorized, uint64_t OrderId);
@@ -39836,14 +30799,7 @@ class UOnlineSystemInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineSystemInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSystemInterface"))
 	void ClearCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
 	void AddCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
 	void OnCaptureAvailabilityChange(bool bCaptureAllowed);
@@ -39914,14 +30870,7 @@ class UOnlineMarketplaceInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineMarketplaceInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineMarketplaceInterface"))
 	void ClearConsumeInventoryItemCompleteDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ConsumeInventoryItemCompleteDelegate);
 	void AddConsumeInventoryItemCompleteDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& ConsumeInventoryItemCompleteDelegate);
 	void OnConsumeInventoryItemComplete(const class FString& ProductID, bool bDidSucceed, int32_t NewQuantity);
@@ -39951,14 +30900,7 @@ class UOnlineAccountInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineAccountInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineAccountInterface"))
 	bool GetLocalAccountNames(class TArray<class FString>& outAccounts);
 	bool DeleteLocalAccount(const class FString& Username, const class FString& optionalPassword);
 	bool RenameLocalAccount(const class FString& NewUserName, const class FString& OldUserName, const class FString& optionalPassword);
@@ -39977,14 +30919,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x02D8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicPhysicsVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicPhysicsVolume"))
 	void eventPostBeginPlay();
 };
 
@@ -39995,14 +30930,7 @@ class ADynamicSMActor_Spawnable : public ADynamicSMActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicSMActor_Spawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicSMActor_Spawnable"))
 };
 
 // Class Engine.DynamicTriggerVolume
@@ -40013,14 +30941,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x02A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.DynamicTriggerVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicTriggerVolume"))
 	void eventPostBeginPlay();
 };
 
@@ -40036,14 +30957,7 @@ public:
 	struct FVector                                     VectorValue;                                   // 0x0178 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetParticleSysParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetParticleSysParam"))
 };
 
 // Class Engine.EngineContent
@@ -40054,14 +30968,7 @@ public:
 	class TArray<class UObject*>                       Content;                                       // 0x0060 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EngineContent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EngineContent"))
 };
 
 // Class Engine.EpochNow_RealTime
@@ -40071,14 +30978,7 @@ class UEpochNow_RealTime : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.EpochNow_RealTime");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EpochNow_RealTime"))
 	uint64_t EpochNow();
 };
 
@@ -40089,14 +30989,7 @@ class UIEpochNow : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.IEpochNow");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.IEpochNow"))
 	uint64_t EpochNow();
 };
 
@@ -40109,14 +31002,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ExponentialHeightFog");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ExponentialHeightFog"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void eventReplicatedEvent(const class FName& VarName);
 	void eventPostBeginPlay();
@@ -40129,14 +31015,7 @@ class AFracturedSMActorSpawnable : public AFracturedStaticMeshActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedSMActorSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedSMActorSpawnable"))
 };
 
 // Class Engine.FracturedStaticMeshActor_Spawnable
@@ -40146,14 +31025,7 @@ class AFracturedStaticMeshActor_Spawnable : public AFracturedStaticMeshActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.FracturedStaticMeshActor_Spawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedStaticMeshActor_Spawnable"))
 };
 
 // Class Engine.SeqEvent_PlayerSpawned
@@ -40166,14 +31038,7 @@ public:
 	struct FRotator                                    SpawnRotation;                                 // 0x018C (0x000C) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_PlayerSpawned");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_PlayerSpawned"))
 };
 
 // Class Engine.SeqAct_ControlMovieTexture
@@ -40184,14 +31049,7 @@ public:
 	class UTextureMovie*                               MovieTexture;                                  // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ControlMovieTexture");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ControlMovieTexture"))
 	void eventActivated();
 };
 
@@ -40202,14 +31060,7 @@ class UPrimaryPlayer : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PrimaryPlayer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrimaryPlayer"))
 };
 
 // Class Engine.SeqAct_ToggleInput
@@ -40221,14 +31072,7 @@ public:
 	uint32_t                                           bToggleTurning : 1;                            // 0x0160 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleInput");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleInput"))
 };
 
 // Class Engine.SeqAct_ToggleHUD
@@ -40238,14 +31082,7 @@ class USeqAct_ToggleHUD : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleHUD");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleHUD"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -40258,14 +31095,7 @@ public:
 	class UClass*                                      PredefinedWaveForm;                            // 0x0168 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ForceFeedback");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ForceFeedback"))
 };
 
 // Class Engine.SeqAct_ToggleCinematicMode
@@ -40282,14 +31112,7 @@ public:
 	uint32_t                                           bDroppedPickups : 1;                           // 0x0160 (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleCinematicMode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleCinematicMode"))
 	void eventActivated();
 };
 
@@ -40302,14 +31125,7 @@ public:
 	class TArray<class FString>                        Commands;                                      // 0x0170 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ConsoleCommand");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ConsoleCommand"))
 	static int32_t eventGetObjClassVersion();
 	void VersionUpdated(int32_t OldVersion, int32_t NewVersion);
 };
@@ -40321,14 +31137,7 @@ class USeqAct_FlyThroughHasEnded : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_FlyThroughHasEnded");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_FlyThroughHasEnded"))
 };
 
 // Class Engine.SeqAct_SetSoundMode
@@ -40340,14 +31149,7 @@ public:
 	uint32_t                                           bTopPriority : 1;                              // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetSoundMode");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetSoundMode"))
 	static int32_t eventGetObjClassVersion();
 	void eventActivated();
 };
@@ -40361,14 +31163,7 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.HeightFog");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.HeightFog"))
 	void OnToggle(class USeqAct_Toggle* Action);
 	void eventReplicatedEvent(const class FName& VarName);
 	void eventPostBeginPlay();
@@ -40381,14 +31176,7 @@ class AInterpActor_ForCinematic : public AInterpActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.InterpActor_ForCinematic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpActor_ForCinematic"))
 };
 
 // Class Engine.IPoolable
@@ -40398,14 +31186,7 @@ class UIPoolable : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.IPoolable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.IPoolable"))
 	void OnPoolReset();
 };
 
@@ -40417,14 +31198,7 @@ public:
 	class UMaterialInstanceTimeVarying*                MatInst;                                       // 0x0268 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.MaterialInstanceTimeVaryingActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialInstanceTimeVaryingActor"))
 };
 
 // Class Engine.SeqAct_AssignController
@@ -40435,14 +31209,7 @@ public:
 	class UClass*                                      ControllerClass;                               // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AssignController");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AssignController"))
 };
 
 // Class Engine.NavMeshBoundsVolume
@@ -40453,14 +31220,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.NavMeshBoundsVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshBoundsVolume"))
 };
 
 // Class Engine.OnlineEventsInterface
@@ -40470,14 +31230,7 @@ class UOnlineEventsInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineEventsInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineEventsInterface"))
 	bool UpdatePlaylistPopulation(int32_t PlaylistId, int32_t NumPlayers);
 	bool UploadGameplayEventsData(const struct FUniqueNetId& UniqueId, class TArray<uint8_t>& outPayload);
 	bool UploadPlayerData(const struct FUniqueNetId& UniqueId, const class FString& PlayerNick, class UOnlineProfileSettings* ProfileSettings, class UOnlinePlayerStorage* PlayerStorage);
@@ -40495,14 +31248,7 @@ public:
 	int32_t                                            GameTypeId;                                    // 0x00C8 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlinePlaylistGameTypeProvider");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlinePlaylistGameTypeProvider"))
 };
 
 // Class Engine.OnlineRecentPlayersList
@@ -40521,14 +31267,7 @@ public:
 	class TArray<struct FCurrentPlayerMet>             CurrentPlayers;                                // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineRecentPlayersList");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineRecentPlayersList"))
 	int32_t GetCurrentPlayersListCount();
 	void SetCurrentPlayersList(const class TArray<struct FCurrentPlayerMet>& Players);
 	bool ShowCurrentPlayersList(uint8_t LocalUserNum, const class FString& Title, const class FString& Description);
@@ -40554,14 +31293,7 @@ class UOnlineStatsWrite_TA : public UOnlineStatsWrite
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineStatsWrite_TA");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineStatsWrite_TA"))
 	void SetIntStat(int32_t StatId, int32_t Value);
 };
 
@@ -40572,14 +31304,7 @@ class UOnlineSuppliedUIInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OnlineSuppliedUIInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSuppliedUIInterface"))
 	bool ShowMatchmakingUI(uint8_t SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, class UOnlineGameSettings* GameSettings);
 	void ClearShowOnlineStatsUICompleteDelegate(const struct FScriptDelegate& ShowOnlineStatsUICompleteDelegate);
 	void AddShowOnlineStatsUICompleteDelegate(const struct FScriptDelegate& ShowOnlineStatsUICompleteDelegate);
@@ -40594,14 +31319,7 @@ class AOwnerReplicatedActor_ORS : public AActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.OwnerReplicatedActor_ORS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OwnerReplicatedActor_ORS"))
 	void eventDestroyed();
 	void eventOnOwnerChanged();
 };
@@ -40613,14 +31331,7 @@ class APathNode_Dynamic : public APathNode
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.PathNode_Dynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PathNode_Dynamic"))
 	class FString eventGetDebugAbbrev();
 };
 
@@ -40632,14 +31343,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_AIReachedRouteActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_AIReachedRouteActor"))
 };
 
 // Class Engine.RadialBlurActor
@@ -40650,14 +31354,7 @@ public:
 	class URadialBlurComponent*                        RadialBlur;                                    // 0x0268 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RadialBlurActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RadialBlurActor"))
 };
 
 // Class Engine.SeqAct_ToggleConstraintDrive
@@ -40671,14 +31368,7 @@ public:
 	uint32_t                                           bEnableLinearvelocityDrive : 1;                // 0x0160 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleConstraintDrive");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleConstraintDrive"))
 };
 
 // Class Engine.RB_BSJointActor
@@ -40688,14 +31378,7 @@ class ARB_BSJointActor : public ARB_ConstraintActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_BSJointActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_BSJointActor"))
 };
 
 // Class Engine.RB_ConstraintActorSpawnable
@@ -40705,14 +31388,7 @@ class ARB_ConstraintActorSpawnable : public ARB_ConstraintActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_ConstraintActorSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_ConstraintActorSpawnable"))
 };
 
 // Class Engine.RB_HingeActor
@@ -40722,14 +31398,7 @@ class ARB_HingeActor : public ARB_ConstraintActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_HingeActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_HingeActor"))
 };
 
 // Class Engine.RB_PrismaticActor
@@ -40739,14 +31408,7 @@ class ARB_PrismaticActor : public ARB_ConstraintActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_PrismaticActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_PrismaticActor"))
 };
 
 // Class Engine.RB_PulleyJointActor
@@ -40756,14 +31418,7 @@ class ARB_PulleyJointActor : public ARB_ConstraintActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.RB_PulleyJointActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.RB_PulleyJointActor"))
 };
 
 // Class Engine.ReplicatedActor_ORS
@@ -40774,14 +31429,7 @@ public:
 	class AActor*                                      ReplicatedOwner;                               // 0x0268 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ReplicatedActor_ORS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ReplicatedActor_ORS"))
 	void eventDestroyed();
 	void eventOnOwnerChanged();
 	void eventReplicatedEvent(const class FName& VarName);
@@ -40794,14 +31442,7 @@ class AReverbVolumeToggleable : public AReverbVolume
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ReverbVolumeToggleable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ReverbVolumeToggleable"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -40813,14 +31454,7 @@ public:
 	class TArray<class UFaceFXAnimSet*>                FaceFXAnimSets;                                // 0x0160 (0x0010) [0x0000000020400000] (CPF_NeedCtorLink | CPF_Deprecated)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AddRemoveFaceFXAnimSet");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AddRemoveFaceFXAnimSet"))
 };
 
 // Class Engine.SeqAct_AIAbortMoveToActor
@@ -40830,14 +31464,7 @@ class USeqAct_AIAbortMoveToActor : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_AIAbortMoveToActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AIAbortMoveToActor"))
 };
 
 // Class Engine.SeqAct_MITV_Activate
@@ -40848,14 +31475,7 @@ public:
 	float                                              DurationOfMITV;                                // 0x0160 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_MITV_Activate");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_MITV_Activate"))
 	void eventActivated();
 	static int32_t eventGetObjClassVersion();
 };
@@ -40870,14 +31490,7 @@ public:
 	class FName                                        ParamName;                                     // 0x0170 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMatInstTexParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMatInstTexParam"))
 };
 
 // Class Engine.SeqAct_SetMatInstVectorParam
@@ -40890,14 +31503,7 @@ public:
 	struct FLinearColor                                VectorValue;                                   // 0x0170 (0x0010) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetMatInstVectorParam");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMatInstVectorParam"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -40910,14 +31516,7 @@ public:
 	class TArray<class UObject*>                       TargetActors;                                  // 0x0168 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetSkelControlTarget");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetSkelControlTarget"))
 };
 
 // Class Engine.SeqAct_SetVector
@@ -40928,14 +31527,7 @@ public:
 	struct FVector                                     DefaultValue;                                  // 0x0160 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_SetVector");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetVector"))
 	void eventActivated();
 };
 
@@ -40946,14 +31538,7 @@ class USeqAct_ToggleAffectedByHitEffects : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleAffectedByHitEffects");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleAffectedByHitEffects"))
 };
 
 // Class Engine.SeqAct_ToggleHiddenGame
@@ -40963,14 +31548,7 @@ class USeqAct_ToggleHiddenGame : public USeqAct_Toggle
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_ToggleHiddenGame");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ToggleHiddenGame"))
 	void ModifyActorComponentsVisibility(class AActor* ActorToModify);
 	void eventActivated();
 };
@@ -40982,14 +31560,7 @@ class USeqAct_UpdatePhysBonesFromAnim : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqAct_UpdatePhysBonesFromAnim");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_UpdatePhysBonesFromAnim"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -41001,14 +31572,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_Death");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_Death"))
 };
 
 // Class Engine.SeqEvent_LOS
@@ -41022,14 +31586,7 @@ public:
 	uint32_t                                           bCheckForObstructions : 1;                     // 0x0188 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_LOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_LOS"))
 	static int32_t eventGetObjClassVersion();
 };
 
@@ -41041,14 +31598,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqEvent_PickupStatusChange");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_PickupStatusChange"))
 };
 
 // Class Engine.SeqVar_Byte
@@ -41058,14 +31608,7 @@ class USeqVar_Byte : public USequenceVariable
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Byte");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Byte"))
 };
 
 // Class Engine.SeqVar_Name
@@ -41075,14 +31618,7 @@ class USeqVar_Name : public USequenceVariable
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Name");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Name"))
 };
 
 // Class Engine.SeqVar_Union
@@ -41092,14 +31628,7 @@ class USeqVar_Union : public USequenceVariable
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SeqVar_Union");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Union"))
 };
 
 // Class Engine.SkeletalMeshActorMATSpawnable
@@ -41109,14 +31638,7 @@ class ASkeletalMeshActorMATSpawnable : public ASkeletalMeshActorMAT
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActorMATSpawnable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActorMATSpawnable"))
 };
 
 // Class Engine.SkeletalMeshActorMATWalkable
@@ -41126,14 +31648,7 @@ class ASkeletalMeshActorMATWalkable : public ASkeletalMeshActorMAT
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.SkeletalMeshActorMATWalkable");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkeletalMeshActorMATWalkable"))
 };
 
 // Class Engine.StaticCameraActor
@@ -41143,14 +31658,7 @@ class AStaticCameraActor : public ACameraActor
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticCameraActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticCameraActor"))
 };
 
 // Class Engine.StaticLensFlareSource
@@ -41161,14 +31669,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0274 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.StaticLensFlareSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.StaticLensFlareSource"))
 };
 
 // Class Engine.TimeWindow
@@ -41182,14 +31683,7 @@ public:
 	uint32_t                                           bRepeatable : 1;                               // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TimeWindow");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TimeWindow"))
 	bool IsActive();
 	uint64_t GetEndTime(uint64_t inTime);
 	uint64_t GetEndTimeFromNow();
@@ -41204,14 +31698,7 @@ class ATrigger_Dynamic : public ATrigger
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Trigger_Dynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Trigger_Dynamic"))
 };
 
 // Class Engine.Trigger_LOS
@@ -41222,14 +31709,7 @@ public:
 	class TArray<class APlayerController*>             PCsWithLOS;                                    // 0x0278 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.Trigger_LOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Trigger_LOS"))
 	void eventTick(float DeltaTime);
 };
 
@@ -41244,14 +31724,7 @@ public:
 	class AActor*                                      MyTrigger;                                     // 0x0390 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TriggeredPath");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TriggeredPath"))
 	bool eventSuggestMovePreparation(class APawn* Other);
 	class AActor* eventSpecialHandling(class APawn* Other);
 	void OnToggle(class USeqAct_Toggle* inAction);
@@ -41265,14 +31738,7 @@ public:
 	class TArray<struct FLevelStreamingData>           Levels;                                        // 0x0278 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.TriggerStreamingLevel");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TriggerStreamingLevel"))
 	void eventTouch(class AActor* Other, class UPrimitiveComponent* OtherComp, const struct FVector& HitLocation, const struct FVector& HitNormal);
 };
 
@@ -41288,14 +31754,7 @@ public:
 	uint32_t                                           bIsDisabled : 1;                               // 0x00D0 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UICharacterSummary");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UICharacterSummary"))
 };
 
 // Class Engine.UIGameInfoSummary
@@ -41315,14 +31774,7 @@ public:
 	class FString                                      Description;                                   // 0x00F8 (0x0010) [0x000000000040C002] (CPF_Const | CPF_Config | CPF_Localized | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIGameInfoSummary");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIGameInfoSummary"))
 };
 
 // Class Engine.UIMapSummary
@@ -41337,14 +31789,7 @@ public:
 	class FString                                      Description;                                   // 0x00D0 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIMapSummary");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIMapSummary"))
 };
 
 // Class Engine.UIWeaponSummary
@@ -41359,14 +31804,7 @@ public:
 	uint32_t                                           bIsDisabled : 1;                               // 0x00D0 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UIWeaponSummary");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIWeaponSummary"))
 };
 
 // Class Engine.UserCloudFileCloudSaveSystemDataBlobStore
@@ -41384,14 +31822,7 @@ public:
 	struct FScriptDelegate                             __DeleteDataBlobCallbackDelegate__Delegate;    // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.UserCloudFileCloudSaveSystemDataBlobStore");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UserCloudFileCloudSaveSystemDataBlobStore"))
 	void OnDeleteUserFileComplete(bool bWasSuccessful, const class FString& UserId, const class FString& Filename);
 	bool DeleteDataBlob(const class FString& StorageID, const class FString& BlobName, const struct FScriptDelegate& InDeleteDataBlobCallback);
 	void OnWriteUserFileComplete(bool bWasSuccessful, const class FString& UserId, const class FString& Filename);
@@ -41412,14 +31843,7 @@ public:
 	class UWindDirectionalSourceComponent*             Component;                                     // 0x0268 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WindDirectionalSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WindDirectionalSource"))
 };
 
 // Class Engine.WindDirectionalSourceDynamic
@@ -41429,14 +31853,7 @@ class AWindDirectionalSourceDynamic : public AWindDirectionalSource
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.WindDirectionalSourceDynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.WindDirectionalSourceDynamic"))
 };
 
 // Class Engine.ContentAuthorizationTokenInterface
@@ -41446,14 +31863,7 @@ class UContentAuthorizationTokenInterface : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class Engine.ContentAuthorizationTokenInterface");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ContentAuthorizationTokenInterface"))
 	static bool GetContentAuthorizationToken(const struct FScriptDelegate& Callback, class FString& outNonce);
 	void EventGetCATComplete(const class FString& Token);
 };

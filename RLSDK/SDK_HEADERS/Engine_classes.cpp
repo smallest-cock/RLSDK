@@ -1,17 +1,22 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: Engine_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
+#ifdef USE_PCH
+#include "pch.h"
+#endif
+
 #include "../SdkHeaders.hpp"
 
 #ifdef _MSC_VER
@@ -6377,6 +6382,23 @@ bool AWorldInfo::IsWithGFx()
 
 	AWorldInfo::StaticClass()->ProcessEvent(uFnIsWithGFx, &IsWithGFx_Params, nullptr);
 	return IsWithGFx_Params.ReturnValue;
+};
+
+// Function Engine.WorldInfo.IsSteamDeck
+// [0x00022501] (FUNC_Final | FUNC_Simulated | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool AWorldInfo::IsSteamDeck()
+{
+    static UFunction* uFnIsSteamDeck = nullptr;
+    if (!uFnIsSteamDeck)
+        uFnIsSteamDeck = UFunction::FindFunction("Function Engine.WorldInfo.IsSteamDeck");
+
+	AWorldInfo_execIsSteamDeck_Params IsSteamDeck_Params;
+	memset(&IsSteamDeck_Params, 0, sizeof(IsSteamDeck_Params));
+
+	AWorldInfo::StaticClass()->ProcessEvent(uFnIsSteamDeck, &IsSteamDeck_Params, nullptr);
+	return IsSteamDeck_Params.ReturnValue;
 };
 
 // Function Engine.WorldInfo.IsEpicGamesStoreBuild
@@ -36799,6 +36821,23 @@ EOnlinePlatform UOnlineSubsystem::GetOnlinePlatformFromName(const class FString&
 
 	UOnlineSubsystem::StaticClass()->ProcessEvent(uFnGetOnlinePlatformFromName, &GetOnlinePlatformFromName_Params, nullptr);
 	return static_cast<EOnlinePlatform>(GetOnlinePlatformFromName_Params.ReturnValue);
+};
+
+// Function Engine.OnlineSubsystem.GetOSVersionString
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+class FString UOnlineSubsystem::GetOSVersionString()
+{
+    static UFunction* uFnGetOSVersionString = nullptr;
+    if (!uFnGetOSVersionString)
+        uFnGetOSVersionString = UFunction::FindFunction("Function Engine.OnlineSubsystem.GetOSVersionString");
+
+	UOnlineSubsystem_execGetOSVersionString_Params GetOSVersionString_Params;
+	memset(&GetOSVersionString_Params, 0, sizeof(GetOSVersionString_Params));
+
+	UOnlineSubsystem::StaticClass()->ProcessEvent(uFnGetOSVersionString, &GetOSVersionString_Params, nullptr);
+	return GetOSVersionString_Params.ReturnValue;
 };
 
 // Function Engine.OnlineSubsystem.GetNativePlatformName

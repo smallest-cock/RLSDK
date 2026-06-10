@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: IpDrv_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER

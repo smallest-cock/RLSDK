@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -2748,6 +2749,13 @@ struct AWorldInfo_execIsPlayInEditor_Params
 // Function Engine.WorldInfo.IsWithGFx
 // [0x00022501] 
 struct AWorldInfo_execIsWithGFx_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Engine.WorldInfo.IsSteamDeck
+// [0x00022501] 
+struct AWorldInfo_execIsSteamDeck_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
@@ -16151,6 +16159,13 @@ struct UOnlineSubsystem_execGetOnlinePlatformFromName_Params
 	uint8_t                                            ReturnValue;                                      // 0x0010 (0x0001) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint8_t                                         PlatformType;                                     // 0x0011 (0x0001) [0x0000000000000000]               
 	// int32_t                                         Index;                                            // 0x0014 (0x0004) [0x0000000000000000]               
+};
+
+// Function Engine.OnlineSubsystem.GetOSVersionString
+// [0x00022401] 
+struct UOnlineSubsystem_execGetOSVersionString_Params
+{
+	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSubsystem.GetNativePlatformName

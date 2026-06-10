@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -1364,6 +1365,15 @@ struct FProfileAutoCamSettings
 	uint32_t                                           bFocusOnGoals : 1;                             // 0x0024 (0x0004) [0x0000000000000000] [0x00000002] 
 };
 
+// ScriptStruct TAGame._Types_TA.ProfileCameraInputSettings
+// Size: 0x0004
+struct FProfileCameraInputSettings
+{
+	uint32_t                                           bInvertSwivelPitch : 1;                        // 0x0000 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint32_t                                           bUnconstrainRotation : 1;                      // 0x0000 (0x0004) [0x0001000000000000] [0x00000002] 
+	uint32_t                                           bFreeLookSmoothing : 1;                        // 0x0000 (0x0004) [0x0001000000000000] [0x00000004] 
+};
+
 // ScriptStruct TAGame._Types_TA.ProfileCameraSettings
 // Size: 0x0020
 struct FProfileCameraSettings
@@ -1559,13 +1569,18 @@ struct FPaintWithOverride
 };
 
 // ScriptStruct TAGame._Types_TA.DemoSpawnSelectionData
-// Size: 0x0008
+// Size: 0x0030 (0x002C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FDemoSpawnSelectionData
 {
 	uint8_t                                            SpawnPreference;                               // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                            SelectionState;                                // 0x0001 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x2];                            // 0x0002 (0x0002) MISSED OFFSET
 	int32_t                                            PercentageTimeLeft;                            // 0x0004 (0x0004) [0x0000000000000000]               
+	class AActor*                                      SpawnActor;                                    // 0x0008 (0x0008) [0x0000000000000000]               
+	int32_t                                            SpawnIndex;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+	struct FVector                                     SpawnLocation;                                 // 0x0014 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    SpawnRotation;                                 // 0x0020 (0x000C) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame._Types_TA.PlayerActorIDPair
@@ -2662,7 +2677,7 @@ struct FMTXPurchaseInfo
 };
 
 // ScriptStruct TAGame.PhysicsMetrics_TA.ResimMetricData
-// Size: 0x001C
+// Size: 0x0024
 struct FResimMetricData
 {
 	class FName                                        GameStateName;                                 // 0x0000 (0x0008) [0x0000000000000000]               
@@ -2671,6 +2686,8 @@ struct FResimMetricData
 	int32_t                                            MinNumResimFramesPerEvent;                     // 0x0010 (0x0004) [0x0000000000000000]               
 	int32_t                                            MaxNumResimFramesPerEvent;                     // 0x0014 (0x0004) [0x0000000000000000]               
 	float                                              AverageNumResimFramesPerEvent;                 // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              AverageCorrectionEventsPerSecond;              // 0x001C (0x0004) [0x0000000000000000]               
+	float                                              AverageResimFramesPerSecond;                   // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.PlatformMetrics_TA.PlatformMetricData
@@ -3361,7 +3378,7 @@ struct FArenaStatSound
 };
 
 // ScriptStruct TAGame.StatFactory_TA.StatEventCollection
-// Size: 0x0248
+// Size: 0x0250
 struct FStatEventCollection
 {
 	class UStatEvent_TA*                               Win;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -3426,17 +3443,18 @@ struct FStatEventCollection
 	class UStatEvent_TA*                               CrossbarHits;                                  // 0x01D8 (0x0008) [0x0001000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               DoubleGrapple;                                 // 0x01E0 (0x0008) [0x0001000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               MaxDodgeStreak;                                // 0x01E8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               InfectedPlayersDefeated;                       // 0x01F0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PlayersInfected;                               // 0x01F8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpPoint;                                   // 0x0200 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpPossession;                              // 0x0208 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpDenial;                                  // 0x0210 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpClear;                                   // 0x0218 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               FlipReset;                                     // 0x0220 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               AerialFlipReset;                               // 0x0228 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BellyFlipReset;                                // 0x0230 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               AerialBellyFlipReset;                          // 0x0238 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               MaxFlipResetStreak;                            // 0x0240 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PowerUpsUsed;                                  // 0x01F0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               InfectedPlayersDefeated;                       // 0x01F8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PlayersInfected;                               // 0x0200 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpPoint;                                   // 0x0208 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpPossession;                              // 0x0210 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpDenial;                                  // 0x0218 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpClear;                                   // 0x0220 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               FlipReset;                                     // 0x0228 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialFlipReset;                               // 0x0230 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BellyFlipReset;                                // 0x0238 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialBellyFlipReset;                          // 0x0240 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxFlipResetStreak;                            // 0x0248 (0x0008) [0x0001000000000001] (CPF_Edit)    
 };
 
 // ScriptStruct TAGame.AssetAttribute_ChangeProductDrawScale_TA.ProductSlotNewDrawScale
@@ -3607,6 +3625,14 @@ struct FCarBallInteractionSettings
 	float                                              Restitution;                                   // 0x002C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              Friction;                                      // 0x0030 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
+};
+
+// ScriptStruct TAGame.Ball_TA.BallExtraData
+// Size: 0x0008
+struct FBallExtraData
+{
+	int32_t                                            DamageIndex;                                   // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              TargetSpeed;                                   // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.Ball_Breakout_TA.BreakoutDamage
@@ -4718,6 +4744,25 @@ struct FActorTouchRecordData
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
+// ScriptStruct TAGame.RPC_GetWorldCupPlayerCountries_TA.PlayerRepresentingTeamData
+// Size: 0x0058
+struct FPlayerRepresentingTeamData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Country;                                       // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame.WorldCupConfig_TA.WorldCupData
+// Size: 0x0038 (0x0034 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FWorldCupData
+{
+	class FString                                      TeamCodeName;                                  // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FLinearColor                                TeamColor;                                     // 0x0010 (0x0010) [0x0000000000000000]               
+	struct FLinearColor                                TeamColorSecondary;                            // 0x0020 (0x0010) [0x0000000000000000]               
+	int32_t                                            CosmeticID;                                    // 0x0030 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
+};
+
 // ScriptStruct TAGame.GameEvent_GameEditor_TA.SpawnArchetypeData
 // Size: 0x0010 (0x000C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FSpawnArchetypeData
@@ -4926,11 +4971,12 @@ struct FLocalizedAction : FBindingAction
 };
 
 // ScriptStruct TAGame.GFxData_Controls_TA.UIPlayerBinding
-// 0x0014 (0x002C - 0x0040)
+// 0x0024 (0x002C - 0x0050)
 struct FUIPlayerBinding : FPlayerBinding
 {
 	uint8_t                                          UnknownData00[0x4];                            // 0x002C (0x0004) MISSED OFFSET
 	class FString                                      UIKey;                                         // 0x0030 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      UIAxisKey;                                     // 0x0040 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 };
 
 // ScriptStruct TAGame.GFxData_Credits_TA.LocalizedNameData
@@ -6454,6 +6500,15 @@ struct FPlayerStats
 	int32_t                                            Demolitions;                                   // 0x0018 (0x0004) [0x0001000000000000]               
 };
 
+// ScriptStruct TAGame.RLBot_Util_TA.PlayerPickupData
+// Size: 0x0010
+struct FPlayerPickupData
+{
+	class UClass*                                      PickupClass;                                   // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            TimeTillItem;                                  // 0x0008 (0x0004) [0x0001000000000000]               
+	int32_t                                            MaxTimeTillItem;                               // 0x000C (0x0004) [0x0001000000000000]               
+};
+
 // ScriptStruct TAGame.RocketPassMetrics_TA.RocketPassPremiumData
 // Size: 0x0010
 struct FRocketPassPremiumData
@@ -7131,6 +7186,29 @@ struct FAntiCheatMessage
 	int32_t                                            MessageId;                                     // 0x0000 (0x0004) [0x0001000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	class TArray<class FString>                        MessageParts;                                  // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame.DemoSpawnSelectMetrics_TA.DemoSpawnEvent
+// Size: 0x0058
+struct FDemoSpawnEvent
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            Preference;                                    // 0x0048 (0x0001) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x3];                            // 0x0049 (0x0003) MISSED OFFSET
+	int32_t                                            TeamNum;                                       // 0x004C (0x0004) [0x0001000000000000]               
+	float                                              SecondsRemaining;                              // 0x0050 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0054 (0x0004) [0x0001000000000000] [0x00000001] 
+};
+
+// ScriptStruct TAGame.SettingsSnapshotManager_TA.ProductData
+// Size: 0x0020
+struct FProductData
+{
+	struct FProductInstanceID                          InstanceID;                                    // 0x0000 (0x0010) [0x0001000000000000]               
+	int32_t                                            ProductID;                                     // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            PaintID;                                       // 0x0014 (0x0004) [0x0001000000000000]               
+	int32_t                                            SpecialEditionID;                              // 0x0018 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamEditionId;                                 // 0x001C (0x0004) [0x0001000000000000]               
 };
 
 // ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata

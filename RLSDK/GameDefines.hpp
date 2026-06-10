@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 #include <windows.h>
 #include <algorithm>
@@ -336,15 +337,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021D30B8)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021D30E8)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022DE1A0)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x0240DCC8)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x0240DD10)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DC0B8)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DC0E8)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E7260)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x024170E8)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x02417130)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "260506.26700.517210"
-#define BUILDDATE_STRING       "May  6 2026 07:48:39"
+#define GPSYONIXBUILDID_STRING "260602.75104.519749"
+#define BUILDDATE_STRING       "Jun  2 2026 21:29:27"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""

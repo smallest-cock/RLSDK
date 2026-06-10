@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -7523,6 +7524,16 @@ struct UPlayerInput_X_execReleaseKey_Params
 	uint32_t                                           bTriggerEvents : 1;                               // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
+// Function ProjectX.PlayerInput_X.GetUIAxisKey
+// [0x00022003] 
+struct UPlayerInput_X_execGetUIAxisKey_Params
+{
+	struct FPlayerBinding                              Binding;                                          // 0x0000 (0x002C) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      ReturnValue;                                      // 0x0030 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class FString                                   UIKey;                                            // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // Function ProjectX.PlayerInput_X.GetUIKey
 // [0x00022003] 
 struct UPlayerInput_X_execGetUIKey_Params
@@ -9652,6 +9663,17 @@ struct UOnlineGame_X_execHandleLoginCompleted_Params
 	// class UError*                                   ConnectionError;                                  // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
+// Function ProjectX.OnlineGame_X.HandleOnlinePlayerLoginCompleted
+// [0x00440003] 
+struct UOnlineGame_X_execHandleOnlinePlayerLoginCompleted_Params
+{
+	class TArray<class UOnlinePlayer_X*>               ActiveLoginAttemptPlayers;                        // 0x0000 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  Task;                                             // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// uint32_t                                        bAnyLoginInProgress : 1;                          // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0020 (0x0008) [0x0000000000000000]               
+	// class UError*                                   ConnectionError;                                  // 0x0028 (0x0008) [0x0000000000000000]               
+};
+
 // Function ProjectX.OnlineGame_X.CheckPsyNetConnection
 // [0x00020003] 
 struct UOnlineGame_X_execCheckPsyNetConnection_Params
@@ -9660,6 +9682,7 @@ struct UOnlineGame_X_execCheckPsyNetConnection_Params
 	// class UError*                                   ConnectionError;                                  // 0x0008 (0x0008) [0x0000000000000000]               
 	// class U__OnlineGame_X__CheckPsyNetConnection_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0018 (0x0008) [0x0000000000000000]               
+	// class UOnlinePlayer_X*                          OPlayer;                                          // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGame_X.RequiresSystemNetworkErrorHandling
@@ -12128,6 +12151,60 @@ struct UTickableStateObject_X_execSetTimer_Params
 	class UObject*                                     inObj;                                            // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
+// Function ProjectX.StringUtil_X.FindWordBoundary
+// [0x00026401] 
+struct UStringUtil_X_execFindWordBoundary_Params
+{
+	class FString                                      Haystack;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Needle;                                           // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bReverseSearch : 1;                               // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bIgnoreCase : 1;                                  // 0x0024 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	int32_t                                            ReturnValue;                                      // 0x0028 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.StringUtil_X.SplitStringIntoMaxSizePieces
+// [0x00022003] 
+struct UStringUtil_X_execSplitStringIntoMaxSizePieces_Params
+{
+	class FString                                      OriginalString;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            MaxStringSize;                                    // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class TArray<class FString>                        ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<class FString>                     StringArray;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         LeftIndex;                                        // 0x0048 (0x0004) [0x0000000000000000]               
+	// int32_t                                         OriginalStringLength;                             // 0x004C (0x0004) [0x0000000000000000]               
+	// class FString                                   StringSection;                                    // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.StringUtil_X.MessageCanBeCorruptedOnConversion
+// [0x00022003] 
+struct UStringUtil_X_execMessageCanBeCorruptedOnConversion_Params
+{
+	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class TArray<uint8_t>                           Utf8Bytes;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   MessageConverted;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.StringUtil_X.IsStringEmptyOrWhiteSpace
+// [0x00022003] 
+struct UStringUtil_X_execIsStringEmptyOrWhiteSpace_Params
+{
+	class FString                                      BaseString;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.StringUtil_X.SplitStringInHalf
+// [0x00422003] 
+struct UStringUtil_X_execSplitStringInHalf_Params
+{
+	class FString                                      OriginalString;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      FirstHalf;                                        // 0x0010 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class FString                                      SecondHalf;                                       // 0x0020 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	// int32_t                                         StringLength;                                     // 0x0030 (0x0004) [0x0000000000000000]               
+};
+
 // Function ProjectX.SystemInfo_X.GetComputerName
 // [0x00022401] 
 struct USystemInfo_X_execGetComputerName_Params
@@ -14131,6 +14208,15 @@ struct U__ClubUtil_X__IsClubTeam_0x1_exec__ClubUtil_X__IsClubTeam_0x1_Params
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function ProjectX.ClubUtil_X.IsOneTeamGrayScale
+// [0x00042003] 
+struct UClubUtil_X_execIsOneTeamGrayScale_Params
+{
+	int32_t                                            Pos0Column;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            Pos1Column;                                       // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.ClubUtil_X.Wrap
 // [0x00042003] 
 struct UClubUtil_X_execWrap_Params
@@ -14150,6 +14236,22 @@ struct UClubUtil_X_execSwapPrimaryAccentColors_Params
 	struct FClubColorSet                               ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// struct FLinearColor                             TeamColor;                                        // 0x0020 (0x0010) [0x0000000000000000]               
 	// struct FLinearColor                             AccentColor;                                      // 0x0030 (0x0010) [0x0000000000000000]               
+};
+
+// Function ProjectX.ClubUtil_X.AreColorsDifferent2D
+// [0x00822003] 
+struct UClubUtil_X_execAreColorsDifferent2D_Params
+{
+	class UColorPalette_X*                             Palette;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            Color0;                                           // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            Color1;                                           // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FColorPosition                           Pos0;                                             // 0x0014 (0x0008) [0x0000000000000000]               
+	// struct FColorPosition                           Pos1;                                             // 0x001C (0x0008) [0x0000000000000000]               
+	// uint32_t                                        bSameRow : 1;                                     // 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bSameColumn : 1;                                  // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+	// int32_t                                         Value;                                            // 0x002C (0x0004) [0x0000000000000000]               
+	// int32_t                                         Hue;                                              // 0x0030 (0x0004) [0x0000000000000000]               
 };
 
 // Function ProjectX.ClubUtil_X.AreColorsDifferent
@@ -15350,6 +15452,13 @@ struct URPC_GetPlayerClubDetails_X_execSetPlayerID_Params
 	class URPC_GetPlayerClubDetails_X*                 ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function ProjectX.__OnlineGame_X__CheckPsyNetConnection_0x1.__OnlineGame_X__CheckPsyNetConnection_0x2
+// [0x00020003] 
+struct U__OnlineGame_X__CheckPsyNetConnection_0x1_exec__OnlineGame_X__CheckPsyNetConnection_0x2_Params
+{
+	class UOnlinePlayerAuthentication_X*               Auth;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function ProjectX.__OnlineGame_X__CheckPsyNetConnection_0x1.__OnlineGame_X__CheckPsyNetConnection_0x1
 // [0x00020003] 
 struct U__OnlineGame_X__CheckPsyNetConnection_0x1_exec__OnlineGame_X__CheckPsyNetConnection_0x1_Params
@@ -15886,6 +15995,12 @@ struct UOnlineGameMatchmakingBase_X_execHandleRegionsPinged_Params
 	class UOnlineGameRegions_X*                        InRegions;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function ProjectX.OnlineGameMatchmakingBase_X.StartSearchingAfterDelay
+// [0x00020003] 
+struct UOnlineGameMatchmakingBase_X_execStartSearchingAfterDelay_Params
+{
+};
+
 // Function ProjectX.OnlineGameMatchmakingBase_X.HandleGameStarted
 // [0x00080003] 
 struct UOnlineGameMatchmakingBase_X_execHandleGameStarted_Params
@@ -16007,6 +16122,13 @@ struct UOnlineGameMatchmakingBase_X_execAddFindGameStatusChangedDelegate_Params
 {
 	struct FScriptDelegate                             HandleFindGameStatusChanged;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UOnlineGameMatchmakingBase_X*                ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameMatchmakingBase_X.EventGetMatchmakingDelaySecs
+// [0x00120001] 
+struct UOnlineGameMatchmakingBase_X_execEventGetMatchmakingDelaySecs_Params
+{
+	float                                              ReturnValue;                                      // 0x0000 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.OnlineGameMatchmakingBase_X.EventFindGameStateChanged
@@ -25283,9 +25405,10 @@ struct UCameraState_X_execEndCameraState_Params
 };
 
 // Function ProjectX.CameraState_X.BeginCameraState
-// [0x00020000] 
+// [0x00024000] 
 struct UCameraState_X_execBeginCameraState_Params
 {
+	class UCameraState_X*                              PreviousState;                                    // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function ProjectX.CameraState_X.GetEndBlendParams
@@ -25445,9 +25568,10 @@ struct UCameraState_CamActor_X_execEndCameraState_Params
 };
 
 // Function ProjectX.CameraState_CamActor_X.BeginCameraState
-// [0x400020002] 
+// [0x400024002] 
 struct UCameraState_CamActor_X_execBeginCameraState_Params
 {
+	class UCameraState_X*                              PreviousState;                                    // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function ProjectX.CameraState_CamActor_X.GetBlendParams
@@ -28476,23 +28600,23 @@ struct UUdpLanBrowser_X_execCreateServer_Params
 // [0x00040003] 
 struct USystemMetrics_X_execSpecs_Params
 {
-	struct FOSMetrics                                  OS;                                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FCpuMetrics                                 CPU;                                              // 0x0020 (0x0040) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FMemoryMetrics                              Memory;                                           // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FVideoCardMetrics                           Video;                                            // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FNetworkAdapterMetrics                      Network;                                          // 0x0080 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FOSMetrics                                  OS;                                               // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FCpuMetrics                                 CPU;                                              // 0x0030 (0x0040) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FMemoryMetrics                              Memory;                                           // 0x0070 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0074 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	struct FVideoCardMetrics                           Video;                                            // 0x0078 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FNetworkAdapterMetrics                      Network;                                          // 0x0090 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.SystemMetrics_X.RecordSpecs
 // [0x00820003] 
 struct USystemMetrics_X_execRecordSpecs_Params
 {
-	// struct FOSMetrics                               OS;                                               // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FCpuMetrics                              CPU;                                              // 0x0020 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FMemoryMetrics                           Memory;                                           // 0x0060 (0x0004) [0x0000000000000000]               
-	// struct FVideoCardMetrics                        Video;                                            // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FNetworkAdapterMetrics                   Network;                                          // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FOSMetrics                               OS;                                               // 0x0000 (0x0030) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FCpuMetrics                              CPU;                                              // 0x0030 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FMemoryMetrics                           Memory;                                           // 0x0070 (0x0004) [0x0000000000000000]               
+	// struct FVideoCardMetrics                        Video;                                            // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FNetworkAdapterMetrics                   Network;                                          // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlinePlayerPermissions_X.HasPermission
@@ -31393,49 +31517,6 @@ struct USmoothDynamicValue_X_eventConstruct_Params
 {
 };
 
-// Function ProjectX.StringUtil_X.SplitStringIntoMaxSizePieces
-// [0x00022003] 
-struct UStringUtil_X_execSplitStringIntoMaxSizePieces_Params
-{
-	class FString                                      OriginalString;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            MaxStringSize;                                    // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class TArray<class FString>                        ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<class FString>                     StringArray;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         LeftIndex;                                        // 0x0048 (0x0004) [0x0000000000000000]               
-	// int32_t                                         OriginalStringLength;                             // 0x004C (0x0004) [0x0000000000000000]               
-	// class FString                                   StringSection;                                    // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// Function ProjectX.StringUtil_X.MessageCanBeCorruptedOnConversion
-// [0x00022003] 
-struct UStringUtil_X_execMessageCanBeCorruptedOnConversion_Params
-{
-	class FString                                      Message;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class TArray<uint8_t>                           Utf8Bytes;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   MessageConverted;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// Function ProjectX.StringUtil_X.IsStringEmptyOrWhiteSpace
-// [0x00022003] 
-struct UStringUtil_X_execIsStringEmptyOrWhiteSpace_Params
-{
-	class FString                                      BaseString;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function ProjectX.StringUtil_X.SplitStringInHalf
-// [0x00422003] 
-struct UStringUtil_X_execSplitStringInHalf_Params
-{
-	class FString                                      OriginalString;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      FirstHalf;                                        // 0x0010 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	class FString                                      SecondHalf;                                       // 0x0020 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// int32_t                                         StringLength;                                     // 0x0030 (0x0004) [0x0000000000000000]               
-};
-
 // Function ProjectX.TimeWindowOptional_X.HandleWindowEnded
 // [0x00020003] 
 struct UTimeWindowOptional_X_execHandleWindowEnded_Params
@@ -31573,6 +31654,27 @@ struct U__ServerPlayerIdCache_X__RegisterPlayer_0x1_exec__ServerPlayerIdCache_X_
 {
 	struct FPlayerIdLink                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.SetVisibilityComponent_X.ApplyVisibility
+// [0x00020003] 
+struct USetVisibilityComponent_X_execApplyVisibility_Params
+{
+	uint32_t                                           bHidden : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// class AActor*                                   AnimOwner;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+	// class UStaticMeshComponent*                     SMC;                                              // 0x0010 (0x0008) [0x0000000004000000] (CPF_EditInline)
+};
+
+// Function ProjectX.SetVisibilityComponent_X.Detached
+// [0x400080802] 
+struct USetVisibilityComponent_X_eventDetached_Params
+{
+};
+
+// Function ProjectX.SetVisibilityComponent_X.Attached
+// [0x400080802] 
+struct USetVisibilityComponent_X_eventAttached_Params
+{
 };
 
 /*

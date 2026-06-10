@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -57,6 +58,18 @@ enum class EPlayerVoiceTransitionState : uint8_t
 # ========================================================================================= #
 */
 
+
+#ifndef STATIC_CLASS_GETTER
+#define STATIC_CLASS_GETTER(classPtr)                                                                                                      \
+    static UClass *StaticClass() {                                                                                                         \
+        static UClass *uClassPointer = nullptr;                                                                                            \
+                                                                                                                                           \
+        if (!uClassPointer)                                                                                                                \
+            uClassPointer = (classPtr);                                                                                                    \
+        return uClassPointer;                                                                                                              \
+    }
+#endif 
+
 // Class OnlineSubsystemEOS.AudioDevicesChangedEvent
 // 0x0000 (0x0060 - 0x0060)
 class UAudioDevicesChangedEvent : public UObject
@@ -64,14 +77,7 @@ class UAudioDevicesChangedEvent : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.AudioDevicesChangedEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.AudioDevicesChangedEvent"))
 };
 
 // Class OnlineSubsystemEOS.EOSErrors
@@ -96,14 +102,7 @@ public:
 	class UErrorType*                                  GameClipsUploadLimitReached;                   // 0x00F0 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.EOSErrors");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.EOSErrors"))
 };
 
 // Class OnlineSubsystemEOS.OnlineSubsystemEOS
@@ -171,14 +170,7 @@ public:
 	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0730 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineSubsystemEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineSubsystemEOS"))
 	void ClearCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
 	void AddCaptureAvailabilityChangeDelegate(const struct FScriptDelegate& CaptureAvailabilityDelegate);
 	void OnCaptureAvailabilityChange(bool bCaptureAllowed);
@@ -328,14 +320,7 @@ public:
 	struct FScriptDelegate                             __EventMessageGenerated__Delegate;             // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS"))
 	bool ReceiveMessage(class FString& outEncodedMessage, struct FUniqueNetId& outPlayerID);
 	bool EndSession();
 	bool BeginSession(float optionalRegisterTimeoutSeconds);
@@ -354,14 +339,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerReportComplete__Delegate;         // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS"))
 	void ReportPlayer(class FString& outProductUserId);
 	bool ReceiveMessage(class FString& outEncodedMessage, struct FUniqueNetId& outPlayerID);
 	bool IsAntiCheatEnabled();
@@ -382,14 +360,7 @@ public:
 	struct FScriptDelegate                             __EventClientAuthStatusChanged__Delegate;      // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS"))
 	bool ReceiveMessage(class FString& outEncodedMessage, struct FUniqueNetId& outPlayerID);
 	bool UnregisterClient(struct FUniqueNetId& outPlayerID);
 	bool RegisterClient(bool bProtected, struct FUniqueNetId& outPlayerID, class FString& outProductUserId);
@@ -408,14 +379,7 @@ public:
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x03C8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineAuthInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAuthInterfaceEOS"))
 	bool RequiresAuthTicket();
 	bool RequestAuthTicket(const struct FUniqueNetId& PlayerID, const struct FScriptDelegate& Callback);
 	bool RequestMtxCode(const struct FUniqueNetId& PlayerID, const struct FScriptDelegate& Callback);
@@ -429,14 +393,7 @@ public:
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0080 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineFriendsInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineFriendsInterfaceEOS"))
 	bool GetActivePlatformId(uint8_t LocalUserNum, const struct FUniqueNetId& AccountId, struct FUniqueNetId& outPlatformId);
 	bool RequestLinkedAccounts(uint8_t LocalUserNum, const class TArray<struct FUniqueNetId>& AccountIds, const struct FScriptDelegate& Callback);
 };
@@ -456,14 +413,7 @@ public:
 	struct FScriptDelegate                             __EventClipErrorOccurred__Delegate;            // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineGameClipsInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineGameClipsInterfaceEOS"))
 	void NotifyEventClipErrorOccurred(const struct FScriptDelegate& InCallback);
 	void EventClipErrorOccurred(const class FString& InEpicAccountId, int32_t ClipId, class UErrorType* InErrorType);
 	void NotifyEventGeneralErrorOccurred(const struct FScriptDelegate& InCallback);
@@ -503,14 +453,7 @@ public:
 	uint32_t                                           bGameSessionUpdateInProgress : 1;              // 0x0330 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineGameInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineGameInterfaceEOS"))
 	bool AcceptGameInvite(uint8_t LocalUserNum, const class FName& SessionName);
 	bool FreeSearchResults(class UOnlineGameSearch* Search);
 	bool UpdateOnlineGame(const class FName& SessionName, class UOnlineGameSettings* UpdatedGameSettings, bool optionalBShouldRefreshOnlineData);
@@ -524,14 +467,7 @@ public:
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x00B8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlinePersistentAuthInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlinePersistentAuthInterfaceEOS"))
 	bool AuthWithNintendoAccountToken(uint8_t LocalUserNum, class FString& outNintendoAccountToken);
 	uint64_t GetTimeUntilAuthExpiration(uint8_t LocalUserNum);
 	class UDateTime* GetAuthExpirationTimestamp(uint8_t LocalUserNum);
@@ -639,14 +575,7 @@ public:
 	struct FScriptDelegate                             __OnFriendInviteAccepted__Delegate;            // 0x0698 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlinePlayerInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlinePlayerInterfaceEOS"))
 	void AddFriendInviteAcceptedDelegate(uint8_t LocalUserNum, const struct FScriptDelegate& InviteAccepted);
 	void OnFriendInviteAccepted(const struct FUniqueNetId& AcceptingPlayerId);
 	bool ReadBlockList(uint8_t LocalUserNum);
@@ -907,14 +836,7 @@ public:
 	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineStatsInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineStatsInterfaceEOS"))
 	bool RegisterStatGuid(const struct FUniqueNetId& PlayerID, class FString& outClientStatGuid);
 	class FString GetClientStatGuid();
 	void ClearRegisterHostStatGuidCompleteDelegateDelegate(const struct FScriptDelegate& RegisterHostStatGuidCompleteDelegate);
@@ -957,14 +879,7 @@ public:
 	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS"))
 	void ClearAllDelegates();
 	void ClearDeleteUserFileCompleteDelegate(const struct FScriptDelegate& DeleteUserFileCompleteDelegate);
 	void AddDeleteUserFileCompleteDelegate(const struct FScriptDelegate& DeleteUserFileCompleteDelegate);
@@ -1016,14 +931,7 @@ public:
 	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x0280 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.OnlineVoiceInterfaceEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineVoiceInterfaceEOS"))
 	bool SetVoiceReceiveVolume(float VoiceVolume);
 	bool UnmuteAll(uint8_t LocalUserNum);
 	bool MuteAll(uint8_t LocalUserNum, bool bAllowFriends);
@@ -1091,14 +999,7 @@ public:
 	struct FPointer                                    VfTable_FTickableObject;                       // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.VideoRecorderEOS");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.VideoRecorderEOS"))
 };
 
 // Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__LinkedAccount_0x1
@@ -1109,14 +1010,7 @@ public:
 	int32_t                                            LocalUserNum;                                  // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__LinkedAccount_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__LinkedAccount_0x1"))
 	void __OnlinePlayerInterfaceEOS__LinkedAccount_0x1(int32_t instance, const class FString& PlatformAuthTicket);
 };
 
@@ -1130,14 +1024,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1"))
 	void __OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1(bool bSuccess, const class FString& Code);
 };
 

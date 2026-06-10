@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: AkAudio_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -143,6 +144,18 @@ enum class EMusicSyncType : uint8_t
 # ========================================================================================= #
 */
 
+
+#ifndef STATIC_CLASS_GETTER
+#define STATIC_CLASS_GETTER(classPtr)                                                                                                      \
+    static UClass *StaticClass() {                                                                                                         \
+        static UClass *uClassPointer = nullptr;                                                                                            \
+                                                                                                                                           \
+        if (!uClassPointer)                                                                                                                \
+            uClassPointer = (classPtr);                                                                                                    \
+        return uClassPointer;                                                                                                              \
+    }
+#endif 
+
 // Class AkAudio.ActorFactoryAkAmbientSound
 // 0x000C (0x009C - 0x00A8)
 class UActorFactoryAkAmbientSound : public UActorFactory
@@ -152,14 +165,7 @@ public:
 	class UAkEvent*                                    AmbientEvent;                                  // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.ActorFactoryAkAmbientSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.ActorFactoryAkAmbientSound"))
 };
 
 // Class AkAudio.AkAmbientSound
@@ -174,14 +180,7 @@ public:
 	class UAkEvent*                                    PlayEvent;                                     // 0x0278 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkAmbientSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkAmbientSound"))
 };
 
 // Class AkAudio.AkBusActor
@@ -194,14 +193,7 @@ public:
 	EPinnedAxisType                                    PinnedAxis;                                    // 0x0278 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkBusActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkBusActor"))
 	void RegisterReflectionEmitter(const class FName& BusName, EBusEmitterType BusType);
 	void SetPinnedAxis(EPinnedAxisType AxisToPin);
 };
@@ -217,14 +209,7 @@ public:
 	uint32_t                                           bStopWhenOwnerDestroyed : 1;                   // 0x00B0 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkComponent"))
 };
 
 // Class AkAudio.AkDevice
@@ -243,14 +228,7 @@ public:
 	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkDevice");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkDevice"))
 	static void SetBusEffect(const class FName& BusName, const class FName& EffectSetting, int32_t optionalEffectSlot);
 	static void ResetSlapbackObjects();
 	static void SetSoundEnvironment(class AActor* Actor, EAkEnvironmentType EnvironmentType);
@@ -286,14 +264,7 @@ public:
 	class TArray<class UAkSwitch*>                     Arguments;                                     // 0x0060 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkDialogueEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkDialogueEvent"))
 };
 
 // Class AkAudio.AkEnvironments
@@ -308,14 +279,7 @@ public:
 	uint32_t                                           bActorEnvironmentDirty : 1;                    // 0x0088 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkEnvironments");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkEnvironments"))
 	void RemoveActorEnvironment(class AActor* TargetActor, class FString& outEnvironmentID);
 	void AddActorEnvironment(class AActor* TargetActor, struct FAkEnvironment& outEnvironment);
 	void AddLevelDefault(struct FAkEnvironment& outEnvironment);
@@ -330,14 +294,7 @@ public:
 	struct FAkEnvironment                              Environment;                                   // 0x02A8 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkEnvironmentVolume");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkEnvironmentVolume"))
 };
 
 // Class AkAudio.AkMusicAnalysis
@@ -360,14 +317,7 @@ public:
 	struct FScriptDelegate                             __EventMusicBar__Delegate;                     // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkMusicAnalysis");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkMusicAnalysis"))
 	static void UpdateSmoothedMusicInfo(float DeltaTime);
 	static void UpdateMusicInfo(struct FMusicAnalysisInfo& outNewValues);
 	static void OnNewTrack(int32_t NewBPM);
@@ -386,14 +336,7 @@ public:
 	struct FScriptDelegate                             __EventTrackEnd__Delegate;                     // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkMusicDevice");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkMusicDevice"))
 	static void Seek(class UAkSoundCue* Sound, float PositionSeconds);
 	static void SetRTCP(const class FName& Key, float Value);
 	static void StopPlayingID(int32_t PlayingID);
@@ -417,14 +360,7 @@ public:
 	EAttenuationType                                   AttenuationType;                               // 0x015D (0x0001) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkParamGroup");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkParamGroup"))
 	void SetSendToSlapbacks(bool bSend);
 	void SetControllerId(int32_t InID);
 	void EnableObjectAttenuation();
@@ -466,14 +402,7 @@ public:
 	struct FAkParamSet                                 StoredParameters;                              // 0x00F8 (0x00A0) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkPlaySoundComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkPlaySoundComponent"))
 	void SetActorParameter(const class FName& Key, class AActor* Value);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
 	void SetVectorParameter(const class FName& Key, const struct FVector& Value);
@@ -508,14 +437,7 @@ public:
 	struct FScriptDelegate                             __EventGearChange__Delegate;                   // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkRevPhysicsSimulation");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkRevPhysicsSimulation"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	static float InterpGearRatio(int32_t Gear, struct FAkRevSimUpdateParams& outSimUpdate);
 	static float GetGearRatio(struct FAkRevSimUpdateParams& outSimUpdate);
@@ -541,14 +463,7 @@ public:
 	uint32_t                                           bWasAttached : 1;                              // 0x00D8 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkRTPCDecayComponent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkRTPCDecayComponent"))
 };
 
 // Class AkAudio.AkSoundBanksInfo
@@ -561,14 +476,7 @@ public:
 	class UStringMap*                                  EventToBankMap;                                // 0x0080 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkSoundBanksInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkSoundBanksInfo"))
 	static class UAkSoundBanksInfo* Parse(const class FString& Text);
 	static class UAkSoundBanksInfo* LoadForNativePlatform();
 };
@@ -583,14 +491,7 @@ public:
 	class FString                                      StopEvent;                                     // 0x0078 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkSoundCue");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkSoundCue"))
 };
 
 // Class AkAudio.AkSoundSource
@@ -619,14 +520,7 @@ public:
 	struct FScriptDelegate                             __EventDuration__Delegate;                     // 0x0180 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkSoundSource");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkSoundSource"))
 	void eventSetSubtitlesEnabled(bool bValue);
 	void SetAttenuationScaling(EAttenuationType AttenuationType);
 	void ForceUpdatePosition();
@@ -649,14 +543,7 @@ class UAkSwitch : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkSwitch"))
 };
 
 // Class AkAudio.InterpTrackAkEvent
@@ -669,14 +556,7 @@ public:
 	float                                              SeekTimeSeconds;                               // 0x00D8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.InterpTrackAkEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.InterpTrackAkEvent"))
 };
 
 // Class AkAudio.InterpTrackAkRTPC
@@ -688,14 +568,7 @@ public:
 	class FString                                      Param;                                         // 0x00E8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.InterpTrackAkRTPC");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.InterpTrackAkRTPC"))
 };
 
 // Class AkAudio.InterpTrackInstAkEvent
@@ -706,14 +579,7 @@ public:
 	float                                              LastUpdatePosition;                            // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.InterpTrackInstAkEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.InterpTrackInstAkEvent"))
 };
 
 // Class AkAudio.InterpTrackInstAkRTPC
@@ -723,14 +589,7 @@ class UInterpTrackInstAkRTPC : public UInterpTrackInst
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.InterpTrackInstAkRTPC");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.InterpTrackInstAkRTPC"))
 };
 
 // Class AkAudio.SeqAct_AkClearBanks
@@ -740,14 +599,7 @@ class USeqAct_AkClearBanks : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkClearBanks");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkClearBanks"))
 };
 
 // Class AkAudio.SeqAct_AkEnvironment
@@ -759,14 +611,7 @@ public:
 	EAkEnvironmentTarget                               Target;                                        // 0x0180 (0x0001) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkEnvironment");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkEnvironment"))
 };
 
 // Class AkAudio.SeqAct_AkLoadBank
@@ -781,14 +626,7 @@ public:
 	int32_t                                            Signal;                                        // 0x0188 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkLoadBank");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkLoadBank"))
 };
 
 // Class AkAudio.SeqAct_AkPlayMusicWithCues
@@ -800,14 +638,7 @@ public:
 	class TArray<struct FMusicSyncEvent>               MusicSyncEvents;                               // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkPlayMusicWithCues");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPlayMusicWithCues"))
 	void eventTriggerEvents(const class FString& CueName);
 };
 
@@ -820,14 +651,7 @@ public:
 	uint32_t                                           bBGMusic : 1;                                  // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkPlaySound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPlaySound"))
 	void ToggleSoundFor(class AActor* A, bool bPlay);
 	void ToggleSound(bool bPlay);
 	void eventActivated();
@@ -843,14 +667,7 @@ public:
 	uint32_t                                           bHasSubtitles : 1;                             // 0x0190 (0x0004) [0x0001000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkPostEvent");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPostEvent"))
 	void eventHandleSoundCueFinished(class UAkSoundSource* Source, int32_t PlayingID);
 };
 
@@ -862,14 +679,7 @@ public:
 	class FString                                      Trigger;                                       // 0x0160 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkPostTrigger");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPostTrigger"))
 };
 
 // Class AkAudio.SeqAct_AkSetRTPCValue
@@ -882,14 +692,7 @@ public:
 	uint32_t                                           Running : 1;                                   // 0x018C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkSetRTPCValue");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkSetRTPCValue"))
 };
 
 // Class AkAudio.SeqAct_AkSetState
@@ -901,14 +704,7 @@ public:
 	class FString                                      State;                                         // 0x0170 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkSetState");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkSetState"))
 };
 
 // Class AkAudio.SeqAct_AkSetSwitch
@@ -920,14 +716,7 @@ public:
 	class FString                                      Switch;                                        // 0x0170 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkSetSwitch");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkSetSwitch"))
 };
 
 // Class AkAudio.SeqAct_AkStartAmbientSound
@@ -937,14 +726,7 @@ class USeqAct_AkStartAmbientSound : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkStartAmbientSound");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkStartAmbientSound"))
 };
 
 // Class AkAudio.SeqAct_AkStopAll
@@ -954,14 +736,7 @@ class USeqAct_AkStopAll : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkStopAll");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkStopAll"))
 };
 
 // Class AkAudio.AkAudioDevice
@@ -979,14 +754,7 @@ public:
 	uint8_t                                          UnknownData01[0x120];                        // 0x0090 (0x0120) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkAudioDevice");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkAudioDevice"))
 };
 
 // Class AkAudio.AkAmbientSoundActor
@@ -997,14 +765,7 @@ public:
 	class UAkPlaySoundComponent*                       PlaySoundComponent;                            // 0x0270 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.AkAmbientSoundActor");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkAmbientSoundActor"))
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
@@ -1017,14 +778,7 @@ public:
 	class FString                                      CueName;                                       // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqEvent_AkMusicCue");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqEvent_AkMusicCue"))
 };
 
 // Class AkAudio.SeqAct_AkPlaySoundAndSeek
@@ -1038,14 +792,7 @@ public:
 	class UAkSoundSource*                              SoundSource;                                   // 0x0170 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class AkAudio.SeqAct_AkPlaySoundAndSeek");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPlaySoundAndSeek"))
 	void ToggleSoundFor(class AActor* A, bool bPlay);
 	void ToggleSound(bool bPlay);
 	void eventActivated();

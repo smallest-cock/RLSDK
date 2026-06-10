@@ -1,17 +1,18 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 22 (v2.69)
-# Generated with CodeRedGenerator v1.1.5 on 05/12/2026 03:24PM
+# Rocket League SDK (RLSDK) Season 23 (v2.70)
+# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260506.26700.517210
-# Build Date: May  6 2026 07:48:39
+# Psyonix Build ID: 260602.75104.519749
+# Build Date: Jun  2 2026 21:29:27
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
+
 #pragma once
 
 #ifdef _MSC_VER
@@ -24,20 +25,48 @@
 # ========================================================================================= #
 */
 
+#ifndef CONST_ReservationType_Reconnect
 #define CONST_ReservationType_Reconnect                   'Reconnect'
+#endif
+#ifndef CONST_ReservationType_FriendJoin
 #define CONST_ReservationType_FriendJoin                  'FriendJoin'
+#endif
+#ifndef CONST_ReservationType_JoinPrivateMatch
 #define CONST_ReservationType_JoinPrivateMatch            'JoinPrivate'
+#endif
+#ifndef CONST_MaxPrivateMatchPasswordLength
 #define CONST_MaxPrivateMatchPasswordLength               16
+#endif
+#ifndef CONST_MaxPrivateMatchNameLength
 #define CONST_MaxPrivateMatchNameLength                   16
+#endif
+#ifndef CONST_LocalPlayersBroadcastDelay
 #define CONST_LocalPlayersBroadcastDelay                  0.1f
+#endif
+#ifndef CONST_QueueMax
 #define CONST_QueueMax                                    100
+#endif
+#ifndef CONST_PrimaryControllerId
 #define CONST_PrimaryControllerId                         0
+#endif
+#ifndef CONST_InMatchmakingID
 #define CONST_InMatchmakingID                             -2
+#endif
+#ifndef CONST_HttpContentType
 #define CONST_HttpContentType                             "plain/text"
+#endif
+#ifndef CONST_NumFriendsPerRequest
 #define CONST_NumFriendsPerRequest                        100
+#endif
+#ifndef CONST_MaxPing
 #define CONST_MaxPing                                     1.0f
+#endif
+#ifndef CONST_XpTitleID
 #define CONST_XpTitleID                                   'XP'
+#endif
+#ifndef CONST_ClosedReason_DuplicateLogin
 #define CONST_ClosedReason_DuplicateLogin                 "DuplicateLogin"
+#endif
 
 /*
 # ========================================================================================= #
@@ -615,6 +644,18 @@ enum class EWebRequestState : uint8_t
 # ========================================================================================= #
 */
 
+
+#ifndef STATIC_CLASS_GETTER
+#define STATIC_CLASS_GETTER(classPtr)                                                                                                      \
+    static UClass *StaticClass() {                                                                                                         \
+        static UClass *uClassPointer = nullptr;                                                                                            \
+                                                                                                                                           \
+        if (!uClassPointer)                                                                                                                \
+            uClassPointer = (classPtr);                                                                                                    \
+        return uClassPointer;                                                                                                              \
+    }
+#endif 
+
 // Class ProjectX._SharedHelpers
 // 0x0000 (0x0060 - 0x0060)
 class U_SharedHelpers : public UObject
@@ -622,14 +663,7 @@ class U_SharedHelpers : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX._SharedHelpers");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX._SharedHelpers"))
 	static int32_t ScoreDeltaFromDefault(class UObject* Object);
 	static void DrawShadowedText(class UCanvas* Canvas, const class FString& Text, int32_t optionalShadowOffsetX, int32_t optionalShadowOffsetY, int32_t optionalShadowAlpha);
 	static bool IsInTransientPackage(class UObject* Obj);
@@ -649,14 +683,7 @@ public:
 	struct FScriptDelegate                             __OnTimer__Delegate;                           // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX._Types_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX._Types_X"))
 	static void RenderProfileRecordSample(struct FRenderProfile& outProfile);
 	static void JoinCredentialsFromString(const class FString& Credentials, class FString& outJoinName, class FString& outJoinPassword);
 	static class FString JoinCredentialsToString(const class FString& JoinName, const class FString& JoinPassword);
@@ -679,14 +706,7 @@ public:
 	uint32_t                                           bIgnoreScriptAttach : 1;                       // 0x00A0 (0x0004) [0x0000000000002002] [0x00000002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ActorComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ActorComponent_X"))
 	void Reattach();
 	void eventTick(float DeltaTime);
 	void eventDetached();
@@ -713,14 +733,7 @@ public:
 	class TArray<class AActor*>                        DamagedActors;                                 // 0x00D0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ExplosionComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ExplosionComponent_X"))
 	void eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, const struct FTraceHitInfo& ExtraHitInfo, float optionalDamageScale);
 	void eventDetached();
 };
@@ -747,14 +760,7 @@ public:
 	float                                              LifeTime;                                      // 0x00F0 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ExplosionHitHandler_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ExplosionHitHandler_X"))
 	void Destroy();
 	void Init(class UActorComponent_X* ExplosionGoal);
 	void eventProcessHit(class AActor* Victim, const struct FVector& HitLocation, float DeltaTime, float optionalDamageScale, struct FContactInformation& outContactInfo);
@@ -773,14 +779,7 @@ public:
 	class UMeshComponent*                              MeshComp;                                      // 0x00C0 (0x0008) [0x0000004004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MICParamDispenserComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MICParamDispenserComponent_X"))
 	bool __MICParamDispenserComponent_X__Attached_0x1(const struct FFXAttachment& A);
 	void eventAttached();
 	void SetActorParameter(const class FName& Key, class AActor* Value);
@@ -832,14 +831,7 @@ public:
 	class TArray<struct FShakeReceiver>                Receivers;                                     // 0x01A8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ShakeComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ShakeComponent_X"))
 	bool GetColorParameter(const class FName& InName, struct FColor& outOutColor);
 	bool GetVectorParameter(const class FName& InName, struct FVector& outOutVector);
 	bool GetFloatParameter(const class FName& InName, float& outOutFloat);
@@ -865,14 +857,7 @@ public:
 	struct FPointer                                    pAdHoc;                                        // 0x0068 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AdHocBeacon_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AdHocBeacon_X"))
 	int32_t GetNodeCountMax();
 	void AdHocJoinMatch();
 	void AdHocCreateMatch();
@@ -922,14 +907,7 @@ public:
 	struct FScriptDelegate                             __EventFXStatePopped__Delegate;                // 0x0310 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FXActor_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FXActor_X"))
 	class FName __FXActor_X__PrintDebugInfo_0x1(class UFXActorEvent_X* State);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void eventDumpDebugInfo();
@@ -988,14 +966,7 @@ public:
 	float                                              EndTime;                                       // 0x00D8 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimateParametersComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimateParametersComponent_X"))
 };
 
 // Class ProjectX.ArchetypePrefab_X
@@ -1007,14 +978,7 @@ public:
 	class TArray<class AActor*>                        ArchetypeInstances;                            // 0x0278 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ArchetypePrefab_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ArchetypePrefab_X"))
 };
 
 // Class ProjectX.ArchetypeSpawnPoint_X
@@ -1037,14 +1001,7 @@ public:
 	struct FScriptDelegate                             __EventSpawned__Delegate;                      // 0x02C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ArchetypeSpawnPoint_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ArchetypeSpawnPoint_X"))
 	void OnSpawned(class AActor* Spawned);
 	class AActor* DoSpawn();
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -1060,14 +1017,7 @@ class UAws4Signature_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Aws4Signature_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Aws4Signature_X"))
 	static void SignRequest(class UHttpRequestInterface* HTTPRequest);
 };
 
@@ -1083,14 +1033,7 @@ public:
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationBeacon_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationBeacon_X"))
 	void __ReservationBeacon_X__Construct_0x4();
 	void __ReservationBeacon_X__Construct_0x3(class UPsyNetBeaconConnection_X* Connection, class UObject* Message);
 	void __ReservationBeacon_X__Construct_0x2(class UPsyNetBeacon_X* instance, class UPsyNetBeaconConnection_X* Connection);
@@ -1120,14 +1063,7 @@ class UBeaconMessage_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BeaconMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BeaconMessage_X"))
 	class UBeaconMessage_X* Broadcast();
 	class UBeaconMessage_X* Send(class UIReservationConnection_X* Connection);
 };
@@ -1142,14 +1078,7 @@ public:
 	struct FScriptDelegate                             __OnCrumbAddedDelegate__Delegate;              // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BreadcrumbBroadcaster_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BreadcrumbBroadcaster_X"))
 	void PollCrumbs();
 	void Unsubscribe(class UObject* Subscriber);
 	void Subscribe(const struct FScriptDelegate& Callback);
@@ -1177,14 +1106,7 @@ public:
 	uint32_t                                           bNewData : 1;                                  // 0x00B8 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CachedWebData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CachedWebData_X"))
 	class FString GetText();
 	void SetData(const class TArray<uint8_t>& NewData, const class FString& NewETag, const class FString& NewContentType, const class FString& NewSignature);
 };
@@ -1216,14 +1138,7 @@ public:
 	struct FScriptDelegate                             __EventCameraStateChanged__Delegate;           // 0x06B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Camera_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Camera_X"))
 	void __Camera_X__Destroyed_0x1(class UCameraState_X* S);
 	void Destroyed();
 	void eventOnViewTargetChanged();
@@ -1273,14 +1188,7 @@ public:
 	uint32_t                                           bDirtyTransform : 1;                           // 0x00B0 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraAttachmentComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraAttachmentComponent_X"))
 };
 
 // Class ProjectX.CanvasTexture_X
@@ -1291,14 +1199,7 @@ public:
 	struct FScriptDelegate                             __Draw__Delegate;                              // 0x0198 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CanvasTexture_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CanvasTexture_X"))
 	void Draw(class UCanvas* C);
 };
 
@@ -1315,14 +1216,7 @@ public:
 	class UCanvasTexture_X*                            Texture;                                       // 0x00B8 (0x0008) [0x000000000440000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CanvasTextureComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CanvasTextureComponent_X"))
 	void OnDraw(class UCanvas* C);
 };
 
@@ -1345,14 +1239,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerCameraChange__Delegate;           // 0x0878 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlayerController_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerController_X"))
 	void ToggleDebugCamera();
 	void DebugCrosshair();
 	void DebugKill();
@@ -1417,14 +1304,7 @@ public:
 	struct FScriptDelegate                             __EventDelegateTest__Delegate;                 // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CheatManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CheatManager_X"))
 	void HandleImageDownloaded(const struct FOnlineImageDownload& Image);
 	void DownloadImage(const class FString& URL);
 	void RandomSleep(float MinDelay, float MaxDelay, float MinSleep, float MaxSleep);
@@ -1453,14 +1333,7 @@ class UCheatObject_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CheatObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CheatObject_X"))
 };
 
 // Class ProjectX.ColorPalette_X
@@ -1475,14 +1348,7 @@ public:
 	class TArray<struct FLinearColor>                  Colors;                                        // 0x0070 (0x0010) [0x0000000000420003] (CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ColorPalette_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ColorPalette_X"))
 	int32_t IntColorToID(int32_t ColorInt);
 	int32_t IdToColorInt(int32_t ColorID);
 	struct FColorPosition GetColorPosition(int32_t ColorID);
@@ -1498,14 +1364,7 @@ class UCompression_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Compression_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Compression_X"))
 	bool Uncompress(class TArray<uint8_t>& outCompressed, class TArray<uint8_t>& outUncompressed);
 	bool Compress(class TArray<uint8_t>& outUncompressed, class TArray<uint8_t>& outCompressed);
 };
@@ -1525,14 +1384,7 @@ public:
 	class FName                                        DefaultPresetName;                             // 0x00A0 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ControlPreset_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ControlPreset_X"))
 	static class FName GetDefaultPresetName();
 	class TArray<struct FPlayerBinding> GetGamepadBindings();
 	class TArray<struct FPlayerBinding> GetPCBindings();
@@ -1545,14 +1397,7 @@ class UCrashReport_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CrashReport_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CrashReport_X"))
 	void eventHandleHttpRequestComplete(class UHttpRequestInterface* Request, class UHttpResponseInterface* Response, bool bSuccess);
 };
 
@@ -1563,14 +1408,7 @@ class UCRC_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CRC_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CRC_X"))
 	static int32_t CrcBytes(class TArray<uint8_t>& outBytes);
 	static int32_t CrcString(const class FString& Text);
 };
@@ -1583,14 +1421,7 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x00A1 (0x0007) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DistributionFloatShakeParameter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DistributionFloatShakeParameter_X"))
 };
 
 // Class ProjectX.EffectsMap_X
@@ -1601,14 +1432,7 @@ public:
 	class TArray<struct FEffectsMapping>               Effects;                                       // 0x0060 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EffectsMap_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EffectsMap_X"))
 	struct FEffectsMapping GetEffects(class UPhysicalMaterial* PhysMat);
 };
 
@@ -1636,14 +1460,7 @@ public:
 	struct FScriptDelegate                             __EventUndockedChanged__Delegate;              // 0x0158 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EngineShare_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EngineShare_X"))
 	void AddDynamicallyLoadedPackages(class TArray<struct FDynamicallyLoadedPackage>& outOutPackages);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void eventPreExit();
@@ -1689,14 +1506,7 @@ public:
 	class TArray<class FString>                        MessageVars;                                   // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOS_ErrorResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOS_ErrorResponse"))
 };
 
 // Class ProjectX.EOS_GetAccountsResponse
@@ -1707,14 +1517,7 @@ public:
 	class TArray<struct FEOSAccountInfo>               Accounts;                                      // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOS_GetAccountsResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOS_GetAccountsResponse"))
 };
 
 // Class ProjectX.EOS_AccountSummaryResponse
@@ -1729,14 +1532,7 @@ public:
 	struct FAccountSettings                            Settings;                                      // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOS_AccountSummaryResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOS_AccountSummaryResponse"))
 };
 
 // Class ProjectX.EOS_ManageBlockListResponse
@@ -1748,14 +1544,7 @@ public:
 	class FString                                      Created;                                       // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOS_ManageBlockListResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOS_ManageBlockListResponse"))
 };
 
 // Class ProjectX.EOS_ManageFriendsListResponse
@@ -1766,14 +1555,7 @@ public:
 	class FString                                      Status;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOS_ManageFriendsListResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOS_ManageFriendsListResponse"))
 };
 
 // Class ProjectX.EOSMetricEvent_X
@@ -1784,14 +1566,7 @@ public:
 	class FName                                        EventName;                                     // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOSMetricEvent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSMetricEvent_X"))
 };
 
 // Class ProjectX.EOSMetrics_X
@@ -1811,14 +1586,7 @@ public:
 	class FString                                      StreamingServiceType;                          // 0x00C0 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOSMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSMetrics_X"))
 	void __EOSMetrics_X__Init_0x1();
 	void __EOSMetrics_X__Init_0x2(class UEOSMetricsConfig_X* EpicMetric);
 	class FString GetUserIdNative(const struct FUniqueNetId& LocalId, const class FString& EpicID);
@@ -1843,14 +1611,7 @@ public:
 	class UICabinedOrGuest*                            CabinedOrGuest_Interface;                      // 0x04E0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalPlayer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalPlayer_X"))
 	bool SpawnPlayActor(const class FString& URL, class FString& outOutError);
 	void eventNotifyServerConnectionOpen();
 	void NotifyOnValidPlayerController(const struct FScriptDelegate& Callback, class UClass* optionalPCClass);
@@ -1869,14 +1630,7 @@ public:
 	uint32_t                                           bDebug : 1;                                    // 0x0060 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.StateObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StateObject_X"))
 	void InitExecution();
 	void eventDestroyed();
 	void Destroy();
@@ -1895,14 +1649,7 @@ public:
 	struct FScriptDelegate                             __EventEosInitTimeout__Delegate;               // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Online_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Online_X"))
 	void __Online_X__InitializeEOS_0x1(class UOSSConfig_X* OSSConfig);
 	void __Online_X__InitializeEOS_0x2(class UEpicConfig_X* EpicConfig);
 	class UOnlineSubsystem* GetOrCreateEOS(class FString& outSandboxId, class FString& outDeploymentId);
@@ -1977,14 +1724,7 @@ public:
 	struct FScriptDelegate                             __EventCabinedModeStatusKnown__Delegate;       // 0x0260 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayer_X"))
 	void __OnlinePlayer_X__OnInit_0x1(class UOnlinePlayerAuthentication_X* instance);
 	void __OnlinePlayer_X__UpdatePsyNetEnabled_0x1(class UBanMessage_X* instance);
 	void __OnlinePlayer_X__InitPlayer_0x1();
@@ -2077,14 +1817,7 @@ public:
 	struct FScriptDelegate                             __GetOutgoingFriendsCallback__Delegate;        // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpicFriendsPlugin_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicFriendsPlugin_X"))
 	void __EpicFriendsPlugin_X__GetBlockList_0x1(class UEOS_GetAccountsResponse* R, class UError* E, int32_t ResponseCode);
 	void __EpicFriendsPlugin_X__GetIncomingFriendRequests_0x1(class UEOS_GetAccountsResponse* R, class UError* E, int32_t ResponseCode);
 	void __EpicFriendsPlugin_X__GetOutgoingFriendRequests_0x1(class UEOS_GetAccountsResponse* R, class UError* E, int32_t ResponseCode);
@@ -2153,14 +1886,7 @@ public:
 	struct FScriptDelegate                             __EventConnectionStatusChanged__Delegate;      // 0x01F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerAuthentication_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerAuthentication_X"))
 	void RequestAuthTicket();
 	void GoToRequestEpicAuthTicket();
 	void RequestEpicAuthTicket();
@@ -2242,14 +1968,7 @@ public:
 	struct FScriptDelegate                             __EventCreatedEpicGamesAccount__Delegate;      // 0x0170 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpicLogin_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicLogin_X"))
 	void __EpicLogin_X__HandleLoginChanged_0x2(const class FString& Ticket, const class FString& Id, class UError* Err);
 	void __EpicLogin_X__HandleLoginFailed_0x1(const class FString& Ticket, const class FString& Id, class UError* Err);
 	void __EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x2(const class FString& Ticket, const class FString& Id, class UError* Err);
@@ -2317,14 +2036,7 @@ class UEpochTimers_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpochTimers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpochTimers_X"))
 	static bool IsActive(const struct FScriptDelegate& Callback);
 	static void ClearAll(class UObject* Obj);
 	static void Clear(const struct FScriptDelegate& Callback, const struct FScriptDelegate& optionalCallback2);
@@ -2342,14 +2054,7 @@ public:
 	class TArray<struct FEpochTimer>                   Timers;                                        // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpochTimerTick_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpochTimerTick_X"))
 };
 
 // Class ProjectX.Errors_X
@@ -2441,14 +2146,7 @@ public:
 	class UErrorType*                                  RankedCriteriaUnmet;                           // 0x0360 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Errors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Errors_X"))
 	static bool DisplayPlatformError(class UErrorType* InErrorType);
 };
 
@@ -2473,14 +2171,7 @@ public:
 	uint32_t                                           HasResponse : 1;                               // 0x00F0 (0x0004) [0x0000000000000000] [0x00000002] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EulaTextResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EulaTextResponse"))
 };
 
 // Class ProjectX.EventRecorder_X
@@ -2503,14 +2194,7 @@ public:
 	int32_t                                            AppEventCount;                                 // 0x00CC (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EventRecorder_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EventRecorder_X"))
 	void eventMetricsNotSent(int32_t Count);
 	void eventMetricsFlood(const class FString& LastEventName);
 	void SetLevelSessionID(const struct FGuid& Id);
@@ -2526,14 +2210,7 @@ class UMetricsSystem_X : public UEventRecorder_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MetricsSystem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MetricsSystem_X"))
 	void eventConstruct();
 	static void HandleUnpause(class UNetMode_Networked* NetMode, class UMetricsSystem_X* Metrics, class UPauseMetricsState_X* State);
 	static void HandlePause(class UNetMode_Networked* NetMode, class UMetricsSystem_X* Metrics, class UPauseMetricsState_X* State);
@@ -2547,14 +2224,7 @@ public:
 	class FString                                      Category;                                      // 0x0070 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EventRecorderGroup_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EventRecorderGroup_X"))
 	class FString VectorToString(const struct FVector& V);
 	static void RecordFunction(int32_t optionalVersion);
 	class UEventRecorder_X* GetEventRecorder();
@@ -2567,14 +2237,7 @@ class UMetricsGroup_X : public UEventRecorderGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MetricsGroup_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MetricsGroup_X"))
 	class UEventRecorder_X* GetEventRecorder();
 };
 
@@ -2587,14 +2250,7 @@ public:
 	class TArray<class FString>                        UnstableConnectionsQueue;                      // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMetrics_X"))
 	static EConnectionType_X GetConnectionType();
 	void UnstableConnections(class TArray<class FString>& outAddresses);
 	void RecordUnstableConnections();
@@ -2621,14 +2277,7 @@ public:
 	float                                              NormalizedLifetime;                            // 0x0080 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ExplosionCollisionShapes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ExplosionCollisionShapes_X"))
 	void Destroy();
 	void Init();
 };
@@ -2643,14 +2292,7 @@ public:
 	struct FVector                                     EndSize;                                       // 0x0094 (0x000C) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BoxCollisionShape_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BoxCollisionShape_X"))
 	struct FVector GetCurrentSize();
 	struct FBox GetCurrentBox();
 };
@@ -2663,14 +2305,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GoalCollisionShape_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GoalCollisionShape_X"))
 };
 
 // Class ProjectX.SphereCollisionShape_X
@@ -2683,14 +2318,7 @@ public:
 	float                                              EndRadius;                                     // 0x008C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SphereCollisionShape_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SphereCollisionShape_X"))
 	float GetCurrentRadius();
 };
 
@@ -2707,14 +2335,7 @@ public:
 	struct FFakeData4                                  Data4;                                         // 0x0260 (0x0120) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FakeData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FakeData_X"))
 	static int32_t RandomizeValues(class UObject* Target, int32_t optionalInRandomSeed);
 	static class UFakeData_X* RandomizeFakeData(class UFakeData_X* FakeData, int32_t optionalInRandomSeed);
 	static class UFakeData_X* GenerateFakeData(int32_t optionalInRandomSeed);
@@ -2729,14 +2350,7 @@ public:
 	class FString                                      Command;                                       // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FuncTestCommandPair_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FuncTestCommandPair_X"))
 };
 
 // Class ProjectX.FuncTestDesc_X
@@ -2749,14 +2363,7 @@ public:
 	class TArray<class UFuncTestGroup_X*>              Groups;                                        // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FuncTestDesc_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FuncTestDesc_X"))
 };
 
 // Class ProjectX.FuncTestGroup_X
@@ -2767,14 +2374,7 @@ public:
 	class TArray<class UFuncTestCommandPair_X*>        Commands;                                      // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FuncTestGroup_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FuncTestGroup_X"))
 };
 
 // Class ProjectX.FXActorEvent_X
@@ -2784,14 +2384,7 @@ class UFXActorEvent_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FXActorEvent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FXActorEvent_X"))
 };
 
 // Class ProjectX.FXAttachmentTraitBase_X
@@ -2801,14 +2394,7 @@ class UFXAttachmentTraitBase_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FXAttachmentTraitBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FXAttachmentTraitBase_X"))
 	class UActorComponent* GetComponent();
 	void eventInit();
 };
@@ -2820,14 +2406,7 @@ class UGameEngine_X : public UGameEngine
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameEngine_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameEngine_X"))
 	void __GameEngine_X__Construct_0x1(const class FString& InURL);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void eventOnlineSubsystemInitialized();
@@ -2847,14 +2426,7 @@ public:
 	struct FScriptDelegate                             __EventInit__Delegate;                         // 0x04C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameInfo_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameInfo_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void eventClientMapLoadFail(const struct FUniqueNetId& PlayerID, const class FString& MapName);
 	void RemovePauser(class APlayerController* PC, bool optionalBForceRemove);
@@ -2897,14 +2469,7 @@ public:
 	uint32_t                                           bHidden : 1;                                   // 0x0060 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameSetting_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameSetting_X"))
 	bool __GameSetting_X__IsSettingHidden_0x1(const struct FGameSettingHidingOverride& SO);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	bool IsSettingHidden();
@@ -2929,14 +2494,7 @@ public:
 	struct FColor                                      ColorOverride;                                 // 0x00AC (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameSettingCategory_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameSettingCategory_X"))
 	bool __GameSettingCategory_X__GetGameSettingIndex_0x1(class UGameSetting_X* GS);
 	bool IsHiddenWithGamemode(const class FName& GamemodeName);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
@@ -2965,14 +2523,7 @@ public:
 	struct FScriptDelegate                             __EventFocusChanged__Delegate;                 // 0x02C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameViewportClient_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameViewportClient_X"))
 	bool HasFocus();
 	void OnPrimaryPlayerSwitch(class ULocalPlayer* OldPrimaryPlayer, class ULocalPlayer* NewPrimaryPlayer);
 	bool ForceRemovePlayer(class ULocalPlayer* ExPlayer);
@@ -3012,14 +2563,7 @@ class UGeForceNow_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GeForceNow_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GeForceNow_X"))
 	static bool IsStreaming();
 };
 
@@ -3038,14 +2582,7 @@ public:
 	int32_t                                            RowIndex;                                      // 0x0090 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxDataRow_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxDataRow_X"))
 	class UGFxObject* FlashEventObject();
 	class FString FlashEventString();
 	float FlashEventFloat();
@@ -3064,14 +2601,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxDataSingleton_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxDataSingleton_X"))
 };
 
 // Class ProjectX.GFxShell_X
@@ -3099,14 +2629,7 @@ public:
 	struct FScriptDelegate                             __EventReceivedInput__Delegate;                // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxShell_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxShell_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void SetMouseKeyPressed(const class FName& Key, bool bPressed);
 	void HandleOnlineSubSet();
@@ -3148,14 +2671,7 @@ public:
 	uint32_t                                           bDebugGetValue : 1;                            // 0x00E0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxDataStore_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxDataStore_X"))
 	void ExportFakeData(const class FName& optionalInTableName);
 	void PrintData(const class FName& optionalInTableName);
 	int32_t GetObjectRowW(class UGFxDataRow_X* O);
@@ -3204,14 +2720,7 @@ public:
 	struct FScriptDelegate                             __EventGameSessionEnded__Delegate;             // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxEngine_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxEngine_X"))
 	void RequestGarbageCollection(EGFxCollectionMode optionalMode, bool optionalBImmediate);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void eventOnGameSessionEnded();
@@ -3256,14 +2765,7 @@ public:
 	struct FScriptDelegate                             __EventInputCaptureChanged__Delegate;          // 0x0320 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxMoviePlayer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxMoviePlayer_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void SetAllowAnyPlayerInput(bool bAllow);
 	bool PopString(const class FString& Value, class TArray<class FString>& outItems);
@@ -3294,14 +2796,7 @@ public:
 	int32_t                                            Value[12];                                     // 0x0060 (0x0030) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxObjectReference_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxObjectReference_X"))
 };
 
 // Class ProjectX.GFxDataCallback_X
@@ -3315,14 +2810,7 @@ public:
 	EDataCallbackType                                  Type;                                          // 0x00A4 (0x0001) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxDataCallback_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxDataCallback_X"))
 };
 
 // Class ProjectX.GFxSoundPack_X
@@ -3335,14 +2823,7 @@ public:
 	uint32_t                                           bHasSubtitles : 1;                             // 0x0080 (0x0004) [0x0001000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxSoundPack_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxSoundPack_X"))
 	bool ToggleSound(int32_t Idx, class AActor* Target, bool bPlay);
 	void StopAll(class AActor* Target);
 	bool StopSound(const class FName& SoundName, class AActor* Target);
@@ -3356,14 +2837,7 @@ class UHashes_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Hashes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Hashes_X"))
 	static int32_t HashInt(int32_t Value);
 };
 
@@ -3374,14 +2848,7 @@ class UIFuncTestManager_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.IFuncTestManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.IFuncTestManager_X"))
 };
 
 // Class ProjectX.InterpComponent_X
@@ -3398,14 +2865,7 @@ public:
 	class TArray<struct FAttachment>                   Attachments;                                   // 0x0168 (0x0010) [0x0000000000680002] (CPF_Const | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.InterpComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.InterpComponent_X"))
 	void DetachComponent(class UActorComponent* Component);
 	void AttachComponent(class UActorComponent* Component, const struct FVector& optionalRelativeLocation, const struct FRotator& optionalRelativeRotation, const struct FVector& optionalRelativeScale);
 };
@@ -3417,14 +2877,7 @@ class UIReservationConnection_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.IReservationConnection_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.IReservationConnection_X"))
 };
 
 // Class ProjectX.JsonTests_X
@@ -3434,14 +2887,7 @@ class UJsonTests_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.JsonTests_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.JsonTests_X"))
 	static bool ToJsonAndBack(class UObject* Target);
 	static void RunJsonTests(int32_t optionalRandomSeed);
 };
@@ -3462,14 +2908,7 @@ public:
 	int32_t                                            MaxPacketSize;                                 // 0x00A0 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanBeacon_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanBeacon_X"))
 	bool BroadcastMessage(class UObject* Message);
 	bool BroadcastData(class TArray<uint8_t>& outData);
 	void Stop();
@@ -3491,14 +2930,7 @@ public:
 	float                                              AttachTime;                                    // 0x0338 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LensFlareComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LensFlareComponent_X"))
 	void SetActorParameter(const class FName& Key, class AActor* Value);
 	void SetLinearColorParameter(const class FName& Key, const struct FLinearColor& Value);
 	void SetVectorParameter(const class FName& Key, const struct FVector& Value);
@@ -3514,14 +2946,7 @@ public:
 	struct FMap_Mirror                                 PlayerMap;                                     // 0x0070 (0x0050) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LinkedAccountMap_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LinkedAccountMap_X"))
 	bool Contains(struct FUniqueNetId& outKey);
 	void Clear(int32_t optionalExpectedElements);
 	void Remove(struct FUniqueNetId& outKey);
@@ -3544,19 +2969,13 @@ public:
 	class TArray<struct FPointer>                      ExportTasks;                                   // 0x0088 (0x0010) [0x0000000000103000] (CPF_Native | CPF_Transient)
 	class TArray<struct FCacheExportCallbackData>      ExportCallbacks;                               // 0x0098 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	uint32_t                                           bDebug : 1;                                    // 0x00A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           GLocalCacheCommitPending : 1;                  // 0x00A8 (0x0004) [0x0000000000001000] [0x00000002] (CPF_Native)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventImportFinished__Delegate;               // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventExportFinished__Delegate;               // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalCache_X"))
 	void Delete(const class FString& Path);
 	EFlushResult Flush(float TimeoutSeconds);
 	bool HasActiveTasks();
@@ -3582,14 +3001,7 @@ public:
 	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MapFlythroughProfiler_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MapFlythroughProfiler_X"))
 	void SetupPlayers();
 	void eventPostBeginPlay();
 	void EventFinished(class AMapFlythroughProfiler_X* Profiler);
@@ -3603,14 +3015,7 @@ public:
 	class UErrorType*                                  SwitchServiceMaintenance;                      // 0x0080 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NNXErrors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NNXErrors_X"))
 };
 
 // Class ProjectX.OnlineConfig_X
@@ -3623,14 +3028,7 @@ public:
 	class TArray<struct FModifierSubscription>         AllSubscriptions;                              // 0x0068 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineConfig_X"))
 	void UnsubscribeModifiers();
 	void ModifyObjects(class UClass* ObjClass, const struct FScriptDelegate& ApplyCallback, const struct FScriptDelegate& optionalResetCallback);
 	void Undo();
@@ -3651,14 +3049,7 @@ public:
 	int32_t                                            PingsPerSecond;                                // 0x008C (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BeaconConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BeaconConfig_X"))
 };
 
 // Class ProjectX.ClassPropertyConfig_X
@@ -3669,14 +3060,7 @@ public:
 	class TArray<struct FPropertyOverride>             Overrides;                                     // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClassPropertyConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClassPropertyConfig_X"))
 	void Apply();
 };
 
@@ -3688,14 +3072,7 @@ public:
 	class TArray<struct FContentPair>                  ContentMap;                                    // 0x0078 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ContentConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ContentConfig_X"))
 	void Undo();
 	void Apply();
 	static bool IsContentEncrypted(const class FName& PackageName);
@@ -3717,14 +3094,7 @@ public:
 	uint32_t                                           bAllowCrossplayTextChat : 1;                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CrossplayConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CrossplayConfig_X"))
 	bool CanInteractWithCrossplayDisabled(EOnlinePlatform Platform1, EOnlinePlatform Platform2);
 	class TArray<uint8_t> GetDisabledCrossplayGroup(EOnlinePlatform PlayerPlatform);
 	bool PlatformsShareGroup(EOnlinePlatform Platform1, EOnlinePlatform Platform2);
@@ -3746,14 +3116,7 @@ public:
 	int32_t                                            UnstableConnectionsTimePeriodSeconds;          // 0x00A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EventRecorderConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EventRecorderConfig_X"))
 };
 
 // Class ProjectX.LocalizationConfig_X
@@ -3764,15 +3127,24 @@ public:
 	class TArray<struct FLocOverride>                  Overrides;                                     // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalizationConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalizationConfig_X"))
 	void Apply();
+};
+
+// Class ProjectX.OSSConfig_X
+// 0x0010 (0x0078 - 0x0088)
+class UOSSConfig_X : public UOnlineConfig_X
+{
+public:
+	uint32_t                                           bEnablePresence : 1;                           // 0x0078 (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
+	uint32_t                                           bWin64OptimizedKeyPolling : 1;                 // 0x0078 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bUseSteamControllerCache : 1;                  // 0x0078 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	float                                              EosInitTimeoutSeconds;                         // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              GdkUpdateDlcTimeoutSeconds;                    // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            GdkMaxConcurrentDlcLicenseRequests;            // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OSSConfig_X"))
 };
 
 // Class ProjectX.PsyNetConfig_X
@@ -3798,14 +3170,7 @@ public:
 	EPsyNetEnvironment                                 PsyNetEnvironment;                             // 0x00C0 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetConfig_X"))
 };
 
 // Class ProjectX.PsyNetRetryConfig_X
@@ -3818,14 +3183,7 @@ public:
 	class TArray<class URetryPolicy_X*>                ReAuthPolicies;                                // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetRetryConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetRetryConfig_X"))
 	class URetryDelay_X* FindReAuthDelay(const class FString& Service, const class FName& Error);
 	class URetryDelay_X* FindRetryDelay(const class FString& Service, const class FName& Error);
 	class URetryPolicy_X* FindReAuthPolicy(const class FString& Service, const class FName& Error);
@@ -3842,14 +3200,7 @@ public:
 	int32_t                                            MaxRPCsPerBatch;                               // 0x0098 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPCConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPCConfig_X"))
 	bool IsRPCDisabled(class URPC_X* RPC);
 };
 
@@ -3874,14 +3225,7 @@ public:
 	float                                              MinSecondsUntilConnectionCheck;                // 0x00A0 (0x0004) [0x0000000000004001] (CPF_Edit | CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerConfig_X"))
 };
 
 // Class ProjectX.OnlineFriendMap_X
@@ -3892,14 +3236,7 @@ public:
 	struct FMap_Mirror                                 PlayerMap;                                     // 0x0070 (0x0050) [0x0000000000001000] (CPF_Native)  
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineFriendMap_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineFriendMap_X"))
 	void ValueArray(class TArray<struct FOnlineFriend>& outOutArray);
 	void AppendArray(class TArray<struct FOnlineFriend>& outInArray);
 	void CopyArray(class TArray<struct FOnlineFriend>& outInArray);
@@ -3924,14 +3261,7 @@ public:
 	class FString                                      GameTagsDelimiter;                             // 0x0188 (0x0010) [0x0000000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameSearch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameSearch_X"))
 	bool GetStringProperty(int32_t PropertyId, class FString& outValue);
 	class FString eventGetExclusiveGameTags();
 	class FString eventGetInclusiveGameTags();
@@ -3959,14 +3289,7 @@ public:
 	struct FScriptDelegate                             __EventNumPlayersUpdated__Delegate;            // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameSettings_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameSettings_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	bool Equals(class UOnlineGameSettings_X* OtherGameSettings);
 	void CalculateMinAndMaxNumPlayers();
@@ -3998,14 +3321,7 @@ public:
 	struct FScriptDelegate                             __EventNewText__Delegate;                      // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineLegalText_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineLegalText_X"))
 	void __OnlineLegalText_X__Sync_0x1(class UUrlConfig_X* UrlConfig);
 	void HandleWebText(class UCachedWebData_X* InCachedData);
 	class FString GetWebUrl(class UUrlConfig_X* UrlConfig);
@@ -4050,14 +3366,7 @@ public:
 	struct FScriptDelegate                             __EventKeyReceived__Delegate;                  // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineLegalTextEOS_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineLegalTextEOS_X"))
 	void __OnlineLegalTextEOS_X__Construct_0x1(class UOnlineGame_X* OnlineGame);
 	class FString GetEosLocale();
 	class FString LoadFileText();
@@ -4091,14 +3400,7 @@ class UOnlineMessage_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineMessage_X"))
 };
 
 // Class ProjectX.OnlineMessageComponent_X
@@ -4112,14 +3414,7 @@ public:
 	struct FScriptDelegate                             __MessageReceivedDelegate__Delegate;           // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineMessageComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineMessageComponent_X"))
 	class UOnlineMessageComponent_X* EnableCompression(bool bEnabled);
 	class UOnlineMessageComponent_X* SetSerializer(class USerializer_X* InSerializer);
 	void InvokeHandlers(class UObject* Message);
@@ -4145,14 +3440,7 @@ public:
 	class TArray<class UISetParameter*>                AllComponents;                                 // 0x00C8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParameterDispenser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParameterDispenser_X"))
 	void Inherit(class UParameterDispenser_X* Other);
 	void ResetMaterials();
 	void ApplyAllParameters(class UISetParameter* ActorComp);
@@ -4174,14 +3462,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x010C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleBeamTarget_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleBeamTarget_X"))
 };
 
 // Class ProjectX.ParticleModuleLocationBoneSocket_X
@@ -4192,14 +3473,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleLocationBoneSocket_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleLocationBoneSocket_X"))
 };
 
 // Class ProjectX.ParticleModuleLocationSkelVertSurface_X
@@ -4209,14 +3483,7 @@ class UParticleModuleLocationSkelVertSurface_X : public UParticleModuleLocationS
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleLocationSkelVertSurface_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleLocationSkelVertSurface_X"))
 };
 
 // Class ProjectX.ParticleModuleVelocitySurfaceNormal_X
@@ -4229,14 +3496,7 @@ public:
 	struct FRawDistributionFloat                       VelocityMultiplier;                            // 0x0080 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleVelocitySurfaceNormal_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleVelocitySurfaceNormal_X"))
 };
 
 // Class ProjectX.ParticleModuleVelocitySurfaceNormalStatic_X
@@ -4246,14 +3506,7 @@ class UParticleModuleVelocitySurfaceNormalStatic_X : public UParticleModuleVeloc
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleVelocitySurfaceNormalStatic_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleVelocitySurfaceNormalStatic_X"))
 };
 
 // Class ProjectX.ParticleModuleWind_X
@@ -4265,14 +3518,7 @@ public:
 	struct FRawDistributionFloat                       AccelerationOverLife;                          // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ParticleModuleWind_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ParticleModuleWind_X"))
 };
 
 // Class ProjectX.Pawn_X
@@ -4288,14 +3534,7 @@ public:
 	struct FScriptDelegate                             __EventAnimEnd__Delegate;                      // 0x0540 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Pawn_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Pawn_X"))
 	bool eventIsSameTeam(class APawn* Other);
 	void eventDestroyed();
 	float GetGravityZ();
@@ -4320,14 +3559,7 @@ public:
 	struct FScriptDelegate                             __EventStatusChanged__Delegate;                // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PerCon_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PerCon_X"))
 	static bool UseWebSocket(bool bRpcWebSocket);
 	void HandleConfigChanged();
 	void SetStatus(EPerConStatus InStatus);
@@ -4343,14 +3575,7 @@ public:
 	class FName                                        SurfaceType;                                   // 0x0060 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PhysicalMaterialProperty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PhysicalMaterialProperty_X"))
 };
 
 // Class ProjectX.PlayerInput_X
@@ -4386,14 +3611,7 @@ public:
 	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x0460 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlayerInput_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerInput_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	static class FName GetKeyForActionArray(const class FName& Action, class TArray<struct FPlayerBinding>& outPlayerBindings);
 	void AbsorbCurrentKeyPress();
@@ -4404,6 +3622,7 @@ public:
 	void RemoveFromDisabledActions(const class FName& ActionName);
 	void AddToDisabledActions(const class FName& ActionName);
 	void ReleaseKey(const class FName& Key, bool optionalBTriggerEvents);
+	static class FString GetUIAxisKey(const struct FPlayerBinding& Binding);
 	static class FString GetUIKey(const class FName& KeyName);
 	static void SetCachedUIKey(const class FString& KeyValue, class FName& outKeyName);
 	static bool GetCachedUIKey(class FName& outKeyName, class FString& outOutKey);
@@ -4432,14 +3651,7 @@ public:
 	float                                              AttachTime;                                    // 0x0270 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PointLightComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PointLightComponent_X"))
 };
 
 // Class ProjectX.PsyNet_X
@@ -4465,14 +3677,7 @@ public:
 	struct FScriptDelegate                             __EventCheaterReported__Delegate;              // 0x0148 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNet_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNet_X"))
 	static void ReportCheater(const struct FUniqueNetId& Id, const class FString& Reason);
 	static class FString AssignQWordToString(uint64_t Q);
 	static uint64_t AssignStringToQWord(const class FString& S);
@@ -4510,14 +3715,7 @@ public:
 	float                                              TimeoutTime;                                   // 0x0088 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetBeaconConnection_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetBeaconConnection_X"))
 };
 
 // Class ProjectX.PsyNetClientService_X
@@ -4533,14 +3731,7 @@ public:
 	uint64_t                                           Expiration;                                    // 0x0088 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetClientService_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetClientService_X"))
 	void Execute();
 	void SetError(class UError* InError);
 };
@@ -4553,14 +3744,7 @@ public:
 	class TArray<class UPsyNetClientService_X*>        ServiceArchetypes;                             // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetClientServiceCollection_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetClientServiceCollection_X"))
 	class UPsyNetClientService_X* GetServiceArchetype(const class FString& ServiceName, int32_t Version);
 	void CollectServiceArchetypes();
 	void eventConstruct();
@@ -4608,14 +3792,7 @@ public:
 	struct FScriptDelegate                             __EventDisabled__Delegate;                     // 0x01B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetConnection_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetConnection_X"))
 	void eventSendPingMessage();
 	void WatchPerConConnection(const struct FScriptDelegate& OnConnected, const struct FScriptDelegate& optionalOnDisconnected);
 	void StopWatchConnection(const struct FScriptDelegate& OnConnected, const struct FScriptDelegate& optionalOnDisconnected);
@@ -4688,14 +3865,7 @@ class UPsyNetErrorType_X : public UErrorType
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetErrorType_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetErrorType_X"))
 };
 
 // Class ProjectX.PsyNetMessage_X
@@ -4707,14 +3877,7 @@ public:
 	class TArray<uint8_t>                              Body;                                          // 0x0068 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessage_X"))
 	class FString GetBodyText();
 	void SetBodyText(const class FString& Value);
 	void SetBody(class TArray<uint8_t>& outValue);
@@ -4728,14 +3891,7 @@ public:
 	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetMessenger_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessenger_X"))
 	void eventDispose();
 	void EventMessageReceived(class UPsyNetMessage_X* Message);
 	class UAsyncTask* SendMessageW(class UPsyNetMessage_X* Message);
@@ -4750,14 +3906,7 @@ public:
 	class FString                                      URL;                                           // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetMessengerHttp_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessengerHttp_X"))
 	void CopyHeadersToMessage(class UWebRequest_X* From, class UPsyNetMessage_X* To);
 	void CopyHeadersToRequest(class UPsyNetMessage_X* From, class UWebRequest_X* To);
 	void HandleWebRequestComplete(const class FString& PsyRequestID, class UWebRequest_X* Request, class UAsyncTask* Task);
@@ -4783,14 +3932,7 @@ public:
 	struct FScriptDelegate                             __EventInvalidMessageReceived__Delegate;       // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetMessengerWebSocket_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessengerWebSocket_X"))
 	void __PsyNetMessengerWebSocket_X__SendQueuedMessages_0x1(const struct FQueuedPsyNetMessage& QueuedMessage);
 	void eventDispose();
 	void HandleReceivedBunch(class UTcpConnection* C);
@@ -4822,14 +3964,7 @@ class UPsyNetServiceSerializer_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetServiceSerializer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetServiceSerializer_X"))
 	static class FString SerializeResponse(class UPsyNetClientService_X* Service);
 	static void DeserializeRequest(const class FString& JSON, class UPsyNetClientService_X* Service);
 };
@@ -4842,14 +3977,7 @@ public:
 	class TArray<struct FServiceSubscription>          Subscriptions;                                 // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetServiceSubscriptions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetServiceSubscriptions_X"))
 	void NotifyServiceExecuted(class UPsyNetClientService_X* Service);
 	void UnsubscribeAll(class UObject* Listener);
 	void Unsubscribe(const struct FScriptDelegate& Callback);
@@ -4883,14 +4011,7 @@ public:
 	struct FScriptDelegate                             __EventLoaded__Delegate;                       // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetStaticData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetStaticData_X"))
 	void __PsyNetStaticData_X__Init_0x2(class UObject* instance);
 	void __PsyNetStaticData_X__Init_0x1(class UObject* instance);
 	void __PsyNetStaticData_X__BlockUntilSyncFinished_0x1(class UOnlineResource_X* instance);
@@ -4933,14 +4054,7 @@ public:
 	class FString                                      URLv2;                                         // 0x0078 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetUrl_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetUrl_X"))
 	class FString GetURL(EDatabaseEnvironment Environment);
 };
 
@@ -4953,14 +4067,7 @@ public:
 	float                                              FadeFalloff;                                   // 0x0114 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RadialBlurComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RadialBlurComponent_X"))
 };
 
 // Class ProjectX.RandomStream_X
@@ -4972,14 +4079,7 @@ public:
 	int32_t                                            CurrentSeed;                                   // 0x0064 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RandomStream_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RandomStream_X"))
 	void SetCurrentSeed(int32_t NewSeed);
 	int32_t GetNextIntRange(int32_t MinValue, int32_t MaxValue);
 	float GetNextFloat();
@@ -4998,14 +4098,7 @@ public:
 	struct FScriptDelegate                             __SendRPC__Delegate;                           // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RemoteAvatarPermissions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissions_X"))
 	struct FUniqueNetId __RemoteAvatarPermissions_X__TimerSendRPC_0x1(class URemoteAvatarPermissionsRequest_X* Request);
 	void HandleRequestFail(class URPC_CanShowAvatar_X* RPC);
 	void HandleRequestSuccess(class URPC_CanShowAvatar_X* RPC);
@@ -5032,14 +4125,7 @@ public:
 	struct FScriptDelegate                             __EventDisallowed__Delegate;                   // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequest_X"))
 	void EventDisallowed(const struct FUniqueNetId& DisallowedPlayerId);
 	void EventAllowed(const struct FUniqueNetId& AllowedPlayerId);
 };
@@ -5059,14 +4145,7 @@ public:
 	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x0290 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RenderProfiler_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RenderProfiler_X"))
 	void SetupPlayers();
 	void eventPostBeginPlay();
 	void EventFinished(class ARenderProfiler_X* Profiler);
@@ -5082,14 +4161,7 @@ public:
 	uint32_t                                           bUseRandomMultiplier : 1;                      // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RetryDelay_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RetryDelay_X"))
 };
 
 // Class ProjectX.RetryPolicy_X
@@ -5102,14 +4174,7 @@ public:
 	class TArray<class FString>                        Services;                                      // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RetryPolicy_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RetryPolicy_X"))
 	bool AppliesTo(const class FString& Service, const class FName& Error);
 };
 
@@ -5134,14 +4199,7 @@ public:
 	struct FScriptDelegate                             __EventComplete__Delegate;                     // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_X"))
 	void NotifySuccess();
 	void NotifyError(class UError* InError);
 	class UErrorType* eventOverrideErrorType(class UErrorType* ErrorType);
@@ -5166,14 +4224,7 @@ class URPC_CrashReport_X : public URPC_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_CrashReport_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_CrashReport_X"))
 };
 
 // Class ProjectX.RPC_RecordMetrics_X
@@ -5188,14 +4239,7 @@ public:
 	class TArray<struct FMetricsEvent>                 Events;                                        // 0x0110 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RecordMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RecordMetrics_X"))
 };
 
 // Class ProjectX.RPCBatch_X
@@ -5215,14 +4259,7 @@ public:
 	uint32_t                                           bUseRpcV2 : 1;                                 // 0x00C8 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPCBatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPCBatch_X"))
 };
 
 // Class ProjectX.RPCQueue_X
@@ -5247,14 +4284,7 @@ public:
 	struct FScriptDelegate                             __SendRequestDelegate__Delegate;               // 0x0158 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPCQueue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPCQueue_X"))
 	class FString __RPCQueue_X__CreateBatch_0x1(const struct FPendingRPC& P);
 	void eventOnError(class URPC_X* RPC, class UError* Error);
 	class UPsyNetMetrics_X* GetPsyNetMetrics();
@@ -5283,14 +4313,7 @@ public:
 	class FName                                        ParameterName;                                 // 0x0060 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RuntimeParameterBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RuntimeParameterBase_X"))
 };
 
 // Class ProjectX.RuntimeParameter_Speed_X
@@ -5300,14 +4323,7 @@ class URuntimeParameter_Speed_X : public URuntimeParameterBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RuntimeParameter_Speed_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RuntimeParameter_Speed_X"))
 };
 
 // Class ProjectX.RuntimeParameters_X
@@ -5317,14 +4333,7 @@ class URuntimeParameters_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RuntimeParameters_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RuntimeParameters_X"))
 };
 
 // Class ProjectX.SeqAct_NonNativeUpdate_X
@@ -5334,14 +4343,7 @@ class USeqAct_NonNativeUpdate_X : public USequenceAction
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SeqAct_NonNativeUpdate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SeqAct_NonNativeUpdate_X"))
 	bool eventUpdate(float dt);
 };
 
@@ -5352,14 +4354,7 @@ class USequenceCondition_X : public USequenceCondition
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SequenceCondition_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SequenceCondition_X"))
 	void eventActivated();
 };
 
@@ -5370,14 +4365,7 @@ class USerializer_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Serializer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Serializer_X"))
 	void DeserializeObject(class UObject* Target, class TArray<uint8_t>& outInData);
 	void SerializeObject(class UObject* Target, class TArray<uint8_t>& outOutData);
 };
@@ -5390,14 +4378,7 @@ public:
 	uint32_t                                           bDebug : 1;                                    // 0x0060 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.JSONSerializer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.JSONSerializer_X"))
 	static bool Validate(const class FString& Stream);
 	static class FString func();
 	static void DecodeObject(class UObject* Target, class FString& outStream);
@@ -5415,14 +4396,7 @@ public:
 	uint32_t                                           bDebug : 1;                                    // 0x0060 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ObjectSerializer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ObjectSerializer_X"))
 	void DeserializeObject(class UObject* Target, class TArray<uint8_t>& outInData);
 	void SerializeObject(class UObject* Target, class TArray<uint8_t>& outOutData);
 };
@@ -5456,14 +4430,7 @@ public:
 	struct FScriptDelegate                             __EventInternetConnectionChanged__Delegate;    // 0x0168 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGame_Base_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGame_Base_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	bool HasInternetConnection();
 	static int32_t GetBeaconPort();
@@ -5526,14 +4493,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerPsyNetLogout__Delegate;           // 0x0288 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGame_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGame_X"))
 	void __OnlineGame_X__OnInit_0x1(class ULegalConfig_X* LegalConfig);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	bool IsMatureLanguageFiltered();
@@ -5548,6 +4508,7 @@ public:
 	bool CheckNotTooYoung(class UError*& outError);
 	class UError* GetPsyNetLoginError(class UOnlinePlayer_X* OnlinePlayer);
 	void HandleLoginCompleted(class UOnlinePlayerAuthentication_X* Auth, class UAsyncTask* Task);
+	void HandleOnlinePlayerLoginCompleted(class UAsyncTask* Task, class TArray<class UOnlinePlayer_X*>& outActiveLoginAttemptPlayers);
 	class UAsyncTask* CheckPsyNetConnection();
 	bool RequiresSystemNetworkErrorHandling();
 	bool ValidateUserOnlineAccount();
@@ -5585,14 +4546,7 @@ public:
 	class UPsyNetConnection_X*                         PsyNetConnection;                              // 0x0180 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameServer_X"))
 	void OnInit();
 };
 
@@ -5649,14 +4603,7 @@ public:
 	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;             // 0x0408 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameDedicatedServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameDedicatedServer_X"))
 	void HandlePsyNetDataLoaded(class UPsyNetStaticData_X* D);
 	void SpinDownDDoSService();
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
@@ -5754,14 +4701,7 @@ public:
 	struct FScriptDelegate                             __EventValidationReady__Delegate;              // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameDLC_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameDLC_X"))
 	bool DoesPlayerOwnDLC(struct FUniqueNetId& outPlayerID, class FName& outDLCName);
 	void HandleGetPublisherAppOwnership(class UWebRequest_X* Request);
 	static bool PlatformRequiresDLCVerification(EOnlinePlatform Platform);
@@ -5793,14 +4733,7 @@ public:
 	struct FScriptDelegate                             __EventGetLeaderboardFailed__Delegate;         // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameLeaderboards_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameLeaderboards_X"))
 	void __OnlineGameLeaderboards_X__ClearPreviousTasks_0x1(class URPC_X* RPC);
 	void ClearPreviousTasks();
 	bool IsSkillLeaderboard(const class FString& NewLeaderboardID, int32_t& outPlaylist);
@@ -5868,14 +4801,7 @@ public:
 	struct FScriptDelegate                             __bMatchStarted__ChangeNotify;                 // 0x01D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameReservations_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameReservations_X"))
 	void __OnlineGameReservations_X__OnInit_0x3(class UIReservationConnection_X* Connection, class UObject* Message);
 	void __OnlineGameReservations_X__OnInit_0x2(class UIReservationConnection_X* Connection, class UObject* Message);
 	void __OnlineGameReservations_X__OnInit_0x1(class UIReservationConnection_X* Connection, class UObject* Message);
@@ -6035,14 +4961,7 @@ public:
 	int32_t                                            PlaylistId;                                    // 0x00C0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameStats_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameStats_X"))
 	void UploadStats(const class FString& StatType, class TArray<struct FUploadStatDataSet>& outDataSet);
 	void SetPlaylistID(int32_t InID);
 	void SetMatchGUID(const class FString& InGuid);
@@ -6062,14 +4981,7 @@ public:
 	float                                              LatentFloat;                                   // 0x0088 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TickableStateObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TickableStateObject_X"))
 	void Sleep(float Seconds);
 	void eventTick(float DeltaTime);
 	void ProcessState(float DeltaSeconds);
@@ -6085,6 +4997,21 @@ public:
 	void SetTimer(float InRate, bool optionalInbLoop, const class FName& optionalInTimerFunc, class UObject* optionalInObj);
 };
 
+// Class ProjectX.StringUtil_X
+// 0x0000 (0x0060 - 0x0060)
+class UStringUtil_X : public UObject
+{
+public:
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StringUtil_X"))
+	static int32_t FindWordBoundary(const class FString& Haystack, const class FString& Needle, bool optionalBReverseSearch, bool optionalBIgnoreCase);
+	static class TArray<class FString> SplitStringIntoMaxSizePieces(const class FString& OriginalString, int32_t MaxStringSize);
+	static bool MessageCanBeCorruptedOnConversion(const class FString& Message);
+	static bool IsStringEmptyOrWhiteSpace(const class FString& BaseString);
+	static void SplitStringInHalf(const class FString& OriginalString, class FString& outFirstHalf, class FString& outSecondHalf);
+};
+
 // Class ProjectX.SystemInfo_X
 // 0x0000 (0x0060 - 0x0060)
 class USystemInfo_X : public UObject
@@ -6092,14 +5019,7 @@ class USystemInfo_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SystemInfo_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SystemInfo_X"))
 	static class FString GetComputerName();
 	static void GetNetworkInfo(class TArray<class FString>& outTypes);
 	static void GetOSInfo(class FString& outType, class FString& outBit);
@@ -6121,14 +5041,7 @@ public:
 	struct FScriptDelegate                             __EventTick__Delegate;                         // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TickActorComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TickActorComponent_X"))
 	void SetTickable(bool bWantsTick);
 	void ClearAllTimers(class UObject* optionalInObj);
 	void ClearTimer(const class FName& optionalInTimerFunc, class UObject* optionalInObj);
@@ -6145,14 +5058,7 @@ public:
 	struct FScriptDelegate                             __TickDelegate__Delegate;                      // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Timers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Timers_X"))
 	static void ClearTick(const struct FScriptDelegate& Callback);
 	static void SetTick(const struct FScriptDelegate& Callback);
 	static bool IsActive(const struct FScriptDelegate& Callback);
@@ -6174,14 +5080,7 @@ public:
 	class TArray<struct FTimerData>                    Timers;                                        // 0x0070 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TimersComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TimersComponent_X"))
 	void UpdateTimers(float DeltaSeconds);
 	bool IsActive(const struct FScriptDelegate& Callback);
 	float GetElapsedTime(const struct FScriptDelegate& Callback);
@@ -6205,14 +5104,7 @@ public:
 	struct FScriptDelegate                             __TickDelegate__Delegate;                      // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TickComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TickComponent_X"))
 	void SetTickable(bool bWantsTick);
 	void TickDelegate(float DeltaTime);
 };
@@ -6224,14 +5116,7 @@ class UUIStrings_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UIStrings_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UIStrings_X"))
 	static class FString FormatAsNumber(int32_t Number, const class FString& Delimiter);
 };
 
@@ -6259,14 +5144,7 @@ public:
 	struct FScriptDelegate                             __EventCompleted__Delegate;                    // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebRequest_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void SetError(class UError* InError);
 	bool IsCancelled();
@@ -6309,14 +5187,7 @@ public:
 	struct FScriptDelegate                             __CommentErrorDelegate__Delegate;              // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WordFilterTypes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WordFilterTypes_X"))
 	static void SortRequestTimeAscending(class TArray<struct FWordFilterPair>& outFiltered);
 	static void SortPendingFront(class TArray<struct FWordFilterPair>& outFiltered);
 	void CommentErrorDelegate(const class FString& OriginalPhrase, class UError* Error);
@@ -6336,14 +5207,7 @@ public:
 	uint32_t                                           bChildrenUpdated : 1;                          // 0x0188 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodeBlendBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodeBlendBase_X"))
 	void SetActiveChildNamed(const class FName& ChildName, bool optionalBForce);
 	float GetAnimDuration(int32_t ChildIndex);
 	float GetBlendTime(int32_t ChildIndex, bool optionalBGetDefault);
@@ -6357,14 +5221,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x018C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodeBlendList_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodeBlendList_X"))
 };
 
 // Class ProjectX.AnimNodeCustomSeries_X
@@ -6375,14 +5232,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x018C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodeCustomSeries_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodeCustomSeries_X"))
 };
 
 // Class ProjectX.AnimNodeSeries_X
@@ -6398,14 +5248,7 @@ public:
 	class UAnimNodeSequence*                           OutroAnim;                                     // 0x01A0 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodeSeries_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodeSeries_X"))
 };
 
 // Class ProjectX.AnimNodeSequence_X
@@ -6420,14 +5263,7 @@ public:
 	float                                              BlendTimeLeft;                                 // 0x01BC (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodeSequence_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodeSequence_X"))
 };
 
 // Class ProjectX.AnimNodePose_X
@@ -6437,14 +5273,7 @@ class UAnimNodePose_X : public UAnimNodeSequence_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNodePose_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNodePose_X"))
 	void PlayAnim(bool optionalBLoop, float optionalInRate, float optionalStartTime);
 };
 
@@ -6456,14 +5285,7 @@ public:
 	class UParticleSystemComponent*                    PSC;                                           // 0x0098 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AnimNotify_PlayParticleEffect_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AnimNotify_PlayParticleEffect_X"))
 	void OnParticleSystemFinished(class UParticleSystemComponent* Component);
 	void EndParticles();
 	void eventNotifyEnd(class AActor* Owner, class UAnimNodeSequence* AnimSeqInstigator);
@@ -6486,14 +5308,7 @@ public:
 	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetBeacon_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetBeacon_X"))
 	void SerializeMessage(class UObject* Message, class FString& outOutMessageType, class FString& outOutMessagePayload);
 	class UObject* DeserializeMessage(const class FString& MessageType, const class FString& MessagePayload);
 	void TimeoutPendingMessages();
@@ -6550,14 +5365,7 @@ public:
 	struct FScriptDelegate                             __EventReceivedBunch__Delegate;                // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TcpConnection");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TcpConnection"))
 	void eventOnDisconnected();
 	void eventOnConnected();
 	void Close();
@@ -6579,14 +5387,7 @@ public:
 	int32_t                                            ClosedCode;                                    // 0x0158 (0x0004) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebSocketConnection_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebSocketConnection_X"))
 	void PretendClose(int32_t Code, const class FString& Reason);
 	void Close();
 	bool BeginWebSocketConnect(const class FString& Address, class UStringMap* HandshakeHeaders);
@@ -6606,14 +5407,7 @@ public:
 	class UBeaconConfig_X*                             Config;                                        // 0x0090 (0x0008) [0x0000800000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UdpPingBeaconBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpPingBeaconBase_X"))
 	void TickSocket(float DeltaTime);
 	void eventSetTickSocket(bool bTick);
 	void Close();
@@ -6628,14 +5422,7 @@ public:
 	struct FScriptDelegate                             __EventLost__Delegate;                         // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UdpPingBeaconClient_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpPingBeaconClient_X"))
 	void TickPongs(float DeltaTime);
 	void eventSetTickPongs(bool bTick);
 	void Close();
@@ -6653,14 +5440,7 @@ class UUdpPingBeaconServer_X : public UUdpPingBeaconBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UdpPingBeaconServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpPingBeaconServer_X"))
 	bool InitServer(int32_t optionalPort);
 };
 
@@ -6687,14 +5467,7 @@ public:
 	struct FScriptDelegate                             __CheckDelegate__Delegate;                     // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PrivilegeCheck_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PrivilegeCheck_X"))
 	bool HasFeatureRestriction(int32_t& outOutControllerID, EFeaturePrivilege& outOutFailedPrivilege);
 	void OnFinished();
 	void Fail(const class FString& Reason);
@@ -6728,14 +5501,7 @@ public:
 	uint32_t                                           bMarkSplitscreenAsRemote : 1;                  // 0x00C8 (0x0004) [0x0001000000006000] [0x00000002] (CPF_Transient | CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AddReservationMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AddReservationMessage_X"))
 	struct FUniqueNetId __AddReservationMessage_X__GetPlayerIDs_0x1(const struct FReservationPlayerData& P);
 	class TArray<struct FUniqueNetId> GetPlayerIDs();
 	void GetPlayerMapPrefs(const struct FUniqueNetId& PlayerID, class TArray<class FName>& outLikes, class TArray<class FName>& outDislikes);
@@ -6755,14 +5521,7 @@ public:
 	struct FPartyMember                                PM;                                            // 0x0060 (0x0180) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.____OnlineGameParty_X__UpdatePartyInfo_0x1____OnlineGameParty_X__UpdatePartyInfo_0x1_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.____OnlineGameParty_X__UpdatePartyInfo_0x1____OnlineGameParty_X__UpdatePartyInfo_0x1_0x1"))
 	bool ____OnlineGameParty_X__UpdatePartyInfo_0x1____OnlineGameParty_X__UpdatePartyInfo_0x1_0x1(const struct FLobbyMember& LM);
 };
 
@@ -6774,14 +5533,7 @@ public:
 	struct FActiveLobbyInfo                            Lobby;                                         // 0x0060 (0x0030) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__UpdatePartyInfo_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__UpdatePartyInfo_0x1"))
 	bool __OnlineGameParty_X__UpdatePartyInfo_0x1(const struct FPartyMember& PM);
 };
 
@@ -6793,14 +5545,7 @@ public:
 	class TArray<struct FSetPlayerStorageResultItem>   Items;                                         // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SetPlayerStorageResult_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SetPlayerStorageResult_X"))
 };
 
 // Class ProjectX.____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x4_0x1
@@ -6811,14 +5556,7 @@ public:
 	struct FSetPlayerStorageResultItem                 R;                                             // 0x0060 (0x0010) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x4_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x4_0x1"))
 	bool ____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2____OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x4_0x1(const struct FPendingStorage& P);
 };
 
@@ -6838,14 +5576,7 @@ public:
 	struct FScriptDelegate                             __EventStorageError__Delegate;                 // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerStorageQueue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageQueue_X"))
 	void __OnlinePlayerStorageQueue_X__Construct_0x1(const class FString& instance);
 	void __OnlinePlayerStorageQueue_X__SendBatch_Internal_0x1(class URPC_X* RPC);
 	bool __OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x5(const struct FPendingStorage& P);
@@ -6879,14 +5610,7 @@ public:
 	class URPC_PlayerStorageSet_X*                     RPC;                                           // 0x0070 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2"))
 	void __OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x4(const struct FSetPlayerStorageResultItem& R);
 	bool __OnlinePlayerStorageQueue_X__HandleStorageSuccess_0x2(const struct FSetPlayerStorageRequestItem& R);
 };
@@ -6900,14 +5624,7 @@ public:
 	struct FScriptDelegate                             ErrorDelegate;                                 // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateErrorDelegate_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateErrorDelegate_0x1"))
 	void __AdHocBrowser_X__CreateErrorDelegate_0x2();
 	void __AdHocBrowser_X__CreateErrorDelegate_0x1(class UError* Error);
 };
@@ -6919,14 +5636,7 @@ class ULanBrowser_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanBrowser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanBrowser_X"))
 	class UAsyncTask* JoinServer(const class FString& ServerId, const class FString& Options);
 	class UTAsyncResult__array_LanServerRecord_X* GetServerList();
 	void DestroyServer();
@@ -6950,14 +5660,7 @@ public:
 	class TArray<struct FAdHocAccessPointInfo>         AdHocAccessPointsAvailable;                    // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AdHocBrowser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AdHocBrowser_X"))
 	void __AdHocBrowser_X__GetServerList_0x1();
 	void HandleSearchTimeout();
 	void AdHocHandleOnNetworkChanged(const class TArray<struct FAdHocAccessPointInfo>& Ahapis);
@@ -6979,14 +5682,7 @@ public:
 	struct FScriptDelegate                             ApcDelegate;                                   // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateServer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateServer_0x1"))
 	void __AdHocBrowser_X__CreateServer_0x2();
 	void __AdHocBrowser_X__CreateServer_0x1();
 };
@@ -7001,14 +5697,7 @@ public:
 	class FString                                      Options;                                       // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AdHocBrowser_X__JoinServer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocBrowser_X__JoinServer_0x1"))
 	void __AdHocBrowser_X__JoinServer_0x1();
 };
 
@@ -7021,14 +5710,7 @@ public:
 	struct FScriptDelegate                             DestroyedDelegate;                             // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AdHocInterface_X__DisableAdHoc_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocInterface_X__DisableAdHoc_0x1"))
 	void __AdHocInterface_X__DisableAdHoc_0x2();
 	void __AdHocInterface_X__DisableAdHoc_0x1();
 };
@@ -7044,14 +5726,7 @@ public:
 	class UOnlineGameMatchmaking_X*                    Matchmaking;                                   // 0x0078 (0x0008) [0x0000800000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AdHocInterface_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AdHocInterface_X"))
 	void CreateErrorDelegate(class UAsyncTask* Task);
 	class UAsyncTask* DisableAdHoc();
 	void HandleGameInfoSpawned(class AGameInfo_X* InGameInfo);
@@ -7067,14 +5742,7 @@ public:
 	struct FScriptDelegate                             InitDelegate;                                  // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AdHocInterface_X__EnableAdHoc_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocInterface_X__EnableAdHoc_0x1"))
 	void __AdHocInterface_X__EnableAdHoc_0x2();
 	void __AdHocInterface_X__EnableAdHoc_0x1();
 };
@@ -7087,14 +5755,7 @@ public:
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;              // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__AddCallbackToRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__AddCallbackToRequest_0x1"))
 	void __AvatarRequester_X__AddCallbackToRequest_0x1(const struct FUniqueNetId& InPlayerID, class UTexture* InAvatar, const class FString& InPlayerName);
 };
 
@@ -7111,14 +5772,7 @@ public:
 	struct FScriptDelegate                             __RequestAvatarPermission__Delegate;           // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AvatarRequester_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AvatarRequester_X"))
 	struct FUniqueNetId __AvatarRequester_X__TimerReadAvatars_0x2(class UPendingAvatarRequest_X* Request);
 	static class UPendingAvatarRequest_X* FindRequestFromArray(const struct FUniqueNetId& PlayerID, EAvatarSize Size, class TArray<class UPendingAvatarRequest_X*>& outRequests);
 	static bool RemoveRequestFromArray(const struct FUniqueNetId& PlayerID, EAvatarSize Size, class TArray<class UPendingAvatarRequest_X*>& outRequests);
@@ -7142,14 +5796,7 @@ public:
 	EAvatarSize                                        Size;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__FindRequestFromArray_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__FindRequestFromArray_0x1"))
 	bool __AvatarRequester_X__FindRequestFromArray_0x1(class UPendingAvatarRequest_X* Request);
 };
 
@@ -7164,14 +5811,7 @@ public:
 	struct FScriptDelegate                             OnAvatarRequestComplete;                       // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PendingAvatarRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PendingAvatarRequest_X"))
 };
 
 // Class ProjectX.__AvatarRequester_X__GetPlayerAvatar_0x1
@@ -7183,14 +5823,7 @@ public:
 	EAvatarSize                                        Size;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__GetPlayerAvatar_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__GetPlayerAvatar_0x1"))
 	void __AvatarRequester_X__GetPlayerAvatar_0x2(const struct FUniqueNetId& instance);
 	void __AvatarRequester_X__GetPlayerAvatar_0x1(const struct FUniqueNetId& instance);
 };
@@ -7204,14 +5837,7 @@ public:
 	EAvatarSize                                        Size;                                          // 0x0078 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__GetPlayerAvatars_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__GetPlayerAvatars_0x1"))
 	void __AvatarRequester_X__GetPlayerAvatars_0x1(const struct FUniqueNetId& Id);
 };
 
@@ -7224,14 +5850,7 @@ public:
 	EAvatarSize                                        Size;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__RemoveRequestFromArray_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__RemoveRequestFromArray_0x1"))
 	bool __AvatarRequester_X__RemoveRequestFromArray_0x1(class UPendingAvatarRequest_X* Request);
 };
 
@@ -7243,14 +5862,7 @@ public:
 	EAvatarSize                                        BatchAvatarSize;                               // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__AvatarRequester_X__TimerReadAvatars_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__TimerReadAvatars_0x1"))
 	void __AvatarRequester_X__TimerReadAvatars_0x3(const struct FUniqueNetId& PlayerID, class UTexture* Texture, const class FString& OnlinePlayerName);
 	bool __AvatarRequester_X__TimerReadAvatars_0x1(class UPendingAvatarRequest_X* Request);
 };
@@ -7263,14 +5875,7 @@ public:
 	class TArray<struct FOnlineFriend>                 BlockedPlayersArray;                           // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__BlockStatusReporter_X__OnBlockListDownloadComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__BlockStatusReporter_X__OnBlockListDownloadComplete_0x1"))
 	void __BlockStatusReporter_X__OnBlockListDownloadComplete_0x1(const struct FPlayerBlockListenData& Sub);
 };
 
@@ -7286,14 +5891,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerStatusDownloaded__Delegate;       // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BlockStatusReporter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlockStatusReporter_X"))
 	void __BlockStatusReporter_X__Construct_0x1();
 	void TriggerPlayerCallback(const class FString& EpicID, const struct FScriptDelegate& Callback, class TArray<struct FOnlineFriend>& outBlockedPlayersArray);
 	void OnBlockListDownloadComplete(bool bSuccess);
@@ -7318,14 +5916,7 @@ public:
 	class FString                                      EpicID;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__BlockStatusReporter_X__TriggerPlayerCallback_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__BlockStatusReporter_X__TriggerPlayerCallback_0x1"))
 	bool __BlockStatusReporter_X__TriggerPlayerCallback_0x1(const struct FOnlineFriend& BlockedPlayer);
 };
 
@@ -7340,14 +5931,7 @@ public:
 	float                                              MaxSleep;                                      // 0x006C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__CheatManager_X__RandomSleep_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__CheatManager_X__RandomSleep_0x1"))
 	void __CheatManager_X__RandomSleep_0x1();
 };
 
@@ -7359,14 +5943,7 @@ public:
 	class TArray<uint64_t>                             TeamClubs;                                     // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ClubUtil_X__IsClubTeam_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ClubUtil_X__IsClubTeam_0x1"))
 	bool __ClubUtil_X__IsClubTeam_0x1(uint64_t Id);
 };
 
@@ -7377,16 +5954,11 @@ class UClubUtil_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubUtil_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubUtil_X"))
+	static bool IsOneTeamGrayScale(int32_t Pos0Column, int32_t Pos1Column);
 	static int32_t Wrap(int32_t Column, int32_t Count);
 	static struct FClubColorSet SwapPrimaryAccentColors(const struct FClubColorSet& Colors, class UColorPalette_X* TeamPalette, class UColorPalette_X* AccentPalette);
+	static bool AreColorsDifferent2D(class UColorPalette_X* Palette, int32_t Color0, int32_t Color1);
 	static bool AreColorsDifferent(class UColorPalette_X* Palette, int32_t Color0, int32_t Color1);
 	static EClubColorChange EnsureDifferentColors(class UColorPalette_X* TeamPalette, class UColorPalette_X* AccentPalette, int32_t DefaultColorID0, int32_t DefaultColorID1, struct FClubColorSet& outSet0, struct FClubColorSet& outSet1);
 	static bool IsClubTeam(int32_t TeamSize, class TArray<uint64_t>& outTeamClubs);
@@ -7401,14 +5973,7 @@ public:
 	EOnlinePlatform                                    PlayerPlatform;                                // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__CrossplayConfig_X__GetDisabledCrossplayGroup_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__CrossplayConfig_X__GetDisabledCrossplayGroup_0x1"))
 	bool __CrossplayConfig_X__GetDisabledCrossplayGroup_0x1(const struct FCrossplayGroup& P);
 };
 
@@ -7420,14 +5985,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestEOSToken_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestEOSToken_0x1"))
 	void __EOSHelpers_X__RequestEOSToken_0x1(class UWebRequest_X* Response);
 };
 
@@ -7448,14 +6006,7 @@ public:
 	class FString                                      deployment_id;                                 // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EASAuthResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EASAuthResponse"))
 };
 
 // Class ProjectX.EOSHelpers_X
@@ -7468,14 +6019,7 @@ public:
 	struct FScriptDelegate                             __ConvertErrorFunction__Delegate;              // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOSHelpers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSHelpers_X"))
 	static void SendHTTPRequestSelectAuth(const class FString& Verb, const class FString& URL, bool bAddContentTypeHeader, class UClass* ResponseClass, const struct FScriptDelegate& Callback, const struct FScriptDelegate& ConvertErrorNew, class UOnlineSubsystem* EOS, int32_t LocalPlayerNum, const class FString& optionalBodyJson, const class FString& optionalContinuation, const class FString& optionalDisplayNameHint, const class FString& optionalDOB, const class FString& optionalBearerAuthTicket, const class FString& optionalContentType);
 	static void SendHTTPRequestEOSToken(const class FString& Verb, const class FString& URL, bool bAddContentTypeHeader, class UClass* ResponseClass, const struct FScriptDelegate& Callback, const struct FScriptDelegate& ConvertErrorNew, class UOnlineSubsystem* EOS, int32_t LocalPlayerNum, const class FString& optionalBodyJson);
 	static void RequestClientAuthToken(const struct FScriptDelegate& Callback);
@@ -7504,14 +6048,7 @@ public:
 	class FString                                      BodyJson;                                      // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequest_0x1"))
 	void __EOSHelpers_X__SendHTTPRequest_0x1(bool bSuccess, const class FString& EpicAuthTicket);
 };
 
@@ -7550,14 +6087,7 @@ public:
 	class UErrorType*                                  EpicEmailNotAllowed;                           // 0x0158 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpicErrors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicErrors_X"))
 };
 
 // Class ProjectX.__EOSHelpers_X__SendHTTPRequestEOSToken_0x2
@@ -7578,14 +6108,7 @@ public:
 	class FString                                      BodyJson;                                      // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequestEOSToken_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequestEOSToken_0x2"))
 	void ____EOSHelpers_X__SendHTTPRequestEOSToken_0x2____EOSHelpers_X__SendHTTPRequestEOSToken_0x1_0x1(bool bSuccess, const class FString& EASAuthTicket);
 	void __EOSHelpers_X__SendHTTPRequestEOSToken_0x1(bool bSuccess, const class FString& EOSAuthTicket);
 	void __EOSHelpers_X__SendHTTPRequestEOSToken_0x2(bool bSuccess, const class FString& EASAuthTicket);
@@ -7632,14 +6155,7 @@ public:
 	class FString                                      DeploymentId;                                  // 0x01B8 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpicConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicConfig_X"))
 	EChatPermissionLevel GetChatPermissionLevel(const class FString& PermissionLabel);
 	void Apply();
 };
@@ -7654,14 +6170,7 @@ public:
 	class UClass*                                      ResponseClass;                                 // 0x0090 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequestSelectAuth_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__SendHTTPRequestSelectAuth_0x1"))
 	void __EOSHelpers_X__SendHTTPRequestSelectAuth_0x1(class UWebRequest_X* Response);
 };
 
@@ -7673,14 +6182,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__AcceptFriendRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__AcceptFriendRequest_0x1"))
 	void __EpicFriendsPlugin_X__AcceptFriendRequest_0x1(class UEOS_ManageFriendsListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7693,14 +6195,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0078 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__AddFriendWithCustomCallback_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__AddFriendWithCustomCallback_0x1"))
 	void __EpicFriendsPlugin_X__AddFriendWithCustomCallback_0x1(class UEOS_ManageFriendsListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7712,14 +6207,7 @@ public:
 	class TArray<struct FHTTPRequestCapturedParam>     CapturedParams;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__bLock_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__bLock_0x1"))
 	void __EpicFriendsPlugin_X__bLock_0x1(class UEOS_ManageBlockListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7731,14 +6219,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__GetOutgoingFriendRequestsWithCustomCallback_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__GetOutgoingFriendRequestsWithCustomCallback_0x1"))
 	void __EpicFriendsPlugin_X__GetOutgoingFriendRequestsWithCustomCallback_0x1(class UEOS_GetAccountsResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7750,14 +6231,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__RejectFriendRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__RejectFriendRequest_0x1"))
 	void __EpicFriendsPlugin_X__RejectFriendRequest_0x1(class UEOS_ManageFriendsListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7769,14 +6243,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__RemoveFriend_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__RemoveFriend_0x1"))
 	void __EpicFriendsPlugin_X__RemoveFriend_0x1(class UEOS_ManageFriendsListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -7788,14 +6255,7 @@ public:
 	uint8_t                                            InLocalPlayerNum;                              // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicLogin_X__HandleLoginChanged_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__HandleLoginChanged_0x1"))
 	void __EpicLogin_X__HandleLoginChanged_0x1();
 };
 
@@ -7808,14 +6268,7 @@ public:
 	struct FUniqueNetId                                NetId;                                         // 0x0078 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicLogin_X__TriggerAuthTicketDelegate_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__TriggerAuthTicketDelegate_0x1"))
 	void __EpicLogin_X__TriggerAuthTicketDelegate_0x1(bool bSuccess, const class FString& AuthTicket);
 };
 
@@ -7827,14 +6280,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1"))
 	void ____EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1____EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1_0x1(const class FString& Ticket, const class FString& Id, class UError* Err);
 	void __EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1(bool bSuccess, const class FString& AuthTicket);
 };
@@ -7847,14 +6293,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicLogin_X__RequestNintendoAccountAuthorization_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__RequestNintendoAccountAuthorization_0x1"))
 	void __EpicLogin_X__RequestNintendoAccountAuthorization_0x1(const class FString& NintendoAccountToken);
 };
 
@@ -7866,14 +6305,7 @@ public:
 	class TArray<struct FCabinedModeData>              ArrayOfCabinedModeData;                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CabinedModeResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CabinedModeResponse"))
 };
 
 // Class ProjectX.__LocalClubData_X__GetClubByID_0x1
@@ -7884,14 +6316,7 @@ public:
 	uint64_t                                           Id;                                            // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__LocalClubData_X__GetClubByID_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__LocalClubData_X__GetClubByID_0x1"))
 	bool __LocalClubData_X__GetClubByID_0x1(class UClubDetails_X* C);
 };
 
@@ -7906,14 +6331,7 @@ public:
 	int32_t                                            AccentColor;                                   // 0x0084 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubSettings_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubSettings_X"))
 	bool IsAccentColorSet();
 	bool IsPrimaryColorSet();
 	static class UClubSettings_X* Create(const class FString& InName, const class FString& InTag, int32_t InPrimaryColor, int32_t InSecondaryColor);
@@ -7935,14 +6353,7 @@ public:
 	class TArray<struct FClubMember>                   Members;                                       // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubDetails_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubDetails_X"))
 	int32_t GetMemberIdx(const struct FUniqueNetId& PlayerID);
 	EClubRole GetMemberRole(const struct FUniqueNetId& PlayerID);
 	EClubBadge GetStatBadge(const class FName& InStat);
@@ -7965,14 +6376,7 @@ public:
 	int32_t                                            NextClubID;                                    // 0x0080 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalClubData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalClubData_X"))
 	class UClubDetails_X* GetClubForPlayer(const struct FUniqueNetId& PlayerID);
 	class UClubDetails_X* GetClubByID(uint64_t Id);
 	void Save();
@@ -7987,14 +6391,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__LocalClubData_X__GetClubForPlayer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__LocalClubData_X__GetClubForPlayer_0x1"))
 	bool __LocalClubData_X__GetClubForPlayer_0x1(class UClubDetails_X* C);
 };
 
@@ -8006,14 +6403,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__MatchRecorder_X__GetPlayerData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__MatchRecorder_X__GetPlayerData_0x1"))
 	bool __MatchRecorder_X__GetPlayerData_0x1(class UMatchPlayerData_X* P);
 };
 
@@ -8048,14 +6438,7 @@ public:
 	int32_t                                            ActorID;                                       // 0x0180 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchPlayerData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchPlayerData_X"))
 	void SetSkills(const struct FUpdatedPlayerSkillRating& Update);
 };
 
@@ -8069,14 +6452,7 @@ public:
 	class UMatchData_X*                                Match;                                         // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchRecorder_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchRecorder_X"))
 	bool __MatchRecorder_X__GetAbandonedPlayers_0x1(class UMatchPlayerData_X* P);
 	struct FUniqueNetId __MatchRecorder_X__GetAbandonedPlayerIDs_0x1(class UMatchPlayerData_X* P);
 	void Finished();
@@ -8100,14 +6476,7 @@ public:
 	uint64_t                                           ClubID;                                        // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubCache_X__GetClubDetails_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubCache_X__GetClubDetails_0x1"))
 	bool __OnlineClubCache_X__GetClubDetails_0x1(class UClubDetails_X* C);
 };
 
@@ -8120,14 +6489,7 @@ public:
 	struct FScriptDelegate                             __EventClubUpdated__Delegate;                  // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineClubCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubCache_X"))
 	uint64_t __OnlineClubCache_X__ClearAllExcept_0x1(class UClubDetails_X* C);
 	class TArray<class FString> GetDebugString();
 	void ClearAllExcept(class TArray<uint64_t>& outKeepClubs);
@@ -8150,14 +6512,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubCache_X__GetPlayerClubDetails_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubCache_X__GetPlayerClubDetails_0x1"))
 	bool __OnlineClubCache_X__GetPlayerClubDetails_0x1(class UClubDetails_X* C);
 };
 
@@ -8170,14 +6525,7 @@ public:
 	struct FUniqueNetId                                SenderPlayerID;                                // 0x0068 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__AcceptClubInvite_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__AcceptClubInvite_0x1"))
 	void __OnlineClubManager_X__AcceptClubInvite_0x1(class UClubDetails_X* instance);
 };
 
@@ -8190,14 +6538,7 @@ public:
 	struct FScriptDelegate                             __EventClubChanged__Delegate;                  // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineClubManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubManager_X"))
 	void OnRoleChanged(class UClubDetails_X* Club, const struct FUniqueNetId& MemberPlayerID, EClubRole OriginalRole, EClubRole NewRole);
 	void OnInviteEventSuccess(uint64_t ClubID, const struct FUniqueNetId& PlayerID, EClubInviteEventType InviteEventType);
 	void OnPlayerKicked(class UClubDetails_X* Club, const struct FUniqueNetId& KickedPlayerID);
@@ -8229,14 +6570,7 @@ public:
 	struct FUniqueNetId                                InvitedPlayerID;                               // 0x0068 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__InviteToClub_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__InviteToClub_0x1"))
 	void __OnlineClubManager_X__InviteToClub_0x1();
 };
 
@@ -8248,14 +6582,7 @@ public:
 	uint64_t                                           ClubID;                                        // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__LeaveClub_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__LeaveClub_0x1"))
 	void __OnlineClubManager_X__LeaveClub_0x1();
 };
 
@@ -8268,14 +6595,7 @@ public:
 	struct FUniqueNetId                                SenderPlayerID;                                // 0x0068 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__RejectClubInvite_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__RejectClubInvite_0x1"))
 	void __OnlineClubManager_X__RejectClubInvite_0x1();
 };
 
@@ -8287,14 +6607,7 @@ public:
 	struct FUniqueNetId                                KickedPlayerID;                                // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__RemoveFromClub_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__RemoveFromClub_0x1"))
 	void __OnlineClubManager_X__RemoveFromClub_0x1(class UClubDetails_X* ClubDet);
 };
 
@@ -8308,14 +6621,7 @@ public:
 	EClubRole                                          NewRole;                                       // 0x00A9 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubManager_X__SetNewRole_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubManager_X__SetNewRole_0x1"))
 	void __OnlineClubManager_X__SetNewRole_0x1(class UClubDetails_X* ClubDet);
 };
 
@@ -8327,14 +6633,7 @@ public:
 	class URPC_GetClubDetails_X*                       RPC;                                           // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__HandleClubSynced_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__HandleClubSynced_0x1"))
 	void __OnlineClubProvider_X__HandleClubSynced_0x1(const struct FClubMember& Member);
 };
 
@@ -8347,14 +6646,7 @@ public:
 	class UTAsyncResult__ClubDetails_X*                ClubDetailsTask;                               // 0x00F0 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ClubDetailsBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ClubDetailsBase_X"))
 	class UClubDetails_X* __RPC_ClubDetailsBase_X__CreateClubDetailsTask_0x1();
 	class UTAsyncResult__ClubDetails_X* CreateClubDetailsTask();
 };
@@ -8367,14 +6659,7 @@ public:
 	int32_t                                            ClubID;                                        // 0x00F8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubDetails_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubDetails_X"))
 	class URPC_GetClubDetails_X* SetClubID(uint64_t InClubID);
 };
 
@@ -8392,14 +6677,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerSynced__Delegate;                 // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineClubProvider_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubProvider_X"))
 	bool __OnlineClubProvider_X__GetClubDetailsArray_0x1(int32_t Id);
 	void ClubSynced(class UClubDetails_X* Club);
 	bool IsSyncing();
@@ -8428,14 +6706,7 @@ public:
 	class URPC_GetClubDetails_X*                       RPC;                                           // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncClubDetails_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncClubDetails_0x1"))
 	void __OnlineClubProvider_X__SyncClubDetails_0x2(class URPC_X* instance);
 	bool __OnlineClubProvider_X__SyncClubDetails_0x1(class URPC_GetClubDetails_X* R);
 };
@@ -8448,14 +6719,7 @@ public:
 	class URPC_GetClubDetailsArray_X*                  RPC;                                           // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncClubDetailsArray_0x1"))
 	void __OnlineClubProvider_X__SyncClubDetailsArray_0x2(class URPC_X* instance);
 	void __OnlineClubProvider_X__SyncClubDetailsArray_0x1(int32_t Id);
 };
@@ -8469,14 +6733,7 @@ public:
 	class TArray<class UClubDetails_X*>                ClubDetails;                                   // 0x00F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubDetailsArray_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubDetailsArray_X"))
 	class URPC_GetClubDetailsArray_X* AddClubID(int32_t InClubID);
 };
 
@@ -8489,14 +6746,7 @@ public:
 	class URPC_GetPlayerClubDetails_X*                 RPC;                                           // 0x00A8 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncPlayerClubDetails_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineClubProvider_X__SyncPlayerClubDetails_0x1"))
 	void __OnlineClubProvider_X__SyncPlayerClubDetails_0x2(class URPC_X* instance);
 	bool __OnlineClubProvider_X__SyncPlayerClubDetails_0x1(class URPC_GetPlayerClubDetails_X* R);
 };
@@ -8509,33 +6759,21 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00F8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPlayerClubDetails_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPlayerClubDetails_X"))
 	class URPC_GetPlayerClubDetails_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
 // Class ProjectX.__OnlineGame_X__CheckPsyNetConnection_0x1
-// 0x0008 (0x0060 - 0x0068)
+// 0x0018 (0x0060 - 0x0078)
 class U__OnlineGame_X__CheckPsyNetConnection_0x1 : public UObject
 {
 public:
 	class UAsyncTask*                                  Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
+	class TArray<class UOnlinePlayer_X*>               ActiveLoginAttemptPlayers;                     // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGame_X__CheckPsyNetConnection_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGame_X__CheckPsyNetConnection_0x1"))
+	void __OnlineGame_X__CheckPsyNetConnection_0x2(class UOnlinePlayerAuthentication_X* Auth);
 	void __OnlineGame_X__CheckPsyNetConnection_0x1(class UOnlinePlayerAuthentication_X* Auth);
 };
 
@@ -8547,14 +6785,7 @@ public:
 	class FString                                      EpicAccountId;                                 // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGame_X__GetOnlinePlayerFromEpicId_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGame_X__GetOnlinePlayerFromEpicId_0x1"))
 	bool __OnlineGame_X__GetOnlinePlayerFromEpicId_0x1(class UOnlinePlayer_X* P);
 };
 
@@ -8566,14 +6797,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGame_X__GetOnlinePlayerFromPlayerId_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGame_X__GetOnlinePlayerFromPlayerId_0x1"))
 	bool __OnlineGame_X__GetOnlinePlayerFromPlayerId_0x1(class UOnlinePlayer_X* P);
 };
 
@@ -8585,14 +6809,7 @@ public:
 	float                                              AccPingThreshold;                              // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__AddRecommendedServers_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__AddRecommendedServers_0x1"))
 	bool __OnlineGameMatchmaking_X__AddRecommendedServers_0x1(class URegionPing_X* R);
 };
 
@@ -8612,20 +6829,13 @@ public:
 	ERegionPingResult                                  PingResult;                                    // 0x0098 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RegionPing_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionPing_X"))
 	void AddRegionData(class URegion_X* InRegion);
 	void Reset();
 };
 
 // Class ProjectX.OnlineGameMatchmakingBase_X
-// 0x0080 (0x00B0 - 0x0130)
+// 0x0098 (0x00B0 - 0x0148)
 class UOnlineGameMatchmakingBase_X : public UOnline_X
 {
 public:
@@ -8636,17 +6846,12 @@ public:
 	struct FScriptDelegate                             __EventFindGameStatus__Delegate;               // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventFindGameError__Delegate;                // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventFindGameStateChanged__Delegate;         // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGetMatchmakingDelaySecs__Delegate;      // 0x0130 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameMatchmakingBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameMatchmakingBase_X"))
 	void HandleRegionsPinged(class UOnlineGameRegions_X* InRegions);
+	void StartSearchingAfterDelay();
 	void HandleGameStarted(class AGRI_X* GRI);
 	void HandleStatusUpdate(const class FString& NewStatus);
 	void HandleJoinGameComplete(bool bSuccess, const class FString& FailReason);
@@ -8664,6 +6869,7 @@ public:
 	class UOnlineGameMatchmakingBase_X* AddFindGameCompleteDelegate(const struct FScriptDelegate& HandleFindGameComplete);
 	class UOnlineGameMatchmakingBase_X* AddFindGameErrorDelegate(const struct FScriptDelegate& HandleFindGameError);
 	class UOnlineGameMatchmakingBase_X* AddFindGameStatusChangedDelegate(const struct FScriptDelegate& HandleFindGameStatusChanged);
+	float EventGetMatchmakingDelaySecs();
 	void EventFindGameStateChanged(const class FName& NewState);
 	void EventFindGameError(const class FString& NewStatus);
 	void EventFindGameStatus(const class FString& NewStatus);
@@ -8671,41 +6877,34 @@ public:
 };
 
 // Class ProjectX.OnlineGameMatchmaking_X
-// 0x0138 (0x0130 - 0x0268)
+// 0x0138 (0x0148 - 0x0280)
 class UOnlineGameMatchmaking_X : public UOnlineGameMatchmakingBase_X
 {
 public:
-	class TArray<int32_t>                              PreferredPlaylists;                            // 0x0130 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class TArray<struct FDSRegionInfo>                 PreferredRegions;                              // 0x0140 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      SearchingString;                               // 0x0150 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      StartSearchFailString;                         // 0x0160 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      FoundServerString;                             // 0x0170 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      PlaylistsHaveChangedString;                    // 0x0180 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      RegionsHaveChangedString;                      // 0x0190 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      MatchmakingAttemptString;                      // 0x01A0 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	float                                              MatchmakingStartTime;                          // 0x01B0 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            MatchmakingBanTime;                            // 0x01B4 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
-	float                                              EstimatedQueueTime;                            // 0x01B8 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
-	uint32_t                                           bIgnoreSkill : 1;                              // 0x01BC (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
-	float                                              MatchmakingDisabledDuration;                   // 0x01C0 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              MatchmakingDisabledUntilTime;                  // 0x01C4 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class FString                                      LastReservationID;                             // 0x01C8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStartSearch__Delegate;                  // 0x01D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMatchmakingError__Delegate;             // 0x01F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMatchmakingCanceledOnPartySizeChanged__Delegate;// 0x0208 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMatchmakingRPCSuccess__Delegate;        // 0x0220 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMatchmakingRPCError__Delegate;          // 0x0238 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x0250 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<int32_t>                              PreferredPlaylists;                            // 0x0148 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class TArray<struct FDSRegionInfo>                 PreferredRegions;                              // 0x0158 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class FString                                      SearchingString;                               // 0x0168 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      StartSearchFailString;                         // 0x0178 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      FoundServerString;                             // 0x0188 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      PlaylistsHaveChangedString;                    // 0x0198 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      RegionsHaveChangedString;                      // 0x01A8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      MatchmakingAttemptString;                      // 0x01B8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	float                                              MatchmakingStartTime;                          // 0x01C8 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            MatchmakingBanTime;                            // 0x01CC (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
+	float                                              EstimatedQueueTime;                            // 0x01D0 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
+	uint32_t                                           bIgnoreSkill : 1;                              // 0x01D4 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
+	float                                              MatchmakingDisabledDuration;                   // 0x01D8 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              MatchmakingDisabledUntilTime;                  // 0x01DC (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class FString                                      LastReservationID;                             // 0x01E0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventStartSearch__Delegate;                  // 0x01F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMatchmakingError__Delegate;             // 0x0208 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMatchmakingCanceledOnPartySizeChanged__Delegate;// 0x0220 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMatchmakingRPCSuccess__Delegate;        // 0x0238 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMatchmakingRPCError__Delegate;          // 0x0250 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x0268 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameMatchmaking_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameMatchmaking_X"))
 	bool AddRecommendedServers(float optionalPingThreshold, float optionalPingIncrement, float optionalMaxPing);
 	void RecordStart(bool bUseRecommendedRegions);
 	void StartMatchmaking();
@@ -8777,14 +6976,7 @@ public:
 	class FString                                      SuperRegionID;                                 // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__GetSubRegionPings_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__GetSubRegionPings_0x1"))
 	bool __OnlineGameMatchmaking_X__GetSubRegionPings_0x1(class URegionPing_X* R);
 };
 
@@ -8799,14 +6991,7 @@ public:
 	class FString                                      Secret;                                        // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Region_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Region_X"))
 	class FString ToString();
 	void AddData(class URegion_X* InRegion);
 	static class URegion_X* FromSuperRegionData(const struct FSuperRegionData& InData);
@@ -8820,14 +7005,7 @@ public:
 	struct FServerReservationData                      Reservation;                                   // 0x0060 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__OnReceiveGameServer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__OnReceiveGameServer_0x1"))
 	bool __OnlineGameMatchmaking_X__OnReceiveGameServer_0x1(const struct FDSRegionInfo& R);
 };
 
@@ -8849,14 +7027,7 @@ public:
 	struct FScriptDelegate                             __EventRegionsError__Delegate;                 // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameRegions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameRegions_X"))
 	class FString __OnlineGameRegions_X__HandleGetPingRegionPingsRPC_0x4(class URegionPing_X* R);
 	bool __OnlineGameRegions_X__HandleGetPingRegionPingsRPC_0x3(class URegionPing_X* R);
 	void __OnlineGameRegions_X__HandleGetPingRegionPingsRPC_0x2(const struct FGetGameServerPingListData_Deprecated& Server);
@@ -8903,14 +7074,7 @@ public:
 	class TArray<class FString>                        RegionIds;                                     // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__RecordStart_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameMatchmaking_X__RecordStart_0x2"))
 	bool __OnlineGameMatchmaking_X__RecordStart_0x2(class URegionPing_X* R);
 };
 
@@ -8922,14 +7086,7 @@ public:
 	struct FPartyMember                                Primary;                                       // 0x0060 (0x0180) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__BroadcastAllLocalPlayers_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__BroadcastAllLocalPlayers_0x2"))
 	bool __OnlineGameParty_X__BroadcastAllLocalPlayers_0x2(const struct FPartyMember& PM);
 };
 
@@ -8998,14 +7155,7 @@ public:
 	struct FScriptDelegate                             __EventRemovePartyMember__Delegate;            // 0x0450 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameParty_X"))
 	void __OnlineGameParty_X__HandleJoinLobby_0x1();
 	void __OnlineGameParty_X__UpdatePartyInfo_0x3(const struct FPartyMember& PM);
 	bool __OnlineGameParty_X__UpdatePartyInfo_0x2(const struct FLobbyMember& LM);
@@ -9229,14 +7379,7 @@ public:
 	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;             // 0x0690 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GRI_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GRI_X"))
 	bool IsPublicMatch();
 	bool IsOnlineFreeplay();
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
@@ -9269,27 +7412,6 @@ public:
 	void EventSpawned(class AGRI_X* GRI);
 };
 
-// Class ProjectX.OSSConfig_X
-// 0x0010 (0x0078 - 0x0088)
-class UOSSConfig_X : public UOnlineConfig_X
-{
-public:
-	uint32_t                                           bEnablePresence : 1;                           // 0x0078 (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
-	float                                              EosInitTimeoutSeconds;                         // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              GdkUpdateDlcTimeoutSeconds;                    // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	int32_t                                            GdkMaxConcurrentDlcLicenseRequests;            // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
-
-public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OSSConfig_X");
-        return uClassPointer;
-    }
-
-};
-
 // Class ProjectX.PartyMessage_X
 // 0x0048 (0x0060 - 0x00A8)
 class UPartyMessage_X : public UOnlineMessage_X
@@ -9298,14 +7420,7 @@ public:
 	struct FUniqueNetId                                Sender;                                        // 0x0060 (0x0048) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_X"))
 	bool BroadcastOn(class UOnlineLobbyInterface* LobbyInterface, const struct FUniqueLobbyId& LobbyId);
 	bool Broadcast();
 };
@@ -9321,14 +7436,7 @@ public:
 	class TArray<int32_t>                              PreferredPlaylists;                            // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_SearchStatus_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_SearchStatus_X"))
 	class UPartyMessage_SearchStatus_X* SetPreferredPlaylists(class TArray<int32_t>& outInPlaylists);
 	class UPartyMessage_SearchStatus_X* SetIsSearching(bool bValue);
 	class UPartyMessage_SearchStatus_X* SetSearchState(const class FName& InSearchState);
@@ -9342,14 +7450,7 @@ public:
 	int32_t                                            BuildID;                                       // 0x00A8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_LobbySettings_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_LobbySettings_X"))
 	class UPartyMessage_LobbySettings_X* SetBuildID(int32_t InBuildID);
 };
 
@@ -9362,14 +7463,7 @@ public:
 	ELobbyKickReason                                   KickReason;                                    // 0x00F0 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_Kick_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_Kick_X"))
 	class UPartyMessage_Kick_X* SetReason(ELobbyKickReason InKickReason);
 	class UPartyMessage_Kick_X* SetKicked(const struct FUniqueNetId& InPlayer);
 };
@@ -9383,14 +7477,7 @@ public:
 	class TArray<struct FSimplePartyMember>            Members;                                       // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_LocalPlayers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_LocalPlayers_X"))
 	void AddMember(const struct FPartyMember& Member);
 	class UPartyMessage_LocalPlayers_X* AddPlayer(const struct FUniqueNetId& PlayerID, const class FString& PlayerName);
 	class UPartyMessage_LocalPlayers_X* AddOnlinePlayer(class UOnlinePlayer_X* Player);
@@ -9406,14 +7493,7 @@ public:
 	int32_t                                            MatchmakeRestrictions;                         // 0x00A8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_MatchmakingAvailability_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_MatchmakingAvailability_X"))
 	class UPartyMessage_MatchmakingAvailability_X* SetMatchmakeRestrictions(int32_t InRestrictions);
 };
 
@@ -9425,14 +7505,7 @@ public:
 	struct FPartyJoinMatchSettings                     Settings;                                      // 0x00A8 (0x0058) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_JoinGame_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_JoinGame_X"))
 	class UPartyMessage_JoinGame_X* SetSettings(struct FPartyJoinMatchSettings& outInSettings);
 };
 
@@ -9444,14 +7517,7 @@ public:
 	struct FPartyMemberServer                          Server;                                        // 0x00A8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_PartyMemberJoinGame_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_PartyMemberJoinGame_X"))
 	class UPartyMessage_PartyMemberJoinGame_X* SetPartyMemberServer(struct FPartyMemberServer& outInServer);
 };
 
@@ -9463,14 +7529,7 @@ public:
 	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_DisableCrossPlay_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_DisableCrossPlay_X"))
 	class UPartyMessage_DisableCrossPlay_X* SetDisableCrossPlay(bool InDisableCrossplay);
 };
 
@@ -9482,14 +7541,7 @@ public:
 	ECrossPlatformChatState                            CrossChatState;                                // 0x00A8 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_CrossPlayTextChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_CrossPlayTextChat_X"))
 	class UPartyMessage_CrossPlayTextChat_X* SetCrossPlayTextChatState(ECrossPlatformChatState InCrossChatState);
 };
 
@@ -9501,14 +7553,7 @@ public:
 	struct FUniqueLobbyId                              PlatformPartyID;                               // 0x00A8 (0x0010) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_SetPlatformParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_SetPlatformParty_X"))
 };
 
 // Class ProjectX.OnlineGameJoinGame_X
@@ -9557,14 +7602,7 @@ public:
 	struct FScriptDelegate                             __EventMaxPlayersChanged__Delegate;            // 0x0440 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameJoinGame_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameJoinGame_X"))
 	void HandleCanPlayOnline(class UPrivilegeCheck_X* PrivilegeCheck);
 	void GoToNextState();
 	void HandleCancelJoin(class UIReservationConnection_X* Connection, class UObject* Message);
@@ -9623,14 +7661,7 @@ public:
 	struct FScriptDelegate                             __EventCurrentPlaylistSet__Delegate;           // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameAccount_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameAccount_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	void OnMainMenuOpened();
 	int32_t GetNumLocalPlayers();
@@ -9656,14 +7687,7 @@ class UPartySequence_InvitedToPlatformParty_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_InvitedToPlatformParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_InvitedToPlatformParty_X"))
 	void HandleJoinPlatformLobby(bool bWasSuccessful, const class FString& Error, struct FActiveLobbyInfo& outLobbyInfo, struct FUniqueLobbyId& outLobbyUID);
 	void JoinPlatformPartyCallback(int32_t LocalPlayerNum, struct FUniqueLobbyId& outInLobbyId);
 	void HandlePlayerInvited(bool bAccepted, struct FUniqueLobbyId& outInLobbyId, struct FUniqueNetId& outFriendId);
@@ -9722,14 +7746,7 @@ public:
 	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x03C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Parties_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Parties_X"))
 	void __Parties_X__CreateLobby_0x1(class UError* Error);
 	void __Parties_X__HandlePsyNetPartyJoined_0x1(const struct FPsyNetPartyMember& Member);
 	void __Parties_X__SetLobbyOwner_0x1(class URPC_PartyChangeOwner_X* RPC);
@@ -9878,14 +7895,7 @@ class UPartySequence_PsyNetPartyUpgrade_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_PsyNetPartyUpgrade_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_PsyNetPartyUpgrade_X"))
 	void HandleJoinPsyNetLobby(bool bWasSuccessful, const class FString& Error, struct FActiveLobbyInfo& outLobbyInfo, struct FUniqueLobbyId& outLobbyUID);
 	void TryUpgrade(struct FActiveLobbyInfo& outLobbyInfo, struct FUniqueLobbyId& outPlatformLobbyUID);
 };
@@ -9897,14 +7907,7 @@ class UPartySequence_InvitedToPsyNetParty_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_InvitedToPsyNetParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_InvitedToPsyNetParty_X"))
 	void JoinPsyNetPartyCallback(int32_t LocalPlayerNum, struct FUniqueLobbyId& outInLobbyId);
 	class UAsyncTask* HandlePlayerInvited(bool bAccepted, struct FUniqueLobbyId& outInLobbyId, struct FUniqueNetId& outInviterId);
 	void HandlePlayerInvitedPrompt(bool bAccepted, struct FUniqueLobbyId& outInLobbyId, struct FUniqueNetId& outInviterId);
@@ -9921,14 +7924,7 @@ public:
 	struct FScriptDelegate                             __EventPartyIdChanged__Delegate;               // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyPlatformSession_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyPlatformSession_X"))
 	void ClearPlatformParty();
 	void LeaveParty();
 	void BroadcastPlatformParty();
@@ -9945,14 +7941,7 @@ public:
 	struct FPartyMetricsData                           PartyData;                                     // 0x0080 (0x000C) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMetrics_X"))
 	void PartyChannelError(const struct FUniqueLobbyId& PartyID, const struct FUniqueNetId& LeaderID, int32_t MissingMessageID);
 	void PartyMessage(const struct FUniqueLobbyId& PartyID, const struct FUniqueNetId& LeaderID, const class FName& MessageType);
 	void PartyChanged(const struct FUniqueLobbyId& PartyID, const struct FUniqueNetId& LeaderID, bool bLeader, int32_t PartySize, int32_t LocalPlayers, int32_t RemotePlayers);
@@ -9978,14 +7967,7 @@ public:
 	struct FScriptDelegate                             Handler;                                       // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__CreatePartyInternal_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__CreatePartyInternal_0x1"))
 	void __OnlineGameParty_X__CreatePartyInternal_0x1(class UError* ConnectionError);
 };
 
@@ -10037,14 +8019,7 @@ public:
 	class UErrorType*                                  PartyChatBlockedChatDisabled;                  // 0x01C0 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyErrors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyErrors_X"))
 };
 
 // Class ProjectX.__OnlineGameParty_X__JoinParty_0x1
@@ -10057,14 +8032,7 @@ public:
 	struct FUniqueLobbyId                              InPartyId;                                     // 0x0068 (0x0010) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__JoinParty_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__JoinParty_0x1"))
 	void __OnlineGameParty_X__JoinParty_0x1(class UPrivilegeCheck_X* PrivilegeCheck);
 };
 
@@ -10080,14 +8048,7 @@ public:
 	struct FScriptDelegate                             __EventPrivilegeCheckRestriction__Delegate;    // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGamePrivileges_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePrivileges_X"))
 	bool IsCheckingPrivileges();
 	void RemoveCallback(const struct FScriptDelegate& Callback);
 	void HandlePrivilegeCheckFinished(class UPrivilegeCheck_X* PrivilegeCheck);
@@ -10122,14 +8083,7 @@ public:
 	struct FScriptDelegate                             __EventPlaylistsChanged__Delegate;             // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGamePlaylists_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePlaylists_X"))
 	bool __OnlineGamePlaylists_X__GetPrivateMatch_0x1(class UGameSettingPlaylist_X* P);
 	bool __OnlineGamePlaylists_X__GetLanMatch_0x1(class UGameSettingPlaylist_X* P);
 	int32_t __OnlineGamePlaylists_X__GetRankedPlaylistIDs_0x2(class UGameSettingPlaylist_X* Playlist);
@@ -10221,14 +8175,7 @@ public:
 	class TArray<int32_t>                              PopulationBuckets;                             // 0x0150 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameSettingPlaylist_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameSettingPlaylist_X"))
 	bool UseRandomizedNameAndPassword();
 	bool ShouldAllowRankedReconnect();
 	bool HasBackfillPolicy();
@@ -10254,14 +8201,7 @@ public:
 	struct FPartyJoinMatchSettings                     InSettings;                                    // 0x0060 (0x0058) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleConfirmJoinGame_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleConfirmJoinGame_0x1"))
 	void __OnlineGameParty_X__HandleConfirmJoinGame_0x1();
 };
 
@@ -10273,14 +8213,7 @@ public:
 	struct FJoinMatchSettings                          Settings;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleConfirmJoinGame_ConnectionValid_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleConfirmJoinGame_ConnectionValid_0x1"))
 	void __OnlineGameParty_X__HandleConfirmJoinGame_ConnectionValid_0x1(const struct FServerReservationData& Reservation);
 };
 
@@ -10295,14 +8228,7 @@ public:
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.FindServerTask_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FindServerTask_X"))
 	void HandleClientReservationMessage(class UIReservationConnection_X* Connection, class UClientReservationMessage_X* Message);
 	void HandleSearchTimeout();
 	void HandleJoinMatchError(class URPC_X* InRPC);
@@ -10321,14 +8247,7 @@ class UPartyJoinedEvent_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyJoinedEvent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyJoinedEvent_X"))
 };
 
 // Class ProjectX.ClientReservationMessage_X
@@ -10339,14 +8258,7 @@ public:
 	struct FServerReservationData                      Reservation;                                   // 0x0060 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClientReservationMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClientReservationMessage_X"))
 	class FString GetDSRToken();
 	class FString GetReservationID();
 };
@@ -10360,14 +8272,7 @@ public:
 	struct FJoinMatchSettings                          Settings;                                      // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleClientReservationMessage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HandleClientReservationMessage_0x1"))
 	void __OnlineGameParty_X__HandleClientReservationMessage_0x1();
 };
 
@@ -10379,14 +8284,7 @@ public:
 	class TArray<EOnlinePlatform>                      PartyLeaderCrossPlayGroup;                     // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HasMultiplePlatforms_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__HasMultiplePlatforms_0x1"))
 	bool __OnlineGameParty_X__HasMultiplePlatforms_0x1(const struct FPartyMember& P);
 };
 
@@ -10402,14 +8300,7 @@ public:
 	struct FScriptDelegate                             __EventSkillSynced__Delegate;                  // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameSkill_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameSkill_X"))
 	void __OnlineGameSkill_X__Construct_0x1(class UOnlineGameParty_X* PartyObject);
 	void __OnlineGameSkill_X__CreateSyncPlayerSkillRPC_0x2(class URPC_GetPartyMemberSkill_X* RPC);
 	void __OnlineGameSkill_X__CreateSyncPlayerSkillRPC_0x1(class URPC_GetPlayerSkill_X* RPC);
@@ -10462,14 +8353,7 @@ public:
 	struct FUniqueNetId                                InPrimaryID;                                   // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameParty_X__GetPlayersWithPrimaryMemberID_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__GetPlayersWithPrimaryMemberID_0x1"))
 	bool __OnlineGameParty_X__GetPlayersWithPrimaryMemberID_0x1(const struct FPartyMember& Member);
 };
 
@@ -10481,14 +8365,7 @@ public:
 	uint32_t                                           bCompressMessages : 1;                         // 0x0078 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyConfig_X"))
 };
 
 // Class ProjectX.__OnlineGameReservations_X__GetMigrationReservationData_0x1
@@ -10500,14 +8377,7 @@ public:
 	class UEngine*                                     GEngine;                                       // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__GetMigrationReservationData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__GetMigrationReservationData_0x1"))
 	void __OnlineGameReservations_X__GetMigrationReservationData_0x1(const struct FReservationData& P);
 };
 
@@ -10519,14 +8389,7 @@ public:
 	class UAddReservationMessage_X*                    Message;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__RecordReservation_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__RecordReservation_0x1"))
 	void __OnlineGameReservations_X__RecordReservation_0x1(const struct FReservationPlayerData& P);
 };
 
@@ -10539,14 +8402,7 @@ public:
 	struct FReservationData                            PlayerRes;                                     // 0x0068 (0x0110) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameReservations_X__SetPlayersWithMigrationData_0x2"))
 	bool __OnlineGameReservations_X__SetPlayersWithMigrationData_0x3(const struct FReservationData& P);
 	void __OnlineGameReservations_X__SetPlayersWithMigrationData_0x2(const struct FMigrationReservationData& P);
 };
@@ -10560,14 +8416,7 @@ public:
 	class UOnlineGameParty_X*                          PartyObject;                                   // 0x00A8 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__ClearPartyMembersSkill_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__ClearPartyMembersSkill_0x1"))
 	bool __OnlineGameSkill_X__ClearPartyMembersSkill_0x1(const struct FPartyMember& Member);
 };
 
@@ -10579,14 +8428,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__ClearSkill_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__ClearSkill_0x1"))
 	void __OnlineGameSkill_X__ClearSkill_0x1(class UPlaylistSkillCache_X* P);
 };
 
@@ -10602,14 +8444,7 @@ public:
 	struct FScriptDelegate                             __EventPlaylistSkillChanged__Delegate;         // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlaylistSkillCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlaylistSkillCache_X"))
 	struct FPlayerSkillRating ConvertUpdatedSkillRating(const struct FUpdatedPlayerSkillRating& InUpdatedRating);
 	int32_t GetPlayerIndex(const struct FUniqueNetId& PlayerID);
 	struct FPlayerSkillRating GetPlayerRating(const struct FUniqueNetId& PlayerID);
@@ -10632,14 +8467,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__HandleSyncedPlayerSkill_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__HandleSyncedPlayerSkill_0x1"))
 	void __OnlineGameSkill_X__HandleSyncedPlayerSkill_0x1(int32_t RankedPlaylistID);
 };
 
@@ -10651,14 +8479,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__OnSkillSynced_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameSkill_X__OnSkillSynced_0x1"))
 	bool __OnlineGameSkill_X__OnSkillSynced_0x1(class ULocalPlayer* P);
 };
 
@@ -10670,14 +8491,7 @@ public:
 	class FString                                      Id;                                            // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineGameWordFilter_X__InternalSanitize_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameWordFilter_X__InternalSanitize_0x1"))
 	void __OnlineGameWordFilter_X__InternalSanitize_0x1(const struct FWordFilterResult& Result);
 };
 
@@ -10692,14 +8506,7 @@ public:
 	class UPsyNetWordFilter_X*                         PsyNetWordFilter;                              // 0x00D0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameWordFilter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameWordFilter_X"))
 	class FString SanitizePhraseAndNotify(const class FString& Comment, const struct FScriptDelegate& Callback);
 	static class FString SanitizePhrase(const class FString& Comment);
 	class UError* CreateError(EWordFilterUsage Usage, struct FWordFilterResult& outResult);
@@ -10721,14 +8528,7 @@ public:
 	class UOnlineSubsystem*                            EOS;                                           // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineLegalTextEOS_X__HandleEOSInitialized_0x1"))
 	void __OnlineLegalTextEOS_X__HandleEOSInitialized_0x1(uint8_t InLocalPlayerNum);
 };
 
@@ -10740,14 +8540,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlineLegalTextEOS_X__RequestKey_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineLegalTextEOS_X__RequestKey_0x1"))
 	void __OnlineLegalTextEOS_X__RequestKey_0x1(class UKeyRequestResponse* Response, class UError* Error, int32_t ResponseCode);
 };
 
@@ -10759,14 +8552,7 @@ public:
 	class TArray<class FString>                        requiredKeys;                                  // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.KeyRequestResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.KeyRequestResponse"))
 };
 
 // Class ProjectX.NullResponse
@@ -10776,14 +8562,7 @@ class UNullResponse : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NullResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NullResponse"))
 };
 
 // Class ProjectX.__OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1
@@ -10795,14 +8574,7 @@ public:
 	class FString                                      InPin;                                         // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1"))
 	void __OnlinePlayerFriends_X__AcceptEpicFriendInvite_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -10860,14 +8632,7 @@ public:
 	struct FScriptDelegate                             __EpicFriendsPlugin__ChangeNotify;             // 0x0398 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerFriends_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerFriends_X"))
 	void __OnlinePlayerFriends_X__OnInit_0x2(class UEpicFriendsPlugin_X* InPlugin);
 	void __OnlinePlayerFriends_X__OnInit_0x1();
 	void __OnlinePlayerFriends_X__DownloadBlockedList_0x1(class UEpicFriendsPlugin_X* Plugin);
@@ -10981,14 +8746,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__BlockPlayer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__BlockPlayer_0x1"))
 	void __OnlinePlayerFriends_X__BlockPlayer_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -11000,14 +8758,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__SubscribeToEpicFriendsPlugin_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__SubscribeToEpicFriendsPlugin_0x1"))
 	void __OnlinePlayerFriends_X__SubscribeToEpicFriendsPlugin_0x1();
 };
 
@@ -11026,14 +8777,7 @@ public:
 	struct FScriptDelegate                             __NotifyAbandondedDelegate__Delegate;          // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RetryDelayer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RetryDelayer_X"))
 	void Abandon();
 	void ExecuteNextStep();
 	void Cancel();
@@ -11054,14 +8798,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__UnblockPlayer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__UnblockPlayer_0x1"))
 	void __OnlinePlayerFriends_X__UnblockPlayer_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -11073,14 +8810,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1"))
 	void __OnlinePlayerFriends_X__LinkPlatformToEpic_0x1(bool bSuccess, const class TArray<struct FLinkedAccountData>& LinkedAccountData);
 };
 
@@ -11091,14 +8821,7 @@ class USocialMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SocialMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SocialMetrics_X"))
 	void SendFriendInvite(const struct FUniqueNetId& ReceiverPlayerID, uint64_t optionalTimeStamp);
 	void RejectFriendInvite(const struct FUniqueNetId& SenderPlayerID, uint64_t optionalTimeStamp);
 	void AcceptFriendInvite(const struct FUniqueNetId& SenderPlayerID, uint64_t optionalTimeStamp);
@@ -11115,14 +8838,7 @@ public:
 	class FString                                      InPin;                                         // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__InviteEpicFriend_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__InviteEpicFriend_0x1"))
 	void __OnlinePlayerFriends_X__InviteEpicFriend_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -11134,14 +8850,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__DeclineEpicFriendInvite_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__DeclineEpicFriendInvite_0x1"))
 	void __OnlinePlayerFriends_X__DeclineEpicFriendInvite_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -11153,14 +8862,7 @@ public:
 	struct FUniqueNetId                                InPlayerID;                                    // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__TriggerSocialCallback_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__TriggerSocialCallback_0x1"))
 	bool __OnlinePlayerFriends_X__TriggerSocialCallback_0x1(const struct FEpicSocialTaskData& Element);
 };
 
@@ -11172,14 +8874,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__RemoveEpicFriend_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__RemoveEpicFriend_0x1"))
 	void __OnlinePlayerFriends_X__RemoveEpicFriend_0x1(class UEpicFriendsPlugin_X* Plugin);
 };
 
@@ -11192,14 +8887,7 @@ public:
 	class FString                                      Message;                                       // 0x0130 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PsyNetSendIndividualChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PsyNetSendIndividualChat_X"))
 	class URPC_PsyNetSendIndividualChat_X* SetMessage(const class FString& InMessage);
 	class URPC_PsyNetSendIndividualChat_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
@@ -11211,14 +8899,7 @@ class UEpicFriends_X : public UOnlineFriendMap_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EpicFriends_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicFriends_X"))
 };
 
 // Class ProjectX.PlatformFriends_X
@@ -11228,14 +8909,7 @@ class UPlatformFriends_X : public UOnlineFriendMap_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlatformFriends_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlatformFriends_X"))
 };
 
 // Class ProjectX.__OnlinePlayerStorageQueue_X__GetStorageMaxSizeBytes_0x1
@@ -11246,14 +8920,7 @@ public:
 	class FName                                        Category;                                      // 0x0060 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__GetStorageMaxSizeBytes_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__GetStorageMaxSizeBytes_0x1"))
 	bool __OnlinePlayerStorageQueue_X__GetStorageMaxSizeBytes_0x1(const struct FStorageMaxSize& C);
 };
 
@@ -11268,14 +8935,7 @@ public:
 	class FString                                      Encoded;                                       // 0x0068 (0x0010) [0x0000008000400000] (CPF_NeedCtorLink | CPF_ProtectedWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EncodeObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EncodeObject_X"))
 };
 
 // Class ProjectX.RPC_PlayerStorageSet_X
@@ -11288,14 +8948,7 @@ public:
 	class USetPlayerStorageResult_X*                   Result;                                        // 0x0140 (0x0008) [0x0001000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PlayerStorageSet_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PlayerStorageSet_X"))
 	class UObject* eventGetResponseObject();
 };
 
@@ -11307,14 +8960,7 @@ public:
 	struct FSetPlayerStorageResultItem                 Item;                                          // 0x0060 (0x0010) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__MapResultItem_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerStorageQueue_X__MapResultItem_0x1"))
 	bool __OnlinePlayerStorageQueue_X__MapResultItem_0x1(const struct FPendingStorage& P);
 };
 
@@ -11326,14 +8972,7 @@ public:
 	class UAsyncTask*                                  ResponseTask;                                  // 0x0060 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__OnlinePlayerStorageSync_X__SyncObjects_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerStorageSync_X__SyncObjects_0x1"))
 	void __OnlinePlayerStorageSync_X__SyncObjects_0x1(class URPC_X* RPC);
 };
 
@@ -11345,14 +8984,7 @@ public:
 	struct FScriptDelegate                             __EventSyncSuccess__Delegate;                  // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerStorageSync_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageSync_X"))
 	void __OnlinePlayerStorageSync_X__HandleSyncSuccess_0x1(const struct FOnlinePlayerStorageSyncResult& Result);
 	class UObject* InstanceSyncData(class UObject* LocalObject, class UDecodeObject_X* DecodeObj);
 	void HandleSyncSuccess(class URPC_PlayerStorageGet_X* RPC, class UAsyncTask* ResponseTask);
@@ -11371,14 +9003,7 @@ public:
 	class UOnlinePlayer_X*                             PrimaryPlayer;                                 // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__Parties_X__HandleIncomingPartyNotification_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__Parties_X__HandleIncomingPartyNotification_0x1"))
 	void __Parties_X__HandleIncomingPartyNotification_0x1(const class FString& EpicID, bool bBlocked);
 };
 
@@ -11398,14 +9023,7 @@ public:
 	struct FUniqueNetId                                FromEpicUserID;                                // 0x0168 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_Party_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_Party_X"))
 };
 
 // Class ProjectX.__PartyMessageQueue_X__SendMessage_0x1
@@ -11416,14 +9034,7 @@ public:
 	class UAsyncTask*                                  Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartyMessageQueue_X__SendMessage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartyMessageQueue_X__SendMessage_0x1"))
 	void __PartyMessageQueue_X__SendMessage_0x1W(class UError* instance);
 };
 
@@ -11439,14 +9050,7 @@ public:
 	struct FScriptDelegate                             __SendMessageServiceDelegate__Delegate;        // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessageQueue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessageQueue_X"))
 	void __PartyMessageQueue_X__CancelAll_0x1(class UAsyncTask* Task);
 	void HandleTaskComplete(class UAsyncTask* Task);
 	class UAsyncTask* SendMessageW(const struct FUniqueLobbyId& LobbyId, const class FString& Message);
@@ -11470,14 +9074,7 @@ public:
 	ELobbyVisibility                                   Type;                                          // 0x0078 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartySequence_CreateParty_X__CreateParty_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartySequence_CreateParty_X__CreateParty_0x1"))
 	void __PartySequence_CreateParty_X__CreateParty_0x1(class URPC_PartyCreate_X* RPC);
 };
 
@@ -11492,14 +9089,7 @@ public:
 	class TArray<struct FPsyNetPartyMember>            Members;                                       // 0x0160 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyCreate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyCreate_X"))
 	class URPC_PartyCreate_X* SetRequirePsyNetParty(bool bValue);
 };
 
@@ -11512,14 +9102,7 @@ public:
 	struct FScriptDelegate                             __EventPartyCreated__Delegate;                 // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_CreateParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_CreateParty_X"))
 	void __PartySequence_CreateParty_X__CreateParty_0x2(class URPC_X* instance);
 	void HandleCreatePartyComplete();
 	void HandlePlatformPartyCreated(bool bWasSuccessful, const class FString& Error, struct FUniqueLobbyId& outPlatformPartyID);
@@ -11536,14 +9119,7 @@ public:
 	struct FUniqueNetId                                FriendId;                                      // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPlatformParty_X__HandlePlayerInvited_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPlatformParty_X__HandlePlayerInvited_0x1"))
 	void __PartySequence_InvitedToPlatformParty_X__HandlePlayerInvited_0x1();
 };
 
@@ -11556,14 +9132,7 @@ public:
 	struct FUniqueNetId                                InviterId;                                     // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedPrompt_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedPrompt_0x1"))
 	void __PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedPrompt_0x1();
 };
 
@@ -11576,14 +9145,7 @@ public:
 	struct FUniqueNetId                                InviterId;                                     // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedSilent_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedSilent_0x1"))
 	void __PartySequence_InvitedToPsyNetParty_X__HandlePlayerInvitedSilent_0x1();
 };
 
@@ -11595,14 +9157,7 @@ public:
 	class UPartyMessage_GetPlatformParty_X*            Message;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PartySequence_JoinParty_X__HandleGetPlatformPartyMessage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PartySequence_JoinParty_X__HandleGetPlatformPartyMessage_0x1"))
 	bool __PartySequence_JoinParty_X__HandleGetPlatformPartyMessage_0x1(const struct FPartyMember& M);
 };
 
@@ -11613,14 +9168,7 @@ class UPartyMessage_GetPlatformParty_X : public UPartyMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_GetPlatformParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_GetPlatformParty_X"))
 };
 
 // Class ProjectX.PartySequence_JoinParty_X
@@ -11631,14 +9179,7 @@ public:
 	struct FScriptDelegate                             __EventJoinedParty__Delegate;                  // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_JoinParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_JoinParty_X"))
 	void HandlePlatformPartyCreated(bool bWasSuccessful, const class FString& Error, struct FUniqueLobbyId& outPlatformPartyID);
 	void HandleJoinLobby(bool bWasSuccessful, const class FString& Error, struct FActiveLobbyInfo& outLobbyInfo, struct FUniqueLobbyId& outLobbyUID);
 	void HandleGetPlatformPartyResponseMessage(class UOnlineMessageComponent_X* Component, class UPartyMessage_GetPlatformPartyResponse_X* Message);
@@ -11658,14 +9199,7 @@ public:
 	class UOnlineSubsystem*                            OnlineSub;                                     // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PRI_X__RegisterPlayerWithSession_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PRI_X__RegisterPlayerWithSession_0x1"))
 	void __PRI_X__RegisterPlayerWithSession_0x1(const struct FUniqueNetId& instance);
 };
 
@@ -11679,14 +9213,7 @@ public:
 	struct FScriptDelegate                             __EventDestroyed__Delegate;                    // 0x0440 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PRI_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PRI_X"))
 	void eventDestroyed();
 	void OnUniqueIdChanged();
 	void SetUniqueId(const struct FUniqueNetId& PlayerUniqueId);
@@ -11709,14 +9236,7 @@ public:
 	class UPsyNetBeaconConnection_X*                   Connection;                                    // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetBeacon_X__SendMessageToClients_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetBeacon_X__SendMessageToClients_0x1"))
 	bool __PsyNetBeacon_X__SendMessageToClients_0x1W(class URPC_RelayToClient_X* OtherRPC);
 };
 
@@ -11734,14 +9254,7 @@ public:
 	int32_t                                            OfflineTTLSeconds;                             // 0x012C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RelayToClient_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RelayToClient_X"))
 };
 
 // Class ProjectX.__PsyNetBeacon_X__SendMessageToServer_0x1
@@ -11753,14 +9266,7 @@ public:
 	class UPsyNetBeaconConnection_X*                   Connection;                                    // 0x0068 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetBeacon_X__SendMessageToServer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetBeacon_X__SendMessageToServer_0x1"))
 	void __PsyNetBeacon_X__SendMessageToServer_0x1W(class URPC_X* instance);
 };
 
@@ -11775,14 +9281,7 @@ public:
 	class FString                                      MessagePayload;                                // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RelayToServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RelayToServer_X"))
 };
 
 // Class ProjectX.__PsyNetConnection_X__ProcessServiceCall_0x1
@@ -11793,14 +9292,7 @@ public:
 	class UPsyNetMessage_X*                            Response;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetConnection_X__ProcessServiceCall_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetConnection_X__ProcessServiceCall_0x1"))
 	void __PsyNetConnection_X__ProcessServiceCall_0x1(class UError* instance);
 };
 
@@ -11813,14 +9305,7 @@ public:
 	class UAsyncTask*                                  Task;                                          // 0x0070 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetMessengerHttp_X__SendMessage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetMessengerHttp_X__SendMessage_0x1"))
 	void __PsyNetMessengerHttp_X__SendMessage_0x1W(class UWebRequest_X* Request);
 };
 
@@ -11832,14 +9317,7 @@ public:
 	class FName                                        RequestID;                                     // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetRequestQue_X__SendRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetRequestQue_X__SendRequest_0x1"))
 	void __PsyNetRequestQue_X__SendRequest_0x1();
 };
 
@@ -11854,14 +9332,7 @@ public:
 	struct FScriptDelegate                             __SendMessageDelegate__Delegate;               // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetRequestQue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetRequestQue_X"))
 	void FailAllPending(class UError* Error);
 	void TimeoutRequests();
 	bool ProcessResponseMessage(class UPsyNetMessage_X* Message);
@@ -11879,14 +9350,7 @@ public:
 	class FString                                      ChannelName;                                   // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__CreateChannel_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__CreateChannel_0x1"))
 	bool __PsyNetServiceProvider_X__CreateChannel_0x1(class UPsyNetChannel_X* C);
 };
 
@@ -11908,14 +9372,7 @@ public:
 	struct FScriptDelegate                             __EventClosed__Delegate;                       // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetChannel_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetChannel_X"))
 	class FString GetDebugName();
 	void Close();
 	void Timeout();
@@ -11943,14 +9400,7 @@ public:
 	struct FScriptDelegate                             __EventServiceExecuted__Delegate;              // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetServiceProvider_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetServiceProvider_X"))
 	void FinalizeServiceTask(class UPsyNetClientService_X* Service, class UTAsyncResult__PsyNetClientService_X* Task, class UError* Error);
 	void PrintServiceResult(const class FString& ServiceName, class UError* Error);
 	class UTAsyncResult__PsyNetClientService_X* ExecuteServiceMessage(class UPsyNetConnection_X* Connection, class UPsyNetMessage_X* Message);
@@ -11974,14 +9424,7 @@ public:
 	class UPsyNetMessage_X*                            Response;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__ExecuteRequest_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__ExecuteRequest_0x1"))
 	void __PsyNetServiceProvider_X__ExecuteRequest_0x1(class UPsyNetClientService_X* Result, class UError* Error);
 };
 
@@ -11995,14 +9438,7 @@ public:
 	class UTAsyncResult__PsyNetClientService_X*        Task;                                          // 0x0078 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__ExecuteServiceMessage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetServiceProvider_X__ExecuteServiceMessage_0x1"))
 	void __PsyNetServiceProvider_X__ExecuteServiceMessage_0x2(class UError* Err);
 	void __PsyNetServiceProvider_X__ExecuteServiceMessage_0x1(class UPsyNetClientService_X* R, class UError* E);
 };
@@ -12018,14 +9454,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetClientService_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetClientService_X"))
 	static class UTAsyncResult__PsyNetClientService_X* CreateResultError(class UError* InError);
 	static class UTAsyncResult__PsyNetClientService_X* CreateResult(class UPsyNetClientService_X* InResult);
 	class UTAsyncResult__PsyNetClientService_X* Copy();
@@ -12047,14 +9476,7 @@ public:
 	EWordFilterUsage                                   Usage;                                         // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PsyNetWordFilter_X__WordFilterSanitizeString_0x1"))
 	bool __PsyNetWordFilter_X__WordFilterSanitizeString_0x1(class URPC_FilterContent_X* P);
 };
 
@@ -12071,14 +9493,7 @@ public:
 	EWordFilterUsage                                   Usage;                                         // 0x0138 (0x0001) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_FilterContent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_FilterContent_X"))
 	static class FString GetPolicy(EWordFilterUsage InUsage);
 	class URPC_FilterContent_X* SetUsage(EWordFilterUsage InUsage);
 	class URPC_FilterContent_X* AddComment(const class FString& Comment, const struct FScriptDelegate& Callback, const struct FUniqueNetId& optionalPlayerID);
@@ -12094,14 +9509,7 @@ public:
 	struct FScriptDelegate                             __QueueRPC__Delegate;                          // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetWordFilter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetWordFilter_X"))
 	void __PsyNetWordFilter_X__WordFilterSanitizeString_0x2(class URPC_FilterContent_X* RPC);
 	void HandlePsyNetWordFilterFail(class URPC_FilterContent_X* RPC);
 	void HandlePsyNetWordFilterSuccess(class URPC_FilterContent_X* RPC);
@@ -12119,14 +9527,7 @@ public:
 	class FString                                      SuperRegionID;                                 // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RegionConfig_X__GetSubRegions_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RegionConfig_X__GetSubRegions_0x1"))
 	bool __RegionConfig_X__GetSubRegions_0x1(class URegion_X* R);
 };
 
@@ -12139,14 +9540,7 @@ public:
 	class TArray<class URegion_X*>                     Regions;                                       // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RegionConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionConfig_X"))
 	struct FRegionSecret __RegionConfig_X__GetRegionSecrets_0x2(class URegion_X* R);
 	bool __RegionConfig_X__GetRegionSecrets_0x1(class URegion_X* R);
 	class TArray<struct FRegionSecret> GetRegionSecrets();
@@ -12164,14 +9558,7 @@ public:
 	class URemoteAvatarPermissionsRequestBatch_X*      Batch;                                         // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RemoteAvatarPermissions_X__GetPermissions_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RemoteAvatarPermissions_X__GetPermissions_0x1"))
 	void __RemoteAvatarPermissions_X__GetPermissions_0x1(const struct FUniqueNetId& PlayerID);
 };
 
@@ -12187,14 +9574,7 @@ public:
 	struct FScriptDelegate                             __EventDisallowed__Delegate;                   // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequestBatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequestBatch_X"))
 	void CheckFinished();
 	void SetDisallowed(const struct FUniqueNetId& PlayerID);
 	void SetAllowed(const struct FUniqueNetId& PlayerID);
@@ -12210,14 +9590,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RemoteAvatarPermissions_X__SetAvatarPermission_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RemoteAvatarPermissions_X__SetAvatarPermission_0x1"))
 	bool __RemoteAvatarPermissions_X__SetAvatarPermission_0x1(class URemoteAvatarPermissionsRequest_X* R);
 };
 
@@ -12229,14 +9602,7 @@ public:
 	struct FScriptDelegate                             InCallback;                                    // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RPC_X__CreateTask_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RPC_X__CreateTask_0x1"))
 	void __RPC_X__CreateTask_0x1(class UError* Err);
 };
 
@@ -12248,14 +9614,7 @@ public:
 	class URPCBatch_X*                                 Batch;                                         // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RPCQueue_X__CreateBatch_0x2");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RPCQueue_X__CreateBatch_0x2"))
 	void __RPCQueue_X__CreateBatch_0x2(class UPsyNetMessage_X* Response, class UError* Error);
 };
 
@@ -12267,14 +9626,7 @@ public:
 	class URPCBatch_X*                                 Batch;                                         // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__RPCQueue_X__CreateBatchSingleRPC_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RPCQueue_X__CreateBatchSingleRPC_0x1"))
 	void __RPCQueue_X__CreateBatchSingleRPC_0x1(class UPsyNetMessage_X* Response, class UError* Error);
 };
 
@@ -12286,14 +9638,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ServerPlayerTracker_X__AddPlayer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ServerPlayerTracker_X__AddPlayer_0x1"))
 	bool __ServerPlayerTracker_X__AddPlayer_0x1(const struct FUniqueNetId& P);
 };
 
@@ -12309,14 +9654,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerRemoved__Delegate;                // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerPlayerTracker_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerPlayerTracker_X"))
 	class TArray<struct FUniqueNetId> __ServerPlayerTracker_X__Refresh_0x3(class UAddReservationMessage_X* Message);
 	struct FUniqueNetId __ServerPlayerTracker_X__Refresh_0x2(const struct FReservationData& P);
 	bool __ServerPlayerTracker_X__Refresh_0x1(const struct FReservationData& P);
@@ -12339,14 +9677,7 @@ public:
 	class UClass*                                      InType;                                        // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__StatusObserver_X__FindByAcceptedType_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__StatusObserver_X__FindByAcceptedType_0x1"))
 	bool __StatusObserver_X__FindByAcceptedType_0x1(class UTriggerInfo* TT);
 };
 
@@ -12360,14 +9691,7 @@ public:
 	struct FScriptDelegate                             EventPropertyChange;                           // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.StatusTrigger_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StatusTrigger_X"))
 	void EventPropertyChangeFunc();
 	void EvaluateCondition(bool InConditionalValue);
 	bool IsTriggered();
@@ -12387,14 +9711,7 @@ public:
 	struct FScriptDelegate                             __UpdateTrigger__Delegate;                     // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TriggerInfo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TriggerInfo"))
 	class UTriggerInfo* SetType(class UClass* InType);
 	void UpdateTrigger(class UStatusTrigger_X* InTrigger);
 };
@@ -12411,14 +9728,7 @@ public:
 	struct FScriptDelegate                             __bInitComplete__ChangeNotify;                 // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.StatusObserver_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StatusObserver_X"))
 	class UTriggerInfo* __StatusObserver_X__Init_0x1(class UClass* T);
 	void __bInitComplete__ChangeNotifyFunc();
 	void DebugPrintTriggers();
@@ -12441,14 +9751,7 @@ public:
 	class UStatusTrigger_X*                            InTrigger;                                     // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__StatusObserver_X__ObservesTriggerType_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__StatusObserver_X__ObservesTriggerType_0x1"))
 	bool __StatusObserver_X__ObservesTriggerType_0x1(class UClass* C);
 };
 
@@ -12460,14 +9763,7 @@ public:
 	class UTAsyncResult__array_ClubInvite_X*           Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__Copy_0x1"))
 	void __TAsyncResult__array_ClubInvite_X__Copy_0x1(const class TArray<class UClubInvite_X*>& R, class UError* E);
 };
 
@@ -12482,14 +9778,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0110 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__array_ClubInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__array_ClubInvite_X"))
 	static class UTAsyncResult__array_ClubInvite_X* CreateResultError(class UError* InError);
 	static class UTAsyncResult__array_ClubInvite_X* CreateResult(const class TArray<class UClubInvite_X*>& InResult);
 	class UTAsyncResult__array_ClubInvite_X* Copy();
@@ -12514,14 +9803,7 @@ public:
 	struct FClubMember                                 InvitedBy;                                     // 0x0088 (0x00B8) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubInvite_X"))
 };
 
 // Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1
@@ -12532,14 +9814,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1"))
 	void __TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1();
 };
 
@@ -12551,14 +9826,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__array_ClubInvite_X__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -12570,14 +9838,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__SetResultWhen_0x1"))
 	void __TAsyncResult__array_ClubInvite_X__SetResultWhen_0x1();
 };
 
@@ -12589,14 +9850,7 @@ public:
 	class UTAsyncResult__array_LanServerRecord_X*      Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__Copy_0x1"))
 	void __TAsyncResult__array_LanServerRecord_X__Copy_0x1(const class TArray<class ULanServerRecord_X*>& R, class UError* E);
 };
 
@@ -12611,14 +9865,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0110 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__array_LanServerRecord_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__array_LanServerRecord_X"))
 	static class UTAsyncResult__array_LanServerRecord_X* CreateResultError(class UError* InError);
 	static class UTAsyncResult__array_LanServerRecord_X* CreateResult(const class TArray<class ULanServerRecord_X*>& InResult);
 	class UTAsyncResult__array_LanServerRecord_X* Copy();
@@ -12641,14 +9888,7 @@ public:
 	class FString                                      MetaData;                                      // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanServerRecord_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanServerRecord_X"))
 };
 
 // Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1
@@ -12659,14 +9899,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1"))
 	void __TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1();
 };
 
@@ -12678,14 +9911,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__array_LanServerRecord_X__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -12697,14 +9923,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__SetResultWhen_0x1"))
 	void __TAsyncResult__array_LanServerRecord_X__SetResultWhen_0x1();
 };
 
@@ -12716,14 +9935,7 @@ public:
 	class UTAsyncResult__ClubDetails_X*                Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__Copy_0x1"))
 	void __TAsyncResult__ClubDetails_X__Copy_0x1(class UClubDetails_X* R, class UError* E);
 };
 
@@ -12738,14 +9950,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__ClubDetails_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__ClubDetails_X"))
 	static class UTAsyncResult__ClubDetails_X* CreateResultError(class UError* InError);
 	static class UTAsyncResult__ClubDetails_X* CreateResult(class UClubDetails_X* InResult);
 	class UTAsyncResult__ClubDetails_X* Copy();
@@ -12767,14 +9972,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResult_0x1"))
 	void __TAsyncResult__ClubDetails_X__NotifyOnResult_0x1();
 };
 
@@ -12786,14 +9984,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__ClubDetails_X__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -12805,14 +9996,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__SetResultWhen_0x1"))
 	void __TAsyncResult__ClubDetails_X__SetResultWhen_0x1();
 };
 
@@ -12824,14 +10008,7 @@ public:
 	class UTAsyncResult__PsyNetClientService_X*        Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__Copy_0x1"))
 	void __TAsyncResult__PsyNetClientService_X__Copy_0x1(class UPsyNetClientService_X* R, class UError* E);
 };
 
@@ -12843,14 +10020,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResult_0x1"))
 	void __TAsyncResult__PsyNetClientService_X__NotifyOnResult_0x1();
 };
 
@@ -12862,14 +10032,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__PsyNetClientService_X__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -12881,14 +10044,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__SetResultWhen_0x1"))
 	void __TAsyncResult__PsyNetClientService_X__SetResultWhen_0x1();
 };
 
@@ -12900,14 +10056,7 @@ public:
 	class UTAsyncResult__PsyNetMessage_X*              Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__Copy_0x1"))
 	void __TAsyncResult__PsyNetMessage_X__Copy_0x1(class UPsyNetMessage_X* R, class UError* E);
 };
 
@@ -12922,14 +10071,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetMessage_X"))
 	static class UTAsyncResult__PsyNetMessage_X* CreateResultError(class UError* InError);
 	static class UTAsyncResult__PsyNetMessage_X* CreateResult(class UPsyNetMessage_X* InResult);
 	class UTAsyncResult__PsyNetMessage_X* Copy();
@@ -12951,14 +10093,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResult_0x1"))
 	void __TAsyncResult__PsyNetMessage_X__NotifyOnResult_0x1();
 };
 
@@ -12970,14 +10105,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__PsyNetMessage_X__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -12989,14 +10117,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__SetResultWhen_0x1"))
 	void __TAsyncResult__PsyNetMessage_X__SetResultWhen_0x1();
 };
 
@@ -13008,14 +10129,7 @@ public:
 	class UTAsyncResult__Texture2DDynamic*             Instance;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__Copy_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__Copy_0x1"))
 	void __TAsyncResult__Texture2DDynamic__Copy_0x1(class UTexture2DDynamic* R, class UError* E);
 };
 
@@ -13030,14 +10144,7 @@ public:
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TAsyncResult__Texture2DDynamic");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__Texture2DDynamic"))
 	static class UTAsyncResult__Texture2DDynamic* CreateResultError(class UError* InError);
 	static class UTAsyncResult__Texture2DDynamic* CreateResult(class UTexture2DDynamic* InResult);
 	class UTAsyncResult__Texture2DDynamic* Copy();
@@ -13059,14 +10166,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResult_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResult_0x1"))
 	void __TAsyncResult__Texture2DDynamic__NotifyOnResult_0x1();
 };
 
@@ -13078,14 +10178,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResultComplete_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResultComplete_0x1"))
 	void __TAsyncResult__Texture2DDynamic__NotifyOnResultComplete_0x1(class UError* Err);
 };
 
@@ -13097,14 +10190,7 @@ public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__SetResultWhen_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__SetResultWhen_0x1"))
 	void __TAsyncResult__Texture2DDynamic__SetResultWhen_0x1();
 };
 
@@ -13116,14 +10202,7 @@ public:
 	class FName                                        TitleId;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TitleConfig_X__GetClubTitleData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TitleConfig_X__GetClubTitleData_0x1"))
 	bool __TitleConfig_X__GetClubTitleData_0x1(const struct FPlayerTitleData& Title);
 };
 
@@ -13138,14 +10217,7 @@ public:
 	class FString                                      DefaultColorHexCode;                           // 0x00A8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TitleConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TitleConfig_X"))
 	static int32_t SortTitles(const struct FPlayerTitleData& A, const struct FPlayerTitleData& B);
 	struct FPlayerTitleData InitTitleColors(const struct FPlayerTitleData& Data);
 	struct FPlayerTitleData GetClubTitleData(const class FName& TitleId);
@@ -13162,14 +10234,7 @@ public:
 	class FName                                        TitleId;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__TitleConfig_X__GetTitleData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TitleConfig_X__GetTitleData_0x1"))
 	bool __TitleConfig_X__GetTitleData_0x1(const struct FPlayerTitleData& Title);
 };
 
@@ -13181,14 +10246,7 @@ public:
 	class UWebRequest_X*                               WebRequest;                                    // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__WebCache_X__DownloadData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__WebCache_X__DownloadData_0x1"))
 	void __WebCache_X__DownloadData_0x1(const class FString& Key, const class FString& Value);
 };
 
@@ -13201,14 +10259,7 @@ public:
 	struct FScriptDelegate                             __CachedDataCallback__Delegate;                // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebCache_X"))
 	class FString GetRequestDebugString(const struct FCachedDataRequest& Request);
 	void HandleWebRequest(class UWebRequest_X* WebRequest);
 	void DownloadData(const class FString& URL, const class FString& ETag, class UStringMap* Headers, bool bZipResponse);
@@ -13230,14 +10281,7 @@ public:
 	class UWebImageDownload_X*                         Download;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__WebImageCache_X__HandleImageData_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__WebImageCache_X__HandleImageData_0x1"))
 	void __WebImageCache_X__HandleImageData_0x1(const class FString& instance, const struct FImageLayout& Image);
 };
 
@@ -13253,14 +10297,7 @@ public:
 	class UTAsyncResult__Texture2DDynamic*             AsyncResult;                                   // 0x0080 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebImageDownload_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebImageDownload_X"))
 };
 
 // Class ProjectX.WebImageCache_X
@@ -13273,14 +10310,7 @@ public:
 	struct FScriptDelegate                             __ImageSyncCallback__Delegate;                 // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebImageCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebImageCache_X"))
 	void SyncImageURL(const class FString& URL, const struct FScriptDelegate& Callback);
 	void HandleImageDecoded(class UWebImageDownload_X* Download, const struct FImageLayout& Image);
 	void SetDownloadError(class UWebImageDownload_X* Download, class UError* Error);
@@ -13303,14 +10333,7 @@ public:
 	class UWebImageDownload_X*                         Download;                                      // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__WebImageCache_X__StartSync_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__WebImageCache_X__StartSync_0x1"))
 	void __WebImageCache_X__StartSync_0x1(class UCachedWebData_X* Data);
 };
 
@@ -13322,14 +10345,7 @@ public:
 	class UTAsyncResult__Texture2DDynamic*             Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__WebImageCache_X__SyncUncachedImage_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__WebImageCache_X__SyncUncachedImage_0x1"))
 	void __WebImageCache_X__SyncUncachedImage_0x1(const struct FOnlineImageDownload& ImageInfo);
 };
 
@@ -13340,14 +10356,7 @@ class U_ReservationTypes_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX._ReservationTypes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX._ReservationTypes_X"))
 };
 
 // Class ProjectX.ActionQueue_X
@@ -13364,14 +10373,7 @@ public:
 	struct FScriptDelegate                             __QueueEmptied__Delegate;                      // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ActionQueue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ActionQueue_X"))
 	void Tick();
 	void Add(const struct FScriptDelegate& Callback);
 	void QueueEmptied();
@@ -13387,14 +10389,7 @@ public:
 	class FName                                        AnimNodeName;                                  // 0x00A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ActivateAnimSeriesComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ActivateAnimSeriesComponent_X"))
 	void SetAnimSeriesActiveInComponent(class USkeletalMeshComponent* SKC, bool bActive);
 	void SetAnimSeriesActive(bool bActive);
 	void eventDetached();
@@ -13410,14 +10405,7 @@ public:
 	struct FCustomMatchSettings                        Settings;                                      // 0x00D0 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AddReservationMessagePrivate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AddReservationMessagePrivate_X"))
 	class FString GetDebugString();
 	class UAddReservationMessagePrivate_X* SetSettings(struct FCustomMatchSettings& outInSettings);
 };
@@ -13432,14 +10420,7 @@ public:
 	class TArray<struct FOnlinePlayerMapPrefs>         MapPrefs;                                      // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AddReservationMessagePublic_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AddReservationMessagePublic_X"))
 	class UAddReservationMessage_X* AddPlayers();
 	void SetPlayerPref(class UGameSettingPlaylist_X* Playlist, class UOnlinePlayer_X* OnlinePlayer);
 	void GetPlayerMapPrefs(const struct FUniqueNetId& PlayerID, class TArray<class FName>& outLikes, class TArray<class FName>& outDislikes);
@@ -13457,14 +10438,7 @@ public:
 	uint32_t                                           ageGateRequired : 1;                           // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AgeGateRequiredResponse");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AgeGateRequiredResponse"))
 };
 
 // Class ProjectX.AppConfig_X
@@ -13475,14 +10449,7 @@ public:
 	uint32_t                                           bSpinSleep : 1;                                // 0x0078 (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AppConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AppConfig_X"))
 	void Undo();
 	void Apply();
 };
@@ -13503,14 +10470,7 @@ public:
 	float                                              AntennaScale;                                  // 0x00A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AprilConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AprilConfig_X"))
 	bool IsActive();
 };
 
@@ -13523,14 +10483,7 @@ public:
 	class AActor*                                      Spawned;                                       // 0x0180 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SeqEvent_Spawned_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SeqEvent_Spawned_X"))
 	static void TriggerFor(class AActor* A);
 };
 
@@ -13543,14 +10496,7 @@ public:
 	int32_t                                            AvatarRequestMaxBatchSize;                     // 0x007C (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.VanityConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.VanityConfig_X"))
 };
 
 // Class ProjectX.BanMessage_X
@@ -13572,14 +10518,7 @@ public:
 	struct FScriptDelegate                             __EventBanEnded__Delegate;                     // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BanMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BanMessage_X"))
 	void __BanMessage_X__Init_0x1();
 	bool IsPermanentlyBanned();
 	bool IsBanned();
@@ -13596,14 +10535,7 @@ class UBlockStatusMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BlockStatusMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlockStatusMetrics_X"))
 	void BlockListDownloadTimeout(bool bValidStatus);
 };
 
@@ -13616,34 +10548,21 @@ public:
 	uint32_t                                           bSubmitBugReportOnTimeout : 1;                 // 0x007C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BlockStatusReporterConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlockStatusReporterConfig_X"))
 };
 
 // Class ProjectX.BlogConfig_X
-// 0x0024 (0x0078 - 0x009C)
+// 0x0028 (0x0078 - 0x00A0)
 class UBlogConfig_X : public UOnlineConfig_X
 {
 public:
 	class TArray<class UBlogTile_X*>                   Entries;                                       // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      MotD;                                          // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	float                                              RetryTime;                                     // 0x0098 (0x0004) [0x0000000000000000]               
+	float                                              RequestDelay;                                  // 0x009C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BlogConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlogConfig_X"))
 	int32_t __BlogConfig_X__Apply_0x2(class UBlogTile_X* L, class UBlogTile_X* R);
 	void __BlogConfig_X__Apply_0x1(class UBlogTile_X* X);
 	void Apply();
@@ -13683,14 +10602,7 @@ public:
 	class FString                                      EventFolderID;                                 // 0x0168 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BlogTile_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlogTile_X"))
 	class FString GetTileID();
 };
 
@@ -13702,14 +10614,7 @@ public:
 	int32_t                                            PollCrumbsIntervalSeconds;                     // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BreadcrumbConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BreadcrumbConfig_X"))
 };
 
 // Class ProjectX.BugMetrics_X
@@ -13720,14 +10625,7 @@ public:
 	class TArray<class FName>                          ReportedIDs;                                   // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.BugMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BugMetrics_X"))
 	void Report(const class FName& Id, const class FString& Details, const class FString& Trace);
 	void BugReport(const class FName& Id, const class FString& optionalDetails);
 	static void StaticReport(const class FName& Id, const class FString& optionalDetails);
@@ -13745,14 +10643,7 @@ public:
 	struct FScriptDelegate                             __EventExpired__Delegate;                      // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CacheTimer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CacheTimer_X"))
 	float GetRandomCacheTimeoutTime();
 	void OnExpired();
 	void OnDisabled();
@@ -13775,14 +10666,7 @@ public:
 	struct FScriptDelegate                             __EventBlenderStateChanged__Delegate;          // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraStateBlender_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraStateBlender_X"))
 	bool IsTransitioning();
 	void BlendCameraState(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void PostProcessPOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
@@ -13808,21 +10692,14 @@ public:
 	uint32_t                                           bCanFreeLook : 1;                              // 0x0088 (0x0004) [0x0001000000000002] [0x00000002] (CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraState_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraState_X"))
 	void OnSnap();
 	void ModifyPostProcessSettings(struct FPostProcessSettings& outPP);
 	void ProcessViewRotation(float DeltaTime, struct FRotator& outOutViewRotation, struct FRotator& outOutDeltaRot);
 	void UpdatePOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void Tick(float DeltaTime);
 	void EndCameraState();
-	void BeginCameraState();
+	void BeginCameraState(class UCameraState_X* optionalPreviousState);
 	struct FViewTargetTransitionParams GetEndBlendParams(class UCameraState_X* NewState);
 	struct FViewTargetTransitionParams GetStartBlendParams(class UCameraState_X* PreviousState);
 	bool ShouldKeepExecuting();
@@ -13838,14 +10715,7 @@ class UCameraUtils_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraUtils_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraUtils_X"))
 	static void UpdateAspectRatioFOV(float AspectRatio, struct FCameraOrientation& outOutPOV);
 	static void BlendPOVs(const struct FCameraOrientation& FromPOV, const struct FCameraOrientation& ToPOV, float Percent, struct FCameraOrientation& outOutPOV);
 	static float GetBlendPercent(const struct FViewTargetTransitionParams& BlendParams, float Time);
@@ -13864,14 +10734,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraModifier_CameraShake_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraModifier_CameraShake_X"))
 	void ModifyCameraShakeScale(class UCameraShake* Shake, float NewScale);
 	void RemoveCameraShake(class UCameraShake* Shake);
 };
@@ -13889,17 +10752,10 @@ public:
 	float                                              PrevPostAlpha;                                 // 0x0208 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraState_CamActor_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraState_CamActor_X"))
 	void UpdatePOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void EndCameraState();
-	void BeginCameraState();
+	void BeginCameraState(class UCameraState_X* optionalPreviousState);
 	struct FViewTargetTransitionParams GetBlendParams(class UCameraState_X* PrevState);
 	bool ShouldExecute();
 };
@@ -13912,14 +10768,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x020C (0x0004) MISSED OFFSET
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CameraState_CamActorCinematic_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraState_CamActorCinematic_X"))
 	void UpdatePOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void EndCameraState();
 };
@@ -13931,14 +10780,7 @@ class UCancelJoinMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CancelJoinMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CancelJoinMessage_X"))
 };
 
 // Class ProjectX.CDN_X
@@ -13950,14 +10792,7 @@ public:
 	class FString                                      BlogURL;                                       // 0x0070 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CDN_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CDN_X"))
 };
 
 // Class ProjectX.HUD_X
@@ -13970,14 +10805,7 @@ public:
 	class UTexture*                                    DebugTexture;                                  // 0x0318 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.HUD_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.HUD_X"))
 	void SetShowDebugObject(class UObject* inObj);
 	void ShowDebugInfo(float& outOut_YL, float& outOut_YPos);
 	void ShowDebug(const class FName& optionalDebugType);
@@ -14007,14 +10835,7 @@ public:
 	struct FScriptDelegate                             __OnFoundReservation__Delegate;                // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.CheckReservation_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CheckReservation_X"))
 	void HandleClientReservationMessage(class UIReservationConnection_X* Connection, class UClientReservationMessage_X* Message);
 	void SendRequest();
 	void HandlePreLoadMap(const class FString& instance);
@@ -14033,14 +10854,7 @@ class URPC_ReservationHeartbeat_X : public URPC_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ReservationHeartbeat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ReservationHeartbeat_X"))
 };
 
 // Class ProjectX.MatchmakingMetrics_X
@@ -14055,14 +10869,7 @@ public:
 	int32_t                                            PartyLeaderTier;                               // 0x009C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchmakingMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchmakingMetrics_X"))
 	void SendReservationRetrySuccess();
 	void RankedReconnect(const class FString& ServerName, const struct FGuid& optionalMatchMakingGuid);
 	void FoundServer(const class FString& ServerName, int32_t Playlist, const class FString& ReservationID, bool bFromNotification, float ElapsedTime, const struct FGuid& MatchMakingGuid, bool bDisableCrossPlay, float MMR, int32_t Tier, const class FString& RegionID, const class FString& ServerId);
@@ -14090,14 +10897,7 @@ public:
 	class UWebRequest_X*                               PendingRequest;                                // 0x00C0 (0x0008) [0x0001000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClanforgeReservation_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClanforgeReservation_X"))
 	void HandleRetry();
 	void Retry();
 	void HandleSendComplete(class UWebRequest_X* Request);
@@ -14125,14 +10925,7 @@ public:
 	EConnectionType_X                                  ConnectionType;                                // 0x00B4 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClientNetMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClientNetMetrics_X"))
 	void __ClientNetMetrics_X__StartRecording_0x2(class UGameServerPinger_X* instance);
 	void __ClientNetMetrics_X__StartRecording_0x1(class UGameServerPinger_X* instance, float DelaySeconds);
 	struct FPingStats CalcPingStats(class TArray<float>& outPings);
@@ -14155,14 +10948,7 @@ public:
 	struct FScriptDelegate                             __EventLost__Delegate;                         // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameServerPinger_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameServerPinger_X"))
 	void HandleLost(class UUdpPingBeaconClient_X* instance, const class FName& __);
 	void HandlePong(class UUdpPingBeaconClient_X* instance, const class FName& __, float DeltaSeconds);
 	void SendPing();
@@ -14180,14 +10966,7 @@ class UInitialServerToClientMessage_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.InitialServerToClientMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.InitialServerToClientMessage_X"))
 	class FString GetDSRToken();
 	class FString GetReservationID();
 };
@@ -14221,14 +11000,7 @@ public:
 	class UErrorType*                                  AlreadyClubOwner;                              // 0x0128 (0x0008) [0x0000000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubErrors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubErrors_X"))
 };
 
 // Class ProjectX.ClubMetrics_X
@@ -14238,14 +11010,7 @@ class UClubMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubMetrics_X"))
 	void ClubIntroShown(uint64_t FirstClubID, uint64_t SecondClubID, const class FString& MatchGUID, uint64_t optionalTimeStamp);
 	class FString GetRoleString(EClubRole ClubRole);
 	void ChangePlayerRole(uint64_t ClubID, const struct FUniqueNetId& MemberPlayerID, const class FString& OriginalRole, const class FString& NewRole, uint64_t optionalTimeStamp);
@@ -14271,14 +11036,7 @@ public:
 	class FString                                      CustomServerPassword;                          // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ClubServerResult_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ClubServerResult_X"))
 	class FString GetAddress();
 };
 
@@ -14290,14 +11048,7 @@ public:
 	class FString                                      ServerId;                                      // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerToServerMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerToServerMessage_X"))
 };
 
 // Class ProjectX.ConnectionInfoMessage_X
@@ -14308,14 +11059,7 @@ public:
 	struct FServerConnectionInfo                       ConnectionInfo;                                // 0x0070 (0x0030) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ConnectionInfoMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ConnectionInfoMessage_X"))
 	static bool IsConnectionInfoValid(struct FServerConnectionInfo& outServerInfo);
 };
 
@@ -14340,14 +11084,7 @@ public:
 	class FName                                        DDoSProtectionDisabled_Name;                   // 0x00C8 (0x0008) [0x0001000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DDoSService_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DDoSService_X"))
 	void __DDoSService_X__EndDDoSService_0x1(class UWebRequest_X* Request);
 	void __DDoSService_X__StartDDoSService_0x1(class UWebRequest_X* Request);
 	bool IsPayloadValid(const struct FDDoSServicePayloadStruct& Payload);
@@ -14373,14 +11110,7 @@ class UURLValidator_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.URLValidator_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.URLValidator_X"))
 	static bool AreCharsUrlSafe(const class FString& Str);
 	static bool IsQueryValid(const class FString& Query);
 	static bool IsCharUrlSafe(const class FString& Char);
@@ -14421,14 +11151,7 @@ public:
 	float                                              OffsetX;                                       // 0x00FC (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DebugDrawer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DebugDrawer_X"))
 	void DrawHeader();
 	void DrawSpacer(float optionalHeight);
 	void DrawBackground(float Width, float Height);
@@ -14454,14 +11177,7 @@ public:
 	class UError*                                      Error;                                         // 0x0068 (0x0008) [0x0000008000000000] (CPF_ProtectedWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DecodeObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DecodeObject_X"))
 	void Decode(class UObject* OutObj);
 };
 
@@ -14474,14 +11190,7 @@ public:
 	class FString                                      Stream;                                        // 0x0078 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DecodeObjectJson_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DecodeObjectJson_X"))
 	void Decode(class UObject* OutObj);
 	class UDecodeObjectJson_X* SetStream(class FString& outInStream);
 };
@@ -14493,14 +11202,7 @@ class UDecodeObjectTypes_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DecodeObjectTypes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DecodeObjectTypes_X"))
 };
 
 // Class ProjectX.DecodeObjectUObject_X
@@ -14512,14 +11214,7 @@ public:
 	class TArray<uint8_t>                              Stream;                                        // 0x0078 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DecodeObjectUObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DecodeObjectUObject_X"))
 	void Decode(class UObject* OutObj);
 	class UDecodeObjectUObject_X* SetStream(int32_t RequestChecksum, class FString& outInStream);
 };
@@ -14532,14 +11227,7 @@ public:
 	class TArray<class UGameSettingPlaylist_X*>        Playlists;                                     // 0x0060 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DownloadedPlaylistsData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DownloadedPlaylistsData_X"))
 };
 
 // Class ProjectX.DSPendingMessage_X
@@ -14551,14 +11239,7 @@ public:
 	float                                              TimeoutTime;                                   // 0x0068 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DSPendingMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DSPendingMessage_X"))
 };
 
 // Class ProjectX.DSR_DSMessage_X
@@ -14572,14 +11253,7 @@ public:
 	class FString                                      MessagePayload;                                // 0x00C0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DSR_DSMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DSR_DSMessage_X"))
 };
 
 // Class ProjectX.DSR_ClientMessage_X
@@ -14592,14 +11266,7 @@ public:
 	class FString                                      MessagePayload;                                // 0x00B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DSR_ClientMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DSR_ClientMessage_X"))
 };
 
 // Class ProjectX.DSR_DSToDSMessage_X
@@ -14611,14 +11278,7 @@ public:
 	class FString                                      MessagePayload;                                // 0x00A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DSR_DSToDSMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DSR_DSToDSMessage_X"))
 };
 
 // Class ProjectX.DynamicValue_X
@@ -14635,14 +11295,7 @@ public:
 	float                                              CachedValue;                                   // 0x0080 (0x0004) [0x0000008000000000] (CPF_ProtectedWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DynamicValue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DynamicValue_X"))
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
 	class FString GetDebugValue();
 	float GetValue();
@@ -14664,14 +11317,7 @@ public:
 	int32_t                                            Priority;                                      // 0x0074 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DynamicValueModifier_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DynamicValueModifier_X"))
 	class FString GetDebugValue();
 	class FString GetDebugString();
 	bool Expired();
@@ -14688,14 +11334,7 @@ public:
 	struct FScriptDelegate                             __GetValueDelegate__Delegate;                  // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DynamicValueModifierCurve_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DynamicValueModifierCurve_X"))
 	class FString GetDebugValue();
 	float GetValue();
 	float GetValueDelegate();
@@ -14712,14 +11351,7 @@ public:
 	uint32_t                                           bUseCurve : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.DynamicValueModifierDuration_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DynamicValueModifierDuration_X"))
 	class FString GetDebugString();
 	float GetValue();
 	bool Expired();
@@ -14733,14 +11365,7 @@ class UEnableOnlineSave_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EnableOnlineSave_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EnableOnlineSave_X"))
 };
 
 // Class ProjectX.EncodeObjectFactory_X
@@ -14752,14 +11377,7 @@ public:
 	class UObjectSerializer_X*                         ObjectSerializer;                              // 0x0068 (0x0008) [0x0000004000000001] (CPF_Edit | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EncodeObjectFactory_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EncodeObjectFactory_X"))
 	static class UDecodeObject_X* DecodeObject(EObjectEncoding Encoding, int32_t RequestChecksum, class FString& outStream);
 	static class UEncodeObject_X* EncodeObject(EObjectEncoding Encoding, class UObject* Target);
 };
@@ -14772,14 +11390,7 @@ public:
 	class UObjectSerializer_X*                         ObjectSerializer;                              // 0x0078 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EncodeObjectUObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EncodeObjectUObject_X"))
 	class UEncodeObject_X* Encode(class UObject* inObj);
 };
 
@@ -14791,14 +11402,7 @@ public:
 	class UJSONSerializer_X*                           JsonSerializer;                                // 0x0078 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EncodeObjectJson_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EncodeObjectJson_X"))
 	class UEncodeObject_X* Encode(class UObject* inObj);
 };
 
@@ -14809,14 +11413,7 @@ class UEncodeObjectTypes_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EncodeObjectTypes_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EncodeObjectTypes_X"))
 };
 
 // Class ProjectX.PreExitEvent_X
@@ -14826,14 +11423,7 @@ class UPreExitEvent_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PreExitEvent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PreExitEvent_X"))
 };
 
 // Class ProjectX.EOSEvent_Presence_X
@@ -14850,14 +11440,7 @@ public:
 	class FString                                      ServerRegion;                                  // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOSEvent_Presence_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSEvent_Presence_X"))
 };
 
 // Class ProjectX.__EOSHelpers_X__RequestClientAuthToken_0x1
@@ -14868,14 +11451,7 @@ public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestClientAuthToken_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestClientAuthToken_0x1"))
 	void __EOSHelpers_X__RequestClientAuthToken_0x1(class UWebRequest_X* Response);
 };
 
@@ -14888,14 +11464,7 @@ public:
 	float                                              PingDelayTime;                                 // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.EOSMetricsConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSMetricsConfig_X"))
 };
 
 // Class ProjectX.LocalizedAccountLinkURL
@@ -14907,14 +11476,7 @@ public:
 	class FString                                      URL;                                           // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalizedAccountLinkURL");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalizedAccountLinkURL"))
 };
 
 // Class ProjectX.__EpicFriendsPlugin_X__Unblock_0x1
@@ -14925,14 +11487,7 @@ public:
 	class TArray<struct FHTTPRequestCapturedParam>     CapturedParams;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__Unblock_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__Unblock_0x1"))
 	void __EpicFriendsPlugin_X__Unblock_0x1(class UEOS_ManageBlockListResponse* R, class UError* E, int32_t ResponseCode);
 };
 
@@ -14945,14 +11500,7 @@ public:
 	class AActor*                                      AttachTo;                                      // 0x0168 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SeqAct_TriggerFXActor_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SeqAct_TriggerFXActor_X"))
 };
 
 // Class ProjectX.Explosion_X
@@ -14971,14 +11519,7 @@ public:
 	struct FScriptDelegate                             __EventSpawnFXActorInitialized__Delegate;      // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Explosion_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Explosion_X"))
 	void InternalMuteExplosion();
 	void MuteExplosion();
 	void eventDestroyed();
@@ -15001,14 +11542,7 @@ public:
 	class FString                                      Password;                                      // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_JoinMatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_JoinMatch_X"))
 };
 
 // Class ProjectX.IOnlineGameHost_X
@@ -15018,14 +11552,7 @@ class UIOnlineGameHost_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.IOnlineGameHost_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.IOnlineGameHost_X"))
 	struct FUniqueNetId GetCustomMatchOwner();
 	struct FCustomMatchSettings GetCustomMatchSettings();
 	bool AllowSplitscreenJoin(const struct FUniqueNetId& PrimaryPlayerId, const struct FUniqueNetId& PlayerID, const class FString& PlayerName, class FString& outError);
@@ -15041,14 +11568,7 @@ class AGameInfo_MapProfiler_X : public AGameInfo_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameInfo_MapProfiler_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameInfo_MapProfiler_X"))
 	void GenericPlayerInitialization(class AController* C);
 	class APlayerController* SpawnPlayerController(const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation);
 };
@@ -15061,14 +11581,7 @@ public:
 	class TArray<struct FGameSettingHidingOverride>    HidingOverrides;                               // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GameSettingConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameSettingConfig_X"))
 };
 
 // Class ProjectX.PresetMutators_X
@@ -15083,14 +11596,7 @@ public:
 	class FString                                      OverrideName;                                  // 0x0088 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PresetMutators_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PresetMutators_X"))
 };
 
 // Class ProjectX.PlaylistSettings_X
@@ -15148,14 +11654,7 @@ public:
 	class TArray<int32_t>                              PopulationBuckets;                             // 0x0148 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlaylistSettings_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlaylistSettings_X"))
 };
 
 // Class ProjectX.OnlineGameDedicatedServerRegistration_X
@@ -15172,14 +11671,7 @@ public:
 	float                                              PsyNetDisconnectShutdownTime;                  // 0x00D8 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameDedicatedServerRegistration_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameDedicatedServerRegistration_X"))
 	void __OnlineGameDedicatedServerRegistration_X__OnInit_0x1(const class FString& instance);
 	void __OnlineGameDedicatedServerRegistration_X__HandleCreateServerSucces_0x1(class UCacheTimer_X* Timer);
 	void HandleCrashed();
@@ -15218,14 +11710,7 @@ public:
 	class TArray<class UGetPlayerStorageResultItem_X*> Items;                                         // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GetPlayerStorageResult_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GetPlayerStorageResult_X"))
 };
 
 // Class ProjectX.GetPlayerStorageResultItem_X
@@ -15242,14 +11727,7 @@ public:
 	EObjectEncoding                                    Encoding;                                      // 0x0088 (0x0001) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GetPlayerStorageResultItem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GetPlayerStorageResultItem_X"))
 };
 
 // Class ProjectX.GFxModal_X
@@ -15265,14 +11743,7 @@ public:
 	struct FScriptDelegate                             __EventClosed__Delegate;                       // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.GFxModal_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxModal_X"))
 	class UGFxModal_X* NotifyOnClosed(const struct FScriptDelegate& Callback);
 	void Close();
 	void FlashAddButton(const class FString& Label);
@@ -15298,14 +11769,7 @@ class UICabinedOrGuest : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ICabinedOrGuest");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ICabinedOrGuest"))
 	bool IsInCabinedModeOrGuest();
 };
 
@@ -15316,14 +11780,7 @@ class UIOnlineGamePlaylists_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.IOnlineGamePlaylists_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.IOnlineGamePlaylists_X"))
 	bool IsNonStandardPlaylistName(const class FName& PlaylistName);
 	bool IsStandardPlaylistName(const class FName& PlaylistName);
 	bool IsUnrankedPlaylistName(const class FName& PlaylistName);
@@ -15341,14 +11798,7 @@ public:
 	uint64_t                                           Nonce;                                         // 0x0060 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanMessage_X"))
 	bool Broadcast();
 	class ULanMessage_X* SetNonce(uint64_t InNonce);
 };
@@ -15363,14 +11813,7 @@ public:
 	uint32_t                                           bHost : 1;                                     // 0x00F4 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanMessage_HostQuery_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanMessage_HostQuery_X"))
 	class ULanMessage_HostQuery_X* SetHost(bool bValue);
 	class ULanMessage_HostQuery_X* SetBuildID(int32_t InBuildID);
 	class ULanMessage_HostQuery_X* SetFilter(const struct FCustomMatchSettings& InFilter);
@@ -15386,14 +11829,7 @@ public:
 	class FString                                      MetaData;                                      // 0x0120 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanMessage_HostResponse_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanMessage_HostResponse_X"))
 	class FString GetDebugString();
 	class ULanMessage_HostResponse_X* SetMetaData(const class FString& InMetaData);
 	class ULanMessage_HostResponse_X* SetServerID(const class FString& InServerID);
@@ -15407,14 +11843,7 @@ class ULanMessage_Ping_X : public ULanMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LanMessage_Ping_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LanMessage_Ping_X"))
 };
 
 // Class ProjectX.LegalConfig_X
@@ -15425,14 +11854,7 @@ public:
 	class FString                                      EULAOfflineFolder;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LegalConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LegalConfig_X"))
 };
 
 // Class ProjectX.LocalCacheTests_X
@@ -15443,14 +11865,7 @@ public:
 	class FString                                      CacheFilePath;                                 // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LocalCacheTests_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalCacheTests_X"))
 	static void HandleLocalCacheImported(class ULocalCache_X* Cache, class UObject* CacheObject, class UError* Error);
 	static void ImportTest();
 	static void HandleLocalCacheExported(class ULocalCache_X* Cache, class UObject* CacheObject, class UError* Error);
@@ -15466,14 +11881,7 @@ public:
 	int32_t                                            BannedMinutes;                                 // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.LoginResponse_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LoginResponse_X"))
 };
 
 // Class ProjectX.MapPrefsConfig_X
@@ -15486,14 +11894,7 @@ public:
 	int32_t                                            MaxDislikes;                                   // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MapPrefsConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MapPrefsConfig_X"))
 };
 
 // Class ProjectX.MatchData_X
@@ -15529,14 +11930,7 @@ public:
 	class TArray<class UMatchPlayerData_X*>            Players;                                       // 0x0138 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchData_X"))
 };
 
 // Class ProjectX.MatchEndedMessage_X
@@ -15546,14 +11940,7 @@ class UMatchEndedMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchEndedMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchEndedMessage_X"))
 };
 
 // Class ProjectX.MatchInfoMessage_X
@@ -15569,14 +11956,7 @@ public:
 	class FString                                      JoinPassword;                                  // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchInfoMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchInfoMessage_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -15588,14 +11968,7 @@ public:
 	class UOnlineGameDedicatedServer_X*                DedicatedServer;                               // 0x0080 (0x0008) [0x0001800000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchInfoWebService_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchInfoWebService_X"))
 	void eventQuery(class UWebRequest* Request, class UWebResponse* Response);
 	void Init();
 };
@@ -15611,14 +11984,7 @@ public:
 	class TArray<uint8_t>                              Content;                                       // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchLog_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchLog_X"))
 	void ConditionalSendWebRequest();
 	void End(int32_t optionalMaxSize);
 	void SetURL(const class FString& InURL);
@@ -15635,14 +12001,7 @@ public:
 	class FString                                      MessageInfo;                                   // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MatchSetupFailedMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MatchSetupFailedMessage_X"))
 	class UMatchSetupFailedMessage_X* SetMessageInfo(const class FString& InInfo);
 };
 
@@ -15666,14 +12025,7 @@ public:
 	float                                              StageTime;                                     // 0x00C4 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MaterialEffect_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MaterialEffect_X"))
 	class FString GetActiveEffects();
 	bool HasAnyEffectsActive();
 	float GetMaterialParameterValue(const class FName& MaterialParamName);
@@ -15696,14 +12048,7 @@ class UPauseMetricsState_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PauseMetricsState_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PauseMetricsState_X"))
 };
 
 // Class ProjectX.NetModeBase
@@ -15713,14 +12058,7 @@ class UNetModeBase : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetModeBase");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetModeBase"))
 };
 
 // Class ProjectX.NetMode_Networked
@@ -15730,14 +12068,7 @@ class UNetMode_Networked : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_Networked");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_Networked"))
 };
 
 // Class ProjectX.MigrationStartedMessage_X
@@ -15752,14 +12083,7 @@ public:
 	class TArray<struct FMigrationReservationData>     MigratingPlayers;                              // 0x0148 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MigrationStartedMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MigrationStartedMessage_X"))
 };
 
 // Class ProjectX.MirrorUtils_X
@@ -15769,14 +12093,7 @@ class UMirrorUtils_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.MirrorUtils_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MirrorUtils_X"))
 	static struct FRotator MirrorRotatorYaw(const struct FRotator& InRotator, const struct FRotator& InMirrorAngle);
 	static struct FVector MirrorVectorXY(const struct FVector& InVectorToMirror, const struct FVector& InMirrorPoint, const struct FVector& InMirrorNormal);
 	static struct FVector CalculateMirrorLocationNormal(const struct FRotator& InMirrorAngle);
@@ -15789,14 +12106,7 @@ class UNetMetricsSystem_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMetricsSystem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMetricsSystem_X"))
 	static void Exit(class UPreExitEvent_X* Event, class UClientNetMetrics_X* Metrics);
 	static void RecordGamePing(class UNetworkPingEvent_X* Ping, class UClientNetMetrics_X* Metrics);
 	static void PlayerRemoved(class UClientNetMetrics_X* Metrics);
@@ -15810,14 +12120,7 @@ class UNetMode_DedicatedClient : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_DedicatedClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_DedicatedClient"))
 };
 
 // Class ProjectX.NetworkPingEvent_X
@@ -15828,14 +12131,7 @@ public:
 	float                                              DeltaSeconds;                                  // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetworkPingEvent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetworkPingEvent_X"))
 };
 
 // Class ProjectX.NetMode_Authoritative
@@ -15845,14 +12141,7 @@ class UNetMode_Authoritative : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_Authoritative");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_Authoritative"))
 };
 
 // Class ProjectX.NetMode_Client
@@ -15862,14 +12151,7 @@ class UNetMode_Client : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_Client");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_Client"))
 };
 
 // Class ProjectX.NetMode_DedicatedServer
@@ -15879,14 +12161,7 @@ class UNetMode_DedicatedServer : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_DedicatedServer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_DedicatedServer"))
 };
 
 // Class ProjectX.NetMode_ListenServer
@@ -15896,14 +12171,7 @@ class UNetMode_ListenServer : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_ListenServer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_ListenServer"))
 };
 
 // Class ProjectX.NetMode_Server
@@ -15913,14 +12181,7 @@ class UNetMode_Server : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_Server");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_Server"))
 };
 
 // Class ProjectX.NetMode_Standalone
@@ -15930,14 +12191,7 @@ class UNetMode_Standalone : public UNetModeBase
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetMode_Standalone");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetMode_Standalone"))
 };
 
 // Class ProjectX.NetModeReplicator_X
@@ -15947,14 +12201,7 @@ class ANetModeReplicator_X : public AReplicationInfo
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetModeReplicator_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetModeReplicator_X"))
 };
 
 // Class ProjectX.NetModeSystem_X
@@ -15964,14 +12211,7 @@ class UNetModeSystem_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.NetModeSystem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.NetModeSystem_X"))
 	static void AddModes(class TArray<class UClass*>& outNetModes);
 	static void HandleDedicatedClient(class ANetModeReplicator_X* instance, class UNetMode_Client* NetMode);
 	static void LevelUnloaded(class AWorldInfo* WorldInfo);
@@ -15989,14 +12229,7 @@ public:
 	int32_t                                            AccentColor;                                   // 0x011C (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_CreateClub_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_CreateClub_X"))
 	class UErrorType* eventOverrideErrorType(class UErrorType* ErrorType);
 	class URPC_CreateClub_X* SetSettings(class UClubSettings_X* Settings);
 };
@@ -16010,14 +12243,7 @@ public:
 	class FString                                      ClubTag;                                       // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateClubName_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateClubName_X"))
 	class UErrorType* eventOverrideErrorType(class UErrorType* ErrorType);
 	class URPC_UpdateClubName_X* SetName(const class FString& InName, const class FString& InTag);
 };
@@ -16031,14 +12257,7 @@ public:
 	int32_t                                            AccentColor;                                   // 0x00FC (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateClubColors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateClubColors_X"))
 	class URPC_UpdateClubColors_X* SetColors(int32_t InPrimary, int32_t InAccent);
 };
 
@@ -16050,14 +12269,7 @@ public:
 	class FName                                        EquippedTitle;                                 // 0x00F8 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateClubTitle_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateClubTitle_X"))
 	class UErrorType* eventOverrideErrorType(class UErrorType* ErrorType);
 	class URPC_UpdateClubTitle_X* SetTitle(const class FName& InTitle);
 };
@@ -16070,14 +12282,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00E8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_InviteToClub_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_InviteToClub_X"))
 	class UErrorType* eventOverrideErrorType(class UErrorType* ErrorType);
 	class URPC_InviteToClub_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
@@ -16090,14 +12295,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00F8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RemoveFromClub_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RemoveFromClub_X"))
 	class URPC_RemoveFromClub_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -16109,14 +12307,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00F8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetClubOwner_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetClubOwner_X"))
 	class URPC_SetClubOwner_X* SetNewOwner(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -16129,14 +12320,7 @@ public:
 	EClubRole                                          RoleID;                                        // 0x0140 (0x0001) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetClubRole_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetClubRole_X"))
 	class URPC_SetClubRole_X* SetNewRole(const struct FUniqueNetId& InPlayerID, EClubRole InRoleID);
 };
 
@@ -16148,14 +12332,7 @@ public:
 	class TArray<class UClubInvite_X*>                 ClubInvites;                                   // 0x00E8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubInvites_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubInvites_X"))
 	class TArray<class UClubInvite_X*> __RPC_GetClubInvites_X__CreateClubInvitesTask_0x1();
 	class UTAsyncResult__array_ClubInvite_X* CreateClubInvitesTask();
 };
@@ -16168,14 +12345,7 @@ public:
 	int32_t                                            ClubID;                                        // 0x00F8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_AcceptClubInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_AcceptClubInvite_X"))
 	class URPC_AcceptClubInvite_X* SetClubID(uint64_t InClubID);
 };
 
@@ -16187,14 +12357,7 @@ public:
 	int32_t                                            ClubID;                                        // 0x00E8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RejectClubInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RejectClubInvite_X"))
 	class URPC_RejectClubInvite_X* SetClubID(uint64_t InClubID);
 };
 
@@ -16205,14 +12368,7 @@ class URPC_LeaveClub_X : public URPC_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_LeaveClub_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_LeaveClub_X"))
 };
 
 // Class ProjectX.OnlineClubServerList_X
@@ -16225,14 +12381,7 @@ public:
 	class UError*                                      Error;                                         // 0x0078 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineClubServerList_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubServerList_X"))
 	void __OnlineClubServerList_X__Refresh_0x3(class URPC_X* instance);
 	void __OnlineClubServerList_X__Refresh_0x2(class URPC_X* instance);
 	void __OnlineClubServerList_X__Refresh_0x1(class URPC_X* instance);
@@ -16247,14 +12396,7 @@ public:
 	class TArray<class UClubServerResult_X*>           Servers;                                       // 0x00E8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubPrivateMatches_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubPrivateMatches_X"))
 };
 
 // Class ProjectX.OnlineConfigDispatcher_X
@@ -16265,14 +12407,7 @@ public:
 	uint32_t                                           bDebug : 1;                                    // 0x0060 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineConfigDispatcher_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineConfigDispatcher_X"))
 	class FString GetDebugString(class UOnlineConfig_X* Config);
 	void UndoConfigObject(class UOnlineConfig_X* Config);
 	void ApplyConfigObject(class UOnlineConfig_X* Config);
@@ -16291,14 +12426,7 @@ public:
 	class TArray<class FString>                        ValidUrls_Switch;                              // 0x00A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UrlConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UrlConfig_X"))
 };
 
 // Class ProjectX.OnlineGameVersion_X
@@ -16309,14 +12437,7 @@ public:
 	uint32_t                                           bUpdateRequired : 1;                           // 0x00B0 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameVersion_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameVersion_X"))
 	void __OnlineGameVersion_X__OnInit_0x4(class UOnlineGameServerBrowser_X* instance, class UError* Error);
 	void __OnlineGameVersion_X__OnInit_0x3(class UOnlineGamePrivateMatch_X* instance, class UError* Error);
 	void __OnlineGameVersion_X__OnInit_0x2(class UOnlineGameRegions_X* instance, class UError* Error);
@@ -16336,14 +12457,7 @@ public:
 	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameWordFilterProcessor_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameWordFilterProcessor_X"))
 	void TriggerCallbacks(int32_t Index);
 	void ProcessSanitizedDelayed();
 	void HandleWordSanitized(class UWebRequest_X* Request);
@@ -16369,14 +12483,7 @@ public:
 	struct FScriptDelegate                             __EventPsyNetPartyInviteAccepted__Delegate;    // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameInvite_X"))
 	void HandleJoinGameComplete(bool bSuccess, const class FString& FailReason);
 	void HandlePasswordRequired();
 	void HandleTaskSuccess(const struct FServerReservationData& Reservation);
@@ -16400,14 +12507,7 @@ public:
 	struct FScriptDelegate                             __EventPlayerTalking__Delegate;                // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameVoice_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameVoice_X"))
 	uint8_t GetControllerID(class APlayerReplicationInfo* PRI);
 	int32_t GetNumTalkers();
 	bool IsRemotePlayerTalking(class APlayerReplicationInfo* PRI);
@@ -16432,14 +12532,7 @@ public:
 	struct FScriptDelegate                             __EventGetPlaylistPopulations__Delegate;       // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGamePopulation_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePopulation_X"))
 	int32_t __OnlineGamePopulation_X__HandleGotAllPopulationPlaylistsRPC_0x2(const struct FGetPopulationData& P);
 	bool __OnlineGamePopulation_X__HandleGotAllPopulationPlaylistsRPC_0x1(const struct FGetPopulationData& P);
 	void HandleGotAllPopulationPlaylistsRPC(class URPC_GetPopulation_X* RPC);
@@ -16463,14 +12556,7 @@ public:
 	struct FScriptDelegate                             __EventSearchCompleteReservation__Delegate;    // 0x01C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameServerBrowser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameServerBrowser_X"))
 	void HandleGameStarted(class AGRI_X* GRI);
 	void PerformSearch();
 	void HandleTaskFail(class UError* Error);
@@ -16492,37 +12578,30 @@ public:
 };
 
 // Class ProjectX.OnlineGamePrivateMatch_X
-// 0x0158 (0x0130 - 0x0288)
+// 0x0158 (0x0148 - 0x02A0)
 class UOnlineGamePrivateMatch_X : public UOnlineGameMatchmakingBase_X
 {
 public:
-	uint32_t                                           bCancelled : 1;                                // 0x0130 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x0134 (0x0004) MISSED OFFSET
-	class FString                                      PreferredRegion;                               // 0x0138 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	int32_t                                            PreferredPlaylistID;                           // 0x0148 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	uint8_t                                          UnknownData01[0x4];                            // 0x014C (0x0004) MISSED OFFSET
-	class FString                                      SearchingString;                               // 0x0150 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      StartSearchFailString;                         // 0x0160 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      FoundServerString;                             // 0x0170 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      AlreadyJoiningGameString;                      // 0x0180 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      TimeoutString;                                 // 0x0190 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      WrongRegionString;                             // 0x01A0 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	struct FCustomMatchSettings                        Settings;                                      // 0x01B0 (0x0088) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	float                                              SearchTimeout;                                 // 0x0238 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
-	uint8_t                                          UnknownData02[0x4];                            // 0x023C (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventPrivateMatchError__Delegate;            // 0x0240 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCancelPrivateMatch__Delegate;           // 0x0258 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x0270 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bCancelled : 1;                                // 0x0148 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x014C (0x0004) MISSED OFFSET
+	class FString                                      PreferredRegion;                               // 0x0150 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	int32_t                                            PreferredPlaylistID;                           // 0x0160 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0164 (0x0004) MISSED OFFSET
+	class FString                                      SearchingString;                               // 0x0168 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      StartSearchFailString;                         // 0x0178 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      FoundServerString;                             // 0x0188 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      AlreadyJoiningGameString;                      // 0x0198 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      TimeoutString;                                 // 0x01A8 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      WrongRegionString;                             // 0x01B8 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	struct FCustomMatchSettings                        Settings;                                      // 0x01C8 (0x0088) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	float                                              SearchTimeout;                                 // 0x0250 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	uint8_t                                          UnknownData02[0x4];                            // 0x0254 (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventPrivateMatchError__Delegate;            // 0x0258 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCancelPrivateMatch__Delegate;           // 0x0270 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x0288 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGamePrivateMatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePrivateMatch_X"))
 	void SendMetrics(const class TArray<class URegionPing_X*>& RegionPings, const class FString& SelectedRegion, int32_t SelectedPlaylistID);
 	void UpdateStatusMessage();
 	void StartCheckingReservations();
@@ -16558,14 +12637,7 @@ public:
 	class UUdpLanServer_X*                             LocalServer;                                   // 0x0088 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UdpLanBrowser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpLanBrowser_X"))
 	class UAsyncTask* JoinServer(const class FString& ServerId, const class FString& Options);
 	void HandleSearchTimeout();
 	void HandleHostResponse(class UOnlineMessageComponent_X* Component, class ULanMessage_HostResponse_X* Response);
@@ -16583,14 +12655,7 @@ class USystemMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SystemMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SystemMetrics_X"))
 	void Specs(const struct FOSMetrics& OS, const struct FCpuMetrics& CPU, const struct FMemoryMetrics& Memory, const struct FVideoCardMetrics& Video, const struct FNetworkAdapterMetrics& Network);
 	void RecordSpecs();
 };
@@ -16607,14 +12672,7 @@ public:
 	struct FScriptDelegate                             __EventUpdated__Delegate;                      // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerPermissions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerPermissions_X"))
 	bool HasPermission(const struct FUniqueNetId& PlayerID, EOnlinePlayerPermission Permission);
 	void HandlePlayerPermissions(class URPC_GetPlayerPermissions_X* RPC);
 	void SendRequest();
@@ -16630,14 +12688,7 @@ public:
 	class FString                                      IP;                                            // 0x00E8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPublicIP_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPublicIP_X"))
 };
 
 // Class ProjectX.RPC_UpdatePlayerPlaylist_X
@@ -16649,14 +12700,7 @@ public:
 	int32_t                                            NumLocalPlayers;                               // 0x00EC (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdatePlayerPlaylist_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdatePlayerPlaylist_X"))
 	class URPC_UpdatePlayerPlaylist_X* SetNumLocalPlayers(int32_t InNumLocalPlayers);
 	class URPC_UpdatePlayerPlaylist_X* SetPlaylist(int32_t InPlaylist);
 };
@@ -16671,14 +12715,7 @@ public:
 	struct FScriptDelegate                             __SubmitReport__Delegate;                      // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerExploitManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerExploitManager_X"))
 	void AddReport(const struct FUniqueNetId& PlayerID, EExploitType Reason);
 	bool FindPlayerReportIndex(const struct FUniqueNetId& PlayerID, int32_t& outOutIndex);
 	bool DoesReportExist(const struct FUniqueNetId& PlayerID, EExploitType Reason);
@@ -16696,14 +12733,7 @@ public:
 	class TArray<struct FPlayerIdLink>                 PlayerIdCache;                                 // 0x0060 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerPlayerIdCache_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerPlayerIdCache_X"))
 	class FString GetEpicIdFromPlayerId(struct FUniqueNetId& outPlayerID);
 	class FString GetProductUserIdFromEpicId(class FString& outEpicAccountId);
 	class FString GetProductUserIdFromPlayerId(struct FUniqueNetId& outPlayerID);
@@ -16721,14 +12751,7 @@ public:
 	struct FCheckReplacementDedicatedServerData        Server;                                        // 0x0100 (0x0038) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_CheckReplacementDedicatedServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_CheckReplacementDedicatedServer_X"))
 	class FString GetServerAddress();
 	class URPC_CheckReplacementDedicatedServer_X* SetServerID(const class FString& InServerID);
 };
@@ -16745,14 +12768,7 @@ public:
 	class FString                                      MatchGUID;                                     // 0x0148 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_AddQuitter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_AddQuitter_X"))
 	class URPC_AddQuitter_X* SetMatchGUID(const class FString& InMatchGUID);
 	class URPC_AddQuitter_X* SetPlaylistID(int32_t InPlaylistID);
 	class URPC_AddQuitter_X* SetReason(const class FString& InReason);
@@ -16770,14 +12786,7 @@ public:
 	class FString                                      MatchGUID;                                     // 0x0138 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RemoveQuitter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RemoveQuitter_X"))
 	class URPC_RemoveQuitter_X* SetMatchGUID(const class FString& InMatchGUID);
 	class URPC_RemoveQuitter_X* SetPlaylistID(int32_t InPlaylistID);
 	class URPC_RemoveQuitter_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
@@ -16791,14 +12800,7 @@ public:
 	class UObject*                                     Match;                                         // 0x00E8 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RecordMatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RecordMatch_X"))
 	class URPC_RecordMatch_X* SetMatch(class UObject* InMatch);
 };
 
@@ -16830,14 +12832,7 @@ public:
 	int32_t                                            ClubID;                                        // 0x0188 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateGameServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateGameServer_X"))
 	class URPC_UpdateGameServer_X* SetBackfillTeam2(int32_t InBackfillAmount);
 	class URPC_UpdateGameServer_X* SetBackfillTeam1(int32_t InBackfillAmount);
 	class URPC_UpdateGameServer_X* SetTeam2Score(int32_t TeamScore);
@@ -16884,14 +12879,7 @@ public:
 	class FString                                      PsyToken;                                      // 0x0190 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_CreateGameServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_CreateGameServer_X"))
 	class URPC_CreateGameServer_X* SetBuildID(int32_t InBuildID);
 	class URPC_CreateGameServer_X* SetDataCenter(const class FString& InDataCenter);
 	class URPC_CreateGameServer_X* SetRegion(const class FString& InRegion);
@@ -16908,14 +12896,7 @@ class UServerMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ServerMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerMetrics_X"))
 	void CrashedError();
 	void ShutDown();
 	void Created(const class FString& ServerId, const class FString& Host);
@@ -16929,14 +12910,7 @@ public:
 	class FString                                      ServerId;                                      // 0x00E8 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_DeactivateGameServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_DeactivateGameServer_X"))
 	class URPC_DeactivateGameServer_X* SetServerID(const class FString& InServerID);
 };
 
@@ -16948,14 +12922,7 @@ public:
 	class FString                                      ServerId;                                      // 0x00E8 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetServerNotJoinable_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetServerNotJoinable_X"))
 	class URPC_SetServerNotJoinable_X* SetServerID(const class FString& InServerID);
 };
 
@@ -16966,14 +12933,7 @@ class UReservationsMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsMetrics_X"))
 	void PlayerReservationWithNoPsyNetBeaconError(const struct FUniqueNetId& PlayerID);
 	void ServerMigrationPlayersAlreadySetError(const class FString& ServerId);
 	void ServerMigrationPlaylistNotSetError(const class FString& ServerId);
@@ -17027,14 +12987,7 @@ class UQueuedOfflineMessage_X : public UInterface
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.QueuedOfflineMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.QueuedOfflineMessage_X"))
 	int32_t GetOfflineTimeToLiveSeconds();
 };
 
@@ -17048,14 +13001,7 @@ public:
 	class FString                                      MessagePayload;                                // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ServerToServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ServerToServer_X"))
 };
 
 // Class ProjectX.ReservationsFullMessage_X
@@ -17065,14 +13011,7 @@ class UReservationsFullMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsFullMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsFullMessage_X"))
 };
 
 // Class ProjectX.ReservationsTeamFullMessage_X
@@ -17082,14 +13021,7 @@ class UReservationsTeamFullMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsTeamFullMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsTeamFullMessage_X"))
 };
 
 // Class ProjectX.ReservationsWaitingMessage_X
@@ -17099,14 +13031,7 @@ class UReservationsWaitingMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsWaitingMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsWaitingMessage_X"))
 };
 
 // Class ProjectX.ReservationsReadyMessage_X
@@ -17120,14 +13045,7 @@ public:
 	class UNetworkEncryptionKey*                       Keys;                                          // 0x0090 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsReadyMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsReadyMessage_X"))
 	class UReservationsReadyMessage_X* SetKeys(class UNetworkEncryptionKey* InKeys);
 	class UReservationsReadyMessage_X* SetProductIDs(const class TArray<int32_t>& InProductIDs);
 	class UReservationsReadyMessage_X* SetPingAddress(const class FString& InAddress);
@@ -17141,14 +13059,7 @@ class UReservationsTimedOutMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsTimedOutMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsTimedOutMessage_X"))
 };
 
 // Class ProjectX.ReservationsPrivateMessage_X
@@ -17158,14 +13069,7 @@ class UReservationsPrivateMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsPrivateMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsPrivateMessage_X"))
 };
 
 // Class ProjectX.ReservationsPasswordMessage_X
@@ -17176,14 +13080,7 @@ public:
 	EPasswordFailureReason                             Reason;                                        // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsPasswordMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsPasswordMessage_X"))
 	class UReservationsPasswordMessage_X* SetReason(EPasswordFailureReason InReason);
 };
 
@@ -17194,14 +13091,7 @@ class UReservationsWrongPlaylistMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsWrongPlaylistMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsWrongPlaylistMessage_X"))
 };
 
 // Class ProjectX.ReservationsWrongRankedMatchMessage_X
@@ -17211,14 +13101,7 @@ class UReservationsWrongRankedMatchMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsWrongRankedMatchMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsWrongRankedMatchMessage_X"))
 };
 
 // Class ProjectX.ReservationsKeysFailedMessage_X
@@ -17228,14 +13111,7 @@ class UReservationsKeysFailedMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsKeysFailedMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsKeysFailedMessage_X"))
 };
 
 // Class ProjectX.ReservationCrossplayDisabledMessage_X
@@ -17245,14 +13121,7 @@ class UReservationCrossplayDisabledMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationCrossplayDisabledMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationCrossplayDisabledMessage_X"))
 };
 
 // Class ProjectX.ReservationsMaxPlayersMessage_X
@@ -17263,14 +13132,7 @@ public:
 	int32_t                                            MaxPlayerCount;                                // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsMaxPlayersMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsMaxPlayersMessage_X"))
 	class UReservationsMaxPlayersMessage_X* SetMaxPlayerCount(int32_t inMaxPlayerCount);
 };
 
@@ -17282,14 +13144,7 @@ public:
 	uint32_t                                           bIsResponse : 1;                               // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PingMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PingMessage_X"))
 	class UPingMessage_X* SetIsResponse();
 };
 
@@ -17307,14 +13162,7 @@ public:
 	class UErrorType*                                  AntiCheatRequired;                             // 0x00B0 (0x0008) [0x0001000000000002] (CPF_Const)   
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AntiCheatErrors_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AntiCheatErrors_X"))
 };
 
 // Class ProjectX.RPC_GetLeaderboardValueForUserBase_X
@@ -17330,14 +13178,7 @@ public:
 	float                                              MMR;                                           // 0x0148 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboardValueForUserBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboardValueForUserBase_X"))
 	class URPC_GetLeaderboardValueForUserBase_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -17350,14 +13191,7 @@ public:
 	int32_t                                            Playlist;                                      // 0x0150 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboardValueForUser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboardValueForUser_X"))
 	class URPC_GetSkillLeaderboardValueForUser_X* SetPlaylist(int32_t InPlaylist);
 };
 
@@ -17370,14 +13204,7 @@ public:
 	class FString                                      Stat;                                          // 0x0150 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboardValueForUser_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboardValueForUser_X"))
 	class URPC_GetLeaderboardValueForUser_X* SetStat(const class FString& InStat);
 };
 
@@ -17392,14 +13219,7 @@ public:
 	class TArray<struct FGetLeaderboardPlatformBaseData> Platforms;                                     // 0x0100 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboardBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboardBase_X"))
 	class URPC_GetLeaderboardBase_X* SetDisableCrossPlay(bool InDisableCrossplay);
 };
 
@@ -17411,14 +13231,7 @@ public:
 	int32_t                                            Playlist;                                      // 0x0110 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboard_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboard_X"))
 	class URPC_GetSkillLeaderboard_X* SetPlaylist(int32_t InPlaylist);
 };
 
@@ -17430,14 +13243,7 @@ public:
 	class FString                                      Stat;                                          // 0x0110 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboard_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboard_X"))
 	class URPC_GetLeaderboard_X* SetStat(const class FString& InStat);
 };
 
@@ -17451,14 +13257,7 @@ public:
 	class TArray<struct FGetLeaderboardRankForUserData> Players;                                       // 0x0108 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboardRankForUsersBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboardRankForUsersBase_X"))
 	class URPC_GetLeaderboardRankForUsersBase_X* SetPlayerIDs(const class TArray<struct FUniqueNetId>& InPlayerIDs);
 };
 
@@ -17470,14 +13269,7 @@ public:
 	int32_t                                            Playlist;                                      // 0x0118 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboardRankForUsers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetSkillLeaderboardRankForUsers_X"))
 	class URPC_GetSkillLeaderboardRankForUsers_X* SetPlaylist(int32_t InPlaylist);
 };
 
@@ -17489,14 +13281,7 @@ public:
 	class FString                                      Stat;                                          // 0x0118 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetLeaderboardRankForUsers_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetLeaderboardRankForUsers_X"))
 	class URPC_GetLeaderboardRankForUsers_X* SetStat(const class FString& InStat);
 };
 
@@ -17518,14 +13303,7 @@ public:
 	float                                              EstimatedQueueTime;                            // 0x014C (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_StartMatchmaking_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_StartMatchmaking_X"))
 	class URPC_StartMatchmaking_X* SetIgnoreSkill(bool bInIgnoreSkill);
 	class URPC_StartMatchmaking_X* SetPartyId(const class FString& InPartyId);
 	class URPC_StartMatchmaking_X* SetPartyMembers(const class TArray<struct FUniqueNetId>& InPartyMembers);
@@ -17545,14 +13323,7 @@ public:
 	class FString                                      Label;                                         // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SuperRegion_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SuperRegion_X"))
 };
 
 // Class ProjectX.RPC_PlayerCancelMatchmaking_X
@@ -17562,14 +13333,7 @@ class URPC_PlayerCancelMatchmaking_X : public URPC_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PlayerCancelMatchmaking_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PlayerCancelMatchmaking_X"))
 };
 
 // Class ProjectX.RankedConfig_X
@@ -17591,14 +13355,7 @@ public:
 	int32_t                                            HighestMuNewPlayersCanHave;                    // 0x00BC (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RankedConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RankedConfig_X"))
 	bool HasSeasonEnded();
 	int32_t GetSeasonTimeRemaining();
 };
@@ -17611,14 +13368,7 @@ public:
 	class TArray<struct FGetPopulationData>            Playlists;                                     // 0x00E8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPopulation_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPopulation_X"))
 };
 
 // Class ProjectX.RPC_PlayerSearchPrivateMatch_X
@@ -17630,14 +13380,7 @@ public:
 	int32_t                                            PlaylistId;                                    // 0x00F8 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PlayerSearchPrivateMatch_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PlayerSearchPrivateMatch_X"))
 	class URPC_PlayerSearchPrivateMatch_X* SetPlaylist(int32_t InPlaylistID);
 	class URPC_PlayerSearchPrivateMatch_X* SetRegion(const class FString& InRegion);
 };
@@ -17651,14 +13394,7 @@ public:
 	class TArray<struct FSuperRegionData>              Regions;                                       // 0x00F8 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetSubRegions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetSubRegions_X"))
 	class URPC_GetSubRegions_X* SetRegionSecrets(class TArray<struct FRegionSecret>& outInRegions);
 };
 
@@ -17671,14 +13407,7 @@ public:
 	class TArray<struct FGetGameServerPingListData_Deprecated> Servers;                                       // 0x00F8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetGameServerPingList_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetGameServerPingList_X"))
 	class URPC_GetGameServerPingList_X* SetRegionSecrets(class TArray<struct FRegionSecret>& outInRegions);
 	void eventOnSuccess();
 };
@@ -17700,14 +13429,7 @@ public:
 	struct FScriptDelegate                             __EventRegionsPinged__Delegate;                // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RegionPinger_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionPinger_X"))
 	class URegionPingData_X* __RegionPinger_X__PingRegions_0x1(const class FString& Address);
 	void HandlePong(class UUdpPingBeaconClient_X* instance, const class FName& Address, float DeltaSeconds);
 	void SendPing(int32_t Idx);
@@ -17727,14 +13449,7 @@ public:
 	class TArray<struct FGetGameServerPingListData>    Servers;                                       // 0x00F8 (0x0010) [0x0001004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetGameServerPingList2_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetGameServerPingList2_X"))
 	class URPC_GetGameServerPingList2_X* SetRegionSecrets(class TArray<struct FRegionSecret>& outInRegions);
 	void eventOnSuccess();
 };
@@ -17751,14 +13466,7 @@ public:
 	float                                              LastSendTime;                                  // 0x0074 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RegionPingData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionPingData_X"))
 };
 
 // Class ProjectX.OnlineGameReservations_AssignTeamsByParty_X
@@ -17768,14 +13476,7 @@ class UOnlineGameReservations_AssignTeamsByParty_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineGameReservations_AssignTeamsByParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameReservations_AssignTeamsByParty_X"))
 	static int32_t PartySort(const struct FPartyByTeam& Left, const struct FPartyByTeam& Right);
 	static void AssignTeams(int32_t TeamSize, class TArray<struct FReservationData>& outTestPlayers);
 };
@@ -17788,14 +13489,7 @@ public:
 	uint32_t                                           bIsResponse : 1;                               // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RegionPingMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionPingMessage_X"))
 	class URegionPingMessage_X* SetIsResponse();
 };
 
@@ -17808,14 +13502,7 @@ public:
 	class TArray<struct FPsyNetBeaconPlayerReservation> Players;                                       // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_ReservationBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_ReservationBase_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -17832,14 +13519,7 @@ public:
 	class TArray<struct FUniqueNetId>                  Team2Players;                                  // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_NewGame_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_NewGame_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -17855,14 +13535,7 @@ public:
 	class TArray<struct FUniqueNetId>                  Team2Players;                                  // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_Backfill_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_Backfill_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -17874,14 +13547,7 @@ public:
 	int32_t                                            PlaylistId;                                    // 0x00B0 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_CreatePrivate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_CreatePrivate_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -17892,14 +13558,7 @@ class UPsyNetService_JoinPrivate_X : public UPsyNetService_ReservationBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_JoinPrivate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_JoinPrivate_X"))
 };
 
 // Class ProjectX.PsyNetService_FriendJoin_X
@@ -17909,14 +13568,7 @@ class UPsyNetService_FriendJoin_X : public UPsyNetService_ReservationBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_FriendJoin_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_FriendJoin_X"))
 };
 
 // Class ProjectX.PsyNetService_Reconnect_X
@@ -17926,14 +13578,7 @@ class UPsyNetService_Reconnect_X : public UPsyNetService_ReservationBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_Reconnect_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_Reconnect_X"))
 };
 
 // Class ProjectX.AntiCheatManager_X
@@ -17943,14 +13588,7 @@ class UAntiCheatManager_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.AntiCheatManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AntiCheatManager_X"))
 	class UError* GetAntiCheatError(int32_t PlaylistId);
 };
 
@@ -17964,14 +13602,7 @@ public:
 	struct FPlayerSeasonRewardProgress                 RewardLevels;                                  // 0x0140 (0x0050) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPlayerSkill_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPlayerSkill_X"))
 	class URPC_GetPlayerSkill_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 	void eventOnSuccess();
 	void AddPlayerIDToResponse();
@@ -17986,14 +13617,7 @@ public:
 	class TArray<struct FPartyMemberSkill>             Players;                                       // 0x00F8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPartyMemberSkill_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPartyMemberSkill_X"))
 	void eventOnSuccess();
 	void AddPlayerIDsToResponse();
 	class URPC_GetPartyMemberSkill_X* AddPlayer(const struct FUniqueNetId& PlayerID);
@@ -18007,14 +13631,7 @@ public:
 	class UOnlineGameSkill_X*                          OnlineGameSkill;                               // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SyncedSkillData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SyncedSkillData_X"))
 };
 
 // Class ProjectX.RPC_RecordMatchResults_X
@@ -18032,14 +13649,7 @@ public:
 	uint32_t                                           bIsBotMatch : 1;                               // 0x0170 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RecordMatchResults_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RecordMatchResults_X"))
 	int32_t GetPartyIndex(const struct FUniqueNetId& LeaderID, class TArray<struct FUniqueNetId>& outPartyIDs);
 	void InitSkillMatchPlayers(class UMatchData_X* MatchData);
 	struct FSkillMatchPlayer InitSkillMatchPlayer(class UMatchData_X* MatchData, class UMatchPlayerData_X* Player, class TArray<struct FUniqueNetId>& outPartyIDs);
@@ -18063,14 +13673,7 @@ public:
 	class UMatchData_X*                                MatchData;                                     // 0x01A0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateSkills_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateSkills_X"))
 	class URPC_RecordMatchResults_X* SetMatch(class UMatchData_X* InMatch);
 };
 
@@ -18084,14 +13687,7 @@ public:
 	int32_t                                            PlaylistId;                                    // 0x0108 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateLeaderboard_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateLeaderboard_X"))
 	class URPC_UpdateLeaderboard_X* SetPlaylistID(int32_t InID);
 	class URPC_UpdateLeaderboard_X* SetMatchGUID(const class FString& InGuid);
 	class URPC_UpdateLeaderboard_X* SetUpdates(class TArray<struct FUploadStatDataSet>& outInUpdates);
@@ -18113,14 +13709,7 @@ public:
 	class TArray<EWordFilterUsage>                     IgnoreMatureLanguageFilterList;                // 0x00A8 (0x0010) [0x0001000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WordFilterConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WordFilterConfig_X"))
 	bool AllowMatureLanguageForUsage(EWordFilterUsage Usage);
 };
 
@@ -18131,14 +13720,7 @@ class UUserBugReportComponent_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UserBugReportComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UserBugReportComponent_X"))
 	void Start(const class FString& Message);
 };
 
@@ -18150,14 +13732,7 @@ public:
 	class TArray<ERegionRestriction>                   Restrictions;                                  // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerRegionRestrictions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerRegionRestrictions_X"))
 	ERegionRestriction __OnlinePlayerRegionRestrictions_X__HandleLoginChanged_0x1(const class FName& S);
 	bool IsRestricted(ERegionRestriction Restriction);
 	void HandleLoginChanged(class UOnlinePlayerAuthentication_X* Auth);
@@ -18175,14 +13750,7 @@ public:
 	class UOnlinePlayerStorageManifest_X*              Manifest;                                      // 0x00C0 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerStorage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorage_X"))
 	void OnInit();
 };
 
@@ -18217,14 +13785,7 @@ public:
 	int32_t                                            EulaResetCounter;                              // 0x0200 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_LoginAuthPlayer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_LoginAuthPlayer_X"))
 	class URPC_LoginAuthPlayer_X* SetAsPrimaryAccount(bool bInPrimary);
 	class URPC_LoginAuthPlayer_X* SetEpicAccountId(const class FString& InEpicAccountId);
 	class URPC_LoginAuthPlayer_X* SetEpicAuthTicket(const class FString& InEpicAuthTicket);
@@ -18248,14 +13809,7 @@ public:
 	class TArray<struct FPlayerPermissionsReponse>     PlayerPermissions;                             // 0x00F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPlayerPermissions_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPlayerPermissions_X"))
 	bool GetPermissionFromString(const class FName& PermissionName, EOnlinePlayerPermission& outPermission);
 	class TArray<uint8_t> ConvertPermissions(const class TArray<class FName>& PermissionNames);
 	struct FPlayerPermissionsList ConvertPlayerPermissions(const struct FUniqueNetId& PlayerID);
@@ -18271,14 +13825,7 @@ public:
 	class TArray<struct FStorageMetadata>              MetaData;                                      // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerStorageManifest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageManifest_X"))
 	bool ChecksumMatches(const class FName& Category, int32_t Checksum, EObjectEncoding Encoding);
 	void SetChecksum(const class FName& Category, int32_t Checksum, EObjectEncoding Encoding);
 	int32_t GetIndex(const class FName& Category);
@@ -18292,14 +13839,7 @@ public:
 	float                                              QueueBatchDelay;                               // 0x0078 (0x0004) [0x0001000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlinePlayerStorageConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageConfig_X"))
 };
 
 // Class ProjectX.SaveLock_X
@@ -18310,14 +13850,7 @@ public:
 	class UGFxEngine_X*                                GFxEngine;                                     // 0x0060 (0x0008) [0x0000800000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SaveLock_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SaveLock_X"))
 	static bool StaticAllowSave();
 	bool AllowSave();
 };
@@ -18332,14 +13865,7 @@ public:
 	class UGetPlayerStorageResult_X*                   Result;                                        // 0x0140 (0x0008) [0x0001000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PlayerStorageGet_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PlayerStorageGet_X"))
 	void __RPC_PlayerStorageGet_X__OnSuccess_0x2(class UGetPlayerStorageResultItem_X* Item);
 	bool __RPC_PlayerStorageGet_X__OnSuccess_0x1(class UGetPlayerStorageResultItem_X* Item);
 	void eventOnSuccess();
@@ -18367,14 +13893,7 @@ public:
 	struct FScriptDelegate                             __EventDataChanged__Delegate;                  // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineResource_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineResource_X"))
 	void SetCachedData(class UCachedWebData_X* NewData);
 	bool IsValidNewData(class UCachedWebData_X* Data);
 	void ClearRetryTimer();
@@ -18398,14 +13917,7 @@ public:
 	int32_t                                            EnableCount;                                   // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.OnlineSaveLock_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineSaveLock_X"))
 	static void HandleEnableOnlineSaveRemoved(class UEnableOnlineSave_X* Enable);
 	static void HandleEnableOnlineSaveAdded(class UEnableOnlineSave_X* Enable);
 	static bool StaticAllowSave();
@@ -18420,14 +13932,7 @@ public:
 	class FString                                      PartyID;                                       // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyBase_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyBase_X"))
 	class URPC_PartyBase_X* SetPartyIdStr(const class FString& InPartyId);
 	class URPC_PartyBase_X* SetPartyId(const struct FUniqueLobbyId& InLobbyId);
 };
@@ -18440,14 +13945,7 @@ public:
 	class FString                                      Message;                                       // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyMessage_X"))
 	class URPC_PartyMessage_X* SetMessage(const class FString& InMessage);
 };
 
@@ -18458,14 +13956,7 @@ class UPartySequence_JoinRequest_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_JoinRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_JoinRequest_X"))
 	void __PartySequence_JoinRequest_X__SendJoinRequest_0x1(class URPC_PartySendJoinRequest_X* RPC);
 	void __PartySequence_JoinRequest_X__AcceptJoinRequest_0x1(class URPC_PartyAcceptJoinRequest_X* RPC);
 	void AcceptJoinRequest(const struct FUniqueNetId& PlayerID);
@@ -18479,14 +13970,7 @@ class UPartySequence_InviteToParty_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_InviteToParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_InviteToParty_X"))
 	void __PartySequence_InviteToParty_X__InviteToPsyNetParty_0x2(class URPC_PartySendInvite_X* RPC);
 	void __PartySequence_InviteToParty_X__InviteToPsyNetParty_0x1(class URPC_PartySendInvite_X* RPC);
 	bool InviteToPsyNetParty(struct FUniqueLobbyId& outLobbyId, struct FUniqueNetId& outPlayerID);
@@ -18500,14 +13984,7 @@ class UPartySequence_LeaveParty_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartySequence_LeaveParty_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_LeaveParty_X"))
 	void LeaveParty(struct FUniqueLobbyId& outLobbyId);
 };
 
@@ -18524,14 +14001,7 @@ public:
 	class UError*                                      SigningError;                                  // 0x00F0 (0x0008) [0x0001000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SignedMessageObject_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SignedMessageObject_X"))
 };
 
 // Class ProjectX.RPC_PartyChat_X
@@ -18542,14 +14012,7 @@ public:
 	class FString                                      Message;                                       // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyChat_X"))
 	class URPC_PartyChat_X* SetText(const class FString& InText);
 };
 
@@ -18561,14 +14024,7 @@ public:
 	class USignedMessageObject_X*                      MessageData;                                   // 0x00F8 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SignedPartyChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SignedPartyChat_X"))
 	class URPC_SignedPartyChat_X* SetSignedMessageData(class USignedMessageObject_X* InMessageData);
 };
 
@@ -18582,14 +14038,7 @@ public:
 	class TArray<struct FPsyNetPartyMember>            Members;                                       // 0x01B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyChangeOwner_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyChangeOwner_X"))
 	class URPC_PartyChangeOwner_X* SetNewOwnerId(const struct FUniqueNetId& InNewOwnerId);
 };
 
@@ -18602,14 +14051,7 @@ public:
 	ELobbyKickReason                                   KickReason;                                    // 0x0108 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyKickMember_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyKickMember_X"))
 	class URPC_PartyKickMember_X* SetReason(ELobbyKickReason InReason);
 	class URPC_PartyKickMember_X* AddMember(const class FString& InMemberId);
 };
@@ -18623,14 +14065,7 @@ public:
 	struct FPsyNetPartyMember                          Member;                                        // 0x00F8 (0x0080) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyInfo_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyInfo_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyUserInvited_X
@@ -18640,14 +14075,7 @@ class UPsyNetService_PartyUserInvited_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyUserInvited_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyUserInvited_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyJoinRequestReceived_X
@@ -18657,14 +14085,7 @@ class UPsyNetService_PartyJoinRequestReceived_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestReceived_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestReceived_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyJoinRequestDeleted_X
@@ -18674,14 +14095,7 @@ class UPsyNetService_PartyJoinRequestDeleted_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestDeleted_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestDeleted_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyJoinRequestAccepted_X
@@ -18692,14 +14106,7 @@ public:
 	struct FPartyData                                  PartyComplete;                                 // 0x01B0 (0x0080) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestAccepted_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyJoinRequestAccepted_X"))
 };
 
 // Class ProjectX.PsyNetService_PartySystem_X
@@ -18709,14 +14116,7 @@ class UPsyNetService_PartySystem_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartySystem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartySystem_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyUserJoined_X
@@ -18726,14 +14126,7 @@ class UPsyNetService_PartyUserJoined_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyUserJoined_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyUserJoined_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyUserKicked_X
@@ -18751,14 +14144,7 @@ public:
 	ELobbyKickReason                                   KickReason;                                    // 0x0190 (0x0001) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyUserKicked_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyUserKicked_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyUserLeft_X
@@ -18768,14 +14154,7 @@ class UPsyNetService_PartyUserLeft_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyUserLeft_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyUserLeft_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyUserDisconnected_X
@@ -18785,14 +14164,7 @@ class UPsyNetService_PartyUserDisconnected_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyUserDisconnected_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyUserDisconnected_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyOwnerChanged_X
@@ -18809,14 +14181,7 @@ public:
 	struct FUniqueNetId                                ForUserId;                                     // 0x0148 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyOwnerChanged_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyOwnerChanged_X"))
 };
 
 // Class ProjectX.PsyNetService_SignedPartyChat_X
@@ -18827,14 +14192,7 @@ public:
 	class USignedMessageObject_X*                      MessageData;                                   // 0x01B0 (0x0008) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_SignedPartyChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_SignedPartyChat_X"))
 };
 
 // Class ProjectX.PsyNetService_PartyChat_X
@@ -18844,14 +14202,7 @@ class UPsyNetService_PartyChat_X : public UPsyNetService_Party_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PartyChat_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PartyChat_X"))
 };
 
 // Class ProjectX.PartyMessage_GetPlatformPartyResponse_X
@@ -18863,14 +14214,7 @@ public:
 	struct FUniqueNetId                                OriginalSender;                                // 0x00B8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PartyMessage_GetPlatformPartyResponse_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessage_GetPlatformPartyResponse_X"))
 };
 
 // Class ProjectX.RPC_PartySendInvite_X
@@ -18881,14 +14225,7 @@ public:
 	struct FUniqueNetId                                InviteeID;                                     // 0x00F8 (0x0048) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartySendInvite_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartySendInvite_X"))
 	class URPC_PartySendInvite_X* Invite(const struct FUniqueNetId& InInviteeUserId);
 };
 
@@ -18902,14 +14239,7 @@ public:
 	class TArray<struct FPsyNetPartyMember>            Members;                                       // 0x0178 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyJoin_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyJoin_X"))
 	class URPC_PartyBase_X* SetJoinKey(const class FString& InJoinKey);
 };
 
@@ -18921,14 +14251,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00E8 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartySendJoinRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartySendJoinRequest_X"))
 	class URPC_PartySendJoinRequest_X* SetRecipientId(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -18940,14 +14263,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x00E8 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyAcceptJoinRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyAcceptJoinRequest_X"))
 	class URPC_PartyAcceptJoinRequest_X* SetAcceptedId(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -18958,14 +14274,7 @@ class URPC_PartyLeave_X : public URPC_PartyBase_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_PartyLeave_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_PartyLeave_X"))
 };
 
 // Class ProjectX.PauseStaticDataSync_X
@@ -18975,14 +14284,7 @@ class UPauseStaticDataSync_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PauseStaticDataSync_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PauseStaticDataSync_X"))
 };
 
 // Class ProjectX.PerConMetrics_X
@@ -18999,14 +14301,7 @@ public:
 	float                                              StartTime;                                     // 0x0098 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PerConMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PerConMetrics_X"))
 	void ServiceError(const struct FUniqueNetId& PlayerID, int32_t Count, const class FString& Service, const class FName& Error);
 	void InvalidMessageError(const struct FUniqueNetId& PlayerID, int32_t Count, const class FString& Substring);
 	void DisconnectedError(const struct FUniqueNetId& PlayerID, int32_t Count, int32_t Code, const class FString& Reason, float ElapsedSeconds);
@@ -19035,14 +14330,7 @@ class UPlatform_Console : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_Console");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_Console"))
 };
 
 // Class ProjectX.Platform_DedicatedServer
@@ -19052,14 +14340,7 @@ class UPlatform_DedicatedServer : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_DedicatedServer");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_DedicatedServer"))
 };
 
 // Class ProjectX.Platform_Dingo
@@ -19069,14 +14350,7 @@ class UPlatform_Dingo : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_Dingo");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_Dingo"))
 };
 
 // Class ProjectX.Platform_GameClient
@@ -19086,14 +14360,7 @@ class UPlatform_GameClient : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_GameClient");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_GameClient"))
 };
 
 // Class ProjectX.Platform_NNX
@@ -19103,14 +14370,7 @@ class UPlatform_NNX : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_NNX");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_NNX"))
 };
 
 // Class ProjectX.Platform_Orbis
@@ -19120,14 +14380,7 @@ class UPlatform_Orbis : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_Orbis");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_Orbis"))
 };
 
 // Class ProjectX.Platform_PC
@@ -19137,14 +14390,7 @@ class UPlatform_PC : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_PC");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_PC"))
 };
 
 // Class ProjectX.Platform_Server
@@ -19154,14 +14400,7 @@ class UPlatform_Server : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.Platform_Server");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Platform_Server"))
 };
 
 // Class ProjectX.PlatformSystem_X
@@ -19171,14 +14410,7 @@ class UPlatformSystem_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlatformSystem_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlatformSystem_X"))
 	static void AddPlatforms(class TArray<class UClass*>& outPlatforms);
 	static void AddServer(class UClass* PlatformClass);
 	static void AddConsole(class UClass* PlatformClass);
@@ -19192,14 +14424,7 @@ class UPlayerActivityMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlayerActivityMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerActivityMetrics_X"))
 	void ClientSessionActivity(float TimeActive, float TimeInactive);
 	void MatchActivity(float TimeActive, float TimeInactive, int32_t PlaylistId);
 };
@@ -19217,14 +14442,7 @@ public:
 	uint32_t                                           bIgnoreKBMAxis : 1;                            // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PlayerActivityMetricsConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerActivityMetricsConfig_X"))
 };
 
 // Class ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1
@@ -19235,14 +14453,7 @@ public:
 	class FString                                      Reason;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__PlayerController_X__CloseConnectionWithReason_0x1"))
 	void __PlayerController_X__CloseConnectionWithReason_0x1();
 };
 
@@ -19262,14 +14473,7 @@ public:
 	class TArray<struct FPostProcessOverride>          PostProcessOverrides;                          // 0x00C0 (0x0010) [0x0000008000400001] (CPF_Edit | CPF_NeedCtorLink | CPF_ProtectedWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PostProcessManager_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PostProcessManager_X"))
 	int32_t GetNextPostProcessOverride();
 	void TogglePostProcessSettings(const class FName& Id, bool bEnabled);
 	void SetMaterialEffectValue(const class FName& EffectName, float NewValue);
@@ -19300,14 +14504,7 @@ public:
 	class UPsyNetConnection_X*                         PrimaryAuthedConnection;                       // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PrimaryAuthLoggedIn_TA");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PrimaryAuthLoggedIn_TA"))
 };
 
 // Class ProjectX.PsyNetBreadcrumbObserver_X
@@ -19317,14 +14514,7 @@ class UPsyNetBreadcrumbObserver_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetBreadcrumbObserver_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetBreadcrumbObserver_X"))
 	void Breadcrumb(const class FString& CrumbName, const class FString& Value);
 	void OnBroadcasterAdded(class UBreadcrumbBroadcaster_X* Broadcaster);
 	static void InitGlobalInstance();
@@ -19338,14 +14528,7 @@ class UPsyNetService_DuplicateLogin_X : public UPsyNetClientService_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_DuplicateLogin_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_DuplicateLogin_X"))
 };
 
 // Class ProjectX.PsyNetMetrics_X
@@ -19357,14 +14540,7 @@ public:
 	class TArray<struct FServiceErrorData>             ErrorData;                                     // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMetrics_X"))
 	void ServiceErrors(const class TArray<struct FServiceErrorData>& Errors);
 	void ServiceCalls(const class TArray<struct FServiceMetricsData>& Services);
 	void HandleMapChange(const class FString& M);
@@ -19382,14 +14558,7 @@ public:
 	struct FHonorDuelChallenge                         PlayerRoles;                                   // 0x00B8 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_CreateHonorDuel_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_CreateHonorDuel_X"))
 	struct FPsyNetBeaconReservation GetReservation();
 };
 
@@ -19402,14 +14571,7 @@ public:
 	class FString                                      ResponseString;                                // 0x00A0 (0x0010) [0x0004000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_Echo_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_Echo_X"))
 	void Execute();
 };
 
@@ -19421,14 +14583,7 @@ public:
 	struct FOnlinePersonaData                          FromPlayer;                                    // 0x0090 (0x0078) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PersonaInfo_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PersonaInfo_X"))
 	struct FOnlineFriend GetData();
 };
 
@@ -19439,14 +14594,7 @@ class UPsyNetService_FriendAcceptedRequest_X : public UPsyNetService_PersonaInfo
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_FriendAcceptedRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_FriendAcceptedRequest_X"))
 };
 
 // Class ProjectX.PsyNetService_IncomingFriendRequest_X
@@ -19456,14 +14604,7 @@ class UPsyNetService_IncomingFriendRequest_X : public UPsyNetService_PersonaInfo
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_IncomingFriendRequest_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_IncomingFriendRequest_X"))
 };
 
 // Class ProjectX.PsyNetService_OnlineStatusUpdate_X
@@ -19476,14 +14617,7 @@ public:
 	class FString                                      RichPresenceInfo;                              // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_OnlineStatusUpdate_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_OnlineStatusUpdate_X"))
 	struct FOnlineStatus GetData();
 };
 
@@ -19495,14 +14629,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0090 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetService_PlayerUnfriended_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetService_PlayerUnfriended_X"))
 };
 
 // Class ProjectX.WebConfig_X
@@ -19515,14 +14642,7 @@ public:
 	float                                              PsyNetStaticDataCacheMinutes;                  // 0x007C (0x0004) [0x0000000000004001] (CPF_Edit | CPF_Config)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.WebConfig_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebConfig_X"))
 };
 
 // Class ProjectX.PsyNetStaticDataMetrics_X
@@ -19532,14 +14652,7 @@ class UPsyNetStaticDataMetrics_X : public UMetricsGroup_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.PsyNetStaticDataMetrics_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetStaticDataMetrics_X"))
 	void SyncDataTime(float Seconds);
 };
 
@@ -19551,14 +14664,7 @@ public:
 	class UError*                                      Error;                                         // 0x0060 (0x0008) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.StaticDataError_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StaticDataError_X"))
 };
 
 // Class ProjectX.RPC_CanShowAvatar_X
@@ -19571,14 +14677,7 @@ public:
 	class TArray<struct FUniqueNetId>                  HiddenPlayerIDs;                               // 0x0108 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_CanShowAvatar_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_CanShowAvatar_X"))
 	class URPC_CanShowAvatar_X* SetPlayerIDs(class TArray<struct FUniqueNetId>& outInPlayerIDs);
 };
 
@@ -19589,14 +14688,7 @@ class UReservationsSettingUpMatchMessage_X : public UBeaconMessage_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.ReservationsSettingUpMatchMessage_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationsSettingUpMatchMessage_X"))
 };
 
 // Class ProjectX.RPC_AddPlayerToRole_X
@@ -19607,14 +14699,7 @@ public:
 	int32_t                                            RoleID;                                        // 0x00E8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_AddPlayerToRole_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_AddPlayerToRole_X"))
 	class URPC_AddPlayerToRole_X* SetRole(EOnlinePlayerRole Role);
 };
 
@@ -19625,14 +14710,7 @@ class URPC_ClearClubInvites_X : public URPC_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ClearClubInvites_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ClearClubInvites_X"))
 };
 
 // Class ProjectX.RPC_ClubsRecordStats_X
@@ -19645,14 +14723,7 @@ public:
 	int32_t                                            Playlist;                                      // 0x0108 (0x0004) [0x0001000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ClubsRecordStats_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ClubsRecordStats_X"))
 	class URPC_ClubsRecordStats_X* SetPlaylist(int32_t InPlaylist);
 	class URPC_ClubsRecordStats_X* SetMatchGUID(const class FString& InMatchGUID);
 };
@@ -19666,14 +14737,7 @@ public:
 	class FString                                      URL;                                           // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_FileStorage_GetFileDownloadUrl_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_FileStorage_GetFileDownloadUrl_X"))
 };
 
 // Class ProjectX.RPC_FileStorage_GetFileUploadUrl_X
@@ -19686,14 +14750,7 @@ public:
 	class FString                                      URL;                                           // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_FileStorage_GetFileUploadUrl_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_FileStorage_GetFileUploadUrl_X"))
 };
 
 // Class ProjectX.RPC_GetAntiAddictionData_X
@@ -19707,14 +14764,7 @@ public:
 	int32_t                                            HoursPlayed;                                   // 0x0134 (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetAntiAddictionData_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetAntiAddictionData_X"))
 	class URPC_GetAntiAddictionData_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -19729,14 +14779,7 @@ public:
 	class TArray<struct FMilestoneTitleData>           SeasonalTitles;                                // 0x0180 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubStats_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubStats_X"))
 };
 
 // Class ProjectX.RPC_GetClubTitles_X
@@ -19747,14 +14790,7 @@ public:
 	class TArray<class FName>                          ClubTitles;                                    // 0x00E8 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetClubTitles_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetClubTitles_X"))
 };
 
 // Class ProjectX.RPC_GetGenericDataAll_X
@@ -19765,14 +14801,7 @@ public:
 	class TArray<struct FGetGenericDataAllData>        GenericData;                                   // 0x00E8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetGenericDataAll_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetGenericDataAll_X"))
 };
 
 // Class ProjectX.RPC_GetPlayerTitles_X
@@ -19784,14 +14813,7 @@ public:
 	class TArray<class FString>                        Titles;                                        // 0x0130 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_GetPlayerTitles_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_GetPlayerTitles_X"))
 	class URPC_GetPlayerTitles_X* SetPlayerID(const struct FUniqueNetId& InPlayerID);
 };
 
@@ -19803,14 +14825,7 @@ public:
 	int32_t                                            RoleID;                                        // 0x00E8 (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_RemovePlayerFromRole_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_RemovePlayerFromRole_X"))
 	class URPC_RemovePlayerFromRole_X* SetRole(EOnlinePlayerRole Role);
 };
 
@@ -19826,14 +14841,7 @@ public:
 	class FString                                      Data;                                          // 0x0148 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ReportExploiter_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ReportExploiter_X"))
 	class URPC_ReportExploiter_X* SetData(const class FString& InData);
 	class URPC_ReportExploiter_X* SetMatchGUID(const class FString& InMatchGUID);
 	class URPC_ReportExploiter_X* SetReason(EExploitType InReason);
@@ -19855,14 +14863,7 @@ public:
 	int32_t                                            NumBots;                                       // 0x0124 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_ReportLowFPS_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_ReportLowFPS_X"))
 	class URPC_ReportLowFPS_X* SetNumBots(int32_t InNumBots);
 	class URPC_ReportLowFPS_X* SetNumHumans(int32_t InNumHumans);
 	class URPC_ReportLowFPS_X* SetServerName(const class FString& InServerName);
@@ -19879,14 +14880,7 @@ public:
 	class FString                                      Text;                                          // 0x0120 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetClubMotD_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetClubMotD_X"))
 	class URPC_SetClubMotD_X* SetText(const class FString& InText);
 };
 
@@ -19901,14 +14895,7 @@ public:
 	int32_t                                            MatchesPlayed;                                 // 0x00F4 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetPlayerSkill_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetPlayerSkill_X"))
 	class URPC_SetPlayerSkill_X* SetSigma(float InSigma);
 	class URPC_SetPlayerSkill_X* SetMu(float InMu);
 	class URPC_SetPlayerSkill_X* SetPlaylist(int32_t InPlaylist);
@@ -19924,14 +14911,7 @@ public:
 	int32_t                                            MatchesPlayed;                                 // 0x00F0 (0x0004) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetPlayerSkillTier_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetPlayerSkillTier_X"))
 	class URPC_SetPlayerSkillTier_X* SetMatchesPlayed(int32_t InMatchesPlayed);
 	class URPC_SetPlayerSkillTier_X* SetTier(int32_t InTier);
 	class URPC_SetPlayerSkillTier_X* SetPlaylist(int32_t InPlaylist);
@@ -19946,14 +14926,7 @@ public:
 	class FString                                      PresenceState;                                 // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetRichPresence_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetRichPresence_X"))
 	class URPC_SetRichPresence_X* SetPresenceState(const class FString& InState);
 	class URPC_SetRichPresence_X* SetPresenceInfo(const class FString& InInfo);
 };
@@ -19967,14 +14940,7 @@ public:
 	int32_t                                            SeasonLevelWins;                               // 0x00EC (0x0004) [0x0000000000000000]               
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_SetSeasonReward_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_SetSeasonReward_X"))
 	class URPC_SetSeasonReward_X* SetReward(int32_t Level, int32_t Wins);
 };
 
@@ -19993,14 +14959,7 @@ public:
 	class TArray<struct FRPCTestParam>                 TestResultStructs;                             // 0x0248 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_Test_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_Test_X"))
 	bool Check(bool Assertion, const class FString& Message);
 	bool CheckParamArraysMatch(const class TArray<struct FRPCTestParam>& A, const class TArray<struct FRPCTestParam>& B, const class FString& Message);
 	bool CheckItemArraysMatch(const class TArray<struct FRPCTestItem>& A, const class TArray<struct FRPCTestItem>& B, const class FString& Message);
@@ -20023,14 +14982,7 @@ class UTestsHelper_X : public UObject
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TestsHelper_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TestsHelper_X"))
 	static class FString GetRandomUppercaseString();
 	static class TArray<class FString> GetRandomStringArray();
 	static class FString GetRandomString();
@@ -20045,14 +14997,7 @@ public:
 	struct FUniqueNetId                                ResponsePlayerID;                              // 0x0130 (0x0048) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_TestPlayerID_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_TestPlayerID_X"))
 	void OnSuccess();
 	void Init();
 };
@@ -20064,14 +15009,7 @@ class URPC_UpdateClub_X : public URPC_CreateClub_X
 public:
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.RPC_UpdateClub_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_UpdateClub_X"))
 };
 
 // Class ProjectX.SeqAct_SpawnArchetype_X
@@ -20087,14 +15025,7 @@ public:
 	class AActor*                                      Spawned;                                       // 0x0198 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SeqAct_SpawnArchetype_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SeqAct_SpawnArchetype_X"))
 	void Init(class AActor* SpawnedActor);
 	void eventActivated();
 };
@@ -20108,14 +15039,7 @@ public:
 	class FName                                        SkelControlName;                               // 0x00A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SkelControlBlendTargetComponent_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SkelControlBlendTargetComponent_X"))
 	void SetControlActiveInComponent(class USkeletalMeshComponent* SKC, bool bActive);
 	void SetControlActive(bool bActive);
 	void eventDetached();
@@ -20133,39 +15057,11 @@ public:
 	float                                              SmoothedCachedValue;                           // 0x0090 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.SmoothDynamicValue_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SmoothDynamicValue_X"))
 	class FString GetDebugValue();
 	float GetValue();
 	void Tick(float DeltaTime);
 	void eventConstruct();
-};
-
-// Class ProjectX.StringUtil_X
-// 0x0000 (0x0060 - 0x0060)
-class UStringUtil_X : public UObject
-{
-public:
-
-public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.StringUtil_X");
-        return uClassPointer;
-    }
-
-	static class TArray<class FString> SplitStringIntoMaxSizePieces(const class FString& OriginalString, int32_t MaxStringSize);
-	static bool MessageCanBeCorruptedOnConversion(const class FString& Message);
-	static bool IsStringEmptyOrWhiteSpace(const class FString& BaseString);
-	static void SplitStringInHalf(const class FString& OriginalString, class FString& outFirstHalf, class FString& outSecondHalf);
 };
 
 // Class ProjectX.TimeWindowOptional_X
@@ -20181,14 +15077,7 @@ public:
 	struct FScriptDelegate                             __EventWindowEnded__Delegate;                  // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.TimeWindowOptional_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TimeWindowOptional_X"))
 	void HandleWindowEnded();
 	void HandleWindowStarted();
 	bool WillEnd();
@@ -20211,14 +15100,7 @@ public:
 	class FString                                      MetaData;                                      // 0x0068 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.UdpLanServer_X");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpLanServer_X"))
 	void HandleLanQueryMessage(class UOnlineMessageComponent_X* Component, class ULanMessage_HostQuery_X* Query);
 	void Destroy();
 	class UAsyncTask* SetServerMetaData(const class FString& InMetaData);
@@ -20233,14 +15115,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1"))
 	bool __ServerPlayerIdCache_X__GetEpicIdFromPlayerId_0x1(const struct FPlayerIdLink& P);
 };
 
@@ -20252,14 +15127,7 @@ public:
 	class FString                                      EpicAccountId;                                 // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1"))
 	bool __ServerPlayerIdCache_X__GetProductUserIdFromEpicId_0x1(const struct FPlayerIdLink& P);
 };
 
@@ -20271,14 +15139,7 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1"))
 	bool __ServerPlayerIdCache_X__GetProductUserIdFromPlayerId_0x1(const struct FPlayerIdLink& P);
 };
 
@@ -20290,15 +15151,23 @@ public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 
 public:
-    static UClass* StaticClass()
-    {
-		static UClass* uClassPointer = nullptr;
-		if (!uClassPointer)
-            uClassPointer = UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__RegisterPlayer_0x1");
-        return uClassPointer;
-    }
-
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__ServerPlayerIdCache_X__RegisterPlayer_0x1"))
 	bool __ServerPlayerIdCache_X__RegisterPlayer_0x1(const struct FPlayerIdLink& P);
+};
+
+// Class ProjectX.SetVisibilityComponent_X
+// 0x000C (0x00A4 - 0x00B0)
+class USetVisibilityComponent_X : public UActorComponent_X
+{
+public:
+	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
+	class UStaticMesh*                                 TargetStaticMesh;                              // 0x00A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.SetVisibilityComponent_X"))
+	void ApplyVisibility(bool bHidden);
+	void eventDetached();
+	void eventAttached();
 };
 
 /*
