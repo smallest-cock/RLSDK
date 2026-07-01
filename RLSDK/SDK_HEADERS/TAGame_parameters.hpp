@@ -1,12 +1,12 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
+# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260602.75104.519749
-# Build Date: Jun  2 2026 21:29:27
+# Psyonix Build ID: 260616.79869.520762
+# Build Date: Jun 16 2026 22:40:00
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -134008,6 +134008,32 @@ struct UCameraState_ScorerLiveReplay_TA_execEndCameraState_Params
 struct UCameraState_ScorerLiveReplay_TA_execBeginCameraState_Params
 {
 	class UCameraState_X*                              InPrevState;                                      // 0x0000 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+};
+
+// Function TAGame.CameraState_ScorerLiveReplay_TA.OverrideBlendParams
+// [0x400C20002] 
+struct UCameraState_ScorerLiveReplay_TA_execOverrideBlendParams_Params
+{
+	struct FViewTargetTransitionParams                 Params;                                           // 0x0000 (0x0010) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	// struct FViewTargetTransitionParams              NewParams;                                        // 0x0010 (0x0010) [0x0000000000000000]               
+};
+
+// Function TAGame.CameraState_ScorerLiveReplay_TA.GetEndBlendParams
+// [0x400820002] 
+struct UCameraState_ScorerLiveReplay_TA_execGetEndBlendParams_Params
+{
+	class UCameraState_X*                              NewState;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	struct FViewTargetTransitionParams                 ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FViewTargetTransitionParams              NewParams;                                        // 0x0018 (0x0010) [0x0000000000000000]               
+};
+
+// Function TAGame.CameraState_ScorerLiveReplay_TA.GetStartBlendParams
+// [0x400820002] 
+struct UCameraState_ScorerLiveReplay_TA_execGetStartBlendParams_Params
+{
+	class UCameraState_X*                              NewState;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	struct FViewTargetTransitionParams                 ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FViewTargetTransitionParams              NewParams;                                        // 0x0018 (0x0010) [0x0000000000000000]               
 };
 
 // Function TAGame.CameraState_ScorerLiveReplay_TA.ShouldExecute

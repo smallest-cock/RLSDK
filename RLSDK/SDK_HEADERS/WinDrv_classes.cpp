@@ -1,12 +1,12 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 06/09/2026 11:31PM
+# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
 # ========================================================================================= #
 # File: WinDrv_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260602.75104.519749
-# Build Date: Jun  2 2026 21:29:27
+# Psyonix Build ID: 260616.79869.520762
+# Build Date: Jun 16 2026 22:40:00
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
