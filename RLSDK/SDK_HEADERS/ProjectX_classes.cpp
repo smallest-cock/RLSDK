@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -20637,6 +20637,29 @@ class FString UPsyNetUrl_X::GetURL(EDatabaseEnvironment Environment)
 
 	this->ProcessEvent(uFnGetURL, &GetURL_Params, nullptr);
 	return GetURL_Params.ReturnValue;
+};
+
+// Function ProjectX.QREnconder_X.BuildForURL
+// [0x00026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_HasOptionalParms | FUNC_Public)
+// Parameter Info:
+// class UTexture*                ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  URL                            (CPF_Parm | CPF_NeedCtorLink)
+// class UObject*                 Owner                          (CPF_OptionalParm | CPF_Parm)
+// int32_t                        ScaleFactor                    (CPF_OptionalParm | CPF_Parm)
+class UTexture* UQREnconder_X::BuildForURL(const class FString& URL, class UObject* Owner, int32_t ScaleFactor)
+{
+    static UFunction* uFnBuildForURL = nullptr;
+    if (!uFnBuildForURL)
+        uFnBuildForURL = UFunction::FindFunction("Function ProjectX.QREnconder_X.BuildForURL");
+
+	UQREnconder_X_execBuildForURL_Params BuildForURL_Params;
+	memset(&BuildForURL_Params, 0, sizeof(BuildForURL_Params));
+	memcpy_s(&BuildForURL_Params.URL, sizeof(BuildForURL_Params.URL), &URL, sizeof(URL));
+	BuildForURL_Params.Owner = Owner;
+	memcpy_s(&BuildForURL_Params.ScaleFactor, sizeof(BuildForURL_Params.ScaleFactor), &ScaleFactor, sizeof(ScaleFactor));
+
+	UQREnconder_X::StaticClass()->ProcessEvent(uFnBuildForURL, &BuildForURL_Params, nullptr);
+	return BuildForURL_Params.ReturnValue;
 };
 
 // Function ProjectX.RandomStream_X.SetCurrentSeed
@@ -64591,27 +64614,6 @@ void UOnlineGamePrivateMatch_X::HandleSearchTimeout()
 	this->ProcessEvent(uFnHandleSearchTimeout, &HandleSearchTimeout_Params, nullptr);
 };
 
-// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1
-// [0x40042003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Private | FUNC_Lambda)
-// Parameter Info:
-// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class URegionPing_X*           A                              (CPF_Parm)
-// class URegionPing_X*           B                              (CPF_Parm)
-int32_t UOnlineGamePrivateMatch_X::__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1(class URegionPing_X* A, class URegionPing_X* B)
-{
-    static UFunction* uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1 = nullptr;
-    if (!uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1)
-        uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1 = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1");
-
-	UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params;
-	memset(&__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params, 0, sizeof(__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params));
-	__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.A = A;
-	__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.B = B;
-
-	UOnlineGamePrivateMatch_X::StaticClass()->ProcessEvent(uFn__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1, &__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params, nullptr);
-	return __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params.ReturnValue;
-};
-
 // Function ProjectX.OnlineGamePrivateMatch_X.GetPrivateMatchMakingRequest
 // [0x00840003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_HasDefaults)
 // Parameter Info:
@@ -64671,6 +64673,27 @@ class FString UOnlineGamePrivateMatch_X::GetPreferredRegion(const class FString&
 
 	this->ProcessEvent(uFnGetPreferredRegion, &GetPreferredRegion_Params, nullptr);
 	return GetPreferredRegion_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.CompareSubRegionsByPingPreference
+// [0x00082003] (FUNC_Final | FUNC_Defined | FUNC_Static | FUNC_Protected)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class URegionPing_X*           A                              (CPF_Parm)
+// class URegionPing_X*           B                              (CPF_Parm)
+int32_t UOnlineGamePrivateMatch_X::CompareSubRegionsByPingPreference(class URegionPing_X* A, class URegionPing_X* B)
+{
+    static UFunction* uFnCompareSubRegionsByPingPreference = nullptr;
+    if (!uFnCompareSubRegionsByPingPreference)
+        uFnCompareSubRegionsByPingPreference = UFunction::FindFunction("Function ProjectX.OnlineGamePrivateMatch_X.CompareSubRegionsByPingPreference");
+
+	UOnlineGamePrivateMatch_X_execCompareSubRegionsByPingPreference_Params CompareSubRegionsByPingPreference_Params;
+	memset(&CompareSubRegionsByPingPreference_Params, 0, sizeof(CompareSubRegionsByPingPreference_Params));
+	CompareSubRegionsByPingPreference_Params.A = A;
+	CompareSubRegionsByPingPreference_Params.B = B;
+
+	UOnlineGamePrivateMatch_X::StaticClass()->ProcessEvent(uFnCompareSubRegionsByPingPreference, &CompareSubRegionsByPingPreference_Params, nullptr);
+	return CompareSubRegionsByPingPreference_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredSubRegions
@@ -68305,8 +68328,8 @@ class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetAsPrimaryAccount(bool b
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class URPC_LoginAuthPlayer_X*  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class FString                  InEpicAccountId                (CPF_Parm | CPF_NeedCtorLink)
-class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetEpicAccountId(const class FString& InEpicAccountId)
+// class FString                  InEpicAccountID                (CPF_Parm | CPF_NeedCtorLink)
+class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetEpicAccountId(const class FString& InEpicAccountID)
 {
     static UFunction* uFnSetEpicAccountId = nullptr;
     if (!uFnSetEpicAccountId)
@@ -68314,7 +68337,7 @@ class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetEpicAccountId(const cla
 
 	URPC_LoginAuthPlayer_X_execSetEpicAccountId_Params SetEpicAccountId_Params;
 	memset(&SetEpicAccountId_Params, 0, sizeof(SetEpicAccountId_Params));
-	memcpy_s(&SetEpicAccountId_Params.InEpicAccountId, sizeof(SetEpicAccountId_Params.InEpicAccountId), &InEpicAccountId, sizeof(InEpicAccountId));
+	memcpy_s(&SetEpicAccountId_Params.InEpicAccountID, sizeof(SetEpicAccountId_Params.InEpicAccountID), &InEpicAccountID, sizeof(InEpicAccountID));
 
 	this->ProcessEvent(uFnSetEpicAccountId, &SetEpicAccountId_Params, nullptr);
 	return SetEpicAccountId_Params.ReturnValue;

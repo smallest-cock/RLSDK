@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -584,6 +584,14 @@ enum class EForceFeedbackType : uint8_t
 	ForceFeedbackType_Heavy                            = 4,
 	ForceFeedbackType_Legacy                           = 5,
 	ForceFeedbackType_END                              = 6
+};
+
+// Enum TAGame._Types_TA.EFreeLookBallCamRotationMode
+enum class EFreeLookBallCamRotationMode : uint8_t
+{
+	FreeLookBallCamRotationMode_Traditional            = 0,
+	FreeLookBallCamRotationMode_InPlace                = 1,
+	FreeLookBallCamRotationMode_END                    = 2
 };
 
 // Enum TAGame._Types_TA.ECameraSettingsPreset
@@ -1973,6 +1981,14 @@ enum class EEngagementEventType : uint8_t
 	EngagementEventType_END                            = 2
 };
 
+// Enum TAGame.K3SUserPermissions_TA.ERemediationMethod
+enum class ERemediationMethod : uint8_t
+{
+	AGE_VERIFICATION                                   = 0,
+	PARENT_VERIFICATION                                = 1,
+	ERemediationMethod_END                             = 2
+};
+
 // Enum TAGame.EOSVoiceSettingsSave_TA.EVoiceSettingsSaveVersion
 enum class EVoiceSettingsSaveVersion : uint8_t
 {
@@ -2710,7 +2726,8 @@ enum class ESaveExportSchemaVersion : uint8_t
 {
 	SaveExportVersion_Base                             = 0,
 	SaveExportVersion_Products                         = 1,
-	SaveExportVersion_Max                              = 2
+	SaveExportVersion_LoadoutUsage                     = 2,
+	SaveExportVersion_Max                              = 3
 };
 
 
@@ -3274,7 +3291,7 @@ public:
 };
 
 // Class TAGame.PlayerController_TA
-// 0x0428 (0x09A0 - 0x0DC8)
+// 0x03E8 (0x09A0 - 0x0D88)
 class APlayerController_TA : public APlayerControllerBase_TA
 {
 public:
@@ -3289,9 +3306,10 @@ public:
 	uint32_t                                           bHandbrakePressed : 1;                         // 0x09D0 (0x0004) [0x0000000000000000] [0x00000020] 
 	uint32_t                                           bHasPitchedOrRolled : 1;                       // 0x09D0 (0x0004) [0x0000000000000000] [0x00000040] 
 	uint32_t                                           bAirPitchSafetyEnabled : 1;                    // 0x09D0 (0x0004) [0x0000000000000000] [0x00000080] 
-	uint32_t                                           bAllowAsymmetricalMute : 1;                    // 0x09D0 (0x0004) [0x0000000000004000] [0x00000100] (CPF_Config)
-	uint32_t                                           bReportedPlayer : 1;                           // 0x09D0 (0x0004) [0x0008004000000000] [0x00000200] (CPF_PrivateWrite)
-	uint32_t                                           bUsePickupPressed : 1;                         // 0x09D0 (0x0004) [0x0001008000000000] [0x00000400] (CPF_ProtectedWrite)
+	uint32_t                                           bHoldingBallCamKey : 1;                        // 0x09D0 (0x0004) [0x0001000000002000] [0x00000100] (CPF_Transient)
+	uint32_t                                           bAllowAsymmetricalMute : 1;                    // 0x09D0 (0x0004) [0x0000000000004000] [0x00000200] (CPF_Config)
+	uint32_t                                           bReportedPlayer : 1;                           // 0x09D0 (0x0004) [0x0008004000000000] [0x00000400] (CPF_PrivateWrite)
+	uint32_t                                           bUsePickupPressed : 1;                         // 0x09D0 (0x0004) [0x0001008000000000] [0x00000800] (CPF_ProtectedWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x09D4 (0x0004) MISSED OFFSET
 	class FString                                      LoginURL;                                      // 0x09D8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	EVoiceFilter                                       DeprecatedVoiceFilter;                         // 0x09E8 (0x0001) [0x0000000000002000] (CPF_Transient)
@@ -3360,35 +3378,31 @@ public:
 	class FString                                      PlayerReportedPostGameMessage;                 // 0x0BC8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      CheckPlayerReportStatusMessage;                // 0x0BD8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	struct FVoiceRoomCredentials                       RoomCredentials;                               // 0x0BE8 (0x0030) [0x0001000000400000] (CPF_NeedCtorLink)
-	class UEOSGameClipsController_TA*                  EOSGameClipsControllerArchetype;               // 0x0C18 (0x0008) [0x0009000000000000]               
-	class UEOSGameClipsController_TA*                  EOSGameClipsController;                        // 0x0C20 (0x0008) [0x0009000000000000]               
-	struct FPrespawnData                               Prespawn;                                      // 0x0C28 (0x001C) [0x0000002100000020] (CPF_Net | CPF_RepNotify | CPF_RepRetry)
-	uint8_t                                          UnknownData03[0x4];                            // 0x0C44 (0x0004) MISSED OFFSET
-	class AFreeplaySessionManager_TA*                  FreeplaySessionManager;                        // 0x0C48 (0x0008) [0x0008000000000020] (CPF_Net)     
-	class AActor*                                      TargettedActor;                                // 0x0C50 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	class ATextChatActor_TA*                           TextChatActor;                                 // 0x0C58 (0x0008) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	class AAntiCheatMessenger_TA*                      AntiCheatMessenger;                            // 0x0C60 (0x0008) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	float                                              PickupButtonPressedSeconds;                    // 0x0C68 (0x0004) [0x0001008000000000] (CPF_ProtectedWrite)
-	float                                              PickupActivationBuffer;                        // 0x0C6C (0x0004) [0x0001008000000000] (CPF_ProtectedWrite)
-	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0C70 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	float                                              CachedInputPitch;                              // 0x0C78 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	float                                              CachedInputYaw;                                // 0x0C7C (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class AGameEvent_Soccar_TA*                        SoccarGameEvent;                               // 0x0C80 (0x0008) [0x0000000000000000]               
-	float                                              PresenceUpdateFrequency;                       // 0x0C88 (0x0004) [0x0001000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData04[0x4];                            // 0x0C8C (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventLaunchAccountPicker__Delegate;          // 0x0C90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLaunchControllerApplet__Delegate;       // 0x0CA8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMuteChanged__Delegate;                  // 0x0CC0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTrainingEditorActorModified__Delegate;  // 0x0CD8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSelectCameraTarget__Delegate;           // 0x0CF0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventConnectionTrackerAttached__Delegate;    // 0x0D08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventChatMessage__Delegate;                  // 0x0D20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventOverrideInput__Delegate;                // 0x0D38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventToggleScoreView__Delegate;              // 0x0D50 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __bReportedPlayer__ChangeNotify;               // 0x0D68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EOSGameClipsControllerArchetype__ChangeNotify;// 0x0D80 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EOSGameClipsController__ChangeNotify;        // 0x0D98 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __FreeplaySessionManager__ChangeNotify;        // 0x0DB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPrespawnData                               Prespawn;                                      // 0x0C18 (0x001C) [0x0000002100000020] (CPF_Net | CPF_RepNotify | CPF_RepRetry)
+	uint8_t                                          UnknownData03[0x4];                            // 0x0C34 (0x0004) MISSED OFFSET
+	class AFreeplaySessionManager_TA*                  FreeplaySessionManager;                        // 0x0C38 (0x0008) [0x0008000000000020] (CPF_Net)     
+	class AActor*                                      TargettedActor;                                // 0x0C40 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class ATextChatActor_TA*                           TextChatActor;                                 // 0x0C48 (0x0008) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	class AAntiCheatMessenger_TA*                      AntiCheatMessenger;                            // 0x0C50 (0x0008) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	float                                              PickupButtonPressedSeconds;                    // 0x0C58 (0x0004) [0x0001008000000000] (CPF_ProtectedWrite)
+	float                                              PickupActivationBuffer;                        // 0x0C5C (0x0004) [0x0001008000000000] (CPF_ProtectedWrite)
+	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0C60 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	float                                              CachedInputPitch;                              // 0x0C68 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	float                                              CachedInputYaw;                                // 0x0C6C (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class AGameEvent_Soccar_TA*                        SoccarGameEvent;                               // 0x0C70 (0x0008) [0x0000000000000000]               
+	float                                              PresenceUpdateFrequency;                       // 0x0C78 (0x0004) [0x0001000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData04[0x4];                            // 0x0C7C (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventLaunchAccountPicker__Delegate;          // 0x0C80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLaunchControllerApplet__Delegate;       // 0x0C98 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMuteChanged__Delegate;                  // 0x0CB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTrainingEditorActorModified__Delegate;  // 0x0CC8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSelectCameraTarget__Delegate;           // 0x0CE0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventConnectionTrackerAttached__Delegate;    // 0x0CF8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventChatMessage__Delegate;                  // 0x0D10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventOverrideInput__Delegate;                // 0x0D28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventToggleScoreView__Delegate;              // 0x0D40 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __bReportedPlayer__ChangeNotify;               // 0x0D58 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __FreeplaySessionManager__ChangeNotify;        // 0x0D70 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.PlayerController_TA"))
@@ -3420,8 +3434,6 @@ public:
 	void UpdateCrosshair();
 	void __PlayerController_TA__ReceivedPlayer_0x1(class UBanSync_TA* BanSync);
 	void __FreeplaySessionManager__ChangeNotifyFunc();
-	void __EOSGameClipsController__ChangeNotifyFunc();
-	void __EOSGameClipsControllerArchetype__ChangeNotifyFunc();
 	void __bReportedPlayer__ChangeNotifyFunc();
 	class ACar_TA* GetViewedCar();
 	void NetClientInputRate(int32_t Rate);
@@ -3545,7 +3557,6 @@ public:
 	void PressRearCamera();
 	void ReleaseSecondaryCamera();
 	void PressSecondaryCamera();
-	void CaptureClip(const class FString& InGameClipInputType);
 	void ReadyUp();
 	void ToggleScoreView();
 	void Spectate();
@@ -3636,7 +3647,6 @@ public:
 	bool AntiCheatAuthComplete();
 	bool AntiCheatPreventSpawnOnJoin();
 	class AAntiCheatMessenger_TA* GetAntiCheatMessenger();
-	void InitEOSGameClipsController();
 	void eventReceivedPlayer();
 	void InitFromGRI(class AGRI_X* GRI);
 	void HandleGRISpawned(class AGRI_X* GRI);
@@ -3721,7 +3731,7 @@ public:
 };
 
 // Class TAGame.RBActor_TA
-// 0x0268 (0x0558 - 0x07C0)
+// 0x0280 (0x0558 - 0x07D8)
 class ARBActor_TA : public APawn_X
 {
 public:
@@ -3773,6 +3783,7 @@ public:
 	float                                              GroundTraceDistance;                           // 0x07A0 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	float                                              GroundOffsetDistance;                          // 0x07A4 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	struct FScriptDelegate                             __EventRigidBodyCollision__Delegate;           // 0x07A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventWeldedActorChanged__Delegate;           // 0x07C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.RBActor_TA"))
@@ -3821,105 +3832,107 @@ public:
 	void eventPostBeginPlay();
 	void eventPreBeginPlay();
 	void eventReplicatedEvent(const class FName& VarName);
+	void EventWeldedActorChanged(class ARBActor_TA* RBActor);
 	void EventRigidBodyCollision(class ARBActor_TA* RBActor, const struct FAccumulatedRigidBodyCollision& Collision);
 };
 
 // Class TAGame.Ball_TA
-// 0x0368 (0x07C0 - 0x0B28)
+// 0x0368 (0x07D8 - 0x0B40)
 class ABall_TA : public ARBActor_TA
 {
 public:
-	class UStaticMeshComponent*                        StaticMesh;                                    // 0x07C0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UStaticMeshComponent*                        TranslucentStaticMesh;                         // 0x07C8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	float                                              MeshTranslucency;                              // 0x07D0 (0x0004) [0x0000000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData00[0x4];                            // 0x07D4 (0x0004) MISSED OFFSET
-	class TArray<class UMaterialInterface*>            TranslucentMaterials;                          // 0x07D8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	struct FCarBallInteractionSettings                 CarInteraction;                                // 0x07E8 (0x0038) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	class AFXActor_X*                                  EndOfGameFXArchetype;                          // 0x0820 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AFXActor_X*                                  WarnFXActorArchetype;                          // 0x0828 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AFXActor_X*                                  WarnFXActor;                                   // 0x0830 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class AExplosion_X*                                ExplosionArchetype;                            // 0x0838 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AExplosion_X*                                NoGoalExplosionArchetype;                      // 0x0840 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bAllowPlayerExplosionOverride : 1;             // 0x0848 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bNotifyGroundHit : 1;                          // 0x0848 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
-	uint32_t                                           bAwardDemolishCredit : 1;                      // 0x0848 (0x0004) [0x0000000000000000] [0x00000004] 
-	uint32_t                                           bEndOfGameHidden : 1;                          // 0x0848 (0x0004) [0x0000004100002020] [0x00000008] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	uint32_t                                           bFadeIn : 1;                                   // 0x0848 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bFadeOut : 1;                                  // 0x0848 (0x0004) [0x0000000000000000] [0x00000020] 
-	uint32_t                                           bPredictionOnGround : 1;                       // 0x0848 (0x0004) [0x0000000000002002] [0x00000040] (CPF_Const | CPF_Transient)
-	uint32_t                                           bCanBeAttached : 1;                            // 0x0848 (0x0004) [0x0000000000002000] [0x00000080] (CPF_Transient)
-	uint32_t                                           bItemFreeze : 1;                               // 0x0848 (0x0004) [0x0008000000002000] [0x00000100] (CPF_Transient)
-	uint32_t                                           bWarnBallReset : 1;                            // 0x0848 (0x0004) [0x0000000100000020] [0x00000200] (CPF_Net | CPF_RepNotify)
-	uint32_t                                           bCanBeScored : 1;                              // 0x0848 (0x0004) [0x0000000000000000] [0x00000400] 
-	uint32_t                                           bCanEndRoundOnGroundTouch : 1;                 // 0x0848 (0x0004) [0x0000004000000000] [0x00000800] (CPF_PrivateWrite)
-	uint32_t                                           bPossessionEnabled : 1;                        // 0x0848 (0x0004) [0x0000008100000020] [0x00001000] (CPF_Net | CPF_RepNotify | CPF_ProtectedWrite)
-	struct FVector                                     MagnusCoefficient;                             // 0x084C (0x000C) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	float                                              MagnusMinSpeed;                                // 0x0858 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	float                                              AngularVelocityDamping;                        // 0x085C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              BallHitSpinScale;                              // 0x0860 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	uint8_t                                          UnknownData01[0x4];                            // 0x0864 (0x0004) MISSED OFFSET
-	class UBallCamTarget_TA*                           BallCamTarget;                                 // 0x0868 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	float                                              Radius;                                        // 0x0870 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              SpawnWidth;                                    // 0x0874 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	float                                              VisualRadius;                                  // 0x0878 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData02[0x4];                            // 0x087C (0x0004) MISSED OFFSET
-	class TArray<struct FBallHitInfo>                  Touches;                                       // 0x0880 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	EVehicleDemolishMode                               VehicleDemolishMode;                           // 0x0890 (0x0001) [0x0000000000000000]               
-	uint8_t                                            HitTeamNum;                                    // 0x0891 (0x0001) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	uint8_t                                          UnknownData03[0x2];                            // 0x0892 (0x0002) MISSED OFFSET
-	float                                              LastCalculateCarHit;                           // 0x0894 (0x0004) [0x0000000000002000] (CPF_Transient)
-	struct FVector                                     InitialLocation;                               // 0x0898 (0x000C) [0x0000000000002000] (CPF_Transient)
-	struct FRotator                                    InitialRotation;                               // 0x08A4 (0x000C) [0x0000000000002000] (CPF_Transient)
-	float                                              LastHitWorldTime;                              // 0x08B0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              ReplicatedBallScale;                           // 0x08B4 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	class UStaticMesh*                                 ReplicatedBallMesh;                            // 0x08B8 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              ReplicatedWorldBounceScale;                    // 0x08C0 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              ReplicatedBallGravityScale;                    // 0x08C4 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              ReplicatedBallMaxLinearSpeedScale;             // 0x08C8 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              ReplicatedAddedCarBounceScale;                 // 0x08CC (0x0004) [0x0000000000000020] (CPF_Net)     
-	float                                              AdditionalCarGroundBounceScaleZ;               // 0x08D0 (0x0004) [0x0000000000000020] (CPF_Net)     
-	float                                              AdditionalCarGroundBounceScaleXY;              // 0x08D4 (0x0004) [0x0000000000000020] (CPF_Net)     
-	class UPhysicalMaterial*                           ReplicatedPhysMatOverride;                     // 0x08D8 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	int32_t                                            GameBallIndex;                                 // 0x08E0 (0x0004) [0x0000004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	uint8_t                                          UnknownData04[0x4];                            // 0x08E4 (0x0004) MISSED OFFSET
-	class AGameEvent_Soccar_TA*                        GameEvent;                                     // 0x08E8 (0x0008) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
-	struct FExplosionData                              ReplicatedExplosionData;                       // 0x08F0 (0x0018) [0x0000004100082020] (CPF_Net | CPF_Transient | CPF_Component | CPF_RepNotify | CPF_PrivateWrite)
-	struct FExplosionDataExtended                      ReplicatedExplosionDataExtended;               // 0x0908 (0x0020) [0x0000004100082020] (CPF_Net | CPF_Transient | CPF_Component | CPF_RepNotify | CPF_PrivateWrite)
-	class AExplosion_X*                                Explosion;                                     // 0x0928 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	float                                              ExplosionTime;                                 // 0x0930 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	struct FVector                                     OldLocation;                                   // 0x0934 (0x000C) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class TArray<class UMaterialInterface*>            FadeMaterials;                                 // 0x0940 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              PredictionTimestep;                            // 0x0950 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData05[0x4];                            // 0x0954 (0x0004) MISSED OFFSET
-	class TArray<struct FPredictedPosition>            PredictedPositions;                            // 0x0958 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
-	float                                              LastPredictionTime;                            // 0x0968 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	uint8_t                                          UnknownData06[0x4];                            // 0x096C (0x0004) MISSED OFFSET
-	struct FGoalPenetrationData                        GoalPenetration;                               // 0x0970 (0x0028) [0x0000000000082000] (CPF_Transient | CPF_Component)
-	float                                              GroundForce;                                   // 0x0998 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData07[0x4];                            // 0x099C (0x0004) MISSED OFFSET
-	class ACar_TA*                                     CurrentAffector;                               // 0x09A0 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UBallTrajectoryComponent_TA*                 TrajectoryComponent;                           // 0x09A8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UPitchTekDrawingComponent_TA*                PitchTekComponent;                             // 0x09B0 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class AGoalExplosionOrientation_TA*                GoalExplosionOrientation;                      // 0x09B8 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class AFXActor_X*                                  PossessionFXActorArchetype;                    // 0x09C0 (0x0008) [0x0000000000000000]               
-	class AFXActor_X*                                  PossessionFXActor;                             // 0x09C8 (0x0008) [0x0000000000002000] (CPF_Transient)
-	struct FVector                                     AirResistance;                                 // 0x09D0 (0x000C) [0x0001000000000020] (CPF_Net)     
-	struct FVector                                     MinResistanceVelocity;                         // 0x09DC (0x000C) [0x0001000000000020] (CPF_Net)     
-	float                                              SecondsSinceGroundedChanged;                   // 0x09E8 (0x0004) [0x0000008000000000] (CPF_ProtectedWrite)
-	uint8_t                                          UnknownData08[0x4];                            // 0x09EC (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventCarTouch__Delegate;                     // 0x09F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitWorld__Delegate;                     // 0x0A08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitGround__Delegate;                    // 0x0A20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitGoal__Delegate;                      // 0x0A38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGameEventSet__Delegate;                 // 0x0A50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventExploded__Delegate;                     // 0x0A68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitTeamNumChanged__Delegate;            // 0x0A80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTrailIntensityChanged__Delegate;        // 0x0A98 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventBallTeleported__Delegate;               // 0x0AB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDemolishedCar__Delegate;                // 0x0AC8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCrossbarHit__Delegate;                  // 0x0AE0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScaleUpdated__Delegate;                 // 0x0AF8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __bItemFreeze__ChangeNotify;                   // 0x0B10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UStaticMeshComponent*                        StaticMesh;                                    // 0x07D8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UStaticMeshComponent*                        TranslucentStaticMesh;                         // 0x07E0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	float                                              MeshTranslucency;                              // 0x07E8 (0x0004) [0x0000000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData00[0x4];                            // 0x07EC (0x0004) MISSED OFFSET
+	class TArray<class UMaterialInterface*>            TranslucentMaterials;                          // 0x07F0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	struct FCarBallInteractionSettings                 CarInteraction;                                // 0x0800 (0x0038) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class AFXActor_X*                                  EndOfGameFXArchetype;                          // 0x0838 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AFXActor_X*                                  WarnFXActorArchetype;                          // 0x0840 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AFXActor_X*                                  WarnFXActor;                                   // 0x0848 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class AExplosion_X*                                ExplosionArchetype;                            // 0x0850 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AExplosion_X*                                NoGoalExplosionArchetype;                      // 0x0858 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	uint32_t                                           bAllowPlayerExplosionOverride : 1;             // 0x0860 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bNotifyGroundHit : 1;                          // 0x0860 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bAwardDemolishCredit : 1;                      // 0x0860 (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bEndOfGameHidden : 1;                          // 0x0860 (0x0004) [0x0000004100002020] [0x00000008] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	uint32_t                                           bFadeIn : 1;                                   // 0x0860 (0x0004) [0x0000000000000000] [0x00000010] 
+	uint32_t                                           bFadeOut : 1;                                  // 0x0860 (0x0004) [0x0000000000000000] [0x00000020] 
+	uint32_t                                           bPredictionOnGround : 1;                       // 0x0860 (0x0004) [0x0000000000002002] [0x00000040] (CPF_Const | CPF_Transient)
+	uint32_t                                           bCanBeAttached : 1;                            // 0x0860 (0x0004) [0x0000000000002000] [0x00000080] (CPF_Transient)
+	uint32_t                                           bItemFreeze : 1;                               // 0x0860 (0x0004) [0x0008000000002000] [0x00000100] (CPF_Transient)
+	uint32_t                                           bWarnBallReset : 1;                            // 0x0860 (0x0004) [0x0000000100000020] [0x00000200] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bCanBeScored : 1;                              // 0x0860 (0x0004) [0x0000000000000000] [0x00000400] 
+	uint32_t                                           bCanEndRoundOnGroundTouch : 1;                 // 0x0860 (0x0004) [0x0000004000000000] [0x00000800] (CPF_PrivateWrite)
+	uint32_t                                           bPossessionEnabled : 1;                        // 0x0860 (0x0004) [0x0000008100000020] [0x00001000] (CPF_Net | CPF_RepNotify | CPF_ProtectedWrite)
+	uint32_t                                           bAddToObjectProvider : 1;                      // 0x0860 (0x0004) [0x0000000000000000] [0x00002000] 
+	struct FVector                                     MagnusCoefficient;                             // 0x0864 (0x000C) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	float                                              MagnusMinSpeed;                                // 0x0870 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	float                                              AngularVelocityDamping;                        // 0x0874 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              BallHitSpinScale;                              // 0x0878 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	uint8_t                                          UnknownData01[0x4];                            // 0x087C (0x0004) MISSED OFFSET
+	class UBallCamTarget_TA*                           BallCamTarget;                                 // 0x0880 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	float                                              Radius;                                        // 0x0888 (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              SpawnWidth;                                    // 0x088C (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	float                                              VisualRadius;                                  // 0x0890 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData02[0x4];                            // 0x0894 (0x0004) MISSED OFFSET
+	class TArray<struct FBallHitInfo>                  Touches;                                       // 0x0898 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	EVehicleDemolishMode                               VehicleDemolishMode;                           // 0x08A8 (0x0001) [0x0000000000000000]               
+	uint8_t                                            HitTeamNum;                                    // 0x08A9 (0x0001) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	uint8_t                                          UnknownData03[0x2];                            // 0x08AA (0x0002) MISSED OFFSET
+	float                                              LastCalculateCarHit;                           // 0x08AC (0x0004) [0x0000000000002000] (CPF_Transient)
+	struct FVector                                     InitialLocation;                               // 0x08B0 (0x000C) [0x0000000000002000] (CPF_Transient)
+	struct FRotator                                    InitialRotation;                               // 0x08BC (0x000C) [0x0000000000002000] (CPF_Transient)
+	float                                              LastHitWorldTime;                              // 0x08C8 (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              ReplicatedBallScale;                           // 0x08CC (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	class UStaticMesh*                                 ReplicatedBallMesh;                            // 0x08D0 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              ReplicatedWorldBounceScale;                    // 0x08D8 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              ReplicatedBallGravityScale;                    // 0x08DC (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              ReplicatedBallMaxLinearSpeedScale;             // 0x08E0 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              ReplicatedAddedCarBounceScale;                 // 0x08E4 (0x0004) [0x0000000000000020] (CPF_Net)     
+	float                                              AdditionalCarGroundBounceScaleZ;               // 0x08E8 (0x0004) [0x0000000000000020] (CPF_Net)     
+	float                                              AdditionalCarGroundBounceScaleXY;              // 0x08EC (0x0004) [0x0000000000000020] (CPF_Net)     
+	class UPhysicalMaterial*                           ReplicatedPhysMatOverride;                     // 0x08F0 (0x0008) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	int32_t                                            GameBallIndex;                                 // 0x08F8 (0x0004) [0x0000004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	uint8_t                                          UnknownData04[0x4];                            // 0x08FC (0x0004) MISSED OFFSET
+	class AGameEvent_Soccar_TA*                        GameEvent;                                     // 0x0900 (0x0008) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
+	struct FExplosionData                              ReplicatedExplosionData;                       // 0x0908 (0x0018) [0x0000004100082020] (CPF_Net | CPF_Transient | CPF_Component | CPF_RepNotify | CPF_PrivateWrite)
+	struct FExplosionDataExtended                      ReplicatedExplosionDataExtended;               // 0x0920 (0x0020) [0x0000004100082020] (CPF_Net | CPF_Transient | CPF_Component | CPF_RepNotify | CPF_PrivateWrite)
+	class AExplosion_X*                                Explosion;                                     // 0x0940 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	float                                              ExplosionTime;                                 // 0x0948 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	struct FVector                                     OldLocation;                                   // 0x094C (0x000C) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class TArray<class UMaterialInterface*>            FadeMaterials;                                 // 0x0958 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              PredictionTimestep;                            // 0x0968 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData05[0x4];                            // 0x096C (0x0004) MISSED OFFSET
+	class TArray<struct FPredictedPosition>            PredictedPositions;                            // 0x0970 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
+	float                                              LastPredictionTime;                            // 0x0980 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	uint8_t                                          UnknownData06[0x4];                            // 0x0984 (0x0004) MISSED OFFSET
+	struct FGoalPenetrationData                        GoalPenetration;                               // 0x0988 (0x0028) [0x0000000000082000] (CPF_Transient | CPF_Component)
+	float                                              GroundForce;                                   // 0x09B0 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData07[0x4];                            // 0x09B4 (0x0004) MISSED OFFSET
+	class ACar_TA*                                     CurrentAffector;                               // 0x09B8 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UBallTrajectoryComponent_TA*                 TrajectoryComponent;                           // 0x09C0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UPitchTekDrawingComponent_TA*                PitchTekComponent;                             // 0x09C8 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class AGoalExplosionOrientation_TA*                GoalExplosionOrientation;                      // 0x09D0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class AFXActor_X*                                  PossessionFXActorArchetype;                    // 0x09D8 (0x0008) [0x0000000000000000]               
+	class AFXActor_X*                                  PossessionFXActor;                             // 0x09E0 (0x0008) [0x0000000000002000] (CPF_Transient)
+	struct FVector                                     AirResistance;                                 // 0x09E8 (0x000C) [0x0001000000000020] (CPF_Net)     
+	struct FVector                                     MinResistanceVelocity;                         // 0x09F4 (0x000C) [0x0001000000000020] (CPF_Net)     
+	float                                              SecondsSinceGroundedChanged;                   // 0x0A00 (0x0004) [0x0000008000000000] (CPF_ProtectedWrite)
+	uint8_t                                          UnknownData08[0x4];                            // 0x0A04 (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventCarTouch__Delegate;                     // 0x0A08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitWorld__Delegate;                     // 0x0A20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitGround__Delegate;                    // 0x0A38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitGoal__Delegate;                      // 0x0A50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGameEventSet__Delegate;                 // 0x0A68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventExploded__Delegate;                     // 0x0A80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitTeamNumChanged__Delegate;            // 0x0A98 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTrailIntensityChanged__Delegate;        // 0x0AB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventBallTeleported__Delegate;               // 0x0AC8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDemolishedCar__Delegate;                // 0x0AE0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCrossbarHit__Delegate;                  // 0x0AF8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScaleUpdated__Delegate;                 // 0x0B10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __bItemFreeze__ChangeNotify;                   // 0x0B28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_TA"))
@@ -3971,6 +3984,8 @@ public:
 	void SetCarHitTeamNum(uint8_t TeamNum);
 	void OnCarHitRecorded(class ACar_TA* HitCar, EBallHitType HitType, int32_t OldTeamNum);
 	void OnDemolishedCar(class ACar_TA* CarDemolished, class APRI_TA* AttackerPRI);
+	class APRI_TA* GetAttackerPRI(class ACar_TA* HitCar, int32_t OldTeamNum);
+	bool ShouldDemolishVehicle(class ACar_TA* HitCar, EBallHitType HitType);
 	void RecordCarHit(class ACar_TA* HitCar, const struct FVector& HitLocation, const struct FVector& HitNormal, EBallHitType optionalHitType);
 	void eventReset();
 	void OnHitBall(class ABall_TA* OtherBall, const struct FVector& HitLocation, const struct FVector& HitNormal);
@@ -5293,6 +5308,7 @@ public:
 	bool CanPickup(class ACar_TA* InCar);
 	class ASpecialPickup_TA* ApplyPickup(class ACar_TA* InCar);
 	void eventRecordHit(class ARBActor_TA* HitActor, const struct FVector& Normal, EBallHitType HitType);
+	class FName GetArchetypeName();
 	void EventDeactivated(class ACar_TA* InCar, class ASpecialPickup_TA* Pickup);
 	void EventActivated(class ACar_TA* InCar, class ASpecialPickup_TA* Pickup);
 };
@@ -7446,6 +7462,7 @@ public:
 	void OnTeamForfeited(class ATeam_TA* Team);
 	void HandleTeamForfeit(class ATeam_TA* Team);
 	void MuteOppositeTeams(bool bMute);
+	bool IsPendingAntiCheatAuth(class APRI_TA* PRI);
 	void UpdateBotCount();
 	bool ReplacePlayer(class APRI_TA* PRI, struct FVector& outCarLocation, struct FRotator& outCarRotation, struct FVector& outCarVelocity);
 	bool ReplaceBot(class APRI_TA* PRI, class APRI_TA* Replace, struct FVector& outCarLocation, struct FRotator& outCarRotation, struct FVector& outCarVelocity);
@@ -7891,6 +7908,7 @@ public:
 	bool __GFxData_Shops_TA__AnyCatalogueNeedsUpdate_0x1(class UGFxData_ShopCatalogue_TA* S);
 	int32_t __GFxData_Shops_TA__LoadCataloguesByID_0x1(int32_t Id);
 	bool __GFxData_Shops_TA__RefreshShopsViewed_0x1(class UGFxData_ShopCatalogue_TA* S);
+	bool __GFxData_Shops_TA__GetEsportsTabHasNew_0x1(class UGFxData_ShopCatalogue_TA* S);
 	bool __GFxData_Shops_TA__SyncFeaturedProducts_0x1(class UGFxData_ShopCatalogue_TA* S);
 	void __GFxData_Shops_TA__OnCheckForPurchaseWarning_0x3(class UGFxModal_X* instance);
 	bool __GFxData_Shops_TA__OnCheckForPurchaseWarning_0x2(const struct FShopDeliverable& D);
@@ -7923,6 +7941,8 @@ public:
 	void SyncFeaturedProducts(class TArray<struct FOnlineProductData>& outProducts);
 	void RefreshOwnedProducts();
 	void OnShopCataloguesOwnershipDesync(bool bTrackedCatalogueMarkedDirty);
+	void MarkEsportsShopsViewed();
+	bool GetEsportsTabHasNew();
 	bool HasShopContentUpdated(class UGFxData_ShopCatalogue_TA* Catalogue);
 	void RefreshShopsViewed();
 	void UpdateShopCache(int32_t ShopID);
@@ -8416,13 +8436,14 @@ public:
 };
 
 // Class TAGame.InterpTrackPostProcess_TA
-// 0x02D4 (0x00DC - 0x03B0)
+// 0x02D8 (0x00DC - 0x03B4)
 class UInterpTrackPostProcess_TA : public UInterpTrackToggle
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
 	struct FPostProcessSettings                        SettingsToApply;                               // 0x00E0 (0x0168) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	struct FPostProcessSettings                        PreviousCameraSettings;                        // 0x0248 (0x0168) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	uint32_t                                           bSettingsApplied : 1;                          // 0x03B0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.InterpTrackPostProcess_TA"))
@@ -8790,46 +8811,60 @@ public:
 };
 
 // Class TAGame.MatchStatsExporter_TA
-// 0x0170 (0x0060 - 0x01D0)
+// 0x01B0 (0x0060 - 0x0210)
 class UMatchStatsExporter_TA : public UObject
 {
 public:
 	int32_t                                            Port;                                          // 0x0060 (0x0004) [0x0001000000004000] (CPF_Config)  
-	float                                              PacketSendRate;                                // 0x0064 (0x0004) [0x0001000000004000] (CPF_Config)  
-	class FString                                      UpdateStateEventName;                          // 0x0068 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ClockUpdatedEventName;                         // 0x0078 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchCreatedEventName;                         // 0x0088 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ReplayCreatedEventName;                        // 0x0098 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchDestroyedEventName;                       // 0x00A8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchInitializedEventName;                     // 0x00B8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchCountdownEventName;                       // 0x00C8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      RoundStartedEventName;                         // 0x00D8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ReplayWillEndEventName;                        // 0x00E8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ReplayPlaybackStartEventName;                  // 0x00F8 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ReplayPlaybackEndEventName;                    // 0x0108 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      PodiumSpotlightStartedEvent;                   // 0x0118 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchEndedEventName;                           // 0x0128 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      StatFeedEventName;                             // 0x0138 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      ScoreDataEventName;                            // 0x0148 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      BallHitEventName;                              // 0x0158 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchPausedEventName;                          // 0x0168 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      MatchUnpausedEventName;                        // 0x0178 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      CrossbarHitEventName;                          // 0x0188 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
-	struct FVector                                     LastBallExplosionLocation;                     // 0x0198 (0x000C) [0x0001000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x01A4 (0x0004) MISSED OFFSET
-	class UStagedBallHitEvent*                         StagedHitEvent;                                // 0x01A8 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class APRI_TA*                                     LastBallHitter;                                // 0x01B0 (0x0008) [0x0001000000002000] (CPF_Transient)
-	float                                              LastBallHitSpeed;                              // 0x01B8 (0x0004) [0x0001000000002000] (CPF_Transient)
-	float                                              PostHitBallSpeed;                              // 0x01BC (0x0004) [0x0001000000002000] (CPF_Transient)
-	class AGameEvent_Soccar_TA*                        CurrentGameEvent;                              // 0x01C0 (0x0008) [0x0001800000002000] (CPF_Transient)
-	class APlayerControllerBase_TA*                    PrimaryPC;                                     // 0x01C8 (0x0008) [0x0001800000002000] (CPF_Transient)
+	int32_t                                            WebPort;                                       // 0x0064 (0x0004) [0x0001000000004000] (CPF_Config)  
+	float                                              PacketSendRate;                                // 0x0068 (0x0004) [0x0001000000004000] (CPF_Config)  
+	uint32_t                                           bSocketsCreated : 1;                           // 0x006C (0x0004) [0x0001000000002000] [0x00000001] (CPF_Transient)
+	class FString                                      UpdateStateEventName;                          // 0x0070 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ClockUpdatedEventName;                         // 0x0080 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchCreatedEventName;                         // 0x0090 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ReplayCreatedEventName;                        // 0x00A0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchDestroyedEventName;                       // 0x00B0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchInitializedEventName;                     // 0x00C0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchCountdownEventName;                       // 0x00D0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      RoundStartedEventName;                         // 0x00E0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ReplayWillEndEventName;                        // 0x00F0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ReplayPlaybackStartEventName;                  // 0x0100 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ReplayPlaybackEndEventName;                    // 0x0110 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      PodiumSpotlightStartedEvent;                   // 0x0120 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchEndedEventName;                           // 0x0130 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      StatFeedEventName;                             // 0x0140 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      ScoreDataEventName;                            // 0x0150 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      BallHitEventName;                              // 0x0160 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchPausedEventName;                          // 0x0170 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      MatchUnpausedEventName;                        // 0x0180 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      CrossbarHitEventName;                          // 0x0190 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      PlayerJoinedEventName;                         // 0x01A0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      PlayerLeftEventName;                           // 0x01B0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      BoostPickupEventName;                          // 0x01C0 (0x0010) [0x0001000000400002] (CPF_Const | CPF_NeedCtorLink)
+	struct FVector                                     LastBallExplosionLocation;                     // 0x01D0 (0x000C) [0x0001000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x01DC (0x0004) MISSED OFFSET
+	class UStagedBallHitEvent*                         StagedHitEvent;                                // 0x01E0 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class APRI_TA*                                     LastBallHitter;                                // 0x01E8 (0x0008) [0x0001000000002000] (CPF_Transient)
+	float                                              LastBallHitSpeed;                              // 0x01F0 (0x0004) [0x0001000000002000] (CPF_Transient)
+	float                                              PostHitBallSpeed;                              // 0x01F4 (0x0004) [0x0001000000002000] (CPF_Transient)
+	class USocketCommandManager_TA*                    CommandManager;                                // 0x01F8 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class AGameEvent_Soccar_TA*                        CurrentGameEvent;                              // 0x0200 (0x0008) [0x0001800000002000] (CPF_Transient)
+	class APlayerControllerBase_TA*                    PrimaryPC;                                     // 0x0208 (0x0008) [0x0001800000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.MatchStatsExporter_TA"))
-	void TickSocketManager();
+	void TickSocketManagers();
 	void SendDataToSockets(class FString& outJsonData);
-	bool CreateSocketManager();
+	bool CreateSocketManagers();
+	void eventProcessSocketCommand(class FString& outCommandJson);
 	void BroadcastEvent(class FString& outEventName, class FString& outData);
+	void HandleBoostPickup(class AVehiclePickup_TA* Pickup);
+	bool IsReplayObjectSeeking(class UReplay_TA* Replay);
+	bool IsReplaySeeking();
+	struct FBoostPickupEvent GetBoostPickupEvent(class AVehiclePickup_Boost_TA* Pickup);
+	void BroadcastPlayerChangeEvent(class APRI_TA* PRI, bool bJoined);
+	void HandlePlayerRemoved(class AGameEvent_TA* GameEvent, class APRI_TA* PRI);
+	void HandlePlayerAdded(class AGameEvent_TA* GameEvent, class APRI_TA* PRI);
 	void HandlePauseChanged();
 	void HandleScoreDataChanged(class AReplayDirector_TA* Director);
 	struct FGoalScoreDataEvent GetGoalScoreDataEvent(class AReplayDirector_TA* Director);
@@ -8857,11 +8892,14 @@ public:
 	class FString GetColorHexCode(struct FLinearColor& outInColor);
 	struct FTeamUpdateState GetTeamState(class ATeam_TA* Team);
 	static float ToKph(float Speed);
+	bool IsInReplay();
+	bool AllowSpectatorData();
 	bool AllowExtraPlayerStateData(class APRI_TA* PRI);
 	struct FPlayerUpdateState GetPlayerState(class APRI_TA* PRI);
 	class FString GetMatchGUID();
 	void UpdateGameEventState();
 	void HandleGameEvent();
+	static bool IsStatsAPIRunning();
 	bool Init();
 };
 
@@ -9504,6 +9542,7 @@ public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.OnlineSessionManager_TA"))
 	bool __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x4(const struct FUniqueNetId& F);
 	struct FUniqueNetId __OnlineSessionManager_TA__GetRemoteSessionPlayerIds_0x1(class APRI_TA* P);
+	class FString eventGetExtraMatchDataString();
 	bool eventCanCrossplayTextChat();
 	class TArray<struct FUniqueNetId> eventGetRemoteSessionPlayerIds();
 };
@@ -9587,7 +9626,7 @@ public:
 	void SetClubRole(EClubRole InClubRole);
 	void SetHidden(bool bInHidden);
 	void SetCanShowAvatar(bool bInCanShowAvatar);
-	void SetEpicAccountId(const class FString& InEpicAccountId);
+	void SetEpicAccountId(const class FString& InEpicAccountID);
 	void SetBlockStatus(bool bBlocked);
 	void NotifyOnNameSanitized(const struct FScriptDelegate& Callback);
 	void SetPlayerNameSanitized(const class FString& Original, const class FString& Sanitized);
@@ -11033,6 +11072,7 @@ public:
 	bool DoesPlayerOwnProduct(int32_t ProductID, bool optionalBCheckUnlockMethod, struct FUniqueNetId& outPlayerID);
 	void RemoveIncompatibleProducts(class TArray<int32_t>& outOutProducts, class TArray<struct FProductInstanceID>& outOutOnlineProducts);
 	int32_t ReplaceIncompatibleProduct(int32_t ProductID, class TArray<int32_t>& outEquippedProducts);
+	class UProductAsset_Body_TA* GetBaseBodyForSpecialEditionVariant(class UProduct_TA* EquippedBody);
 	bool CanEquip(int32_t ProductID, class TArray<int32_t>& outEquippedProducts);
 	void ConvertProductIDs(class TArray<int32_t>& outProductIDs, class TArray<class UProduct_TA*>& outOutProducts);
 	class UProductAsset_TA* LoadAssetByName(const class FName& AssetName);
@@ -11371,7 +11411,7 @@ public:
 	class UProductSlot_TA*                             Slot;                                          // 0x0060 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
 	EUnlockMethod                                      UnlockMethod;                                  // 0x0068 (0x0001) [0x0000000000000000]               
 	EProductQuality                                    Quality;                                       // 0x0069 (0x0001) [0x0000000000000000]               
-	ECrossEntitlementStatus                            BaseXEStatus;                                  // 0x006A (0x0001) [0x0001000000000001] (CPF_Edit)    
+	ECrossEntitlementStatus                            BaseXEStatus;                                  // 0x006A (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x5];                            // 0x006B (0x0005) MISSED OFFSET
 	class UProductAsset_Pack_TA*                       Folder;                                        // 0x0070 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UDLCPack_TA*                                 DLC;                                           // 0x0078 (0x0008) [0x0000000000000002] (CPF_Const)   
@@ -11390,7 +11430,7 @@ public:
 	class TArray<EConsoleType>                         PlatformExclusive;                             // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<EProductTradeRestriction>             TradeRestrictions;                             // 0x0100 (0x0010) [0x0000000000420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink)
 	class TArray<class UProductAttribute_TA*>          Attributes;                                    // 0x0110 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
-	class FString                                      XELabelKey;                                    // 0x0120 (0x0010) [0x0001000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class FString                                      XELabelKey;                                    // 0x0120 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	int32_t                                            SortPriority;                                  // 0x0130 (0x0004) [0x0000000000000001] (CPF_Edit)    
 
 public:
@@ -11578,7 +11618,7 @@ public:
 };
 
 // Class TAGame.Pylon_Soccar_TA
-// 0x008C (0x04A4 - 0x0530)
+// 0x0098 (0x04A4 - 0x053C)
 class APylon_Soccar_TA : public APylon
 {
 public:
@@ -11594,7 +11634,9 @@ public:
 	float                                              GroundZ;                                       // 0x0518 (0x0004) [0x0000000000000002] (CPF_Const)   
 	struct FVector                                     PodiumSpotlightOverride;                       // 0x051C (0x000C) [0x0000004000000001] (CPF_Edit | CPF_PrivateWrite)
 	float                                              PodiumSpotlightZ;                              // 0x0528 (0x0004) [0x0000004000000001] (CPF_Edit | CPF_PrivateWrite)
-	uint32_t                                           bRandomBallSpawnPoint : 1;                     // 0x052C (0x0004) [0x0001004000000001] [0x00000001] (CPF_Edit | CPF_PrivateWrite)
+	struct FVector                                     TerritoryWallScale;                            // 0x052C (0x000C) [0x0000004000000001] (CPF_Edit | CPF_PrivateWrite)
+	uint32_t                                           bRandomBallSpawnPoint : 1;                     // 0x0538 (0x0004) [0x0001004000000001] [0x00000001] (CPF_Edit | CPF_PrivateWrite)
+	uint32_t                                           bWinnersExplosionEnabled : 1;                  // 0x0538 (0x0004) [0x0001004000000001] [0x00000002] (CPF_Edit | CPF_PrivateWrite)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Pylon_Soccar_TA"))
@@ -11620,37 +11662,37 @@ public:
 };
 
 // Class TAGame.Ball_Breakout_TA
-// 0x0168 (0x0B28 - 0x0C90)
+// 0x0168 (0x0B40 - 0x0CA8)
 class ABall_Breakout_TA : public ABall_TA
 {
 public:
-	class TArray<struct FBreakoutDamage>               DamageAtTime;                                  // 0x0B28 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	class TArray<int32_t>                              DamageForceLevels;                             // 0x0B38 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bClearTeamOnDamage : 1;                        // 0x0B48 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bCanDamageOwnTeam : 1;                         // 0x0B48 (0x0004) [0x0000000000000000] [0x00000002] 
-	float                                              MinDamageVelocity;                             // 0x0B4C (0x0004) [0x0000000000000000]               
-	float                                              MinDamageTime;                                 // 0x0B50 (0x0004) [0x0000000000000000]               
-	int32_t                                            MinImpactSpeedForCharge;                       // 0x0B54 (0x0004) [0x0000000000000000]               
-	float                                              DoubleTapTime;                                 // 0x0B58 (0x0004) [0x0000000000000000]               
-	float                                              ForceAccumDecayPerSecond;                      // 0x0B5C (0x0004) [0x0000000000000000]               
-	float                                              ForceAccumMax;                                 // 0x0B60 (0x0004) [0x0000000000000000]               
-	float                                              ForceAccumRecent;                              // 0x0B64 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                            LastTeamTouch;                                 // 0x0B68 (0x0001) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	uint8_t                                          UnknownData00[0x7];                            // 0x0B69 (0x0007) MISSED OFFSET
-	class ACar_TA*                                     LastCarTouch;                                  // 0x0B70 (0x0008) [0x0000000000000000]               
-	int32_t                                            LastDamage;                                    // 0x0B78 (0x0004) [0x0000000000000000]               
-	float                                              LastDamageTime;                                // 0x0B7C (0x0004) [0x0000000000000000]               
-	int32_t                                            DamageIndex;                                   // 0x0B80 (0x0004) [0x0000004100000020] (CPF_Net | CPF_RepNotify | CPF_PrivateWrite)
-	int32_t                                            LockedDamageIndex;                             // 0x0B84 (0x0004) [0x0000000000000000]               
-	class TArray<int32_t>                              DamageIndexPointsToAward;                      // 0x0B88 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              AbsorbedForce;                                 // 0x0B98 (0x0004) [0x0000000000002000] (CPF_Transient)
-	struct FAppliedBreakoutDamage                      AppliedDamage;                                 // 0x0B9C (0x0018) [0x0000004100000020] (CPF_Net | CPF_RepNotify | CPF_PrivateWrite)
-	uint8_t                                          UnknownData01[0x4];                            // 0x0BB4 (0x0004) MISSED OFFSET
-	struct FAccumulatedRigidBodyCollision              ClosestPlatformCollision;                      // 0x0BB8 (0x0080) [0x0000004000082000] (CPF_Transient | CPF_Component | CPF_PrivateWrite)
-	class TArray<struct FAccumulatedRigidBodyCollision> WorldCollisions;                               // 0x0C38 (0x0010) [0x0000000000482000] (CPF_Transient | CPF_Component | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDamageIndexChanged__Delegate;           // 0x0C48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLastTeamTouchChanged__Delegate;         // 0x0C60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAppliedDamage__Delegate;                // 0x0C78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FBreakoutDamage>               DamageAtTime;                                  // 0x0B40 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<int32_t>                              DamageForceLevels;                             // 0x0B50 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	uint32_t                                           bClearTeamOnDamage : 1;                        // 0x0B60 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bCanDamageOwnTeam : 1;                         // 0x0B60 (0x0004) [0x0000000000000000] [0x00000002] 
+	float                                              MinDamageVelocity;                             // 0x0B64 (0x0004) [0x0000000000000000]               
+	float                                              MinDamageTime;                                 // 0x0B68 (0x0004) [0x0000000000000000]               
+	int32_t                                            MinImpactSpeedForCharge;                       // 0x0B6C (0x0004) [0x0000000000000000]               
+	float                                              DoubleTapTime;                                 // 0x0B70 (0x0004) [0x0000000000000000]               
+	float                                              ForceAccumDecayPerSecond;                      // 0x0B74 (0x0004) [0x0000000000000000]               
+	float                                              ForceAccumMax;                                 // 0x0B78 (0x0004) [0x0000000000000000]               
+	float                                              ForceAccumRecent;                              // 0x0B7C (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                            LastTeamTouch;                                 // 0x0B80 (0x0001) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	uint8_t                                          UnknownData00[0x7];                            // 0x0B81 (0x0007) MISSED OFFSET
+	class ACar_TA*                                     LastCarTouch;                                  // 0x0B88 (0x0008) [0x0000000000000000]               
+	int32_t                                            LastDamage;                                    // 0x0B90 (0x0004) [0x0000000000000000]               
+	float                                              LastDamageTime;                                // 0x0B94 (0x0004) [0x0000000000000000]               
+	int32_t                                            DamageIndex;                                   // 0x0B98 (0x0004) [0x0000004100000020] (CPF_Net | CPF_RepNotify | CPF_PrivateWrite)
+	int32_t                                            LockedDamageIndex;                             // 0x0B9C (0x0004) [0x0000000000000000]               
+	class TArray<int32_t>                              DamageIndexPointsToAward;                      // 0x0BA0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              AbsorbedForce;                                 // 0x0BB0 (0x0004) [0x0000000000002000] (CPF_Transient)
+	struct FAppliedBreakoutDamage                      AppliedDamage;                                 // 0x0BB4 (0x0018) [0x0000004100000020] (CPF_Net | CPF_RepNotify | CPF_PrivateWrite)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0BCC (0x0004) MISSED OFFSET
+	struct FAccumulatedRigidBodyCollision              ClosestPlatformCollision;                      // 0x0BD0 (0x0080) [0x0000004000082000] (CPF_Transient | CPF_Component | CPF_PrivateWrite)
+	class TArray<struct FAccumulatedRigidBodyCollision> WorldCollisions;                               // 0x0C50 (0x0010) [0x0000000000482000] (CPF_Transient | CPF_Component | CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDamageIndexChanged__Delegate;           // 0x0C60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLastTeamTouchChanged__Delegate;         // 0x0C78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventAppliedDamage__Delegate;                // 0x0C90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_Breakout_TA"))
@@ -11677,37 +11719,37 @@ public:
 };
 
 // Class TAGame.Ball_God_TA
-// 0x008C (0x0B28 - 0x0BB4)
+// 0x008C (0x0B40 - 0x0BCC)
 class ABall_God_TA : public ABall_TA
 {
 public:
-	float                                              WallBounceSpeed;                               // 0x0B28 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              WallBounceBlend;                               // 0x0B2C (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              WallBounceBackDistance;                        // 0x0B30 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetBlendScaleXY;                            // 0x0B34 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetBlendScaleZ;                             // 0x0B38 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetSpeed;                                   // 0x0B3C (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              TargetSpeedIncrement;                          // 0x0B40 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetSpeedBlend;                              // 0x0B44 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              MaxVelocityPitch;                              // 0x0B48 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              LastSpeedIncrementTime;                        // 0x0B4C (0x0004) [0x0000000000000000]               
-	float                                              TargetSpeedIncrementTime;                      // 0x0B50 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              MinGlowBrightness;                             // 0x0B54 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              MaxGlowBrightness;                             // 0x0B58 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              PulseSpeedScale;                               // 0x0B5C (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              PulseBrightnessScale;                          // 0x0B60 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              PulseMinBrightness;                            // 0x0B64 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              PulseLifetime;                                 // 0x0B68 (0x0004) [0x0000000000000002] (CPF_Const)   
-	struct FLinearColor                                GlowDefaultColor;                              // 0x0B6C (0x0010) [0x0000000000000002] (CPF_Const)   
-	struct FLinearColor                                MaxSpeedColor;                                 // 0x0B7C (0x0010) [0x0000000000000002] (CPF_Const)   
-	class FName                                        AudioCurveName;                                // 0x0B8C (0x0008) [0x0000000000000002] (CPF_Const)   
-	class FName                                        AudioIntensityName;                            // 0x0B94 (0x0008) [0x0000000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData00[0x4];                            // 0x0B9C (0x0004) MISSED OFFSET
-	class UFXActorEvent_X*                             FXEvent_TeamChanged;                           // 0x0BA0 (0x0008) [0x0000000000000002] (CPF_Const)   
-	class UFXActorEvent_X*                             FXEvent_IntensityChanged;                      // 0x0BA8 (0x0008) [0x0000000000000002] (CPF_Const)   
-	uint32_t                                           bSwapTeamOnWorldHit : 1;                       // 0x0BB0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
-	uint32_t                                           bBackwardsDirectionCheckEnabled : 1;           // 0x0BB0 (0x0004) [0x0000000000000002] [0x00000002] (CPF_Const)
-	uint32_t                                           bIncrementSpeedOnHitNumChange : 1;             // 0x0BB0 (0x0004) [0x0000000000000002] [0x00000004] (CPF_Const)
+	float                                              WallBounceSpeed;                               // 0x0B40 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              WallBounceBlend;                               // 0x0B44 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              WallBounceBackDistance;                        // 0x0B48 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetBlendScaleXY;                            // 0x0B4C (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetBlendScaleZ;                             // 0x0B50 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetSpeed;                                   // 0x0B54 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              TargetSpeedIncrement;                          // 0x0B58 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetSpeedBlend;                              // 0x0B5C (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              MaxVelocityPitch;                              // 0x0B60 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              LastSpeedIncrementTime;                        // 0x0B64 (0x0004) [0x0000000000000000]               
+	float                                              TargetSpeedIncrementTime;                      // 0x0B68 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              MinGlowBrightness;                             // 0x0B6C (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              MaxGlowBrightness;                             // 0x0B70 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              PulseSpeedScale;                               // 0x0B74 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              PulseBrightnessScale;                          // 0x0B78 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              PulseMinBrightness;                            // 0x0B7C (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              PulseLifetime;                                 // 0x0B80 (0x0004) [0x0000000000000002] (CPF_Const)   
+	struct FLinearColor                                GlowDefaultColor;                              // 0x0B84 (0x0010) [0x0000000000000002] (CPF_Const)   
+	struct FLinearColor                                MaxSpeedColor;                                 // 0x0B94 (0x0010) [0x0000000000000002] (CPF_Const)   
+	class FName                                        AudioCurveName;                                // 0x0BA4 (0x0008) [0x0000000000000002] (CPF_Const)   
+	class FName                                        AudioIntensityName;                            // 0x0BAC (0x0008) [0x0000000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData00[0x4];                            // 0x0BB4 (0x0004) MISSED OFFSET
+	class UFXActorEvent_X*                             FXEvent_TeamChanged;                           // 0x0BB8 (0x0008) [0x0000000000000002] (CPF_Const)   
+	class UFXActorEvent_X*                             FXEvent_IntensityChanged;                      // 0x0BC0 (0x0008) [0x0000000000000002] (CPF_Const)   
+	uint32_t                                           bSwapTeamOnWorldHit : 1;                       // 0x0BC8 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bBackwardsDirectionCheckEnabled : 1;           // 0x0BC8 (0x0004) [0x0000000000000002] [0x00000002] (CPF_Const)
+	uint32_t                                           bIncrementSpeedOnHitNumChange : 1;             // 0x0BC8 (0x0004) [0x0000000000000002] [0x00000004] (CPF_Const)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_God_TA"))
@@ -11741,33 +11783,33 @@ public:
 };
 
 // Class TAGame.Ball_Fire_TA
-// 0x009C (0x0BB4 - 0x0C50)
+// 0x009C (0x0BCC - 0x0C68)
 class ABall_Fire_TA : public ABall_God_TA
 {
 public:
-	uint8_t                                          UnknownData00[0x4];                            // 0x0BB4 (0x0004) MISSED OFFSET
-	class UParticleSystem*                             SpinPSArchetype;                               // 0x0BB8 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UParticleSystemComponent*                    SpinPSC;                                       // 0x0BC0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class FString                                      ParticleColorParamName;                        // 0x0BC8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FLinearColor                                DefaultParticleColor;                          // 0x0BD8 (0x0010) [0x0000000000000000]               
-	struct FLinearColor                                SupersonicParticleColor;                       // 0x0BE8 (0x0010) [0x0000000000000000]               
-	float                                              SecondsToRampUp;                               // 0x0BF8 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              MinSpeedScalar;                                // 0x0BFC (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              MinRedirectScalar;                             // 0x0C00 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TeamNumChangeTimestamp;                        // 0x0C04 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	float                                              TimeSinceLastChangeTimeStamp;                  // 0x0C08 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bUseTargetTeamIndex : 1;                       // 0x0C0C (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
-	uint32_t                                           bAtSupersonicThreshold : 1;                    // 0x0C0C (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
-	float                                              MaxDistanceForSave;                            // 0x0C10 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              DotProductSaveThreshold;                       // 0x0C14 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetLowSpeedDistanceThreshold;               // 0x0C18 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetLowSpeedThreshold;                       // 0x0C1C (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetLowSpeedScalar;                          // 0x0C20 (0x0004) [0x0000000000000002] (CPF_Const)   
-	float                                              TargetAlphaThreshold;                          // 0x0C24 (0x0004) [0x0000000000000002] (CPF_Const)   
-	class UAkSoundCue*                                 SpeedupCue;                                    // 0x0C28 (0x0008) [0x0000000000000000]               
-	int32_t                                            SpeedThresholdState;                           // 0x0C30 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData01[0x4];                            // 0x0C34 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventDemolitionSave__Delegate;               // 0x0C38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          UnknownData00[0x4];                            // 0x0BCC (0x0004) MISSED OFFSET
+	class UParticleSystem*                             SpinPSArchetype;                               // 0x0BD0 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UParticleSystemComponent*                    SpinPSC;                                       // 0x0BD8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class FString                                      ParticleColorParamName;                        // 0x0BE0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FLinearColor                                DefaultParticleColor;                          // 0x0BF0 (0x0010) [0x0000000000000000]               
+	struct FLinearColor                                SupersonicParticleColor;                       // 0x0C00 (0x0010) [0x0000000000000000]               
+	float                                              SecondsToRampUp;                               // 0x0C10 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              MinSpeedScalar;                                // 0x0C14 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              MinRedirectScalar;                             // 0x0C18 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TeamNumChangeTimestamp;                        // 0x0C1C (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	float                                              TimeSinceLastChangeTimeStamp;                  // 0x0C20 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bUseTargetTeamIndex : 1;                       // 0x0C24 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bAtSupersonicThreshold : 1;                    // 0x0C24 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	float                                              MaxDistanceForSave;                            // 0x0C28 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              DotProductSaveThreshold;                       // 0x0C2C (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetLowSpeedDistanceThreshold;               // 0x0C30 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetLowSpeedThreshold;                       // 0x0C34 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetLowSpeedScalar;                          // 0x0C38 (0x0004) [0x0000000000000002] (CPF_Const)   
+	float                                              TargetAlphaThreshold;                          // 0x0C3C (0x0004) [0x0000000000000002] (CPF_Const)   
+	class UAkSoundCue*                                 SpeedupCue;                                    // 0x0C40 (0x0008) [0x0000000000000000]               
+	int32_t                                            SpeedThresholdState;                           // 0x0C48 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0C4C (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventDemolitionSave__Delegate;               // 0x0C50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_Fire_TA"))
@@ -11793,43 +11835,43 @@ public:
 };
 
 // Class TAGame.Ball_Haunted_TA
-// 0x0108 (0x0B28 - 0x0C30)
+// 0x0108 (0x0B40 - 0x0C48)
 class ABall_Haunted_TA : public ABall_TA
 {
 public:
-	struct FVector2D                                   SeekPositionRangeLength;                       // 0x0B28 (0x0008) [0x0000000000000000]               
-	struct FVector2D                                   SeekPositionRangeWidth;                        // 0x0B30 (0x0008) [0x0000000000000000]               
-	struct FVector2D                                   SeekPositionRangeHeight;                       // 0x0B38 (0x0008) [0x0000000000000000]               
-	struct FVector2D                                   NextSeekTimeRange;                             // 0x0B40 (0x0008) [0x0000000000000000]               
-	float                                              TrappedHoverHeight;                            // 0x0B48 (0x0004) [0x0000000000000000]               
-	float                                              HorizontalSpeed;                               // 0x0B4C (0x0004) [0x0000000000000000]               
-	float                                              VerticalSpeed;                                 // 0x0B50 (0x0004) [0x0000000000000000]               
-	float                                              ArrivalDistance;                               // 0x0B54 (0x0004) [0x0000000000000000]               
-	float                                              TrappedHorizontalSpeed;                        // 0x0B58 (0x0004) [0x0000000000000000]               
-	float                                              TrappedVerticalSpeed;                          // 0x0B5C (0x0004) [0x0000000000000000]               
-	float                                              TrappedCaptureTime;                            // 0x0B60 (0x0004) [0x0000000000000000]               
-	float                                              HitPhysicsDuration;                            // 0x0B64 (0x0004) [0x0000000000000000]               
-	uint8_t                                            ReplicatedBeamBrokenValue;                     // 0x0B68 (0x0001) [0x0008000000000020] (CPF_Net)     
-	uint8_t                                            LastTeamTouch;                                 // 0x0B69 (0x0001) [0x0008000000000020] (CPF_Net)     
-	uint8_t                                            DeactivatedGoalIndex;                          // 0x0B6A (0x0001) [0x0008000000000020] (CPF_Net)     
-	uint8_t                                            TotalActiveBeams;                              // 0x0B6B (0x0001) [0x0000000000002020] (CPF_Net | CPF_Transient)
-	struct FVector                                     SeekTarget;                                    // 0x0B6C (0x000C) [0x0000000000002000] (CPF_Transient)
-	float                                              NextNeutralTime;                               // 0x0B78 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bHitPhysicsActive : 1;                         // 0x0B7C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bIsBallBeamed : 1;                             // 0x0B7C (0x0004) [0x0000000000002020] [0x00000002] (CPF_Net | CPF_Transient)
-	uint32_t                                           bIsTrapped : 1;                                // 0x0B7C (0x0004) [0x0000000000002000] [0x00000004] (CPF_Transient)
-	float                                              CurrentCaptureTime;                            // 0x0B80 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              CaptureTimePercentage;                         // 0x0B84 (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              CaptureTimeAtExit;                             // 0x0B88 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x0B8C (0x0004) MISSED OFFSET
-	class UGoal_TA*                                    ActiveGoal;                                    // 0x0B90 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
-	int32_t                                            NumActiveBeamsByTeam[2];                       // 0x0B98 (0x0008) [0x0000000000002000] (CPF_Transient)
-	struct FScriptDelegate                             __EventLastTeamTouchChanged__Delegate;         // 0x0BA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventIsTrapped__Delegate;                    // 0x0BB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventBeamIsBroken__Delegate;                 // 0x0BD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ReplicatedBeamBrokenValue__ChangeNotify;     // 0x0BE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __LastTeamTouch__ChangeNotify;                 // 0x0C00 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __DeactivatedGoalIndex__ChangeNotify;          // 0x0C18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FVector2D                                   SeekPositionRangeLength;                       // 0x0B40 (0x0008) [0x0000000000000000]               
+	struct FVector2D                                   SeekPositionRangeWidth;                        // 0x0B48 (0x0008) [0x0000000000000000]               
+	struct FVector2D                                   SeekPositionRangeHeight;                       // 0x0B50 (0x0008) [0x0000000000000000]               
+	struct FVector2D                                   NextSeekTimeRange;                             // 0x0B58 (0x0008) [0x0000000000000000]               
+	float                                              TrappedHoverHeight;                            // 0x0B60 (0x0004) [0x0000000000000000]               
+	float                                              HorizontalSpeed;                               // 0x0B64 (0x0004) [0x0000000000000000]               
+	float                                              VerticalSpeed;                                 // 0x0B68 (0x0004) [0x0000000000000000]               
+	float                                              ArrivalDistance;                               // 0x0B6C (0x0004) [0x0000000000000000]               
+	float                                              TrappedHorizontalSpeed;                        // 0x0B70 (0x0004) [0x0000000000000000]               
+	float                                              TrappedVerticalSpeed;                          // 0x0B74 (0x0004) [0x0000000000000000]               
+	float                                              TrappedCaptureTime;                            // 0x0B78 (0x0004) [0x0000000000000000]               
+	float                                              HitPhysicsDuration;                            // 0x0B7C (0x0004) [0x0000000000000000]               
+	uint8_t                                            ReplicatedBeamBrokenValue;                     // 0x0B80 (0x0001) [0x0008000000000020] (CPF_Net)     
+	uint8_t                                            LastTeamTouch;                                 // 0x0B81 (0x0001) [0x0008000000000020] (CPF_Net)     
+	uint8_t                                            DeactivatedGoalIndex;                          // 0x0B82 (0x0001) [0x0008000000000020] (CPF_Net)     
+	uint8_t                                            TotalActiveBeams;                              // 0x0B83 (0x0001) [0x0000000000002020] (CPF_Net | CPF_Transient)
+	struct FVector                                     SeekTarget;                                    // 0x0B84 (0x000C) [0x0000000000002000] (CPF_Transient)
+	float                                              NextNeutralTime;                               // 0x0B90 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint32_t                                           bHitPhysicsActive : 1;                         // 0x0B94 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bIsBallBeamed : 1;                             // 0x0B94 (0x0004) [0x0000000000002020] [0x00000002] (CPF_Net | CPF_Transient)
+	uint32_t                                           bIsTrapped : 1;                                // 0x0B94 (0x0004) [0x0000000000002000] [0x00000004] (CPF_Transient)
+	float                                              CurrentCaptureTime;                            // 0x0B98 (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              CaptureTimePercentage;                         // 0x0B9C (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              CaptureTimeAtExit;                             // 0x0BA0 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x0BA4 (0x0004) MISSED OFFSET
+	class UGoal_TA*                                    ActiveGoal;                                    // 0x0BA8 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	int32_t                                            NumActiveBeamsByTeam[2];                       // 0x0BB0 (0x0008) [0x0000000000002000] (CPF_Transient)
+	struct FScriptDelegate                             __EventLastTeamTouchChanged__Delegate;         // 0x0BB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventIsTrapped__Delegate;                    // 0x0BD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventBeamIsBroken__Delegate;                 // 0x0BE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ReplicatedBeamBrokenValue__ChangeNotify;     // 0x0C00 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __LastTeamTouch__ChangeNotify;                 // 0x0C18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __DeactivatedGoalIndex__ChangeNotify;          // 0x0C30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_Haunted_TA"))
@@ -11865,27 +11907,27 @@ public:
 };
 
 // Class TAGame.Ball_Trajectory_TA
-// 0x0090 (0x0B28 - 0x0BB8)
+// 0x0090 (0x0B40 - 0x0BD0)
 class ABall_Trajectory_TA : public ABall_TA
 {
 public:
-	class TArray<struct FVector>                       AccurateTrajectoryPoints;                      // 0x0B28 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FVector>                       AllPoints;                                     // 0x0B38 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              LastCalculateTime;                             // 0x0B48 (0x0004) [0x0000000000000000]               
-	float                                              FixedDeltaTime;                                // 0x0B4C (0x0004) [0x0000000000000000]               
-	float                                              TotalPathDistance;                             // 0x0B50 (0x0004) [0x0000000000000000]               
-	int32_t                                            FrameCount;                                    // 0x0B54 (0x0004) [0x0000000000000000]               
-	int32_t                                            TotalStepCount;                                // 0x0B58 (0x0004) [0x0000000000000000]               
-	int32_t                                            TotalFrameCount;                               // 0x0B5C (0x0004) [0x0000000000000000]               
-	int32_t                                            CurrentStepCount;                              // 0x0B60 (0x0004) [0x0000000000000000]               
-	int32_t                                            StepToPutAPointAt;                             // 0x0B64 (0x0004) [0x0000000000000000]               
-	struct FVector                                     LastLocation;                                  // 0x0B68 (0x000C) [0x0000000000000000]               
-	struct FVector                                     LastVelocity;                                  // 0x0B74 (0x000C) [0x0000000000000000]               
-	struct FVector                                     LastAngularVelocity;                           // 0x0B80 (0x000C) [0x0000000000000000]               
-	struct FRotator                                    LastRotation;                                  // 0x0B8C (0x000C) [0x0000000000000000]               
-	struct FTrajectorySetup                            TrajectorySettings;                            // 0x0B98 (0x0014) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x4];                            // 0x0BAC (0x0004) MISSED OFFSET
-	class UBallTrajectoryComponent_TA*                 TrajectoryComponentToUpdate;                   // 0x0BB0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class TArray<struct FVector>                       AccurateTrajectoryPoints;                      // 0x0B40 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FVector>                       AllPoints;                                     // 0x0B50 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              LastCalculateTime;                             // 0x0B60 (0x0004) [0x0000000000000000]               
+	float                                              FixedDeltaTime;                                // 0x0B64 (0x0004) [0x0000000000000000]               
+	float                                              TotalPathDistance;                             // 0x0B68 (0x0004) [0x0000000000000000]               
+	int32_t                                            FrameCount;                                    // 0x0B6C (0x0004) [0x0000000000000000]               
+	int32_t                                            TotalStepCount;                                // 0x0B70 (0x0004) [0x0000000000000000]               
+	int32_t                                            TotalFrameCount;                               // 0x0B74 (0x0004) [0x0000000000000000]               
+	int32_t                                            CurrentStepCount;                              // 0x0B78 (0x0004) [0x0000000000000000]               
+	int32_t                                            StepToPutAPointAt;                             // 0x0B7C (0x0004) [0x0000000000000000]               
+	struct FVector                                     LastLocation;                                  // 0x0B80 (0x000C) [0x0000000000000000]               
+	struct FVector                                     LastVelocity;                                  // 0x0B8C (0x000C) [0x0000000000000000]               
+	struct FVector                                     LastAngularVelocity;                           // 0x0B98 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    LastRotation;                                  // 0x0BA4 (0x000C) [0x0000000000000000]               
+	struct FTrajectorySetup                            TrajectorySettings;                            // 0x0BB0 (0x0014) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0BC4 (0x0004) MISSED OFFSET
+	class UBallTrajectoryComponent_TA*                 TrajectoryComponentToUpdate;                   // 0x0BC8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_Trajectory_TA"))
@@ -11895,52 +11937,52 @@ public:
 };
 
 // Class TAGame.Vehicle_TA
-// 0x0108 (0x07C0 - 0x08C8)
+// 0x0108 (0x07D8 - 0x08E0)
 class AVehicle_TA : public ARBActor_TA
 {
 public:
-	class UCarMeshComponent_TA*                        CarMesh;                                       // 0x07C0 (0x0008) [0x000000000408000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UVehicleSim_TA*                              VehicleSim;                                    // 0x07C8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	struct FStickyForceData                            StickyForce;                                   // 0x07D0 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	struct FAutoFlipData                               AutoFlip;                                      // 0x07D8 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bDriving : 1;                                  // 0x07E0 (0x0004) [0x0000004000002020] [0x00000001] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bReplicatedHandbrake : 1;                      // 0x07E0 (0x0004) [0x0000000000002022] [0x00000002] (CPF_Const | CPF_Net | CPF_Transient)
-	uint32_t                                           bJumped : 1;                                   // 0x07E0 (0x0004) [0x0000008000002000] [0x00000004] (CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bDoubleJumped : 1;                             // 0x07E0 (0x0004) [0x0000008000002000] [0x00000008] (CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bOnGround : 1;                                 // 0x07E0 (0x0004) [0x0000004000002000] [0x00000010] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bSupersonic : 1;                               // 0x07E0 (0x0004) [0x0000008000002000] [0x00000020] (CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bPodiumMode : 1;                               // 0x07E0 (0x0004) [0x0000000100002020] [0x00000040] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	uint32_t                                           bHasPostMatchCelebration : 1;                  // 0x07E0 (0x0004) [0x0000008000002020] [0x00000080] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	struct FVehicleInputs                              Input;                                         // 0x07E4 (0x0020) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	uint8_t                                            ReplicatedThrottle;                            // 0x0804 (0x0001) [0x0000000000002022] (CPF_Const | CPF_Net | CPF_Transient)
-	uint8_t                                            ReplicatedSteer;                               // 0x0805 (0x0001) [0x0000000000002022] (CPF_Const | CPF_Net | CPF_Transient)
-	EInputRestriction                                  InputRestriction;                              // 0x0806 (0x0001) [0x0000008000000020] (CPF_Net | CPF_ProtectedWrite)
-	uint8_t                                          UnknownData00[0x1];                            // 0x0807 (0x0001) MISSED OFFSET
-	class AAIController_TA*                            AIController;                                  // 0x0808 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class APlayerController_TA*                        PlayerController;                              // 0x0810 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class APRI_TA*                                     PRI;                                           // 0x0818 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	int32_t                                            VehicleUpdateTag;                              // 0x0820 (0x0004) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
-	uint8_t                                          UnknownData01[0x4];                            // 0x0824 (0x0004) MISSED OFFSET
-	struct FCarInteractionData                         CarInteraction;                                // 0x0828 (0x0010) [0x0000000000000000]               
-	struct FVector                                     LocalCollisionOffset;                          // 0x0838 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	struct FVector                                     LocalCollisionExtent;                          // 0x0844 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	int32_t                                            LastBallTouchFrame;                            // 0x0850 (0x0004) [0x0000000000002000] (CPF_Transient)
-	int32_t                                            LastBallImpactFrame;                           // 0x0854 (0x0004) [0x0000000000002000] (CPF_Transient)
-	class ACarComponent_Boost_TA*                      BoostComponent;                                // 0x0858 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class ACarComponent_Dodge_TA*                      DodgeComponent;                                // 0x0860 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class ACarComponent_AirControl_TA*                 AirControlComponent;                           // 0x0868 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class ACarComponent_Jump_TA*                       JumpComponent;                                 // 0x0870 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class ACarComponent_DoubleJump_TA*                 DoubleJumpComponent;                           // 0x0878 (0x0008) [0x0000000000002000] (CPF_Transient)
-	int32_t                                            PodiumSpot;                                    // 0x0880 (0x0004) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	int32_t                                            PMCAnimIdx;                                    // 0x0884 (0x0004) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	class UPitchTekDrawingComponent_TA*                PitchTekComponent;                             // 0x0888 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	int32_t                                            NumWheelsForGrounded;                          // 0x0890 (0x0004) [0x0000000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData02[0x4];                            // 0x0894 (0x0004) MISSED OFFSET
-	class ULocalPlayerAudioParamsComponent_TA*         LocalPlayerAudioParamsComponent;               // 0x0898 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
-	float                                              TimeBelowSupersonicSpeed;                      // 0x08A0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData03[0x4];                            // 0x08A4 (0x0004) MISSED OFFSET
-	class UNetworkConfig_TA*                           NetworkConfig;                                 // 0x08A8 (0x0008) [0x0000800000000000]               
-	struct FScriptDelegate                             __EventPRIChanged__Delegate;                   // 0x08B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UCarMeshComponent_TA*                        CarMesh;                                       // 0x07D8 (0x0008) [0x000000000408000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UVehicleSim_TA*                              VehicleSim;                                    // 0x07E0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	struct FStickyForceData                            StickyForce;                                   // 0x07E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	struct FAutoFlipData                               AutoFlip;                                      // 0x07F0 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	uint32_t                                           bDriving : 1;                                  // 0x07F8 (0x0004) [0x0000004000002020] [0x00000001] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bReplicatedHandbrake : 1;                      // 0x07F8 (0x0004) [0x0000000000002022] [0x00000002] (CPF_Const | CPF_Net | CPF_Transient)
+	uint32_t                                           bJumped : 1;                                   // 0x07F8 (0x0004) [0x0000008000002000] [0x00000004] (CPF_Transient | CPF_ProtectedWrite)
+	uint32_t                                           bDoubleJumped : 1;                             // 0x07F8 (0x0004) [0x0000008000002000] [0x00000008] (CPF_Transient | CPF_ProtectedWrite)
+	uint32_t                                           bOnGround : 1;                                 // 0x07F8 (0x0004) [0x0000004000002000] [0x00000010] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bSupersonic : 1;                               // 0x07F8 (0x0004) [0x0000008000002000] [0x00000020] (CPF_Transient | CPF_ProtectedWrite)
+	uint32_t                                           bPodiumMode : 1;                               // 0x07F8 (0x0004) [0x0000000100002020] [0x00000040] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	uint32_t                                           bHasPostMatchCelebration : 1;                  // 0x07F8 (0x0004) [0x0000008000002020] [0x00000080] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
+	struct FVehicleInputs                              Input;                                         // 0x07FC (0x0020) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	uint8_t                                            ReplicatedThrottle;                            // 0x081C (0x0001) [0x0000000000002022] (CPF_Const | CPF_Net | CPF_Transient)
+	uint8_t                                            ReplicatedSteer;                               // 0x081D (0x0001) [0x0000000000002022] (CPF_Const | CPF_Net | CPF_Transient)
+	EInputRestriction                                  InputRestriction;                              // 0x081E (0x0001) [0x0000008000000020] (CPF_Net | CPF_ProtectedWrite)
+	uint8_t                                          UnknownData00[0x1];                            // 0x081F (0x0001) MISSED OFFSET
+	class AAIController_TA*                            AIController;                                  // 0x0820 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class APlayerController_TA*                        PlayerController;                              // 0x0828 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class APRI_TA*                                     PRI;                                           // 0x0830 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	int32_t                                            VehicleUpdateTag;                              // 0x0838 (0x0004) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
+	uint8_t                                          UnknownData01[0x4];                            // 0x083C (0x0004) MISSED OFFSET
+	struct FCarInteractionData                         CarInteraction;                                // 0x0840 (0x0010) [0x0000000000000000]               
+	struct FVector                                     LocalCollisionOffset;                          // 0x0850 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	struct FVector                                     LocalCollisionExtent;                          // 0x085C (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
+	int32_t                                            LastBallTouchFrame;                            // 0x0868 (0x0004) [0x0000000000002000] (CPF_Transient)
+	int32_t                                            LastBallImpactFrame;                           // 0x086C (0x0004) [0x0000000000002000] (CPF_Transient)
+	class ACarComponent_Boost_TA*                      BoostComponent;                                // 0x0870 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class ACarComponent_Dodge_TA*                      DodgeComponent;                                // 0x0878 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class ACarComponent_AirControl_TA*                 AirControlComponent;                           // 0x0880 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class ACarComponent_Jump_TA*                       JumpComponent;                                 // 0x0888 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class ACarComponent_DoubleJump_TA*                 DoubleJumpComponent;                           // 0x0890 (0x0008) [0x0000000000002000] (CPF_Transient)
+	int32_t                                            PodiumSpot;                                    // 0x0898 (0x0004) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
+	int32_t                                            PMCAnimIdx;                                    // 0x089C (0x0004) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
+	class UPitchTekDrawingComponent_TA*                PitchTekComponent;                             // 0x08A0 (0x0008) [0x000000000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	int32_t                                            NumWheelsForGrounded;                          // 0x08A8 (0x0004) [0x0000000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData02[0x4];                            // 0x08AC (0x0004) MISSED OFFSET
+	class ULocalPlayerAudioParamsComponent_TA*         LocalPlayerAudioParamsComponent;               // 0x08B0 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	float                                              TimeBelowSupersonicSpeed;                      // 0x08B8 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData03[0x4];                            // 0x08BC (0x0004) MISSED OFFSET
+	class UNetworkConfig_TA*                           NetworkConfig;                                 // 0x08C0 (0x0008) [0x0000800000000000]               
+	struct FScriptDelegate                             __EventPRIChanged__Delegate;                   // 0x08C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Vehicle_TA"))
@@ -14503,7 +14545,7 @@ public:
 };
 
 // Class TAGame.PRI_TA
-// 0x08E8 (0x0458 - 0x0D40)
+// 0x0908 (0x0458 - 0x0D60)
 class APRI_TA : public APRI_X
 {
 public:
@@ -14638,48 +14680,49 @@ public:
 	class TArray<class UProductSlot_TA*>               ValidationFailedClearedSlots;                  // 0x0900 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	struct FDemoSpawnSelectionData                     DemoSelectionData;                             // 0x0910 (0x0030) [0x0001004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
 	class FString                                      AnonymizedName;                                // 0x0940 (0x0010) [0x0001000000400020] (CPF_Net | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGameEventChanged__Delegate;             // 0x0950 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStatEvent__Delegate;                    // 0x0968 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventRequestOverrideLoadout__Delegate;       // 0x0980 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSelectedLoadout__Delegate;              // 0x0998 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventVanityChanged__Delegate;                // 0x09B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStatTickerMessage__Delegate;            // 0x09C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventInvalidPsyonixID__Delegate;             // 0x09E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventReadyChanged__Delegate;                 // 0x09F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCarPreUpdate__Delegate;                 // 0x0A10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCarSet__Delegate;                       // 0x0A28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSplitScreenStatusChanged__Delegate;     // 0x0A40 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDistracted__Delegate;                   // 0x0A58 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPersistentCameraSet__Delegate;          // 0x0A70 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCameraChanged__Delegate;                // 0x0A88 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPartyLeaderChanged__Delegate;           // 0x0AA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScorePoint__Delegate;                   // 0x0AB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventWonMVP__Delegate;                       // 0x0AD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStatTitlesSet__Delegate;                // 0x0AE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPawnTypeChanged__Delegate;              // 0x0B00 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCommittedProductStats__Delegate;        // 0x0B18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCommittedMatchStats__Delegate;          // 0x0B30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStartVoteToForfeitDisabledChanged__Delegate;// 0x0B48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTitleChanged__Delegate;                 // 0x0B60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSkillTierChanged__Delegate;             // 0x0B78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventServerChangeTeamFailed__Delegate;       // 0x0B90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventScoredGoal__Delegate;                   // 0x0BA8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventReplacingBotChanged__Delegate;          // 0x0BC0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMatchAdmin__Delegate;                   // 0x0BD8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventServerUnlockedAchievement__Delegate;    // 0x0BF0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSpectatorShortcutChanged__Delegate;     // 0x0C08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventOwnerChanged__Delegate;                 // 0x0C20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventQuitSeverityChanged__Delegate;          // 0x0C38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventIdleBannedChanged__Delegate;            // 0x0C50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCurrentVoiceRoomChanged__Delegate;      // 0x0C68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerGoalExplosionChanged__Delegate;   // 0x0C80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventInfectedStatusSet__Delegate;            // 0x0C98 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventNewlyInfected__Delegate;                // 0x0CB0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDemoSpawnSelectionDataChanged__Delegate;// 0x0CC8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAnonymizationSettingsChanged__Delegate; // 0x0CE0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __bStayAsPartyActive__ChangeNotify;            // 0x0CF8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ReplicatedWorstNetQualityBeyondLatency__ChangeNotify;// 0x0D10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ClubID__ChangeNotify;                        // 0x0D28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FLoadoutAssetNames                          AssetLoadouts[2];                              // 0x0950 (0x0020) [0x0001008000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_ProtectedWrite)
+	struct FScriptDelegate                             __EventGameEventChanged__Delegate;             // 0x0970 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventStatEvent__Delegate;                    // 0x0988 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventRequestOverrideLoadout__Delegate;       // 0x09A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSelectedLoadout__Delegate;              // 0x09B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventVanityChanged__Delegate;                // 0x09D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventStatTickerMessage__Delegate;            // 0x09E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventInvalidPsyonixID__Delegate;             // 0x0A00 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventReadyChanged__Delegate;                 // 0x0A18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCarPreUpdate__Delegate;                 // 0x0A30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCarSet__Delegate;                       // 0x0A48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSplitScreenStatusChanged__Delegate;     // 0x0A60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDistracted__Delegate;                   // 0x0A78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPersistentCameraSet__Delegate;          // 0x0A90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCameraChanged__Delegate;                // 0x0AA8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPartyLeaderChanged__Delegate;           // 0x0AC0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScorePoint__Delegate;                   // 0x0AD8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventWonMVP__Delegate;                       // 0x0AF0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventStatTitlesSet__Delegate;                // 0x0B08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPawnTypeChanged__Delegate;              // 0x0B20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCommittedProductStats__Delegate;        // 0x0B38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCommittedMatchStats__Delegate;          // 0x0B50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventStartVoteToForfeitDisabledChanged__Delegate;// 0x0B68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTitleChanged__Delegate;                 // 0x0B80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSkillTierChanged__Delegate;             // 0x0B98 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventServerChangeTeamFailed__Delegate;       // 0x0BB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventScoredGoal__Delegate;                   // 0x0BC8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventReplacingBotChanged__Delegate;          // 0x0BE0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMatchAdmin__Delegate;                   // 0x0BF8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventServerUnlockedAchievement__Delegate;    // 0x0C10 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSpectatorShortcutChanged__Delegate;     // 0x0C28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventOwnerChanged__Delegate;                 // 0x0C40 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventQuitSeverityChanged__Delegate;          // 0x0C58 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventIdleBannedChanged__Delegate;            // 0x0C70 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCurrentVoiceRoomChanged__Delegate;      // 0x0C88 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPlayerGoalExplosionChanged__Delegate;   // 0x0CA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventInfectedStatusSet__Delegate;            // 0x0CB8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventNewlyInfected__Delegate;                // 0x0CD0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDemoSpawnSelectionDataChanged__Delegate;// 0x0CE8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventAnonymizationSettingsChanged__Delegate; // 0x0D00 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __bStayAsPartyActive__ChangeNotify;            // 0x0D18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ReplicatedWorstNetQualityBeyondLatency__ChangeNotify;// 0x0D30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ClubID__ChangeNotify;                        // 0x0D48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.PRI_TA"))
@@ -14687,6 +14730,7 @@ public:
 	struct FProductInstanceID __PRI_TA__ValidateLoadout_0x1(const struct FLoadoutProductData& Prod);
 	static bool __PRI_TA__InitClientLoadoutAttributes_0x1(class UProductAttribute_TA* A);
 	bool __PRI_TA__InitFromAttributes_0x1(class UProductAttribute_TA* A);
+	class FString __PRI_TA__OnLoadoutsSetInternal_0x1(int32_t P);
 	void __PRI_TA__UpdatePlayerBanner_0x2(class UPlayerVanity_TA* PlayerVanity);
 	void __PRI_TA__UpdatePlayerBanner_0x1(class UPlayerVanity_TA* PlayerVanity);
 	void __PRI_TA__UpdatePlayerAvatar_0x1(class UPlayerVanity_TA* PlayerVanity);
@@ -14831,6 +14875,7 @@ public:
 	void SetReplayGameEvent(class AGameEvent_TA* InGameEvent);
 	void SetGameEvent(class AGameEvent_TA* InGameEvent);
 	void ValidateReplicatedLoadout(int32_t TeamIndex);
+	void UpdateAssetLoadoutTitle();
 	void OnLoadoutsSetInternal();
 	bool AreLoadoutsSet();
 	void OnLoadoutsOnlineSet();
@@ -15071,92 +15116,92 @@ public:
 };
 
 // Class TAGame.Car_TA
-// 0x03A0 (0x08C8 - 0x0C68)
+// 0x03A0 (0x08E0 - 0x0C80)
 class ACar_TA : public AVehicle_TA
 {
 public:
-	class TArray<class ACarComponent_TA*>              DefaultCarComponents;                          // 0x08C8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	class UEngineAudioComponent_TA*                    EngineAudio;                                   // 0x08D8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UEngineAudioREVComponent_TA*                 EngineAudioRev;                                // 0x08E0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UThrottleShakeComponent_TA*                  ThrottleShake;                                 // 0x08E8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class ACarComponent_FlipCar_TA*                    FlipComponent;                                 // 0x08F0 (0x0008) [0x0000000000002000] (CPF_Transient)
-	EDemolishTarget                                    DemolishTarget;                                // 0x08F8 (0x0001) [0x0000000000002000] (CPF_Transient)
-	EDemolishSpeed                                     DemolishSpeed;                                 // 0x08F9 (0x0001) [0x0000000000002000] (CPF_Transient)
-	EDemolishSource                                    DemolishSource;                                // 0x08FA (0x0001) [0x0000008000000000] (CPF_ProtectedWrite)
-	uint8_t                                          UnknownData00[0x5];                            // 0x08FB (0x0005) MISSED OFFSET
-	class UProductLoader_TA*                           Loadout;                                       // 0x0900 (0x0008) [0x0000004004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline | CPF_PrivateWrite)
-	uint32_t                                           bLoadoutSet : 1;                               // 0x0908 (0x0004) [0x0000004000000000] [0x00000001] (CPF_PrivateWrite)
-	uint32_t                                           bUnlimitedTimeForDodge : 1;                    // 0x0908 (0x0004) [0x0000008000000021] [0x00000002] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
-	uint32_t                                           bUnlimitedJumps : 1;                           // 0x0908 (0x0004) [0x0000008000000021] [0x00000004] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
-	uint32_t                                           bDemolishOnOpposingGround : 1;                 // 0x0908 (0x0004) [0x0000004000002000] [0x00000008] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bWasOnOpposingGround : 1;                      // 0x0908 (0x0004) [0x0000004000002000] [0x00000010] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bDemolishOnGoalZone : 1;                       // 0x0908 (0x0004) [0x0000004000002000] [0x00000020] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bWasInGoalZone : 1;                            // 0x0908 (0x0004) [0x0000004000002000] [0x00000040] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bOverrideHandbrakeOn : 1;                      // 0x0908 (0x0004) [0x0000000000002020] [0x00000080] (CPF_Net | CPF_Transient)
-	uint32_t                                           bTeamBumpsUseCarForceMultiplier : 1;           // 0x0908 (0x0004) [0x0000000000000000] [0x00000100] 
-	uint32_t                                           bOverrideBoostOn : 1;                          // 0x0908 (0x0004) [0x0000000000002020] [0x00000200] (CPF_Net | CPF_Transient)
-	uint32_t                                           bUseDefaultLoadout : 1;                        // 0x0908 (0x0004) [0x0000000000004000] [0x00000400] (CPF_Config)
-	uint32_t                                           bDodgesRefreshed : 1;                          // 0x0908 (0x0004) [0x0001000000002000] [0x00000800] (CPF_Transient)
-	uint32_t                                           bDodgeCounterReplicated : 1;                   // 0x0908 (0x0004) [0x0001008000002000] [0x00001000] (CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bConstrained3D : 1;                            // 0x0908 (0x0004) [0x0000000100000020] [0x00002000] (CPF_Net | CPF_RepNotify)
-	uint8_t                                          UnknownData01[0x4];                            // 0x090C (0x0004) MISSED OFFSET
-	class AFXActor_X*                                  ExitFXArchetype;                               // 0x0910 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AExplosion_X*                                DemolishExplosionArchetype;                    // 0x0918 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AExplosion_X*                                DemolishExplosion;                             // 0x0920 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UClass*                                      TargetClass;                                   // 0x0928 (0x0008) [0x0000000000000002] (CPF_Const)   
-	class UTargetIndicator_TA*                         TargetIndicatorArchetype;                      // 0x0930 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class TArray<class UTargetIndicator_TA*>           TargetIndicators;                              // 0x0938 (0x0010) [0x0000000004482008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
-	float                                              MaxTimeForDodge;                               // 0x0948 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	int32_t                                            MaxNumJumps;                                   // 0x094C (0x0004) [0x0000008000000021] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
-	class UAkSoundCue*                                 GroundedJumpFailedSFX;                         // 0x0950 (0x0008) [0x0000008000000001] (CPF_Edit | CPF_ProtectedWrite)
-	float                                              LastWheelsHitBallTime;                         // 0x0958 (0x0004) [0x0000000000002000] (CPF_Transient)
-	struct FLoadoutTeamPaint                           TeamPaint;                                     // 0x095C (0x0010) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
-	struct FClubColorSet                               ClubColors;                                    // 0x096C (0x0008) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
-	float                                              ReplicatedCarScale;                            // 0x0974 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	struct FDemolishDataExtended                       ReplicatedDemolishExtended;                    // 0x0978 (0x0048) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	struct FDemolishData                               ReplicatedDemolish;                            // 0x09C0 (0x0028) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	struct FDemolishData2                              ReplicatedDemolish_CustomFX;                   // 0x09E8 (0x0030) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	struct FDemolishDataGoalExplosion                  ReplicatedDemolishGoalExplosion;               // 0x0A18 (0x0030) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	class AFXActor_X*                                  BodyFXActor;                                   // 0x0A48 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class APRI_TA*                                     AttackerPRI;                                   // 0x0A50 (0x0008) [0x0000000000000000]               
-	struct FVector                                     MouseAccel;                                    // 0x0A58 (0x000C) [0x0000000000002000] (CPF_Transient)
-	struct FVector                                     MouseAirAccel;                                 // 0x0A64 (0x000C) [0x0000000000002000] (CPF_Transient)
-	class ASpecialPickup_TA*                           AttachedPickup;                                // 0x0A70 (0x0008) [0x0000000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	class ARumblePickups_TA*                           RumblePickups;                                 // 0x0A78 (0x0008) [0x0008000000000020] (CPF_Net)     
-	struct FVector                                     ReplayFocusOffset;                             // 0x0A80 (0x000C) [0x0000000000002000] (CPF_Transient)
-	float                                              AddedBallForceMultiplier;                      // 0x0A8C (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	float                                              AddedCarForceMultiplier;                       // 0x0A90 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
-	uint8_t                                          UnknownData02[0x4];                            // 0x0A94 (0x0004) MISSED OFFSET
-	class UCarTrajectoryComponent_TA*                  CarTrajectoryComponent;                        // 0x0A98 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class AGameEvent_TA*                               GameEvent;                                     // 0x0AA0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class UNameplateComponentCar_TA*                   NameplateComponentCar;                         // 0x0AA8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UExplosionHitHandler_TA*                     ExplosionHitHandler;                           // 0x0AB0 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
-	float                                              ReplicatedCarMaxLinearSpeedScale;              // 0x0AB8 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	class FName                                        PostMatchAnim;                                 // 0x0ABC (0x0008) [0x0000000000000020] (CPF_Net)     
-	int32_t                                            DoubleJumps;                                   // 0x0AC4 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	class FName                                        DoubleJumpKey;                                 // 0x0AC8 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	int32_t                                            DodgesRefreshedCounter;                        // 0x0AD0 (0x0004) [0x0001008100000020] (CPF_Net | CPF_RepNotify | CPF_ProtectedWrite)
-	uint8_t                                          UnknownData03[0x4];                            // 0x0AD4 (0x0004) MISSED OFFSET
-	class AFXActor_X*                                  FlipResetFXActorArchetype;                     // 0x0AD8 (0x0008) [0x0001000000000000]               
-	class AFXActor_X*                                  FlipResetFXActor;                              // 0x0AE0 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class TArray<struct FDemolishInvulnerability>      DemolishInvulnerabilities;                     // 0x0AE8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class UViralItemFXComponent_TA*                    ViralItemFXComponent;                          // 0x0AF8 (0x0008) [0x0001000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UDrawBoxComponent*                           HitboxDrawComponent;                           // 0x0B00 (0x0008) [0x0001000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
-	class TArray<class UDrawCylinderComponent*>        HitboxWheelComponents;                         // 0x0B08 (0x0010) [0x0001000004482008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
-	struct FScriptDelegate                             __EventVehicleSetup__Delegate;                 // 0x0B18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventBumpedCar__Delegate;                    // 0x0B30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDemolished__Delegate;                   // 0x0B48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDemolishedExtended__Delegate;           // 0x0B60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTeamSet__Delegate;                      // 0x0B78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTeamPaintChanged__Delegate;             // 0x0B90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitBall__Delegate;                      // 0x0BA8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitCar__Delegate;                       // 0x0BC0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLanded__Delegate;                       // 0x0BD8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSuperSonicChanged__Delegate;            // 0x0BF0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventHitWorld__Delegate;                     // 0x0C08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPreparingDemoFX__Delegate;              // 0x0C20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPerformedFlipReset__Delegate;           // 0x0C38 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __RumblePickups__ChangeNotify;                 // 0x0C50 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class ACarComponent_TA*>              DefaultCarComponents;                          // 0x08E0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class UEngineAudioComponent_TA*                    EngineAudio;                                   // 0x08F0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UEngineAudioREVComponent_TA*                 EngineAudioRev;                                // 0x08F8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UThrottleShakeComponent_TA*                  ThrottleShake;                                 // 0x0900 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class ACarComponent_FlipCar_TA*                    FlipComponent;                                 // 0x0908 (0x0008) [0x0000000000002000] (CPF_Transient)
+	EDemolishTarget                                    DemolishTarget;                                // 0x0910 (0x0001) [0x0000000000002000] (CPF_Transient)
+	EDemolishSpeed                                     DemolishSpeed;                                 // 0x0911 (0x0001) [0x0000000000002000] (CPF_Transient)
+	EDemolishSource                                    DemolishSource;                                // 0x0912 (0x0001) [0x0000008000000000] (CPF_ProtectedWrite)
+	uint8_t                                          UnknownData00[0x5];                            // 0x0913 (0x0005) MISSED OFFSET
+	class UProductLoader_TA*                           Loadout;                                       // 0x0918 (0x0008) [0x0000004004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline | CPF_PrivateWrite)
+	uint32_t                                           bLoadoutSet : 1;                               // 0x0920 (0x0004) [0x0000004000000000] [0x00000001] (CPF_PrivateWrite)
+	uint32_t                                           bUnlimitedTimeForDodge : 1;                    // 0x0920 (0x0004) [0x0000008000000021] [0x00000002] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
+	uint32_t                                           bUnlimitedJumps : 1;                           // 0x0920 (0x0004) [0x0000008000000021] [0x00000004] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
+	uint32_t                                           bDemolishOnOpposingGround : 1;                 // 0x0920 (0x0004) [0x0000004000002000] [0x00000008] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bWasOnOpposingGround : 1;                      // 0x0920 (0x0004) [0x0000004000002000] [0x00000010] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bDemolishOnGoalZone : 1;                       // 0x0920 (0x0004) [0x0000004000002000] [0x00000020] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bWasInGoalZone : 1;                            // 0x0920 (0x0004) [0x0000004000002000] [0x00000040] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bOverrideHandbrakeOn : 1;                      // 0x0920 (0x0004) [0x0000000000002020] [0x00000080] (CPF_Net | CPF_Transient)
+	uint32_t                                           bTeamBumpsUseCarForceMultiplier : 1;           // 0x0920 (0x0004) [0x0000000000000000] [0x00000100] 
+	uint32_t                                           bOverrideBoostOn : 1;                          // 0x0920 (0x0004) [0x0000000000002020] [0x00000200] (CPF_Net | CPF_Transient)
+	uint32_t                                           bUseDefaultLoadout : 1;                        // 0x0920 (0x0004) [0x0000000000004000] [0x00000400] (CPF_Config)
+	uint32_t                                           bDodgesRefreshed : 1;                          // 0x0920 (0x0004) [0x0001000000002000] [0x00000800] (CPF_Transient)
+	uint32_t                                           bDodgeCounterReplicated : 1;                   // 0x0920 (0x0004) [0x0001008000002000] [0x00001000] (CPF_Transient | CPF_ProtectedWrite)
+	uint32_t                                           bConstrained3D : 1;                            // 0x0920 (0x0004) [0x0000000100000020] [0x00002000] (CPF_Net | CPF_RepNotify)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0924 (0x0004) MISSED OFFSET
+	class AFXActor_X*                                  ExitFXArchetype;                               // 0x0928 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AExplosion_X*                                DemolishExplosionArchetype;                    // 0x0930 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AExplosion_X*                                DemolishExplosion;                             // 0x0938 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UClass*                                      TargetClass;                                   // 0x0940 (0x0008) [0x0000000000000002] (CPF_Const)   
+	class UTargetIndicator_TA*                         TargetIndicatorArchetype;                      // 0x0948 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class TArray<class UTargetIndicator_TA*>           TargetIndicators;                              // 0x0950 (0x0010) [0x0000000004482008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	float                                              MaxTimeForDodge;                               // 0x0960 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	int32_t                                            MaxNumJumps;                                   // 0x0964 (0x0004) [0x0000008000000021] (CPF_Edit | CPF_Net | CPF_ProtectedWrite)
+	class UAkSoundCue*                                 GroundedJumpFailedSFX;                         // 0x0968 (0x0008) [0x0000008000000001] (CPF_Edit | CPF_ProtectedWrite)
+	float                                              LastWheelsHitBallTime;                         // 0x0970 (0x0004) [0x0000000000002000] (CPF_Transient)
+	struct FLoadoutTeamPaint                           TeamPaint;                                     // 0x0974 (0x0010) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
+	struct FClubColorSet                               ClubColors;                                    // 0x0984 (0x0008) [0x0000008100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_ProtectedWrite)
+	float                                              ReplicatedCarScale;                            // 0x098C (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	struct FDemolishDataExtended                       ReplicatedDemolishExtended;                    // 0x0990 (0x0048) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	struct FDemolishData                               ReplicatedDemolish;                            // 0x09D8 (0x0028) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	struct FDemolishData2                              ReplicatedDemolish_CustomFX;                   // 0x0A00 (0x0030) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	struct FDemolishDataGoalExplosion                  ReplicatedDemolishGoalExplosion;               // 0x0A30 (0x0030) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	class AFXActor_X*                                  BodyFXActor;                                   // 0x0A60 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class APRI_TA*                                     AttackerPRI;                                   // 0x0A68 (0x0008) [0x0000000000000000]               
+	struct FVector                                     MouseAccel;                                    // 0x0A70 (0x000C) [0x0000000000002000] (CPF_Transient)
+	struct FVector                                     MouseAirAccel;                                 // 0x0A7C (0x000C) [0x0000000000002000] (CPF_Transient)
+	class ASpecialPickup_TA*                           AttachedPickup;                                // 0x0A88 (0x0008) [0x0000000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	class ARumblePickups_TA*                           RumblePickups;                                 // 0x0A90 (0x0008) [0x0008000000000020] (CPF_Net)     
+	struct FVector                                     ReplayFocusOffset;                             // 0x0A98 (0x000C) [0x0000000000002000] (CPF_Transient)
+	float                                              AddedBallForceMultiplier;                      // 0x0AA4 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	float                                              AddedCarForceMultiplier;                       // 0x0AA8 (0x0004) [0x0000000000000021] (CPF_Edit | CPF_Net)
+	uint8_t                                          UnknownData02[0x4];                            // 0x0AAC (0x0004) MISSED OFFSET
+	class UCarTrajectoryComponent_TA*                  CarTrajectoryComponent;                        // 0x0AB0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class AGameEvent_TA*                               GameEvent;                                     // 0x0AB8 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class UNameplateComponentCar_TA*                   NameplateComponentCar;                         // 0x0AC0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UExplosionHitHandler_TA*                     ExplosionHitHandler;                           // 0x0AC8 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	float                                              ReplicatedCarMaxLinearSpeedScale;              // 0x0AD0 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	class FName                                        PostMatchAnim;                                 // 0x0AD4 (0x0008) [0x0000000000000020] (CPF_Net)     
+	int32_t                                            DoubleJumps;                                   // 0x0ADC (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class FName                                        DoubleJumpKey;                                 // 0x0AE0 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	int32_t                                            DodgesRefreshedCounter;                        // 0x0AE8 (0x0004) [0x0001008100000020] (CPF_Net | CPF_RepNotify | CPF_ProtectedWrite)
+	uint8_t                                          UnknownData03[0x4];                            // 0x0AEC (0x0004) MISSED OFFSET
+	class AFXActor_X*                                  FlipResetFXActorArchetype;                     // 0x0AF0 (0x0008) [0x0001000000000000]               
+	class AFXActor_X*                                  FlipResetFXActor;                              // 0x0AF8 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class TArray<struct FDemolishInvulnerability>      DemolishInvulnerabilities;                     // 0x0B00 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class UViralItemFXComponent_TA*                    ViralItemFXComponent;                          // 0x0B10 (0x0008) [0x0001000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UDrawBoxComponent*                           HitboxDrawComponent;                           // 0x0B18 (0x0008) [0x0001000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	class TArray<class UDrawCylinderComponent*>        HitboxWheelComponents;                         // 0x0B20 (0x0010) [0x0001000004482008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	struct FScriptDelegate                             __EventVehicleSetup__Delegate;                 // 0x0B30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventBumpedCar__Delegate;                    // 0x0B48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDemolished__Delegate;                   // 0x0B60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDemolishedExtended__Delegate;           // 0x0B78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTeamSet__Delegate;                      // 0x0B90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTeamPaintChanged__Delegate;             // 0x0BA8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitBall__Delegate;                      // 0x0BC0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitCar__Delegate;                       // 0x0BD8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLanded__Delegate;                       // 0x0BF0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSuperSonicChanged__Delegate;            // 0x0C08 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventHitWorld__Delegate;                     // 0x0C20 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPreparingDemoFX__Delegate;              // 0x0C38 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPerformedFlipReset__Delegate;           // 0x0C50 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __RumblePickups__ChangeNotify;                 // 0x0C68 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Car_TA"))
@@ -15436,7 +15481,7 @@ public:
 class USaveObject_TA : public UObject
 {
 public:
-	int32_t                                            Version;                                       // 0x0060 (0x0004) [0x0000000000000000]               
+	int32_t                                            Version;                                       // 0x0060 (0x0004) [0x0000008000000000] (CPF_ProtectedWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventDirtied__Delegate;                      // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventLoaded__Delegate;                       // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -16141,9 +16186,11 @@ public:
 	uint32_t                                           bFullClubMatch : 1;                            // 0x0828 (0x0004) [0x0008000000000020] [0x00080000] (CPF_Net)
 	uint32_t                                           bMatchCreatorAdminEnabled : 1;                 // 0x0828 (0x0004) [0x0009000000000020] [0x00100000] (CPF_Net)
 	uint32_t                                           bCanDropOnlineRewards : 1;                     // 0x0828 (0x0004) [0x0008000000000020] [0x00200000] (CPF_Net)
-	uint32_t                                           bAllowHonorDuels : 1;                          // 0x0828 (0x0004) [0x0001000100002020] [0x00400000] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	uint32_t                                           bThistleMatch : 1;                             // 0x0828 (0x0004) [0x0009000000000020] [0x00800000] (CPF_Net)
-	uint32_t                                           bAllowDemoSpawnSelection : 1;                  // 0x0828 (0x0004) [0x0001000000000000] [0x01000000] 
+	uint32_t                                           bAllowHonorDuels : 1;                          // 0x0828 (0x0004) [0x0009000100002020] [0x00400000] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	uint32_t                                           bHonorDuelAccepted : 1;                        // 0x0828 (0x0004) [0x0001000100002020] [0x00800000] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	uint32_t                                           bThistleMatch : 1;                             // 0x0828 (0x0004) [0x0009000000000020] [0x01000000] (CPF_Net)
+	uint32_t                                           bAllowDemoSpawnSelection : 1;                  // 0x0828 (0x0004) [0x0001000000000000] [0x02000000] 
+	uint32_t                                           bUseDisadvantageSpawnAdjustment : 1;           // 0x0828 (0x0004) [0x0000000000000002] [0x04000000] (CPF_Const)
 	uint8_t                                          UnknownData00[0x4];                            // 0x082C (0x0004) MISSED OFFSET
 	class TArray<class AActor*>                        BallSpawnPoints;                               // 0x0830 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	int32_t                                            BallSpawnPointIndex;                           // 0x0840 (0x0004) [0x0000000000000000]               
@@ -16347,13 +16394,14 @@ public:
 	void __TieBreakDecision__ChangeNotifyFunc();
 	void __WaitTimeRemaining__ChangeNotifyFunc();
 	void __bThistleMatch__ChangeNotifyFunc();
+	void __bAllowHonorDuels__ChangeNotifyFunc();
 	void __bCanDropOnlineRewards__ChangeNotifyFunc();
 	void __bMatchCreatorAdminEnabled__ChangeNotifyFunc();
 	void __bFullClubMatch__ChangeNotifyFunc();
 	void __bClubMatch__ChangeNotifyFunc();
 	void __bReadyToStartGame__ChangeNotifyFunc();
 	void __bShowIntroScene__ChangeNotifyFunc();
-	class ACar_TA* GetClosestVehicle(const struct FVector& InLocation, int32_t optionalTeamNum);
+	class ACar_TA* GetClosestVehicle(const struct FVector& InLocation, int32_t optionalTeamNum, class ACar_TA* optionalExcludedCar);
 	class UGoal_TA* GetClosestGoal(const struct FVector& InLocation);
 	void OnMaxScoreChanged();
 	class UGoal_TA* GetGoalByTeamIndex(int32_t TeamIndex);
@@ -16380,6 +16428,7 @@ public:
 	void CreateGoalIndicators(class APlayerController_TA* Player);
 	void HandleMatchCompleteDataReceived(class URPC_MatchComplete_TA* RPC);
 	void BeginHighlightsReplay();
+	bool UseDisadvantageSpawnAdjustment();
 	bool IsWaitingForPlayers();
 	bool CanSelectDemoSpawn(class APRI_TA* optionalPRI);
 	bool ShouldPlayReplayPlayback();
@@ -16483,6 +16532,8 @@ public:
 	void StartNewGame();
 	void ResetToDefaultTime();
 	void ResetGame();
+	static int32_t SortPreferableSpawn(class AActor* A, class AActor* B);
+	bool GetSpawnOrientationFromLocations(int32_t StartingIndex, class APRI_TA* PRI, class TArray<class AActor*>& outSpawnSpots, struct FVector& outOut_Location, struct FRotator& outOut_Rotation);
 	bool GetSpawnOrientation(class AController* ForPlayer, struct FVector& outOut_Location, struct FRotator& outOut_Rotation);
 	void ClearReplicatedStatEvent();
 	void HandleGaveStat(class AStatFactory_TA* Factory, class APRI_TA* ToPRI, class UStatEvent_TA* StatEvent, class ABall_TA* Ball, int32_t BallHitIndex, class APRI_TA* Victim, class UGoal_TA* Goal);
@@ -17023,7 +17074,9 @@ public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraState_PodiumSpotlight_TA"))
 	bool __CameraState_PodiumSpotlight_TA__UpdatePOV_0x1(const struct FCachedPodiumCar& CC);
 	void UpdateCachedCarInfo(class AGameEvent_TA* GameEvent);
+	struct FRotator GetRotation(float PitchDeg, float YawDeg);
 	struct FVector GetFocusCenter(const struct FVector& FieldCenter, float PodiumSpotlightZ);
+	class AGameEvent_Soccar_TA* GetSoccarGame();
 	void UpdatePOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void BeginCameraState(class UCameraState_X* optionalInPrevState);
 	bool ShouldExecute();
@@ -17066,92 +17119,91 @@ public:
 };
 
 // Class TAGame.Car_KnockOut_TA
-// 0x0240 (0x0C68 - 0x0EA8)
+// 0x0238 (0x0C80 - 0x0EB8)
 class ACar_KnockOut_TA : public ACar_TA
 {
 public:
-	class APRI_KnockOut_TA*                            PRI_KO;                                        // 0x0C68 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class FName                                        ReplicatedStateName;                           // 0x0C70 (0x0008) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	uint8_t                                            ReplicatedStateChanged;                        // 0x0C78 (0x0001) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	uint8_t                                          UnknownData00[0x3];                            // 0x0C79 (0x0003) MISSED OFFSET
-	struct FImpulseData                                ReplicatedImpulse;                             // 0x0C7C (0x0008) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
-	struct FVector                                     HitImpulse;                                    // 0x0C84 (0x000C) [0x0001000000002000] (CPF_Transient)
-	float                                              RespawnImmunityTime;                           // 0x0C90 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              StunTimeHitScale;                              // 0x0C94 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackRadius;                                  // 0x0C98 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackYExtent;                                 // 0x0C9C (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackZExtent;                                 // 0x0CA0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              MaxAttackDegrees;                              // 0x0CA4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              DefaultAttackDamage;                           // 0x0CA8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackLingerTime;                              // 0x0CAC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              GrabbingLingerTime;                            // 0x0CB0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              MinGrabTimeBeforeThrow;                        // 0x0CB4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              BlockTime;                                     // 0x0CB8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              GrabThrowTime;                                 // 0x0CBC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              GrabStunTime;                                  // 0x0CC0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              DodgeThrowImpulse;                             // 0x0CC4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              DoubleJumpThrowImpulse;                        // 0x0CC8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              LightGrabTime;                                 // 0x0CCC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              HeavyGrabTime;                                 // 0x0CD0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackHitKnockbackScale;                       // 0x0CD4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              MinHitImpulseSpeed;                            // 0x0CD8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              LightHitImpulseScale;                          // 0x0CDC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              HeavyHitImpulseScale;                          // 0x0CE0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              SuddenKOImpulse;                               // 0x0CE4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              SuddenKOThrowTime;                             // 0x0CE8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              LightHitPitchDegrees;                          // 0x0CEC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              HeavyHitPitchDegrees;                          // 0x0CF0 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              SuddenKOHitPitchDegrees;                       // 0x0CF4 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackBeginDelay;                              // 0x0CF8 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              HitTime;                                       // 0x0CFC (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              AttackStunTorqueScale;                         // 0x0D00 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TradeStunTorqueScale;                          // 0x0D04 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TradeStunTime;                                 // 0x0D08 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TradeStunImpulseScale;                         // 0x0D0C (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TradeStunPitchDegrees;                         // 0x0D10 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              ThrowPitchOffset;                              // 0x0D14 (0x0004) [0x0001000000000002] (CPF_Const)   
-	struct FVector                                     GrabAttachOffset;                              // 0x0D18 (0x000C) [0x0001000000000002] (CPF_Const)   
-	float                                              ThrowBackwardVelocityScale;                    // 0x0D24 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TradeImpulseSpeed;                             // 0x0D28 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              TorqueStunBeginDelay;                          // 0x0D2C (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              DamagePointsPerImpulseSpeed;                   // 0x0D30 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              ThrowVelocityTransferScale;                    // 0x0D34 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              GrabFixJumpVelocity;                           // 0x0D38 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData01[0x4];                            // 0x0D3C (0x0004) MISSED OFFSET
-	class UTarget_TA*                                  AttachedTarget;                                // 0x0D40 (0x0008) [0x000100000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class TArray<class ACarComponent_TA*>              AttackComponents;                              // 0x0D48 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class ACarComponent_Torque_TA*                     TorqueComponent;                               // 0x0D58 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class TArray<struct FPendingHit>                   TakenHits;                                     // 0x0D60 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class ACar_KnockOut_TA*                            PendingGrabber;                                // 0x0D70 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class ACarComponent_TA*                            UsedAttackComponent;                           // 0x0D78 (0x0008) [0x0001000000002020] (CPF_Net | CPF_Transient)
-	float                                              SuperSonicStartTime;                           // 0x0D80 (0x0004) [0x0001000000002000] (CPF_Transient)
-	float                                              SuperSonicTimeForHeavyAttack;                  // 0x0D84 (0x0004) [0x0001000000000002] (CPF_Const)   
-	float                                              ReturnToSafezoneTime;                          // 0x0D88 (0x0004) [0x0001000000002000] (CPF_Transient)
-	float                                              ThrowMashAlpha;                                // 0x0D8C (0x0004) [0x0001000000002000] (CPF_Transient)
-	class TArray<class APRI_TA*>                       AttackerPRIs;                                  // 0x0D90 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	float                                              ResetAttackPRIDelay;                           // 0x0DA0 (0x0004) [0x0001000000000000]               
-	uint8_t                                          UnknownData02[0x4];                            // 0x0DA4 (0x0004) MISSED OFFSET
-	class AFXActor_Knockout_Attack_TA*                 FX_AttackArchetype;                            // 0x0DA8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AFXActor_Knockout_Attack_TA*                 FX_GrabAttackArchetype;                        // 0x0DB0 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AFXActor_TA*                                 FX_HitAttackLightArchetype;                    // 0x0DB8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AFXActor_TA*                                 FX_HitAttackHeavyArchetype;                    // 0x0DC0 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AFXActor_TA*                                 FX_HitBlockArchetype;                          // 0x0DC8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AFXActor_TA*                                 FX_GrabHitArchetype;                           // 0x0DD0 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class FName                                        DemoSoundAttachmentName;                       // 0x0DD8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class UAkSoundCue*                                 DemoSoundOverride;                             // 0x0DE0 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AStunlock_TA*                                StunlockArchetype;                             // 0x0DE8 (0x0008) [0x0001000000000002] (CPF_Const)   
-	class AStunlock_TA*                                Stunlock;                                      // 0x0DF0 (0x0008) [0x0001000000002000] (CPF_Transient)
-	uint32_t                                           bDrawDebug : 1;                                // 0x0DF8 (0x0004) [0x0001000000000002] [0x00000001] (CPF_Const)
-	uint8_t                                          UnknownData03[0x4];                            // 0x0DFC (0x0004) MISSED OFFSET
-	class AFXActor_Knockout_Attack_TA*                 FX_Attack;                                     // 0x0E00 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class ACar_KnockOut_TA*                            PendingCarToGrab;                              // 0x0E08 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class ACar_KnockOut_TA*                            CarPendingThrow;                               // 0x0E10 (0x0008) [0x0001000000002000] (CPF_Transient)
-	struct FScriptDelegate                             __EventReplicatedStateChanged__Delegate;       // 0x0E18 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDamageTaken__Delegate;                  // 0x0E30 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventBlockTaken__Delegate;                   // 0x0E48 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGrabbedCarChanged__Delegate;            // 0x0E60 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGrabbed__Delegate;                      // 0x0E78 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventThrown__Delegate;                       // 0x0E90 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class APRI_KnockOut_TA*                            PRI_KO;                                        // 0x0C80 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class FName                                        ReplicatedStateName;                           // 0x0C88 (0x0008) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	uint8_t                                            ReplicatedStateChanged;                        // 0x0C90 (0x0001) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	uint8_t                                          UnknownData00[0x3];                            // 0x0C91 (0x0003) MISSED OFFSET
+	struct FImpulseData                                ReplicatedImpulse;                             // 0x0C94 (0x0008) [0x0001000100002020] (CPF_Net | CPF_Transient | CPF_RepNotify)
+	struct FVector                                     HitImpulse;                                    // 0x0C9C (0x000C) [0x0001000000002000] (CPF_Transient)
+	float                                              RespawnImmunityTime;                           // 0x0CA8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              StunTimeHitScale;                              // 0x0CAC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackRadius;                                  // 0x0CB0 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackYExtent;                                 // 0x0CB4 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackZExtent;                                 // 0x0CB8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              MaxAttackDegrees;                              // 0x0CBC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              DefaultAttackDamage;                           // 0x0CC0 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackLingerTime;                              // 0x0CC4 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              GrabbingLingerTime;                            // 0x0CC8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              MinGrabTimeBeforeThrow;                        // 0x0CCC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              BlockTime;                                     // 0x0CD0 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              GrabThrowTime;                                 // 0x0CD4 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              GrabStunTime;                                  // 0x0CD8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              DodgeThrowImpulse;                             // 0x0CDC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              DoubleJumpThrowImpulse;                        // 0x0CE0 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              LightGrabTime;                                 // 0x0CE4 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              HeavyGrabTime;                                 // 0x0CE8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackHitKnockbackScale;                       // 0x0CEC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              MinHitImpulseSpeed;                            // 0x0CF0 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              LightHitImpulseScale;                          // 0x0CF4 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              HeavyHitImpulseScale;                          // 0x0CF8 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              SuddenKOImpulse;                               // 0x0CFC (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              SuddenKOThrowTime;                             // 0x0D00 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              LightHitPitchDegrees;                          // 0x0D04 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              HeavyHitPitchDegrees;                          // 0x0D08 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              SuddenKOHitPitchDegrees;                       // 0x0D0C (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackBeginDelay;                              // 0x0D10 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              HitTime;                                       // 0x0D14 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              AttackStunTorqueScale;                         // 0x0D18 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TradeStunTorqueScale;                          // 0x0D1C (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TradeStunTime;                                 // 0x0D20 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TradeStunImpulseScale;                         // 0x0D24 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TradeStunPitchDegrees;                         // 0x0D28 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              ThrowPitchOffset;                              // 0x0D2C (0x0004) [0x0001000000000002] (CPF_Const)   
+	struct FVector                                     GrabAttachOffset;                              // 0x0D30 (0x000C) [0x0001000000000002] (CPF_Const)   
+	float                                              ThrowBackwardVelocityScale;                    // 0x0D3C (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TradeImpulseSpeed;                             // 0x0D40 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              TorqueStunBeginDelay;                          // 0x0D44 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              DamagePointsPerImpulseSpeed;                   // 0x0D48 (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              ThrowVelocityTransferScale;                    // 0x0D4C (0x0004) [0x0001000000000002] (CPF_Const)   
+	uint32_t                                           bAllowAttacksInRespawn : 1;                    // 0x0D50 (0x0004) [0x0001000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bDrawDebug : 1;                                // 0x0D50 (0x0004) [0x0001000000000002] [0x00000002] (CPF_Const)
+	float                                              GrabFixJumpVelocity;                           // 0x0D54 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	class UTarget_TA*                                  AttachedTarget;                                // 0x0D58 (0x0008) [0x000100000408000A] (CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class TArray<class ACarComponent_TA*>              AttackComponents;                              // 0x0D60 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class ACarComponent_Torque_TA*                     TorqueComponent;                               // 0x0D70 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class TArray<struct FPendingHit>                   TakenHits;                                     // 0x0D78 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class ACar_KnockOut_TA*                            PendingGrabber;                                // 0x0D88 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class ACarComponent_TA*                            UsedAttackComponent;                           // 0x0D90 (0x0008) [0x0001000000002020] (CPF_Net | CPF_Transient)
+	float                                              SuperSonicStartTime;                           // 0x0D98 (0x0004) [0x0001000000002000] (CPF_Transient)
+	float                                              SuperSonicTimeForHeavyAttack;                  // 0x0D9C (0x0004) [0x0001000000000002] (CPF_Const)   
+	float                                              ReturnToSafezoneTime;                          // 0x0DA0 (0x0004) [0x0001000000002000] (CPF_Transient)
+	float                                              ThrowMashAlpha;                                // 0x0DA4 (0x0004) [0x0001000000002000] (CPF_Transient)
+	class TArray<class APRI_TA*>                       AttackerPRIs;                                  // 0x0DA8 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	float                                              ResetAttackPRIDelay;                           // 0x0DB8 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x0DBC (0x0004) MISSED OFFSET
+	class AFXActor_Knockout_Attack_TA*                 FX_AttackArchetype;                            // 0x0DC0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AFXActor_Knockout_Attack_TA*                 FX_GrabAttackArchetype;                        // 0x0DC8 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AFXActor_TA*                                 FX_HitAttackLightArchetype;                    // 0x0DD0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AFXActor_TA*                                 FX_HitAttackHeavyArchetype;                    // 0x0DD8 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AFXActor_TA*                                 FX_HitBlockArchetype;                          // 0x0DE0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AFXActor_TA*                                 FX_GrabHitArchetype;                           // 0x0DE8 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class FName                                        DemoSoundAttachmentName;                       // 0x0DF0 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class UAkSoundCue*                                 DemoSoundOverride;                             // 0x0DF8 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AStunlock_TA*                                StunlockArchetype;                             // 0x0E00 (0x0008) [0x0001000000000002] (CPF_Const)   
+	class AStunlock_TA*                                Stunlock;                                      // 0x0E08 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class AFXActor_Knockout_Attack_TA*                 FX_Attack;                                     // 0x0E10 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class ACar_KnockOut_TA*                            PendingCarToGrab;                              // 0x0E18 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class ACar_KnockOut_TA*                            CarPendingThrow;                               // 0x0E20 (0x0008) [0x0001000000002000] (CPF_Transient)
+	struct FScriptDelegate                             __EventReplicatedStateChanged__Delegate;       // 0x0E28 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventDamageTaken__Delegate;                  // 0x0E40 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventBlockTaken__Delegate;                   // 0x0E58 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGrabbedCarChanged__Delegate;            // 0x0E70 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGrabbed__Delegate;                      // 0x0E88 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventThrown__Delegate;                       // 0x0EA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Car_KnockOut_TA"))
@@ -17442,7 +17494,7 @@ public:
 };
 
 // Class TAGame.CarPreviewActor_TA
-// 0x01E8 (0x0268 - 0x0450)
+// 0x01F0 (0x0268 - 0x0458)
 class ACarPreviewActor_TA : public AActor
 {
 public:
@@ -17478,14 +17530,16 @@ public:
 	class UEngineAudioPreviewBase_TA*                  EngineAudioPreview;                            // 0x03C0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class UProductAttribute_PreviewWheelSpin_TA*       WheelSpinAttribute;                            // 0x03C8 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class UProductAttribute_SetPreviewObjectSpeedShaderParam_TA* GameShaderParamAttribute;                      // 0x03D0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            PreviewTeam;                                   // 0x03D8 (0x0004) [0x0000000000002000] (CPF_Transient)
-	int32_t                                            LinkedControllerId;                            // 0x03DC (0x0004) [0x0000000000000001] (CPF_Edit)    
-	class AFXActor_X*                                  RootFXActor;                                   // 0x03E0 (0x0008) [0x0000000000000000]               
-	class UAkParamGroup*                               Ak;                                            // 0x03E8 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	struct FScriptDelegate                             __EventInitializeComponents__Delegate;         // 0x03F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ProductApplicatorDelegate__Delegate;         // 0x0408 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCarSetupFinished__Delegate;             // 0x0420 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAnimTreeInitialized__Delegate;          // 0x0438 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              GameShaderPreviewTime;                         // 0x03D8 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            PreviewTeam;                                   // 0x03DC (0x0004) [0x0000000000002000] (CPF_Transient)
+	int32_t                                            LinkedControllerId;                            // 0x03E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData03[0x4];                            // 0x03E4 (0x0004) MISSED OFFSET
+	class AFXActor_X*                                  RootFXActor;                                   // 0x03E8 (0x0008) [0x0000000000000000]               
+	class UAkParamGroup*                               Ak;                                            // 0x03F0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	struct FScriptDelegate                             __EventInitializeComponents__Delegate;         // 0x03F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ProductApplicatorDelegate__Delegate;         // 0x0410 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventCarSetupFinished__Delegate;             // 0x0428 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventAnimTreeInitialized__Delegate;          // 0x0440 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CarPreviewActor_TA"))
@@ -18663,43 +18717,6 @@ public:
 	void eventConstruct();
 };
 
-// Class TAGame.EOSGameClipsMetrics_TA
-// 0x0038 (0x0080 - 0x00B8)
-class UEOSGameClipsMetrics_TA : public UMetricsGroup_X
-{
-public:
-	class UEOSGameClipsManager_TA*                     GameClipsManager;                              // 0x0080 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Object;                     // 0x0088 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Interface;                  // 0x0090 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class TArray<struct FEOSGameClipsClipInfo>         ClipsUploading;                                // 0x0098 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	class TArray<class FName>                          GeneralErrors;                                 // 0x00A8 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.EOSGameClipsMetrics_TA"))
-	void RecordClipInfo(const struct FEOSGameClipsClipInfo& InClipInfoMetric);
-	void RecordAccountLinking(const struct FEOSGameClipsAccountLinkInfo& InAccountMetric);
-	int32_t AddClip(const class FString& InEpicAccountId, int32_t InClipId);
-	void HandleCreateClipInitiated(const class FString& InEpicAccountId, int32_t InClipId, class FString& outInClipType);
-	void HandleClipStatusChanged(const class FString& InEpicAccountId, int32_t InClipId, EGameClipsClipStatus InNewClipStatus);
-	void HandleClipErrorOccurred(const class FString& InEpicAccountId, int32_t InClipId, class UErrorType* InErrorType);
-	void HandleGeneralErrorOccurred(class UErrorType* InErrorType);
-	void HandleConnectionStatusChanged(const class FString& InEpicAccountId, EGameClipsConnection InConnection, EGameClipsConnectionStatus InNewConnectionStatus);
-	void HandleGameClipsManagerChanged();
-	void SetGameClipsInterface(class UOnlineGameClipsInterface* InGameClipsInterface);
-};
-
-// Class TAGame.__EOSGameClipsMetrics_TA__RecordClipInfo_0x1
-// 0x0040 (0x0060 - 0x00A0)
-class U__EOSGameClipsMetrics_TA__RecordClipInfo_0x1 : public UObject
-{
-public:
-	struct FEOSGameClipsClipInfo                       InClipInfoMetric;                              // 0x0060 (0x0040) [0x0001000000400000] (CPF_NeedCtorLink)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__EOSGameClipsMetrics_TA__RecordClipInfo_0x1"))
-	void __EOSGameClipsMetrics_TA__RecordClipInfo_0x1(const class FName& ErrorName);
-};
-
 // Class TAGame.__EOSVoiceManager_TA__ClearRoomCredentialsForPlayer_0x1
 // 0x0048 (0x0060 - 0x00A8)
 class U__EOSVoiceManager_TA__ClearRoomCredentialsForPlayer_0x1 : public UObject
@@ -18879,7 +18896,6 @@ public:
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.OnlineGame_TA"))
-	void __OnlineGame_TA__OnInit_0x1();
 	bool __OnlineGame_TA__GetSessionPlayerIds_0x5(const struct FUniqueNetId& P);
 	struct FUniqueNetId __OnlineGame_TA__GetSessionPlayerIds_0x4(class APlayerReplicationInfo* P);
 	bool __OnlineGame_TA__GetSessionPlayerIds_0x3(class APlayerReplicationInfo* P);
@@ -21377,6 +21393,18 @@ public:
 	void __GameEvent_Soccar_TA__HandlePlayerSkillUpdated_0x1(class APRI_TA* PRI);
 };
 
+// Class TAGame.__GameEvent_Soccar_TA__GetSpawnOrientation_0x2
+// 0x0010 (0x0060 - 0x0070)
+class U__GameEvent_Soccar_TA__GetSpawnOrientation_0x2 : public UObject
+{
+public:
+	class TArray<class AActor*>                        PossibleSpawns;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__GameEvent_Soccar_TA__GetSpawnOrientation_0x2"))
+	bool __GameEvent_Soccar_TA__GetSpawnOrientation_0x2(class AActor* P);
+};
+
 // Class TAGame.DemoSpawnSelectMetrics_TA
 // 0x0020 (0x0080 - 0x00A0)
 class UDemoSpawnSelectMetrics_TA : public UMetricsGroup_X
@@ -21392,6 +21420,21 @@ public:
 	void HandleMatchGUIDChanged(class AGRI_X* GRI);
 	void HandleMatchEnded(class AGameEvent_Soccar_TA* SoccarEvent);
 	void eventConstruct();
+};
+
+// Class TAGame.PostMatchMetrics_TA
+// 0x0018 (0x0080 - 0x0098)
+class UPostMatchMetrics_TA : public UMetricsGroup_X
+{
+public:
+	uint64_t                                           LastMatchEndEpoch;                             // 0x0080 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class FString                                      LastMatchGuid;                                 // 0x0088 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.PostMatchMetrics_TA"))
+	void PostMatchPresence(const class FString& MatchGUID, uint64_t MatchEndEpoch, uint64_t PlayerLeftEpoch);
+	void HandleMatchDestroyed(class AGameEvent_Soccar_TA* SoccarEvent);
+	void RecordMatchEnded(class AGameEvent_Soccar_TA* SoccarEvent);
 };
 
 // Class TAGame.__GameEvent_Soccar_TA__FillClubRecordStatsRPC_0x1
@@ -22002,7 +22045,7 @@ public:
 };
 
 // Class TAGame.GFxHUD_TA
-// 0x01C0 (0x0378 - 0x0538)
+// 0x01B8 (0x0378 - 0x0530)
 class AGFxHUD_TA : public AHUDBase_TA
 {
 public:
@@ -22028,25 +22071,24 @@ public:
 	class UGFxData_LocalCar_TA*                        CarData;                                       // 0x0460 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
 	class TArray<class UGFxData_PRI_TA*>               PRIData;                                       // 0x0468 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	class UGFxData_MiniScoreboard_TA*                  MiniScoreboard;                                // 0x0478 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class UGFxData_EOSGameClipsMaskArea_TA*            EOSGameClipsMaskHandler;                       // 0x0480 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class TArray<class UGFxData_PlayerRecord_TA*>      PlayerRecordData;                              // 0x0488 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
-	uint32_t                                           bAttackTargetActive : 1;                       // 0x0498 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bShowedDisconnectMessage : 1;                  // 0x0498 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
-	struct FVector                                     AttackTargetWorldPosition;                     // 0x049C (0x000C) [0x0000000000000000]               
-	struct FVector                                     AttackTargetPositionOffset;                    // 0x04A8 (0x000C) [0x0000000000000000]               
-	float                                              CloseScoreboardTime;                           // 0x04B4 (0x0004) [0x0000000000002000] (CPF_Transient)
-	class TArray<class APRI_TA*>                       PendingShowAddMessagePlayers;                  // 0x04B8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class AActor*                                      LastTarget;                                    // 0x04C8 (0x0008) [0x0000000000002000] (CPF_Transient)
-	float                                              TestLastLogTime;                               // 0x04D0 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x04D4 (0x0004) MISSED OFFSET
-	class ACar_TA*                                     CarDisplayingBoost;                            // 0x04D8 (0x0008) [0x0000000000000000]               
-	class UAdHocBeacon_X*                              AdHocBeacon;                                   // 0x04E0 (0x0008) [0x0000800000000000]               
-	class AGameInfo_Replay_TA*                         ReplayGameInfo;                                // 0x04E8 (0x0008) [0x0000800000002000] (CPF_Transient)
-	class FString                                      ServerMigrationTitle;                          // 0x04F0 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class FString                                      ServerMigrationBody;                           // 0x0500 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
-	class UGFxData_Scoreboard_TA*                      Scoreboard;                                    // 0x0510 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class UGFxData_DemoSpawnSelection_TA*              DemoSpawnSelectionData;                        // 0x0518 (0x0008) [0x0001000000002000] (CPF_Transient)
-	struct FScriptDelegate                             __VoteLambda__Delegate;                        // 0x0520 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class UGFxData_PlayerRecord_TA*>      PlayerRecordData;                              // 0x0480 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	uint32_t                                           bAttackTargetActive : 1;                       // 0x0490 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bShowedDisconnectMessage : 1;                  // 0x0490 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	struct FVector                                     AttackTargetWorldPosition;                     // 0x0494 (0x000C) [0x0000000000000000]               
+	struct FVector                                     AttackTargetPositionOffset;                    // 0x04A0 (0x000C) [0x0000000000000000]               
+	float                                              CloseScoreboardTime;                           // 0x04AC (0x0004) [0x0000000000002000] (CPF_Transient)
+	class TArray<class APRI_TA*>                       PendingShowAddMessagePlayers;                  // 0x04B0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class AActor*                                      LastTarget;                                    // 0x04C0 (0x0008) [0x0000000000002000] (CPF_Transient)
+	float                                              TestLastLogTime;                               // 0x04C8 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x04CC (0x0004) MISSED OFFSET
+	class ACar_TA*                                     CarDisplayingBoost;                            // 0x04D0 (0x0008) [0x0000000000000000]               
+	class UAdHocBeacon_X*                              AdHocBeacon;                                   // 0x04D8 (0x0008) [0x0000800000000000]               
+	class AGameInfo_Replay_TA*                         ReplayGameInfo;                                // 0x04E0 (0x0008) [0x0000800000002000] (CPF_Transient)
+	class FString                                      ServerMigrationTitle;                          // 0x04E8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class FString                                      ServerMigrationBody;                           // 0x04F8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
+	class UGFxData_Scoreboard_TA*                      Scoreboard;                                    // 0x0508 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class UGFxData_DemoSpawnSelection_TA*              DemoSpawnSelectionData;                        // 0x0510 (0x0008) [0x0001000000002000] (CPF_Transient)
+	struct FScriptDelegate                             __VoteLambda__Delegate;                        // 0x0518 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_TA"))
@@ -24039,8 +24081,10 @@ public:
 	void AddFriendData(class UPersona_TA* Persona);
 	void UpdateRecentPlayerList();
 	void HandleRecentPlayerLinkedAccountReceived(bool bSuccess, const class TArray<struct FLinkedAccountData>& ReceivedAccountData);
+	void HandleMatchFinished(class AGameEvent_Soccar_TA* GameEvent);
 	void HandlePlayerAddedToMatch(class AGameEvent_TA* GameEvent, class APRI_TA* PRI);
 	void HandleMatchGUIDChanged(class AGRI_X* GRI);
+	bool PlayerIsAnonymized(class APRI_TA* PRI);
 	void HandleGameEventRemoved(class AGameEvent_TA* GameEvent);
 	void HandleGameEventAdded(class AGameEvent_TA* GameEvent);
 	void HandleCrossPlayChanged();
@@ -24960,6 +25004,7 @@ public:
 	void __GFxShell_TA__HandleSaveDataLoaded_0x1(class UOnlineStorageSyncManager_TA* instance, class UAsyncTask* Task);
 	void __GFxShell_TA__HandleBanned_0x1(class UGFxModal_X* instance);
 	static bool __GFxShell_TA__InitPlaylistSkills_0x1(class UGameSettingPlaylist_X* P);
+	void DebugHitTest(const class FString& triggerMode, bool bShowClassInfo);
 	static class FString ReplaceHtmlEntities(const class FString& Text);
 	static class UGFxDataStore_X* GetData(class ULocalPlayer_X* ForPlayer);
 	static class UGFxShell_TA* GetShell(class ULocalPlayer_X* ForPlayer);
@@ -25521,6 +25566,7 @@ public:
 	bool BodyHasForcedProducts(class UProduct_TA* ProductBody);
 	bool BodyIsLicensedOrForced(class UProduct_TA* InBody);
 	void ClearPreviewLoadout(int32_t optionalPendingPreviewProductID);
+	class UProduct_TA* GetBaseBody(class UProduct_TA* InBody);
 	bool IsSameBody(class UProduct_TA* PendingBodyProduct, class UProduct_TA* EquippedProduct);
 	void ClearPreviewProduct();
 	void SetPreviewProduct(int32_t SlotIndex, const struct FProductHashID& HashID);
@@ -27291,7 +27337,7 @@ public:
 class U__GFxData_PossibleTradeIn_TA__GetNumHashInFilteredIDs_0x1 : public UObject
 {
 public:
-	struct FProductHashID                              HashID;                                        // 0x0060 (0x0004) [0x0001000000000000]               
+	struct FProductHashID                              HashID;                                        // 0x0060 (0x0004) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__GFxData_PossibleTradeIn_TA__GetNumHashInFilteredIDs_0x1"))
@@ -27304,14 +27350,14 @@ class UGFxData_PossibleTradeIn_TA : public UGFxDataRow_X
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
-	struct FProductFilter                              Filter;                                        // 0x0098 (0x0170) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	int32_t                                            TradeInFilterID;                               // 0x0208 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	EProductQuality                                    Quality;                                       // 0x020C (0x0001) [0x0001000040000000] (CPF_DataBinding)
+	struct FProductFilter                              Filter;                                        // 0x0098 (0x0170) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	int32_t                                            TradeInFilterID;                               // 0x0208 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	EProductQuality                                    Quality;                                       // 0x020C (0x0001) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x3];                            // 0x020D (0x0003) MISSED OFFSET
-	int32_t                                            NumberofTradeIns;                              // 0x0210 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	int32_t                                            RemainingItems;                                // 0x0214 (0x0004) [0x0001000040000000] (CPF_DataBinding)
-	struct FProductTradeInFilter                       TradeInFilter;                                 // 0x0218 (0x0050) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FProductHashID>                FilteredHashIDs;                               // 0x0268 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	int32_t                                            NumberofTradeIns;                              // 0x0210 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            RemainingItems;                                // 0x0214 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	struct FProductTradeInFilter                       TradeInFilter;                                 // 0x0218 (0x0050) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FProductHashID>                FilteredHashIDs;                               // 0x0268 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_PossibleTradeIn_TA"))
@@ -27364,6 +27410,7 @@ public:
 	void OnEquippedLoadOutChanged();
 	void HandleEquippedLoadoutChanged(class ULoadoutSet_TA* InLoadoutSet, class ULoadout_TA* InLoadout);
 	void HandleLoadoutChanged(class ULoadoutSet_TA* LoadoutSet, class ULoadout_TA* Loadout);
+	void RecordEquippedLoadoutUsage();
 	void SetPreviewTeam(int32_t TeamIndex);
 	void RenamePreset(int32_t Index, const class FString& NewName);
 	void EquipLoadoutSet(class ULoadoutSet_TA* InLoadoutSet);
@@ -27384,7 +27431,7 @@ public:
 };
 
 // Class TAGame.GFxData_PRI_TA
-// 0x01AC (0x0094 - 0x0240)
+// 0x01B4 (0x0094 - 0x0248)
 class UGFxData_PRI_TA : public UGFxDataRow_X
 {
 public:
@@ -27451,21 +27498,21 @@ public:
 	uint8_t                                          UnknownData02[0x1];                            // 0x01EB (0x0001) MISSED OFFSET
 	int32_t                                            SpectatorShortcut;                             // 0x01EC (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	class UGFxData_PlayerBanner_TA*                    GFxPlayerBanner;                               // 0x01F0 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UGFxData_PlayerAvatar_TA*                    GFxPlayerAvatar;                               // 0x01F8 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UGFxData_PlayerAvatarBorder_TA*              GFxPlayerBorder;                               // 0x0200 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UPersona_TA*                                 Persona;                                       // 0x0208 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UPersona_TA*                                 PrimaryPersona;                                // 0x0210 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UPersonas_TA*                                Personas;                                      // 0x0218 (0x0008) [0x0000800000002000] (CPF_Transient)
-	class UGFxData_ScoreboardStat_TA*                  ScoreboardStats;                               // 0x0220 (0x0008) [0x0001000000002000] (CPF_Transient)
-	class UGFxData_SpectatorStat_TA*                   SpectatorStats;                                // 0x0228 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0230 (0x0008) [0x0000000000000000]               
-	class UProfileGameplaySave_TA*                     ProfileGameplaySettings;                       // 0x0238 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UPlayerBanner_TA*                            AnonymizedBanner;                              // 0x01F8 (0x0008) [0x0001000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	class UGFxData_PlayerAvatar_TA*                    GFxPlayerAvatar;                               // 0x0200 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UGFxData_PlayerAvatarBorder_TA*              GFxPlayerBorder;                               // 0x0208 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UPersona_TA*                                 Persona;                                       // 0x0210 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UPersona_TA*                                 PrimaryPersona;                                // 0x0218 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UPersonas_TA*                                Personas;                                      // 0x0220 (0x0008) [0x0000800000002000] (CPF_Transient)
+	class UGFxData_ScoreboardStat_TA*                  ScoreboardStats;                               // 0x0228 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class UGFxData_SpectatorStat_TA*                   SpectatorStats;                                // 0x0230 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0238 (0x0008) [0x0000000000000000]               
+	class UProfileGameplaySave_TA*                     ProfileGameplaySettings;                       // 0x0240 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_PRI_TA"))
 	void __GFxData_PRI_TA__SetPRI_0x2(class UGameplaySettingsSave_TA* SettingsSave);
 	void __GFxData_PRI_TA__SetPRI_0x1(class UOnlineGamePlaylists_X* instance);
-	void __GFxData_PRI_TA__HandleProfileSet_0x1(class UProfileGameplaySave_TA* Settings);
 	void __GFxData_PRI_TA__UpdatePRIData_0x4();
 	int32_t __GFxData_PRI_TA__UpdatePRIData_0x3(const struct FScoreboardStat& S);
 	class FString __GFxData_PRI_TA__UpdatePRIData_0x2(const struct FScoreboardStat& S);
@@ -27479,6 +27526,7 @@ public:
 	void HandleClub(class UClubDetails_X* Club);
 	void HandleClubID();
 	void UpdatePlayerAvatarBorder();
+	void UpdateAnonymizedPlayerBanner();
 	void UpdatePlayerBanner();
 	void UpdateScreenPosition(class UCanvas* MyCanvas, const struct FVector& WorldPosition, bool bHovered, bool bFocused);
 	void PrintDebugInfo(class UDebugDrawer* Drawer);
@@ -27516,6 +27564,7 @@ public:
 	void HandleOwnerChanged(class APRI_TA* InPRI);
 	void HandleAnonymizationSettingsChanged();
 	void HandleAnonymizationChanged(class APRI_TA* InPRI);
+	void HandleGameplaySettingsLoaded(class UProfileGameplaySave_TA* Settings);
 	void HandleProfileSet(class ULocalPlayer_TA* InLocalPlayer);
 	void SetPRI(class APRI_TA* InPRI);
 	bool SamePlayer(class APRI_TA* InPRI);
@@ -27792,21 +27841,21 @@ public:
 	uint32_t                                           bIsFavorited : 1;                              // 0x0138 (0x0004) [0x0000000040000000] [0x00004000] (CPF_DataBinding)
 	uint32_t                                           bIsArchived : 1;                               // 0x0138 (0x0004) [0x0000000040000000] [0x00008000] (CPF_DataBinding)
 	uint32_t                                           bCanArchive : 1;                               // 0x0138 (0x0004) [0x0000000040000000] [0x00010000] (CPF_DataBinding)
-	uint32_t                                           bIsXETradeLocked : 1;                          // 0x0138 (0x0004) [0x0001000040000000] [0x00020000] (CPF_DataBinding)
+	uint32_t                                           bIsXETradeLocked : 1;                          // 0x0138 (0x0004) [0x0000000040000000] [0x00020000] (CPF_DataBinding)
 	uint32_t                                           bDebugLoadingProducts : 1;                     // 0x0138 (0x0004) [0x0000000000000001] [0x00040000] (CPF_Edit)
 	struct FColor                                      ProductPaintColor;                             // 0x013C (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	class FString                                      ProductPaintColorName;                         // 0x0140 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	EProductQuality                                    ProductQuality;                                // 0x0150 (0x0001) [0x0000000040000000] (CPF_DataBinding)
-	ECrossEntitlementStatus                            XEStatus;                                      // 0x0151 (0x0001) [0x0001000040000000] (CPF_DataBinding)
+	ECrossEntitlementStatus                            XEStatus;                                      // 0x0151 (0x0001) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x2];                            // 0x0152 (0x0002) MISSED OFFSET
 	int32_t                                            ProductQuantity;                               // 0x0154 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	int32_t                                            TradeHold;                                     // 0x0158 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	int32_t                                            SeriesID;                                      // 0x015C (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	class FString                                      SeriesDescription;                             // 0x0160 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      XEShopDescriptionText;                         // 0x0170 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      XEBlueprintDescriptionText;                    // 0x0180 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class FString                                      XEDescriptionText;                             // 0x0190 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	int32_t                                            ProductTradeInQuantity;                        // 0x01A0 (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	class FString                                      XEShopDescriptionText;                         // 0x0170 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      XEBlueprintDescriptionText;                    // 0x0180 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      XEDescriptionText;                             // 0x0190 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            ProductTradeInQuantity;                        // 0x01A0 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	int32_t                                            SchematicResources;                            // 0x01A4 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	class UGFxProductAttributeMap_TA*                  AttributeMap;                                  // 0x01A8 (0x0008) [0x0000000004400009] (CPF_Edit | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline)
 	class FString                                      AttributeTables;                               // 0x01B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
@@ -28113,7 +28162,7 @@ public:
 	class FString                                      NotEnoughProductsSelected;                     // 0x00C8 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	int32_t                                            NumProductsRequiredForTradeIn;                 // 0x00D8 (0x0004) [0x0000000000000002] (CPF_Const)   
 	uint8_t                                          UnknownData00[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
-	class TArray<struct FProductTradeInFilter>         TradeInFilters;                                // 0x00E0 (0x0010) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FProductTradeInFilter>         TradeInFilters;                                // 0x00E0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventTradeInComplete__Delegate;              // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -30163,7 +30212,7 @@ public:
 class U__GFxData_TradeInFilter_TA__GetPossibleTradeInData_0x1 : public UObject
 {
 public:
-	EProductQuality                                    Quality;                                       // 0x0060 (0x0001) [0x0001000000000000]               
+	EProductQuality                                    Quality;                                       // 0x0060 (0x0001) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__GFxData_TradeInFilter_TA__GetPossibleTradeInData_0x1"))
@@ -30171,17 +30220,19 @@ public:
 };
 
 // Class TAGame.GFxData_TradeInFilter_TA
-// 0x0084 (0x0094 - 0x0118)
+// 0x008C (0x0094 - 0x0120)
 class UGFxData_TradeInFilter_TA : public UGFxDataRow_X
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
-	int32_t                                            Id;                                            // 0x0098 (0x0004) [0x0001000040000000] (CPF_DataBinding)
+	int32_t                                            Id;                                            // 0x0098 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x009C (0x0004) MISSED OFFSET
-	class FString                                      Label;                                         // 0x00A0 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	class TArray<class UGFxData_PossibleTradeIn_TA*>   PossibleTradeIns;                              // 0x00B0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FProductTradeInFilter                       TradeInFilter;                                 // 0x00C0 (0x0050) [0x0001000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class USaveData_TA*                                SaveData;                                      // 0x0110 (0x0008) [0x0001000000002000] (CPF_Transient)
+	class FString                                      Label;                                         // 0x00A0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	int32_t                                            NumProductsRequiredForTradeIn;                 // 0x00B0 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint8_t                                          UnknownData02[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
+	class TArray<class UGFxData_PossibleTradeIn_TA*>   PossibleTradeIns;                              // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FProductTradeInFilter                       TradeInFilter;                                 // 0x00C8 (0x0050) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class USaveData_TA*                                SaveData;                                      // 0x0118 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_TradeInFilter_TA"))
@@ -30191,7 +30242,7 @@ public:
 	void UpdatePossibleTradeInQuantities();
 	void GenerateTradeInQuantities();
 	void HandleSaveDataLoaded(class USaveGameManager_TA* Manager, class USaveData_TA* InSaveData, class UError* Error);
-	void Init(struct FProductTradeInFilter& outInTradeInFilter);
+	void Init(class UGFxData_ProductTradeIn_TA* ProductTradeIn, struct FProductTradeInFilter& outInTradeInFilter);
 	void eventOnRemoved();
 	void eventOnShellSet();
 };
@@ -30201,7 +30252,7 @@ public:
 class U__GFxData_TradeInFilter_TA__UpdatePossibleTradeInQuantities_0x1 : public UObject
 {
 public:
-	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<class UOnlineProduct_TA*>             OnlineProducts;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__GFxData_TradeInFilter_TA__UpdatePossibleTradeInQuantities_0x1"))
@@ -30232,17 +30283,17 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 	class FString                                      Difficulty;                                    // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FName                                        SelectedFreeplayMap;                           // 0x00C0 (0x0008) [0x0000000040000000] (CPF_DataBinding)
-	uint32_t                                           bShowBoostMeter : 1;                           // 0x00C8 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           bShufflePlay : 1;                              // 0x00C8 (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
-	uint32_t                                           bIsCustomTraining : 1;                         // 0x00C8 (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
-	uint32_t                                           bCanRandomizeShot : 1;                         // 0x00C8 (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
-	uint8_t                                          UnknownData01[0x4];                            // 0x00CC (0x0004) MISSED OFFSET
+	int32_t                                            SelectedFreeplayMode;                          // 0x00C8 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint32_t                                           bShowBoostMeter : 1;                           // 0x00CC (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           bShufflePlay : 1;                              // 0x00CC (0x0004) [0x0000000040000000] [0x00000002] (CPF_DataBinding)
+	uint32_t                                           bIsCustomTraining : 1;                         // 0x00CC (0x0004) [0x0000000040000000] [0x00000004] (CPF_DataBinding)
+	uint32_t                                           bCanRandomizeShot : 1;                         // 0x00CC (0x0004) [0x0000000040000000] [0x00000008] (CPF_DataBinding)
 	class TArray<struct FUseAction>                    UseActions;                                    // 0x00D0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FString                                      TutorialTip;                                   // 0x00E0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class TArray<struct FTrainingRoundProgress>        ProgressPerShot;                               // 0x00F0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	int32_t                                            CurrentPlaylistIndex;                          // 0x0100 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	EControlsVisibilityType                            ControlsVisibility;                            // 0x0104 (0x0001) [0x0000000040000000] (CPF_DataBinding)
-	uint8_t                                          UnknownData02[0x3];                            // 0x0105 (0x0003) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x3];                            // 0x0105 (0x0003) MISSED OFFSET
 	class AGameEvent_TrainingEditor_TA*                TrainingEditor;                                // 0x0108 (0x0008) [0x0000800000000000]               
 	class UTrainingProgressTracker_TA*                 ProgressTracker;                               // 0x0110 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class UTrainingConfig_TA*                          TrainingConfig;                                // 0x0118 (0x0008) [0x0000800000000000]               
@@ -30274,7 +30325,7 @@ public:
 	void OnOpenShotSelectionMenu();
 	void StartAtPlaylistIndex(int32_t InPlaylistIndex);
 	void PlayTutorial(bool optionalBAdvanced);
-	void PlayFreeplayMap(const class FName& Map);
+	void PlayFreeplayMap(const class FName& Map, int32_t GameModeIdx);
 	void InternalPlayFreeplay(bool optionalBDisableConfirmation);
 	void PlayFreeplay();
 	void PlayFreeplayWithoutPopup();
@@ -30561,7 +30612,6 @@ public:
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_Nameplate_TA"))
-	void __GFxData_Nameplate_TA__HandleProfileSet_0x1(class UProfileGameplaySave_TA* Settings);
 	void __GFxData_Nameplate_TA__SetNameplateComponent_0x1(class UGameplaySettingsSave_TA* SettingsSave);
 	void SetShowShortcut(bool bValue);
 	bool CanRenderBoostNameplate(class APRI_TA* InPRI);
@@ -30579,6 +30629,7 @@ public:
 	class UOnlineGame_X* GetOnlineGame();
 	void HandlePlayerNameSet(class UNameplateComponent_TA* InNameplateComponent);
 	void SetNameplateComponent(class UNameplateComponent_TA* InNameplateComponent);
+	void HandleGameplaySettingsLoaded(class UProfileGameplaySave_TA* Settings);
 	void HandleProfileSet(class ULocalPlayer_TA* InLocalPlayer);
 	void eventOnRemoved();
 	void eventOnShellSet();
@@ -31627,15 +31678,17 @@ public:
 };
 
 // Class TAGame.__OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x1
-// 0x0010 (0x0060 - 0x0070)
+// 0x0018 (0x0060 - 0x0078)
 class U__OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x1 : public UObject
 {
 public:
-	class FString                                      Message;                                       // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UPersona_TA*                                 Persona;                                       // 0x0060 (0x0008) [0x0000000000000000]               
+	class FString                                      Message;                                       // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x1"))
-	void __OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x1(class UPersona_TA* P);
+	void __OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x2(class UPersona_TA* P);
+	bool __OnlineGameParty_TA__AddPlayerPartyServiceLobbyMessage_0x1(class APlayerReplicationInfo* P);
 };
 
 // Class TAGame.__OnlineGameParty_TA__GetPartyMessageError_0x3
@@ -32966,15 +33019,17 @@ public:
 };
 
 // Class TAGame.LoadoutSet_TA
-// 0x0068 (0x0060 - 0x00C8)
+// 0x0070 (0x0060 - 0x00D0)
 class ULoadoutSet_TA : public UObject
 {
 public:
 	class FString                                      LoadoutSetName;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class ULoadout_TA*                                 Loadouts[2];                                   // 0x0070 (0x0010) [0x0000008000000000] (CPF_ProtectedWrite)
-	struct FScriptDelegate                             __EventChanged__Delegate;                      // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventProductEquipped__Delegate;              // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventOnlineProductEquipped__Delegate;        // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            UseCount;                                      // 0x0080 (0x0004) [0x0001000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventChanged__Delegate;                      // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventProductEquipped__Delegate;              // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventOnlineProductEquipped__Delegate;        // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.LoadoutSet_TA"))
@@ -35925,7 +35980,7 @@ public:
 	class TArray<int32_t>                              XPDataRanges;                                  // 0x0098 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	int32_t                                            TradeConfirmationLockoutSeconds;               // 0x00A8 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
-	class FString                                      SupportURL;                                    // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      SupportUrl;                                    // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	int32_t                                            CurrentActiveSeason;                           // 0x00C0 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData02[0x4];                            // 0x00C4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __MainMenuBG__ChangeNotify;                    // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -36702,14 +36757,16 @@ public:
 };
 
 // Class TAGame.MapPrefsSave_TA
-// 0x0034 (0x00CC - 0x0100)
+// 0x003C (0x00CC - 0x0108)
 class UMapPrefsSave_TA : public UJsonSaveObject_TA
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00CC (0x0004) MISSED OFFSET
 	class TArray<struct FPlaylistMapPrefs>             MapPrefs;                                      // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        SelectedFreeplayMap;                           // 0x00E0 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __EventUsedAllMapVotes__Delegate;              // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SelectedFreeplayMode;                          // 0x00E8 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x00EC (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventUsedAllMapVotes__Delegate;              // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.MapPrefsSave_TA"))
@@ -37660,23 +37717,21 @@ class ACameraSettingsActor_TA : public AReplicationInfo
 {
 public:
 	float                                              UploadCameraDelay;                             // 0x0268 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData00[0x4];                            // 0x026C (0x0004) MISSED OFFSET
+	float                                              IdleReliableResendThreshold;                   // 0x026C (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 	class APRI_TA*                                     PRI;                                           // 0x0270 (0x0008) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
 	struct FProfileCameraSettings                      ProfileSettings;                               // 0x0278 (0x0020) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
 	uint32_t                                           bUsingSecondaryCamera : 1;                     // 0x0298 (0x0004) [0x0000008000002020] [0x00000001] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
 	uint32_t                                           bUsingBehindView : 1;                          // 0x0298 (0x0004) [0x0000008000002020] [0x00000002] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
 	uint32_t                                           bUsingFreecam : 1;                             // 0x0298 (0x0004) [0x0000008000002020] [0x00000004] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bLookingAtBall : 1;                            // 0x0298 (0x0004) [0x0001008000002020] [0x00000008] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bDirtySecondaryCamera : 1;                     // 0x0298 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bDirtyBehindView : 1;                          // 0x0298 (0x0004) [0x0000000000000000] [0x00000020] 
-	uint32_t                                           bDirtyLookingAtBall : 1;                       // 0x0298 (0x0004) [0x0001000000000000] [0x00000040] 
+	uint32_t                                           bDirtySecondaryCamera : 1;                     // 0x0298 (0x0004) [0x0000000000000000] [0x00000008] 
+	uint32_t                                           bDirtyBehindView : 1;                          // 0x0298 (0x0004) [0x0000000000000000] [0x00000010] 
 	uint8_t                                            CameraPitch;                                   // 0x029C (0x0001) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
 	uint8_t                                            CameraYaw;                                     // 0x029D (0x0001) [0x0000008000002020] (CPF_Net | CPF_Transient | CPF_ProtectedWrite)
-	uint8_t                                          UnknownData01[0x2];                            // 0x029E (0x0002) MISSED OFFSET
-	float                                              MaxProximityDistance;                          // 0x02A0 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	float                                              LastRotationChangeTime;                        // 0x02A4 (0x0004) [0x0000000000000000]               
-	float                                              LastReplicateRotationTime;                     // 0x02A8 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData02[0x4];                            // 0x02AC (0x0004) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x2];                            // 0x029E (0x0002) MISSED OFFSET
+	float                                              LastRotationChangeTime;                        // 0x02A0 (0x0004) [0x0000000000000000]               
+	float                                              LastReplicateRotationTime;                     // 0x02A4 (0x0004) [0x0000000000000000]               
+	float                                              MaxProximityDistance;                          // 0x02A8 (0x0004) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	uint8_t                                          UnknownData01[0x4];                            // 0x02AC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventCameraChanged__Delegate;                // 0x02B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSecondaryCameraChanged__Delegate;       // 0x02C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
@@ -37772,7 +37827,8 @@ public:
 	uint8_t                                          UnknownData02[0x7];                            // 0x0791 (0x0007) MISSED OFFSET
 	class ARBActor_TA*                                 Demolisher;                                    // 0x0798 (0x0008) [0x0000000000002000] (CPF_Transient)
 	uint32_t                                           bDemolished : 1;                               // 0x07A0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bGroundClampTrace : 1;                         // 0x07A0 (0x0004) [0x0000000000000002] [0x00000002] (CPF_Const)
+	uint32_t                                           bShowCameraSaveDebug : 1;                      // 0x07A0 (0x0004) [0x0001000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bGroundClampTrace : 1;                         // 0x07A0 (0x0004) [0x0000000000000002] [0x00000004] (CPF_Const)
 	uint8_t                                          UnknownData03[0x4];                            // 0x07A4 (0x0004) MISSED OFFSET
 	class APawn*                                       DemolishedPawn;                                // 0x07A8 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class ACameraSettingsActor_TA*                     CameraSettings;                                // 0x07B0 (0x0008) [0x0000000000002000] (CPF_Transient)
@@ -38097,7 +38153,7 @@ public:
 };
 
 // Class TAGame.CameraState_Director_TA
-// 0x0050 (0x00E4 - 0x0134)
+// 0x0058 (0x00E4 - 0x013C)
 class UCameraState_Director_TA : public UCameraState_Replay_TA
 {
 public:
@@ -38107,19 +38163,24 @@ public:
 	class UCameraStateSelector_TA*                     CountdownSelector;                             // 0x00F8 (0x0008) [0x0001000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UCameraStateSelector_TA*                     KickoffSelector;                               // 0x0100 (0x0008) [0x0001000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UCameraStateSelector_TA*                     DefaultSelector;                               // 0x0108 (0x0008) [0x0001000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	struct FProfileSliderLimits                        MinTransitionTimeLimits;                       // 0x0110 (0x000C) [0x0001000000000003] (CPF_Edit | CPF_Const)
-	uint8_t                                          UnknownData01[0x4];                            // 0x011C (0x0004) MISSED OFFSET
-	class UCameraStateSelector_TA*                     CurrentSelector;                               // 0x0120 (0x0008) [0x0001000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class UCameraState_X*                              CurrentState;                                  // 0x0128 (0x0008) [0x0001000000000000]               
-	uint32_t                                           bInitialized : 1;                              // 0x0130 (0x0004) [0x0001000000000000] [0x00000001] 
+	class UCameraStateSelector_TA*                     MidMatchJoinedSelector;                        // 0x0110 (0x0008) [0x0001000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	struct FProfileSliderLimits                        MinTransitionTimeLimits;                       // 0x0118 (0x000C) [0x0001000000000003] (CPF_Edit | CPF_Const)
+	float                                              MidMatchJoinMoveThreshold;                     // 0x0124 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	class UCameraStateSelector_TA*                     CurrentSelector;                               // 0x0128 (0x0008) [0x0001000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UCameraState_X*                              CurrentState;                                  // 0x0130 (0x0008) [0x0001000000000000]               
+	uint32_t                                           bInitialized : 1;                              // 0x0138 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint32_t                                           bSawCountdown : 1;                             // 0x0138 (0x0004) [0x0001000000000000] [0x00000002] 
+	uint32_t                                           bMidMatchJoinDone : 1;                         // 0x0138 (0x0004) [0x0001000000000000] [0x00000004] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraState_Director_TA"))
 	bool IsDisabled(const class FName& CameraMode, const class FString& InFocusActorString);
 	bool ShouldClipToField();
 	bool ShouldUpdateAspectRatio();
+	bool AnyCars();
+	bool AnyCarMoving();
 	void UpdateSelector();
-	void SetSelector(class UCameraStateSelector_TA* InSelector);
+	void SetSelector(class UCameraStateSelector_TA* InSelector, bool optionalBSkipInitial);
 	class UCameraState_X* GetProxyCameraState();
 	void InitCameraState(class UCameraState_X* InState);
 	void InitSelector(class UCameraStateSelector_TA* InSelector);
@@ -38270,27 +38331,27 @@ public:
 };
 
 // Class TAGame.Ball_GameEditor_TA
-// 0x00D8 (0x0B28 - 0x0C00)
+// 0x00D8 (0x0B40 - 0x0C18)
 class ABall_GameEditor_TA : public ABall_TA
 {
 public:
-	struct FVector                                     StartLocation;                                 // 0x0B28 (0x000C) [0x0000000000000000]               
-	struct FRotator                                    StartRotation;                                 // 0x0B34 (0x000C) [0x0000000000000000]               
-	float                                              VelocityStartSpeed;                            // 0x0B40 (0x0004) [0x0000000000000000]               
-	struct FRotator                                    VelocityStartRotation;                         // 0x0B44 (0x000C) [0x0000000000000000]               
-	float                                              BallResetTime;                                 // 0x0B50 (0x0004) [0x0000000000000000]               
-	float                                              FirstHitTime;                                  // 0x0B54 (0x0004) [0x0000000000000000]               
-	struct FVector                                     CameraPositionOffset;                          // 0x0B58 (0x000C) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x4];                            // 0x0B64 (0x0004) MISSED OFFSET
-	class AFXActor_X*                                  EditingFXActorArchetype;                       // 0x0B68 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class AFXActor_X*                                  EditingFXActor;                                // 0x0B70 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	uint32_t                                           bUpdateTrajectory : 1;                         // 0x0B78 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FVector                                     ToLocation;                                    // 0x0B7C (0x000C) [0x0000000000000000]               
-	struct FScriptDelegate                             __EventBallWentThruRing__Delegate;             // 0x0B88 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventVelocityStartSpeedChanged__Delegate;    // 0x0BA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventFire__Delegate;                         // 0x0BB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventReset__Delegate;                        // 0x0BD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventSelectionChange__Delegate;              // 0x0BE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FVector                                     StartLocation;                                 // 0x0B40 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    StartRotation;                                 // 0x0B4C (0x000C) [0x0000000000000000]               
+	float                                              VelocityStartSpeed;                            // 0x0B58 (0x0004) [0x0000000000000000]               
+	struct FRotator                                    VelocityStartRotation;                         // 0x0B5C (0x000C) [0x0000000000000000]               
+	float                                              BallResetTime;                                 // 0x0B68 (0x0004) [0x0000000000000000]               
+	float                                              FirstHitTime;                                  // 0x0B6C (0x0004) [0x0000000000000000]               
+	struct FVector                                     CameraPositionOffset;                          // 0x0B70 (0x000C) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x4];                            // 0x0B7C (0x0004) MISSED OFFSET
+	class AFXActor_X*                                  EditingFXActorArchetype;                       // 0x0B80 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AFXActor_X*                                  EditingFXActor;                                // 0x0B88 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	uint32_t                                           bUpdateTrajectory : 1;                         // 0x0B90 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FVector                                     ToLocation;                                    // 0x0B94 (0x000C) [0x0000000000000000]               
+	struct FScriptDelegate                             __EventBallWentThruRing__Delegate;             // 0x0BA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventVelocityStartSpeedChanged__Delegate;    // 0x0BB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventFire__Delegate;                         // 0x0BD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventReset__Delegate;                        // 0x0BE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventSelectionChange__Delegate;              // 0x0C00 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_GameEditor_TA"))
@@ -38370,21 +38431,22 @@ public:
 };
 
 // Class TAGame.Ball_Spawner_TA
-// 0x0048 (0x0268 - 0x02B0)
+// 0x0050 (0x0268 - 0x02B8)
 class ABall_Spawner_TA : public AActor
 {
 public:
 	class UParticleSystem*                             ParticleSystemArchetype;                       // 0x0268 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UParticleSystemComponent*                    PSC;                                           // 0x0270 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
-	class AFXActor_X*                                  FXActor;                                       // 0x0278 (0x0008) [0x0000000000000000]               
-	class UAkSoundCue*                                 SpawnSoundCue;                                 // 0x0280 (0x0008) [0x0000000000000000]               
-	class ABall_TA*                                    BallToSpawn;                                   // 0x0288 (0x0008) [0x0000000000000000]               
-	float                                              BallSpawnTime;                                 // 0x0290 (0x0004) [0x0000000000000000]               
-	float                                              FXSpawnTime;                                   // 0x0294 (0x0004) [0x0000000000000000]               
-	class AGameEvent_Soccar_TA*                        SoccarGame;                                    // 0x0298 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	class ABall_TA*                                    SpawnedBall;                                   // 0x02A0 (0x0008) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	float                                              SpawnDelaySeconds;                             // 0x02A8 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
-	uint32_t                                           bReplayMode : 1;                               // 0x02AC (0x0004) [0x0000000000000000] [0x00000001] 
+	class AFXActor_TA*                                 CarFXActorArchetype;                           // 0x0278 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AFXActor_X*                                  FXActor;                                       // 0x0280 (0x0008) [0x0000000000000000]               
+	class UAkSoundCue*                                 SpawnSoundCue;                                 // 0x0288 (0x0008) [0x0000000000000000]               
+	class ABall_TA*                                    BallToSpawn;                                   // 0x0290 (0x0008) [0x0000000000000000]               
+	float                                              BallSpawnTime;                                 // 0x0298 (0x0004) [0x0000000000000000]               
+	float                                              FXSpawnTime;                                   // 0x029C (0x0004) [0x0000000000000000]               
+	class AGameEvent_Soccar_TA*                        SoccarGame;                                    // 0x02A0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	class ABall_TA*                                    SpawnedBall;                                   // 0x02A8 (0x0008) [0x0000004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	float                                              SpawnDelaySeconds;                             // 0x02B0 (0x0004) [0x0000000100000020] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bReplayMode : 1;                               // 0x02B4 (0x0004) [0x0000000000000000] [0x00000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Ball_Spawner_TA"))
@@ -38396,12 +38458,14 @@ public:
 	void HandleGameStateChanged(class AGameEvent_Soccar_TA* GameEvent);
 	void SetupFXSpawn();
 	void SetupBallSpawn();
+	void HandleCarAdded(class ACar_TA* Car);
+	void SubscribeToCars();
 	void eventPostBeginPlay();
 	void eventReplicatedEvent(const class FName& VarName);
 };
 
 // Class TAGame.Ball_Tutorial_TA
-// 0x0000 (0x0B28 - 0x0B28)
+// 0x0000 (0x0B40 - 0x0B40)
 class ABall_Tutorial_TA : public ABall_TA
 {
 public:
@@ -39628,6 +39692,8 @@ public:
 	void UpdateValidPOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void UpdatePOV(float DeltaTime, struct FCameraOrientation& outOutPOV);
 	void ResetView();
+	struct FRotator GetCarFacingRotation();
+	void ResetInterpState();
 	void BeginCameraState(class UCameraState_X* optionalPreviousState);
 };
 
@@ -40170,7 +40236,7 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraStateSelector_TA"))
 	class UCameraState_X* SelectState(class UCameraState_X* InCurrentState);
-	void SetActive();
+	void SetActive(bool optionalBSkipInitial);
 	void Init(class ACamera_X* InCamera);
 };
 
@@ -40789,31 +40855,31 @@ public:
 };
 
 // Class TAGame.PRI_KnockOut_TA
-// 0x00A0 (0x0D40 - 0x0DE0)
+// 0x00A0 (0x0D60 - 0x0E00)
 class APRI_KnockOut_TA : public APRI_TA
 {
 public:
-	class AGameEvent_KnockOut_TA*                      GameEvent_KO;                                  // 0x0D40 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	uint32_t                                           bShowMatchPlacement : 1;                       // 0x0D48 (0x0004) [0x0001000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bIsEliminated : 1;                             // 0x0D48 (0x0004) [0x0001004100002020] [0x00000002] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	uint32_t                                           bIsActiveMVP : 1;                              // 0x0D48 (0x0004) [0x0001004100002020] [0x00000004] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	int32_t                                            Knockouts;                                     // 0x0D4C (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            StackedKnockoutCount;                          // 0x0D50 (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	float                                              LastKnockoutTime;                              // 0x0D54 (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	float                                              MaxKnockoutStackTime;                          // 0x0D58 (0x0004) [0x0001000000000002] (CPF_Const)   
-	int32_t                                            KnockoutAssists;                               // 0x0D5C (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            KnockoutDeaths;                                // 0x0D60 (0x0004) [0x0001004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
-	int32_t                                            DamageCaused;                                  // 0x0D64 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            Hits;                                          // 0x0D68 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            Grabs;                                         // 0x0D6C (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            Blocks;                                        // 0x0D70 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            EliminationOrder;                              // 0x0D74 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            MatchPlacement;                                // 0x0D78 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            SpectateDelaySeconds;                          // 0x0D7C (0x0004) [0x0001000000000000]               
-	struct FScriptDelegate                             __EventKnockedOut__Delegate;                   // 0x0D80 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventActiveMVPChanged__Delegate;             // 0x0D98 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventLivesChanged__Delegate;                 // 0x0DB0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventEliminated__Delegate;                   // 0x0DC8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class AGameEvent_KnockOut_TA*                      GameEvent_KO;                                  // 0x0D60 (0x0008) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	uint32_t                                           bShowMatchPlacement : 1;                       // 0x0D68 (0x0004) [0x0001000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bIsEliminated : 1;                             // 0x0D68 (0x0004) [0x0001004100002020] [0x00000002] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	uint32_t                                           bIsActiveMVP : 1;                              // 0x0D68 (0x0004) [0x0001004100002020] [0x00000004] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	int32_t                                            Knockouts;                                     // 0x0D6C (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            StackedKnockoutCount;                          // 0x0D70 (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	float                                              LastKnockoutTime;                              // 0x0D74 (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	float                                              MaxKnockoutStackTime;                          // 0x0D78 (0x0004) [0x0001000000000002] (CPF_Const)   
+	int32_t                                            KnockoutAssists;                               // 0x0D7C (0x0004) [0x0001004000002000] (CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            KnockoutDeaths;                                // 0x0D80 (0x0004) [0x0001004100002020] (CPF_Net | CPF_Transient | CPF_RepNotify | CPF_PrivateWrite)
+	int32_t                                            DamageCaused;                                  // 0x0D84 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            Hits;                                          // 0x0D88 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            Grabs;                                         // 0x0D8C (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            Blocks;                                        // 0x0D90 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            EliminationOrder;                              // 0x0D94 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            MatchPlacement;                                // 0x0D98 (0x0004) [0x0001004000002020] (CPF_Net | CPF_Transient | CPF_PrivateWrite)
+	int32_t                                            SpectateDelaySeconds;                          // 0x0D9C (0x0004) [0x0001000000000000]               
+	struct FScriptDelegate                             __EventKnockedOut__Delegate;                   // 0x0DA0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventActiveMVPChanged__Delegate;             // 0x0DB8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLivesChanged__Delegate;                 // 0x0DD0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventEliminated__Delegate;                   // 0x0DE8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.PRI_KnockOut_TA"))
@@ -40840,6 +40906,7 @@ public:
 	void SetShowMatchPlacement(bool bInShowMatchPlacement);
 	void OnEliminated(int32_t SpectateDelay);
 	bool ShouldChooseTeamWhenSpectating();
+	bool HasPlayerTeam();
 	void HandleDemolished(class ACar_TA* Victim, const struct FDemolishData& Data);
 	void SetCar(class ACar_TA* NewCar);
 	void SetGameEvent(class AGameEvent_TA* InGameEvent);
@@ -40857,11 +40924,12 @@ class UCameraStateSelector_Priority_TA : public UCameraStateSelector_TA
 public:
 	class TArray<struct FStateParams>                  PriorityStates;                                // 0x0088 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	uint32_t                                           bSelectFirst : 1;                              // 0x0098 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bSkipInitialState : 1;                         // 0x0098 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraStateSelector_Priority_TA"))
 	class UCameraState_X* SelectState(class UCameraState_X* InCurrentState);
-	void SetActive();
+	void SetActive(bool optionalBSkipInitial);
 	void Init(class ACamera_X* InCamera);
 };
 
@@ -40877,7 +40945,7 @@ public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraStateSelector_Sequence_TA"))
 	int32_t GetNextStateIndex();
 	class UCameraState_X* SelectState(class UCameraState_X* InCurrentState);
-	void SetActive();
+	void SetActive(bool optionalBSkipInitial);
 };
 
 // Class TAGame.CameraStateSelector_RandomSequence_TA
@@ -40890,7 +40958,7 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.CameraStateSelector_RandomSequence_TA"))
 	void Reshuffle();
-	void SetActive();
+	void SetActive(bool optionalBSkipInitial);
 	void Init(class ACamera_X* InCamera);
 };
 
@@ -40987,9 +41055,11 @@ public:
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.StreamerSafeAnonymizationUtils_TA"))
-	void __StreamerSafeAnonymizationUtils_TA__HandleLocalProfileSet_0x1(class UProfileGameplaySave_TA* Settings);
 	void Destroy();
 	void InvokeCurrentCallback();
+	void ClearAnonymizationSettings();
+	void HandleAnonymizationSaveRemoved(class UProfileGameplaySave_TA* Settings);
+	void HandleAnonymizationSaveAdded(class UProfileGameplaySave_TA* Settings);
 	void HandleLocalProfileSet(class ULocalPlayer_TA* LP);
 	void SubscribeToLocalAnonymizationSettings(const struct FScriptDelegate& Callback);
 	void OnAnonymizationChanged();
@@ -41135,11 +41205,11 @@ public:
 };
 
 // Class TAGame.Car_Freeplay_TA
-// 0x0010 (0x0C68 - 0x0C78)
+// 0x0010 (0x0C80 - 0x0C90)
 class ACar_Freeplay_TA : public ACar_TA
 {
 public:
-	class TArray<struct FLinearColor>                  CarColors;                                     // 0x0C68 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FLinearColor>                  CarColors;                                     // 0x0C80 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.Car_Freeplay_TA"))
@@ -41201,7 +41271,7 @@ public:
 };
 
 // Class TAGame.Car_Season_TA
-// 0x0000 (0x0C68 - 0x0C68)
+// 0x0000 (0x0C80 - 0x0C80)
 class ACar_Season_TA : public ACar_TA
 {
 public:
@@ -41323,11 +41393,13 @@ public:
 };
 
 // Class TAGame.ProductAttribute_SetPreviewObjectSpeedShaderParam_TA
-// 0x0004 (0x0080 - 0x0084)
+// 0x0020 (0x0080 - 0x00A0)
 class UProductAttribute_SetPreviewObjectSpeedShaderParam_TA : public UProductAttribute_TA
 {
 public:
 	float                                              PreviewSpeedToUse;                             // 0x0080 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
+	struct FInterpCurveFloat                           PreviewSpeedCurve;                             // 0x0088 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.ProductAttribute_SetPreviewObjectSpeedShaderParam_TA"))
@@ -42181,7 +42253,7 @@ public:
 };
 
 // Class TAGame.CinematicsCar_TA
-// 0x0000 (0x0C68 - 0x0C68)
+// 0x0000 (0x0C80 - 0x0C80)
 class ACinematicsCar_TA : public ACar_TA
 {
 public:
@@ -42537,9 +42609,9 @@ public:
 class UCrossEntitlementManager_TA : public UObject
 {
 public:
-	class TArray<int32_t>                              CrossEntitiedProducts;                         // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<int32_t>                              LockedProducts;                                // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class UContentConfig_X*                            ContentConfig;                                 // 0x0080 (0x0008) [0x0001800000000000]               
+	class TArray<int32_t>                              CrossEntitiedProducts;                         // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<int32_t>                              LockedProducts;                                // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UContentConfig_X*                            ContentConfig;                                 // 0x0080 (0x0008) [0x0000800000000000]               
 	struct FScriptDelegate                             __EventProductStatusUpdated__Delegate;         // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -43351,146 +43423,6 @@ public:
 	int32_t GetEnvironmentZone();
 };
 
-// Class TAGame.EOSGameClipsConfig_TA
-// 0x0038 (0x0078 - 0x00B0)
-class UEOSGameClipsConfig_TA : public UOnlineConfig_X
-{
-public:
-	uint32_t                                           bFeatureEnabled : 1;                           // 0x0078 (0x0004) [0x0009000040000000] [0x00000001] (CPF_DataBinding)
-	uint32_t                                           bCabinedModeClippingEnabled : 1;               // 0x0078 (0x0004) [0x0001000000000000] [0x00000002] 
-	uint32_t                                           bGameplayClippingEnabled : 1;                  // 0x0078 (0x0004) [0x0001000000000000] [0x00000004] 
-	uint32_t                                           bGoalReplayClippingEnabled : 1;                // 0x0078 (0x0004) [0x0001000000000000] [0x00000008] 
-	uint32_t                                           bLinkAccountPopupEnabled : 1;                  // 0x0078 (0x0004) [0x0001000000000000] [0x00000010] 
-	uint32_t                                           bSettingsMenuButtonEnabled : 1;                // 0x0078 (0x0004) [0x0001000000000000] [0x00000020] 
-	uint32_t                                           bStaticDataDebugEnabled : 1;                   // 0x0078 (0x0004) [0x0001000040000000] [0x00000040] (CPF_DataBinding)
-	uint8_t                                          UnknownData00[0x4];                            // 0x007C (0x0004) MISSED OFFSET
-	uint64_t                                           ClipDurationSeconds;                           // 0x0080 (0x0008) [0x0001000000000000]               
-	float                                              MinClipLengthSeconds;                          // 0x0088 (0x0004) [0x0001000000000000]               
-	float                                              MinClipCooldownSeconds;                        // 0x008C (0x0004) [0x0001000000000000]               
-	float                                              MinClipCooldownAfterRecordingStartedSeconds;   // 0x0090 (0x0004) [0x0001000000000000]               
-	int32_t                                            MaxClipUploadsPerMinute;                       // 0x0094 (0x0004) [0x0001000000000000]               
-	struct FScriptDelegate                             __bFeatureEnabled__ChangeNotify;               // 0x0098 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.EOSGameClipsConfig_TA"))
-	void __bFeatureEnabled__ChangeNotifyFunc();
-};
-
-// Class TAGame.EOSGameClipsController_TA
-// 0x0088 (0x0060 - 0x00E8)
-class UEOSGameClipsController_TA : public UObject
-{
-public:
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Object;                     // 0x0060 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Interface;                  // 0x0068 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class UEOSGameClipsManager_TA*                     GameClipsManager;                              // 0x0070 (0x0008) [0x0001800000000000]               
-	class UEOSGameClipsConfig_TA*                      GameClipsConfig;                               // 0x0078 (0x0008) [0x0001800000000000]               
-	class UAkSoundCue*                                 ClipCaptured_SFX;                              // 0x0080 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UAkSoundCue*                                 ClipFailed_SFX;                                // 0x0088 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UAkSoundCue*                                 ClipSucceeded_SFX;                             // 0x0090 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	uint32_t                                           bGoalReplayClipInitiated : 1;                  // 0x0098 (0x0004) [0x0001000000000000] [0x00000001] 
-	float                                              LastClipTimeSeconds;                           // 0x009C (0x0004) [0x0001000000000000]               
-	struct FScriptDelegate                             __EventClippedDuringReplay__Delegate;          // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventClipStatusChanged__Delegate;            // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventErrorOccurred__Delegate;                // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.EOSGameClipsController_TA"))
-	void __EOSGameClipsController_TA__HandleGameClipsManagerChanged_0x1();
-	void __EOSGameClipsController_TA__SetGameClipsInterface_0x2(const class FString& InEpicAccountId, int32_t InClipId, class UErrorType* InErrorType);
-	void __EOSGameClipsController_TA__SetGameClipsInterface_0x1(class UErrorType* InErrorType);
-	void PlaySoundEffect(class UAkSoundCue* SoundEffect);
-	class FString GetEpicAccountId();
-	bool IsAccountLinked();
-	void CreateClip(const class FString& InGameClipInputType);
-	float GetCooldownTime();
-	float GetTimeUntilUnthrottled();
-	void CaptureClipPressed(const class FString& InGameClipInputType);
-	void HandleErrorOccurred(const class FString& InEpicAccountId, class UErrorType* InErrorType);
-	void HandleClipStatusChanged(const class FString& InEpicAccountId, int32_t InClipId, EGameClipsClipStatus InNewClipStatus);
-	void HandleRecordingChanged(EGameClipsRecording InNewRecording);
-	void SetGameClipsInterface(class UOnlineGameClipsInterface* InGameClipsInterface);
-	void HandleGameClipsManagerChanged();
-	void ShutDown();
-	void eventConstruct();
-	void EventErrorOccurred(class UErrorType* InErrorType);
-	void EventClipStatusChanged(int32_t InClipId, EGameClipsClipStatus InNewClipStatus);
-	void EventClippedDuringReplay();
-};
-
-// Class TAGame.EOSGameClipsManager_TA
-// 0x0108 (0x0060 - 0x0168)
-class UEOSGameClipsManager_TA : public UObject
-{
-public:
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Object;                     // 0x0060 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Interface;                  // 0x0068 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class UEOSGameClipsConfig_TA*                      GameClipsConfig;                               // 0x0070 (0x0008) [0x0001800000000000]               
-	class AGameEvent_TA*                               CurrentGameEvent;                              // 0x0078 (0x0008) [0x0001800000000000]               
-	class UOnlineSubsystem*                            OnlineSubsystem;                               // 0x0080 (0x0008) [0x0001800000000000]               
-	class FString                                      ClipType_Gameplay;                             // 0x0088 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipType_GoalReplay;                           // 0x0098 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipType_None;                                 // 0x00A8 (0x0010) [0x0001004000400002] (CPF_Const | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      CurrentClipType;                               // 0x00B8 (0x0010) [0x0009004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      PreviousClipType;                              // 0x00C8 (0x0010) [0x0001004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
-	uint32_t                                           bClippingAvailable : 1;                        // 0x00D8 (0x0004) [0x0009004000000000] [0x00000001] (CPF_PrivateWrite)
-	uint32_t                                           bEnableDebug : 1;                              // 0x00D8 (0x0004) [0x0001000000000000] [0x00000002] 
-	uint8_t                                          UnknownData00[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
-	class TArray<class FString>                        linkedAccounts;                                // 0x00E0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class TArray<class FString>                        InactiveAccounts;                              // 0x00F0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	float                                              MostRecentRecordingStartTime;                  // 0x0100 (0x0004) [0x0001000000000000]               
-	uint8_t                                          UnknownData01[0x4];                            // 0x0104 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventCreateGameClipInitiated__Delegate;      // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMaskStatusChanged__Delegate;            // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __CurrentClipType__ChangeNotify;               // 0x0138 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __bClippingAvailable__ChangeNotify;            // 0x0150 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.EOSGameClipsManager_TA"))
-	void __EOSGameClipsManager_TA__HandleGameEventChanged_0x1(class AGameEvent_TA* InGameEvent);
-	void __EOSGameClipsManager_TA__UpdateRecording_0x1();
-	void __bClippingAvailable__ChangeNotifyFunc();
-	void __CurrentClipType__ChangeNotifyFunc();
-	static bool IsSimulating();
-	bool IsCabinedClippingDisabled();
-	void UpdateRecording();
-	void HideMaskArea(uint64_t InMaskId);
-	uint64_t ShowMaskArea(const struct FGameClipsMaskArea& InMaskArea);
-	bool IsClippingInGoalReplay(const class FString& InGameClipInputType);
-	bool IsClippingInGameplay(const class FString& InGameClipInputType);
-	bool IsClippingInCorrectState(const class FString& InGameClipInputType);
-	bool IsAnyAccountActive();
-	bool IsAnyAccountLinked();
-	bool IsAccountLinked(const class FString& InAccountId);
-	void RemoveInactiveAccount(const class FString& InAccountId);
-	void AddInactiveAccount(const class FString& InAccountId);
-	void OnCaptureAvailabilityChange(bool bIsAvailable);
-	void HandleOnlineSubChanged();
-	void HandleGameStateChanged(const class FName& InStateName);
-	void HandleGameEventChanged();
-	void HandleGameClipsConfigChanged();
-	void HandleMaskStatusChanged(uint64_t InMaskAreaHandle, const struct FGameClipsMaskArea& InMaskArea, EGameClipsMaskStatus InNewMaskStatus);
-	void HandleConnectionStatusChanged(const class FString& InEpicAccountId, EGameClipsConnection InConnection, EGameClipsConnectionStatus InNewConnectionStatus);
-	void HandleRecordingChanged(EGameClipsRecording NewRecording);
-	void HandleAvailabilityChanged(EGameClipsAvailability NewAvailability);
-	void SetGameClipsInterface(class UOnlineGameClipsInterface* InGameClipsInterface);
-	void eventConstruct();
-	void EventMaskStatusChanged(uint64_t InMaskAreaHandle, const struct FGameClipsMaskArea& InMaskArea, EGameClipsMaskStatus InNewMaskStatus);
-	void EventCreateGameClipInitiated(const class FString& InEpicAccountId, int32_t InClipId, const class FString& InClipType);
-};
-
-// Class TAGame.EOSGameClipsSettingsSave_TA
-// 0x0008 (0x00CC - 0x00D4)
-class UEOSGameClipsSettingsSave_TA : public UJsonSaveObject_TA
-{
-public:
-	uint8_t                                          UnknownData00[0x4];                            // 0x00CC (0x0004) MISSED OFFSET
-	uint32_t                                           bLinkAccountPopupSeen : 1;                     // 0x00D0 (0x0004) [0x0001000000000000] [0x00000001] 
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.EOSGameClipsSettingsSave_TA"))
-};
-
 // Class TAGame.EOSShopPurchaseEvent_X
 // 0x0028 (0x0068 - 0x0090)
 class UEOSShopPurchaseEvent_X : public UEOSMetricEvent_X
@@ -43604,7 +43536,7 @@ public:
 	class ULocalPlayer_TA*                             Player;                                        // 0x0090 (0x0008) [0x0001000000000000]               
 	class TArray<class UJsonSaveObject_TA*>            RegisteredSettings;                            // 0x0098 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	int32_t                                            PayloadChecksum;                               // 0x00A8 (0x0004) [0x0001000000000000]               
-	int32_t                                            schemaVersion;                                 // 0x00AC (0x0004) [0x0001000000000000]               
+	int32_t                                            SchemaVersion;                                 // 0x00AC (0x0004) [0x0001000000000000]               
 	class UOnlineStorageConfig_TA*                     Config;                                        // 0x00B0 (0x0008) [0x0001800000000000]               
 	struct FScriptDelegate                             __EventSettingsSnapshotUpdated__Delegate;      // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
@@ -43633,18 +43565,21 @@ public:
 	class UEpicConfig_X*                               EpicConfig;                                    // 0x0060 (0x0008) [0x0000800000000000]               
 	class UPsyNetRetryConfig_X*                        RetryConfig;                                   // 0x0068 (0x0008) [0x0000800000000000]               
 	struct FPlayerPermissions                          Permissions;                                   // 0x0070 (0x0010) [0x0000008000000000] (CPF_ProtectedWrite)
-	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0080 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	class UNotificationSave_TA*                        NotificationSave;                              // 0x0088 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	class UProfileGameplaySave_TA*                     ProfileGameplaySave;                           // 0x0090 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	class UK3SUserPermissions_TA*                      DownloadedPermissions;                         // 0x0098 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	class FString                                      ServiceName;                                   // 0x00A0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class TArray<float>                                RetryDelays;                                   // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            PermissionRetryAttempts;                       // 0x00C0 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x4];                            // 0x00C4 (0x0004) MISSED OFFSET
-	class UWebRequest_X*                               ActivePermissionsRequest;                      // 0x00C8 (0x0008) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bPsyNetConnected : 1;                          // 0x00D0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bTargetedNewsUnSelectedFirstTime : 1;          // 0x00D0 (0x0004) [0x0000000000000000] [0x00000002] 
-	uint8_t                                          UnknownData01[0x4];                            // 0x00D4 (0x0004) MISSED OFFSET
+	uint32_t                                           bPolicyRestricted : 1;                         // 0x0080 (0x0004) [0x0001000000000000] [0x00000001] 
+	uint32_t                                           bRemediationJustCompleted : 1;                 // 0x0080 (0x0004) [0x0001000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bPolicyRemediationOpened : 1;                  // 0x0080 (0x0004) [0x0001000000002000] [0x00000004] (CPF_Transient)
+	uint32_t                                           bPsyNetConnected : 1;                          // 0x0080 (0x0004) [0x0000000000002000] [0x00000008] (CPF_Transient)
+	uint32_t                                           bTargetedNewsUnSelectedFirstTime : 1;          // 0x0080 (0x0004) [0x0000000000000000] [0x00000010] 
+	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
+	class UGameplaySettingsSave_TA*                    GameplaySettingsSave;                          // 0x0088 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UNotificationSave_TA*                        NotificationSave;                              // 0x0090 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UProfileGameplaySave_TA*                     ProfileGameplaySave;                           // 0x0098 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UK3SUserPermissions_TA*                      DownloadedPermissions;                         // 0x00A0 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class FString                                      ServiceName;                                   // 0x00A8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class TArray<float>                                RetryDelays;                                   // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PermissionRetryAttempts;                       // 0x00C8 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x00CC (0x0004) MISSED OFFSET
+	class UWebRequest_X*                               ActivePermissionsRequest;                      // 0x00D0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class FString                                      EnhancedVoiceReportingString;                  // 0x00D8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class FString                                      VoiceReportingOnString;                        // 0x00E8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class FString                                      TextString;                                    // 0x00F8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
@@ -43712,7 +43647,8 @@ public:
 	class FString DoStringConversion(const class FString& InValue, const struct FScriptDelegate& ConversionDelegate);
 	void LogPermission(const struct FK3SSetting& Setting, const class FString& InterpretedValue, const struct FScriptDelegate& ConversionDelegate);
 	void UpdatePlayerPermissions();
-	void RequestEOSPermissions();
+	void SetDownloadedPermissions(class UK3SUserPermissions_TA* InDownloadedPermissions);
+	void RequestEOSPermissions(bool optionalBPolicyValidationOnly);
 	void HandlePsyNetConnected(class UPsyNetConnection_X* C);
 	void CopyPrimaryPlayerPermissions(ERequestResolvedStatus optionalStatus);
 	void HandleSaveObjectChanged();
@@ -43755,6 +43691,7 @@ public:
 	uint32_t                                           bAllowTargetedNews_Functional : 1;             // 0x00D0 (0x0004) [0x0001000000000000] [0x00000200] 
 	uint32_t                                           bHideHUD : 1;                                  // 0x00D0 (0x0004) [0x0001000000000000] [0x00000400] 
 	uint32_t                                           bAutoSkipGoalReplay : 1;                       // 0x00D0 (0x0004) [0x0001000000000000] [0x00000800] 
+	uint32_t                                           bPolicyRemediationPreviouslyIssued : 1;        // 0x00D0 (0x0004) [0x0001000000000000] [0x00001000] 
 	EHUDMessageLevel                                   HUDMessageThreshold;                           // 0x00D4 (0x0001) [0x0000000000000000]               
 	ERankInfoDisplayType                               RankInfoDisplayType;                           // 0x00D5 (0x0001) [0x0000000000000000]               
 	ENameplateMode                                     NameplateMode;                                 // 0x00D6 (0x0001) [0x0000000000000000]               
@@ -46994,23 +46931,23 @@ public:
 };
 
 // Class TAGame.GFxHUD_Spectator_TA
-// 0x0060 (0x0538 - 0x0598)
+// 0x0060 (0x0530 - 0x0590)
 class AGFxHUD_Spectator_TA : public AGFxHUD_TA
 {
 public:
-	class UGFxData_ReplayViewer_TA*                    ViewerData;                                    // 0x0538 (0x0008) [0x0000000000002000] (CPF_Transient)
-	float                                              ZoomSpeed;                                     // 0x0540 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              ZoomClickTime;                                 // 0x0544 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	class AGFxHUD_TA*                                  GameHUD;                                       // 0x0548 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class APRI_TA*                                     TargetPlayerPRI;                               // 0x0550 (0x0008) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bZoomIn : 1;                                   // 0x0558 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bZoomOut : 1;                                  // 0x0558 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
-	uint32_t                                           bReplayTimeSkipped : 1;                        // 0x0558 (0x0004) [0x0000000000000000] [0x00000004] 
-	float                                              ZoomInTime;                                    // 0x055C (0x0004) [0x0000000000002000] (CPF_Transient)
-	float                                              ZoomOutTime;                                   // 0x0560 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData00[0x4];                            // 0x0564 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __EventTargetPlayerPRIChanged__Delegate;       // 0x0568 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OpenMenuWithKeycodeDelegate__Delegate;       // 0x0580 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UGFxData_ReplayViewer_TA*                    ViewerData;                                    // 0x0530 (0x0008) [0x0000000000002000] (CPF_Transient)
+	float                                              ZoomSpeed;                                     // 0x0538 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              ZoomClickTime;                                 // 0x053C (0x0004) [0x0000000000000001] (CPF_Edit)    
+	class AGFxHUD_TA*                                  GameHUD;                                       // 0x0540 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class APRI_TA*                                     TargetPlayerPRI;                               // 0x0548 (0x0008) [0x0000000000002000] (CPF_Transient)
+	uint32_t                                           bZoomIn : 1;                                   // 0x0550 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bZoomOut : 1;                                  // 0x0550 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bReplayTimeSkipped : 1;                        // 0x0550 (0x0004) [0x0000000000000000] [0x00000004] 
+	float                                              ZoomInTime;                                    // 0x0554 (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              ZoomOutTime;                                   // 0x0558 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData00[0x4];                            // 0x055C (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __EventTargetPlayerPRIChanged__Delegate;       // 0x0560 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OpenMenuWithKeycodeDelegate__Delegate;       // 0x0578 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_Spectator_TA"))
@@ -47845,104 +47782,6 @@ public:
 	void HandleConfigChanged();
 };
 
-// Class TAGame.GFxData_EOSGameClipsConfig_TA
-// 0x0008 (0x0098 - 0x00A0)
-class UGFxData_EOSGameClipsConfig_TA : public UGFxDataSingleton_X
-{
-public:
-	class UEOSGameClipsConfig_TA*                      GameClipsConfig;                               // 0x0098 (0x0008) [0x0001800000000000]               
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_EOSGameClipsConfig_TA"))
-	void HandleGameClipsConfigChanged();
-};
-
-// Class TAGame.GFxData_EOSGameClipsController_TA
-// 0x0060 (0x0098 - 0x00F8)
-class UGFxData_EOSGameClipsController_TA : public UGFxDataSingleton_X
-{
-public:
-	class UEOSGameClipsManager_TA*                     GameClipsManager;                              // 0x0098 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-	class UEOSGameClipsController_TA*                  GameClipsController;                           // 0x00A0 (0x0008) [0x0001004000000000] (CPF_PrivateWrite)
-	class FString                                      StartClippingMessage;                          // 0x00A8 (0x0010) [0x0001004000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipUploadedMessage;                           // 0x00B8 (0x0010) [0x0001004000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipFailedMessage;                             // 0x00C8 (0x0010) [0x0001004000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipsUploadingMessage;                         // 0x00D8 (0x0010) [0x0001004000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink | CPF_PrivateWrite)
-	class FString                                      ClipAfterReplayMessage;                        // 0x00E8 (0x0010) [0x0001004000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink | CPF_PrivateWrite)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_EOSGameClipsController_TA"))
-	void __GFxData_EOSGameClipsController_TA__InitGameClipsController_0x1(class UPlayer* P);
-	void __GFxData_EOSGameClipsController_TA__HandleEOSGameClipsControllerChanged_0x1();
-	bool ShouldShowGoalReplayClippingButton();
-	void RemoveMaskedArea(uint64_t MaskedAreaId);
-	uint64_t AddMaskedArea(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	static bool IsMaskedAreaValid(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	static class FString GetMaskAsString(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	void AddHUDMessage(const class FString& InChatMessage);
-	void HandleErrorOccurred(class UErrorType* InErrorType);
-	void HandleBindingsChanged(class UPlayerInput_X* PlayerInput);
-	void HandleClipStatusChanged(int32_t InClipId, EGameClipsClipStatus InNewClipStatus);
-	void HandleEOSGameClipsControllerChanged();
-	void InitGameClipsController();
-	void eventOnRemoved();
-	void eventOnShellSet();
-};
-
-// Class TAGame.GFxData_EOSGameClipsLocalPlayer_TA
-// 0x0018 (0x0098 - 0x00B0)
-class UGFxData_EOSGameClipsLocalPlayer_TA : public UGFxDataSingleton_X
-{
-public:
-	class UEOSGameClipsManager_TA*                     GameClipsManager;                              // 0x0098 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-	class UEOSGameClipsConfig_TA*                      GameClipsConfig;                               // 0x00A0 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-	class AGameEvent_TA*                               CurrentGameEvent;                              // 0x00A8 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_EOSGameClipsLocalPlayer_TA"))
-	void __GFxData_EOSGameClipsLocalPlayer_TA__GameClipsManagerChanged_0x1();
-	void SetLinkAccountPopupShown(bool bLinkAccountPopupShown);
-	bool ShouldShowLinkAccountPopup();
-	bool ShouldAllowExternalLinks();
-	bool ShouldShowInSettingsMenu();
-	bool IsAccountLinked();
-	bool IsUserEligibleForClipping();
-	bool IsAccountInCabinedMode();
-	class FString GetEpicAccountId();
-	void GameEventChanged();
-	void GameClipsManagerChanged();
-	void eventOnRemoved();
-	void eventOnShellSet();
-};
-
-// Class TAGame.GFxData_EOSGameClipsMaskArea_TA
-// 0x0024 (0x0098 - 0x00BC)
-class UGFxData_EOSGameClipsMaskArea_TA : public UGFxDataSingleton_X
-{
-public:
-	class UEOSGameClipsManager_TA*                     GameClipsManager;                              // 0x0098 (0x0008) [0x0001804000000000] (CPF_PrivateWrite)
-	class TArray<struct FGameClipsMaskArea>            ActiveMaskAreas;                               // 0x00A0 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	class UCanvas*                                     DrawableCanvas;                                // 0x00B0 (0x0008) [0x0001000000000000]               
-	struct FColor                                      DebugDrawColor;                                // 0x00B8 (0x0004) [0x0001000000000002] (CPF_Const)   
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_EOSGameClipsMaskArea_TA"))
-	void __GFxData_EOSGameClipsMaskArea_TA__DrawDebugMaskAreas_0x1(const struct FGameClipsMaskArea& MaskArea);
-	bool IsDebugEnabled();
-	void OnMaskedAreaRemoved(uint64_t MaskedAreaId, float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	void OnMaskedAreaAdded(uint64_t MaskedAreaId, float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	void RemoveMaskedArea(uint64_t MaskedAreaId);
-	uint64_t AddMaskedArea(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	static bool IsMaskedAreaValid(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	static class FString GetMaskAsString(float InTopLeftX, float InTopLeftY, float InBottomRightX, float InBottomRightY);
-	void DrawMaskArea(const struct FGameClipsMaskArea& InMaskArea);
-	void DrawDebugMaskAreas(class AHUD* InHUD);
-	void HandleMaskStatusChanged(uint64_t InMaskAreaHandle, const struct FGameClipsMaskArea& InMaskArea, EGameClipsMaskStatus InNewMaskStatus);
-	void HandleGameClipsManagerChanged();
-	void eventOnRemoved();
-	void eventOnShellSet();
-};
-
 // Class TAGame.__GFxData_EOSVoiceRoom_TA__SendChatNotification_0x1
 // 0x0048 (0x0060 - 0x00A8)
 class U__GFxData_EOSVoiceRoom_TA__SendChatNotification_0x1 : public UObject
@@ -48405,6 +48244,7 @@ public:
 	uint32_t                                           bMatchCreatorAdminEnabled : 1;                 // 0x00A4 (0x0004) [0x0001000040000000] [0x01000000] (CPF_DataBinding)
 	uint32_t                                           bThistleMatch : 1;                             // 0x00A4 (0x0004) [0x0001000040000000] [0x02000000] (CPF_DataBinding)
 	uint32_t                                           bAntiCheatTerminated : 1;                      // 0x00A4 (0x0004) [0x0001000040000000] [0x04000000] (CPF_DataBinding)
+	uint32_t                                           bAllowHonorDuels : 1;                          // 0x00A4 (0x0004) [0x0001000040000000] [0x08000000] (CPF_DataBinding)
 	class FString                                      MatchState;                                    // 0x00A8 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FName                                        GameState;                                     // 0x00B8 (0x0008) [0x0000000040000000] (CPF_DataBinding)
 	class FName                                        MatchType;                                     // 0x00C0 (0x0008) [0x0000000040000000] (CPF_DataBinding)
@@ -50269,7 +50109,7 @@ public:
 };
 
 // Class TAGame.GFxData_PlayerRecord_TA
-// 0x008C (0x0094 - 0x0120)
+// 0x00A4 (0x0094 - 0x0138)
 class UGFxData_PlayerRecord_TA : public UGFxDataRow_X
 {
 public:
@@ -50279,8 +50119,10 @@ public:
 	uint8_t                                          UnknownData01[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
 	class FString                                      SanitizedPlayerName;                           // 0x00B0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FString                                      PlayerName;                                    // 0x00C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class APRI_TA*                                     PRI;                                           // 0x00D0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	struct FUniqueNetId                                PlayerID;                                      // 0x00D8 (0x0048) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class FString                                      AnonymizedPlayerName;                          // 0x00D0 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class APRI_TA*                                     PRI;                                           // 0x00E0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
+	struct FUniqueNetId                                PlayerID;                                      // 0x00E8 (0x0048) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
+	class UProfileGameplaySave_TA*                     ProfileGameplaySettings;                       // 0x0130 (0x0008) [0x0000000000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxData_PlayerRecord_TA"))
@@ -50288,11 +50130,15 @@ public:
 	void ReportSeveralReasons(const class TArray<uint8_t>& Reasons);
 	void Report(uint8_t Reason);
 	void HandleUniqueIdChanged(class APRI_X* InPRI);
+	void UpdateAnonymizedName();
 	void HandlePlayerNameSanitized(const class FString& Original, const class FString& Sanitized);
 	void HandlePlayerNameChanged(class APRI_X* InPRI);
 	void eventOnRemoved();
 	void SetPRI(class APRI_TA* InPRI);
 	class UOnlineGame_X* GetOnlineGame();
+	void HandleGameplaySettingsLoaded(class UProfileGameplaySave_TA* Settings);
+	void HandleProfileSet(class ULocalPlayer_TA* InLocalPlayer);
+	void eventOnShellSet();
 };
 
 // Class TAGame.GFxData_PlayerReport_TA
@@ -51673,6 +51519,7 @@ public:
 	class FString GetInvalidShopRegionWarning(class UGFxData_ShopCatalogue_TA* Shop);
 	class FString GetNoShopItemsWarning(class UGFxData_ShopCatalogue_TA* Shop);
 	bool ValidateShop(class UGFxData_ShopCatalogue_TA* Shop);
+	bool IsValidEsportsTeamShop(class UGFxData_ShopCatalogue_TA* Shop);
 	bool IsValidEsportsTeamRegion(const class FString& InRegion);
 	class FString GetEsportsTeamRegion(class UGFxData_ShopCatalogue_TA* EsportsTeamRow);
 	void eventConstruct();
@@ -52211,6 +52058,18 @@ public:
 	void Init(class AGameEvent_TrainingEditor_TA* InTrainingEditor);
 	bool ValidateRound(const struct FEditorRoundData& RoundData);
 	void EventProgressSet(class UTrainingPackProgress_TA* NewProgress, class UTrainingPackProgress_TA* OldProgress);
+};
+
+// Class TAGame.__GFxData_Training_TA__PlayFreeplayMap_0x1
+// 0x0008 (0x0060 - 0x0068)
+class U__GFxData_Training_TA__PlayFreeplayMap_0x1 : public UObject
+{
+public:
+	class FName                                        Map;                                           // 0x0060 (0x0008) [0x0000000000000000]               
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__GFxData_Training_TA__PlayFreeplayMap_0x1"))
+	bool __GFxData_Training_TA__PlayFreeplayMap_0x1(class UMapData_TA* P);
 };
 
 // Class TAGame.GFxData_TrainingMode_TA
@@ -52833,12 +52692,12 @@ public:
 };
 
 // Class TAGame.GFxHUD_GameEditor_TA
-// 0x0010 (0x0538 - 0x0548)
+// 0x0010 (0x0530 - 0x0540)
 class AGFxHUD_GameEditor_TA : public AGFxHUD_TA
 {
 public:
-	class UGFxData_TrainingModeEditor_TA*              EditorData;                                    // 0x0538 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	class AGameEvent_TrainingEditor_TA*                TrainingGameEvent;                             // 0x0540 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class UGFxData_TrainingModeEditor_TA*              EditorData;                                    // 0x0530 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class AGameEvent_TrainingEditor_TA*                TrainingGameEvent;                             // 0x0538 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_GameEditor_TA"))
@@ -52848,13 +52707,13 @@ public:
 };
 
 // Class TAGame.GFxHUD_Soccar_TA
-// 0x0018 (0x0538 - 0x0550)
+// 0x0018 (0x0530 - 0x0548)
 class AGFxHUD_Soccar_TA : public AGFxHUD_TA
 {
 public:
-	class AGameEvent_Soccar_TA*                        SoccarGame;                                    // 0x0538 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	class UGFxData_ServerPerformanceStats_TA*          GFxServerPerformanceStats;                     // 0x0540 (0x0008) [0x0000000000000000]               
-	class UPreMatchLobby_TA*                           PreMatchLobby;                                 // 0x0548 (0x0008) [0x0001000000000000]               
+	class AGameEvent_Soccar_TA*                        SoccarGame;                                    // 0x0530 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class UGFxData_ServerPerformanceStats_TA*          GFxServerPerformanceStats;                     // 0x0538 (0x0008) [0x0000000000000000]               
+	class UPreMatchLobby_TA*                           PreMatchLobby;                                 // 0x0540 (0x0008) [0x0001000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_Soccar_TA"))
@@ -52885,21 +52744,21 @@ public:
 };
 
 // Class TAGame.GFxHUD_KnockOut_TA
-// 0x0038 (0x0550 - 0x0588)
+// 0x0038 (0x0548 - 0x0580)
 class AGFxHUD_KnockOut_TA : public AGFxHUD_Soccar_TA
 {
 public:
-	class AGameEvent_KnockOut_TA*                      KnockOutGame;                                  // 0x0550 (0x0008) [0x0001008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	class UGFxData_CarKnockOut_TA*                     KnockOutCarData;                               // 0x0558 (0x0008) [0x0001008000002000] (CPF_Transient | CPF_ProtectedWrite)
-	class UGameViewportClient_TA*                      ViewportClient;                                // 0x0560 (0x0008) [0x0001000000002000] (CPF_Transient)
-	int32_t                                            DefaultMinZOffsetValue;                        // 0x0568 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            DefaultMaxZOffsetValue;                        // 0x056C (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            LowMinZOffsetClampValue;                       // 0x0570 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            HighMinZOffsetClampValue;                      // 0x0574 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            LowMaxZOffsetClampValue;                       // 0x0578 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            HighMaxZOffsetClampValue;                      // 0x057C (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            MinSqDistance;                                 // 0x0580 (0x0004) [0x0001000000000001] (CPF_Edit)    
-	int32_t                                            MaxSqDistance;                                 // 0x0584 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	class AGameEvent_KnockOut_TA*                      KnockOutGame;                                  // 0x0548 (0x0008) [0x0001008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class UGFxData_CarKnockOut_TA*                     KnockOutCarData;                               // 0x0550 (0x0008) [0x0001008000002000] (CPF_Transient | CPF_ProtectedWrite)
+	class UGameViewportClient_TA*                      ViewportClient;                                // 0x0558 (0x0008) [0x0001000000002000] (CPF_Transient)
+	int32_t                                            DefaultMinZOffsetValue;                        // 0x0560 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            DefaultMaxZOffsetValue;                        // 0x0564 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            LowMinZOffsetClampValue;                       // 0x0568 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            HighMinZOffsetClampValue;                      // 0x056C (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            LowMaxZOffsetClampValue;                       // 0x0570 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            HighMaxZOffsetClampValue;                      // 0x0574 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            MinSqDistance;                                 // 0x0578 (0x0004) [0x0001000000000001] (CPF_Edit)    
+	int32_t                                            MaxSqDistance;                                 // 0x057C (0x0004) [0x0001000000000001] (CPF_Edit)    
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_KnockOut_TA"))
@@ -52915,15 +52774,15 @@ public:
 };
 
 // Class TAGame.GFxHUD_Replay_TA
-// 0x0020 (0x0598 - 0x05B8)
+// 0x0020 (0x0590 - 0x05B0)
 class AGFxHUD_Replay_TA : public AGFxHUD_Spectator_TA
 {
 public:
-	class AGameInfo_Replay_TA*                         Game;                                          // 0x0598 (0x0008) [0x0000000000002000] (CPF_Transient)
-	float                                              PrevKeyframeBufferTime;                        // 0x05A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bUserPaused : 1;                               // 0x05A4 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bPausedForEndOfReplay : 1;                     // 0x05A4 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
-	class TArray<class UProductAsset_TA*>              ReferencedProducts;                            // 0x05A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class AGameInfo_Replay_TA*                         Game;                                          // 0x0590 (0x0008) [0x0000000000002000] (CPF_Transient)
+	float                                              PrevKeyframeBufferTime;                        // 0x0598 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint32_t                                           bUserPaused : 1;                               // 0x059C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bPausedForEndOfReplay : 1;                     // 0x059C (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	class TArray<class UProductAsset_TA*>              ReferencedProducts;                            // 0x05A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_Replay_TA"))
@@ -52948,7 +52807,7 @@ public:
 };
 
 // Class TAGame.GFxHUD_Season_TA
-// 0x0000 (0x0550 - 0x0550)
+// 0x0000 (0x0548 - 0x0548)
 class AGFxHUD_Season_TA : public AGFxHUD_Soccar_TA
 {
 public:
@@ -52958,11 +52817,11 @@ public:
 };
 
 // Class TAGame.GFxHUD_Training_TA
-// 0x0008 (0x0550 - 0x0558)
+// 0x0008 (0x0548 - 0x0550)
 class AGFxHUD_Training_TA : public AGFxHUD_Soccar_TA
 {
 public:
-	class UGFxData_Training_TA*                        TrainingData;                                  // 0x0550 (0x0008) [0x0000000000000000]               
+	class UGFxData_Training_TA*                        TrainingData;                                  // 0x0548 (0x0008) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.GFxHUD_Training_TA"))
@@ -54204,22 +54063,22 @@ public:
 };
 
 // Class TAGame.SpecialAttachment_TA
-// 0x0038 (0x07C0 - 0x07F8)
+// 0x0038 (0x07D8 - 0x0810)
 class ASpecialAttachment_TA : public ARBActor_TA
 {
 public:
-	struct FVector                                     Offset;                                        // 0x07C0 (0x000C) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData00[0x4];                            // 0x07CC (0x0004) MISSED OFFSET
-	class UStaticMeshComponent*                        StaticMesh;                                    // 0x07D0 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	float                                              BallHitMultiplier;                             // 0x07D8 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              CarHitMultiplier;                              // 0x07DC (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              CarHitVerticalMultiplier;                      // 0x07E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	float                                              CarHitTorque;                                  // 0x07E4 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bUseCarsBump : 1;                              // 0x07E8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bDemolishOnHit : 1;                            // 0x07E8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bDemolishTeam : 1;                             // 0x07E8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint8_t                                          UnknownData01[0x4];                            // 0x07EC (0x0004) MISSED OFFSET
-	class ACar_TA*                                     AttachedCar;                                   // 0x07F0 (0x0008) [0x0000000000002020] (CPF_Net | CPF_Transient)
+	struct FVector                                     Offset;                                        // 0x07D8 (0x000C) [0x0000000000000001] (CPF_Edit)    
+	uint8_t                                          UnknownData00[0x4];                            // 0x07E4 (0x0004) MISSED OFFSET
+	class UStaticMeshComponent*                        StaticMesh;                                    // 0x07E8 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	float                                              BallHitMultiplier;                             // 0x07F0 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              CarHitMultiplier;                              // 0x07F4 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              CarHitVerticalMultiplier;                      // 0x07F8 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              CarHitTorque;                                  // 0x07FC (0x0004) [0x0000000000000001] (CPF_Edit)    
+	uint32_t                                           bUseCarsBump : 1;                              // 0x0800 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bDemolishOnHit : 1;                            // 0x0800 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bDemolishTeam : 1;                             // 0x0800 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint8_t                                          UnknownData01[0x4];                            // 0x0804 (0x0004) MISSED OFFSET
+	class ACar_TA*                                     AttachedCar;                                   // 0x0808 (0x0008) [0x0000000000002020] (CPF_Net | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SpecialAttachment_TA"))
@@ -54575,13 +54434,18 @@ public:
 };
 
 // Class TAGame.TrackerWallDynamicMeshActor_TA
-// 0x0000 (0x0270 - 0x0270)
+// 0x0020 (0x0270 - 0x0290)
 class ATrackerWallDynamicMeshActor_TA : public ADynamicMeshActor_TA
 {
 public:
+	class UStaticMeshComponent*                        WallBorder;                                    // 0x0270 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UStaticMeshComponent*                        WallGlow;                                      // 0x0278 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UStaticMeshComponent*                        WallMesh;                                      // 0x0280 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class APylon_Soccar_TA*                            MapPylon;                                      // 0x0288 (0x0008) [0x0000800000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.TrackerWallDynamicMeshActor_TA"))
+	void HandlePylonAdded();
 };
 
 // Class TAGame.NameplateComponentMatinee_TA
@@ -55339,7 +55203,7 @@ public:
 };
 
 // Class TAGame.PlayerController_KnockOut_TA
-// 0x0000 (0x0DC8 - 0x0DC8)
+// 0x0000 (0x0D88 - 0x0D88)
 class APlayerController_KnockOut_TA : public APlayerController_TA
 {
 public:
@@ -55588,7 +55452,7 @@ public:
 };
 
 // Class TAGame.PRI_Breakout_TA
-// 0x0000 (0x0D40 - 0x0D40)
+// 0x0000 (0x0D60 - 0x0D60)
 class APRI_Breakout_TA : public APRI_TA
 {
 public:
@@ -55599,7 +55463,7 @@ public:
 };
 
 // Class TAGame.PRI_KeepUp_TA
-// 0x0000 (0x0D40 - 0x0D40)
+// 0x0000 (0x0D60 - 0x0D60)
 class APRI_KeepUp_TA : public APRI_TA
 {
 public:
@@ -55610,7 +55474,7 @@ public:
 };
 
 // Class TAGame.PRI_Possession_TA
-// 0x0000 (0x0D40 - 0x0D40)
+// 0x0000 (0x0D60 - 0x0D60)
 class APRI_Possession_TA : public APRI_TA
 {
 public:
@@ -59264,6 +59128,18 @@ public:
 	void PostBeginPlay();
 };
 
+// Class TAGame.SocketCommandManager_TA
+// 0x0010 (0x0060 - 0x0070)
+class USocketCommandManager_TA : public UObject
+{
+public:
+	class TArray<class UClass*>                        PossibleCommands;                              // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommandManager_TA"))
+	void ProcessCommand(class FString& outCommandJson);
+};
+
 // Class TAGame._StatsAPITypes_TA
 // 0x0000 (0x0060 - 0x0060)
 class U_StatsAPITypes_TA : public UObject
@@ -59326,6 +59202,18 @@ public:
 	bool __AntiCheatMessenger_TA__HandleIncomingMessagePart_0x1(const struct FAntiCheatMessage& P);
 };
 
+// Class TAGame.OnlineSettingsMetadata_TA
+// 0x0008 (0x0060 - 0x0068)
+class UOnlineSettingsMetadata_TA : public UObject
+{
+public:
+	int32_t                                            SchemaVersion;                                 // 0x0060 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x0064 (0x0004) [0x0001000000000000]               
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.OnlineSettingsMetadata_TA"))
+};
+
 // Class TAGame.__SpecialEvent_TA__SyncImageForIndex_0x1
 // 0x0004 (0x0060 - 0x0064)
 class U__SpecialEvent_TA__SyncImageForIndex_0x1 : public UObject
@@ -59336,6 +59224,127 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__SpecialEvent_TA__SyncImageForIndex_0x1"))
 	void __SpecialEvent_TA__SyncImageForIndex_0x1(class UTexture2DDynamic* Texture);
+};
+
+// Class TAGame.__SocketCommandManager_TA__ProcessCommand_0x1
+// 0x0010 (0x0060 - 0x0070)
+class U__SocketCommandManager_TA__ProcessCommand_0x1 : public UObject
+{
+public:
+	class FString                                      Command;                                       // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__SocketCommandManager_TA__ProcessCommand_0x1"))
+	bool __SocketCommandManager_TA__ProcessCommand_0x1(class UClass* P);
+};
+
+// Class TAGame.SocketCommand_TA
+// 0x0010 (0x0060 - 0x0070)
+class USocketCommand_TA : public UObject
+{
+public:
+	class FString                                      Command;                                       // 0x0060 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_TA"))
+	static class UGFxData_ReplayViewer_TA* GetReplayViewer();
+	bool CanApply(class UJsonObject* CommandJson);
+	void Apply();
+};
+
+// Class TAGame.SocketCommand_HUDVisibility_TA
+// 0x0004 (0x0070 - 0x0074)
+class USocketCommand_HUDVisibility_TA : public USocketCommand_TA
+{
+public:
+	uint32_t                                           bVisible : 1;                                  // 0x0070 (0x0004) [0x0001000000000000] [0x00000001] 
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_HUDVisibility_TA"))
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_LoadReplay_TA
+// 0x0020 (0x0070 - 0x0090)
+class USocketCommand_LoadReplay_TA : public USocketCommand_TA
+{
+public:
+	class FString                                      Filename;                                      // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Path;                                          // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_LoadReplay_TA"))
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_ChangePOV_TA
+// 0x0020 (0x0070 - 0x0090)
+class USocketCommand_ChangePOV_TA : public USocketCommand_TA
+{
+public:
+	class FString                                      Focus;                                         // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Perspective;                                   // 0x0080 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_ChangePOV_TA"))
+	bool IsNumeric(const class FString& S);
+	class FString GetFocusActorString(class APRI_TA* PRI);
+	class APRI_TA* GetPRIForShortcut(int32_t InShortcut);
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_Replay_TA
+// 0x0000 (0x0070 - 0x0070)
+class USocketCommand_Replay_TA : public USocketCommand_TA
+{
+public:
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_Replay_TA"))
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_SeekReplay_TA
+// 0x0008 (0x0070 - 0x0078)
+class USocketCommand_SeekReplay_TA : public USocketCommand_Replay_TA
+{
+public:
+	int32_t                                            frame;                                         // 0x0070 (0x0004) [0x0001000000000000]               
+	float                                              TimeSeconds;                                   // 0x0074 (0x0004) [0x0001000000000000]               
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_SeekReplay_TA"))
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_PauseMatch_TA
+// 0x0004 (0x0070 - 0x0074)
+class USocketCommand_PauseMatch_TA : public USocketCommand_TA
+{
+public:
+	uint32_t                                           bPaused : 1;                                   // 0x0070 (0x0004) [0x0001000000000000] [0x00000001] 
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_PauseMatch_TA"))
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
+};
+
+// Class TAGame.SocketCommand_GameSpeed_TA
+// 0x0004 (0x0070 - 0x0074)
+class USocketCommand_GameSpeed_TA : public USocketCommand_Replay_TA
+{
+public:
+	float                                              Speed;                                         // 0x0070 (0x0004) [0x0001000000000000]               
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.SocketCommand_GameSpeed_TA"))
+	void Apply();
+	bool CanApply(class UJsonObject* CommandJson);
 };
 
 // Class TAGame.__TargetFindConfig_TA__IsActiveForPlaylist_0x1

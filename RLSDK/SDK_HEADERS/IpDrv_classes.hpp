@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -422,19 +422,19 @@ public:
 };
 
 // Class IpDrv.OnlineSubsystemCommonImpl
-// 0x0048 (0x0378 - 0x03C0)
+// 0x0048 (0x0368 - 0x03B0)
 class UOnlineSubsystemCommonImpl : public UOnlineSubsystem
 {
 public:
-	struct FPointer                                    VoiceEngine;                                   // 0x0378 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	int32_t                                            MaxLocalTalkers;                               // 0x0380 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            MaxRemoteTalkers;                              // 0x0384 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint32_t                                           bIsUsingSpeechRecognition : 1;                 // 0x0388 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
-	uint8_t                                          UnknownData00[0x4];                            // 0x038C (0x0004) MISSED OFFSET
-	class UOnlineGameInterfaceImpl*                    GameInterfaceImpl;                             // 0x0390 (0x0008) [0x0000000000000000]               
-	class UOnlineAuthInterfaceImpl*                    AuthInterfaceImpl;                             // 0x0398 (0x0008) [0x0000000000000000]               
-	class UOnlinePurchaseInterfaceImpl*                PurchaseInterfaceImpl;                         // 0x03A0 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x03A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPointer                                    VoiceEngine;                                   // 0x0368 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	int32_t                                            MaxLocalTalkers;                               // 0x0370 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            MaxRemoteTalkers;                              // 0x0374 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint32_t                                           bIsUsingSpeechRecognition : 1;                 // 0x0378 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint8_t                                          UnknownData00[0x4];                            // 0x037C (0x0004) MISSED OFFSET
+	class UOnlineGameInterfaceImpl*                    GameInterfaceImpl;                             // 0x0380 (0x0008) [0x0000000000000000]               
+	class UOnlineAuthInterfaceImpl*                    AuthInterfaceImpl;                             // 0x0388 (0x0008) [0x0000000000000000]               
+	class UOnlinePurchaseInterfaceImpl*                PurchaseInterfaceImpl;                         // 0x0390 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x0398 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineSubsystemCommonImpl"))

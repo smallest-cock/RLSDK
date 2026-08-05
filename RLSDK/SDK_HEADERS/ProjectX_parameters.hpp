@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -8832,6 +8832,17 @@ struct UPsyNetUrl_X_execGetURL_Params
 	uint8_t                                            Environment;                                      // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      ReturnValue;                                      // 0x0008 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.QREnconder_X.BuildForURL
+// [0x00026401] 
+struct UQREnconder_X_execBuildForURL_Params
+{
+	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UObject*                                     Owner;                                            // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	int32_t                                            ScaleFactor;                                      // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UTexture*                                    ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.RandomStream_X.SetCurrentSeed
@@ -28418,15 +28429,6 @@ struct UOnlineGamePrivateMatch_X_execHandleSearchTimeout_Params
 {
 };
 
-// Function ProjectX.OnlineGamePrivateMatch_X.__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1
-// [0x40042003] 
-struct UOnlineGamePrivateMatch_X_exec__OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1_Params
-{
-	class URegionPing_X*                               A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	class URegionPing_X*                               B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
 // Function ProjectX.OnlineGamePrivateMatch_X.GetPrivateMatchMakingRequest
 // [0x00840003] 
 struct UOnlineGamePrivateMatch_X_execGetPrivateMatchMakingRequest_Params
@@ -28456,6 +28458,15 @@ struct UOnlineGamePrivateMatch_X_execGetPreferredRegion_Params
 {
 	class FString                                      SelectedRegion;                                   // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGamePrivateMatch_X.CompareSubRegionsByPingPreference
+// [0x00082003] 
+struct UOnlineGamePrivateMatch_X_execCompareSubRegionsByPingPreference_Params
+{
+	class URegionPing_X*                               A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class URegionPing_X*                               B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.OnlineGamePrivateMatch_X.GetPreferredSubRegions
@@ -30054,7 +30065,7 @@ struct URPC_LoginAuthPlayer_X_execSetAsPrimaryAccount_Params
 // [0x00020003] 
 struct URPC_LoginAuthPlayer_X_execSetEpicAccountId_Params
 {
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      InEpicAccountID;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class URPC_LoginAuthPlayer_X*                      ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 

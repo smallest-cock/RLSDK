@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -15670,6 +15670,13 @@ struct UOnlineProfileSettings_execGetProfileSettingDefaultId_Params
 	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function Engine.OnlineSessionManager.GetExtraMatchDataString
+// [0x00020800] 
+struct UOnlineSessionManager_eventGetExtraMatchDataString_Params
+{
+	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
 // Function Engine.OnlineSessionManager.CanCrossplayTextChat
 // [0x00020800] 
 struct UOnlineSessionManager_eventCanCrossplayTextChat_Params
@@ -16453,14 +16460,6 @@ struct UOnlineSubsystem_eventSetNewsInterface_Params
 struct UOnlineSubsystem_eventSetStatsInterface_Params
 {
 	class UObject*                                     NewInterface;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineSubsystem.SetGameClipsInterface
-// [0x00020803] 
-struct UOnlineSubsystem_eventSetGameClipsInterface_Params
-{
-	class UObject*                                     InGameClipsInterface;                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
@@ -36111,202 +36110,6 @@ struct UOnlineStatsInterface_execReadOnlineStats_Params
 	class TArray<struct FUniqueNetId>                  Players;                                          // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UOnlineStatsRead*                            StatsRead;                                        // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventClipErrorOccurred
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventClipErrorOccurred_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventClipErrorOccurred
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventClipErrorOccurred_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            ClipId;                                           // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class UErrorType*                                  InErrorType;                                      // 0x0018 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventGeneralErrorOccurred
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventGeneralErrorOccurred_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventGeneralErrorOccurred
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventGeneralErrorOccurred_Params
-{
-	class UErrorType*                                  InErrorType;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventMaskStatusChanged
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventMaskStatusChanged_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventMaskStatusChanged
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventMaskStatusChanged_Params
-{
-	uint64_t                                           InMaskAreaHandle;                                 // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FGameClipsMaskArea                          InMaskArea;                                       // 0x0008 (0x0018) [0x0000000000000082] (CPF_Const | CPF_Parm)
-	uint8_t                                            InNewMaskStatus;                                  // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventClipStatusChanged
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventClipStatusChanged_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventClipStatusChanged
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventClipStatusChanged_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            InClipId;                                         // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                            InNewClipStatus;                                  // 0x0014 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventConnectionStatusChanged
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventConnectionStatusChanged_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventConnectionStatusChanged
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventConnectionStatusChanged_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            InConnection;                                     // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                            InNewConnectionStatus;                            // 0x0011 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventRecordingChanged
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventRecordingChanged_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventRecordingChanged
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventRecordingChanged_Params
-{
-	uint8_t                                            InNewRecording;                                   // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.NotifyEventAvailabilityChanged
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execNotifyEventAvailabilityChanged_Params
-{
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function Engine.OnlineGameClipsInterface.EventAvailabilityChanged
-// [0x00120000] 
-struct UOnlineGameClipsInterface_execEventAvailabilityChanged_Params
-{
-	uint8_t                                            InNewAvailability;                                // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.IsAccountLinked
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execIsAccountLinked_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.IsUploading
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execIsUploading_Params
-{
-	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.IsRecording
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execIsRecording_Params
-{
-	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.IsAvailable
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execIsAvailable_Params
-{
-	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.GetTimeUntilUnthrottled
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execGetTimeUntilUnthrottled_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	float                                              ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.IsClipUploadingLimitReached
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execIsClipUploadingLimitReached_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.SetUserMaxClipUploadsPerMinute
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execSetUserMaxClipUploadsPerMinute_Params
-{
-	int32_t                                            InMaxClipUploadsPerMinute;                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.CreateClip
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execCreateClip_Params
-{
-	class FString                                      InEpicAccountId;                                  // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      InClipType;                                       // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            ReturnValue;                                      // 0x0020 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.DisableMaskArea
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execDisableMaskArea_Params
-{
-	uint64_t                                           InMaskAreaHandle;                                 // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function Engine.OnlineGameClipsInterface.EnableMaskArea
-// [0x00420000] 
-struct UOnlineGameClipsInterface_execEnableMaskArea_Params
-{
-	struct FGameClipsMaskArea                          InMaskArea;                                       // 0x0000 (0x0018) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
-	uint64_t                                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function Engine.OnlineGameClipsInterface.StopRecording
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execStopRecording_Params
-{
-};
-
-// Function Engine.OnlineGameClipsInterface.StartRecording
-// [0x00020000] 
-struct UOnlineGameClipsInterface_execStartRecording_Params
-{
-	uint64_t                                           InClipDuration;                                   // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function Engine.OnlineVoiceInterface.SetVoiceReceiveVolume

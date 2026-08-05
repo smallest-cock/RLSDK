@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -337,15 +337,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DC0B8)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DC0E8)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E7260)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x024170E8)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x02417130)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DC0F8)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DC128)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E70C0)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02417158)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x024171A0)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "260616.79869.520762"
-#define BUILDDATE_STRING       "Jun 16 2026 22:40:00"
+#define GPSYONIXBUILDID_STRING "260727.84176.523543"
+#define BUILDDATE_STRING       "Jul 27 2026 23:41:19"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""

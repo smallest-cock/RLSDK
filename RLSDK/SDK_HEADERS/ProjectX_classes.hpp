@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -1123,7 +1123,7 @@ public:
 	struct FVector                                     OldControllerLocation;                         // 0x05EC (0x000C) [0x0000000000002000] (CPF_Transient)
 	struct FCameraOrientation                          PreProcessPOV;                                 // 0x05F8 (0x002C) [0x0000000000002000] (CPF_Transient)
 	struct FCameraOrientation                          PostProcessPOV;                                // 0x0624 (0x002C) [0x0000000000002000] (CPF_Transient)
-	class UCameraStateBlender_X*                       Blender;                                       // 0x0650 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UCameraStateBlender_X*                       Blender;                                       // 0x0650 (0x0008) [0x0000008004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline | CPF_ProtectedWrite)
 	struct FVector                                     ShakeLocationOffset;                           // 0x0658 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	struct FRotator                                    ShakeRotationOffset;                           // 0x0664 (0x000C) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	float                                              ShakeFOVOffset;                                // 0x0670 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
@@ -4056,6 +4056,17 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetUrl_X"))
 	class FString GetURL(EDatabaseEnvironment Environment);
+};
+
+// Class ProjectX.QREnconder_X
+// 0x0000 (0x0060 - 0x0060)
+class UQREnconder_X : public UObject
+{
+public:
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.QREnconder_X"))
+	static class UTexture* BuildForURL(const class FString& URL, class UObject* optionalOwner, int32_t optionalScaleFactor);
 };
 
 // Class ProjectX.RadialBlurComponent_X
@@ -12608,10 +12619,10 @@ public:
 	void HandleStartSearch(class UAsyncTask* Task);
 	void OnReceiveGameServer(const struct FServerReservationData& Reservation);
 	void HandleSearchTimeout();
-	static int32_t __OnlineGamePrivateMatch_X__GetPreferredSubRegions_0x1(class URegionPing_X* A, class URegionPing_X* B);
 	struct FPrivateMatchmakingRequestData GetPrivateMatchMakingRequest(const class FString& SelectedRegion, int32_t InPlaylistID);
 	class FString GetSubRegionToMatchmake(const class FString& SelectedRegion, const class TArray<class URegionPing_X*>& PreferredSubRegions);
 	class FString GetPreferredRegion(const class FString& SelectedRegion);
+	static int32_t CompareSubRegionsByPingPreference(class URegionPing_X* A, class URegionPing_X* B);
 	static class TArray<class URegionPing_X*> GetPreferredSubRegions(const class FString& SuperRegionID, const class TArray<class URegionPing_X*>& RegionPings);
 	void Cancel();
 	void ResetPrivateMatchSettings();
@@ -13787,7 +13798,7 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_LoginAuthPlayer_X"))
 	class URPC_LoginAuthPlayer_X* SetAsPrimaryAccount(bool bInPrimary);
-	class URPC_LoginAuthPlayer_X* SetEpicAccountId(const class FString& InEpicAccountId);
+	class URPC_LoginAuthPlayer_X* SetEpicAccountId(const class FString& InEpicAccountID);
 	class URPC_LoginAuthPlayer_X* SetEpicAuthTicket(const class FString& InEpicAuthTicket);
 	class URPC_LoginAuthPlayer_X* SetLocalFirstPlayerID(const class FString& InLocalFirstPlayerID);
 	class URPC_LoginAuthPlayer_X* SetConsoleType(const class FString& InType);

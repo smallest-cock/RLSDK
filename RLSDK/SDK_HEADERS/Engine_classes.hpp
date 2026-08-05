@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -343,70 +343,6 @@
 # Enums
 # ========================================================================================= #
 */
-
-// Enum Engine._Types_Engine.EGameClipsAvailability
-enum class EGameClipsAvailability : uint8_t
-{
-	GameClipsAvailability_Pending                      = 0,
-	GameClipsAvailability_NotAvailable                 = 1,
-	GameClipsAvailability_Available                    = 2,
-	GameClipsAvailability_END                          = 3
-};
-
-// Enum Engine._Types_Engine.EGameClipsRecording
-enum class EGameClipsRecording : uint8_t
-{
-	GameClipsRecording_Pending                         = 0,
-	GameClipsRecording_NotRecording                    = 1,
-	GameClipsRecording_Recording                       = 2,
-	GameClipsRecording_END                             = 3
-};
-
-// Enum Engine._Types_Engine.EGameClipsConnectionStatus
-enum class EGameClipsConnectionStatus : uint8_t
-{
-	GameClipsConnectionStatus_Pending                  = 0,
-	GameClipsConnectionStatus_NotConnected             = 1,
-	GameClipsConnectionStatus_Connected                = 2,
-	GameClipsConnectionStatus_END                      = 3
-};
-
-// Enum Engine._Types_Engine.EGameClipsConnection
-enum class EGameClipsConnection : uint8_t
-{
-	GameClipsConnection_Epic                           = 0,
-	GameClipsConnection_Postparty                      = 1,
-	GameClipsConnection_END                            = 2
-};
-
-// Enum Engine._Types_Engine.EGameClipsClipStatus
-enum class EGameClipsClipStatus : uint8_t
-{
-	GameClipsClipStatus_None                           = 0,
-	GameClipsClipStatus_Creating                       = 1,
-	GameClipsClipStatus_Uploading                      = 2,
-	GameClipsClipStatus_Completed                      = 3,
-	GameClipsClipStatus_Failed                         = 4,
-	GameClipsClipStatus_END                            = 5
-};
-
-// Enum Engine._Types_Engine.EGameClipsStateChangeType
-enum class EGameClipsStateChangeType : uint8_t
-{
-	GameClipsStateChangeType_Availability              = 0,
-	GameClipsStateChangeType_Recording                 = 1,
-	GameClipsStateChangeType_ClipStatus                = 2,
-	GameClipsStateChangeType_UserStatus                = 3,
-	GameClipsStateChangeType_END                       = 4
-};
-
-// Enum Engine._Types_Engine.EGameClipsMaskStatus
-enum class EGameClipsMaskStatus : uint8_t
-{
-	GameClipsMaskStatus_Show                           = 0,
-	GameClipsMaskStatus_Hide                           = 1,
-	GameClipsMaskStatus_END                            = 2
-};
 
 // Enum Engine.Actor.EActorMetricsType
 enum class EActorMetricsType : uint8_t
@@ -10437,6 +10373,7 @@ public:
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSessionManager"))
+	class FString eventGetExtraMatchDataString();
 	bool eventCanCrossplayTextChat();
 	class TArray<struct FUniqueNetId> eventGetRemoteSessionPlayerIds();
 	void RemovePlayerFromSession(const struct FUniqueNetId& PlayerID);
@@ -10513,7 +10450,7 @@ public:
 };
 
 // Class Engine.OnlineSubsystem
-// 0x0318 (0x0060 - 0x0378)
+// 0x0308 (0x0060 - 0x0368)
 class UOnlineSubsystem : public UObject
 {
 public:
@@ -10564,39 +10501,37 @@ public:
 	class UOnlineLobbyInterface*                       LobbyInterface_Interface;                      // 0x01C0 (0x0008) [0x0000000000000000]               
 	class UOnlineFriendsInterface*                     FriendsInterface_Object;                       // 0x01C8 (0x0008) [0x0000000000000000] 
 	class UOnlineFriendsInterface*                     FriendsInterface_Interface;                    // 0x01D0 (0x0008) [0x0000000000000000]               
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Object;                     // 0x01D8 (0x0008) [0x0000000000000000] 
-	class UOnlineGameClipsInterface*                   GameClipsInterface_Interface;                  // 0x01E0 (0x0008) [0x0000000000000000]               
-	class UClass*                                      SearchClass;                                   // 0x01E8 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bSupportsMultiSignin : 1;                      // 0x01F0 (0x0004) [0x0000004000004000] [0x00000001] (CPF_Config | CPF_PrivateWrite)
-	uint32_t                                           bSupportsMultiVoice : 1;                       // 0x01F0 (0x0004) [0x0000004000004000] [0x00000002] (CPF_Config | CPF_PrivateWrite)
-	uint32_t                                           bShowPrivilegeCheckErrors : 1;                 // 0x01F0 (0x0004) [0x0000004000004000] [0x00000004] (CPF_Config | CPF_PrivateWrite)
-	uint8_t                                          UnknownData00[0x4];                            // 0x01F4 (0x0004) MISSED OFFSET
-	class TArray<class UPlatformAccountSettings*>      AccountSettings;                               // 0x01F8 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
-	class TArray<class UPlatformBlockListStatus*>      BlockListStatuses;                             // 0x0208 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
-	class TArray<class UPlatformURL*>                  UnsupportedCorrectiveActionURLs;               // 0x0218 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
-	class UOnlineSessionManager*                       SessionManager;                                // 0x0228 (0x0008) [0x0000800000000000]               
-	class TArray<struct FSteamDLCInfo>                 SteamDLC;                                      // 0x0230 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FPS4DLCInfo>                   PS4DLC;                                        // 0x0240 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FXboxOneDLCInfo>               XboxOneDLC;                                    // 0x0250 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FSwitchDLCInfo>                SwitchDLC;                                     // 0x0260 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FEpicDLCInfo>                  EpicDLC;                                       // 0x0270 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
-	EOnlinePlatform                                    OnlinePlatformType;                            // 0x0280 (0x0001) [0x0000004000004000] (CPF_Config | CPF_PrivateWrite)
-	EOnlineServerConnectionStatus                      CurrentConnectionStatus;                       // 0x0281 (0x0001) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          UnknownData01[0x6];                            // 0x0282 (0x0006) MISSED OFFSET
-	class TArray<class FString>                        OnlineSubsystemNames;                          // 0x0288 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FNamedInterface>               NamedInterfaces;                               // 0x0298 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FNamedInterfaceDef>            NamedInterfaceDefs;                            // 0x02A8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FNamedSession>                 Sessions;                                      // 0x02B8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FString                                      IniLocPatcherClassName;                        // 0x02C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class UIniLocPatcher*                              Patcher;                                       // 0x02D8 (0x0008) [0x0000000000002000] (CPF_Transient)
-	float                                              AsyncMinCompletionTime;                        // 0x02E0 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData02[0x4];                            // 0x02E4 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __FeaturePrivilegeLevelUpdated__Delegate;      // 0x02E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlatformAccountSettingsCreated__Delegate;// 0x0300 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlatformBlockListStatusCreated__Delegate;// 0x0318 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeviceSuspend__Delegate;                   // 0x0330 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadOnlineAvatarComplete__Delegate;        // 0x0348 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSystemUserControllerPairingChanged__Delegate;// 0x0360 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UClass*                                      SearchClass;                                   // 0x01D8 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bSupportsMultiSignin : 1;                      // 0x01E0 (0x0004) [0x0000004000004000] [0x00000001] (CPF_Config | CPF_PrivateWrite)
+	uint32_t                                           bSupportsMultiVoice : 1;                       // 0x01E0 (0x0004) [0x0000004000004000] [0x00000002] (CPF_Config | CPF_PrivateWrite)
+	uint32_t                                           bShowPrivilegeCheckErrors : 1;                 // 0x01E0 (0x0004) [0x0000004000004000] [0x00000004] (CPF_Config | CPF_PrivateWrite)
+	uint8_t                                          UnknownData00[0x4];                            // 0x01E4 (0x0004) MISSED OFFSET
+	class TArray<class UPlatformAccountSettings*>      AccountSettings;                               // 0x01E8 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	class TArray<class UPlatformBlockListStatus*>      BlockListStatuses;                             // 0x01F8 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	class TArray<class UPlatformURL*>                  UnsupportedCorrectiveActionURLs;               // 0x0208 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	class UOnlineSessionManager*                       SessionManager;                                // 0x0218 (0x0008) [0x0000800000000000]               
+	class TArray<struct FSteamDLCInfo>                 SteamDLC;                                      // 0x0220 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FPS4DLCInfo>                   PS4DLC;                                        // 0x0230 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FXboxOneDLCInfo>               XboxOneDLC;                                    // 0x0240 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FSwitchDLCInfo>                SwitchDLC;                                     // 0x0250 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FEpicDLCInfo>                  EpicDLC;                                       // 0x0260 (0x0010) [0x0000000000404001] (CPF_Edit | CPF_Config | CPF_NeedCtorLink)
+	EOnlinePlatform                                    OnlinePlatformType;                            // 0x0270 (0x0001) [0x0000004000004000] (CPF_Config | CPF_PrivateWrite)
+	EOnlineServerConnectionStatus                      CurrentConnectionStatus;                       // 0x0271 (0x0001) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          UnknownData01[0x6];                            // 0x0272 (0x0006) MISSED OFFSET
+	class TArray<class FString>                        OnlineSubsystemNames;                          // 0x0278 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FNamedInterface>               NamedInterfaces;                               // 0x0288 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FNamedInterfaceDef>            NamedInterfaceDefs;                            // 0x0298 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FNamedSession>                 Sessions;                                      // 0x02A8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FString                                      IniLocPatcherClassName;                        // 0x02B8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class UIniLocPatcher*                              Patcher;                                       // 0x02C8 (0x0008) [0x0000000000002000] (CPF_Transient)
+	float                                              AsyncMinCompletionTime;                        // 0x02D0 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData02[0x4];                            // 0x02D4 (0x0004) MISSED OFFSET
+	struct FScriptDelegate                             __FeaturePrivilegeLevelUpdated__Delegate;      // 0x02D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPlatformAccountSettingsCreated__Delegate;// 0x02F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventPlatformBlockListStatusCreated__Delegate;// 0x0308 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnDeviceSuspend__Delegate;                   // 0x0320 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadOnlineAvatarComplete__Delegate;        // 0x0338 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnSystemUserControllerPairingChanged__Delegate;// 0x0350 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineSubsystem"))
@@ -10676,7 +10611,6 @@ public:
 	bool eventSetPartyChatInterface(class UObject* NewInterface);
 	bool eventSetNewsInterface(class UObject* NewInterface);
 	bool eventSetStatsInterface(class UObject* NewInterface);
-	bool eventSetGameClipsInterface(class UObject* InGameClipsInterface);
 	bool eventSetVoiceInterface(class UObject* NewInterface);
 	bool eventSetContentInterface(class UObject* NewInterface);
 	bool eventSetLobbyInterface(class UObject* InInterface);
@@ -30582,42 +30516,6 @@ public:
 	bool ReadOnlineStatsByRank(uint8_t LocalUserNum, class UOnlineStatsRead* StatsRead, int32_t optionalStartIndex, int32_t optionalNumToRead);
 	bool ReadOnlineStatsForFriends(uint8_t LocalUserNum, class UOnlineStatsRead* StatsRead);
 	bool ReadOnlineStats(uint8_t LocalUserNum, class UOnlineStatsRead* StatsRead, class TArray<struct FUniqueNetId>& outPlayers);
-};
-
-// Class Engine.OnlineGameClipsInterface
-// 0x0000 (0x0060 - 0x0060)
-class UOnlineGameClipsInterface : public UInterface
-{
-public:
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.OnlineGameClipsInterface"))
-	void NotifyEventClipErrorOccurred(const struct FScriptDelegate& InCallback);
-	void EventClipErrorOccurred(const class FString& InEpicAccountId, int32_t ClipId, class UErrorType* InErrorType);
-	void NotifyEventGeneralErrorOccurred(const struct FScriptDelegate& InCallback);
-	void EventGeneralErrorOccurred(class UErrorType* InErrorType);
-	void NotifyEventMaskStatusChanged(const struct FScriptDelegate& InCallback);
-	void EventMaskStatusChanged(uint64_t InMaskAreaHandle, const struct FGameClipsMaskArea& InMaskArea, EGameClipsMaskStatus InNewMaskStatus);
-	void NotifyEventClipStatusChanged(const struct FScriptDelegate& InCallback);
-	void EventClipStatusChanged(const class FString& InEpicAccountId, int32_t InClipId, EGameClipsClipStatus InNewClipStatus);
-	void NotifyEventConnectionStatusChanged(const struct FScriptDelegate& InCallback);
-	void EventConnectionStatusChanged(const class FString& InEpicAccountId, EGameClipsConnection InConnection, EGameClipsConnectionStatus InNewConnectionStatus);
-	void NotifyEventRecordingChanged(const struct FScriptDelegate& InCallback);
-	void EventRecordingChanged(EGameClipsRecording InNewRecording);
-	void NotifyEventAvailabilityChanged(const struct FScriptDelegate& InCallback);
-	void EventAvailabilityChanged(EGameClipsAvailability InNewAvailability);
-	bool IsAccountLinked(const class FString& InEpicAccountId);
-	bool IsUploading();
-	bool IsRecording();
-	bool IsAvailable();
-	float GetTimeUntilUnthrottled(const class FString& InEpicAccountId);
-	bool IsClipUploadingLimitReached(const class FString& InEpicAccountId);
-	void SetUserMaxClipUploadsPerMinute(int32_t InMaxClipUploadsPerMinute);
-	int32_t CreateClip(const class FString& InEpicAccountId, const class FString& InClipType);
-	void DisableMaskArea(uint64_t InMaskAreaHandle);
-	uint64_t EnableMaskArea(struct FGameClipsMaskArea& outInMaskArea);
-	void StopRecording();
-	void StartRecording(uint64_t InClipDuration);
 };
 
 // Class Engine.OnlineVoiceInterface

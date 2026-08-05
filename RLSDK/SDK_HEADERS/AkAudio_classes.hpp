@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.70)
-# Generated with CodeRedGenerator v1.1.5 on 07/01/2026 01:46PM
+# Rocket League SDK (RLSDK) Season 23 (v2.72)
+# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
 # ========================================================================================= #
 # File: AkAudio_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260616.79869.520762
-# Build Date: Jun 16 2026 22:40:00
+# Psyonix Build ID: 260727.84176.523543
+# Build Date: Jul 27 2026 23:41:19
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
@@ -740,7 +740,7 @@ public:
 };
 
 // Class AkAudio.AkAudioDevice
-// 0x0148 (0x0068 - 0x01B0)
+// 0x0140 (0x0068 - 0x01A8)
 class UAkAudioDevice : public USubsystem
 {
 public:
@@ -751,7 +751,7 @@ public:
 	int32_t                                            WwiseBusSendBufferSamples;                     // 0x0084 (0x0004) [0x0000000000004000] (CPF_Config)  
 	uint32_t                                           DebugRecordWwiseBusSends : 1;                  // 0x0088 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 	float                                              LowMemoryThreshold;                            // 0x008C (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData01[0x120];                        // 0x0090 (0x0120) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x118];                        // 0x0090 (0x0118) MISSED OFFSET
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkAudioDevice"))
