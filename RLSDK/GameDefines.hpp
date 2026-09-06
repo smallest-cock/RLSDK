@@ -630,6 +630,11 @@ private:
 	}
 };
 
+struct FPointer
+{
+	uintptr_t Dummy; // 0x0000 (0x08)
+};
+
 template <typename TKey, typename TValue> class TMap
 {
 private:
@@ -990,11 +995,6 @@ struct FScriptDelegate
 {
 	class UObject* Object;
 	uint8_t        padding[0x10];
-};
-
-struct FPointer
-{
-	uintptr_t Dummy; // 0x0000 (0x08)
 };
 
 struct FQWord
