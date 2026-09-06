@@ -1,15 +1,15 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
+# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260727.84176.523543
-# Build Date: Jul 27 2026 23:41:19
+# Psyonix Build ID: 260825.79374.526531
+# Build Date: Aug 25 2026 22:52:54
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
+# Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 
@@ -13204,7 +13204,7 @@ public:
 	void ApplyPaintSettingsToObject(class UProductPaint_TA* ProductPaint, class UProductAttribute_PaintSettings_TA* PaintSettings, class UObject* ObjectToPaint, class UProductAsset_TA* optionalAsset);
 	void eventApplyPaintToObject(class UProductPaint_TA* ProductPaint, class UProductAttribute_PaintSettings_TA* PaintSettings, class UObject* ObjectToPaint, class UProductAsset_TA* optionalProduct);
 	void SetWheelMesh(class UMeshComponent* MeshComp, class UProductAsset_Wheel_TA* Asset, EWheelPosition WheelPos, const class FName& BoneName, struct FVehicleAxleSettings& outAxle);
-	void UpdateGameShaderPreviewSpeedParam(float PreviewSpeed);
+	void UpdateGameShaderPreviewSpeedParam(float PreviewSpeed, float CarMaxSpeed, float SuperSonicSpeed);
 	struct FVector CalculatePresetSuspensionOffset();
 	class AFXActor_X* AttachFXActor(struct FProductAttachment& outAttachStruct);
 	class UAttachmentBehavior_TA* AddBehavior(class UProductAsset_TA* Asset, class UActorComponent* Component, class UAttachmentBehavior_TA* BehaviorArchetype);
@@ -17531,9 +17531,9 @@ public:
 	class UProductAttribute_PreviewWheelSpin_TA*       WheelSpinAttribute;                            // 0x03C8 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class UProductAttribute_SetPreviewObjectSpeedShaderParam_TA* GameShaderParamAttribute;                      // 0x03D0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	float                                              GameShaderPreviewTime;                         // 0x03D8 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
-	int32_t                                            PreviewTeam;                                   // 0x03DC (0x0004) [0x0000000000002000] (CPF_Transient)
-	int32_t                                            LinkedControllerId;                            // 0x03E0 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint8_t                                          UnknownData03[0x4];                            // 0x03E4 (0x0004) MISSED OFFSET
+	float                                              PreviewCarMaxSpeed;                            // 0x03DC (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	int32_t                                            PreviewTeam;                                   // 0x03E0 (0x0004) [0x0000000000002000] (CPF_Transient)
+	int32_t                                            LinkedControllerId;                            // 0x03E4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	class AFXActor_X*                                  RootFXActor;                                   // 0x03E8 (0x0008) [0x0000000000000000]               
 	class UAkParamGroup*                               Ak;                                            // 0x03F0 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __EventInitializeComponents__Delegate;         // 0x03F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)

@@ -1,15 +1,15 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
+# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
 # ========================================================================================= #
 # File: Core_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260727.84176.523543
-# Build Date: Jul 27 2026 23:41:19
+# Psyonix Build ID: 260825.79374.526531
+# Build Date: Aug 25 2026 22:52:54
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
+# Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 
@@ -140,7 +140,7 @@ bool UObject::IsA(int32_t objInternalInteger)
 
 template<typename T> T GetVirtualFunction(const void* instance, size_t index)
 {
-	auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
+	auto vtable = *static_cast<void***>(const_cast<void*>(instance));
 	return reinterpret_cast<T>(vtable[index]);
 }
 

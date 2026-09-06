@@ -1,15 +1,15 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
+# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260727.84176.523543
-# Build Date: Jul 27 2026 23:41:19
+# Psyonix Build ID: 260825.79374.526531
+# Build Date: Aug 25 2026 22:52:54
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
+# Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 
@@ -337,15 +337,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DC0F8)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DC128)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E70C0)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02417158)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x024171A0)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DD0F8)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DD128)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E80C0)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02418148)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x02418190)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "260727.84176.523543"
-#define BUILDDATE_STRING       "Jul 27 2026 23:41:19"
+#define GPSYONIXBUILDID_STRING "260825.79374.526531"
+#define BUILDDATE_STRING       "Aug 25 2026 22:52:54"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""
@@ -387,7 +387,7 @@ namespace StringUtils
 
 template <typename T> T getVirtualFunc(const void* instance, size_t index)
 {
-	auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
+	auto vtable = *static_cast<void***>(const_cast<void*>(instance));
 	return reinterpret_cast<T>(vtable[index]);
 }
 
@@ -405,7 +405,7 @@ public:
 private:
 	template <typename T> T getVirtualFunc(const void* instance, size_t index)
 	{
-		auto vtable = *static_cast<const void***>(const_cast<void*>(instance));
+		auto vtable = *static_cast<void***>(const_cast<void*>(instance));
 		return reinterpret_cast<T>(vtable[index]);
 	}
 

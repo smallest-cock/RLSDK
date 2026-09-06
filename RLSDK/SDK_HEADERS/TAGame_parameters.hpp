@@ -1,15 +1,15 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
+# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260727.84176.523543
-# Build Date: Jul 27 2026 23:41:19
+# Psyonix Build ID: 260825.79374.526531
+# Build Date: Aug 25 2026 22:52:54
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
+# Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 
@@ -10420,6 +10420,7 @@ struct AGameEvent_TA_execRestartPlayer_Params
 	// uint32_t                                        bReplacedBotOrPlayer : 1;                         // 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class APRI_TA*                                  PRI;                                              // 0x0060 (0x0008) [0x0000000000000000]               
 	// uint32_t                                        bFoundStartSpot : 1;                              // 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class APlayerController_TA*                     PC;                                               // 0x0070 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GameEvent_TA.CanSpawnPlayer
@@ -26002,6 +26003,8 @@ struct UCarMeshComponentBase_TA_execSetWheelMesh_Params
 struct UCarMeshComponentBase_TA_execUpdateGameShaderPreviewSpeedParam_Params
 {
 	float                                              PreviewSpeed;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	float                                              CarMaxSpeed;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	float                                              SuperSonicSpeed;                                  // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.CarMeshComponentBase_TA.CalculatePresetSuspensionOffset
@@ -39803,6 +39806,7 @@ struct ACarPreviewActor_TA_eventOnOwnerChanged_Params
 struct ACarPreviewActor_TA_execTick_Params
 {
 	float                                              DeltaTime;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	// float                                           SuperSonicSpeed;                                  // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.CarPreviewActor_TA.SetPreviewHidden

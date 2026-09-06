@@ -1,15 +1,15 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with CodeRedGenerator v1.1.5 on 08/05/2026 12:24AM
+# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
 # ========================================================================================= #
 # File: TAGame_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260727.84176.523543
-# Build Date: Jul 27 2026 23:41:19
+# Psyonix Build ID: 260825.79374.526531
+# Build Date: Aug 25 2026 22:52:54
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
-# Links: www.github.com/CodeRedModding/CodeRed-Generator, discord.gg/d5ahhQmJbJ
+# Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
 #############################################################################################
 */
 
@@ -58407,7 +58407,9 @@ void UCarMeshComponentBase_TA::SetWheelMesh(class UMeshComponent* MeshComp, clas
 // [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
 // Parameter Info:
 // float                          PreviewSpeed                   (CPF_Parm)
-void UCarMeshComponentBase_TA::UpdateGameShaderPreviewSpeedParam(float PreviewSpeed)
+// float                          CarMaxSpeed                    (CPF_Parm)
+// float                          SuperSonicSpeed                (CPF_Parm)
+void UCarMeshComponentBase_TA::UpdateGameShaderPreviewSpeedParam(float PreviewSpeed, float CarMaxSpeed, float SuperSonicSpeed)
 {
     static UFunction* uFnUpdateGameShaderPreviewSpeedParam = nullptr;
     if (!uFnUpdateGameShaderPreviewSpeedParam)
@@ -58416,6 +58418,8 @@ void UCarMeshComponentBase_TA::UpdateGameShaderPreviewSpeedParam(float PreviewSp
 	UCarMeshComponentBase_TA_execUpdateGameShaderPreviewSpeedParam_Params UpdateGameShaderPreviewSpeedParam_Params;
 	memset(&UpdateGameShaderPreviewSpeedParam_Params, 0, sizeof(UpdateGameShaderPreviewSpeedParam_Params));
 	memcpy_s(&UpdateGameShaderPreviewSpeedParam_Params.PreviewSpeed, sizeof(UpdateGameShaderPreviewSpeedParam_Params.PreviewSpeed), &PreviewSpeed, sizeof(PreviewSpeed));
+	memcpy_s(&UpdateGameShaderPreviewSpeedParam_Params.CarMaxSpeed, sizeof(UpdateGameShaderPreviewSpeedParam_Params.CarMaxSpeed), &CarMaxSpeed, sizeof(CarMaxSpeed));
+	memcpy_s(&UpdateGameShaderPreviewSpeedParam_Params.SuperSonicSpeed, sizeof(UpdateGameShaderPreviewSpeedParam_Params.SuperSonicSpeed), &SuperSonicSpeed, sizeof(SuperSonicSpeed));
 
 	this->ProcessEvent(uFnUpdateGameShaderPreviewSpeedParam, &UpdateGameShaderPreviewSpeedParam_Params, nullptr);
 };
