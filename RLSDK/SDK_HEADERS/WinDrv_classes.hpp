@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: WinDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -124,15 +124,15 @@ public:
 };
 
 // Class WinDrv.WindowsClient
-// 0x0348 (0x0078 - 0x03C0)
+// 0x0340 (0x0078 - 0x03B8)
 class UWindowsClient : public UClient
 {
 public:
-	uint8_t                                          UnknownData00[0x200];                        // 0x0078 (0x0200) MISSED OFFSET
-	class UClass*                                      AudioDeviceClass;                              // 0x0278 (0x0008) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData01[0x38];                          // 0x0280 (0x0038) MISSED OFFSET
-	int32_t                                            AllowJoystickInput;                            // 0x02B8 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData02[0x104];                        // 0x02BC (0x0104) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x1F8];                        // 0x0078 (0x01F8) MISSED OFFSET
+	class UClass*                                      AudioDeviceClass;                              // 0x0270 (0x0008) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData01[0x38];                          // 0x0278 (0x0038) MISSED OFFSET
+	int32_t                                            AllowJoystickInput;                            // 0x02B0 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData02[0x104];                        // 0x02B4 (0x0104) MISSED OFFSET
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.WindowsClient"))

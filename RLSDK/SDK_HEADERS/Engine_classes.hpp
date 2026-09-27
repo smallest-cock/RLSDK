@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -4235,7 +4235,7 @@ class AZoneInfo : public AInfo
 public:
 	float                                              KillZ;                                         // 0x0268 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              SoftKill;                                      // 0x026C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bSoftKillZ : 1;                                // 0x0270 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bSoftKillZ : 1;                                // 0x0270 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ZoneInfo"))
@@ -5027,7 +5027,7 @@ public:
 	class AActor*                                      AssociatedActor;                               // 0x0298 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bForcePawnWalk : 1;                            // 0x02A0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bProcessAllActors : 1;                         // 0x02A0 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bPawnsOnly : 1;                                // 0x02A0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bPawnsOnly : 1;                                // 0x02A0 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Volume"))
@@ -5046,7 +5046,7 @@ class ABlockingVolume : public AVolume
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
-	uint32_t                                           bBlockCamera : 1;                              // 0x02A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bBlockCamera : 1;                              // 0x02A8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.BlockingVolume"))
@@ -5059,7 +5059,7 @@ class ADynamicBlockingVolume : public ABlockingVolume
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02AC (0x0004) MISSED OFFSET
-	uint32_t                                           bEnabled : 1;                                  // 0x02B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEnabled : 1;                                  // 0x02B0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicBlockingVolume"))
@@ -5075,7 +5075,7 @@ class ACullDistanceVolume : public AVolume
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 	class TArray<struct FCullDistanceSizePair>         CullDistances;                                 // 0x02A8 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bEnabled : 1;                                  // 0x02B8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEnabled : 1;                                  // 0x02B8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CullDistanceVolume"))
@@ -5390,7 +5390,7 @@ public:
 	class UDynamicLightEnvironmentComponent*           LightEnvironment;                              // 0x0270 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 	uint32_t                                           bDestroyOnSystemFinish : 1;                    // 0x0278 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bPostUpdateTickGroup : 1;                      // 0x0278 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bCurrentlyActive : 1;                          // 0x0278 (0x0004) [0x0000000100000020] [0x00000004] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bCurrentlyActive : 1;                          // 0x0278 (0x0004) [0x0000000100000020] [0x100000004] (CPF_Net | CPF_RepNotify)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Emitter"))
@@ -5629,7 +5629,7 @@ public:
 	EFWFileType                                        FileType;                                      // 0x0280 (0x0001) [0x0000000000000002] (CPF_Const)   
 	uint8_t                                          UnknownData00[0x3];                            // 0x0281 (0x0003) MISSED OFFSET
 	uint32_t                                           bFlushEachWrite : 1;                           // 0x0284 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bWantsAsyncWrites : 1;                         // 0x0284 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bWantsAsyncWrites : 1;                         // 0x0284 (0x0004) [0x0000000000000000] [0x100000002] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FileWriter"))
@@ -5901,7 +5901,7 @@ class AMutator : public AInfo
 public:
 	class AMutator*                                    NextMutator;                                   // 0x0268 (0x0008) [0x0000000000000000]               
 	class TArray<class FString>                        GroupNames;                                    // 0x0270 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bUserAdded : 1;                                // 0x0280 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bUserAdded : 1;                                // 0x0280 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Mutator"))
@@ -6224,7 +6224,7 @@ class ALiftExit : public ANavigationPoint
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0384 (0x0004) MISSED OFFSET
 	class ALiftCenter*                                 MyLiftCenter;                                  // 0x0388 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bExitOnly : 1;                                 // 0x0390 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bExitOnly : 1;                                 // 0x0390 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LiftExit"))
@@ -6361,7 +6361,7 @@ class AAISwitchablePylon : public APylon
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x04A4 (0x0004) MISSED OFFSET
-	uint32_t                                           bOpen : 1;                                     // 0x04A8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bOpen : 1;                                     // 0x04A8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AISwitchablePylon"))
@@ -6376,7 +6376,7 @@ class ADynamicPylon : public APylon
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x04A4 (0x0004) MISSED OFFSET
-	uint32_t                                           bMoving : 1;                                   // 0x04A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bMoving : 1;                                   // 0x04A8 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DynamicPylon"))
@@ -6503,7 +6503,7 @@ public:
 	class APortalMarker*                               MyMarker;                                      // 0x0290 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bMovablePortal : 1;                            // 0x0298 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bAlwaysTeleportNonPawns : 1;                   // 0x0298 (0x0004) [0x0000000000000000] [0x00000002] 
-	uint32_t                                           bCanTeleportVehicles : 1;                      // 0x0298 (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bCanTeleportVehicles : 1;                      // 0x0298 (0x0004) [0x0000000000000000] [0x100000004] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PortalTeleporter"))
@@ -6533,7 +6533,7 @@ public:
 	uint32_t                                           bProxy : 1;                                    // 0x0270 (0x0004) [0x0000000800000000] [0x00000002] (CPF_EditorOnly)
 	uint32_t                                           bHiddenByProxy : 1;                            // 0x0270 (0x0004) [0x0000000800000000] [0x00000004] (CPF_EditorOnly)
 	uint32_t                                           OldCastShadow : 1;                             // 0x0270 (0x0004) [0x0000000800000000] [0x00000008] (CPF_EditorOnly)
-	uint32_t                                           OldAcceptsLights : 1;                          // 0x0270 (0x0004) [0x0000000800000000] [0x00000010] (CPF_EditorOnly)
+	uint32_t                                           OldAcceptsLights : 1;                          // 0x0270 (0x0004) [0x0000000800000000] [0x100000010] (CPF_EditorOnly)
 	ECollisionType                                     OldCollisionType;                              // 0x0274 (0x0001) [0x0000000800000000] (CPF_EditorOnly)
 	uint8_t                                          UnknownData00[0x3];                            // 0x0275 (0x0003) MISSED OFFSET
 	class TArray<struct FPreCombinedStaticMeshActor>   PreCombinedStaticMeshActors;                   // 0x0278 (0x0010) [0x0000000800420003] (CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink | CPF_EditorOnly)
@@ -7481,7 +7481,7 @@ public:
 	class FString                                      NewActorClassName;                             // 0x0080 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class UClass*                                      NewActorClass;                                 // 0x0090 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bPlaceable : 1;                                // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bShowInEditorQuickMenu : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bShowInEditorQuickMenu : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x100000002] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactory"))
@@ -9097,7 +9097,7 @@ public:
 	float                                              MaxLow;                                        // 0x0084 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              MinHigh;                                       // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              MinLow;                                        // 0x008C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bMirrorMaxMin : 1;                             // 0x0090 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bMirrorMaxMin : 1;                             // 0x0090 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionFloatUniformRange"))
@@ -9791,7 +9791,7 @@ public:
 	struct FMap_Mirror                                 ObjectMap;                                     // 0x00B0 (0x0050) [0x0000000000001000] (CPF_Native)  
 	class TArray<class FString>                        ValueArray;                                    // 0x0100 (0x0010) [0x0000000000001000] (CPF_Native)  
 	class TArray<class UJsonObject*>                   ObjectArray;                                   // 0x0110 (0x0010) [0x0000000000001000] (CPF_Native)  
-	uint32_t                                           bArray : 1;                                    // 0x0120 (0x0004) [0x0000000000001000] [0x00000001] (CPF_Native)
+	uint32_t                                           bArray : 1;                                    // 0x0120 (0x0004) [0x0000000000001000] [0x100000001] (CPF_Native)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.JsonObject"))
@@ -9921,7 +9921,7 @@ class ULevelStreamingAlwaysLoaded : public ULevelStreaming
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0114 (0x0004) MISSED OFFSET
-	uint32_t                                           bIsProceduralBuildingLODLevel : 1;             // 0x0118 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bIsProceduralBuildingLODLevel : 1;             // 0x0118 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LevelStreamingAlwaysLoaded"))
@@ -11212,7 +11212,7 @@ public:
 	uint32_t                                           BlockRigidBody : 1;                            // 0x0060 (0x0004) [0x0000000000000003] [0x00000010] (CPF_Edit | CPF_Const)
 	uint32_t                                           HiddenGame : 1;                                // 0x0060 (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
 	uint32_t                                           HiddenEditor : 1;                              // 0x0060 (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
-	uint32_t                                           CastShadow : 1;                                // 0x0060 (0x0004) [0x0000000000000001] [0x00000080] (CPF_Edit)
+	uint32_t                                           CastShadow : 1;                                // 0x0060 (0x0004) [0x0000000000000001] [0x100000080] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PrimitiveComponentFactory"))
@@ -11341,7 +11341,7 @@ public:
 class UMantleReachSpec : public UForcedReachSpec
 {
 public:
-	uint32_t                                           bClimbUp : 1;                                  // 0x00C8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bClimbUp : 1;                                  // 0x00C8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MantleReachSpec"))
@@ -12496,7 +12496,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 	struct FPointer                                    VfTable_IInterface_NavMeshPathObstacle;        // 0x02A8 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	struct FPointer                                    VfTable_IInterface_NavMeshPathObject;          // 0x02B0 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	uint32_t                                           bSplitNavMesh : 1;                             // 0x02B8 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
+	uint32_t                                           bSplitNavMesh : 1;                             // 0x02B8 (0x0004) [0x0000000000002002] [0x100000001] (CPF_Const | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.EnvironmentVolume"))
@@ -12583,7 +12583,7 @@ class ANavMeshObstacle : public AActor
 public:
 	struct FPointer                                    VfTable_IInterface_NavMeshPathObstacle;        // 0x0268 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bPreserveInternalGeo : 1;                      // 0x0270 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bPreserveInternalGeo : 1;                      // 0x0270 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.NavMeshObstacle"))
@@ -12696,7 +12696,7 @@ public:
 	class UStaticMesh*                                 AutoAdjustOn;                                  // 0x0320 (0x0008) [0x0000000000000000]               
 	class UStaticMesh*                                 AutoAdjustOff;                                 // 0x0328 (0x0008) [0x0000000000000000]               
 	class UStaticMesh*                                 Disabled;                                      // 0x0330 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bShowWhenNotSelected : 1;                      // 0x0338 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bShowWhenNotSelected : 1;                      // 0x0338 (0x0004) [0x0000000800002000] [0x100000001] (CPF_Transient | CPF_EditorOnly)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CoverMeshComponent"))
@@ -13373,7 +13373,7 @@ class UGoal_AtActor : public UPathGoalEvaluator
 public:
 	class AActor*                                      GoalActor;                                     // 0x0078 (0x0008) [0x0000000000000000]               
 	float                                              GoalDist;                                      // 0x0080 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bKeepPartial : 1;                              // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bKeepPartial : 1;                              // 0x0084 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Goal_AtActor"))
@@ -13559,7 +13559,7 @@ public:
 	uint32_t                                           bTryIntervalKeyRemoval : 1;                    // 0x007C (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 	uint32_t                                           bRunCurrentDefaultCompressor : 1;              // 0x007C (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
 	uint32_t                                           bAutoReplaceIfExistingErrorTooGreat : 1;       // 0x007C (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
-	uint32_t                                           bRaiseMaxErrorToExisting : 1;                  // 0x007C (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
+	uint32_t                                           bRaiseMaxErrorToExisting : 1;                  // 0x007C (0x0004) [0x0000000000000001] [0x100000040] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_Automatic"))
@@ -13594,7 +13594,7 @@ class UAnimationCompressionAlgorithm_RemoveEverySecondKey : public UAnimationCom
 public:
 	uint8_t                                          UnknownData00[0x2];                            // 0x0076 (0x0002) MISSED OFFSET
 	int32_t                                            MinKeys;                                       // 0x0078 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bStartAtSecondKey : 1;                         // 0x007C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bStartAtSecondKey : 1;                         // 0x007C (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveEverySecondKey"))
@@ -13613,7 +13613,7 @@ public:
 	float                                              EffectorDiffSocket;                            // 0x0088 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              ParentKeyScale;                                // 0x008C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bRetarget : 1;                                 // 0x0090 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bActuallyFilterLinearKeys : 1;                 // 0x0090 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bActuallyFilterLinearKeys : 1;                 // 0x0090 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimationCompressionAlgorithm_RemoveLinearKeys"))
@@ -14080,7 +14080,7 @@ public:
 	float                                              Child2Weight;                                  // 0x0148 (0x0004) [0x0000000000000000]               
 	float                                              Child2WeightTarget;                            // 0x014C (0x0004) [0x0000000000000000]               
 	float                                              BlendTimeToGo;                                 // 0x0150 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bSkipBlendWhenNotRendered : 1;                 // 0x0154 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bSkipBlendWhenNotRendered : 1;                 // 0x0154 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlend"))
@@ -14092,7 +14092,7 @@ public:
 class UAnimNodeAdditiveBlending : public UAnimNodeBlend
 {
 public:
-	uint32_t                                           bPassThroughWhenNotRendered : 1;               // 0x0158 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bPassThroughWhenNotRendered : 1;               // 0x0158 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeAdditiveBlending"))
@@ -14161,7 +14161,7 @@ public:
 	float                                              DirAngle;                                      // 0x014C (0x0004) [0x0000000000000000]               
 	int32_t                                            SingleAnimAtOrAboveLOD;                        // 0x0150 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	struct FRotator                                    RotationOffset;                                // 0x0154 (0x000C) [0x0000000000000000]               
-	uint32_t                                           bUseAcceleration : 1;                          // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUseAcceleration : 1;                          // 0x0160 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeBlendDirectional"))
@@ -14286,7 +14286,7 @@ public:
 	class TArray<struct FRandomAnimInfo>               RandomInfo;                                    // 0x0170 (0x0010) [0x0000000004400041] (CPF_Edit | CPF_EditFixedSize | CPF_NeedCtorLink | CPF_EditInline)
 	class UAnimNodeSequence*                           PlayingSeqNode;                                // 0x0180 (0x0008) [0x0000000000002000] (CPF_Transient)
 	int32_t                                            PendingChildIndex;                             // 0x0188 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bPickedPendingChildIndex : 1;                  // 0x018C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bPickedPendingChildIndex : 1;                  // 0x018C (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeRandom"))
@@ -14312,7 +14312,7 @@ class UAnimNodeMirror : public UAnimNodeBlendBase
 {
 public:
 	uint8_t                                          UnknownData00[0x3];                            // 0x0145 (0x0003) MISSED OFFSET
-	uint32_t                                           bEnableMirroring : 1;                          // 0x0148 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEnableMirroring : 1;                          // 0x0148 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.AnimNodeMirror"))
@@ -14581,7 +14581,7 @@ class UMorphNodeBase : public UAnimObject
 {
 public:
 	class FName                                        NodeName;                                      // 0x0090 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bDrawSlider : 1;                               // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bDrawSlider : 1;                               // 0x0098 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MorphNodeBase"))
@@ -14930,7 +14930,7 @@ public:
 	uint8_t                                          UnknownData00[0x2];                            // 0x013E (0x0002) MISSED OFFSET
 	float                                              WheelSteering;                                 // 0x0140 (0x0004) [0x0000000000002001] (CPF_Edit | CPF_Transient)
 	uint32_t                                           bInvertWheelRoll : 1;                          // 0x0144 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bInvertWheelSteering : 1;                      // 0x0144 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bInvertWheelSteering : 1;                      // 0x0144 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SkelControlWheel"))
@@ -15377,7 +15377,7 @@ class AFogVolumeDensityInfo : public AInfo
 public:
 	class UFogVolumeDensityComponent*                  DensityComponent;                              // 0x0268 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UStaticMeshComponent*                        AutomaticMeshComponent;                        // 0x0270 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
-	uint32_t                                           bEnabled : 1;                                  // 0x0278 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bEnabled : 1;                                  // 0x0278 (0x0004) [0x0000000100000020] [0x100000001] (CPF_Net | CPF_RepNotify)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FogVolumeDensityInfo"))
@@ -15542,7 +15542,7 @@ class UActorFactoryFogVolumeConstantDensityInfo : public UActorFactory
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 	class UMaterialInterface*                          SelectedMaterial;                              // 0x00A0 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bNothingSelected : 1;                          // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bNothingSelected : 1;                          // 0x00A8 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ActorFactoryFogVolumeConstantDensityInfo"))
@@ -15784,7 +15784,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x028C (0x0004) MISSED OFFSET
 	class UApexAsset*                                  Asset;                                         // 0x0290 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
 	struct FColor                                      WireframeColor;                                // 0x0298 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bAssetChanged : 1;                             // 0x029C (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bAssetChanged : 1;                             // 0x029C (0x0004) [0x0000000000000002] [0x100000001] (CPF_Const)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexComponentBase"))
@@ -15820,7 +15820,7 @@ public:
 	float                                              SleepDamping;                                  // 0x02A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	struct FPointer                                    ApexDestructibleActor;                         // 0x02A8 (0x0008) [0x0000000000201000] (CPF_Native)  
 	struct FPointer                                    ApexDestructiblePreview;                       // 0x02B0 (0x0008) [0x0000000000201000] (CPF_Native)  
-	uint32_t                                           bIsThumbnailComponent : 1;                     // 0x02B8 (0x0004) [0x0000000000001000] [0x00000001] (CPF_Native)
+	uint32_t                                           bIsThumbnailComponent : 1;                     // 0x02B8 (0x0004) [0x0000000000001000] [0x100000001] (CPF_Native)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ApexStaticDestructibleComponent"))
@@ -15862,7 +15862,7 @@ public:
 	class TArray<struct FMatrix>                       FragmentTransforms;                            // 0x0338 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	class TArray<class UFracturedStaticMeshComponent*> DependentComponents;                           // 0x0348 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 	uint32_t                                           bBecameVisible : 1;                            // 0x0358 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
-	uint32_t                                           bFragmentTransformsChanged : 1;                // 0x0358 (0x0004) [0x0000000000002002] [0x00000002] (CPF_Const | CPF_Transient)
+	uint32_t                                           bFragmentTransformsChanged : 1;                // 0x0358 (0x0004) [0x0000000000002002] [0x100000002] (CPF_Const | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FracturedSkinnedMeshComponent"))
@@ -15935,7 +15935,7 @@ public:
 	int32_t                                            InstanceEndCullDistance;                       // 0x0340 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x4];                            // 0x0344 (0x0004) MISSED OFFSET
 	struct FBitArray_Mirror                            SelectedInstances;                             // 0x0348 (0x0020) [0x0000000800001002] (CPF_Const | CPF_Native | CPF_EditorOnly)
-	uint32_t                                           bDontResolveInstancedLightmaps : 1;            // 0x0368 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bDontResolveInstancedLightmaps : 1;            // 0x0368 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InstancedStaticMeshComponent"))
@@ -15948,7 +15948,7 @@ class USplineMeshComponent : public UStaticMeshComponent
 public:
 	struct FSplineMeshParams                           SplineParams;                                  // 0x0300 (0x0058) [0x0000000000000000]               
 	struct FVector                                     SplineXDir;                                    // 0x0358 (0x000C) [0x0000000000000000]               
-	uint32_t                                           bSmoothInterpRollScale : 1;                    // 0x0364 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bSmoothInterpRollScale : 1;                    // 0x0364 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SplineMeshComponent"))
@@ -16089,7 +16089,7 @@ public:
 	uint32_t                                           bVisible : 1;                                  // 0x0098 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 	uint32_t                                           bIsFolder : 1;                                 // 0x0098 (0x0004) [0x0000000000000000] [0x00000004] 
 	uint32_t                                           bIsParented : 1;                               // 0x0098 (0x0004) [0x0000000000000000] [0x00000008] 
-	uint32_t                                           bIsSelected : 1;                               // 0x0098 (0x0004) [0x0000000000002000] [0x00000010] (CPF_Transient)
+	uint32_t                                           bIsSelected : 1;                               // 0x0098 (0x0004) [0x0000000000002000] [0x100000010] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroup"))
@@ -16108,7 +16108,7 @@ public:
 	uint32_t                                           bDisableWorldCollision : 1;                    // 0x00B0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 	uint32_t                                           bIgnoreLegacyHeightAdjust : 1;                 // 0x00B0 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 	uint32_t                                           bRecreatePreviewPawn : 1;                      // 0x00B0 (0x0004) [0x0000000800002000] [0x00000010] (CPF_Transient | CPF_EditorOnly)
-	uint32_t                                           bRefreshStageMarkGroup : 1;                    // 0x00B0 (0x0004) [0x0000000800002000] [0x00000020] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bRefreshStageMarkGroup : 1;                    // 0x00B0 (0x0004) [0x0000000800002000] [0x100000020] (CPF_Transient | CPF_EditorOnly)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpGroupAI"))
@@ -16211,7 +16211,7 @@ class UInterpTrackDirector : public UInterpTrack
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00C4 (0x0004) MISSED OFFSET
 	class TArray<struct FDirectorTrackCut>             CutTrack;                                      // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bSimulateCameraCutsOnClients : 1;              // 0x00D8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bSimulateCameraCutsOnClients : 1;              // 0x00D8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackDirector"))
@@ -16226,7 +16226,7 @@ public:
 	class TArray<struct FEventTrackKey>                EventTrack;                                    // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bFireEventsWhenForwards : 1;                   // 0x00D8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bFireEventsWhenBackwards : 1;                  // 0x00D8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackEvent"))
@@ -16270,7 +16270,7 @@ public:
 	class FName                                        SlotName;                                      // 0x00F8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<struct FAnimControlTrackKey>          AnimSeqs;                                      // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bEnableRootMotion : 1;                         // 0x0110 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bSkipAnimNotifiers : 1;                        // 0x0110 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bSkipAnimNotifiers : 1;                        // 0x0110 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackAnimControl"))
@@ -16282,7 +16282,7 @@ class UInterpTrackFade : public UInterpTrackFloatBase
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00E4 (0x0004) MISSED OFFSET
-	uint32_t                                           bPersistFade : 1;                              // 0x00E8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bPersistFade : 1;                              // 0x00E8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFade"))
@@ -16297,7 +16297,7 @@ public:
 	class TArray<struct FMaterialReferenceList>        Materials;                                     // 0x00E8 (0x0010) [0x0000000000480003] (CPF_Edit | CPF_Const | CPF_Component | CPF_NeedCtorLink)
 	class UMaterialInterface*                          Material;                                      // 0x00F8 (0x0008) [0x0000000020000002] (CPF_Const | CPF_Deprecated)
 	class FName                                        ParamName;                                     // 0x0100 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackFloatMaterialParam"))
@@ -16484,7 +16484,7 @@ class UInterpTrackParticleReplay : public UInterpTrack
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00C4 (0x0004) MISSED OFFSET
 	class TArray<struct FParticleReplayTrackKey>       TrackKeys;                                     // 0x00C8 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	uint32_t                                           bIsCapturingReplay : 1;                        // 0x00D8 (0x0004) [0x0000000800002002] [0x00000001] (CPF_Const | CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bIsCapturingReplay : 1;                        // 0x00D8 (0x0004) [0x0000000800002002] [0x100000001] (CPF_Const | CPF_Transient | CPF_EditorOnly)
 	float                                              FixedTimeStep;                                 // 0x00DC (0x0004) [0x0000000800002002] (CPF_Const | CPF_Transient | CPF_EditorOnly)
 
 public:
@@ -16502,7 +16502,7 @@ public:
 	uint32_t                                           bActivateWithJustAttachedFlag : 1;             // 0x00D8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           bFireEventsWhenForwards : 1;                   // 0x00D8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 	uint32_t                                           bFireEventsWhenBackwards : 1;                  // 0x00D8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
-	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
+	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x100000010] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackToggle"))
@@ -16565,7 +16565,7 @@ public:
 	uint32_t                                           bPlayOnReverse : 1;                            // 0x00F8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bContinueSoundOnMatineeEnd : 1;                // 0x00F8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           bSuppressSubtitles : 1;                        // 0x00F8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint32_t                                           bTreatAsDialogue : 1;                          // 0x00F8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint32_t                                           bTreatAsDialogue : 1;                          // 0x00F8 (0x0004) [0x0000000000000001] [0x100000008] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackSound"))
@@ -16580,7 +16580,7 @@ public:
 	class TArray<struct FMaterialReferenceList>        Materials;                                     // 0x00E8 (0x0010) [0x0000000000480003] (CPF_Edit | CPF_Const | CPF_Component | CPF_NeedCtorLink)
 	class UMaterialInterface*                          Material;                                      // 0x00F8 (0x0008) [0x0000000020000002] (CPF_Const | CPF_Deprecated)
 	class FName                                        ParamName;                                     // 0x0100 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bNeedsMaterialRefsUpdate : 1;                  // 0x0108 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVectorMaterialParam"))
@@ -16607,7 +16607,7 @@ public:
 	class TArray<struct FVisibilityTrackKey>           VisibilityTrack;                               // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bFireEventsWhenForwards : 1;                   // 0x00D8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bFireEventsWhenBackwards : 1;                  // 0x00D8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bFireEventsWhenJumpingForwards : 1;            // 0x00D8 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackVisibility"))
@@ -16805,7 +16805,7 @@ class UInterpTrackInstBoolProp : public UInterpTrackInstProperty
 public:
 	struct FPointer                                    BoolProp;                                      // 0x0070 (0x0008) [0x0000000000000000]               
 	int32_t                                            BitMask;                                       // 0x0078 (0x0004) [0x0000000000000000]               
-	uint32_t                                           ResetBool : 1;                                 // 0x007C (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           ResetBool : 1;                                 // 0x007C (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstBoolProp"))
@@ -16876,7 +16876,7 @@ public:
 class UInterpTrackInstSkelControlStrength : public UInterpTrackInst
 {
 public:
-	uint32_t                                           bSavedControlledByAnimMetaData : 1;            // 0x0060 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bSavedControlledByAnimMetaData : 1;            // 0x0060 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstSkelControlStrength"))
@@ -16914,7 +16914,7 @@ public:
 	ETrackToggleAction                                 Action;                                        // 0x0060 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x3];                            // 0x0061 (0x0003) MISSED OFFSET
 	float                                              LastUpdatePosition;                            // 0x0064 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bSavedActiveState : 1;                         // 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bSavedActiveState : 1;                         // 0x0068 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InterpTrackInstToggle"))
@@ -17127,7 +17127,7 @@ public:
 	uint32_t                                           R : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           G : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           B : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint32_t                                           A : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint32_t                                           A : 1;                                         // 0x00F8 (0x0004) [0x0000000000000001] [0x100000008] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionComponentMask"))
@@ -17340,7 +17340,7 @@ public:
 class UMaterialExpressionDestDepth : public UMaterialExpression
 {
 public:
-	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionDestDepth"))
@@ -17944,7 +17944,7 @@ public:
 class UMaterialExpressionParticleMacroUV : public UMaterialExpression
 {
 public:
-	uint32_t                                           bUseViewSpace : 1;                             // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUseViewSpace : 1;                             // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionParticleMacroUV"))
@@ -17977,7 +17977,7 @@ public:
 class UMaterialExpressionPixelDepth : public UMaterialExpression
 {
 public:
-	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bNormalize : 1;                                // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionPixelDepth"))
@@ -18052,7 +18052,7 @@ class UMaterialExpressionSceneDepth : public UMaterialExpression
 {
 public:
 	struct FExpressionInput                            Coordinates;                                   // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bNormalize : 1;                                // 0x00F8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bNormalize : 1;                                // 0x00F8 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSceneDepth"))
@@ -18066,7 +18066,7 @@ public:
 	struct FExpressionInput                            Coordinates;                                   // 0x00C0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
 	ESceneTextureType                                  SceneTextureType;                              // 0x00F8 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x3];                            // 0x00F9 (0x0003) MISSED OFFSET
-	uint32_t                                           ScreenAlign : 1;                               // 0x00FC (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           ScreenAlign : 1;                               // 0x00FC (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionSceneTexture"))
@@ -18077,7 +18077,7 @@ public:
 class UMaterialExpressionScreenPosition : public UMaterialExpression
 {
 public:
-	uint32_t                                           ScreenAlign : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           ScreenAlign : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionScreenPosition"))
@@ -18137,7 +18137,7 @@ public:
 class UMaterialExpressionStaticBool : public UMaterialExpression
 {
 public:
-	uint32_t                                           Value : 1;                                     // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           Value : 1;                                     // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionStaticBool"))
@@ -18238,7 +18238,7 @@ public:
 	float                                              UTiling;                                       // 0x00C4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              VTiling;                                       // 0x00C8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           UnMirrorU : 1;                                 // 0x00CC (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           UnMirrorV : 1;                                 // 0x00CC (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           UnMirrorV : 1;                                 // 0x00CC (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTextureCoordinate"))
@@ -18442,7 +18442,7 @@ public:
 class UMaterialExpressionTime : public UMaterialExpression
 {
 public:
-	uint32_t                                           bIgnorePause : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bIgnorePause : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.MaterialExpressionTime"))
@@ -18870,7 +18870,7 @@ public:
 	class TArray<struct FCurveParameterPoint>          Points;                                        // 0x00A0 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	EInterpMethodType                                  InterpMethod;                                  // 0x00B0 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData01[0x3];                            // 0x00B1 (0x0003) MISSED OFFSET
-	uint32_t                                           bIsEditingCurve : 1;                           // 0x00B4 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIsEditingCurve : 1;                           // 0x00B4 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.DistributionVectorConstantCurveParticleParameter"))
@@ -18968,7 +18968,7 @@ class UParticleModuleAccelerationBase : public UParticleModule
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
-	uint32_t                                           bAlwaysInWorldSpace : 1;                       // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bAlwaysInWorldSpace : 1;                       // 0x0070 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAccelerationBase"))
@@ -18981,7 +18981,7 @@ class UParticleModuleAcceleration : public UParticleModuleAccelerationBase
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
 	struct FRawDistributionVector                      Acceleration;                                  // 0x0078 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bApplyOwnerScale : 1;                          // 0x00A0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bApplyOwnerScale : 1;                          // 0x00A0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAcceleration"))
@@ -19083,7 +19083,7 @@ public:
 	uint32_t                                           StrengthByDistance : 1;                        // 0x00E8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bAffectBaseVelocity : 1;                       // 0x00E8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           bOverrideVelocity : 1;                         // 0x00E8 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint32_t                                           bUseWorldSpacePosition : 1;                    // 0x00E8 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint32_t                                           bUseWorldSpacePosition : 1;                    // 0x00E8 (0x0004) [0x0000000000000001] [0x100000008] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleAttractorPoint"))
@@ -19308,7 +19308,7 @@ class UParticleModuleCollisionActor : public UParticleModuleCollision
 {
 public:
 	class TArray<class FName>                          ActorsToCollideWith;                           // 0x0188 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bCheckPawnCollisions : 1;                      // 0x0198 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bCheckPawnCollisions : 1;                      // 0x0198 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleCollisionActor"))
@@ -19332,7 +19332,7 @@ class UParticleModuleColor : public UParticleModuleColorBase
 public:
 	struct FRawDistributionVector                      StartColor;                                    // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	struct FRawDistributionFloat                       StartAlpha;                                    // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColor"))
@@ -19369,7 +19369,7 @@ class UParticleModuleColorOverLife : public UParticleModuleColorBase
 public:
 	struct FRawDistributionVector                      ColorOverLife;                                 // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	struct FRawDistributionFloat                       AlphaOverLife;                                 // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bClampAlpha : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorOverLife"))
@@ -19394,7 +19394,7 @@ class UParticleModuleColorScaleOverLife : public UParticleModuleColorBase
 public:
 	struct FRawDistributionVector                      ColorScaleOverLife;                            // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	struct FRawDistributionFloat                       AlphaScaleOverLife;                            // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bEmitterTime : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEmitterTime : 1;                              // 0x00C0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleColorScaleOverLife"))
@@ -19441,7 +19441,7 @@ class UParticleModuleEventReceiverKillParticles : public UParticleModuleEventRec
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x007C (0x0004) MISSED OFFSET
-	uint32_t                                           bStopSpawning : 1;                             // 0x0080 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bStopSpawning : 1;                             // 0x0080 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleEventReceiverKillParticles"))
@@ -19484,7 +19484,7 @@ public:
 	struct FRawDistributionVector                      UpperRightCorner;                              // 0x0098 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           bAbsolute : 1;                                 // 0x00C0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bKillInside : 1;                               // 0x00C0 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bAxisAlignedAndFixedSize : 1;                  // 0x00C0 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bAxisAlignedAndFixedSize : 1;                  // 0x00C0 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleKillBox"))
@@ -19498,7 +19498,7 @@ public:
 	struct FRawDistributionFloat                       Height;                                        // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           bAbsolute : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bFloor : 1;                                    // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bApplyPSysScale : 1;                           // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bApplyPSysScale : 1;                           // 0x0098 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleKillHeight"))
@@ -19828,7 +19828,7 @@ class UParticleModuleOrbitBase : public UParticleModule
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
-	uint32_t                                           bUseEmitterTime : 1;                           // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUseEmitterTime : 1;                           // 0x0070 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleOrbitBase"))
@@ -19895,7 +19895,7 @@ class UParticleModuleParameterDynamic : public UParticleModuleParameterBase
 public:
 	class TArray<struct FEmitterDynamicParameter>      DynamicParams;                                 // 0x0070 (0x0010) [0x0000000000480041] (CPF_Edit | CPF_EditFixedSize | CPF_Component | CPF_NeedCtorLink)
 	int32_t                                            UpdateFlags;                                   // 0x0080 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bUsesVelocity : 1;                             // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bUsesVelocity : 1;                             // 0x0084 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleParameterDynamic"))
@@ -19986,7 +19986,7 @@ class UParticleModuleMeshRotation : public UParticleModuleRotationBase
 {
 public:
 	struct FRawDistributionVector                      StartRotation;                                 // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bInheritParent : 1;                            // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bInheritParent : 1;                            // 0x0098 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotation"))
@@ -20032,7 +20032,7 @@ class UParticleModuleRotationOverLifetime : public UParticleModuleRotationBase
 {
 public:
 	struct FRawDistributionFloat                       RotationOverLife;                              // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           Scale : 1;                                     // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           Scale : 1;                                     // 0x0098 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleRotationOverLifetime"))
@@ -20088,7 +20088,7 @@ class UParticleModuleMeshRotationRateOverLife : public UParticleModuleRotationRa
 {
 public:
 	struct FRawDistributionVector                      RotRate;                                       // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bScaleRotRate : 1;                             // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bScaleRotRate : 1;                             // 0x0098 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleMeshRotationRateOverLife"))
@@ -20168,7 +20168,7 @@ public:
 	struct FRawDistributionVector                      LifeMultiplier;                                // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           MultiplyX : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           MultiplyY : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           MultiplyZ : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           MultiplyZ : 1;                                 // 0x0098 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeMultiplyLife"))
@@ -20198,7 +20198,7 @@ public:
 	struct FRawDistributionVector                      SizeScale;                                     // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           EnableX : 1;                                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           EnableY : 1;                                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           EnableZ : 1;                                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           EnableZ : 1;                                   // 0x0098 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeScale"))
@@ -20212,7 +20212,7 @@ public:
 	struct FRawDistributionVector                      SizeScaleByTime;                               // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           bEnableX : 1;                                  // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bEnableY : 1;                                  // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bEnableZ : 1;                                  // 0x0098 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bEnableZ : 1;                                  // 0x0098 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSizeScaleByTime"))
@@ -20236,7 +20236,7 @@ class UParticleModuleSpawnBase : public UParticleModule
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 	uint32_t                                           bProcessSpawnRate : 1;                         // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bProcessBurstList : 1;                         // 0x0070 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bProcessBurstList : 1;                         // 0x0070 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSpawnBase"))
@@ -20317,7 +20317,7 @@ class UParticleModuleSubUV : public UParticleModuleSubUVBase
 {
 public:
 	struct FRawDistributionFloat                       SubImageIndex;                                 // 0x0070 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           bUseRealTime : 1;                              // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUseRealTime : 1;                              // 0x0098 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleSubUV"))
@@ -20482,7 +20482,7 @@ public:
 	uint32_t                                           RenderGeometry : 1;                            // 0x014C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           RenderDirectLine : 1;                          // 0x014C (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           RenderLines : 1;                               // 0x014C (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint32_t                                           RenderTessellation : 1;                        // 0x014C (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint32_t                                           RenderTessellation : 1;                        // 0x014C (0x0004) [0x0000000000000001] [0x100000008] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataBeam"))
@@ -20638,7 +20638,7 @@ public:
 	uint32_t                                           RenderGeometry : 1;                            // 0x008C (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 	uint32_t                                           RenderDirectLine : 1;                          // 0x008C (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 	uint32_t                                           RenderLines : 1;                               // 0x008C (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
-	uint32_t                                           RenderTessellation : 1;                        // 0x008C (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
+	uint32_t                                           RenderTessellation : 1;                        // 0x008C (0x0004) [0x0000000000000001] [0x100000020] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleTypeDataTrail2"))
@@ -20836,7 +20836,7 @@ class UParticleModuleVelocityBase : public UParticleModule
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 	uint32_t                                           bInWorldSpace : 1;                             // 0x0070 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bApplyOwnerScale : 1;                          // 0x0070 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bApplyOwnerScale : 1;                          // 0x0070 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityBase"))
@@ -20900,7 +20900,7 @@ class UParticleModuleVelocityOverLifetime : public UParticleModuleVelocityBase
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
 	struct FRawDistributionVector                      VelOverLife;                                   // 0x0078 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
-	uint32_t                                           Absolute : 1;                                  // 0x00A0 (0x0004) [0x0000000000000009] [0x00000001] (CPF_Edit | CPF_ExportObject)
+	uint32_t                                           Absolute : 1;                                  // 0x00A0 (0x0004) [0x0000000000000009] [0x100000001] (CPF_Edit | CPF_ExportObject)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleModuleVelocityOverLifetime"))
@@ -21088,7 +21088,7 @@ class AKActorSpawnable : public AKActor
 {
 public:
 	uint32_t                                           bRecycleScaleToZero : 1;                       // 0x03B8 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bScalingToZero : 1;                            // 0x03B8 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bScalingToZero : 1;                            // 0x03B8 (0x0004) [0x0000000000000000] [0x100000002] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.KActorSpawnable"))
@@ -21432,7 +21432,7 @@ public:
 	float                                              AngularSpringScale;                            // 0x00EC (0x0004) [0x0000000000000002] (CPF_Const)   
 	float                                              AngularDampingScale;                           // 0x00F0 (0x0004) [0x0000000000000002] (CPF_Const)   
 	float                                              AngularForceLimitScale;                        // 0x00F4 (0x0004) [0x0000000000000002] (CPF_Const)   
-	uint32_t                                           bInitBodies : 1;                               // 0x00F8 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bInitBodies : 1;                               // 0x00F8 (0x0004) [0x0000000000000002] [0x100000001] (CPF_Const)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PhysicsAssetInstance"))
@@ -22323,7 +22323,7 @@ public:
 	class UPrefabSequence*                             PrefabSequence;                                // 0x0088 (0x0008) [0x0000000000000002] (CPF_Const)   
 	class UTexture2D*                                  PrefabPreview;                                 // 0x0090 (0x0008) [0x0000000800000002] (CPF_Const | CPF_EditorOnly)
 	uint32_t                                           bWorldspacePrefab : 1;                         // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bAutoUpdatePrefabInstances : 1;                // 0x0098 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bAutoUpdatePrefabInstances : 1;                // 0x0098 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Prefab"))
@@ -22522,7 +22522,7 @@ class USeqAct_ActivateRemoteEvent : public USequenceAction
 public:
 	class AActor*                                      Instigator;                                    // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class FName                                        EventName;                                     // 0x0168 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0170 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0170 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ActivateRemoteEvent"))
@@ -22560,7 +22560,7 @@ public:
 class USeqAct_AttachToEvent : public USequenceAction
 {
 public:
-	uint32_t                                           bPreferController : 1;                         // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bPreferController : 1;                         // 0x0160 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_AttachToEvent"))
@@ -22811,7 +22811,7 @@ class USeqAct_IsInObjectList : public USequenceAction
 {
 public:
 	uint32_t                                           bCheckForAllObjects : 1;                       // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bObjectFound : 1;                              // 0x0160 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bObjectFound : 1;                              // 0x0160 (0x0004) [0x0000000000002000] [0x100000002] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_IsInObjectList"))
@@ -22985,7 +22985,7 @@ class USeqAct_LevelStreamingBase : public USeqAct_Latent
 {
 public:
 	uint32_t                                           bMakeVisibleAfterLoad : 1;                     // 0x0178 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0178 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0178 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelStreamingBase"))
@@ -22999,7 +22999,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 	class ULevelStreaming*                             Level;                                         // 0x0180 (0x0008) [0x0000000000000002] (CPF_Const)   
 	class FName                                        LevelName;                                     // 0x0188 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelStreaming"))
@@ -23013,7 +23013,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 	class TArray<struct FLevelStreamingNameCombo>      Levels;                                        // 0x0180 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	uint32_t                                           bUnloadAllOtherLevels : 1;                     // 0x0190 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x100000002] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_MultiLevelStreaming"))
@@ -23026,7 +23026,7 @@ class USeqAct_LevelVisibility : public USeqAct_Latent
 public:
 	class ULevelStreaming*                             Level;                                         // 0x0178 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class FName                                        LevelName;                                     // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_LevelVisibility"))
@@ -23062,7 +23062,7 @@ public:
 	class FName                                        MainLevelName;                                 // 0x0178 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<class FName>                          InitiallyLoadedSecondaryLevelNames;            // 0x0180 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	uint32_t                                           bIsHighPriority : 1;                           // 0x0190 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0190 (0x0004) [0x0000000000002000] [0x100000002] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_PrepareMapChange"))
@@ -23139,7 +23139,7 @@ class USeqAct_WaitForLevelsVisible : public USeqAct_Latent
 {
 public:
 	class TArray<class FName>                          LevelNames;                                    // 0x0178 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0188 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bShouldBlockOnLoad : 1;                        // 0x0188 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_WaitForLevelsVisible"))
@@ -23187,7 +23187,7 @@ public:
 	class TArray<int32_t>                              Slots;                                         // 0x0160 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	ECoverType                                         ManualCoverType;                               // 0x0170 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x3];                            // 0x0171 (0x0003) MISSED OFFSET
-	uint32_t                                           bManualAdjustPlayersOnly : 1;                  // 0x0174 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bManualAdjustPlayersOnly : 1;                  // 0x0174 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_ModifyCover"))
@@ -23267,7 +23267,7 @@ class USeqAct_Possess : public USequenceAction
 {
 public:
 	class APawn*                                       PawnToPossess;                                 // 0x0160 (0x0008) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bKillOldPawn : 1;                              // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bKillOldPawn : 1;                              // 0x0168 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_Possess"))
@@ -23302,7 +23302,7 @@ public:
 class USeqAct_SetApexClothingParam : public USequenceAction
 {
 public:
-	uint32_t                                           bEnableApexClothingSimulation : 1;             // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bEnableApexClothingSimulation : 1;             // 0x0160 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetApexClothingParam"))
@@ -23366,7 +23366,7 @@ public:
 	EMeshType                                          MeshType;                                      // 0x0170 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x3];                            // 0x0171 (0x0003) MISSED OFFSET
 	uint32_t                                           bIsAllowedToMove : 1;                          // 0x0174 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bAllowDecalsToReattach : 1;                    // 0x0174 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bAllowDecalsToReattach : 1;                    // 0x0174 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetMesh"))
@@ -23540,7 +23540,7 @@ public:
 class USeqAct_SetBool : public USeqAct_SetSequenceVariable
 {
 public:
-	uint32_t                                           DefaultValue : 1;                              // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           DefaultValue : 1;                              // 0x0160 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqAct_SetBool"))
@@ -23765,7 +23765,7 @@ public:
 class USeqCond_CompareBool : public USequenceCondition
 {
 public:
-	uint32_t                                           bResult : 1;                                   // 0x0140 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bResult : 1;                                   // 0x0140 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqCond_CompareBool"))
@@ -24170,7 +24170,7 @@ public:
 	struct FVector                                     EventVelocity;                                 // 0x0194 (0x000C) [0x0000000000000000]               
 	float                                              EventParticleTime;                             // 0x01A0 (0x0004) [0x0000000000000000]               
 	struct FVector                                     EventNormal;                                   // 0x01A4 (0x000C) [0x0000000000000000]               
-	uint32_t                                           UseRelfectedImpactVector : 1;                  // 0x01B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           UseRelfectedImpactVector : 1;                  // 0x01B0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_ParticleEvent"))
@@ -24184,7 +24184,7 @@ class USeqEvent_RemoteEvent : public USequenceEvent
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x017C (0x0004) MISSED OFFSET
 	class FName                                        EventName;                                     // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x0188 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqEvent_RemoteEvent"))
@@ -24391,7 +24391,7 @@ class USeqVar_Named : public USequenceVariable
 public:
 	class UClass*                                      ExpectedType;                                  // 0x00E0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class FName                                        FindVarName;                                   // 0x00E8 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bStatusIsOk : 1;                               // 0x00F0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bStatusIsOk : 1;                               // 0x00F0 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_Named"))
@@ -24460,7 +24460,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x010C (0x0004) MISSED OFFSET
 	class TArray<class UObject*>                       ContainedObjects;                              // 0x0110 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class UClass*>                        ExcludeClassList;                              // 0x0120 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint32_t                                           bCollidingOnly : 1;                            // 0x0130 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bCollidingOnly : 1;                            // 0x0130 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SeqVar_ObjectVolume"))
@@ -25242,7 +25242,7 @@ public:
 	struct FPointer                                    RBHeightfield;                                 // 0x0348 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 	struct FBoxSphereBounds                            CachedBoxSphereBounds;                         // 0x0350 (0x001C) [0x0000000000000002] (CPF_Const)   
 	uint32_t                                           bIncludeHoles : 1;                             // 0x036C (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bHeightFieldDataHasHole : 1;                   // 0x036C (0x0004) [0x0000000800002000] [0x00000002] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bHeightFieldDataHasHole : 1;                   // 0x036C (0x0004) [0x0000000800002000] [0x100000002] (CPF_Transient | CPF_EditorOnly)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeHeightfieldCollisionComponent"))
@@ -25270,7 +25270,7 @@ public:
 	struct FTerrainBVTree                              BVTree;                                        // 0x02C8 (0x0010) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	class TArray<struct FVector>                       CollisionVertices;                             // 0x02D8 (0x0010) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    RBHeightfield;                                 // 0x02E8 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
-	uint32_t                                           bDisplayCollisionLevel : 1;                    // 0x02F0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bDisplayCollisionLevel : 1;                    // 0x02F0 (0x0004) [0x0000000000000002] [0x100000001] (CPF_Const)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.TerrainComponent"))
@@ -25293,7 +25293,7 @@ public:
 	struct FSet_Mirror                                 SelectedRegionComponents;                      // 0x02B0 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
 	uint8_t                                          UnknownData03[0x50];                          // 0x0300 (0x0050) MISSED OFFSET
 	class FString                                      HeightmapFilePath;                             // 0x0350 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
-	uint32_t                                           bIsValid : 1;                                  // 0x0360 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bIsValid : 1;                                  // 0x0360 (0x0004) [0x0000000800002000] [0x100000001] (CPF_Transient | CPF_EditorOnly)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeInfo"))
@@ -25307,7 +25307,7 @@ public:
 	class FName                                        LayerName;                                     // 0x0060 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UPhysicalMaterial*                           PhysMaterial;                                  // 0x0068 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	float                                              Hardness;                                      // 0x0070 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bNoWeightBlend : 1;                            // 0x0074 (0x0004) [0x0000000800000000] [0x00000001] (CPF_EditorOnly)
+	uint32_t                                           bNoWeightBlend : 1;                            // 0x0074 (0x0004) [0x0000000800000000] [0x100000001] (CPF_EditorOnly)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LandscapeLayerInfoObject"))
@@ -25565,7 +25565,7 @@ public:
 	struct FMatrix                                     CanvasToScreen;                                // 0x0090 (0x0040) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	struct FMatrix                                     InvCanvasToScreen;                             // 0x00D0 (0x0040) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	class UPostProcessChain*                           UIScenePostProcess;                            // 0x0110 (0x0008) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bEnablePostProcess : 1;                        // 0x0118 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bEnablePostProcess : 1;                        // 0x0118 (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UISceneClient"))
@@ -26138,7 +26138,7 @@ class UUIDataProvider_Settings : public UUIPropertyDataProvider
 {
 public:
 	class USettings*                                   Settings;                                      // 0x0098 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bIsAListRow : 1;                               // 0x00A0 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIsAListRow : 1;                               // 0x00A0 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIDataProvider_Settings"))
@@ -26149,7 +26149,7 @@ public:
 class UUIResourceDataProvider : public UUIPropertyDataProvider
 {
 public:
-	uint32_t                                           bSkipDuringEnumeration : 1;                    // 0x0098 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t                                           bSkipDuringEnumeration : 1;                    // 0x0098 (0x0004) [0x0000000000004000] [0x100000001] (CPF_Config)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.UIResourceDataProvider"))
@@ -26389,7 +26389,7 @@ public:
 	class USpriteComponent*                            Sprite;                                        // 0x0270 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UFluidInfluenceComponent*                    InfluenceComponent;                            // 0x0278 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
 	uint32_t                                           bActive : 1;                                   // 0x0280 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
-	uint32_t                                           bToggled : 1;                                  // 0x0280 (0x0004) [0x0000000100000020] [0x00000002] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bToggled : 1;                                  // 0x0280 (0x0004) [0x0000000100000020] [0x100000002] (CPF_Net | CPF_RepNotify)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.FluidInfluenceActor"))
@@ -26630,7 +26630,7 @@ class ALensFlareSource : public AActor
 {
 public:
 	class ULensFlareComponent*                         LensFlareComp;                                 // 0x0268 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
-	uint32_t                                           bCurrentlyActive : 1;                          // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bCurrentlyActive : 1;                          // 0x0270 (0x0004) [0x0000000100000020] [0x100000001] (CPF_Net | CPF_RepNotify)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.LensFlareSource"))
@@ -26778,7 +26778,7 @@ public:
 	EPixelFormat                                       Format;                                        // 0x0158 (0x0001) [0x0000000000003000] (CPF_Native | CPF_Transient)
 	uint8_t                                          UnknownData00[0x3];                            // 0x0159 (0x0003) MISSED OFFSET
 	int32_t                                            NumMips;                                       // 0x015C (0x0004) [0x0000000000003000] (CPF_Native | CPF_Transient)
-	uint32_t                                           bIsResolveTarget : 1;                          // 0x0160 (0x0004) [0x0000000000003000] [0x00000001] (CPF_Native | CPF_Transient)
+	uint32_t                                           bIsResolveTarget : 1;                          // 0x0160 (0x0004) [0x0000000000003000] [0x100000001] (CPF_Native | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Texture2DDynamic"))
@@ -27397,7 +27397,7 @@ class ALight : public AActor
 {
 public:
 	class ULightComponent*                             LightComponent;                                // 0x0268 (0x0008) [0x00000000040A000B] (CPF_Edit | CPF_Const | CPF_ExportObject | CPF_EditConst | CPF_Component | CPF_EditInline)
-	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000100000020] [0x00000001] (CPF_Net | CPF_RepNotify)
+	uint32_t                                           bEnabled : 1;                                  // 0x0270 (0x0004) [0x0000000100000020] [0x100000001] (CPF_Net | CPF_RepNotify)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.Light"))
@@ -27773,7 +27773,7 @@ class USphericalHarmonicLightComponent : public ULightComponent
 public:
 	uint8_t                                          UnknownData00[0xC];                            // 0x01C4 (0x000C) MISSED OFFSET
 	struct FSHVectorRGB                                WorldSpaceIncidentLighting;                    // 0x01D0 (0x0090) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bRenderBeforeModShadows : 1;                   // 0x0260 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bRenderBeforeModShadows : 1;                   // 0x0260 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.SphericalHarmonicLightComponent"))
@@ -27858,7 +27858,7 @@ public:
 	int32_t                                            NumPooledReuses;                               // 0x0174 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	class AActor*                                      SharedInstigator;                              // 0x0178 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	class UParticleSystem*                             SharedParticleSystem;                          // 0x0180 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	uint32_t                                           bAllowDLESharing : 1;                          // 0x0188 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bAllowDLESharing : 1;                          // 0x0188 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.ParticleLightEnvironmentComponent"))
@@ -28617,7 +28617,7 @@ public:
 	float                                              ASize;                                         // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              BMaxSize;                                      // 0x00A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bInvertPatternOrder : 1;                       // 0x00A4 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bEqualSizeAB : 1;                              // 0x00A4 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bEqualSizeAB : 1;                              // 0x00A4 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeAlternate"))
@@ -28672,7 +28672,7 @@ public:
 	uint8_t                                          UnknownData01[0x3];                            // 0x0099 (0x0003) MISSED OFFSET
 	float                                              RepeatSize;                                    // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            CycleSize;                                     // 0x00A0 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bFixRepeatSize : 1;                            // 0x00A4 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bFixRepeatSize : 1;                            // 0x00A4 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeCycle"))
@@ -28741,7 +28741,7 @@ public:
 	class TArray<struct FBuildingMeshInfo>             BuildingMeshes;                                // 0x0098 (0x0010) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	struct FBuildingMeshInfo                           PartialOccludedBuildingMesh;                   // 0x00A8 (0x0050) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
 	uint32_t                                           bDoOcclusionTest : 1;                          // 0x00F8 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bBlockAll : 1;                                 // 0x00F8 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bBlockAll : 1;                                 // 0x00F8 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeMesh"))
@@ -28770,7 +28770,7 @@ public:
 	float                                              RepeatMaxSizeZ;                                // 0x00A4 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            QuadLightmapRes;                               // 0x00A8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              YOffset;                                       // 0x00AC (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bDisableMaterialRepeat : 1;                    // 0x00B0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bDisableMaterialRepeat : 1;                    // 0x00B0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeQuad"))
@@ -28813,7 +28813,7 @@ public:
 	EProcBuildingAxis                                  SizeAxis;                                      // 0x0098 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData01[0x3];                            // 0x0099 (0x0003) MISSED OFFSET
 	float                                              DecisionSize;                                  // 0x009C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bUseTopLevelScopeSize : 1;                     // 0x00A0 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUseTopLevelScopeSize : 1;                     // 0x00A0 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeSize"))
@@ -28865,7 +28865,7 @@ class UPBRuleNodeVariation : public UPBRuleNodeBase
 {
 public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
-	uint32_t                                           bVariationOfScopeOnLeft : 1;                   // 0x0098 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bVariationOfScopeOnLeft : 1;                   // 0x0098 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.PBRuleNodeVariation"))
@@ -29448,7 +29448,7 @@ class UCloudStorageBase : public UPlatformInterfaceBase
 {
 public:
 	class TArray<class FString>                        LocalCloudFiles;                               // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bSuppressDelegateCalls : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bSuppressDelegateCalls : 1;                    // 0x0098 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.CloudStorageBase"))
@@ -29517,7 +29517,7 @@ public:
 class UInGameAdManager : public UPlatformInterfaceBase
 {
 public:
-	uint32_t                                           bShouldPauseWhileAdOpen : 1;                   // 0x0088 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bShouldPauseWhileAdOpen : 1;                   // 0x0088 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Engine.InGameAdManager"))

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: Core_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -586,7 +586,7 @@ struct FVoiceAudioDevice
 {
 	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
 	class FString                                      Name;                                          // 0x0010 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
-	uint32_t                                           bDefault : 1;                                  // 0x0020 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           bDefault : 1;                                  // 0x0020 (0x0004) [0x0000000040000000] [0x100000001] (CPF_DataBinding)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -599,7 +599,7 @@ struct FVoiceRoomMemberStatus
 	uint32_t                                           bSelfMuted : 1;                                // 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
 	uint32_t                                           bLocalMuted : 1;                               // 0x0000 (0x0004) [0x0000000000000000] [0x00000008] 
 	uint32_t                                           bAdminMuted : 1;                               // 0x0000 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bBlocked : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000020] 
+	uint32_t                                           bBlocked : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x100000020] 
 };
 
 // ScriptStruct Core._Types_Core.ProductInstanceID
@@ -650,7 +650,7 @@ struct FRawDistributionFloat : FRawDistribution
 struct FMatineeRawDistributionFloat : FRawDistributionFloat
 {
 	float                                              MatineeValue;                                  // 0x0028 (0x0004) [0x0000000000000000]               
-	uint32_t                                           bInMatinee : 1;                                // 0x002C (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bInMatinee : 1;                                // 0x002C (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Core.DistributionVector.RawDistributionVector
@@ -666,7 +666,7 @@ struct FObjectProviderSubscription
 {
 	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bFireOnce : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bFireOnce : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 

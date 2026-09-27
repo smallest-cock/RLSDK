@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -2166,6 +2166,25 @@ void UReservationBeacon_X::Close()
 	memset(&Close_Params, 0, sizeof(Close_Params));
 
 	this->ProcessEvent(uFnClose, &Close_Params, nullptr);
+};
+
+// Function ProjectX.ReservationBeacon_X.RefreshConnectionTimeout
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UIReservationConnection_X* Connection                     (CPF_Parm)
+// float                          TimeoutSeconds                 (CPF_Parm)
+void UReservationBeacon_X::RefreshConnectionTimeout(class UIReservationConnection_X* Connection, float TimeoutSeconds)
+{
+    static UFunction* uFnRefreshConnectionTimeout = nullptr;
+    if (!uFnRefreshConnectionTimeout)
+        uFnRefreshConnectionTimeout = UFunction::FindFunction("Function ProjectX.ReservationBeacon_X.RefreshConnectionTimeout");
+
+	UReservationBeacon_X_execRefreshConnectionTimeout_Params RefreshConnectionTimeout_Params;
+	memset(&RefreshConnectionTimeout_Params, 0, sizeof(RefreshConnectionTimeout_Params));
+	RefreshConnectionTimeout_Params.Connection = Connection;
+	memcpy_s(&RefreshConnectionTimeout_Params.TimeoutSeconds, sizeof(RefreshConnectionTimeout_Params.TimeoutSeconds), &TimeoutSeconds, sizeof(TimeoutSeconds));
+
+	this->ProcessEvent(uFnRefreshConnectionTimeout, &RefreshConnectionTimeout_Params, nullptr);
 };
 
 // Function ProjectX.ReservationBeacon_X.CloseConnection
@@ -9009,6 +9028,23 @@ void UOnlinePlayerAuthentication_X::OnInit()
 	this->ProcessEvent(uFnOnInit, &OnInit_Params, nullptr);
 };
 
+// Function ProjectX.OnlinePlayerAuthentication_X.EventOnMMRRefunded
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class TArray<struct FMMRCompensationData> MMRCompensationList            (CPF_Parm | CPF_NeedCtorLink)
+void UOnlinePlayerAuthentication_X::EventOnMMRRefunded(const class TArray<struct FMMRCompensationData>& MMRCompensationList)
+{
+    static UFunction* uFnEventOnMMRRefunded = nullptr;
+    if (!uFnEventOnMMRRefunded)
+        uFnEventOnMMRRefunded = UFunction::FindFunction("Function ProjectX.OnlinePlayerAuthentication_X.EventOnMMRRefunded");
+
+	UOnlinePlayerAuthentication_X_execEventOnMMRRefunded_Params EventOnMMRRefunded_Params;
+	memset(&EventOnMMRRefunded_Params, 0, sizeof(EventOnMMRRefunded_Params));
+	memcpy_s(&EventOnMMRRefunded_Params.MMRCompensationList, sizeof(EventOnMMRRefunded_Params.MMRCompensationList), &MMRCompensationList, sizeof(MMRCompensationList));
+
+	this->ProcessEvent(uFnEventOnMMRRefunded, &EventOnMMRRefunded_Params, nullptr);
+};
+
 // Function ProjectX.OnlinePlayerAuthentication_X.EventConnectionStatusChanged
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
@@ -12860,6 +12896,23 @@ void UGFxShell_X::ExitGame()
 	memset(&ExitGame_Params, 0, sizeof(ExitGame_Params));
 
 	this->ProcessEvent(uFnExitGame, &ExitGame_Params, nullptr);
+};
+
+// Function ProjectX.GFxShell_X.SetAxisInputTypeSwitchBlocked
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// uint32_t                       bBlocked                       (CPF_Parm)
+void UGFxShell_X::SetAxisInputTypeSwitchBlocked(bool bBlocked)
+{
+    static UFunction* uFnSetAxisInputTypeSwitchBlocked = nullptr;
+    if (!uFnSetAxisInputTypeSwitchBlocked)
+        uFnSetAxisInputTypeSwitchBlocked = UFunction::FindFunction("Function ProjectX.GFxShell_X.SetAxisInputTypeSwitchBlocked");
+
+	UGFxShell_X_execSetAxisInputTypeSwitchBlocked_Params SetAxisInputTypeSwitchBlocked_Params;
+	memset(&SetAxisInputTypeSwitchBlocked_Params, 0, sizeof(SetAxisInputTypeSwitchBlocked_Params));
+	SetAxisInputTypeSwitchBlocked_Params.bBlocked = bBlocked;
+
+	this->ProcessEvent(uFnSetAxisInputTypeSwitchBlocked, &SetAxisInputTypeSwitchBlocked_Params, nullptr);
 };
 
 // Function ProjectX.GFxShell_X.HandleMovieInputCaptureChanged
@@ -17893,6 +17946,23 @@ void UPsyNet_X::ReportCheater(const struct FUniqueNetId& Id, const class FString
 	UPsyNet_X::StaticClass()->ProcessEvent(uFnReportCheater, &ReportCheater_Params, nullptr);
 };
 
+// Function ProjectX.PsyNet_X.GetBuildSecret
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+class FString UPsyNet_X::GetBuildSecret()
+{
+    static UFunction* uFnGetBuildSecret = nullptr;
+    if (!uFnGetBuildSecret)
+        uFnGetBuildSecret = UFunction::FindFunction("Function ProjectX.PsyNet_X.GetBuildSecret");
+
+	UPsyNet_X_execGetBuildSecret_Params GetBuildSecret_Params;
+	memset(&GetBuildSecret_Params, 0, sizeof(GetBuildSecret_Params));
+
+	UPsyNet_X::StaticClass()->ProcessEvent(uFnGetBuildSecret, &GetBuildSecret_Params, nullptr);
+	return GetBuildSecret_Params.ReturnValue;
+};
+
 // Function ProjectX.PsyNet_X.AssignQWordToString
 // [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
 // Parameter Info:
@@ -21121,6 +21191,27 @@ void URPC_X::NotifyError(class UError* InError)
 	this->ProcessEvent(uFnNotifyError, &NotifyError_Params, nullptr);
 };
 
+// Function ProjectX.RPC_X.SetHeader
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
+// Parameter Info:
+// class URPC_X*                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  Key                            (CPF_Parm | CPF_NeedCtorLink)
+// class FString                  Value                          (CPF_Parm | CPF_NeedCtorLink)
+class URPC_X* URPC_X::SetHeader(const class FString& Key, const class FString& Value)
+{
+    static UFunction* uFnSetHeader = nullptr;
+    if (!uFnSetHeader)
+        uFnSetHeader = UFunction::FindFunction("Function ProjectX.RPC_X.SetHeader");
+
+	URPC_X_execSetHeader_Params SetHeader_Params;
+	memset(&SetHeader_Params, 0, sizeof(SetHeader_Params));
+	memcpy_s(&SetHeader_Params.Key, sizeof(SetHeader_Params.Key), &Key, sizeof(Key));
+	memcpy_s(&SetHeader_Params.Value, sizeof(SetHeader_Params.Value), &Value, sizeof(Value));
+
+	this->ProcessEvent(uFnSetHeader, &SetHeader_Params, nullptr);
+	return SetHeader_Params.ReturnValue;
+};
+
 // Function ProjectX.RPC_X.OverrideErrorType
 // [0x00080800] (FUNC_Event | FUNC_Protected)
 // Parameter Info:
@@ -23410,6 +23501,23 @@ void UOnlineGameDedicatedServer_X::HandleTrackerPlayerAdded(class UServerPlayerT
 	this->ProcessEvent(uFnHandleTrackerPlayerAdded, &HandleTrackerPlayerAdded_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.SyncStatus
+// [0x00080000] (FUNC_Protected)
+// Parameter Info:
+// struct FUniqueNetId            PlayerID                       (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGameDedicatedServer_X::SyncStatus(const struct FUniqueNetId& PlayerID)
+{
+    static UFunction* uFnSyncStatus = nullptr;
+    if (!uFnSyncStatus)
+        uFnSyncStatus = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.SyncStatus");
+
+	UOnlineGameDedicatedServer_X_execSyncStatus_Params SyncStatus_Params;
+	memset(&SyncStatus_Params, 0, sizeof(SyncStatus_Params));
+	memcpy_s(&SyncStatus_Params.PlayerID, sizeof(SyncStatus_Params.PlayerID), &PlayerID, sizeof(PlayerID));
+
+	this->ProcessEvent(uFnSyncStatus, &SyncStatus_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.MatchGUID
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -23565,6 +23673,40 @@ bool UOnlineGameDedicatedServer_X::IsRankedMatch()
 
 	this->ProcessEvent(uFnIsRankedMatch, &IsRankedMatch_Params, nullptr);
 	return IsRankedMatch_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.SetModeSourcePlaylist
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// int32_t                        PlaylistId                     (CPF_Parm)
+void UOnlineGameDedicatedServer_X::SetModeSourcePlaylist(int32_t PlaylistId)
+{
+    static UFunction* uFnSetModeSourcePlaylist = nullptr;
+    if (!uFnSetModeSourcePlaylist)
+        uFnSetModeSourcePlaylist = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.SetModeSourcePlaylist");
+
+	UOnlineGameDedicatedServer_X_execSetModeSourcePlaylist_Params SetModeSourcePlaylist_Params;
+	memset(&SetModeSourcePlaylist_Params, 0, sizeof(SetModeSourcePlaylist_Params));
+	memcpy_s(&SetModeSourcePlaylist_Params.PlaylistId, sizeof(SetModeSourcePlaylist_Params.PlaylistId), &PlaylistId, sizeof(PlaylistId));
+
+	this->ProcessEvent(uFnSetModeSourcePlaylist, &SetModeSourcePlaylist_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.GetModeSourcePlaylist
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UGameSettingPlaylist_X*  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+class UGameSettingPlaylist_X* UOnlineGameDedicatedServer_X::GetModeSourcePlaylist()
+{
+    static UFunction* uFnGetModeSourcePlaylist = nullptr;
+    if (!uFnGetModeSourcePlaylist)
+        uFnGetModeSourcePlaylist = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.GetModeSourcePlaylist");
+
+	UOnlineGameDedicatedServer_X_execGetModeSourcePlaylist_Params GetModeSourcePlaylist_Params;
+	memset(&GetModeSourcePlaylist_Params, 0, sizeof(GetModeSourcePlaylist_Params));
+
+	this->ProcessEvent(uFnGetModeSourcePlaylist, &GetModeSourcePlaylist_Params, nullptr);
+	return GetModeSourcePlaylist_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetPlaylist
@@ -24149,7 +24291,7 @@ struct FUniqueNetId UOnlineGameDedicatedServer_X::GetCustomMatchOwner()
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.UpdateCustomMatchOwner
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 // struct FUniqueNetId            NewOwner                       (CPF_Parm | CPF_NeedCtorLink)
 void UOnlineGameDedicatedServer_X::UpdateCustomMatchOwner(const struct FUniqueNetId& NewOwner)
@@ -24376,6 +24518,36 @@ void UOnlineGameDedicatedServer_X::InitClanforge()
 	memset(&InitClanforge_Params, 0, sizeof(InitClanforge_Params));
 
 	this->ProcessEvent(uFnInitClanforge, &InitClanforge_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.UpdateDisableMatchmakingBan
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+void UOnlineGameDedicatedServer_X::UpdateDisableMatchmakingBan()
+{
+    static UFunction* uFnUpdateDisableMatchmakingBan = nullptr;
+    if (!uFnUpdateDisableMatchmakingBan)
+        uFnUpdateDisableMatchmakingBan = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.UpdateDisableMatchmakingBan");
+
+	UOnlineGameDedicatedServer_X_execUpdateDisableMatchmakingBan_Params UpdateDisableMatchmakingBan_Params;
+	memset(&UpdateDisableMatchmakingBan_Params, 0, sizeof(UpdateDisableMatchmakingBan_Params));
+
+	this->ProcessEvent(uFnUpdateDisableMatchmakingBan, &UpdateDisableMatchmakingBan_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.HandleServerConfigUpdated
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+void UOnlineGameDedicatedServer_X::HandleServerConfigUpdated()
+{
+    static UFunction* uFnHandleServerConfigUpdated = nullptr;
+    if (!uFnHandleServerConfigUpdated)
+        uFnHandleServerConfigUpdated = UFunction::FindFunction("Function ProjectX.OnlineGameDedicatedServer_X.HandleServerConfigUpdated");
+
+	UOnlineGameDedicatedServer_X_execHandleServerConfigUpdated_Params HandleServerConfigUpdated_Params;
+	memset(&HandleServerConfigUpdated_Params, 0, sizeof(HandleServerConfigUpdated_Params));
+
+	this->ProcessEvent(uFnHandleServerConfigUpdated, &HandleServerConfigUpdated_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.OnInit
@@ -25145,6 +25317,23 @@ bool UOnlineGameReservations_X::__OnlineGameReservations_X__SetPlayersWithMigrat
 
 	this->ProcessEvent(uFn__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1, &__OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params, nullptr);
 	return __OnlineGameReservations_X__SetPlayersWithMigrationData_0x1_Params.ReturnValue;
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4
+// [0x40040003] (FUNC_Final | FUNC_Defined | FUNC_Private | FUNC_Lambda)
+// Parameter Info:
+// struct FPsyNetBeaconPlayerReservation P                              (CPF_Parm | CPF_NeedCtorLink)
+void UOnlineGameReservations_X::__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4(const struct FPsyNetBeaconPlayerReservation& P)
+{
+    static UFunction* uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4 = nullptr;
+    if (!uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4)
+        uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4 = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4");
+
+	UOnlineGameReservations_X_exec__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params __OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params;
+	memset(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params, 0, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params));
+	memcpy_s(&__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params.P, sizeof(__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params.P), &P, sizeof(P));
+
+	this->ProcessEvent(uFn__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4, &__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3
@@ -26480,7 +26669,7 @@ void UOnlineGameReservations_X::ClearReservations()
 };
 
 // Function ProjectX.OnlineGameReservations_X.Reset
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// [0x00820003] (FUNC_Final | FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
 // Parameter Info:
 void UOnlineGameReservations_X::Reset()
 {
@@ -27584,6 +27773,23 @@ void UOnlineGameReservations_X::HandleServerMigrationMessage(class UMatchInfoMes
 	this->ProcessEvent(uFnHandleServerMigrationMessage, &HandleServerMigrationMessage_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameReservations_X.HandleHonorDuelReservation
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UPsyNetService_CreateHonorDuel_X* Notification                   (CPF_Parm)
+void UOnlineGameReservations_X::HandleHonorDuelReservation(class UPsyNetService_CreateHonorDuel_X* Notification)
+{
+    static UFunction* uFnHandleHonorDuelReservation = nullptr;
+    if (!uFnHandleHonorDuelReservation)
+        uFnHandleHonorDuelReservation = UFunction::FindFunction("Function ProjectX.OnlineGameReservations_X.HandleHonorDuelReservation");
+
+	UOnlineGameReservations_X_execHandleHonorDuelReservation_Params HandleHonorDuelReservation_Params;
+	memset(&HandleHonorDuelReservation_Params, 0, sizeof(HandleHonorDuelReservation_Params));
+	HandleHonorDuelReservation_Params.Notification = Notification;
+
+	this->ProcessEvent(uFnHandleHonorDuelReservation, &HandleHonorDuelReservation_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGameReservations_X.HandleReconnectReservation
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -28541,6 +28747,23 @@ void UTimers_X::Clear(const struct FScriptDelegate& Callback)
 	UTimers_X::StaticClass()->ProcessEvent(uFnClear, &Clear_Params, nullptr);
 };
 
+// Function ProjectX.Timers_X.SetNextFrame
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+void UTimers_X::SetNextFrame(const struct FScriptDelegate& Callback)
+{
+    static UFunction* uFnSetNextFrame = nullptr;
+    if (!uFnSetNextFrame)
+        uFnSetNextFrame = UFunction::FindFunction("Function ProjectX.Timers_X.SetNextFrame");
+
+	UTimers_X_execSetNextFrame_Params SetNextFrame_Params;
+	memset(&SetNextFrame_Params, 0, sizeof(SetNextFrame_Params));
+	memcpy_s(&SetNextFrame_Params.Callback, sizeof(SetNextFrame_Params.Callback), &Callback, sizeof(Callback));
+
+	UTimers_X::StaticClass()->ProcessEvent(uFnSetNextFrame, &SetNextFrame_Params, nullptr);
+};
+
 // Function ProjectX.Timers_X.SetStateTimer
 // [0x00026401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_HasOptionalParms | FUNC_Public)
 // Parameter Info:
@@ -28725,6 +28948,23 @@ void UTimersComponent_X::Clear(const struct FScriptDelegate& Callback)
 	memcpy_s(&Clear_Params.Callback, sizeof(Clear_Params.Callback), &Callback, sizeof(Callback));
 
 	this->ProcessEvent(uFnClear, &Clear_Params, nullptr);
+};
+
+// Function ProjectX.TimersComponent_X.SetNextFrame
+// [0x00020401] (FUNC_Final | FUNC_Native | FUNC_Public)
+// Parameter Info:
+// struct FScriptDelegate         Callback                       (CPF_Parm | CPF_NeedCtorLink)
+void UTimersComponent_X::SetNextFrame(const struct FScriptDelegate& Callback)
+{
+    static UFunction* uFnSetNextFrame = nullptr;
+    if (!uFnSetNextFrame)
+        uFnSetNextFrame = UFunction::FindFunction("Function ProjectX.TimersComponent_X.SetNextFrame");
+
+	UTimersComponent_X_execSetNextFrame_Params SetNextFrame_Params;
+	memset(&SetNextFrame_Params, 0, sizeof(SetNextFrame_Params));
+	memcpy_s(&SetNextFrame_Params.Callback, sizeof(SetNextFrame_Params.Callback), &Callback, sizeof(Callback));
+
+	this->ProcessEvent(uFnSetNextFrame, &SetNextFrame_Params, nullptr);
 };
 
 // Function ProjectX.TimersComponent_X.SetStateTimer
@@ -29206,6 +29446,25 @@ class UWebRequest_X* UWebRequest_X::SetVerb(const class FString& InVerb)
 
 	this->ProcessEvent(uFnSetVerb, &SetVerb_Params, nullptr);
 	return SetVerb_Params.ReturnValue;
+};
+
+// Function ProjectX.WebRequest_X.RedactUrlSecrets
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  InURL                          (CPF_Parm | CPF_NeedCtorLink)
+class FString UWebRequest_X::RedactUrlSecrets(const class FString& InURL)
+{
+    static UFunction* uFnRedactUrlSecrets = nullptr;
+    if (!uFnRedactUrlSecrets)
+        uFnRedactUrlSecrets = UFunction::FindFunction("Function ProjectX.WebRequest_X.RedactUrlSecrets");
+
+	UWebRequest_X_execRedactUrlSecrets_Params RedactUrlSecrets_Params;
+	memset(&RedactUrlSecrets_Params, 0, sizeof(RedactUrlSecrets_Params));
+	memcpy_s(&RedactUrlSecrets_Params.InURL, sizeof(RedactUrlSecrets_Params.InURL), &InURL, sizeof(InURL));
+
+	UWebRequest_X::StaticClass()->ProcessEvent(uFnRedactUrlSecrets, &RedactUrlSecrets_Params, nullptr);
+	return RedactUrlSecrets_Params.ReturnValue;
 };
 
 // Function ProjectX.WebRequest_X.SetHeader
@@ -29968,6 +30227,25 @@ void UPsyNetBeacon_X::CloseConnection(class UPsyNetBeaconConnection_X* Connectio
 	CloseConnection_Params.Connection = Connection;
 
 	this->ProcessEvent(uFnCloseConnection, &CloseConnection_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetBeacon_X.RefreshConnectionTimeout
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UPsyNetBeaconConnection_X* Connection                     (CPF_Parm)
+// float                          TimeoutSeconds                 (CPF_Parm)
+void UPsyNetBeacon_X::RefreshConnectionTimeout(class UPsyNetBeaconConnection_X* Connection, float TimeoutSeconds)
+{
+    static UFunction* uFnRefreshConnectionTimeout = nullptr;
+    if (!uFnRefreshConnectionTimeout)
+        uFnRefreshConnectionTimeout = UFunction::FindFunction("Function ProjectX.PsyNetBeacon_X.RefreshConnectionTimeout");
+
+	UPsyNetBeacon_X_execRefreshConnectionTimeout_Params RefreshConnectionTimeout_Params;
+	memset(&RefreshConnectionTimeout_Params, 0, sizeof(RefreshConnectionTimeout_Params));
+	RefreshConnectionTimeout_Params.Connection = Connection;
+	memcpy_s(&RefreshConnectionTimeout_Params.TimeoutSeconds, sizeof(RefreshConnectionTimeout_Params.TimeoutSeconds), &TimeoutSeconds, sizeof(TimeoutSeconds));
+
+	this->ProcessEvent(uFnRefreshConnectionTimeout, &RefreshConnectionTimeout_Params, nullptr);
 };
 
 // Function ProjectX.PsyNetBeacon_X.BroadcastMessage
@@ -39802,6 +40080,21 @@ void UOnlineGameParty_X::HandleLobbyMemberStatusUpdate(int32_t MemberIndex, int3
 	memcpy_s(&LobbyInfo, sizeof(LobbyInfo), &HandleLobbyMemberStatusUpdate_Params.LobbyInfo, sizeof(HandleLobbyMemberStatusUpdate_Params.LobbyInfo));
 };
 
+// Function ProjectX.OnlineGameParty_X.CancelJoinGame
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+void UOnlineGameParty_X::CancelJoinGame()
+{
+    static UFunction* uFnCancelJoinGame = nullptr;
+    if (!uFnCancelJoinGame)
+        uFnCancelJoinGame = UFunction::FindFunction("Function ProjectX.OnlineGameParty_X.CancelJoinGame");
+
+	UOnlineGameParty_X_execCancelJoinGame_Params CancelJoinGame_Params;
+	memset(&CancelJoinGame_Params, 0, sizeof(CancelJoinGame_Params));
+
+	this->ProcessEvent(uFnCancelJoinGame, &CancelJoinGame_Params, nullptr);
+};
+
 // Function ProjectX.OnlineGameParty_X.CancelJoinGameFromPartyDestroyed
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -39889,6 +40182,25 @@ void UOnlineGameParty_X::HandleConfirmJoinGame_ConnectionValid(const struct FPar
 	memcpy_s(&HandleConfirmJoinGame_ConnectionValid_Params.InSettings, sizeof(HandleConfirmJoinGame_ConnectionValid_Params.InSettings), &InSettings, sizeof(InSettings));
 
 	this->ProcessEvent(uFnHandleConfirmJoinGame_ConnectionValid, &HandleConfirmJoinGame_ConnectionValid_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameParty_X.IsSearchingForServer
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  InServerName                   (CPF_Parm | CPF_NeedCtorLink)
+bool UOnlineGameParty_X::IsSearchingForServer(const class FString& InServerName)
+{
+    static UFunction* uFnIsSearchingForServer = nullptr;
+    if (!uFnIsSearchingForServer)
+        uFnIsSearchingForServer = UFunction::FindFunction("Function ProjectX.OnlineGameParty_X.IsSearchingForServer");
+
+	UOnlineGameParty_X_execIsSearchingForServer_Params IsSearchingForServer_Params;
+	memset(&IsSearchingForServer_Params, 0, sizeof(IsSearchingForServer_Params));
+	memcpy_s(&IsSearchingForServer_Params.InServerName, sizeof(IsSearchingForServer_Params.InServerName), &InServerName, sizeof(InServerName));
+
+	this->ProcessEvent(uFnIsSearchingForServer, &IsSearchingForServer_Params, nullptr);
+	return IsSearchingForServer_Params.ReturnValue;
 };
 
 // Function ProjectX.OnlineGameParty_X.HandleConfirmJoinGame
@@ -42550,6 +42862,23 @@ void UOnlineGameJoinGame_X::GotoJoinGameState(const class FName& NewStateName)
 	memcpy_s(&GotoJoinGameState_Params.NewStateName, sizeof(GotoJoinGameState_Params.NewStateName), &NewStateName, sizeof(NewStateName));
 
 	this->ProcessEvent(uFnGotoJoinGameState, &GotoJoinGameState_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameJoinGame_X.HandleMaxPlayersMessage
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+// class UReservationsMaxPlayersMessage_X* Message                        (CPF_Parm)
+void UOnlineGameJoinGame_X::HandleMaxPlayersMessage(class UReservationsMaxPlayersMessage_X* Message)
+{
+    static UFunction* uFnHandleMaxPlayersMessage = nullptr;
+    if (!uFnHandleMaxPlayersMessage)
+        uFnHandleMaxPlayersMessage = UFunction::FindFunction("Function ProjectX.OnlineGameJoinGame_X.HandleMaxPlayersMessage");
+
+	UOnlineGameJoinGame_X_execHandleMaxPlayersMessage_Params HandleMaxPlayersMessage_Params;
+	memset(&HandleMaxPlayersMessage_Params, 0, sizeof(HandleMaxPlayersMessage_Params));
+	HandleMaxPlayersMessage_Params.Message = Message;
+
+	this->ProcessEvent(uFnHandleMaxPlayersMessage, &HandleMaxPlayersMessage_Params, nullptr);
 };
 
 // Function ProjectX.OnlineGameJoinGame_X.HandleConnectionResponse
@@ -47381,6 +47710,23 @@ void UOnlineGamePlaylists_X::EventPlaylistsChanged(class UOnlineGamePlaylists_X*
 	EventPlaylistsChanged_Params.PlaylistsObj = PlaylistsObj;
 
 	this->ProcessEvent(uFnEventPlaylistsChanged, &EventPlaylistsChanged_Params, nullptr);
+};
+
+// Function ProjectX.GameSettingPlaylist_X.IsHonorDuel
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UGameSettingPlaylist_X::IsHonorDuel()
+{
+    static UFunction* uFnIsHonorDuel = nullptr;
+    if (!uFnIsHonorDuel)
+        uFnIsHonorDuel = UFunction::FindFunction("Function ProjectX.GameSettingPlaylist_X.IsHonorDuel");
+
+	UGameSettingPlaylist_X_execIsHonorDuel_Params IsHonorDuel_Params;
+	memset(&IsHonorDuel_Params, 0, sizeof(IsHonorDuel_Params));
+
+	this->ProcessEvent(uFnIsHonorDuel, &IsHonorDuel_Params, nullptr);
+	return IsHonorDuel_Params.ReturnValue;
 };
 
 // Function ProjectX.GameSettingPlaylist_X.UseRandomizedNameAndPassword
@@ -57540,7 +57886,7 @@ bool UCameraStateBlender_X::IsTransitioning()
 };
 
 // Function ProjectX.CameraStateBlender_X.BlendCameraState
-// [0x00480003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_HasOutParms)
+// [0x00C80003] (FUNC_Final | FUNC_Defined | FUNC_Protected | FUNC_HasOutParms | FUNC_HasDefaults)
 // Parameter Info:
 // float                          DeltaTime                      (CPF_Parm)
 // struct FCameraOrientation      OutPOV                         (CPF_Parm | CPF_OutParm)
@@ -63804,6 +64150,40 @@ void UOnlineGameInvite_X::__OnlineGameInvite_X__BeginState_0x1(class UError* Err
 	this->ProcessEvent(uFn__OnlineGameInvite_X__BeginState_0x1, &__OnlineGameInvite_X__BeginState_0x1_Params, nullptr);
 };
 
+// Function ProjectX.OnlineGameInvite_X.CancelJoinGame
+// [0x00020000] (FUNC_Public)
+// Parameter Info:
+void UOnlineGameInvite_X::CancelJoinGame()
+{
+    static UFunction* uFnCancelJoinGame = nullptr;
+    if (!uFnCancelJoinGame)
+        uFnCancelJoinGame = UFunction::FindFunction("Function ProjectX.OnlineGameInvite_X.CancelJoinGame");
+
+	UOnlineGameInvite_X_execCancelJoinGame_Params CancelJoinGame_Params;
+	memset(&CancelJoinGame_Params, 0, sizeof(CancelJoinGame_Params));
+
+	this->ProcessEvent(uFnCancelJoinGame, &CancelJoinGame_Params, nullptr);
+};
+
+// Function ProjectX.OnlineGameInvite_X.IsSearchingForServer
+// [0x00020002] (FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  InServerName                   (CPF_Parm | CPF_NeedCtorLink)
+bool UOnlineGameInvite_X::IsSearchingForServer(const class FString& InServerName)
+{
+    static UFunction* uFnIsSearchingForServer = nullptr;
+    if (!uFnIsSearchingForServer)
+        uFnIsSearchingForServer = UFunction::FindFunction("Function ProjectX.OnlineGameInvite_X.IsSearchingForServer");
+
+	UOnlineGameInvite_X_execIsSearchingForServer_Params IsSearchingForServer_Params;
+	memset(&IsSearchingForServer_Params, 0, sizeof(IsSearchingForServer_Params));
+	memcpy_s(&IsSearchingForServer_Params.InServerName, sizeof(IsSearchingForServer_Params.InServerName), &InServerName, sizeof(InServerName));
+
+	this->ProcessEvent(uFnIsSearchingForServer, &IsSearchingForServer_Params, nullptr);
+	return IsSearchingForServer_Params.ReturnValue;
+};
+
 // Function ProjectX.OnlineGameInvite_X.OnGameInviteComplete
 // [0x00084003] (FUNC_Final | FUNC_Defined | FUNC_HasOptionalParms | FUNC_Protected)
 // Parameter Info:
@@ -67023,6 +67403,25 @@ class UReservationsPasswordMessage_X* UReservationsPasswordMessage_X::SetReason(
 	return SetReason_Params.ReturnValue;
 };
 
+// Function ProjectX.ReservationsMaxPlayersMessage_X.SetGameMode
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class UReservationsMaxPlayersMessage_X* ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// uint8_t                        inGameMode                     (CPF_Parm)
+class UReservationsMaxPlayersMessage_X* UReservationsMaxPlayersMessage_X::SetGameMode(uint8_t inGameMode)
+{
+    static UFunction* uFnSetGameMode = nullptr;
+    if (!uFnSetGameMode)
+        uFnSetGameMode = UFunction::FindFunction("Function ProjectX.ReservationsMaxPlayersMessage_X.SetGameMode");
+
+	UReservationsMaxPlayersMessage_X_execSetGameMode_Params SetGameMode_Params;
+	memset(&SetGameMode_Params, 0, sizeof(SetGameMode_Params));
+	memcpy_s(&SetGameMode_Params.inGameMode, sizeof(SetGameMode_Params.inGameMode), &inGameMode, sizeof(inGameMode));
+
+	this->ProcessEvent(uFnSetGameMode, &SetGameMode_Params, nullptr);
+	return SetGameMode_Params.ReturnValue;
+};
+
 // Function ProjectX.ReservationsMaxPlayersMessage_X.SetMaxPlayerCount
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -67814,6 +68213,74 @@ struct FPsyNetBeaconReservation UPsyNetService_CreatePrivate_X::GetReservation()
 	return GetReservation_Params.ReturnValue;
 };
 
+// Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation
+// [0x400820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
+// Parameter Info:
+// struct FPsyNetBeaconReservation ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+struct FPsyNetBeaconReservation UPsyNetService_CreateHonorDuel_X::GetReservation()
+{
+    static UFunction* uFnGetReservation = nullptr;
+    if (!uFnGetReservation)
+        uFnGetReservation = UFunction::FindFunction("Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation");
+
+	UPsyNetService_CreateHonorDuel_X_execGetReservation_Params GetReservation_Params;
+	memset(&GetReservation_Params, 0, sizeof(GetReservation_Params));
+
+	this->ProcessEvent(uFnGetReservation, &GetReservation_Params, nullptr);
+	return GetReservation_Params.ReturnValue;
+};
+
+// Function ProjectX.HonorDuelReservationMessage_X.GetDSRToken
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+class FString UHonorDuelReservationMessage_X::GetDSRToken()
+{
+    static UFunction* uFnGetDSRToken = nullptr;
+    if (!uFnGetDSRToken)
+        uFnGetDSRToken = UFunction::FindFunction("Function ProjectX.HonorDuelReservationMessage_X.GetDSRToken");
+
+	UHonorDuelReservationMessage_X_execGetDSRToken_Params GetDSRToken_Params;
+	memset(&GetDSRToken_Params, 0, sizeof(GetDSRToken_Params));
+
+	this->ProcessEvent(uFnGetDSRToken, &GetDSRToken_Params, nullptr);
+	return GetDSRToken_Params.ReturnValue;
+};
+
+// Function ProjectX.HonorDuelReservationMessage_X.GetReservationID
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+class FString UHonorDuelReservationMessage_X::GetReservationID()
+{
+    static UFunction* uFnGetReservationID = nullptr;
+    if (!uFnGetReservationID)
+        uFnGetReservationID = UFunction::FindFunction("Function ProjectX.HonorDuelReservationMessage_X.GetReservationID");
+
+	UHonorDuelReservationMessage_X_execGetReservationID_Params GetReservationID_Params;
+	memset(&GetReservationID_Params, 0, sizeof(GetReservationID_Params));
+
+	this->ProcessEvent(uFnGetReservationID, &GetReservationID_Params, nullptr);
+	return GetReservationID_Params.ReturnValue;
+};
+
+// Function ProjectX.HonorDuelConfig_X.IsActive
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UHonorDuelConfig_X::IsActive()
+{
+    static UFunction* uFnIsActive = nullptr;
+    if (!uFnIsActive)
+        uFnIsActive = UFunction::FindFunction("Function ProjectX.HonorDuelConfig_X.IsActive");
+
+	UHonorDuelConfig_X_execIsActive_Params IsActive_Params;
+	memset(&IsActive_Params, 0, sizeof(IsActive_Params));
+
+	this->ProcessEvent(uFnIsActive, &IsActive_Params, nullptr);
+	return IsActive_Params.ReturnValue;
+};
+
 // Function ProjectX.AntiCheatManager_X.GetAntiCheatError
 // [0x00020002] (FUNC_Defined | FUNC_Public)
 // Parameter Info:
@@ -68303,6 +68770,25 @@ void UOnlinePlayerStorage_X::OnInit()
 	memset(&OnInit_Params, 0, sizeof(OnInit_Params));
 
 	this->ProcessEvent(uFnOnInit, &OnInit_Params, nullptr);
+};
+
+// Function ProjectX.RPC_LoginAuthPlayer_X.SetCheaterCompensationOverride
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class URPC_LoginAuthPlayer_X*  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class TArray<struct FMMRCompensationData> InCheaterCompensations         (CPF_Parm | CPF_NeedCtorLink)
+class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetCheaterCompensationOverride(const class TArray<struct FMMRCompensationData>& InCheaterCompensations)
+{
+    static UFunction* uFnSetCheaterCompensationOverride = nullptr;
+    if (!uFnSetCheaterCompensationOverride)
+        uFnSetCheaterCompensationOverride = UFunction::FindFunction("Function ProjectX.RPC_LoginAuthPlayer_X.SetCheaterCompensationOverride");
+
+	URPC_LoginAuthPlayer_X_execSetCheaterCompensationOverride_Params SetCheaterCompensationOverride_Params;
+	memset(&SetCheaterCompensationOverride_Params, 0, sizeof(SetCheaterCompensationOverride_Params));
+	memcpy_s(&SetCheaterCompensationOverride_Params.InCheaterCompensations, sizeof(SetCheaterCompensationOverride_Params.InCheaterCompensations), &InCheaterCompensations, sizeof(InCheaterCompensations));
+
+	this->ProcessEvent(uFnSetCheaterCompensationOverride, &SetCheaterCompensationOverride_Params, nullptr);
+	return SetCheaterCompensationOverride_Params.ReturnValue;
 };
 
 // Function ProjectX.RPC_LoginAuthPlayer_X.SetAsPrimaryAccount
@@ -70480,23 +70966,6 @@ void UPsyNetMetrics_X::RecordServiceCall(const class FString& Service, float Lat
 	memcpy_s(&RecordServiceCall_Params.Latency, sizeof(RecordServiceCall_Params.Latency), &Latency, sizeof(Latency));
 
 	this->ProcessEvent(uFnRecordServiceCall, &RecordServiceCall_Params, nullptr);
-};
-
-// Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation
-// [0x400820002] (FUNC_Defined | FUNC_Public | FUNC_HasDefaults)
-// Parameter Info:
-// struct FPsyNetBeaconReservation ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-struct FPsyNetBeaconReservation UPsyNetService_CreateHonorDuel_X::GetReservation()
-{
-    static UFunction* uFnGetReservation = nullptr;
-    if (!uFnGetReservation)
-        uFnGetReservation = UFunction::FindFunction("Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation");
-
-	UPsyNetService_CreateHonorDuel_X_execGetReservation_Params GetReservation_Params;
-	memset(&GetReservation_Params, 0, sizeof(GetReservation_Params));
-
-	this->ProcessEvent(uFnGetReservation, &GetReservation_Params, nullptr);
-	return GetReservation_Params.ReturnValue;
 };
 
 // Function ProjectX.PsyNetService_Echo_X.Execute

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: AkAudio_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -206,7 +206,7 @@ public:
 	uint8_t                                          UnknownData00[0x3];                            // 0x009D (0x0003) MISSED OFFSET
 	class FName                                        BoneName;                                      // 0x00A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UAkEvent*                                    AutoPlayEvent;                                 // 0x00A8 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bStopWhenOwnerDestroyed : 1;                   // 0x00B0 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bStopWhenOwnerDestroyed : 1;                   // 0x00B0 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkComponent"))
@@ -276,7 +276,7 @@ public:
 	class TArray<struct FAkEnvironment>                LevelEnvironments;                             // 0x0068 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	class TArray<struct FAkActorEnvironment>           ActorEnvironments;                             // 0x0078 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	uint32_t                                           bLevelDirty : 1;                               // 0x0088 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bActorEnvironmentDirty : 1;                    // 0x0088 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bActorEnvironmentDirty : 1;                    // 0x0088 (0x0004) [0x0000000000000000] [0x100000002] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkEnvironments"))
@@ -460,7 +460,7 @@ public:
 	class UAkSoundSource*                              SoundSource;                                   // 0x00C8 (0x0008) [0x000000000408200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 	float                                              CurrentValue;                                  // 0x00D0 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	float                                              LastAttachTime;                                // 0x00D4 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
-	uint32_t                                           bWasAttached : 1;                              // 0x00D8 (0x0004) [0x0000000000002002] [0x00000001] (CPF_Const | CPF_Transient)
+	uint32_t                                           bWasAttached : 1;                              // 0x00D8 (0x0004) [0x0000000000002002] [0x100000001] (CPF_Const | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkRTPCDecayComponent"))
@@ -648,7 +648,7 @@ class USeqAct_AkPlaySound : public USequenceAction
 {
 public:
 	class UAkSoundCue*                                 SoundCue;                                      // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bBGMusic : 1;                                  // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bBGMusic : 1;                                  // 0x0168 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPlaySound"))
@@ -658,13 +658,12 @@ public:
 };
 
 // Class AkAudio.SeqAct_AkPostEvent
-// 0x001C (0x0178 - 0x0194)
+// 0x0018 (0x0178 - 0x0190)
 class USeqAct_AkPostEvent : public USeqAct_Latent
 {
 public:
 	class TArray<int32_t>                              PlayingIDs;                                    // 0x0178 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	class UAkSoundCue*                                 SoundCue;                                      // 0x0188 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bHasSubtitles : 1;                             // 0x0190 (0x0004) [0x0001000000000001] [0x00000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkPostEvent"))
@@ -689,7 +688,7 @@ class USeqAct_AkSetRTPCValue : public USeqAct_Latent
 public:
 	class FString                                      Param;                                         // 0x0178 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	float                                              Value;                                         // 0x0188 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           Running : 1;                                   // 0x018C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           Running : 1;                                   // 0x018C (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.SeqAct_AkSetRTPCValue"))

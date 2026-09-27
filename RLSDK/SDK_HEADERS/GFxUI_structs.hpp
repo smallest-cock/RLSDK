@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: GFxUI_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -88,7 +88,7 @@ struct FASDisplayInfo
 	uint32_t                                           hasYScale : 1;                                 // 0x0028 (0x0004) [0x0000000000000001] [0x00000100] (CPF_Edit)
 	uint32_t                                           hasZScale : 1;                                 // 0x0028 (0x0004) [0x0000000000000001] [0x00000200] (CPF_Edit)
 	uint32_t                                           hasAlpha : 1;                                  // 0x0028 (0x0004) [0x0000000000000001] [0x00000400] (CPF_Edit)
-	uint32_t                                           hasVisible : 1;                                // 0x0028 (0x0004) [0x0000000000000001] [0x00000800] (CPF_Edit)
+	uint32_t                                           hasVisible : 1;                                // 0x0028 (0x0004) [0x0000000000000001] [0x100000800] (CPF_Edit)
 };
 
 // ScriptStruct GFxUI.GFxObject.ASColorTransform
@@ -141,7 +141,7 @@ struct FLoadingMovieMapInfo
 	uint8_t                                          UnknownData01[0x7];                            // 0x0089 (0x0007) MISSED OFFSET
 	class UTexture2D*                                  LargeMapImage;                                 // 0x0090 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bSetBackgroundVisible : 1;                     // 0x0098 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bDisplayGenericBackground : 1;                 // 0x0098 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bDisplayGenericBackground : 1;                 // 0x0098 (0x0004) [0x0000000000000000] [0x100000002] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x009C (0x0004) PADDING FOR MINALIGNMENT
 };
 

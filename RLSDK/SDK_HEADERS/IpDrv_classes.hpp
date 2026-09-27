@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -687,7 +687,7 @@ public:
 	class TArray<struct FEventUploadConfig>            EventUploadConfigs;                            // 0x0080 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
 	class TArray<struct FPointer>                      MCPEventPostObjects;                           // 0x0090 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 	class TArray<EEventUploadType>                     DisabledUploadTypes;                           // 0x00A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	uint32_t                                           bBinaryStats : 1;                              // 0x00B0 (0x0004) [0x0000000000004002] [0x00000001] (CPF_Const | CPF_Config)
+	uint32_t                                           bBinaryStats : 1;                              // 0x00B0 (0x0004) [0x0000000000004002] [0x100000001] (CPF_Const | CPF_Config)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineEventsInterfaceMcp"))
@@ -1701,7 +1701,7 @@ class UTargetUserChatPermChangedEvent : public UObject
 public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                TargetId;                                      // 0x00A8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bAllowed : 1;                                  // 0x00F0 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bAllowed : 1;                                  // 0x00F0 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.TargetUserChatPermChangedEvent"))
@@ -1778,7 +1778,7 @@ public:
 	class FString                                      CharSet;                                       // 0x00D0 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class AWebConnection*                              Connection;                                    // 0x00E0 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bSentText : 1;                                 // 0x00E8 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bSentResponse : 1;                             // 0x00E8 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bSentResponse : 1;                             // 0x00E8 (0x0004) [0x0000000000000000] [0x100000002] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.WebResponse"))

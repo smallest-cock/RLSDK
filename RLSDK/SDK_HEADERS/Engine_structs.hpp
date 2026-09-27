@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: Engine_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -144,7 +144,7 @@ struct FSeqOpInputLink
 	float                                              ActivateDelay;                                 // 0x0030 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bMoving : 1;                                   // 0x0034 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
 	uint32_t                                           bClampedMax : 1;                               // 0x0034 (0x0004) [0x0000000800000000] [0x00000002] (CPF_EditorOnly)
-	uint32_t                                           bClampedMin : 1;                               // 0x0034 (0x0004) [0x0000000800000000] [0x00000004] (CPF_EditorOnly)
+	uint32_t                                           bClampedMin : 1;                               // 0x0034 (0x0004) [0x0000000800000000] [0x100000004] (CPF_EditorOnly)
 	int32_t                                            OverrideDelta;                                 // 0x0038 (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x003C (0x0004) PADDING FOR MINALIGNMENT
 };
@@ -158,7 +158,7 @@ struct FAnimSlotInfo
 };
 
 // ScriptStruct Engine.Actor.TimerData
-// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0028
 struct FTimerData
 {
 	uint32_t                                           bLoop : 1;                                     // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
@@ -170,7 +170,7 @@ struct FTimerData
 	float                                              TimerTimeDilation;                             // 0x0014 (0x0004) [0x0000000000000000]               
 	class UObject*                                     TimerObj;                                      // 0x0018 (0x0008) [0x0000000000000000]               
 	int32_t                                            StateGeneration;                               // 0x0020 (0x0004) [0x0000000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
+	int32_t                                            SetFrame;                                      // 0x0024 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct Engine.PrimitiveComponent.RBCollisionChannelContainer
@@ -534,7 +534,7 @@ struct FMultiCueSplineSoundSlot
 	float                                              SourceInteriorLPF;                             // 0x0024 (0x0004) [0x0000000000001002] (CPF_Const | CPF_Native)
 	float                                              CurrentInteriorVolume;                         // 0x0028 (0x0004) [0x0000000000001002] (CPF_Const | CPF_Native)
 	float                                              CurrentInteriorLPF;                            // 0x002C (0x0004) [0x0000000000001002] (CPF_Const | CPF_Native)
-	uint32_t                                           bPlaying : 1;                                  // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bPlaying : 1;                                  // 0x0030 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -664,7 +664,7 @@ struct FAnimBlendChild
 	float                                              Weight;                                        // 0x0010 (0x0004) [0x0000000000000000]               
 	float                                              BlendWeight;                                   // 0x0014 (0x0004) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	uint32_t                                           bMirrorSkeleton : 1;                           // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bIsAdditive : 1;                               // 0x0018 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bIsAdditive : 1;                               // 0x0018 (0x0004) [0x0000000000000000] [0x100000002] 
 	int32_t                                            DrawY;                                         // 0x001C (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 };
 
@@ -867,7 +867,7 @@ struct FLocalizedSubtitle
 	class TArray<struct FSubtitleCue>                  Subtitles;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bMature : 1;                                   // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bManualWordWrap : 1;                           // 0x0020 (0x0004) [0x0000000000000000] [0x00000002] 
-	uint32_t                                           bSingleLine : 1;                               // 0x0020 (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bSingleLine : 1;                               // 0x0020 (0x0004) [0x0000000000000000] [0x100000004] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -959,7 +959,7 @@ struct FLightmassDebugOptions
 	uint32_t                                           bColorBordersGreen : 1;                        // 0x0008 (0x0004) [0x0000000000000001] [0x00000400] (CPF_Edit)
 	uint32_t                                           bColorByExecutionTime : 1;                     // 0x0008 (0x0004) [0x0000000000000001] [0x00000800] (CPF_Edit)
 	float                                              ExecutionTimeDivisor;                          // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bInitialized : 1;                              // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bInitialized : 1;                              // 0x0010 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.EngineTypes.SwarmDebugOptions
@@ -968,7 +968,7 @@ struct FSwarmDebugOptions
 {
 	uint32_t                                           bDistributionEnabled : 1;                      // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bForceContentExport : 1;                       // 0x0000 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bInitialized : 1;                              // 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bInitialized : 1;                              // 0x0000 (0x0004) [0x0000000000000000] [0x100000004] 
 };
 
 // ScriptStruct Engine.EngineTypes.RootMotionCurve
@@ -1118,7 +1118,7 @@ struct FNxDestructibleParametersFlag
 	uint32_t                                           CRUMBLE_SMALLEST_CHUNKS : 1;                   // 0x0000 (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
 	uint32_t                                           ACCURATE_RAYCASTS : 1;                         // 0x0000 (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
 	uint32_t                                           USE_VALID_BOUNDS : 1;                          // 0x0000 (0x0004) [0x0000000000000001] [0x00000080] (CPF_Edit)
-	uint32_t                                           FORM_EXTENDED_STRUCTURES : 1;                  // 0x0000 (0x0004) [0x0000000000000001] [0x00000100] (CPF_Edit)
+	uint32_t                                           FORM_EXTENDED_STRUCTURES : 1;                  // 0x0000 (0x0004) [0x0000000000000001] [0x100000100] (CPF_Edit)
 };
 
 // ScriptStruct Engine.ApexDestructibleAsset.NxDestructibleDepthParameters
@@ -1282,7 +1282,7 @@ struct FViewTargetTransitionParams
 	uint8_t                                            BlendFunction;                                 // 0x0004 (0x0001) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData00[0x3];                            // 0x0005 (0x0003) MISSED OFFSET
 	float                                              BlendExp;                                      // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bLockOutgoing : 1;                             // 0x000C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bLockOutgoing : 1;                             // 0x000C (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.Camera.TCameraCache
@@ -1310,7 +1310,7 @@ struct FLUTBlender
 {
 	class TArray<class UTexture*>                      LUTTextures;                                   // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<float>                                LUTWeights;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bHasChanged : 1;                               // 0x0020 (0x0004) [0x0000000000003002] [0x00000001] (CPF_Const | CPF_Native | CPF_Transient)
+	uint32_t                                           bHasChanged : 1;                               // 0x0020 (0x0004) [0x0000000000003002] [0x100000001] (CPF_Const | CPF_Native | CPF_Transient)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -1450,7 +1450,7 @@ struct FRenderingPerformanceOverrides
 	uint32_t                                           bAllowDominantWholeSceneDynamicShadows : 1;    // 0x0000 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           bAllowMotionBlurSkinning : 1;                  // 0x0000 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
 	uint32_t                                           bAllowTemporalAA : 1;                          // 0x0000 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
-	uint32_t                                           bAllowLightShafts : 1;                         // 0x0000 (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
+	uint32_t                                           bAllowLightShafts : 1;                         // 0x0000 (0x0004) [0x0000000000000001] [0x100000010] (CPF_Edit)
 };
 
 // ScriptStruct Engine.CameraShake.FOscillator
@@ -1546,7 +1546,7 @@ struct FTextureGroupContainer
 	uint32_t                                           TEXTUREGROUP_Terrain_Weightmap : 1;            // 0x0000 (0x0004) [0x0000000000000003] [0x02000000] (CPF_Edit | CPF_Const)
 	uint32_t                                           TEXTUREGROUP_ImageBasedReflection : 1;         // 0x0000 (0x0004) [0x0000000000000003] [0x04000000] (CPF_Edit | CPF_Const)
 	uint32_t                                           TEXTUREGROUP_Bokeh : 1;                        // 0x0000 (0x0004) [0x0000000000000003] [0x08000000] (CPF_Edit | CPF_Const)
-	uint32_t                                           TEXTUREGROUP_Pitch : 1;                        // 0x0000 (0x0004) [0x0000000000000003] [0x10000000] (CPF_Edit | CPF_Const)
+	uint32_t                                           TEXTUREGROUP_Pitch : 1;                        // 0x0000 (0x0004) [0x0000000000000003] [0x110000000] (CPF_Edit | CPF_Const)
 };
 
 // ScriptStruct Engine.Texture2D.Texture2DMipMap
@@ -1671,7 +1671,7 @@ struct FUIRangeData
 	float                                              MinValue;                                      // 0x0004 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              MaxValue;                                      // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              NudgeValue;                                    // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bIntRange : 1;                                 // 0x0010 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bIntRange : 1;                                 // 0x0010 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.UIRoot.TextureCoordinates
@@ -1712,7 +1712,7 @@ struct FSeqOpOutputLink
 	uint32_t                                           bClampedMin : 1;                               // 0x0038 (0x0004) [0x0000000800000000] [0x00000008] (CPF_EditorOnly)
 	int32_t                                            OverrideDelta;                                 // 0x003C (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 	float                                              PIEActivationTime;                             // 0x0040 (0x0004) [0x0000000800002000] (CPF_Transient | CPF_EditorOnly)
-	uint32_t                                           bIsActivated : 1;                              // 0x0044 (0x0004) [0x0000000C01002000] [0x00000001] (CPF_Transient | CPF_NonTransactional | CPF_EditorOnly)
+	uint32_t                                           bIsActivated : 1;                              // 0x0044 (0x0004) [0x0000000C01002000] [0x100000001] (CPF_Transient | CPF_NonTransactional | CPF_EditorOnly)
 };
 
 // ScriptStruct Engine.SequenceOp.SeqVarLink
@@ -1735,7 +1735,7 @@ struct FSeqVarLink
 	uint32_t                                           bAllowAnyType : 1;                             // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bMoving : 1;                                   // 0x0050 (0x0004) [0x0000000800002000] [0x00000002] (CPF_Transient | CPF_EditorOnly)
 	uint32_t                                           bClampedMax : 1;                               // 0x0050 (0x0004) [0x0000000800000000] [0x00000004] (CPF_EditorOnly)
-	uint32_t                                           bClampedMin : 1;                               // 0x0050 (0x0004) [0x0000000800000000] [0x00000008] (CPF_EditorOnly)
+	uint32_t                                           bClampedMin : 1;                               // 0x0050 (0x0004) [0x0000000800000000] [0x100000008] (CPF_EditorOnly)
 	int32_t                                            OverrideDelta;                                 // 0x0054 (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 };
 
@@ -1750,7 +1750,7 @@ struct FSeqEventLink
 	uint32_t                                           bHidden : 1;                                   // 0x002C (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bMoving : 1;                                   // 0x002C (0x0004) [0x0000000800002000] [0x00000002] (CPF_Transient | CPF_EditorOnly)
 	uint32_t                                           bClampedMax : 1;                               // 0x002C (0x0004) [0x0000000800000000] [0x00000004] (CPF_EditorOnly)
-	uint32_t                                           bClampedMin : 1;                               // 0x002C (0x0004) [0x0000000800000000] [0x00000008] (CPF_EditorOnly)
+	uint32_t                                           bClampedMin : 1;                               // 0x002C (0x0004) [0x0000000800000000] [0x100000008] (CPF_EditorOnly)
 	int32_t                                            OverrideDelta;                                 // 0x0030 (0x0004) [0x0000000800000000] (CPF_EditorOnly)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };
@@ -1779,7 +1779,7 @@ struct FInputEventParameters
 	float                                              DeltaTime;                                     // 0x0018 (0x0004) [0x0000000000102002] (CPF_Const | CPF_Transient)
 	uint32_t                                           bAltPressed : 1;                               // 0x001C (0x0004) [0x0000000000102002] [0x00000001] (CPF_Const | CPF_Transient)
 	uint32_t                                           bCtrlPressed : 1;                              // 0x001C (0x0004) [0x0000000000102002] [0x00000002] (CPF_Const | CPF_Transient)
-	uint32_t                                           bShiftPressed : 1;                             // 0x001C (0x0004) [0x0000000000102002] [0x00000004] (CPF_Const | CPF_Transient)
+	uint32_t                                           bShiftPressed : 1;                             // 0x001C (0x0004) [0x0000000000102002] [0x100000004] (CPF_Const | CPF_Transient)
 };
 
 // ScriptStruct Engine.UIRoot.SubscribedInputEventParameters
@@ -1864,7 +1864,7 @@ struct FFireLink
 	class TArray<uint8_t>                              Interactions;                                  // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	int32_t                                            PackedProperties_CoverPairRefAndDynamicInfo;   // 0x0010 (0x0004) [0x0000000000000002] (CPF_Const)   
 	uint32_t                                           bFallbackLink : 1;                             // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bDynamicIndexInited : 1;                       // 0x0014 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bDynamicIndexInited : 1;                       // 0x0014 (0x0004) [0x0000000000000000] [0x100000002] 
 };
 
 // ScriptStruct Engine.CoverLink.DynamicLinkInfo
@@ -1954,7 +1954,7 @@ struct FCoverSlot
 	uint32_t                                           bPreferLeanOverPopup : 1;                      // 0x0090 (0x0004) [0x0000000000000001] [0x00100000] (CPF_Edit)
 	uint32_t                                           bDestructible : 1;                             // 0x0090 (0x0004) [0x0000000000002000] [0x00200000] (CPF_Transient)
 	uint32_t                                           bSelected : 1;                                 // 0x0090 (0x0004) [0x0000000000002000] [0x00400000] (CPF_Transient)
-	uint32_t                                           bFailedToFindSurface : 1;                      // 0x0090 (0x0004) [0x0000000000022001] [0x00800000] (CPF_Edit | CPF_Transient | CPF_EditConst)
+	uint32_t                                           bFailedToFindSurface : 1;                      // 0x0090 (0x0004) [0x0000000000022001] [0x100800000] (CPF_Edit | CPF_Transient | CPF_EditConst)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0094 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -2093,7 +2093,7 @@ struct FLightmassMaterialInterfaceSettings
 	uint32_t                                           bOverrideDiffuseBoost : 1;                     // 0x0018 (0x0004) [0x0000000000000000] [0x00000004] 
 	uint32_t                                           bOverrideSpecularBoost : 1;                    // 0x0018 (0x0004) [0x0000000000000000] [0x00000008] 
 	uint32_t                                           bOverrideExportResolutionScale : 1;            // 0x0018 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bOverrideDistanceFieldPenumbraScale : 1;       // 0x0018 (0x0004) [0x0000000000000000] [0x00000020] 
+	uint32_t                                           bOverrideDistanceFieldPenumbraScale : 1;       // 0x0018 (0x0004) [0x0000000000000000] [0x100000020] 
 };
 
 // ScriptStruct Engine.Material.MaterialInput
@@ -2249,7 +2249,7 @@ struct FSocialPostImageFlags
 	uint32_t                                           bIsUserGeneratedImage : 1;                     // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bIsGameGeneratedImage : 1;                     // 0x0000 (0x0004) [0x0000000000000000] [0x00000002] 
 	uint32_t                                           bIsAchievementImage : 1;                       // 0x0000 (0x0004) [0x0000000000000000] [0x00000004] 
-	uint32_t                                           bIsMediaImage : 1;                             // 0x0000 (0x0004) [0x0000000000000000] [0x00000008] 
+	uint32_t                                           bIsMediaImage : 1;                             // 0x0000 (0x0004) [0x0000000000000000] [0x100000008] 
 };
 
 // ScriptStruct Engine.OnlineSubsystem.SocialPostImageInfo
@@ -2294,7 +2294,7 @@ struct FDownloadedWorkshopData
 struct FSocialPostPrivileges
 {
 	uint32_t                                           bCanPostImage : 1;                             // 0x0000 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
-	uint32_t                                           bCanPostLink : 1;                              // 0x0000 (0x0004) [0x0000000000000002] [0x00000002] (CPF_Const)
+	uint32_t                                           bCanPostLink : 1;                              // 0x0000 (0x0004) [0x0000000000000002] [0x100000002] (CPF_Const)
 };
 
 // ScriptStruct Engine.OnlineSubsystem.OnlinePartyMember
@@ -2579,7 +2579,7 @@ struct FRemoteTalker
 	float                                              LastNotificationTime;                          // 0x0048 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bWasTalking : 1;                               // 0x004C (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bIsTalking : 1;                                // 0x004C (0x0004) [0x0000000000000000] [0x00000002] 
-	uint32_t                                           bIsRegistered : 1;                             // 0x004C (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bIsRegistered : 1;                             // 0x004C (0x0004) [0x0000000000000000] [0x100000004] 
 };
 
 // ScriptStruct Engine.OnlineSubsystem.LocalTalker
@@ -2592,7 +2592,7 @@ struct FLocalTalker
 	uint32_t                                           bIsRecognizingSpeech : 1;                      // 0x0048 (0x0004) [0x0000000000000000] [0x00000004] 
 	uint32_t                                           bWasTalking : 1;                               // 0x0048 (0x0004) [0x0000000000000000] [0x00000008] 
 	uint32_t                                           bIsTalking : 1;                                // 0x0048 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bIsRegistered : 1;                             // 0x0048 (0x0004) [0x0000000000000000] [0x00000020] 
+	uint32_t                                           bIsRegistered : 1;                             // 0x0048 (0x0004) [0x0000000000000000] [0x100000020] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -2682,7 +2682,7 @@ struct FOnlineFriend : FOnlineUser
 struct FFriendsQuery
 {
 	struct FUniqueNetId                                UniqueId;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bIsFriend : 1;                                 // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIsFriend : 1;                                 // 0x0048 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -2719,7 +2719,7 @@ struct FXboxOneDLCInfo
 {
 	class FString                                      Key;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FName                                        Value;                                         // 0x0010 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bDiscUnlock : 1;                               // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bDiscUnlock : 1;                               // 0x0018 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -2852,7 +2852,7 @@ struct FEmitterBaseInfo
 	class AActor*                                      Base;                                          // 0x0008 (0x0008) [0x0000000000000000]               
 	struct FVector                                     RelativeLocation;                              // 0x0010 (0x000C) [0x0000000000000000]               
 	struct FRotator                                    RelativeRotation;                              // 0x001C (0x000C) [0x0000000000000000]               
-	uint32_t                                           bInheritBaseScale : 1;                         // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bInheritBaseScale : 1;                         // 0x0028 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -2870,7 +2870,7 @@ struct FStatColorMapping
 {
 	class FString                                      StatName;                                      // 0x0000 (0x0010) [0x0000000000444000] (CPF_Config | CPF_GlobalConfig | CPF_NeedCtorLink)
 	class TArray<struct FStatColorMapEntry>            ColorMap;                                      // 0x0010 (0x0010) [0x0000000000444000] (CPF_Config | CPF_GlobalConfig | CPF_NeedCtorLink)
-	uint32_t                                           DisableBlend : 1;                              // 0x0020 (0x0004) [0x0000000000044000] [0x00000001] (CPF_Config | CPF_GlobalConfig)
+	uint32_t                                           DisableBlend : 1;                              // 0x0020 (0x0004) [0x0000000000044000] [0x100000001] (CPF_Config | CPF_GlobalConfig)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3003,7 +3003,7 @@ struct FWaveformSample
 struct FFragmentGroup
 {
 	class TArray<int32_t>                              FragmentIndices;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bGroupIsRooted : 1;                            // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bGroupIsRooted : 1;                            // 0x0010 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3015,7 +3015,7 @@ struct FDeferredPartToSpawn
 	struct FVector                                     InitialVel;                                    // 0x0004 (0x000C) [0x0000000000000000]               
 	struct FVector                                     InitialAngVel;                                 // 0x0010 (0x000C) [0x0000000000000000]               
 	float                                              RelativeScale;                                 // 0x001C (0x0004) [0x0000000000000000]               
-	uint32_t                                           bExplosion : 1;                                // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bExplosion : 1;                                // 0x0020 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.FracturedStaticMeshActor.CheckpointRecord
@@ -3033,7 +3033,7 @@ struct FLevelStreamingStatus
 {
 	class FName                                        PackageName;                                   // 0x0000 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bShouldBeLoaded : 1;                           // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bShouldBeVisible : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bShouldBeVisible : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x100000002] 
 };
 
 // ScriptStruct Engine.GameEngine.FullyLoadedPackagesInfo
@@ -3105,7 +3105,7 @@ struct FPlayerInformation
 	class FName                                        ControllerName;                                // 0x0000 (0x0008) [0x0000000000000000]               
 	class FString                                      PlayerName;                                    // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                UniqueId;                                      // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bIsBot : 1;                                    // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIsBot : 1;                                    // 0x0060 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0064 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3245,7 +3245,7 @@ struct FHostMigrationState
 	float                                              HostMigrationTravelCountdown;                  // 0x0008 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	class FString                                      HostMigrationTravelURL;                        // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bHostMigrationEnabled : 1;                     // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bHostMigrationEnabled : 1;                     // 0x0020 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3313,7 +3313,7 @@ struct FLightmassWorldInfoSettings
 	float                                              MaxOcclusionDistance;                          // 0x0050 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bVisualizeMaterialDiffuse : 1;                 // 0x0054 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bVisualizeAmbientOcclusion : 1;                // 0x0054 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bCompressShadowmap : 1;                        // 0x0054 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bCompressShadowmap : 1;                        // 0x0054 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 };
 
 // ScriptStruct Engine.WorldInfo.ScreenMessageString
@@ -3336,7 +3336,7 @@ struct FApexModuleDestructibleSettings
 	int32_t                                            MaxShapeCount;                                 // 0x0004 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            MaxRrbActorCount;                              // 0x0008 (0x0004) [0x0000000000000000]               
 	float                                              MaxChunkSeparationLOD;                         // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bOverrideMaxChunkSeparationLOD : 1;            // 0x0010 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bOverrideMaxChunkSeparationLOD : 1;            // 0x0010 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.WorldInfo.PhysXSimulationProperties
@@ -3367,7 +3367,7 @@ struct FCompartmentRunList
 	uint32_t                                           RigidBody : 1;                                 // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           Fluid : 1;                                     // 0x0000 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
 	uint32_t                                           Cloth : 1;                                     // 0x0000 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
-	uint32_t                                           SoftBody : 1;                                  // 0x0000 (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
+	uint32_t                                           SoftBody : 1;                                  // 0x0000 (0x0004) [0x0000000000000001] [0x100000008] (CPF_Edit)
 };
 
 // ScriptStruct Engine.WorldInfo.NetViewer
@@ -3394,7 +3394,7 @@ struct FStringIdToStringMapping
 {
 	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000002] (CPF_Const)   
 	class FName                                        Name;                                          // 0x0004 (0x0008) [0x0000000000008002] (CPF_Const | CPF_Localized)
-	uint32_t                                           bIsWildcard : 1;                               // 0x000C (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bIsWildcard : 1;                               // 0x000C (0x0004) [0x0000000000000002] [0x100000001] (CPF_Const)
 };
 
 // ScriptStruct Engine.Settings.LocalizedStringSettingMetaData
@@ -3497,7 +3497,7 @@ struct FConnectedPeerInfo
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            NatType;                                       // 0x0048 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x0049 (0x0003) MISSED OFFSET
-	uint32_t                                           bLostConnectionToHost : 1;                     // 0x004C (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bLostConnectionToHost : 1;                     // 0x004C (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.PlayerController.ClientAdjustment
@@ -3617,7 +3617,7 @@ struct FGamepadInfo
 {
 	uint8_t                                            InputAPI;                                      // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
-	uint32_t                                           bConnected : 1;                                // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bConnected : 1;                                // 0x0004 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.GameViewportClient.PerPlayerSplitscreenData
@@ -3643,7 +3643,7 @@ struct FDebugDisplayProperty
 {
 	class UObject*                                     Obj;                                           // 0x0000 (0x0008) [0x0000000000000000]               
 	class FName                                        PropertyName;                                  // 0x0008 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bSpecialProperty : 1;                          // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bSpecialProperty : 1;                          // 0x0010 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3680,7 +3680,7 @@ struct FActorToLookAt
 	float                                              EnteredTime;                                   // 0x000C (0x0004) [0x0000000000000000]               
 	float                                              LastKnownDistance;                             // 0x0010 (0x0004) [0x0000000000000000]               
 	float                                              StartTimeBeingLookedAt;                        // 0x0014 (0x0004) [0x0000000000000000]               
-	uint32_t                                           CurrentlyBeingLookedAt : 1;                    // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           CurrentlyBeingLookedAt : 1;                    // 0x0018 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3707,7 +3707,7 @@ struct FKeyBind
 	uint32_t                                           Alt : 1;                                       // 0x0018 (0x0004) [0x0000000000000000] [0x00000004] 
 	uint32_t                                           bIgnoreCtrl : 1;                               // 0x0018 (0x0004) [0x0000000000000000] [0x00000008] 
 	uint32_t                                           bIgnoreShift : 1;                              // 0x0018 (0x0004) [0x0000000000000000] [0x00000010] 
-	uint32_t                                           bIgnoreAlt : 1;                                // 0x0018 (0x0004) [0x0000000000000000] [0x00000020] 
+	uint32_t                                           bIgnoreAlt : 1;                                // 0x0018 (0x0004) [0x0000000000000000] [0x100000020] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3720,7 +3720,7 @@ struct FTouchTracker
 	struct FVector2D                                   Location;                                      // 0x0008 (0x0008) [0x0000000000000000]               
 	uint8_t                                            EventType;                                     // 0x0010 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x0011 (0x0003) MISSED OFFSET
-	uint32_t                                           bTrapInput : 1;                                // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bTrapInput : 1;                                // 0x0014 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.InstancedStaticMeshComponent.InstancedStaticMeshInstanceData
@@ -3803,7 +3803,7 @@ struct FAnimSetBakeAndPruneStatus
 	class FString                                      AnimSetName;                                   // 0x0000 (0x0010) [0x0000000000420001] (CPF_Edit | CPF_EditConst | CPF_NeedCtorLink)
 	uint32_t                                           bReferencedButUnused : 1;                      // 0x0010 (0x0004) [0x0000000000020001] [0x00000001] (CPF_Edit | CPF_EditConst)
 	uint32_t                                           bSkipBakeAndPrune : 1;                         // 0x0010 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bSkipCooking : 1;                              // 0x0010 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bSkipCooking : 1;                              // 0x0010 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -3860,7 +3860,7 @@ struct FAnimControlTrackKey
 	float                                              AnimEndOffset;                                 // 0x0010 (0x0004) [0x0000000000000000]               
 	float                                              AnimPlayRate;                                  // 0x0014 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bLooping : 1;                                  // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bReverse : 1;                                  // 0x0018 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bReverse : 1;                                  // 0x0018 (0x0004) [0x0000000000000000] [0x100000002] 
 };
 
 // ScriptStruct Engine.InterpTrackBoolProp.BoolTrackKey
@@ -3868,7 +3868,7 @@ struct FAnimControlTrackKey
 struct FBoolTrackKey
 {
 	float                                              Time;                                          // 0x0000 (0x0004) [0x0000000000000000]               
-	uint32_t                                           Value : 1;                                     // 0x0004 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           Value : 1;                                     // 0x0004 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.InterpTrackDirector.DirectorTrackCut
@@ -4003,7 +4003,7 @@ struct FLandscapeLayerStruct
 	class UMaterialInstanceConstant*                   ThumbnailMIC;                                  // 0x0008 (0x0008) [0x0000000800000000] (CPF_EditorOnly)
 	class ALandscapeProxy*                             Owner;                                         // 0x0010 (0x0008) [0x0000000800000000] (CPF_EditorOnly)
 	int32_t                                            DebugColorChannel;                             // 0x0018 (0x0004) [0x0000000800002000] (CPF_Transient | CPF_EditorOnly)
-	uint32_t                                           bSelected : 1;                                 // 0x001C (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bSelected : 1;                                 // 0x001C (0x0004) [0x0000000800002000] [0x100000001] (CPF_Transient | CPF_EditorOnly)
 	class FString                                      SourceFilePath;                                // 0x0020 (0x0010) [0x0000000800400000] (CPF_NeedCtorLink | CPF_EditorOnly)
 };
 
@@ -4023,7 +4023,7 @@ struct FLandscapeLayerInfo
 	uint32_t                                           bNoWeightBlend : 1;                            // 0x000C (0x0004) [0x0000000800000000] [0x00000001] (CPF_EditorOnly)
 	class UPhysicalMaterial*                           PhysMaterial;                                  // 0x0010 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UMaterialInstanceConstant*                   ThumbnailMIC;                                  // 0x0018 (0x0008) [0x0000000800000000] (CPF_EditorOnly)
-	uint32_t                                           bSelected : 1;                                 // 0x0020 (0x0004) [0x0000000800002000] [0x00000001] (CPF_Transient | CPF_EditorOnly)
+	uint32_t                                           bSelected : 1;                                 // 0x0020 (0x0004) [0x0000000800002000] [0x100000001] (CPF_Transient | CPF_EditorOnly)
 	int32_t                                            DebugColorChannel;                             // 0x0024 (0x0004) [0x0000000800002000] (CPF_Transient | CPF_EditorOnly)
 	class FString                                      LayerSourceFile;                               // 0x0028 (0x0010) [0x0000000800402000] (CPF_Transient | CPF_NeedCtorLink | CPF_EditorOnly)
 };
@@ -4307,7 +4307,7 @@ struct FParameterValueOverTime
 	float                                              CycleTime;                                     // 0x0020 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bNormalizeTime : 1;                            // 0x0024 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	float                                              OffsetTime;                                    // 0x0028 (0x0004) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bOffsetFromEnd : 1;                            // 0x002C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bOffsetFromEnd : 1;                            // 0x002C (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.MaterialInstanceTimeVarying.FontParameterValueOverTime
@@ -4476,7 +4476,7 @@ struct FLobbyFilter
 	class FString                                      Value;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            Operator;                                      // 0x0020 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x0021 (0x0003) MISSED OFFSET
-	uint32_t                                           bNumeric : 1;                                  // 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bNumeric : 1;                                  // 0x0024 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.OnlineLobbySettings.LobbySortFilter
@@ -4557,7 +4557,7 @@ struct FColumnMetaData
 // Size: 0x0004
 struct FTimerOptions
 {
-	uint32_t                                           bLooping : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bLooping : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct Engine.ParticleEmitter.ParticleBurst
@@ -4603,7 +4603,7 @@ struct FBeamModifierOptions
 {
 	uint32_t                                           bModify : 1;                                   // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bScale : 1;                                    // 0x0000 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bLock : 1;                                     // 0x0000 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bLock : 1;                                     // 0x0000 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 };
 
 // ScriptStruct Engine.ParticleModuleCollision.ParticleAttractorCollisionAction
@@ -4646,7 +4646,7 @@ struct FOrbitOptions
 {
 	uint32_t                                           bProcessDuringSpawn : 1;                       // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint32_t                                           bProcessDuringUpdate : 1;                      // 0x0000 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
-	uint32_t                                           bUseEmitterTime : 1;                           // 0x0000 (0x0004) [0x0000000000000001] [0x00000004] (CPF_Edit)
+	uint32_t                                           bUseEmitterTime : 1;                           // 0x0000 (0x0004) [0x0000000000000001] [0x100000004] (CPF_Edit)
 };
 
 // ScriptStruct Engine.ParticleModuleParameterDynamic.EmitterDynamicParameter
@@ -4685,7 +4685,7 @@ struct FPhysXEmitterVerticalLodProperties
 // Size: 0x0004
 struct FParticleSystemLOD
 {
-	uint32_t                                           bLit : 1;                                      // 0x0000 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bLit : 1;                                      // 0x0000 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.ParticleSystem.LODSoloTrack
@@ -4742,7 +4742,7 @@ struct FPBParamSwatch
 struct FPBVariationInfo
 {
 	class FName                                        VariationName;                                 // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	uint32_t                                           bMeshOnTopOfFacePoly : 1;                      // 0x0008 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bMeshOnTopOfFacePoly : 1;                      // 0x0008 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 };
 
 // ScriptStruct Engine.ProcBuilding.PBFracMeshCompInfo
@@ -4795,7 +4795,7 @@ struct FPBScopeProcessInfo
 	class UProcBuildingRuleset*                        Ruleset;                                       // 0x0008 (0x0008) [0x0000000000000000]               
 	class FName                                        RulesetVariation;                              // 0x0010 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bGenerateLODPoly : 1;                          // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bPartOfNonRect : 1;                            // 0x0018 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bPartOfNonRect : 1;                            // 0x0018 (0x0004) [0x0000000000000000] [0x100000002] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x001C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -4941,7 +4941,7 @@ struct FQueuedActivationInfo
 	class AActor*                                      InOriginator;                                  // 0x0008 (0x0008) [0x0000000000000000]               
 	class AActor*                                      InInstigator;                                  // 0x0010 (0x0008) [0x0000000000000000]               
 	class TArray<int32_t>                              ActivateIndices;                               // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bPushTop : 1;                                  // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bPushTop : 1;                                  // 0x0028 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -5037,7 +5037,7 @@ struct FSwitchObjectCase
 {
 	class UObject*                                     ObjectValue;                                   // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bFallThru : 1;                                 // 0x0008 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
-	uint32_t                                           bDefaultValue : 1;                             // 0x0008 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+	uint32_t                                           bDefaultValue : 1;                             // 0x0008 (0x0004) [0x0000000000000001] [0x100000002] (CPF_Edit)
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x000C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -5210,7 +5210,7 @@ struct FSoundClassProperties
 	uint32_t                                           bIsMusic : 1;                                  // 0x001C (0x0004) [0x0000000000000001] [0x00000008] (CPF_Edit)
 	uint32_t                                           bReverb : 1;                                   // 0x001C (0x0004) [0x0000000000000001] [0x00000010] (CPF_Edit)
 	uint32_t                                           bCenterChannelOnly : 1;                        // 0x001C (0x0004) [0x0000000000000001] [0x00000020] (CPF_Edit)
-	uint32_t                                           bApplyAmbientVolumes : 1;                      // 0x001C (0x0004) [0x0000000000000001] [0x00000040] (CPF_Edit)
+	uint32_t                                           bApplyAmbientVolumes : 1;                      // 0x001C (0x0004) [0x0000000000000001] [0x100000040] (CPF_Edit)
 };
 
 // ScriptStruct Engine.SoundMode.SoundClassAdjuster
@@ -5646,7 +5646,7 @@ struct FUIKeyRepeatData
 // 0x0004 (0x0010 - 0x0014)
 struct FUIAxisEmulationData : FUIKeyRepeatData
 {
-	uint32_t                                           bEnabled : 1;                                  // 0x0010 (0x0004) [0x0000000000100000] [0x00000001] 
+	uint32_t                                           bEnabled : 1;                                  // 0x0010 (0x0004) [0x0000000000100000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 

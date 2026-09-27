@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -192,6 +192,14 @@ struct FNewsTileData
 {
 	struct FNewsContent                                ContentFields;                                 // 0x0000 (0x00D8) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FNewsPlacement>                Placements;                                    // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct ProjectX._Types_X.MMRCompensationData
+// Size: 0x0008
+struct FMMRCompensationData
+{
+	int32_t                                            Playlist;                                      // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            MMRCompensation;                               // 0x0004 (0x0004) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.ServerReservationData
@@ -475,7 +483,7 @@ struct FClubColorSet
 	uint8_t                                            CustomColorID;                                 // 0x0001 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x2];                            // 0x0002 (0x0002) MISSED OFFSET
 	uint32_t                                           bTeamColorSet : 1;                             // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x100000002] 
 };
 
 // ScriptStruct ProjectX._Types_X.CustomMatchTeamSettings
@@ -591,7 +599,7 @@ struct FReplicatedRBStateNoQuat
 	struct FVector                                     Location;                                      // 0x0010 (0x000C) [0x0000000000000000]               
 	struct FVector                                     LinearVelocity;                                // 0x001C (0x000C) [0x0000000000000000]               
 	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]               
-	uint32_t                                           bSleeping : 1;                                 // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bSleeping : 1;                                 // 0x0034 (0x0004) [0x0000000000000000] [0x100000001] 
 };
 
 // ScriptStruct ProjectX._Types_X.ReplicatedRBState
@@ -604,7 +612,7 @@ struct FReplicatedRBState
 	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]               
 	float                                              Time;                                          // 0x0034 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bSleeping : 1;                                 // 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint32_t                                           bNewData : 1;                                  // 0x0038 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bNewData : 1;                                  // 0x0038 (0x0004) [0x0000000000000000] [0x100000002] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x003C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -624,7 +632,7 @@ struct FPlayerBinding
 	float                                              PressedTime;                                   // 0x0020 (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              ReleasedTime;                                  // 0x0024 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint32_t                                           bTapped : 1;                                   // 0x0028 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
-	uint32_t                                           bToggled : 1;                                  // 0x0028 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bToggled : 1;                                  // 0x0028 (0x0004) [0x0000000000002000] [0x100000002] (CPF_Transient)
 };
 
 // ScriptStruct ProjectX._Types_X.BindingAction
@@ -758,7 +766,7 @@ struct FPartyMember
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerTitleData
-// Size: 0x0030 (0x002C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0058
 struct FPlayerTitleData
 {
 	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
@@ -767,7 +775,10 @@ struct FPlayerTitleData
 	int32_t                                            SortPriority;                                  // 0x0020 (0x0004) [0x0000000000000000]               
 	struct FColor                                      Color;                                         // 0x0024 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	struct FColor                                      GlowColor;                                     // 0x0028 (0x0004) [0x0000000040000000] (CPF_DataBinding)
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
+	uint8_t                                          UnknownData00[0x4];                            // 0x002C (0x0004) MISSED OFFSET
+	class FString                                      MarkupFragment;                                // 0x0030 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      IconTexture;                                   // 0x0040 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FName                                        StatName;                                      // 0x0050 (0x0008) [0x0001000000000000]               
 };
 
 // ScriptStruct ProjectX._Types_X.PlayerTitleCategory
@@ -1130,7 +1141,7 @@ struct FContentPair
 	class FName                                        KeyName;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	class FString                                      Content;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FEncryptedKeyIndex                          Index;                                         // 0x0018 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint32_t                                           bUnreleased : 1;                               // 0x001C (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bUnreleased : 1;                               // 0x001C (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
 };
 
 // ScriptStruct ProjectX.DDoSService_X.DDoSServicePayloadStruct
@@ -1325,7 +1336,7 @@ struct FFXAttachment
 struct FFXActorEventCheck
 {
 	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bHasTicked : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bHasTicked : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x000C (0x0004) PADDING FOR MINALIGNMENT
 };
 
@@ -1712,7 +1723,7 @@ struct FLeaderboardData
 	int32_t                                            Value;                                         // 0x0070 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	float                                              MMR;                                           // 0x0074 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	int32_t                                            Division;                                      // 0x0078 (0x0004) [0x0000000040000000] (CPF_DataBinding)
-	uint32_t                                           bIsPrimaryPlayer : 1;                          // 0x007C (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	uint32_t                                           bIsPrimaryPlayer : 1;                          // 0x007C (0x0004) [0x0000000040000000] [0x100000001] (CPF_DataBinding)
 };
 
 // ScriptStruct ProjectX.OnlineGameLeaderboards_X.CachedLeaderboardData

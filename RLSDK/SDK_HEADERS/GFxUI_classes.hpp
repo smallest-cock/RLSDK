@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -183,7 +183,7 @@ class UGFxInteraction : public UInteraction
 {
 public:
 	struct FPointer                                    VfTable_FCallbackEventDevice;                  // 0x00D0 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	uint32_t                                           bFakeMobileTouches : 1;                        // 0x00D8 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bFakeMobileTouches : 1;                        // 0x00D8 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxInteraction"))
@@ -485,7 +485,7 @@ class UGFxAction_CloseMovie : public USequenceAction
 {
 public:
 	class UGFxMoviePlayer*                             Movie;                                         // 0x0160 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bUnload : 1;                                   // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t                                           bUnload : 1;                                   // 0x0168 (0x0004) [0x0000000000000001] [0x100000001] (CPF_Edit)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxAction_CloseMovie"))

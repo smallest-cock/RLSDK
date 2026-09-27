@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -337,15 +337,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021DD0F8)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021DD128)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022E80C0)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02418148)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x02418190)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021E9130)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021E9128)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022EB7D0)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02424458)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x024244A0)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "260825.79374.526531"
-#define BUILDDATE_STRING       "Aug 25 2026 22:52:54"
+#define GPSYONIXBUILDID_STRING "260918.75141.528314"
+#define BUILDDATE_STRING       "Sep 25 2026 19:02:10"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""

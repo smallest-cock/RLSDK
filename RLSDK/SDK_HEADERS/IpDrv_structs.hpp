@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: IpDrv_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -560,7 +560,7 @@ struct FEventUploadConfig
 	uint8_t                                          UnknownData00[0x7];                            // 0x0001 (0x0007) MISSED OFFSET
 	class FString                                      UploadUrl;                                     // 0x0008 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	float                                              Timeout;                                       // 0x0018 (0x0004) [0x0000000000000002] (CPF_Const)   
-	uint32_t                                           bUseCompression : 1;                           // 0x001C (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bUseCompression : 1;                           // 0x001C (0x0004) [0x0000000000000002] [0x100000001] (CPF_Const)
 };
 
 // ScriptStruct IpDrv.OnlineNewsInterfaceMcp.NewsCacheEntry

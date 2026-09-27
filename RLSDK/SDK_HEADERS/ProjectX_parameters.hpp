@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 23 (v2.72)
-# Generated with RLSDKGenerator v1.1.5 on 09/06/2026 05:19AM
+# Rocket League SDK (RLSDK) Season 24 (v2.76)
+# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260825.79374.526531
-# Build Date: Aug 25 2026 22:52:54
+# Psyonix Build ID: 260918.75141.528314
+# Build Date: Sep 25 2026 19:02:10
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -942,6 +942,15 @@ struct UReservationBeacon_X_execBeginConnect_Params
 // [0x00020003] 
 struct UReservationBeacon_X_execClose_Params
 {
+};
+
+// Function ProjectX.ReservationBeacon_X.RefreshConnectionTimeout
+// [0x00020003] 
+struct UReservationBeacon_X_execRefreshConnectionTimeout_Params
+{
+	class UIReservationConnection_X*                   Connection;                                       // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
+	float                                              TimeoutSeconds;                                   // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	// class UPsyNetBeaconConnection_X*                PsyNetConnection;                                 // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.ReservationBeacon_X.CloseConnection
@@ -3811,9 +3820,10 @@ struct UOnlinePlayerAuthentication_X_execOnLoginSuccessRPC_Params
 struct UOnlinePlayerAuthentication_X_execSendLoginRPC_Params
 {
 	// uint32_t                                        bAuthTicketRequired : 1;                          // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class FString                                   FirstPartyName;                                   // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FUniqueNetId                             LocalFirstPlayerID;                               // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	// uint32_t                                        bSetAsPrimaryAccount : 1;                         // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class FString                                   BuildSecret;                                      // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   FirstPartyName;                                   // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FUniqueNetId                             LocalFirstPlayerID;                               // 0x0028 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        bSetAsPrimaryAccount : 1;                         // 0x0070 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.PsyNetLogin
@@ -3848,6 +3858,13 @@ struct UOnlinePlayerAuthentication_X_execOnRemoved_Params
 struct UOnlinePlayerAuthentication_X_execOnInit_Params
 {
 	// class UEpicLogin_X*                             NoneCoalescing_0x1;                               // 0x0000 (0x0008) [0x0000000000000000]               
+};
+
+// Function ProjectX.OnlinePlayerAuthentication_X.EventOnMMRRefunded
+// [0x00120001] 
+struct UOnlinePlayerAuthentication_X_execEventOnMMRRefunded_Params
+{
+	class TArray<struct FMMRCompensationData>          MMRCompensationList;                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlinePlayerAuthentication_X.EventConnectionStatusChanged
@@ -5504,6 +5521,13 @@ struct UGFxShell_X_execExitToMainMenu_Params
 // [0x08020003] 
 struct UGFxShell_X_execExitGame_Params
 {
+};
+
+// Function ProjectX.GFxShell_X.SetAxisInputTypeSwitchBlocked
+// [0x00020003] 
+struct UGFxShell_X_execSetAxisInputTypeSwitchBlocked_Params
+{
+	uint32_t                                           bBlocked : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
 // Function ProjectX.GFxShell_X.HandleMovieInputCaptureChanged
@@ -7661,6 +7685,13 @@ struct UPsyNet_X_execReportCheater_Params
 	class FString                                      Reason;                                           // 0x0048 (0x0010) [0x0000000000400880] (CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink)
 };
 
+// Function ProjectX.PsyNet_X.GetBuildSecret
+// [0x00022401] 
+struct UPsyNet_X_execGetBuildSecret_Params
+{
+	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
 // Function ProjectX.PsyNet_X.AssignQWordToString
 // [0x00022401] 
 struct UPsyNet_X_execAssignQWordToString_Params
@@ -8741,6 +8772,7 @@ struct UPsyNetStaticData_X_execBlockUntilSyncFinished_Params
 struct UPsyNetStaticData_X_execHandleGetURL_Params
 {
 	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class FString                                   BuildSecret;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.PsyNetStaticData_X.Sync
@@ -9048,6 +9080,16 @@ struct URPC_X_execNotifySuccess_Params
 struct URPC_X_execNotifyError_Params
 {
 	class UError*                                      InError;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.RPC_X.SetHeader
+// [0x00820003] 
+struct URPC_X_execSetHeader_Params
+{
+	class FString                                      Key;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Value;                                            // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_X*                                      ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FKeyValuePair                            Header;                                           // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.RPC_X.OverrideErrorType
@@ -10030,6 +10072,13 @@ struct UOnlineGameDedicatedServer_X_execHandleTrackerPlayerAdded_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
+// Function ProjectX.OnlineGameDedicatedServer_X.SyncStatus
+// [0x00080000] 
+struct UOnlineGameDedicatedServer_X_execSyncStatus_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
 // Function ProjectX.OnlineGameDedicatedServer_X.MatchGUID
 // [0x00020003] 
 struct UOnlineGameDedicatedServer_X_execMatchGUID_Params
@@ -10093,6 +10142,21 @@ struct UOnlineGameDedicatedServer_X_execCanIssueMatchmakingBan_Params
 struct UOnlineGameDedicatedServer_X_execIsRankedMatch_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.SetModeSourcePlaylist
+// [0x00080003] 
+struct UOnlineGameDedicatedServer_X_execSetModeSourcePlaylist_Params
+{
+	int32_t                                            PlaylistId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.GetModeSourcePlaylist
+// [0x00080003] 
+struct UOnlineGameDedicatedServer_X_execGetModeSourcePlaylist_Params
+{
+	class UGameSettingPlaylist_X*                      ReturnValue;                                      // 0x0000 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGameSettingPlaylist_X*                   ModeSourcePlaylist;                               // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetPlaylist
@@ -10302,8 +10366,8 @@ struct UOnlineGameDedicatedServer_X_execGoInactive_Params
 struct UOnlineGameDedicatedServer_X_execGetStartServerCommand_Params
 {
 	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class FString                                   ServerCommand;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0020 (0x0008) [0x0000000000000000]               
+	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0010 (0x0008) [0x0000000000000000]               
+	// class FString                                   ServerCommand;                                    // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.GetNextRandomMapName
@@ -10342,10 +10406,11 @@ struct UOnlineGameDedicatedServer_X_execGetCustomMatchOwner_Params
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.UpdateCustomMatchOwner
-// [0x00020003] 
+// [0x00820003] 
 struct UOnlineGameDedicatedServer_X_execUpdateCustomMatchOwner_Params
 {
 	struct FUniqueNetId                                NewOwner;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FUniqueNetId                             StructInitializer_0x1;                            // 0x0048 (0x0048) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.SetCustomSettings
@@ -10394,8 +10459,8 @@ struct UOnlineGameDedicatedServer_X_execGoToMap_Params
 struct UOnlineGameDedicatedServer_X_execGetPlaylistTags_Params
 {
 	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0010 (0x0008) [0x0000000000000000]               
-	// class FString                                   PlaylistTags;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   PlaylistTags;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 	// struct FCategorySettingPair                     CurrentTag;                                       // 0x0028 (0x0014) [0x0000000000000000]               
 };
 
@@ -10450,6 +10515,18 @@ struct UOnlineGameDedicatedServer_X_execInitClanforge_Params
 {
 	// class FString                                   ReserveURL;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class FString                                   UnreserveURL;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.UpdateDisableMatchmakingBan
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_X_execUpdateDisableMatchmakingBan_Params
+{
+};
+
+// Function ProjectX.OnlineGameDedicatedServer_X.HandleServerConfigUpdated
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_X_execHandleServerConfigUpdated_Params
+{
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.OnInit
@@ -10818,6 +10895,13 @@ struct UOnlineGameReservations_X_exec__OnlineGameReservations_X__SetPlayersWithM
 {
 	struct FMigrationReservationData                   P;                                                // 0x0000 (0x0108) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	bool                                               ReturnValue : 1;                                  // 0x0108 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4
+// [0x40040003] 
+struct UOnlineGameReservations_X_exec__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x4_Params
+{
+	struct FPsyNetBeaconPlayerReservation              P;                                                // 0x0000 (0x00B8) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameReservations_X.__OnlineGameReservations_X__HandlePsyNetBeaconReservation_0x3
@@ -11219,6 +11303,8 @@ struct UOnlineGameReservations_X_execRemoveReservationIndex_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           bAllowRankedReconnect : 1;                        // 0x0004 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	// class UGameSettingPlaylist_X*                   CurrentPlaylist;                                  // 0x0008 (0x0008) [0x0000000000000000]               
+	// uint32_t                                        bKeepReservation : 1;                             // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function ProjectX.OnlineGameReservations_X.AddSpecialReservation
@@ -11429,9 +11515,10 @@ struct UOnlineGameReservations_X_execClearReservations_Params
 };
 
 // Function ProjectX.OnlineGameReservations_X.Reset
-// [0x00020003] 
+// [0x00820003] 
 struct UOnlineGameReservations_X_execReset_Params
 {
+	// struct FHonorDuelChallenge                      StructInitializer_0x1;                            // 0x0000 (0x0090) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.OnlineGameReservations_X.RecordTeamHistory
@@ -11553,6 +11640,8 @@ struct UOnlineGameReservations_X_execHandlePlayerCancel_Params
 {
 	class UIReservationConnection_X*                   Connection;                                       // 0x0000 (0x0010) [0x0000000000000080] (CPF_Parm)    
 	class UObject*                                     Message;                                          // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// float                                           RemainingSeconds;                                 // 0x0018 (0x0004) [0x0000000000000000]               
+	// int32_t                                         PlayerIdx;                                        // 0x001C (0x0004) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGameReservations_X.GetConnectionPlayerID
@@ -11841,7 +11930,8 @@ struct UOnlineGameReservations_X_execCreateClientReservationMessage_Params
 	struct FServerReservationData                      Reservation;                                      // 0x0000 (0x0070) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                PlayerID;                                         // 0x0070 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class UObject*                                     ReturnValue;                                      // 0x00B8 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UClientReservationMessage_X*              ObjectInitializer_0x1;                            // 0x00C0 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	// class UHonorDuelReservationMessage_X*           Message;                                          // 0x00C0 (0x0008) [0x0001000000000000]               
+	// class UClientReservationMessage_X*              ObjectInitializer_0x1;                            // 0x00C8 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function ProjectX.OnlineGameReservations_X.HandlePsyNetBeaconReservation
@@ -11969,6 +12059,15 @@ struct UOnlineGameReservations_X_execNotifyMigrationInfoReceived_Params
 struct UOnlineGameReservations_X_execHandleServerMigrationMessage_Params
 {
 	class UMatchInfoMessage_X*                         Message;                                          // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.OnlineGameReservations_X.HandleHonorDuelReservation
+// [0x00040003] 
+struct UOnlineGameReservations_X_execHandleHonorDuelReservation_Params
+{
+	class UPsyNetService_CreateHonorDuel_X*            Notification;                                     // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	// int32_t                                         ModePlaylistId;                                   // 0x0008 (0x0004) [0x0000000000000000]               
+	// class UGameSettingPlaylist_X*                   ModePlaylist;                                     // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGameReservations_X.HandleReconnectReservation
@@ -12373,6 +12472,13 @@ struct UTimers_X_execClear_Params
 	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
+// Function ProjectX.Timers_X.SetNextFrame
+// [0x00022401] 
+struct UTimers_X_execSetNextFrame_Params
+{
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
 // Function ProjectX.Timers_X.SetStateTimer
 // [0x00026401] 
 struct UTimers_X_execSetStateTimer_Params
@@ -12447,6 +12553,13 @@ struct UTimersComponent_X_execClearAll_Params
 // Function ProjectX.TimersComponent_X.Clear
 // [0x00020401] 
 struct UTimersComponent_X_execClear_Params
+{
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.TimersComponent_X.SetNextFrame
+// [0x00020401] 
+struct UTimersComponent_X_execSetNextFrame_Params
 {
 	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
@@ -12649,6 +12762,14 @@ struct UWebRequest_X_execSetVerb_Params
 {
 	class FString                                      InVerb;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UWebRequest_X*                               ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function ProjectX.WebRequest_X.RedactUrlSecrets
+// [0x00022401] 
+struct UWebRequest_X_execRedactUrlSecrets_Params
+{
+	class FString                                      InURL;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.WebRequest_X.SetHeader
@@ -12991,6 +13112,14 @@ struct UPsyNetBeacon_X_execClose_Params
 struct UPsyNetBeacon_X_execCloseConnection_Params
 {
 	class UPsyNetBeaconConnection_X*                   Connection;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.PsyNetBeacon_X.RefreshConnectionTimeout
+// [0x00020003] 
+struct UPsyNetBeacon_X_execRefreshConnectionTimeout_Params
+{
+	class UPsyNetBeaconConnection_X*                   Connection;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	float                                              TimeoutSeconds;                                   // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function ProjectX.PsyNetBeacon_X.BroadcastMessage
@@ -17440,6 +17569,12 @@ struct UOnlineGameParty_X_execHandleLobbyMemberStatusUpdate_Params
 	class FString                                      Status;                                           // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
+// Function ProjectX.OnlineGameParty_X.CancelJoinGame
+// [0x00020003] 
+struct UOnlineGameParty_X_execCancelJoinGame_Params
+{
+};
+
 // Function ProjectX.OnlineGameParty_X.CancelJoinGameFromPartyDestroyed
 // [0x00040003] 
 struct UOnlineGameParty_X_execCancelJoinGameFromPartyDestroyed_Params
@@ -17478,6 +17613,14 @@ struct UOnlineGameParty_X_execHandleConfirmJoinGame_ConnectionValid_Params
 	struct FPartyJoinMatchSettings                     InSettings;                                       // 0x0000 (0x0058) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	// class FName                                     ReservationType;                                  // 0x0058 (0x0008) [0x0000000000000000]               
 	// class U__OnlineGameParty_X__HandleConfirmJoinGame_ConnectionValid_0x1* _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
+};
+
+// Function ProjectX.OnlineGameParty_X.IsSearchingForServer
+// [0x00020003] 
+struct UOnlineGameParty_X_execIsSearchingForServer_Params
+{
+	class FString                                      InServerName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.OnlineGameParty_X.HandleConfirmJoinGame
@@ -18627,6 +18770,13 @@ struct UOnlineGameJoinGame_X_execSendPing_Params
 struct UOnlineGameJoinGame_X_execGotoJoinGameState_Params
 {
 	class FName                                        NewStateName;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.OnlineGameJoinGame_X.HandleMaxPlayersMessage
+// [0x00080003] 
+struct UOnlineGameJoinGame_X_execHandleMaxPlayersMessage_Params
+{
+	class UReservationsMaxPlayersMessage_X*            Message;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function ProjectX.OnlineGameJoinGame_X.HandleConnectionResponse
@@ -20704,6 +20854,13 @@ struct UOnlineGamePlaylists_X_execOnInit_Params
 struct UOnlineGamePlaylists_X_execEventPlaylistsChanged_Params
 {
 	class UOnlineGamePlaylists_X*                      PlaylistsObj;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function ProjectX.GameSettingPlaylist_X.IsHonorDuel
+// [0x00020003] 
+struct UGameSettingPlaylist_X_execIsHonorDuel_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.GameSettingPlaylist_X.UseRandomizedNameAndPassword
@@ -24654,30 +24811,30 @@ struct U__TAsyncResult__Texture2DDynamic__SetResultWhen_0x1_exec__TAsyncResult__
 // [0x00020003] 
 struct U__TitleConfig_X__GetClubTitleData_0x1_exec__TitleConfig_X__GetClubTitleData_0x1_Params
 {
-	struct FPlayerTitleData                            Title;                                            // 0x0000 (0x0030) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPlayerTitleData                            Title;                                            // 0x0000 (0x0058) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.TitleConfig_X.SortTitles
 // [0x00822003] 
 struct UTitleConfig_X_execSortTitles_Params
 {
-	struct FPlayerTitleData                            A;                                                // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FPlayerTitleData                            B;                                                // 0x0030 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            ReturnValue;                                      // 0x0060 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         SortPriorityDiff;                                 // 0x0064 (0x0004) [0x0000000000000000]               
-	// struct FColor                                   DefaultColor;                                     // 0x0068 (0x0004) [0x0000000000000000]               
-	// class FString                                   ColorA;                                           // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   ColorB;                                           // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPlayerTitleData                            A;                                                // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FPlayerTitleData                            B;                                                // 0x0058 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            ReturnValue;                                      // 0x00B0 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         SortPriorityDiff;                                 // 0x00B4 (0x0004) [0x0000000000000000]               
+	// struct FColor                                   DefaultColor;                                     // 0x00B8 (0x0004) [0x0000000000000000]               
+	// class FString                                   ColorA;                                           // 0x00C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   ColorB;                                           // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.TitleConfig_X.InitTitleColors
 // [0x00840003] 
 struct UTitleConfig_X_execInitTitleColors_Params
 {
-	struct FPlayerTitleData                            Data;                                             // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FPlayerTitleData                            ReturnValue;                                      // 0x0030 (0x0030) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// struct FPlayerTitleCategory                     Category;                                         // 0x0060 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPlayerTitleData                            Data;                                             // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FPlayerTitleData                            ReturnValue;                                      // 0x0058 (0x0058) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// struct FPlayerTitleCategory                     Category;                                         // 0x00B0 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.TitleConfig_X.GetClubTitleData
@@ -24685,8 +24842,8 @@ struct UTitleConfig_X_execInitTitleColors_Params
 struct UTitleConfig_X_execGetClubTitleData_Params
 {
 	class FName                                        TitleId;                                          // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	struct FPlayerTitleData                            ReturnValue;                                      // 0x0008 (0x0030) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class U__TitleConfig_X__GetClubTitleData_0x1*   _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	struct FPlayerTitleData                            ReturnValue;                                      // 0x0008 (0x0058) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class U__TitleConfig_X__GetClubTitleData_0x1*   _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.TitleConfig_X.GetTitleData
@@ -24694,8 +24851,8 @@ struct UTitleConfig_X_execGetClubTitleData_Params
 struct UTitleConfig_X_execGetTitleData_Params
 {
 	class FName                                        TitleId;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FPlayerTitleData                            ReturnValue;                                      // 0x0008 (0x0030) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class U__TitleConfig_X__GetTitleData_0x1*       _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	struct FPlayerTitleData                            ReturnValue;                                      // 0x0008 (0x0058) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class U__TitleConfig_X__GetTitleData_0x1*       _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
 };
 
 // Function ProjectX.TitleConfig_X.GetCategory
@@ -24714,18 +24871,20 @@ struct UTitleConfig_X_execApply_Params
 {
 	// struct FPlayerTitleCategory                     StructInitializer_0x1;                            // 0x0000 (0x0028) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 	// struct FPlayerTitleCategory                     StructInitializer_0x2;                            // 0x0028 (0x0028) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FPlayerTitleData                         StructInitializer_0x3;                            // 0x0050 (0x0030) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FPlayerTitleData                         StructInitializer_0x4;                            // 0x0080 (0x0030) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FPlayerTitleData>           MapLocal_0x1;                                     // 0x00B0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FPlayerTitleData>           MapLocal_0x2;                                     // 0x00C0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// int32_t                                         Index;                                            // 0x0050 (0x0004) [0x0000000000000000]               
+	// struct FPlayerTitleCategory                     StructInitializer_0x3;                            // 0x0058 (0x0028) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FPlayerTitleData                         StructInitializer_0x4;                            // 0x0080 (0x0058) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FPlayerTitleData                         StructInitializer_0x5;                            // 0x00D8 (0x0058) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FPlayerTitleData>           MapLocal_0x1;                                     // 0x0130 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FPlayerTitleData>           MapLocal_0x2;                                     // 0x0140 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function ProjectX.__TitleConfig_X__GetTitleData_0x1.__TitleConfig_X__GetTitleData_0x1
 // [0x00020003] 
 struct U__TitleConfig_X__GetTitleData_0x1_exec__TitleConfig_X__GetTitleData_0x1_Params
 {
-	struct FPlayerTitleData                            Title;                                            // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPlayerTitleData                            Title;                                            // 0x0000 (0x0058) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0058 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.__WebCache_X__DownloadData_0x1.__WebCache_X__DownloadData_0x1
@@ -25007,8 +25166,8 @@ struct UActivateAnimSeriesComponent_X_execSetAnimSeriesActiveInComponent_Params
 struct UActivateAnimSeriesComponent_X_execSetAnimSeriesActive_Params
 {
 	uint32_t                                           bActive : 1;                                      // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// class USkeletalMeshComponent*                   SKC;                                              // 0x0008 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// class AActor*                                   AnimOwner;                                        // 0x0010 (0x0008) [0x0000000000000000]               
+	// class AActor*                                   AnimOwner;                                        // 0x0008 (0x0008) [0x0000000000000000]               
+	// class USkeletalMeshComponent*                   SKC;                                              // 0x0010 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function ProjectX.ActivateAnimSeriesComponent_X.Detached
@@ -25306,12 +25465,13 @@ struct UCameraStateBlender_X_execIsTransitioning_Params
 };
 
 // Function ProjectX.CameraStateBlender_X.BlendCameraState
-// [0x00480003] 
+// [0x00C80003] 
 struct UCameraStateBlender_X_execBlendCameraState_Params
 {
 	struct FCameraOrientation                          OutPOV;                                           // 0x0000 (0x002C) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	float                                              DeltaTime;                                        // 0x002C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// float                                           BlendPct;                                         // 0x0030 (0x0004) [0x0000000000000000]               
+	// struct FRotator                                 SnapshotRotationFromLastFrame;                    // 0x0034 (0x000C) [0x0000000000000000]               
 };
 
 // Function ProjectX.CameraStateBlender_X.PostProcessPOV
@@ -28081,6 +28241,20 @@ struct UOnlineGameInvite_X_exec__OnlineGameInvite_X__BeginState_0x1_Params
 	class UError*                                      Error;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function ProjectX.OnlineGameInvite_X.CancelJoinGame
+// [0x00020000] 
+struct UOnlineGameInvite_X_execCancelJoinGame_Params
+{
+};
+
+// Function ProjectX.OnlineGameInvite_X.IsSearchingForServer
+// [0x00020002] 
+struct UOnlineGameInvite_X_execIsSearchingForServer_Params
+{
+	class FString                                      InServerName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.OnlineGameInvite_X.OnGameInviteComplete
 // [0x00084003] 
 struct UOnlineGameInvite_X_execOnGameInviteComplete_Params
@@ -29481,6 +29655,15 @@ struct UReservationsPasswordMessage_X_execSetReason_Params
 	class UReservationsPasswordMessage_X*              ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function ProjectX.ReservationsMaxPlayersMessage_X.SetGameMode
+// [0x00020003] 
+struct UReservationsMaxPlayersMessage_X_execSetGameMode_Params
+{
+	uint8_t                                            inGameMode;                                       // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UReservationsMaxPlayersMessage_X*            ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function ProjectX.ReservationsMaxPlayersMessage_X.SetMaxPlayerCount
 // [0x00020003] 
 struct UReservationsMaxPlayersMessage_X_execSetMaxPlayerCount_Params
@@ -29833,6 +30016,36 @@ struct UPsyNetService_CreatePrivate_X_execGetReservation_Params
 	// struct FPsyNetBeaconReservation                 Reservation;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
+// Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation
+// [0x400820002] 
+struct UPsyNetService_CreateHonorDuel_X_execGetReservation_Params
+{
+	struct FPsyNetBeaconReservation                    ReturnValue;                                      // 0x0000 (0x0048) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// struct FPsyNetBeaconReservation                 Reservation;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function ProjectX.HonorDuelReservationMessage_X.GetDSRToken
+// [0x00020003] 
+struct UHonorDuelReservationMessage_X_execGetDSRToken_Params
+{
+	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.HonorDuelReservationMessage_X.GetReservationID
+// [0x00020003] 
+struct UHonorDuelReservationMessage_X_execGetReservationID_Params
+{
+	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
+// Function ProjectX.HonorDuelConfig_X.IsActive
+// [0x00020003] 
+struct UHonorDuelConfig_X_execIsActive_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint64_t                                        CurrentTime;                                      // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
 // Function ProjectX.AntiCheatManager_X.GetAntiCheatError
 // [0x00020002] 
 struct UAntiCheatManager_X_execGetAntiCheatError_Params
@@ -30050,6 +30263,14 @@ struct UOnlinePlayerRegionRestrictions_X_execOnInit_Params
 // [0x400080002] 
 struct UOnlinePlayerStorage_X_execOnInit_Params
 {
+};
+
+// Function ProjectX.RPC_LoginAuthPlayer_X.SetCheaterCompensationOverride
+// [0x00020003] 
+struct URPC_LoginAuthPlayer_X_execSetCheaterCompensationOverride_Params
+{
+	class TArray<struct FMMRCompensationData>          InCheaterCompensations;                           // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_LoginAuthPlayer_X*                      ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function ProjectX.RPC_LoginAuthPlayer_X.SetAsPrimaryAccount
@@ -31011,14 +31232,6 @@ struct UPsyNetMetrics_X_execRecordServiceCall_Params
 	class FString                                      Service;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	float                                              Latency;                                          // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         Idx;                                              // 0x0014 (0x0004) [0x0000000000000000]               
-};
-
-// Function ProjectX.PsyNetService_CreateHonorDuel_X.GetReservation
-// [0x400820002] 
-struct UPsyNetService_CreateHonorDuel_X_execGetReservation_Params
-{
-	struct FPsyNetBeaconReservation                    ReturnValue;                                      // 0x0000 (0x0048) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// struct FPsyNetBeaconReservation                 Reservation;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function ProjectX.PsyNetService_Echo_X.Execute
