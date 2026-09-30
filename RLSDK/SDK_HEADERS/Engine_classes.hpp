@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
+# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
 # ========================================================================================= #
 # File: Engine_classes.hpp
 # ========================================================================================= #
@@ -10081,8 +10081,11 @@ public:
 	int32_t                                            MedianReplicationRate;                         // 0x0114 (0x0004) [0x0000000000004000] (CPF_Config)  
 	int32_t                                            NetServerMaxTickRate;                          // 0x0118 (0x0004) [0x0000000000004000] (CPF_Config)  
 	uint32_t                                           bClampListenServerTickRate : 1;                // 0x011C (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t : 0;	// new bitfield unit at 0x0120
 	uint32_t                                           AllowDownloads : 1;                            // 0x0120 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t : 0;	// new bitfield unit at 0x0124
 	uint32_t                                           AllowPeerConnections : 1;                      // 0x0124 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t : 0;	// new bitfield unit at 0x0128
 	uint32_t                                           AllowPeerVoice : 1;                            // 0x0128 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 	uint8_t                                          UnknownData02[0x24];                          // 0x012C (0x0024) MISSED OFFSET
 	int32_t                                            MaxDownloadSize;                               // 0x0150 (0x0004) [0x0000000000004000] (CPF_Config)  
@@ -11840,16 +11843,24 @@ public:
 	class URB_BodySetup*                               BodySetup;                                     // 0x00F8 (0x0008) [0x0000000004000001] (CPF_Edit | CPF_EditInline)
 	uint8_t                                          UnknownData03[0x40];                          // 0x0100 (0x0040) MISSED OFFSET
 	uint32_t                                           UseSimpleLineCollision : 1;                    // 0x0140 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0144
 	uint32_t                                           UseSimpleBoxCollision : 1;                     // 0x0144 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0148
 	uint32_t                                           UseSimpleRigidBodyCollision : 1;               // 0x0148 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x014C
 	uint32_t                                           UseFullPrecisionUVs : 1;                       // 0x014C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0150
 	uint32_t                                           bUsedForInstancing : 1;                        // 0x0150 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	int32_t                                            ConsolePreallocateInstanceCount;               // 0x0154 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bUseMaximumStreamingTexelRatio : 1;            // 0x0158 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x015C
 	uint32_t                                           bPartitionForEdgeGeometry : 1;                 // 0x015C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0160
 	uint32_t                                           bCanBecomeDynamic : 1;                         // 0x0160 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	uint8_t                                          UnknownData04[0x4];                            // 0x0164 (0x0004) MISSED OFFSET
+	uint32_t : 0;	// new bitfield unit at 0x0168
 	uint32_t                                           bStripComplexCollisionForConsole : 1;          // 0x0168 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x016C
 	uint32_t                                           bPerLODStaticLightingForInstancing : 1;        // 0x016C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	float                                              StreamingDistanceMultiplier;                   // 0x0170 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint8_t                                          UnknownData05[0x8C];                          // 0x0174 (0x008C) MISSED OFFSET
@@ -12077,8 +12088,11 @@ public:
 	float                                              ChunkLinHorizontalScale;                       // 0x0274 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              ExplosionVelScale;                             // 0x0278 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bCompositeChunksExplodeOnImpact : 1;           // 0x027C (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0280
 	uint32_t                                           bFixIsolatedChunks : 1;                        // 0x0280 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0284
 	uint32_t                                           bAlwaysBreakOffIsolatedIslands : 1;            // 0x0284 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
+	uint32_t : 0;	// new bitfield unit at 0x0288
 	uint32_t                                           bSpawnPhysicsChunks : 1;                       // 0x0288 (0x0004) [0x0000000000000001] [0x00000001] (CPF_Edit)
 	float                                              ChanceOfPhysicsChunk;                          // 0x028C (0x0004) [0x0000000000000001] (CPF_Edit)    
 	float                                              ExplosionChanceOfPhysicsChunk;                 // 0x0290 (0x0004) [0x0000000000000001] (CPF_Edit)    

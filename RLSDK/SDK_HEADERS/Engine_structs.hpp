@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
+# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
 # ========================================================================================= #
 # File: Engine_structs.hpp
 # ========================================================================================= #
@@ -5665,6 +5665,7 @@ struct FStaticMeshLODElement
 	class UMaterialInterface*                          Material;                                      // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	uint32_t                                           bEnableShadowCasting : 1;                      // 0x0008 (0x0004) [0x0000000000001001] [0x00000001] (CPF_Edit | CPF_Native)
 	uint8_t                                          UnknownData00[0x4];                            // 0x000C (0x0004) MISSED OFFSET
+	uint32_t : 0;	// new bitfield unit at 0x0010
 	uint32_t                                           bEnableCollision : 1;                          // 0x0010 (0x0004) [0x0000000000001001] [0x00000001] (CPF_Edit | CPF_Native)
 	uint8_t                                          UnknownData01[0x4];                            // 0x0014 (0x0004) MISSED OFFSET
 };

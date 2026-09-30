@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/26/2026 09:24PM
+# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
@@ -1725,6 +1725,7 @@ class UTcpNetDriver : public UNetDriver
 public:
 	uint8_t                                          UnknownData00[0x58];                          // 0x0298 (0x0058) MISSED OFFSET
 	uint32_t                                           AllowPlayerPortUnreach : 1;                    // 0x02F0 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint32_t : 0;	// new bitfield unit at 0x02F4
 	uint32_t                                           LogPortUnreach : 1;                            // 0x02F4 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 	uint8_t                                          UnknownData01[0x20];                          // 0x02F8 (0x0020) MISSED OFFSET
 
