@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
+# Rocket League SDK (RLSDK) Season 24 (v2.77)
+# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
 # ========================================================================================= #
 # File: ProjectX_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260918.75141.528314
-# Build Date: Sep 25 2026 19:02:10
+# Psyonix Build ID: 261001.2867.529371
+# Build Date: Oct  1 2026 01:20:52
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -10460,8 +10460,12 @@ struct UOnlineGameDedicatedServer_X_execGetPlaylistTags_Params
 {
 	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 	// class FString                                   PlaylistTags;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0020 (0x0008) [0x0000000000000000]               
-	// struct FCategorySettingPair                     CurrentTag;                                       // 0x0028 (0x0014) [0x0000000000000000]               
+	// class TArray<struct FCategorySettingPair>       Tags;                                             // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UGameSettingPlaylist_X*                   Playlist;                                         // 0x0030 (0x0008) [0x0000000000000000]               
+	// class UGameSettingPlaylist_X*                   ActivePlaylist;                                   // 0x0038 (0x0008) [0x0000000000000000]               
+	// struct FCategorySettingPair                     OverrideTag;                                      // 0x0040 (0x0014) [0x0000000000000000]               
+	// int32_t                                         ExistingIdx;                                      // 0x0054 (0x0004) [0x0000000000000000]               
+	// struct FCategorySettingPair                     CurrentTag;                                       // 0x0058 (0x0014) [0x0000000000000000]               
 };
 
 // Function ProjectX.OnlineGameDedicatedServer_X.UpdateAverageMMR

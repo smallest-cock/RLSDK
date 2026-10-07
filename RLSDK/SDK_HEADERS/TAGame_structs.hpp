@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
+# Rocket League SDK (RLSDK) Season 24 (v2.77)
+# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260918.75141.528314
-# Build Date: Sep 25 2026 19:02:10
+# Psyonix Build ID: 261001.2867.529371
+# Build Date: Oct  1 2026 01:20:52
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -7316,6 +7316,30 @@ struct FAntiCheatMessage
 	class TArray<class FString>                        MessageParts;                                  // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
+// ScriptStruct TAGame.SettingsSnapshotManager_TA.ProductData
+// Size: 0x0020
+struct FProductData
+{
+	struct FProductInstanceID                          InstanceID;                                    // 0x0000 (0x0010) [0x0001000000000000]               
+	int32_t                                            ProductID;                                     // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            PaintID;                                       // 0x0014 (0x0004) [0x0001000000000000]               
+	int32_t                                            SpecialEditionID;                              // 0x0018 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamEditionId;                                 // 0x001C (0x0004) [0x0001000000000000]               
+};
+
+// ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata
+// Size: 0x0070
+struct FJsonMetadata
+{
+	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      platformKey;                                   // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SchemaVersion;                                 // 0x0058 (0x0004) [0x0001000000000000]               
+	int32_t                                            clientVersion;                                 // 0x005C (0x0004) [0x0001000000000000]               
+	uint64_t                                           timestampUtc;                                  // 0x0060 (0x0008) [0x0001000000000000]               
+	int32_t                                            settingsVersion;                               // 0x0068 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x006C (0x0004) [0x0001000000000000]               
+};
+
 // ScriptStruct TAGame.CustomScoreboardConfig_TA.ScoreboardGameModeDef
 // Size: 0x0010
 struct FScoreboardGameModeDef
@@ -7369,30 +7393,6 @@ struct FScoreboardModePreference
 {
 	class FName                                        ModeID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
 	class TArray<uint8_t>                              Stats;                                         // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-};
-
-// ScriptStruct TAGame.SettingsSnapshotManager_TA.ProductData
-// Size: 0x0020
-struct FProductData
-{
-	struct FProductInstanceID                          InstanceID;                                    // 0x0000 (0x0010) [0x0001000000000000]               
-	int32_t                                            ProductID;                                     // 0x0010 (0x0004) [0x0001000000000000]               
-	int32_t                                            PaintID;                                       // 0x0014 (0x0004) [0x0001000000000000]               
-	int32_t                                            SpecialEditionID;                              // 0x0018 (0x0004) [0x0001000000000000]               
-	int32_t                                            TeamEditionId;                                 // 0x001C (0x0004) [0x0001000000000000]               
-};
-
-// ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata
-// Size: 0x0070
-struct FJsonMetadata
-{
-	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      platformKey;                                   // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            SchemaVersion;                                 // 0x0058 (0x0004) [0x0001000000000000]               
-	int32_t                                            clientVersion;                                 // 0x005C (0x0004) [0x0001000000000000]               
-	uint64_t                                           timestampUtc;                                  // 0x0060 (0x0008) [0x0001000000000000]               
-	int32_t                                            settingsVersion;                               // 0x0068 (0x0004) [0x0001000000000000]               
-	int32_t                                            Checksum;                                      // 0x006C (0x0004) [0x0001000000000000]               
 };
 
 // ScriptStruct TAGame.SpecialEvent_TA.SpecialEventStoreConfigs

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
+# Rocket League SDK (RLSDK) Season 24 (v2.77)
+# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
 # ========================================================================================= #
 # File: TAGame_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260918.75141.528314
-# Build Date: Sep 25 2026 19:02:10
+# Psyonix Build ID: 261001.2867.529371
+# Build Date: Oct  1 2026 01:20:52
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -60205,6 +60205,18 @@ public:
 	bool __AntiCheatMessenger_TA__HandleIncomingMessagePart_0x1(const struct FAntiCheatMessage& P);
 };
 
+// Class TAGame.OnlineSettingsMetadata_TA
+// 0x0008 (0x0060 - 0x0068)
+class UOnlineSettingsMetadata_TA : public UObject
+{
+public:
+	int32_t                                            SchemaVersion;                                 // 0x0060 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x0064 (0x0004) [0x0001000000000000]               
+
+public:
+    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.OnlineSettingsMetadata_TA"))
+};
+
 // Class TAGame.ProductStat_CrossbarHits_TA
 // 0x0000 (0x00B0 - 0x00B0)
 class UProductStat_CrossbarHits_TA : public UProductStat_SoccarEventBase_TA
@@ -60359,18 +60371,6 @@ public:
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1"))
 	bool __HonorDuelStatusSync_TA__HandlePlayerAdded_0x1(const struct FPlayerStatus& P);
-};
-
-// Class TAGame.OnlineSettingsMetadata_TA
-// 0x0008 (0x0060 - 0x0068)
-class UOnlineSettingsMetadata_TA : public UObject
-{
-public:
-	int32_t                                            SchemaVersion;                                 // 0x0060 (0x0004) [0x0001000000000000]               
-	int32_t                                            Checksum;                                      // 0x0064 (0x0004) [0x0001000000000000]               
-
-public:
-    STATIC_CLASS_GETTER(UObject::FindClass("Class TAGame.OnlineSettingsMetadata_TA"))
 };
 
 // Class TAGame.__SpecialEvent_TA__SyncImageForIndex_0x1

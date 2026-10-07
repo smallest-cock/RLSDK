@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.76)
-# Generated with RLSDKGenerator v1.1.5 on 09/29/2026 08:40PM
+# Rocket League SDK (RLSDK) Season 24 (v2.77)
+# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 260918.75141.528314
-# Build Date: Sep 25 2026 19:02:10
+# Psyonix Build ID: 261001.2867.529371
+# Build Date: Oct  1 2026 01:20:52
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -344,8 +344,8 @@ enum EClassCastFlag : uint32_t
 #define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x024244A0)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "260918.75141.528314"
-#define BUILDDATE_STRING       "Sep 25 2026 19:02:10"
+#define GPSYONIXBUILDID_STRING "261001.2867.529371"
+#define BUILDDATE_STRING       "Oct  1 2026 01:20:52"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""
