@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: IpDrv_structs.hpp
 # ========================================================================================= #
@@ -62,7 +62,6 @@ struct FOnlineImageDownload
 	uint8_t                                          UnknownData00[0x7];                            // 0x0019 (0x0007) MISSED OFFSET
 	class UTexture2DDynamic*                           Texture;                                       // 0x0020 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             DecodedCallbacks;                              // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          DecodedCallbacksUnknownData01[0x8];            // 0x0030 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct IpDrv.ImageDecoder.DecodeImageRequest
@@ -71,7 +70,6 @@ struct FDecodeImageRequest
 {
 	class FString                                      RequestURL;                                    // 0x0000 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             OnFinishedCallback;                            // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          OnFinishedCallbackUnknownData00[0x8];          // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	struct FPointer                                    Task;                                          // 0x0030 (0x0008) [0x0000000000001000] (CPF_Native)  
 };
 
@@ -550,7 +548,6 @@ struct FAuthCodeRequest
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	int32_t                                            RequestID;                                     // 0x0068 (0x0004) [0x0000000000000000]               
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x006C (0x0004) PADDING FOR MINALIGNMENT
 };
@@ -627,7 +624,6 @@ struct FSanitizeCallbackData
 	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData01[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	class FString                                      Comment;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 

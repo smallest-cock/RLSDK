@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: Core_structs.hpp
 # ========================================================================================= #
@@ -636,7 +636,6 @@ struct FAsyncDelegateInfo
 	int32_t                                            CallbackId;                                    // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             AsyncDelegate;                                 // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          AsyncDelegateUnknownData01[0x8];               // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct Core.DistributionFloat.RawDistributionFloat
@@ -667,7 +666,6 @@ struct FObjectProviderSubscription
 {
 	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	uint32_t                                           bFireOnce : 1;                                 // 0x0028 (0x0004) [0x0000000000000000] [0x100000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
@@ -677,7 +675,6 @@ struct FObjectProviderSubscription
 struct FObjectProviderPendingCallback
 {
 	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0008 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	class UObject*                                     Value;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 };
 

@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
@@ -2394,7 +2394,6 @@ struct FPendingError
 {
 	class UError*                                      Error;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	class UClass*                                      ModalClass;                                    // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
@@ -2451,7 +2450,6 @@ struct FInviteTarget
 {
 	struct FUniqueNetId                                ToPlayer;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             InviteHandler;                                 // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          InviteHandlerUnknownData00[0x8];               // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProductHash_TA.ProductHashSource
@@ -2907,7 +2905,6 @@ struct FPendingSignedMessage
 {
 	class USignedMessageObject_X*                      MessageObject;                                 // 0x0000 (0x0008) [0x0001000000000000]               
 	struct FScriptDelegate                             FinishedCallback;                              // 0x0008 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          FinishedCallbackUnknownData00[0x8];            // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	int32_t                                            RequestID;                                     // 0x0028 (0x0004) [0x0001000000000000]               
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
@@ -2921,7 +2918,6 @@ struct FPendingKeyGenMessage
 	uint8_t                                            ChatChannel;                                   // 0x0058 (0x0001) [0x0001000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x0059 (0x0007) MISSED OFFSET
 	struct FScriptDelegate                             FinishedCallback;                              // 0x0060 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          FinishedCallbackUnknownData01[0x8];            // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TextModerationManager_TA.UserPublicKey
@@ -2950,9 +2946,7 @@ struct FBracketResult
 	float                                              RetrieveTime;                                  // 0x0080 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             BracketChangedCallback;                        // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          BracketChangedCallbackUnknownData01[0x8];      // 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             ErrorCallback;                                 // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ErrorCallbackUnknownData02[0x8];               // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TourBracketCache_TA.BracketRequest
@@ -2962,7 +2956,6 @@ struct FBracketRequest
 	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.RPC_TourUpdateGame_TA.TeamUpdateInfo
@@ -3062,7 +3055,6 @@ struct FVanityQueryRequest
 	uint8_t                                          UnknownData00[0x7];                            // 0x0009 (0x0007) MISSED OFFSET
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             VanityCallback;                                // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          VanityCallbackUnknownData01[0x8];              // 0x0028 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	int32_t                                            NumIdsToQuery;                                 // 0x0040 (0x0004) [0x0000000000000000]               
 	int32_t                                            NumQueriesCompleted;                           // 0x0044 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bForced : 1;                                   // 0x0048 (0x0004) [0x0000000000000000] [0x100000001] 
@@ -5951,7 +5943,6 @@ struct FMapImageLoadRequest
 	class FName                                        PackageName;                                   // 0x0008 (0x0008) [0x0000000000000000]               
 	class FString                                      AssetPath;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0028 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.MapPrefsMetrics_TA.MapPrefsMetric
@@ -6245,7 +6236,6 @@ struct FAssetLoadRequest
 	uint32_t                                           bIsThumbnailRequest : 1;                       // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData01[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             OnLoadedCallback;                              // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          OnLoadedCallbackUnknownData02[0x8];            // 0x0040 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProductAttribute_InheritCarSetting_TA.InheritedParameter
@@ -6365,7 +6355,6 @@ struct FRenderThumbnailRequest
 {
 	struct FProductThumbnailResult                     Result;                                        // 0x0000 (0x0018) [0x0000000000000002] (CPF_Const)   
 	struct FScriptDelegate                             Callback;                                      // 0x0018 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0020 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProfileCameraSave_TA.CameraPresetFloatOverride
@@ -6378,7 +6367,6 @@ struct FCameraPresetFloatOverride
 	float                                              ValueController;                               // 0x0008 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x000C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             ApplyFunc;                                     // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ApplyFuncUnknownData02[0x8];                   // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProfileCameraSave_TA.CameraPresetBoolOverride
@@ -6390,7 +6378,6 @@ struct FCameraPresetBoolOverride
 	uint32_t                                           bValueKBM : 1;                                 // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bValueController : 1;                          // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
 	struct FScriptDelegate                             ApplyFunc;                                     // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ApplyFuncUnknownData01[0x8];                   // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.RBHistory_TA.RBPhysicsSnapshot
@@ -6519,7 +6506,6 @@ struct FReplayExportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ReplayManager_TA.ReplayImportCallbackData
@@ -6528,7 +6514,6 @@ struct FReplayImportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ReplayManager_TA.ReplayExportTask
@@ -7025,7 +7010,6 @@ struct FRewardsRequest
 	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TourSeeder_TA.TeamSeeds
@@ -7053,7 +7037,6 @@ struct FButtonInfo
 {
 	class FString                                      Text;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             ClickDelegate;                                 // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ClickDelegateUnknownData00[0x8];               // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	uint32_t                                           bCorrectAnswer : 1;                            // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };

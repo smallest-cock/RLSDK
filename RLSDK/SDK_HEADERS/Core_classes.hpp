@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
@@ -2458,7 +2458,6 @@ class USubscription : public UObject
 {
 public:
 	struct FScriptDelegate                             __SubscriberCallback__Delegate;                // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SubscriberCallback__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.Subscription"))
@@ -3189,7 +3188,6 @@ class UDelegateTracker : public UObject
 public:
 	class TArray<struct FAsyncDelegateInfo>            AsyncDelegates;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __PlaceholderDelegate__Delegate;               // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __PlaceholderDelegate__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.DelegateTracker"))
@@ -3214,7 +3212,6 @@ public:
 	int32_t                                            PrintObjectCount;                              // 0x00A0 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __LogFunc__Delegate;                           // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __LogFunc__Delegate_UnknownData02[0x8];        // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.DebugDrawer"))
@@ -3280,7 +3277,6 @@ class UStringMap : public UComponent
 public:
 	struct FMap_Mirror                                 Map;                                           // 0x0070 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
 	struct FScriptDelegate                             __PairCallback__Delegate;                      // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __PairCallback__Delegate_UnknownData00[0x8];   // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.StringMap"))
@@ -3317,11 +3313,8 @@ public:
 	class TArray<class UObjectProvider*>               Proxies;                                       // 0x0178 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 	class TArray<struct FObjectProviderPendingCallback> PendingInjectionCallbacks;                     // 0x0188 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __ObjectSubscriptionCallback__Delegate;        // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ObjectSubscriptionCallback__Delegate_UnknownData01[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ObjectListSubscriptionCallback__Delegate;    // 0x01B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ObjectListSubscriptionCallback__Delegate_UnknownData02[0x8];// 0x01C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ObjectChangeCallback__Delegate;              // 0x01D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ObjectChangeCallback__Delegate_UnknownData03[0x8];// 0x01E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.ObjectProvider"))
@@ -3473,13 +3466,9 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	class UError*                                      Error;                                         // 0x0068 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventAsyncTaskSuccess__Delegate;             // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAsyncTaskSuccess__Delegate_UnknownData01[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAsyncTaskFail__Delegate;                // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAsyncTaskFail__Delegate_UnknownData02[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAsyncTaskComplete__Delegate;            // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAsyncTaskComplete__Delegate_UnknownData03[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisposed__Delegate;                     // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisposed__Delegate_UnknownData04[0x8];  // 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.AsyncTask"))

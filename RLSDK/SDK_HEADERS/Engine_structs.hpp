@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: Engine_structs.hpp
 # ========================================================================================= #
@@ -248,7 +248,6 @@ struct FMaterialViewRelevance
 struct FComponentTemplate
 {
 	struct FScriptDelegate                             Condition;                                     // 0x0000 (0x0020) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
-	uint8_t                                          ConditionUnknownData00[0x8];                   // 0x0008 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	class UObject*                                     Object;                                        // 0x0020 (0x0008) [0x0000000000000001] (CPF_Edit)    
 };
 
@@ -1644,7 +1643,6 @@ struct FSetSaveDataCallbackStruct
 	int32_t                                            SlotIndex;                                     // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData01[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct Engine.CloudSaveSystem.SaveSlotOperation
@@ -1663,7 +1661,6 @@ struct FGetSaveDataCallbackStruct
 	int32_t                                            SlotIndex;                                     // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          CallbackUnknownData01[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct Engine.UIRoot.UIRangeData
@@ -3608,7 +3605,6 @@ struct FInputMatchRequest
 	class AActor*                                      MatchActor;                                    // 0x0010 (0x0008) [0x0000000000000000]               
 	class FName                                        MatchFuncName;                                 // 0x0018 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             MatchDelegate;                                 // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          MatchDelegateUnknownData00[0x8];               // 0x0028 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 	class FName                                        FailedFuncName;                                // 0x0040 (0x0008) [0x0000000000000000]               
 	class FName                                        RequestName;                                   // 0x0048 (0x0008) [0x0000000000000000]               
 	int32_t                                            MatchIdx;                                      // 0x0050 (0x0004) [0x0000000000002000] (CPF_Transient)

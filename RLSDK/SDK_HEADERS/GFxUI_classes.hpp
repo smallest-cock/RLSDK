@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
 # ========================================================================================= #
@@ -254,7 +254,6 @@ public:
 	int32_t                                            SplitscreenLayoutYAdjust;                      // 0x01F8 (0x0004) [0x0000000000004000] (CPF_Config)  
 	uint8_t                                          UnknownData06[0x4];                            // 0x01FC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __OnPostAdvance__Delegate;                     // 0x0200 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnPostAdvance__Delegate_UnknownData07[0x8];  // 0x0208 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxMoviePlayer"))
@@ -600,7 +599,6 @@ class UGFxClikWidget : public UGFxObject
 {
 public:
 	struct FScriptDelegate                             __EventListener__Delegate;                     // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventListener__Delegate_UnknownData00[0x8];  // 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxClikWidget"))

@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: ProjectX_classes.hpp
 # ========================================================================================= #
@@ -679,11 +679,8 @@ class U_Types_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __OnPriviledgeChecked__Delegate;               // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnPriviledgeChecked__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ServiceExecutionDelegate__Delegate;          // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ServiceExecutionDelegate__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnTimer__Delegate;                           // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnTimer__Delegate_UnknownData02[0x8];        // 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX._Types_X"))
@@ -907,9 +904,7 @@ public:
 	class TArray<struct FFXEventSubscription>          EventSubscriptions;                            // 0x02E0 (0x0010) [0x0000004000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	class UFXActorEvent_X*                             AnimationEndState;                             // 0x02F0 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventFXStatePushed__Delegate;                // 0x02F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFXStatePushed__Delegate_UnknownData02[0x8];// 0x0300 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFXStatePopped__Delegate;                // 0x0318 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFXStatePopped__Delegate_UnknownData03[0x8];// 0x0320 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FXActor_X"))
@@ -1004,7 +999,6 @@ public:
 	class TArray<class AActor*>                        SpawnedActors;                                 // 0x02A8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	class AActor*                                      SpawnedActor;                                  // 0x02B8 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventSpawned__Delegate;                      // 0x02C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSpawned__Delegate_UnknownData01[0x8];   // 0x02C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ArchetypeSpawnPoint_X"))
@@ -1035,11 +1029,8 @@ public:
 	class TArray<struct FBeaconMessageHandler>         MessageHandlers;                               // 0x0070 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class UPsyNetBeacon_X*                             PsyNetBeacon;                                  // 0x0080 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __MessageReceivedDelegate__Delegate;           // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __MessageReceivedDelegate__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConnected__Delegate;                    // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnected__Delegate_UnknownData01[0x8]; // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisconnected__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ReservationBeacon_X"))
@@ -1086,7 +1077,6 @@ public:
 	class UBreadcrumbConfig_X*                         BreadcrumbConfig;                              // 0x0060 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	struct FPointer                                    BreadcrumbInstance;                            // 0x0068 (0x0008) [0x0000000000001000] (CPF_Native)  
 	struct FScriptDelegate                             __OnCrumbAddedDelegate__Delegate;              // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCrumbAddedDelegate__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BreadcrumbBroadcaster_X"))
@@ -1147,7 +1137,6 @@ public:
 	uint32_t                                           bSnapNextTransition : 1;                       // 0x06A8 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x06AC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventCameraStateChanged__Delegate;           // 0x06B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCameraStateChanged__Delegate_UnknownData01[0x8];// 0x06B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Camera_X"))
@@ -1209,7 +1198,6 @@ class UCanvasTexture_X : public UTextureRenderTarget2D
 {
 public:
 	struct FScriptDelegate                             __Draw__Delegate;                              // 0x01A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __Draw__Delegate_UnknownData00[0x8];           // 0x01A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CanvasTexture_X"))
@@ -1246,15 +1234,10 @@ public:
 	float                                              CloseConnectionDelay;                          // 0x083C (0x0004) [0x0000000000000002] (CPF_Const)   
 	class UNetConnection*                              NetConnection;                                 // 0x0840 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventReceivedPRI__Delegate;                  // 0x0848 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedPRI__Delegate_UnknownData00[0x8];// 0x0850 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPawnChange__Delegate;                   // 0x0868 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPawnChange__Delegate_UnknownData01[0x8];// 0x0870 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReceivedPlayer__Delegate;               // 0x0888 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedPlayer__Delegate_UnknownData02[0x8];// 0x0890 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDestroyed__Delegate;                    // 0x08A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDestroyed__Delegate_UnknownData03[0x8]; // 0x08B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerCameraChange__Delegate;           // 0x08C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerCameraChange__Delegate_UnknownData04[0x8];// 0x08D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerController_X"))
@@ -1320,7 +1303,6 @@ class UCheatManager_X : public UCheatManager
 {
 public:
 	struct FScriptDelegate                             __EventDelegateTest__Delegate;                 // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDelegateTest__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CheatManager_X"))
@@ -1469,23 +1451,14 @@ public:
 	uint32_t                                           bUndocked : 1;                                 // 0x0090 (0x0004) [0x0000000000000002] [0x00000004] (CPF_Const)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0094 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventPreExit__Delegate;                      // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPreExit__Delegate_UnknownData01[0x8];   // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLoadingMovieClosed__Delegate;           // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoadingMovieClosed__Delegate_UnknownData02[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPreScriptsReloaded__Delegate;           // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPreScriptsReloaded__Delegate_UnknownData03[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPostScriptsReloaded__Delegate;          // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPostScriptsReloaded__Delegate_UnknownData04[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventOnlineGameInitialized__Delegate;        // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventOnlineGameInitialized__Delegate_UnknownData05[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPreLoadMap__Delegate;                   // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPreLoadMap__Delegate_UnknownData06[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPostLoadMap__Delegate;                  // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPostLoadMap__Delegate_UnknownData07[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCrashed__Delegate;                      // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCrashed__Delegate_UnknownData08[0x8];   // 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventUndockedChanged__Delegate;              // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventUndockedChanged__Delegate_UnknownData09[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EngineShare_X"))
@@ -1671,9 +1644,7 @@ public:
 	class UPsyNet_X*                                   PsyNet;                                        // 0x0070 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class UOnlineSubsystem*                            EOS;                                           // 0x0078 (0x0008) [0x0000008000002000] (CPF_Transient | CPF_ProtectedWrite)
 	struct FScriptDelegate                             __EventEOSInitialized__Delegate;               // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEOSInitialized__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEosInitTimeout__Delegate;               // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEosInitTimeout__Delegate_UnknownData02[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Online_X"))
@@ -1742,21 +1713,13 @@ public:
 	class UError*                                      LoginStatusError;                              // 0x01B8 (0x0008) [0x0000000000000000]               
 	class UError*                                      BannedError;                                   // 0x01C0 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventLoginComplete__Delegate;                // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginComplete__Delegate_UnknownData02[0x8];// 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLogoutComplete__Delegate;               // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLogoutComplete__Delegate_UnknownData03[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLoginStatusChanged__Delegate;           // 0x0208 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginStatusChanged__Delegate_UnknownData04[0x8];// 0x0210 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCanPlayOnlineChanged__Delegate;         // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCanPlayOnlineChanged__Delegate_UnknownData05[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventShowKeyboardComplete__Delegate;         // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventShowKeyboardComplete__Delegate_UnknownData06[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventOnlineNameChanged__Delegate;            // 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventOnlineNameChanged__Delegate_UnknownData07[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventRemoved__Delegate;                      // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRemoved__Delegate_UnknownData08[0x8];   // 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCabinedModeStatusKnown__Delegate;       // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCabinedModeStatusKnown__Delegate_UnknownData09[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayer_X"))
@@ -1848,11 +1811,8 @@ public:
 	class FString                                      BlockListURL;                                  // 0x00D0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      AccountSummaryURL;                             // 0x00E0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __HTTPRequestCallback__Delegate;               // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __HTTPRequestCallback__Delegate_UnknownData00[0x8];// 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __AddFriendCallback__Delegate;                 // 0x0110 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __AddFriendCallback__Delegate_UnknownData01[0x8];// 0x0118 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __GetOutgoingFriendsCallback__Delegate;        // 0x0130 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __GetOutgoingFriendsCallback__Delegate_UnknownData02[0x8];// 0x0138 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicFriendsPlugin_X"))
@@ -1918,17 +1878,11 @@ public:
 	class UError*                                      PrimaryAccountNotSetError;                     // 0x0198 (0x0008) [0x0000000000000000]               
 	class UErrorType*                                  LastLoggedAuthErrorType;                       // 0x01A0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventLoginChanged__Delegate;                 // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginChanged__Delegate_UnknownData01[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBanned__Delegate;                       // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBanned__Delegate_UnknownData02[0x8];    // 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLoginResult__Delegate;                  // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginResult__Delegate_UnknownData03[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlatformAuthTicketFailedChanged_Switch__Delegate;// 0x0208 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlatformAuthTicketFailedChanged_Switch__Delegate_UnknownData04[0x8];// 0x0210 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConnectionStatusChanged__Delegate;      // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnectionStatusChanged__Delegate_UnknownData05[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventOnMMRRefunded__Delegate;                // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventOnMMRRefunded__Delegate_UnknownData06[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerAuthentication_X"))
@@ -2007,19 +1961,12 @@ public:
 	class TArray<struct FLinkedAccount>                linkedAccounts;                                // 0x00C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      EpicAccountId;                                 // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventLoginSucceeded__Delegate;               // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginSucceeded__Delegate_UnknownData02[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLoginFailed__Delegate;                  // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginFailed__Delegate_UnknownData03[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReceivedPinGrantCode__Delegate;         // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedPinGrantCode__Delegate_UnknownData04[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLoginError__Delegate;                   // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoginError__Delegate_UnknownData05[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReceivedEpicAuthTicket__Delegate;       // 0x0160 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedEpicAuthTicket__Delegate_UnknownData06[0x8];// 0x0168 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x0180 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInitialized__Delegate_UnknownData07[0x8];// 0x0188 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCreatedEpicGamesAccount__Delegate;      // 0x01A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCreatedEpicGamesAccount__Delegate_UnknownData08[0x8];// 0x01A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EpicLogin_X"))
@@ -2477,9 +2424,7 @@ public:
 	class APawn*                                       PawnArchetype;                                 // 0x04A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<struct FPauserData>                   PCPausers;                                     // 0x04B0 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventSpawned__Delegate;                      // 0x04C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSpawned__Delegate_UnknownData00[0x8];   // 0x04C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInit__Delegate;                         // 0x04E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInit__Delegate_UnknownData01[0x8];      // 0x04E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameInfo_X"))
@@ -2573,15 +2518,10 @@ public:
 	uint32_t                                           bIsFinishedLoadingSaveSettings : 1;            // 0x02A8 (0x0004) [0x0000000000002000] [0x00000004] (CPF_Transient)
 	int32_t                                            MaxSplitScreenPlayers;                         // 0x02AC (0x0004) [0x0000000000004002] (CPF_Const | CPF_Config)
 	struct FScriptDelegate                             __EventLocalPlayerJoin__Delegate;              // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLocalPlayerJoin__Delegate_UnknownData00[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLocalPlayerLeave__Delegate;             // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLocalPlayerLeave__Delegate_UnknownData01[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventNotifyConnectionError__Delegate;        // 0x02F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventNotifyConnectionError__Delegate_UnknownData02[0x8];// 0x02F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrimaryPlayerChange__Delegate;          // 0x0310 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryPlayerChange__Delegate_UnknownData03[0x8];// 0x0318 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFocusChanged__Delegate;                 // 0x0330 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFocusChanged__Delegate_UnknownData04[0x8];// 0x0338 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameViewportClient_X"))
@@ -2693,11 +2633,8 @@ public:
 	float                                              CurrentInputTypeCooldown;                      // 0x00F0 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	uint8_t                                          UnknownData02[0x4];                            // 0x00F4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventInputCaptureChanged__Delegate;          // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInputCaptureChanged__Delegate_UnknownData03[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInputTypeChanged__Delegate;             // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInputTypeChanged__Delegate_UnknownData04[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReceivedInput__Delegate;                // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedInput__Delegate_UnknownData05[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxShell_X"))
@@ -2788,11 +2725,8 @@ public:
 	EInputPlatformType                                 AvailableGamepadType;                          // 0x0154 (0x0001) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	uint8_t                                          UnknownData00[0x3];                            // 0x0155 (0x0003) MISSED OFFSET
 	struct FScriptDelegate                             __EventShellCreated__Delegate;                 // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventShellCreated__Delegate_UnknownData01[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAvailableGamepadTypeChanged__Delegate;  // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAvailableGamepadTypeChanged__Delegate_UnknownData02[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGameSessionEnded__Delegate;             // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameSessionEnded__Delegate_UnknownData03[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxEngine_X"))
@@ -2836,11 +2770,8 @@ public:
 	class UGFxObjectReference_X*                       ShellHooksClass;                               // 0x02E0 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	class TArray<class UGFxSoundPack_X*>               LoadedSoundPacks;                              // 0x02E8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventStarted__Delegate;                      // 0x02F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStarted__Delegate_UnknownData00[0x8];   // 0x0300 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventClosed__Delegate;                       // 0x0318 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventClosed__Delegate_UnknownData01[0x8];    // 0x0320 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInputCaptureChanged__Delegate;          // 0x0338 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInputCaptureChanged__Delegate_UnknownData02[0x8];// 0x0340 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxMoviePlayer_X"))
@@ -3051,9 +2982,7 @@ public:
 	float                                              LastCacheCommitTime;                           // 0x00B0 (0x0004) [0x0000000000003000] (CPF_Native | CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventImportFinished__Delegate;               // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventImportFinished__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventExportFinished__Delegate;               // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventExportFinished__Delegate_UnknownData02[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.LocalCache_X"))
@@ -3080,7 +3009,6 @@ public:
 	struct FRenderProfile                              Profile;                                       // 0x027C (0x0028) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFinished__Delegate_UnknownData01[0x8];  // 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.MapFlythroughProfiler_X"))
@@ -3370,7 +3298,6 @@ public:
 	float                                              LogTime;                                       // 0x00D8 (0x0004) [0x0000004040002000] (CPF_Transient | CPF_DataBinding | CPF_PrivateWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventNumPlayersUpdated__Delegate;            // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventNumPlayersUpdated__Delegate_UnknownData01[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameSettings_X"))
@@ -3403,7 +3330,6 @@ public:
 	class UCachedWebData_X*                            CachedData;                                    // 0x0080 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class FString                                      AppendedPath;                                  // 0x0088 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventNewText__Delegate;                      // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventNewText__Delegate_UnknownData00[0x8];   // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineLegalText_X"))
@@ -3446,13 +3372,9 @@ public:
 	class FString                                      EOSDeclineURL;                                 // 0x0120 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      OfflineURL;                                    // 0x0130 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventNewText__Delegate;                      // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventNewText__Delegate_UnknownData03[0x8];   // 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventHandleSyncStarted__Delegate;            // 0x0160 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventHandleSyncStarted__Delegate_UnknownData04[0x8];// 0x0168 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventHandleSyncResponse__Delegate;           // 0x0180 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventHandleSyncResponse__Delegate_UnknownData05[0x8];// 0x0188 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventKeyReceived__Delegate;                  // 0x01A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventKeyReceived__Delegate_UnknownData06[0x8];// 0x01A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineLegalTextEOS_X"))
@@ -3502,7 +3424,6 @@ public:
 	class UCompression_X*                              Compressor;                                    // 0x0078 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class TArray<struct FOnlineMessageHandler>         MessageHandlers;                               // 0x0080 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __MessageReceivedDelegate__Delegate;           // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __MessageReceivedDelegate__Delegate_UnknownData00[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineMessageComponent_X"))
@@ -3622,9 +3543,7 @@ public:
 	uint8_t                                          UnknownData01[0x4];                            // 0x051C (0x0004) MISSED OFFSET
 	class AController*                                 PreviousController;                            // 0x0520 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventDestroyed__Delegate;                    // 0x0528 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDestroyed__Delegate_UnknownData02[0x8]; // 0x0530 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAnimEnd__Delegate;                      // 0x0548 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAnimEnd__Delegate_UnknownData03[0x8];   // 0x0550 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Pawn_X"))
@@ -3650,7 +3569,6 @@ public:
 	EPerConStatus                                      Status;                                        // 0x0078 (0x0001) [0x0000004000000000] (CPF_PrivateWrite)
 	uint8_t                                          UnknownData00[0x7];                            // 0x0079 (0x0007) MISSED OFFSET
 	struct FScriptDelegate                             __EventStatusChanged__Delegate;                // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStatusChanged__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PerCon_X"))
@@ -3703,13 +3621,9 @@ public:
 	class TArray<struct FPointer>                      HeldBindings;                                  // 0x03E8 (0x0010) [0x0000000000003000] (CPF_Native | CPF_Transient)
 	uint8_t                                          UnknownData02[0x50];                          // 0x03F8 (0x0050) MISSED OFFSET
 	struct FScriptDelegate                             __EventActionToggled__Delegate;                // 0x0448 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventActionToggled__Delegate_UnknownData03[0x8];// 0x0450 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBindingsChanged__Delegate;              // 0x0468 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBindingsChanged__Delegate_UnknownData04[0x8];// 0x0470 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSetBindingsToUserBindings__Delegate;    // 0x0488 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSetBindingsToUserBindings__Delegate_UnknownData05[0x8];// 0x0490 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x04A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInitialized__Delegate_UnknownData06[0x8];// 0x04B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlayerInput_X"))
@@ -3772,15 +3686,10 @@ public:
 	float                                              LastReportCheaterTime;                         // 0x00E0 (0x0004) [0x0000000000000000]               
 	uint32_t                                           bUsePsynetEnvironment : 1;                     // 0x00E4 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
 	struct FScriptDelegate                             __EventPrimaryConnectionEnabled__Delegate;     // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryConnectionEnabled__Delegate_UnknownData01[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrimaryConnectionDisabled__Delegate;    // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryConnectionDisabled__Delegate_UnknownData02[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrimaryPlayerLoggedIn__Delegate;        // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryPlayerLoggedIn__Delegate_UnknownData03[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrimaryPlayerLoggedOut__Delegate;       // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryPlayerLoggedOut__Delegate_UnknownData04[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCheaterReported__Delegate;              // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCheaterReported__Delegate_UnknownData05[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNet_X"))
@@ -3891,19 +3800,12 @@ public:
 	int32_t                                            ConsecutiveAuthFailures;                       // 0x0120 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventConnected__Delegate;                    // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnected__Delegate_UnknownData01[0x8]; // 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisconnected__Delegate_UnknownData02[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConnectFailed__Delegate;                // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnectFailed__Delegate_UnknownData03[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPerConConnected__Delegate;              // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPerConConnected__Delegate_UnknownData04[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPerConDisconnected__Delegate;           // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPerConDisconnected__Delegate_UnknownData05[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEnabled__Delegate;                      // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEnabled__Delegate_UnknownData06[0x8];   // 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisabled__Delegate;                     // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisabled__Delegate_UnknownData07[0x8];  // 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetConnection_X"))
@@ -4003,7 +3905,6 @@ class UPsyNetMessenger_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMessageReceived__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessenger_X"))
@@ -4041,15 +3942,10 @@ public:
 	class TArray<struct FQueuedPsyNetMessage>          QueuedMessages;                                // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UPsyNetConfig_X*                             PsyNetConfig;                                  // 0x00B8 (0x0008) [0x0000800000000000]               
 	struct FScriptDelegate                             __EventStartConnect__Delegate;                 // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStartConnect__Delegate_UnknownData01[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStartConnectFail__Delegate;             // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStartConnectFail__Delegate_UnknownData02[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConnected__Delegate;                    // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnected__Delegate_UnknownData03[0x8]; // 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisconnected__Delegate_UnknownData04[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInvalidMessageReceived__Delegate;       // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInvalidMessageReceived__Delegate_UnknownData05[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetMessengerWebSocket_X"))
@@ -4129,7 +4025,6 @@ public:
 	float                                              BlockingSyncStartTime;                         // 0x0118 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x011C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventLoaded__Delegate;                       // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLoaded__Delegate_UnknownData02[0x8];    // 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetStaticData_X"))
@@ -4231,7 +4126,6 @@ public:
 	class TArray<class URemoteAvatarPermissionsRequest_X*> AllRequests;                                   // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FMap_Mirror                                 PermissionCache;                               // 0x0090 (0x0050) [0x0000000000001000] (CPF_Native)  
 	struct FScriptDelegate                             __SendRPC__Delegate;                           // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SendRPC__Delegate_UnknownData00[0x8];        // 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissions_X"))
@@ -4258,9 +4152,7 @@ class URemoteAvatarPermissionsRequest_X : public UObject
 public:
 	struct FUniqueNetId                                PlayerID;                                      // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventAllowed__Delegate;                      // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAllowed__Delegate_UnknownData00[0x8];   // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisallowed__Delegate;                   // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisallowed__Delegate_UnknownData01[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequest_X"))
@@ -4281,7 +4173,6 @@ public:
 	float                                              PrimitiveTime;                                 // 0x0288 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData01[0x4];                            // 0x028C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFinished__Delegate_UnknownData02[0x8];  // 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RenderProfiler_X"))
@@ -4334,11 +4225,8 @@ public:
 	class UError*                                      Error;                                         // 0x0090 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	class UAsyncTask*                                  Task;                                          // 0x0098 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventSuccess__Delegate;                      // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSuccess__Delegate_UnknownData01[0x8];   // 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFail__Delegate;                         // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFail__Delegate_UnknownData02[0x8];      // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventComplete__Delegate;                     // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventComplete__Delegate_UnknownData03[0x8];  // 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPC_X"))
@@ -4422,13 +4310,9 @@ public:
 	uint32_t                                           bAuthorized : 1;                               // 0x0108 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData01[0x4];                            // 0x010C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventRPCSuccess__Delegate;                   // 0x0110 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRPCSuccess__Delegate_UnknownData02[0x8];// 0x0118 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventRPCError__Delegate;                     // 0x0130 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRPCError__Delegate_UnknownData03[0x8];  // 0x0138 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBatchError__Delegate;                   // 0x0150 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBatchError__Delegate_UnknownData04[0x8];// 0x0158 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __SendRequestDelegate__Delegate;               // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SendRequestDelegate__Delegate_UnknownData05[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RPCQueue_X"))
@@ -4575,7 +4459,6 @@ public:
 	class UOnlineGameWordFilter_X*                     WordFilter;                                    // 0x0160 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class TArray<class UOnline_X*>                     OnlineComponents;                              // 0x0168 (0x0010) [0x0000008000400000] (CPF_NeedCtorLink | CPF_ProtectedWrite)
 	struct FScriptDelegate                             __EventInternetConnectionChanged__Delegate;    // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInternetConnectionChanged__Delegate_UnknownData01[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGame_Base_X"))
@@ -4637,11 +4520,8 @@ public:
 	class UAvatarRequester_X*                          AvatarRequester;                               // 0x0260 (0x0008) [0x0000000000000000]               
 	class URemoteAvatarPermissions_X*                  AvatarPermissions;                             // 0x0268 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventConnectionError__Delegate;              // 0x0270 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnectionError__Delegate_UnknownData01[0x8];// 0x0278 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerPsyNetLogin__Delegate;            // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerPsyNetLogin__Delegate_UnknownData02[0x8];// 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerPsyNetLogout__Delegate;           // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerPsyNetLogout__Delegate_UnknownData03[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGame_X"))
@@ -4746,19 +4626,12 @@ public:
 	class UServerConfig_X*                             Config;                                        // 0x0380 (0x0008) [0x0000804000002001] (CPF_Edit | CPF_Transient | CPF_PrivateWrite)
 	class UPsyNetConfig_X*                             PsyNetConfig;                                  // 0x0388 (0x0008) [0x0000800000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventFoundNewDedicatedServerForPlayers__Delegate;// 0x0390 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFoundNewDedicatedServerForPlayers__Delegate_UnknownData02[0x8];// 0x0398 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAverageMMRChanged__Delegate;            // 0x03B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAverageMMRChanged__Delegate_UnknownData03[0x8];// 0x03B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlaylistSet__Delegate;                  // 0x03D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlaylistSet__Delegate_UnknownData04[0x8];// 0x03D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrivateMatchSettingsChanged__Delegate;  // 0x03F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrivateMatchSettingsChanged__Delegate_UnknownData05[0x8];// 0x03F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventInactive__Delegate;                     // 0x0410 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventInactive__Delegate_UnknownData06[0x8];  // 0x0418 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventActive__Delegate;                       // 0x0430 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventActive__Delegate_UnknownData07[0x8];    // 0x0438 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;             // 0x0450 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchGUIDChanged__Delegate_UnknownData08[0x8];// 0x0458 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameDedicatedServer_X"))
@@ -4862,7 +4735,6 @@ public:
 	class TArray<struct FPlayerDLCInfo>                PlayerDLCInfos;                                // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FSteamWebRequestData>          SteamWebRequests;                              // 0x00D8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventValidationReady__Delegate;              // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventValidationReady__Delegate_UnknownData00[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameDLC_X"))
@@ -4893,11 +4765,8 @@ public:
 	class URPC_X*                                      GetLoaderboardPlayerValueRPC;                  // 0x00F0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class TArray<class URPC_X*>                        LeaderboardRequests;                           // 0x00F8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnGetLeaderboardPlayerValue__Delegate;       // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnGetLeaderboardPlayerValue__Delegate_UnknownData02[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventNewLeaderboard__Delegate;               // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventNewLeaderboard__Delegate_UnknownData03[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGetLeaderboardFailed__Delegate;         // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGetLeaderboardFailed__Delegate_UnknownData04[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameLeaderboards_X"))
@@ -4967,11 +4836,8 @@ public:
 	float                                              HonorDuelTimeoutSeconds;                       // 0x0248 (0x0004) [0x0001000000000000]               
 	float                                              HonorDuelReservationDeadline;                  // 0x024C (0x0004) [0x0001000000000000]               
 	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;          // 0x0250 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReservationsUpdated__Delegate_UnknownData02[0x8];// 0x0258 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMigrationJoinOccurred__Delegate;        // 0x0270 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMigrationJoinOccurred__Delegate_UnknownData03[0x8];// 0x0278 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __bMatchStarted__ChangeNotify;                 // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __bMatchStarted__ChangeNotify_UnknownData04[0x8];// 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameReservations_X"))
@@ -5214,7 +5080,6 @@ public:
 	uint32_t                                           bTick : 1;                                     // 0x00B0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00B4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventTick__Delegate;                         // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventTick__Delegate_UnknownData02[0x8];      // 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TickActorComponent_X"))
@@ -5232,7 +5097,6 @@ class UTimers_X : public UObject
 public:
 	class UTickComponent_X*                            TickComponent;                                 // 0x0060 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __TickDelegate__Delegate;                      // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __TickDelegate__Delegate_UnknownData00[0x8];   // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Timers_X"))
@@ -5281,7 +5145,6 @@ public:
 	uint32_t                                           bTick : 1;                                     // 0x0088 (0x0004) [0x0000000000000002] [0x00000002] (CPF_Const)
 	uint8_t                                          UnknownData00[0x4];                            // 0x008C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __TickDelegate__Delegate;                      // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __TickDelegate__Delegate_UnknownData01[0x8];   // 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TickComponent_X"))
@@ -5322,7 +5185,6 @@ public:
 	class TArray<uint8_t>                              ResponseData;                                  // 0x00A8 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	class UError*                                      Error;                                         // 0x00B8 (0x0008) [0x0000000000002002] (CPF_Const | CPF_Transient)
 	struct FScriptDelegate                             __EventCompleted__Delegate;                    // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCompleted__Delegate_UnknownData01[0x8]; // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebRequest_X"))
@@ -5367,9 +5229,7 @@ class UWordFilterTypes_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __CommentSanitizedDelegate__Delegate;          // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __CommentSanitizedDelegate__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __CommentErrorDelegate__Delegate;              // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __CommentErrorDelegate__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WordFilterTypes_X"))
@@ -5489,11 +5349,8 @@ public:
 	class TArray<class UDSPendingMessage_X*>           PendingMessages;                               // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UPsyNetConfig_X*                             PsyNetConfig;                                  // 0x00A0 (0x0008) [0x0000800000000000]               
 	struct FScriptDelegate                             __EventConnected__Delegate;                    // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnected__Delegate_UnknownData01[0x8]; // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisconnected__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMessageReceived__Delegate;              // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMessageReceived__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetBeacon_X"))
@@ -5550,11 +5407,8 @@ public:
 	class TArray<uint8_t>                              InBytesDecoded;                                // 0x00D8 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              BunchBytes;                                    // 0x00E8 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventConnected__Delegate;                    // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConnected__Delegate_UnknownData01[0x8]; // 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisconnected__Delegate;                 // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisconnected__Delegate_UnknownData02[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReceivedBunch__Delegate;                // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReceivedBunch__Delegate_UnknownData03[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TcpConnection"))
@@ -5611,9 +5465,7 @@ class UUdpPingBeaconClient_X : public UUdpPingBeaconBase_X
 {
 public:
 	struct FScriptDelegate                             __EventPong__Delegate;                         // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPong__Delegate_UnknownData00[0x8];      // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLost__Delegate;                         // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLost__Delegate_UnknownData01[0x8];      // 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.UdpPingBeaconClient_X"))
@@ -5658,9 +5510,7 @@ public:
 	int32_t                                            PlaylistId;                                    // 0x00B8 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData02[0x4];                            // 0x00BC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             EventFinished;                                 // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          EventFinished_UnknownData03[0x8];              // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __CheckDelegate__Delegate;                     // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __CheckDelegate__Delegate_UnknownData04[0x8];  // 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PrivilegeCheck_X"))
@@ -5767,11 +5617,8 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x008C (0x0004) MISSED OFFSET
 	class TArray<struct FStorageMaxSize>               StorageMaxSizes;                               // 0x0090 (0x0010) [0x0001000000400003] (CPF_Edit | CPF_Const | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventStorageSuccess__Delegate;               // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStorageSuccess__Delegate_UnknownData01[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventOutOfSync__Delegate;                    // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventOutOfSync__Delegate_UnknownData02[0x8]; // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStorageError__Delegate;                 // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStorageError__Delegate_UnknownData03[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageQueue_X"))
@@ -5820,7 +5667,6 @@ class U__AdHocBrowser_X__CreateErrorDelegate_0x1 : public UObject
 public:
 	class UAsyncTask*                                  Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             ErrorDelegate;                                 // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ErrorDelegate_UnknownData00[0x8];              // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateErrorDelegate_0x1"))
@@ -5879,7 +5725,6 @@ public:
 	class FString                                      MetaData;                                      // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UAsyncTask*                                  Task;                                          // 0x0070 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             ApcDelegate;                                   // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ApcDelegate_UnknownData00[0x8];                // 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocBrowser_X__CreateServer_0x1"))
@@ -5908,7 +5753,6 @@ class U__AdHocInterface_X__DisableAdHoc_0x1 : public UObject
 public:
 	class UAsyncTask*                                  Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             DestroyedDelegate;                             // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          DestroyedDelegate_UnknownData00[0x8];          // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocInterface_X__DisableAdHoc_0x1"))
@@ -5941,7 +5785,6 @@ class U__AdHocInterface_X__EnableAdHoc_0x1 : public UObject
 public:
 	class UAsyncTask*                                  Task;                                          // 0x0060 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             InitDelegate;                                  // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          InitDelegate_UnknownData00[0x8];               // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AdHocInterface_X__EnableAdHoc_0x1"))
@@ -5955,7 +5798,6 @@ class U__AvatarRequester_X__AddCallbackToRequest_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;              // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ReadOnlineAvatarCompleteDelegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__AvatarRequester_X__AddCallbackToRequest_0x1"))
@@ -5972,9 +5814,7 @@ public:
 	class TArray<class UPendingAvatarRequest_X*>       PendingPermissionRequests;                     // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<class UPendingAvatarRequest_X*>       PendingAvatarRequests;                         // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __RequestAvatars__Delegate;                    // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __RequestAvatars__Delegate_UnknownData00[0x8]; // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __RequestAvatarPermission__Delegate;           // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __RequestAvatarPermission__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.AvatarRequester_X"))
@@ -6014,7 +5854,6 @@ public:
 	EAvatarSize                                        Size;                                          // 0x00A8 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x00A9 (0x0007) MISSED OFFSET
 	struct FScriptDelegate                             OnAvatarRequestComplete;                       // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          OnAvatarRequestComplete_UnknownData01[0x8];    // 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PendingAvatarRequest_X"))
@@ -6040,7 +5879,6 @@ class U__AvatarRequester_X__GetPlayerAvatars_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;              // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ReadOnlineAvatarCompleteDelegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	EAvatarSize                                        Size;                                          // 0x0080 (0x0001) [0x0000000000000000]               
 
 public:
@@ -6095,9 +5933,7 @@ public:
 	class UPlatformBlockListStatus*                    PrimaryStatus;                                 // 0x0070 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	class UBlockStatusReporterConfig_X*                Config;                                        // 0x0078 (0x0008) [0x0000800000000000]               
 	struct FScriptDelegate                             __EventBlockListDownloaded__Delegate;          // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBlockListDownloaded__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerStatusDownloaded__Delegate;       // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerStatusDownloaded__Delegate_UnknownData01[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BlockStatusReporter_X"))
@@ -6192,7 +6028,6 @@ class U__EOSHelpers_X__RequestEOSToken_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestEOSToken_0x1"))
@@ -6225,11 +6060,8 @@ class UEOSHelpers_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __HTTPRequestCallback__Delegate;               // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __HTTPRequestCallback__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAccessTokenReceived__Delegate;          // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAccessTokenReceived__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ConvertErrorFunction__Delegate;              // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ConvertErrorFunction__Delegate_UnknownData02[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.EOSHelpers_X"))
@@ -6250,16 +6082,14 @@ class U__EOSHelpers_X__SendHTTPRequest_0x1 : public UObject
 public:
 	class FString                                      URL;                                           // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	class FString                                      Verb;                                          // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bAddContentTypeHeader : 1;                     // 0x00A0 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	class UClass*                                      ResponseClass;                                 // 0x00A8 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             ConvertErrorNew;                               // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ConvertErrorNew_UnknownData02[0x8];            // 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	class UOnlineSubsystem*                            EOS;                                           // 0x00D0 (0x0008) [0x0000000000000000]               
 	int32_t                                            LocalPlayerNum;                                // 0x00D8 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData03[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
 	class FString                                      BodyJson;                                      // 0x00E0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -6312,16 +6142,14 @@ class U__EOSHelpers_X__SendHTTPRequestEOSToken_0x2 : public UObject
 public:
 	class FString                                      URL;                                           // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	class FString                                      Verb;                                          // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bAddContentTypeHeader : 1;                     // 0x00A0 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	class UClass*                                      ResponseClass;                                 // 0x00A8 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             ConvertErrorNew;                               // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ConvertErrorNew_UnknownData02[0x8];            // 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	class UOnlineSubsystem*                            EOS;                                           // 0x00D0 (0x0008) [0x0000000000000000]               
 	int32_t                                            LocalPlayerNum;                                // 0x00D8 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData03[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
+	uint8_t                                          UnknownData01[0x4];                            // 0x00DC (0x0004) MISSED OFFSET
 	class FString                                      BodyJson;                                      // 0x00E0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -6382,9 +6210,7 @@ class U__EOSHelpers_X__SendHTTPRequestSelectAuth_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             ConvertErrorNew;                               // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          ConvertErrorNew_UnknownData01[0x8];            // 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	class UClass*                                      ResponseClass;                                 // 0x00A0 (0x0008) [0x0000000000000000]               
 
 public:
@@ -6410,7 +6236,6 @@ class U__EpicFriendsPlugin_X__AddFriendWithCustomCallback_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FUniqueNetId                                FriendId;                                      // 0x0080 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -6436,7 +6261,6 @@ class U__EpicFriendsPlugin_X__GetOutgoingFriendRequestsWithCustomCallback_0x1 : 
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicFriendsPlugin_X__GetOutgoingFriendRequestsWithCustomCallback_0x1"))
@@ -6485,7 +6309,6 @@ class U__EpicLogin_X__TriggerAuthTicketDelegate_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FUniqueNetId                                NetId;                                         // 0x0080 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
@@ -6499,7 +6322,6 @@ class U__EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__UpdateTwoFactorAuthenticationStatus_0x1"))
@@ -6513,7 +6335,6 @@ class U__EpicLogin_X__RequestNintendoAccountAuthorization_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EpicLogin_X__RequestNintendoAccountAuthorization_0x1"))
@@ -6710,7 +6531,6 @@ class UOnlineClubCache_X : public UComponent
 public:
 	class TArray<class UClubDetails_X*>                ClubDetailsCache;                              // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventClubUpdated__Delegate;                  // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventClubUpdated__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubCache_X"))
@@ -6760,7 +6580,6 @@ class UOnlineClubManager_X : public UObject
 public:
 	class UPsyNetConnection_X*                         Connection;                                    // 0x0060 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventClubChanged__Delegate;                  // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventClubChanged__Delegate_UnknownData00[0x8];// 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubManager_X"))
@@ -6899,9 +6718,7 @@ public:
 	class TArray<class URPC_GetClubDetailsArray_X*>    SyncingClubsArray;                             // 0x0088 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FPlayerClubSyncResult>         PlayerClubSyncResults;                         // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSyncComplete__Delegate;                 // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSyncComplete__Delegate_UnknownData00[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerSynced__Delegate;                 // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerSynced__Delegate_UnknownData01[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineClubProvider_X"))
@@ -7070,15 +6887,10 @@ public:
 	class UAsyncTask*                                  StartMatchmakingTask;                          // 0x00C8 (0x0008) [0x0000000000002000] (CPF_Transient)
 	class FString                                      PingingRegionsString;                          // 0x00D0 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventFindGameComplete__Delegate;             // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFindGameComplete__Delegate_UnknownData00[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFindGameStatus__Delegate;               // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFindGameStatus__Delegate_UnknownData01[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFindGameError__Delegate;                // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFindGameError__Delegate_UnknownData02[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFindGameStateChanged__Delegate;         // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFindGameStateChanged__Delegate_UnknownData03[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGetMatchmakingDelaySecs__Delegate;      // 0x0160 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGetMatchmakingDelaySecs__Delegate_UnknownData04[0x8];// 0x0168 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameMatchmakingBase_X"))
@@ -7129,17 +6941,11 @@ public:
 	float                                              MatchmakingDisabledUntilTime;                  // 0x0214 (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class FString                                      LastReservationID;                             // 0x0218 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventStartSearch__Delegate;                  // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStartSearch__Delegate_UnknownData00[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchmakingError__Delegate;             // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchmakingError__Delegate_UnknownData01[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchmakingCanceledOnPartySizeChanged__Delegate;// 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchmakingCanceledOnPartySizeChanged__Delegate_UnknownData02[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchmakingRPCSuccess__Delegate;        // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchmakingRPCSuccess__Delegate_UnknownData03[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchmakingRPCError__Delegate;          // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchmakingRPCError__Delegate_UnknownData04[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSendMatchmakingRPC__Delegate_UnknownData05[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameMatchmaking_X"))
@@ -7261,11 +7067,8 @@ public:
 	uint32_t                                           bPingingRegions : 1;                           // 0x00F8 (0x0004) [0x0000008000002000] [0x00000001] (CPF_Transient | CPF_ProtectedWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00FC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventRegionsSynced__Delegate;                // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRegionsSynced__Delegate_UnknownData01[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventRegionsPinged__Delegate;                // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRegionsPinged__Delegate_UnknownData02[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventRegionsError__Delegate;                 // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRegionsError__Delegate_UnknownData03[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameRegions_X"))
@@ -7371,49 +7174,27 @@ public:
 	class FString                                      JoinLobbyError;                                // 0x0248 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	class TArray<int32_t>                              LeaderPreferredPlaylists;                      // 0x0258 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventPartyCreated__Delegate;                 // 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyCreated__Delegate_UnknownData04[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnPartyInviteAccepted__Delegate;             // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnPartyInviteAccepted__Delegate_UnknownData05[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerInvited__Delegate;                // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerInvited__Delegate_UnknownData06[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerInvitedSilent__Delegate;          // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerInvitedSilent__Delegate_UnknownData07[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyChanged__Delegate;                 // 0x02E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyChanged__Delegate_UnknownData08[0x8];// 0x02F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyMemberXPLevelChanged__Delegate;    // 0x0308 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyMemberXPLevelChanged__Delegate_UnknownData09[0x8];// 0x0310 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyMemberCompletedChallengesChanged__Delegate;// 0x0328 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyMemberCompletedChallengesChanged__Delegate_UnknownData10[0x8];// 0x0330 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartySizeChanged__Delegate;             // 0x0348 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartySizeChanged__Delegate_UnknownData11[0x8];// 0x0350 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyLeaderChanged__Delegate;           // 0x0368 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyLeaderChanged__Delegate_UnknownData12[0x8];// 0x0370 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSearchStatusChanged__Delegate;          // 0x0388 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSearchStatusChanged__Delegate_UnknownData13[0x8];// 0x0390 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyError__Delegate;                   // 0x03A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyError__Delegate_UnknownData14[0x8];// 0x03B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyJoinGameError__Delegate;           // 0x03C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyJoinGameError__Delegate_UnknownData15[0x8];// 0x03D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyJoinGameSuccess__Delegate;         // 0x03E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyJoinGameSuccess__Delegate_UnknownData16[0x8];// 0x03F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyDestroyed__Delegate;               // 0x0408 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyDestroyed__Delegate_UnknownData17[0x8];// 0x0410 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConfirmJoinGameMessage__Delegate;       // 0x0428 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConfirmJoinGameMessage__Delegate_UnknownData18[0x8];// 0x0430 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLeaderLeftOnlineGame__Delegate;         // 0x0448 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLeaderLeftOnlineGame__Delegate_UnknownData19[0x8];// 0x0450 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventProcessingStatusChanged__Delegate;      // 0x0468 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventProcessingStatusChanged__Delegate_UnknownData20[0x8];// 0x0470 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisableCrossPlayChanged__Delegate;      // 0x0488 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisableCrossPlayChanged__Delegate_UnknownData21[0x8];// 0x0490 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerInMatchChanged__Delegate;         // 0x04A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerInMatchChanged__Delegate_UnknownData22[0x8];// 0x04B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStartedJoinFriend__Delegate;            // 0x04C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStartedJoinFriend__Delegate_UnknownData23[0x8];// 0x04D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAddPartyMember__Delegate;               // 0x04E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAddPartyMember__Delegate_UnknownData24[0x8];// 0x04F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventRemovePartyMember__Delegate;            // 0x0508 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRemovePartyMember__Delegate_UnknownData25[0x8];// 0x0510 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameParty_X"))
@@ -7635,19 +7416,12 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0604 (0x0004) MISSED OFFSET
 	class FString                                      MatchGUID;                                     // 0x0608 (0x0010) [0x0000004100400020] (CPF_Net | CPF_NeedCtorLink | CPF_RepNotify | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventSpawned__Delegate;                      // 0x0618 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSpawned__Delegate_UnknownData01[0x8];   // 0x0620 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGameDataSelected__Delegate;             // 0x0638 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameDataSelected__Delegate_UnknownData02[0x8];// 0x0640 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;          // 0x0658 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReservationsUpdated__Delegate_UnknownData03[0x8];// 0x0660 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventServerNameChanged__Delegate;            // 0x0678 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventServerNameChanged__Delegate_UnknownData04[0x8];// 0x0680 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGameStarted__Delegate;                  // 0x0698 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameStarted__Delegate_UnknownData05[0x8];// 0x06A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;             // 0x06B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMatchGUIDChanged__Delegate_UnknownData06[0x8];// 0x06C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGameClassReceived__Delegate;            // 0x06D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameClassReceived__Delegate_UnknownData07[0x8];// 0x06E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GRI_X"))
@@ -7866,23 +7640,14 @@ public:
 	uint32_t                                           bCreatedPrivateMatch : 1;                      // 0x0390 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
 	uint8_t                                          UnknownData01[0x4];                            // 0x0394 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventJoinGameComplete__Delegate;             // 0x0398 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinGameComplete__Delegate_UnknownData02[0x8];// 0x03A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStatusUpdate__Delegate;                 // 0x03B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStatusUpdate__Delegate_UnknownData03[0x8];// 0x03C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCountdownStarted__Delegate;             // 0x03D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCountdownStarted__Delegate_UnknownData04[0x8];// 0x03E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCountdownEnded__Delegate;               // 0x03F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCountdownEnded__Delegate_UnknownData05[0x8];// 0x0400 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventActiveServerChanged__Delegate;          // 0x0418 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventActiveServerChanged__Delegate_UnknownData06[0x8];// 0x0420 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventServerReserved__Delegate;               // 0x0438 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventServerReserved__Delegate_UnknownData07[0x8];// 0x0440 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPasswordRequired__Delegate;             // 0x0458 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPasswordRequired__Delegate_UnknownData08[0x8];// 0x0460 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventJoiningGame__Delegate;                  // 0x0478 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoiningGame__Delegate_UnknownData09[0x8];// 0x0480 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventMaxPlayersChanged__Delegate;            // 0x0498 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventMaxPlayersChanged__Delegate_UnknownData10[0x8];// 0x04A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameJoinGame_X"))
@@ -7942,9 +7707,7 @@ public:
 	float                                              UpdateCurrentGameTaskTimer;                    // 0x00C8 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	int32_t                                            CurrentPlaylistId;                             // 0x00CC (0x0004) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventPrimaryPlayerIdChanged__Delegate;       // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrimaryPlayerIdChanged__Delegate_UnknownData00[0x8];// 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCurrentPlaylistSet__Delegate;           // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCurrentPlaylistSet__Delegate_UnknownData01[0x8];// 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameAccount_X"))
@@ -8006,55 +7769,30 @@ public:
 	class FString                                      PartySetting_JoinKey;                          // 0x0160 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	class TArray<class UPsyNetService_Party_X*>        PendingNotifications;                          // 0x0170 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventShowInviteUI__Delegate;                 // 0x0180 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventShowInviteUI__Delegate_UnknownData00[0x8];// 0x0188 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLobbyInviteComplete__Delegate;          // 0x01A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLobbyInviteComplete__Delegate_UnknownData01[0x8];// 0x01A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventJoinRequestSent__Delegate;              // 0x01C0 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinRequestSent__Delegate_UnknownData02[0x8];// 0x01C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventJoinRequestAccepted__Delegate;          // 0x01E0 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinRequestAccepted__Delegate_UnknownData03[0x8];// 0x01E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventJoinRequestReceived__Delegate;          // 0x0200 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinRequestReceived__Delegate_UnknownData04[0x8];// 0x0208 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventJoinRequestDeleted__Delegate;           // 0x0220 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinRequestDeleted__Delegate_UnknownData05[0x8];// 0x0228 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x0240 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateLobbyComplete__Delegate_UnknownData06[0x8];// 0x0248 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x0260 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyError__Delegate_UnknownData07[0x8];   // 0x0268 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x0280 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbySessionCreated__Delegate_UnknownData08[0x8];// 0x0288 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x02A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnFindLobbiesComplete__Delegate_UnknownData09[0x8];// 0x02A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x02C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnJoinLobbyComplete__Delegate_UnknownData10[0x8];// 0x02C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x02E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbySettingsUpdate__Delegate_UnknownData11[0x8];// 0x02E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x0300 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyMemberSettingsUpdate__Delegate_UnknownData12[0x8];// 0x0308 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x0320 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyMemberStatusUpdate__Delegate_UnknownData13[0x8];// 0x0328 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0340 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyReceiveMessage__Delegate_UnknownData14[0x8];// 0x0348 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0360 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyReceiveBinaryData__Delegate_UnknownData15[0x8];// 0x0368 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0380 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyJoinGame__Delegate_UnknownData16[0x8];// 0x0388 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x03A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyInvite__Delegate_UnknownData17[0x8];  // 0x03A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLobbyInvitePending__Delegate;           // 0x03C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLobbyInvitePending__Delegate_UnknownData18[0x8];// 0x03C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x03E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyDestroyed__Delegate_UnknownData19[0x8];// 0x03E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPartyChatRecieved__Delegate;            // 0x0400 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyChatRecieved__Delegate_UnknownData20[0x8];// 0x0408 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLobbyMessageFailed__Delegate;           // 0x0420 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLobbyMessageFailed__Delegate_UnknownData21[0x8];// 0x0428 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSignedPartyChatRecieved__Delegate;      // 0x0440 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSignedPartyChatRecieved__Delegate_UnknownData22[0x8];// 0x0448 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSignedPartyChatSent__Delegate;          // 0x0460 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSignedPartyChatSent__Delegate_UnknownData23[0x8];// 0x0468 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x0480 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnHostStartPlayTogether__Delegate_UnknownData24[0x8];// 0x0488 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Parties_X"))
@@ -8233,7 +7971,6 @@ class UPartyPlatformSession_X : public UObject
 public:
 	struct FUniqueLobbyId                              PartyID;                                       // 0x0060 (0x0010) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventPartyIdChanged__Delegate;               // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyIdChanged__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyPlatformSession_X"))
@@ -8277,7 +8014,6 @@ public:
 	int32_t                                            LocalPlayerNum;                                // 0x0070 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0074 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             Handler;                                       // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Handler_UnknownData01[0x8];                    // 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineGameParty_X__CreatePartyInternal_0x1"))
@@ -8358,9 +8094,7 @@ public:
 	uint32_t                                           bIsCheckingPrivileges : 1;                     // 0x00D0 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00D4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventCheckingPrivilegesChanged__Delegate;    // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCheckingPrivilegesChanged__Delegate_UnknownData01[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPrivilegeCheckRestriction__Delegate;    // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrivilegeCheckRestriction__Delegate_UnknownData02[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePrivileges_X"))
@@ -8396,7 +8130,6 @@ public:
 	class FString                                      PrivateCategory;                               // 0x0110 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      TournamentCategory;                            // 0x0120 (0x0010) [0x0000000000408002] (CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventPlaylistsChanged__Delegate;             // 0x0130 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlaylistsChanged__Delegate_UnknownData00[0x8];// 0x0138 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePlaylists_X"))
@@ -8544,7 +8277,6 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00F4 (0x0004) MISSED OFFSET
 	class URPC_X*                                      RPC;                                           // 0x00F8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData01[0x8];    // 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.FindServerTask_X"))
@@ -8617,7 +8349,6 @@ public:
 	class TArray<struct FSkillSyncRequest>             SyncRequests;                                  // 0x00E0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  SkillsSyncedPlayers;                           // 0x00F0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSkillSynced__Delegate;                  // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSkillSynced__Delegate_UnknownData00[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameSkill_X"))
@@ -8775,7 +8506,6 @@ public:
 	struct FRankedDisparitySettings                    StaticDataDisparitySettings;                   // 0x007C (0x000C) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	class URankedConfig_X*                             RankedConfig;                                  // 0x0088 (0x0008) [0x0000800000000001] (CPF_Edit)    
 	struct FScriptDelegate                             __EventPlaylistSkillChanged__Delegate;         // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlaylistSkillChanged__Delegate_UnknownData00[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PlaylistSkillCache_X"))
@@ -8872,7 +8602,6 @@ class U__OnlineLegalTextEOS_X__RequestKey_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlineLegalTextEOS_X__RequestKey_0x1"))
@@ -8942,53 +8671,29 @@ public:
 	class TArray<struct FEpicSocialTaskData>           BlockPlayerCallbacks;                          // 0x0160 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FEpicSocialTaskData>           UnblockPlayerCallbacks;                        // 0x0170 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSocialCallback__Delegate;               // 0x0180 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSocialCallback__Delegate_UnknownData01[0x8];// 0x0188 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventFriendsListChanged__Delegate;           // 0x01A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventFriendsListChanged__Delegate_UnknownData02[0x8];// 0x01A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBlockedListChanged__Delegate;           // 0x01C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBlockedListChanged__Delegate_UnknownData03[0x8];// 0x01C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAcceptEpicFriendInvite__Delegate;       // 0x01E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAcceptEpicFriendInvite__Delegate_UnknownData04[0x8];// 0x01E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDeclineEpicFriendInvite__Delegate;      // 0x0200 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDeclineEpicFriendInvite__Delegate_UnknownData05[0x8];// 0x0208 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventChatMessage__Delegate;                  // 0x0220 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventChatMessage__Delegate_UnknownData06[0x8];// 0x0228 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPsyNetStatusUpdate__Delegate;           // 0x0240 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPsyNetStatusUpdate__Delegate_UnknownData07[0x8];// 0x0248 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlatformStatusUpdate__Delegate;         // 0x0260 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlatformStatusUpdate__Delegate_UnknownData08[0x8];// 0x0268 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicStatusUpdate__Delegate;             // 0x0280 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicStatusUpdate__Delegate_UnknownData09[0x8];// 0x0288 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendInviteReceived__Delegate;     // 0x02A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendInviteReceived__Delegate_UnknownData10[0x8];// 0x02A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendInviteRemoved__Delegate;      // 0x02C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendInviteRemoved__Delegate_UnknownData11[0x8];// 0x02C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendInviteSucceeded__Delegate;    // 0x02E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendInviteSucceeded__Delegate_UnknownData12[0x8];// 0x02E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendInviteFailed__Delegate;       // 0x0300 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendInviteFailed__Delegate_UnknownData13[0x8];// 0x0308 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendInviteAccepted__Delegate;     // 0x0320 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendInviteAccepted__Delegate_UnknownData14[0x8];// 0x0328 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicPlayerUnfriended__Delegate;         // 0x0340 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicPlayerUnfriended__Delegate_UnknownData15[0x8];// 0x0348 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventQueriedUserByEpicDisplayName__Delegate; // 0x0360 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventQueriedUserByEpicDisplayName__Delegate_UnknownData16[0x8];// 0x0368 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlatformFriendsListDownloadCompleted__Delegate;// 0x0380 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlatformFriendsListDownloadCompleted__Delegate_UnknownData17[0x8];// 0x0388 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPsyNetFriendsListDownloadCompleted__Delegate;// 0x03A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPsyNetFriendsListDownloadCompleted__Delegate_UnknownData18[0x8];// 0x03A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendsListDownloadCompleted__Delegate;// 0x03C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendsListDownloadCompleted__Delegate_UnknownData19[0x8];// 0x03C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBlockListDownloaded__Delegate;          // 0x03E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBlockListDownloaded__Delegate_UnknownData20[0x8];// 0x03E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBlockStatusReceived__Delegate;          // 0x0400 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBlockStatusReceived__Delegate_UnknownData21[0x8];// 0x0408 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventEpicFriendsPluginAdded__Delegate;       // 0x0420 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventEpicFriendsPluginAdded__Delegate_UnknownData22[0x8];// 0x0428 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerIdsAssociated__Delegate;          // 0x0440 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerIdsAssociated__Delegate_UnknownData23[0x8];// 0x0448 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EpicFriendsPlugin__ChangeNotify;             // 0x0460 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EpicFriendsPlugin__ChangeNotify_UnknownData24[0x8];// 0x0468 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerFriends_X"))
@@ -9103,7 +8808,6 @@ public:
 	struct FUniqueNetId                                BlockedID;                                     // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                EpicAccountId;                                 // 0x00A8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__BlockPlayer_0x1"))
@@ -9116,7 +8820,6 @@ class U__OnlinePlayerFriends_X__SubscribeToEpicFriendsPlugin_0x1 : public UObjec
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__SubscribeToEpicFriendsPlugin_0x1"))
@@ -9135,9 +8838,7 @@ public:
 	int32_t                                            FailedAttempts;                                // 0x0088 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x008C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __RepeatedDelegate__Delegate;                  // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __RepeatedDelegate__Delegate_UnknownData01[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __NotifyAbandondedDelegate__Delegate;          // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __NotifyAbandondedDelegate__Delegate_UnknownData02[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RetryDelayer_X"))
@@ -9159,7 +8860,6 @@ public:
 	struct FUniqueNetId                                UnblockID;                                     // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                EpicAccountId;                                 // 0x00A8 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__UnblockPlayer_0x1"))
@@ -9172,7 +8872,6 @@ class U__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__OnlinePlayerFriends_X__LinkPlatformToEpic_0x1"))
@@ -9347,7 +9046,6 @@ class UOnlinePlayerStorageSync_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __EventSyncSuccess__Delegate;                  // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSyncSuccess__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerStorageSync_X"))
@@ -9414,7 +9112,6 @@ public:
 	uint32_t                                           bPaused : 1;                                   // 0x0090 (0x0004) [0x0000004000000000] [0x00000001] (CPF_PrivateWrite)
 	float                                              BatchDelayTime;                                // 0x0094 (0x0004) [0x0000000000000001] (CPF_Edit)    
 	struct FScriptDelegate                             __SendMessageServiceDelegate__Delegate;        // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SendMessageServiceDelegate__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartyMessageQueue_X"))
@@ -9467,7 +9164,6 @@ class UPartySequence_CreateParty_X : public UObject
 public:
 	class URPC_PartyCreate_X*                          PendingRPC;                                    // 0x0060 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __EventPartyCreated__Delegate;                 // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPartyCreated__Delegate_UnknownData00[0x8];// 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_CreateParty_X"))
@@ -9545,7 +9241,6 @@ class UPartySequence_JoinParty_X : public UObject
 {
 public:
 	struct FScriptDelegate                             __EventJoinedParty__Delegate;                  // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventJoinedParty__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PartySequence_JoinParty_X"))
@@ -9578,11 +9273,8 @@ class APRI_X : public APlayerReplicationInfo
 {
 public:
 	struct FScriptDelegate                             __EventPlayerNameChanged__Delegate;            // 0x0418 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerNameChanged__Delegate_UnknownData00[0x8];// 0x0420 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventUniqueIdChanged__Delegate;              // 0x0438 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventUniqueIdChanged__Delegate_UnknownData01[0x8];// 0x0440 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDestroyed__Delegate;                    // 0x0458 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDestroyed__Delegate_UnknownData02[0x8]; // 0x0460 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PRI_X"))
@@ -9702,7 +9394,6 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	class TArray<struct FPsyNetRequest>                Requests;                                      // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __SendMessageDelegate__Delegate;               // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SendMessageDelegate__Delegate_UnknownData01[0x8];// 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetRequestQue_X"))
@@ -9743,7 +9434,6 @@ public:
 	class TArray<struct FPendingChannelService>        ServiceQueue;                                  // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UPsyNetServiceSubscriptions_X*               Subscriptions;                                 // 0x0090 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __EventClosed__Delegate;                       // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventClosed__Delegate_UnknownData01[0x8];    // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetChannel_X"))
@@ -9772,7 +9462,6 @@ public:
 	class UPsyNetServiceSubscriptions_X*               Subscriptions;                                 // 0x0068 (0x0008) [0x0000004004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline | CPF_PrivateWrite)
 	class TArray<class UPsyNetChannel_X*>              Channels;                                      // 0x0070 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventServiceExecuted__Delegate;              // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventServiceExecuted__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetServiceProvider_X"))
@@ -9825,11 +9514,8 @@ class UTAsyncResult__PsyNetClientService_X : public UAsyncTask
 public:
 	class UPsyNetClientService_X*                      Result;                                        // 0x00F0 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetClientService_X"))
@@ -9885,7 +9571,6 @@ public:
 	class UWordFilterConfig_X*                         Config;                                        // 0x0070 (0x0008) [0x0000800000000001] (CPF_Edit)    
 	class TArray<class URPC_FilterContent_X*>          PendingFilterRPCs;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __QueueRPC__Delegate;                          // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __QueueRPC__Delegate_UnknownData00[0x8];       // 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.PsyNetWordFilter_X"))
@@ -9950,9 +9635,7 @@ public:
 	class TArray<struct FUniqueNetId>                  Allowed;                                       // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  Disallowed;                                    // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventAllowed__Delegate;                      // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAllowed__Delegate_UnknownData00[0x8];   // 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDisallowed__Delegate;                   // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDisallowed__Delegate_UnknownData01[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RemoteAvatarPermissionsRequestBatch_X"))
@@ -9981,7 +9664,6 @@ class U__RPC_X__CreateTask_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             InCallback;                                    // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          InCallback_UnknownData00[0x8];                 // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__RPC_X__CreateTask_0x1"))
@@ -10033,9 +9715,7 @@ public:
 	class TArray<class UAddReservationMessage_X*>      Messages;                                      // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UOnlineGameReservations_X*                   Reservations;                                  // 0x0090 (0x0008) [0x0000800000000000]               
 	struct FScriptDelegate                             __EventPlayerAdded__Delegate;                  // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerAdded__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPlayerRemoved__Delegate;                // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerRemoved__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerPlayerTracker_X"))
@@ -10073,7 +9753,6 @@ public:
 	uint32_t                                           bTriggered : 1;                                // 0x0060 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             EventPropertyChange;                           // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          EventPropertyChange_UnknownData01[0x8];        // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StatusTrigger_X"))
@@ -10093,9 +9772,7 @@ public:
 	class UClass*                                      AcceptedType;                                  // 0x0060 (0x0008) [0x0000000000000000]               
 	class TArray<class UStatusTrigger_X*>              Triggers;                                      // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             Callback;                                      // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __UpdateTrigger__Delegate;                     // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __UpdateTrigger__Delegate_UnknownData01[0x8];  // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TriggerInfo"))
@@ -10113,7 +9790,6 @@ public:
 	uint32_t                                           bInitComplete : 1;                             // 0x0080 (0x0004) [0x0008000000000000] [0x00000001] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __bInitComplete__ChangeNotify;                 // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __bInitComplete__ChangeNotify_UnknownData01[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.StatusObserver_X"))
@@ -10162,11 +9838,8 @@ class UTAsyncResult__array_ClubInvite_X : public UAsyncTask
 public:
 	class TArray<class UClubInvite_X*>                 Result;                                        // 0x00F0 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__array_ClubInvite_X"))
@@ -10203,7 +9876,6 @@ class U__TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResult_0x1"))
@@ -10216,7 +9888,6 @@ class U__TAsyncResult__array_ClubInvite_X__NotifyOnResultComplete_0x1 : public U
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__NotifyOnResultComplete_0x1"))
@@ -10229,7 +9900,6 @@ class U__TAsyncResult__array_ClubInvite_X__SetResultWhen_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_ClubInvite_X__SetResultWhen_0x1"))
@@ -10255,11 +9925,8 @@ class UTAsyncResult__array_LanServerRecord_X : public UAsyncTask
 public:
 	class TArray<class ULanServerRecord_X*>            Result;                                        // 0x00F0 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__array_LanServerRecord_X"))
@@ -10294,7 +9961,6 @@ class U__TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1 : public UObj
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResult_0x1"))
@@ -10307,7 +9973,6 @@ class U__TAsyncResult__array_LanServerRecord_X__NotifyOnResultComplete_0x1 : pub
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__NotifyOnResultComplete_0x1"))
@@ -10320,7 +9985,6 @@ class U__TAsyncResult__array_LanServerRecord_X__SetResultWhen_0x1 : public UObje
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__array_LanServerRecord_X__SetResultWhen_0x1"))
@@ -10346,11 +10010,8 @@ class UTAsyncResult__ClubDetails_X : public UAsyncTask
 public:
 	class UClubDetails_X*                              Result;                                        // 0x00F0 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__ClubDetails_X"))
@@ -10373,7 +10034,6 @@ class U__TAsyncResult__ClubDetails_X__NotifyOnResult_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResult_0x1"))
@@ -10386,7 +10046,6 @@ class U__TAsyncResult__ClubDetails_X__NotifyOnResultComplete_0x1 : public UObjec
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__NotifyOnResultComplete_0x1"))
@@ -10399,7 +10058,6 @@ class U__TAsyncResult__ClubDetails_X__SetResultWhen_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__ClubDetails_X__SetResultWhen_0x1"))
@@ -10424,7 +10082,6 @@ class U__TAsyncResult__PsyNetClientService_X__NotifyOnResult_0x1 : public UObjec
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResult_0x1"))
@@ -10437,7 +10094,6 @@ class U__TAsyncResult__PsyNetClientService_X__NotifyOnResultComplete_0x1 : publi
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__NotifyOnResultComplete_0x1"))
@@ -10450,7 +10106,6 @@ class U__TAsyncResult__PsyNetClientService_X__SetResultWhen_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetClientService_X__SetResultWhen_0x1"))
@@ -10476,11 +10131,8 @@ class UTAsyncResult__PsyNetMessage_X : public UAsyncTask
 public:
 	class UPsyNetMessage_X*                            Result;                                        // 0x00F0 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__PsyNetMessage_X"))
@@ -10503,7 +10155,6 @@ class U__TAsyncResult__PsyNetMessage_X__NotifyOnResult_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResult_0x1"))
@@ -10516,7 +10167,6 @@ class U__TAsyncResult__PsyNetMessage_X__NotifyOnResultComplete_0x1 : public UObj
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__NotifyOnResultComplete_0x1"))
@@ -10529,7 +10179,6 @@ class U__TAsyncResult__PsyNetMessage_X__SetResultWhen_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__PsyNetMessage_X__SetResultWhen_0x1"))
@@ -10555,11 +10204,8 @@ class UTAsyncResult__Texture2DDynamic : public UAsyncTask
 public:
 	class UTexture2DDynamic*                           Result;                                        // 0x00F0 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventResult__Delegate;                       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResult__Delegate_UnknownData00[0x8];    // 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventResultComplete__Delegate;               // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventResultComplete__Delegate_UnknownData01[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __ResultDelegate__Delegate;                    // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ResultDelegate__Delegate_UnknownData02[0x8]; // 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TAsyncResult__Texture2DDynamic"))
@@ -10582,7 +10228,6 @@ class U__TAsyncResult__Texture2DDynamic__NotifyOnResult_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResult_0x1"))
@@ -10595,7 +10240,6 @@ class U__TAsyncResult__Texture2DDynamic__NotifyOnResultComplete_0x1 : public UOb
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__NotifyOnResultComplete_0x1"))
@@ -10608,7 +10252,6 @@ class U__TAsyncResult__Texture2DDynamic__SetResultWhen_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             GetResultDelegate;                             // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          GetResultDelegate_UnknownData00[0x8];          // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__TAsyncResult__Texture2DDynamic__SetResultWhen_0x1"))
@@ -10680,7 +10323,6 @@ class UWebCache_X : public UObject
 public:
 	class TArray<struct FCachedDataRequest>            Requests;                                      // 0x0060 (0x0010) [0x0000000000482000] (CPF_Transient | CPF_Component | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __CachedDataCallback__Delegate;                // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __CachedDataCallback__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebCache_X"))
@@ -10732,7 +10374,6 @@ public:
 	class UImageDecoder*                               Decoder;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 	class UStringObjectMap*                            Downloads;                                     // 0x0068 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __ImageSyncCallback__Delegate;                 // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ImageSyncCallback__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.WebImageCache_X"))
@@ -10795,9 +10436,7 @@ public:
 	int32_t                                            QueueIndex;                                    // 0x0088 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x008C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __ActionDelegate__Delegate;                    // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ActionDelegate__Delegate_UnknownData02[0x8]; // 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __QueueEmptied__Delegate;                      // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __QueueEmptied__Delegate_UnknownData03[0x8];   // 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ActionQueue_X"))
@@ -10943,7 +10582,6 @@ public:
 	float                                              BannedUntilTime;                               // 0x00E8 (0x0004) [0x0000000040000000] (CPF_DataBinding)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00EC (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventBanEnded__Delegate;                     // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBanEnded__Delegate_UnknownData02[0x8];  // 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.BanMessage_X"))
@@ -11069,7 +10707,6 @@ public:
 	uint32_t                                           bEnabled : 1;                                  // 0x0078 (0x0004) [0x0000004000002000] [0x00000001] (CPF_Transient | CPF_PrivateWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x007C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventExpired__Delegate;                      // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventExpired__Delegate_UnknownData01[0x8];   // 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CacheTimer_X"))
@@ -11093,7 +10730,6 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00EC (0x0004) MISSED OFFSET
 	class UCameraState_X*                              CameraState;                                   // 0x00F0 (0x0008) [0x0000004000002000] (CPF_Transient | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventBlenderStateChanged__Delegate;          // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBlenderStateChanged__Delegate_UnknownData01[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CameraStateBlender_X"))
@@ -11258,14 +10894,11 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x006C (0x0004) MISSED OFFSET
 	class UAsyncTask*                                  CheckReservationTask;                          // 0x0070 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             FoundReservationCallback;                      // 0x0078 (0x0020) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	uint8_t                                          FoundReservationCallback_UnknownData01[0x8];   // 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FServerReservationData                      FoundReservation;                              // 0x0098 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
 	class UPsyNetConfig_X*                             Config;                                        // 0x0108 (0x0008) [0x0000800000000000]               
 	class UReservationBeacon_X*                        ReservationBeacon;                             // 0x0110 (0x0008) [0x0000800004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __OnStartSearch__Delegate;                     // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnStartSearch__Delegate_UnknownData02[0x8];  // 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnFoundReservation__Delegate;                // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnFoundReservation__Delegate_UnknownData03[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.CheckReservation_X"))
@@ -11378,9 +11011,7 @@ public:
 	class FName                                        Address;                                       // 0x0078 (0x0008) [0x0000000000000000]               
 	class UUdpPingBeaconClient_X*                      PingBeacon;                                    // 0x0080 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
 	struct FScriptDelegate                             __EventPong__Delegate;                         // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPong__Delegate_UnknownData00[0x8];      // 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventLost__Delegate;                         // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventLost__Delegate_UnknownData01[0x8];      // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GameServerPinger_X"))
@@ -11767,7 +11398,6 @@ class UDynamicValueModifierCurve_X : public UDynamicValueModifier_X
 public:
 	struct FInterpCurveFloat                           Curve;                                         // 0x0078 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __GetValueDelegate__Delegate;                  // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __GetValueDelegate__Delegate_UnknownData00[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.DynamicValueModifierCurve_X"))
@@ -11885,7 +11515,6 @@ class U__EOSHelpers_X__RequestClientAuthToken_0x1 : public UObject
 {
 public:
 	struct FScriptDelegate                             Callback;                                      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callback_UnknownData00[0x8];                   // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.__EOSHelpers_X__RequestClientAuthToken_0x1"))
@@ -11954,7 +11583,6 @@ public:
 	class FName                                        EnvDemoSoundAttachmentName;                    // 0x029C (0x0008) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x02A4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventSpawnFXActorInitialized__Delegate;      // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSpawnFXActorInitialized__Delegate_UnknownData01[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.Explosion_X"))
@@ -12166,9 +11794,7 @@ public:
 	class TArray<struct FScriptDelegate>               Callbacks;                                     // 0x0078 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	class FString                                      ConfirmString;                                 // 0x0088 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __ClickDelegate__Delegate;                     // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ClickDelegate__Delegate_UnknownData00[0x8];  // 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventClosed__Delegate;                       // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventClosed__Delegate_UnknownData01[0x8];    // 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.GFxModal_X"))
@@ -12883,7 +12509,6 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00C4 (0x0004) MISSED OFFSET
 	class TArray<struct FWordFilterRequest>            SanitizeCallbacks;                             // 0x00C8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnSanitizeStringComplete__Delegate_UnknownData01[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameWordFilterProcessor_X"))
@@ -12906,15 +12531,10 @@ public:
 	class FString                                      GameInviteCredentials;                         // 0x0138 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	class FName                                        ActionRequired;                                // 0x0148 (0x0008) [0x0000000000002000] (CPF_Transient)
 	struct FScriptDelegate                             __EventGameInviteAccepted__Delegate;           // 0x0150 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameInviteAccepted__Delegate_UnknownData00[0x8];// 0x0158 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventGameInviteComplete__Delegate;           // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGameInviteComplete__Delegate_UnknownData01[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventConfirmationRequired__Delegate;         // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventConfirmationRequired__Delegate_UnknownData02[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPasswordRequired__Delegate;             // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPasswordRequired__Delegate_UnknownData03[0x8];// 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventPsyNetPartyInviteAccepted__Delegate;    // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPsyNetPartyInviteAccepted__Delegate_UnknownData04[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameInvite_X"))
@@ -12941,7 +12561,6 @@ class UOnlineGameVoice_X : public UOnline_X
 {
 public:
 	struct FScriptDelegate                             __EventPlayerTalking__Delegate;                // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPlayerTalking__Delegate_UnknownData00[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameVoice_X"))
@@ -12967,7 +12586,6 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00D4 (0x0004) MISSED OFFSET
 	class TArray<struct FGetPopulationData>            Populations;                                   // 0x00D8 (0x0010) [0x0000004000402000] (CPF_Transient | CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventGetPlaylistPopulations__Delegate;       // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGetPlaylistPopulations__Delegate_UnknownData01[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePopulation_X"))
@@ -12989,13 +12607,9 @@ public:
 	class FString                                      NoResultsFound;                                // 0x0168 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	class FString                                      NotLoggedInToPsynet;                           // 0x0178 (0x0010) [0x0000000000408003] (CPF_Edit | CPF_Const | CPF_Localized | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSearchComplete__Delegate;               // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSearchComplete__Delegate_UnknownData00[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSearchError__Delegate;                  // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSearchError__Delegate_UnknownData01[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBrowserError__Delegate;                 // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBrowserError__Delegate_UnknownData02[0x8];// 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSearchCompleteReservation__Delegate;    // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSearchCompleteReservation__Delegate_UnknownData03[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGameServerBrowser_X"))
@@ -13039,11 +12653,8 @@ public:
 	float                                              SearchTimeout;                                 // 0x0288 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
 	uint8_t                                          UnknownData02[0x4];                            // 0x028C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __EventPrivateMatchError__Delegate;            // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventPrivateMatchError__Delegate_UnknownData03[0x8];// 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventCancelPrivateMatch__Delegate;           // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventCancelPrivateMatch__Delegate_UnknownData04[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSendMatchmakingRPC__Delegate;           // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSendMatchmakingRPC__Delegate_UnknownData05[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineGamePrivateMatch_X"))
@@ -13115,7 +12726,6 @@ public:
 	class TArray<struct FUniqueNetId>                  PendingPlayerRequests;                         // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FPlayerPermissionsList>        PlayerPermissions;                             // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventUpdated__Delegate;                      // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventUpdated__Delegate_UnknownData01[0x8];   // 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlinePlayerPermissions_X"))
@@ -13159,7 +12769,6 @@ public:
 	class UOnlineGameDedicatedServer_X*                DedicatedServer;                               // 0x0060 (0x0008) [0x0000000000000000]               
 	class TArray<struct FMatchExploitReportData>       SubmittedReports;                              // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __SubmitReport__Delegate;                      // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __SubmitReport__Delegate_UnknownData00[0x8];   // 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.ServerExploitManager_X"))
@@ -13876,7 +13485,6 @@ public:
 	uint8_t                                          UnknownData01[0x4];                            // 0x009C (0x0004) MISSED OFFSET
 	class TArray<class URegionPingData_X*>             PingResults;                                   // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventRegionsPinged__Delegate;                // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventRegionsPinged__Delegate_UnknownData02[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.RegionPinger_X"))
@@ -14385,11 +13993,8 @@ public:
 	class UPsyNetRetryConfig_X*                        RetryConfig;                                   // 0x00B0 (0x0008) [0x0000800000000000]               
 	class FString                                      ServiceName;                                   // 0x00B8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __EventSyncComplete__Delegate;                 // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSyncComplete__Delegate_UnknownData00[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventSyncError__Delegate;                    // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventSyncError__Delegate_UnknownData01[0x8]; // 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventDataChanged__Delegate;                  // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventDataChanged__Delegate_UnknownData02[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.OnlineResource_X"))
@@ -15559,9 +15164,7 @@ public:
 	class UIEpochNow*                                  Time_Object;                                   // 0x0070 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	class UIEpochNow*                                  Time_Interface;                                // 0x0078 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 	struct FScriptDelegate                             __EventWindowStarted__Delegate;                // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventWindowStarted__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventWindowEnded__Delegate;                  // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventWindowEnded__Delegate_UnknownData01[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class ProjectX.TimeWindowOptional_X"))

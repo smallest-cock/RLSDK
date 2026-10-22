@@ -1,7 +1,7 @@
 /*
 #############################################################################################
 # Rocket League SDK (RLSDK) Season 24 (v2.78)
-# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:59PM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
@@ -372,23 +372,14 @@ class UAdHocDelegates : public UObject
 {
 public:
 	struct FScriptDelegate                             __EventAdHocOnNetworkChanged__Delegate;        // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAdHocOnNetworkChanged__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAdHocError__Delegate;                   // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAdHocError__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAdHocInitialized__Delegate;             // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAdHocInitialized__Delegate_UnknownData02[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAccessPointCreated__Delegate;           // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAccessPointCreated__Delegate_UnknownData03[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventBecomeStation__Delegate;                // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventBecomeStation__Delegate_UnknownData04[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStationConnected__Delegate;             // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStationConnected__Delegate_UnknownData05[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventStationDisconnected__Delegate;          // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventStationDisconnected__Delegate_UnknownData06[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAdHocFinalized__Delegate;               // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAdHocFinalized__Delegate_UnknownData07[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventAdHocDestroyed__Delegate;               // 0x0160 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventAdHocDestroyed__Delegate_UnknownData08[0x8];// 0x0168 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.AdHocDelegates"))
@@ -425,7 +416,6 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x00B9 (0x0007) MISSED OFFSET
 	class UTexture*                                    Texture;                                       // 0x00C0 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             Callbacks;                                     // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          Callbacks_UnknownData01[0x8];                  // 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.AvatarDownload"))
@@ -445,7 +435,6 @@ public:
 	class UOnlineAuthInterfaceImpl*                    AuthInterfaceImpl;                             // 0x03B8 (0x0008) [0x0000000000000000]               
 	class UOnlinePurchaseInterfaceImpl*                PurchaseInterfaceImpl;                         // 0x03C0 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x03C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnSanitizeStringComplete__Delegate_UnknownData01[0x8];// 0x03D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineSubsystemCommonImpl"))
@@ -594,7 +583,6 @@ public:
 	struct FPointer                                    VfTable_FTickableObject;                       // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	class TArray<struct FDecodeImageRequest>           ActiveDecodeRequests;                          // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __ImageDecodedDelegate__Delegate;              // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __ImageDecodedDelegate__Delegate_UnknownData00[0x8];// 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.ImageDecoder"))
@@ -719,7 +707,6 @@ public:
 	uint32_t                                           bNeedsTicking : 1;                             // 0x00A0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __OnReadNewsCompleted__Delegate;               // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReadNewsCompleted__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineNewsInterfaceMcp"))
@@ -744,9 +731,7 @@ public:
 	uint8_t                                          UnknownData00[0x4];                            // 0x00D4 (0x0004) MISSED OFFSET
 	class TArray<struct FFileNameToURLMapping>         FilesToUrls;                                   // 0x00D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnReadTitleFileComplete__Delegate;           // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReadTitleFileComplete__Delegate_UnknownData01[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnRequestTitleFileListComplete__Delegate;    // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRequestTitleFileListComplete__Delegate_UnknownData02[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadBase"))
@@ -813,9 +798,7 @@ public:
 	class TArray<struct FScriptDelegate>               LoadCompleteDelegates;                         // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               SaveCompleteDelegates;                         // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnLoadTitleFileComplete__Delegate;           // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLoadTitleFileComplete__Delegate_UnknownData00[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnSaveTitleFileComplete__Delegate;           // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnSaveTitleFileComplete__Delegate_UnknownData01[0x8];// 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.TitleFileDownloadCache"))
@@ -848,13 +831,9 @@ public:
 	class TArray<struct FMcpMessageContents>           MessageContentsList;                           // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FMcpMessageList>               MessageLists;                                  // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnCreateMessageComplete__Delegate;           // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateMessageComplete__Delegate_UnknownData01[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteMessageComplete__Delegate;           // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteMessageComplete__Delegate_UnknownData02[0x8];// 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryMessagesComplete__Delegate;           // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryMessagesComplete__Delegate_UnknownData03[0x8];// 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryMessageContentsComplete__Delegate;    // 0x0110 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryMessageContentsComplete__Delegate_UnknownData04[0x8];// 0x0118 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpMessageBase"))
@@ -922,13 +901,9 @@ public:
 	class TArray<struct FScriptDelegate>               WriteUserFileCompleteDelegates;                // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               DeleteUserFileCompleteDelegates;               // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnEnumerateUserFilesComplete__Delegate;      // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnEnumerateUserFilesComplete__Delegate_UnknownData00[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReadUserFileComplete__Delegate;            // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReadUserFileComplete__Delegate_UnknownData01[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnWriteUserFileComplete__Delegate;           // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnWriteUserFileComplete__Delegate_UnknownData02[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteUserFileComplete__Delegate_UnknownData03[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserCloudFileDownload"))
@@ -1011,15 +986,10 @@ public:
 	uint32_t                                           bUsingRegisteredAddr : 1;                      // 0x0168 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	uint8_t                                          UnknownData01[0x4];                            // 0x016C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __OnConnectionRequestResult__Delegate;         // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnConnectionRequestResult__Delegate_UnknownData02[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReceivedBandwidthTestRequest__Delegate;    // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedBandwidthTestRequest__Delegate_UnknownData03[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReceivedBandwidthTestResults__Delegate;    // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedBandwidthTestResults__Delegate_UnknownData04[0x8];// 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnTravelRequestReceived__Delegate_UnknownData05[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnCreateNewSessionRequestReceived__Delegate; // 0x01F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateNewSessionRequestReceived__Delegate_UnknownData06[0x8];// 0x01F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.MeshBeaconClient"))
@@ -1045,15 +1015,10 @@ public:
 	uint32_t                                           bAllowBandwidthTesting : 1;                    // 0x0110 (0x0004) [0x0000000000000000] [0x00000001] 
 	int32_t                                            ConnectionBacklog;                             // 0x0114 (0x0004) [0x0000000000004000] (CPF_Config)  
 	struct FScriptDelegate                             __OnReceivedClientConnectionRequest__Delegate; // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedClientConnectionRequest__Delegate_UnknownData00[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnStartedBandwidthTest__Delegate;            // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnStartedBandwidthTest__Delegate_UnknownData01[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnFinishedBandwidthTest__Delegate;           // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnFinishedBandwidthTest__Delegate_UnknownData02[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAllPendingPlayersConnected__Delegate;      // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAllPendingPlayersConnected__Delegate_UnknownData03[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReceivedClientCreateNewSessionResult__Delegate;// 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedClientCreateNewSessionResult__Delegate_UnknownData04[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.MeshBeaconHost"))
@@ -1107,31 +1072,18 @@ public:
 	class TArray<struct FScriptDelegate>               ClientConnectionCloseDelegates;                // 0x0270 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ServerConnectionCloseDelegates;                // 0x0280 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnAuthReady__Delegate;                       // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAuthReady__Delegate_UnknownData02[0x8];    // 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientAuthRequest__Delegate;               // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientAuthRequest__Delegate_UnknownData03[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnServerAuthRequest__Delegate;               // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnServerAuthRequest__Delegate_UnknownData04[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientAuthResponse__Delegate;              // 0x02F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientAuthResponse__Delegate_UnknownData05[0x8];// 0x02F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnServerAuthResponse__Delegate;              // 0x0310 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnServerAuthResponse__Delegate_UnknownData06[0x8];// 0x0318 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientAuthComplete__Delegate;              // 0x0330 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientAuthComplete__Delegate_UnknownData07[0x8];// 0x0338 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnServerAuthComplete__Delegate;              // 0x0350 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnServerAuthComplete__Delegate_UnknownData08[0x8];// 0x0358 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientAuthEndSessionRequest__Delegate;     // 0x0370 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientAuthEndSessionRequest__Delegate_UnknownData09[0x8];// 0x0378 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnServerAuthRetryRequest__Delegate;          // 0x0390 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnServerAuthRetryRequest__Delegate_UnknownData10[0x8];// 0x0398 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientConnectionClose__Delegate;           // 0x03B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientConnectionClose__Delegate_UnknownData11[0x8];// 0x03B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnServerConnectionClose__Delegate;           // 0x03D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnServerConnectionClose__Delegate_UnknownData12[0x8];// 0x03D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReceivedAuthCode__Delegate;                // 0x03F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedAuthCode__Delegate_UnknownData13[0x8];// 0x03F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAccountAuthorization__Delegate;            // 0x0410 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAccountAuthorization__Delegate_UnknownData14[0x8];// 0x0418 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineAuthInterfaceImpl"))
@@ -1213,7 +1165,6 @@ class UOnlineFriendsInterfaceImpl : public UObject
 public:
 	struct FPointer                                    VfTable_IOnlineFriendsInterface;               // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	struct FScriptDelegate                             __OnReceivedLinkedAccount__Delegate;           // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceivedLinkedAccount__Delegate_UnknownData00[0x8];// 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineFriendsInterfaceImpl"))
@@ -1253,41 +1204,23 @@ public:
 	struct FPointer                                    SessionInfo;                                   // 0x0150 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	class TArray<struct FScriptDelegate>               GameInviteAcceptedDelegates;                   // 0x0158 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnFindOnlineGamesComplete__Delegate;         // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnFindOnlineGamesComplete__Delegate_UnknownData01[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnCreateOnlineGameComplete__Delegate;        // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateOnlineGameComplete__Delegate_UnknownData02[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUpdateOnlineGameComplete__Delegate;        // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUpdateOnlineGameComplete__Delegate_UnknownData03[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDestroyOnlineGameComplete__Delegate;       // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDestroyOnlineGameComplete__Delegate_UnknownData04[0x8];// 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnCancelFindOnlineGamesComplete__Delegate;   // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCancelFindOnlineGamesComplete__Delegate_UnknownData05[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnJoinOnlineGameComplete__Delegate;          // 0x0208 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnJoinOnlineGameComplete__Delegate_UnknownData06[0x8];// 0x0210 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnRegisterPlayerComplete__Delegate;          // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRegisterPlayerComplete__Delegate_UnknownData07[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUnregisterPlayerComplete__Delegate;        // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUnregisterPlayerComplete__Delegate_UnknownData08[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnStartOnlineGameComplete__Delegate;         // 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnStartOnlineGameComplete__Delegate_UnknownData09[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnEndOnlineGameComplete__Delegate;           // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnEndOnlineGameComplete__Delegate_UnknownData10[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnArbitrationRegistrationComplete__Delegate; // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnArbitrationRegistrationComplete__Delegate_UnknownData11[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnGameInviteAccepted__Delegate;              // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnGameInviteAccepted__Delegate_UnknownData12[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnRecalculateSkillRatingComplete__Delegate;  // 0x02E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRecalculateSkillRatingComplete__Delegate_UnknownData13[0x8];// 0x02F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnMigrateOnlineGameComplete__Delegate;       // 0x0308 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnMigrateOnlineGameComplete__Delegate_UnknownData14[0x8];// 0x0310 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnJoinMigratedOnlineGameComplete__Delegate;  // 0x0328 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnJoinMigratedOnlineGameComplete__Delegate_UnknownData15[0x8];// 0x0330 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQosStatusChanged__Delegate;                // 0x0348 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQosStatusChanged__Delegate_UnknownData16[0x8];// 0x0350 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventReportMatchmakingInfo__Delegate;        // 0x0368 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventReportMatchmakingInfo__Delegate_UnknownData17[0x8];// 0x0370 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnGamePlayersChanged__Delegate;              // 0x0388 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnGamePlayersChanged__Delegate_UnknownData18[0x8];// 0x0390 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineGameInterfaceImpl"))
@@ -1389,9 +1322,7 @@ public:
 	int32_t                                            SucceededDownloadCount;                        // 0x00D8 (0x0004) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
 	int32_t                                            FailedDownloadCount;                           // 0x00DC (0x0004) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
 	struct FScriptDelegate                             __OnOnlineImageFinished__Delegate;             // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnOnlineImageFinished__Delegate_UnknownData01[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __EventImageDecoded__Delegate;                 // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventImageDecoded__Delegate_UnknownData02[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineImageDownloaderWeb"))
@@ -1452,33 +1383,19 @@ public:
 	class TArray<struct FBasicLobbyInfo>               CachedFindLobbyResults;                        // 0x0150 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              CachedBinaryData;                              // 0x0160 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateLobbyComplete__Delegate_UnknownData00[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnFindLobbiesComplete__Delegate_UnknownData01[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnJoinLobbyComplete__Delegate_UnknownData02[0x8];// 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbySettingsUpdate__Delegate_UnknownData03[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x01F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyMemberSettingsUpdate__Delegate_UnknownData04[0x8];// 0x01F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x0210 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyMemberStatusUpdate__Delegate_UnknownData05[0x8];// 0x0218 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0230 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyReceiveMessage__Delegate_UnknownData06[0x8];// 0x0238 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0250 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyReceiveBinaryData__Delegate_UnknownData07[0x8];// 0x0258 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0270 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyJoinGame__Delegate_UnknownData08[0x8];// 0x0278 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyInvite__Delegate_UnknownData09[0x8];  // 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyDestroyed__Delegate_UnknownData10[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbySessionCreated__Delegate_UnknownData11[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x02F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnLobbyError__Delegate_UnknownData12[0x8];   // 0x02F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x0310 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnHostStartPlayTogether__Delegate_UnknownData13[0x8];// 0x0318 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineLobbyInterfaceImpl"))
@@ -1568,9 +1485,7 @@ public:
 	class TArray<struct FScriptDelegate>               RequestPinGrantCodeDelegates;                  // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               UnderageUserDetectedDelegates;                 // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnReceievedPinGrantCode__Delegate;           // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReceievedPinGrantCode__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUnderageUserDetected__Delegate;            // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUnderageUserDetected__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePersistentAuthInterfaceImpl"))
@@ -1623,9 +1538,7 @@ public:
 	float                                              LastPlaylistDownloadTime;                      // 0x0110 (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              PlaylistRefreshInterval;                       // 0x0114 (0x0004) [0x0000000000004000] (CPF_Config)  
 	struct FScriptDelegate                             __OnReadPlaylistComplete__Delegate;            // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReadPlaylistComplete__Delegate_UnknownData02[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnPlaylistPopulationDataUpdated__Delegate;   // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnPlaylistPopulationDataUpdated__Delegate_UnknownData03[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePlaylistManager"))
@@ -1663,9 +1576,7 @@ class UOnlinePurchaseInterfaceImpl : public UObject
 {
 public:
 	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __EventGetAppPriceInfoComplete__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnMicroTxnResponse__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePurchaseInterfaceImpl"))
@@ -1694,7 +1605,6 @@ public:
 	class FName                                        BeaconName;                                    // 0x0084 (0x0008) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x008C (0x0004) MISSED OFFSET
 	struct FScriptDelegate                             __OnDestroyComplete__Delegate;                 // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDestroyComplete__Delegate_UnknownData02[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeacon"))
@@ -1719,15 +1629,10 @@ public:
 	class UClass*                                      ResolverClass;                                 // 0x0140 (0x0008) [0x0000000000000000]               
 	class UClientBeaconAddressResolver*                Resolver;                                      // 0x0148 (0x0008) [0x0000000000000000]               
 	struct FScriptDelegate                             __OnReservationRequestComplete__Delegate;      // 0x0150 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReservationRequestComplete__Delegate_UnknownData02[0x8];// 0x0158 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReservationCountUpdated__Delegate;         // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReservationCountUpdated__Delegate_UnknownData03[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnTravelRequestReceived__Delegate_UnknownData04[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnHostIsReady__Delegate;                     // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnHostIsReady__Delegate_UnknownData05[0x8];  // 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnHostHasCancelled__Delegate;                // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnHostHasCancelled__Delegate_UnknownData06[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeaconClient"))
@@ -1761,11 +1666,8 @@ public:
 	EPartyBeaconHostState                              BeaconState;                                   // 0x00F8 (0x0001) [0x0000000000000002] (CPF_Const)   
 	uint8_t                                          UnknownData00[0x7];                            // 0x00F9 (0x0007) MISSED OFFSET
 	struct FScriptDelegate                             __OnReservationChange__Delegate;               // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReservationChange__Delegate_UnknownData01[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReservationsFull__Delegate;                // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReservationsFull__Delegate_UnknownData02[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnClientCancellationReceived__Delegate;      // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnClientCancellationReceived__Delegate_UnknownData03[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeaconHost"))
@@ -2034,17 +1936,11 @@ class UMcpClashMobBase : public UMcpServiceBase
 public:
 	class FString                                      McpClashMobClassName;                          // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnQueryChallengeListComplete__Delegate;      // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryChallengeListComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDownloadChallengeFileComplete__Delegate;   // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDownloadChallengeFileComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAcceptChallengeComplete__Delegate;         // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAcceptChallengeComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryChallengeUserStatusComplete__Delegate;// 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryChallengeUserStatusComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUpdateChallengeUserProgressComplete__Delegate;// 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUpdateChallengeUserProgressComplete__Delegate_UnknownData04[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUpdateChallengeUserRewardComplete__Delegate;// 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUpdateChallengeUserRewardComplete__Delegate_UnknownData05[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpClashMobBase"))
@@ -2136,23 +2032,14 @@ public:
 	class FString                                      McpGroupsManagerClassName;                     // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class TArray<struct FMcpGroupList>                 GroupLists;                                    // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnCreateGroupComplete__Delegate;             // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateGroupComplete__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteGroupComplete__Delegate;             // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteGroupComplete__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryGroupsComplete__Delegate;             // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryGroupsComplete__Delegate_UnknownData02[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryGroupMembersComplete__Delegate;       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryGroupMembersComplete__Delegate_UnknownData03[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAddGroupMembersComplete__Delegate;         // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAddGroupMembersComplete__Delegate_UnknownData04[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnRemoveGroupMembersComplete__Delegate;      // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRemoveGroupMembersComplete__Delegate_UnknownData05[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteAllGroupsComplete__Delegate;         // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteAllGroupsComplete__Delegate_UnknownData06[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryGroupInvitesComplete__Delegate;       // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryGroupInvitesComplete__Delegate_UnknownData07[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAcceptGroupInviteComplete__Delegate;       // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAcceptGroupInviteComplete__Delegate_UnknownData08[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpGroupsBase"))
@@ -2195,13 +2082,9 @@ public:
 	class FString                                      AcceptGroupInviteUrl;                          // 0x0228 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class FString                                      RejectGroupInviteUrl;                          // 0x0238 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnQueryGroupsRequestComplete__Delegate;      // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryGroupsRequestComplete__Delegate_UnknownData00[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryGroupMembersRequestComplete__Delegate;// 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryGroupMembersRequestComplete__Delegate_UnknownData01[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAddGroupMembersRequestComplete__Delegate;  // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAddGroupMembersRequestComplete__Delegate_UnknownData02[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAcceptGroupInviteRequestComplete__Delegate;// 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAcceptGroupInviteRequestComplete__Delegate_UnknownData03[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpGroupsManager"))
@@ -2234,9 +2117,7 @@ class UMcpIdMappingBase : public UMcpServiceBase
 public:
 	class FString                                      McpIdMappingClassName;                         // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnAddMappingComplete__Delegate;              // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAddMappingComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryMappingsComplete__Delegate;           // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryMappingsComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpIdMappingBase"))
@@ -2275,13 +2156,9 @@ class UMcpManagedValueManagerBase : public UMcpServiceBase
 public:
 	class FString                                      McpManagedValueManagerClassName;               // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateSaveSlotComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnReadSaveSlotComplete__Delegate;            // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnReadSaveSlotComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnUpdateValueComplete__Delegate;             // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnUpdateValueComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteValueComplete__Delegate;             // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteValueComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpManagedValueManagerBase"))
@@ -2336,7 +2213,6 @@ class UMcpServerTimeBase : public UMcpServiceBase
 public:
 	class FString                                      McpServerTimeClassName;                        // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnQueryServerTimeComplete__Delegate;         // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryServerTimeComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpServerTimeBase"))
@@ -2369,25 +2245,15 @@ class UMcpUserInventoryBase : public UMcpServiceBase
 public:
 	class FString                                      McpUserInventoryClassName;                     // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnCreateSaveSlotComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteSaveSlotComplete__Delegate;          // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteSaveSlotComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQuerySaveSlotListComplete__Delegate;       // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQuerySaveSlotListComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryInventoryItemsComplete__Delegate;     // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryInventoryItemsComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnPurchaseItemComplete__Delegate;            // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnPurchaseItemComplete__Delegate_UnknownData04[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnSellItemComplete__Delegate;                // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnSellItemComplete__Delegate_UnknownData05[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnEarnItemComplete__Delegate;                // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnEarnItemComplete__Delegate_UnknownData06[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnConsumeItemComplete__Delegate;             // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnConsumeItemComplete__Delegate_UnknownData07[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteItemComplete__Delegate;              // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteItemComplete__Delegate_UnknownData08[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnRecordIapComplete__Delegate;               // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRecordIapComplete__Delegate_UnknownData09[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserInventoryBase"))
@@ -2477,13 +2343,9 @@ class UMcpUserManagerBase : public UMcpServiceBase
 public:
 	class FString                                      McpUserManagerClassName;                       // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	struct FScriptDelegate                             __OnRegisterUserComplete__Delegate;            // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnRegisterUserComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnAuthenticateUserComplete__Delegate;        // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnAuthenticateUserComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnQueryUsersComplete__Delegate;              // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnQueryUsersComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 	struct FScriptDelegate                             __OnDeleteUserComplete__Delegate;              // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint8_t                                          __OnDeleteUserComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserManagerBase"))
