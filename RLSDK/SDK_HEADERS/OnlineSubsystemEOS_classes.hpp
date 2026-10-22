@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -95,64 +95,90 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineSubsystemEOS
-// 0x0370 (0x03B0 - 0x0720)
+// 0x0440 (0x03E8 - 0x0828)
 class UOnlineSubsystemEOS : public UOnlineSubsystemCommonImpl
 {
 public:
-	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x03B0 (0x0008) [0x0000000000000000]               
-	class UOnlineGameInterfaceEOS*                     GameInterfaceEOS;                              // 0x03B8 (0x0008) [0x0000000000000000]               
-	class UOnlineStatsInterfaceEOS*                    StatsInterfaceEOS;                             // 0x03C0 (0x0008) [0x0000000000000000]               
-	class UOnlineAuthInterfaceEOS*                     AuthInterfaceEOS;                              // 0x03C8 (0x0008) [0x0000000000000000]               
-	class UOnlinePersistentAuthInterfaceEOS*           PersistentAuthInterfaceEOS;                    // 0x03D0 (0x0008) [0x0000000000000000]               
-	class UOnlineFriendsInterfaceEOS*                  FriendsInterfaceEOS;                           // 0x03D8 (0x0008) [0x0000000000000000]               
-	class UOnlineUserCloudFileInterfaceEOS*            UserCloudFileInterfaceEOS;                     // 0x03E0 (0x0008) [0x0000000000000000]               
-	class UOnlineVoiceInterfaceEOS*                    VoiceInterfaceEOS;                             // 0x03E8 (0x0008) [0x0000000000000000]               
-	class UOnlineAntiCheatInterfaceEOS*                AntiCheatInterfaceEOS;                         // 0x03F0 (0x0008) [0x0001000000000000]               
-	class TArray<struct FScriptDelegate>               SpeechRecognitionCompleteDelegates;            // 0x03F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FPointer                                    AuthHandle;                                    // 0x0408 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    FriendsHandle;                                 // 0x0410 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    UserInfoHandle;                                // 0x0418 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    PresenceHandle;                                // 0x0420 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    ConnectHandle;                                 // 0x0428 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    SessionsHandle;                                // 0x0430 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    PDSHandle;                                     // 0x0438 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    StatsHandle;                                   // 0x0440 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    AchievementsHandle;                            // 0x0448 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    EcomHandle;                                    // 0x0450 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    UIHandle;                                      // 0x0458 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    RTCHandle;                                     // 0x0460 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    RTCAudioHandle;                                // 0x0468 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    RTCAdminHandle;                                // 0x0470 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    EULATrackingHandle;                            // 0x0478 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class TArray<class FName>                          UnlockedDLC;                                   // 0x0480 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FScriptDelegate>               UnlockedDLCDelegates;                          // 0x0490 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	class TArray<struct FScriptDelegate>               ExternalUIChangeDelegates;                     // 0x04A0 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x04B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x04C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerTalking__Delegate;                   // 0x04E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x04F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0510 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x0528 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x0540 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLinkStatusChange__Delegate;                // 0x0558 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnExternalUIChange__Delegate;                // 0x0570 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnControllerChange__Delegate;                // 0x0588 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnConnectionStatusChange__Delegate;          // 0x05A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStorageDeviceChange__Delegate;             // 0x05B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateOnlineAccountCompleted__Delegate;    // 0x05D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x05E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCloseKickPlayerDialog__Delegate;           // 0x0600 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCommerceDialogClosed__Delegate;            // 0x0618 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnErrorDialogClosed__Delegate;               // 0x0630 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnlockedDLCChange__Delegate;               // 0x0648 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStorePurchaseCompleteDelegate__Delegate;   // 0x0660 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserOrphaned__Delegate;                    // 0x0678 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserRestored__Delegate;                    // 0x0690 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerSigningOut__Delegate;                // 0x06A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventCryptoKeyCreated__Delegate;             // 0x06C0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTextMessageSigned__Delegate;            // 0x06D8 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTextMessageValidated__Delegate;         // 0x06F0 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0708 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x03E8 (0x0008) [0x0000000000000000]               
+	class UOnlineGameInterfaceEOS*                     GameInterfaceEOS;                              // 0x03F0 (0x0008) [0x0000000000000000]               
+	class UOnlineStatsInterfaceEOS*                    StatsInterfaceEOS;                             // 0x03F8 (0x0008) [0x0000000000000000]               
+	class UOnlineAuthInterfaceEOS*                     AuthInterfaceEOS;                              // 0x0400 (0x0008) [0x0000000000000000]               
+	class UOnlinePersistentAuthInterfaceEOS*           PersistentAuthInterfaceEOS;                    // 0x0408 (0x0008) [0x0000000000000000]               
+	class UOnlineFriendsInterfaceEOS*                  FriendsInterfaceEOS;                           // 0x0410 (0x0008) [0x0000000000000000]               
+	class UOnlineUserCloudFileInterfaceEOS*            UserCloudFileInterfaceEOS;                     // 0x0418 (0x0008) [0x0000000000000000]               
+	class UOnlineVoiceInterfaceEOS*                    VoiceInterfaceEOS;                             // 0x0420 (0x0008) [0x0000000000000000]               
+	class UOnlineAntiCheatInterfaceEOS*                AntiCheatInterfaceEOS;                         // 0x0428 (0x0008) [0x0001000000000000]               
+	class TArray<struct FScriptDelegate>               SpeechRecognitionCompleteDelegates;            // 0x0430 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPointer                                    AuthHandle;                                    // 0x0440 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    FriendsHandle;                                 // 0x0448 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    UserInfoHandle;                                // 0x0450 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    PresenceHandle;                                // 0x0458 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    ConnectHandle;                                 // 0x0460 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    SessionsHandle;                                // 0x0468 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    PDSHandle;                                     // 0x0470 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    StatsHandle;                                   // 0x0478 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    AchievementsHandle;                            // 0x0480 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    EcomHandle;                                    // 0x0488 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    UIHandle;                                      // 0x0490 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    RTCHandle;                                     // 0x0498 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    RTCAudioHandle;                                // 0x04A0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    RTCAdminHandle;                                // 0x04A8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    EULATrackingHandle;                            // 0x04B0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class TArray<class FName>                          UnlockedDLC;                                   // 0x04B8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FScriptDelegate>               UnlockedDLCDelegates;                          // 0x04C8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	class TArray<struct FScriptDelegate>               ExternalUIChangeDelegates;                     // 0x04D8 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x04E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnMicroTxnResponse__Delegate_UnknownData00[0x8];// 0x04F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x0508 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventGetAppPriceInfoComplete__Delegate_UnknownData01[0x8];// 0x0510 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerTalking__Delegate;                   // 0x0528 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerTalking__Delegate_UnknownData02[0x8];// 0x0530 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x0548 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRecognitionComplete__Delegate_UnknownData03[0x8];// 0x0550 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0568 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadOnlineStatsComplete__Delegate_UnknownData04[0x8];// 0x0570 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x0588 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRegisterHostStatGuidComplete__Delegate_UnknownData05[0x8];// 0x0590 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x05A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFlushOnlineStatsComplete__Delegate_UnknownData06[0x8];// 0x05B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLinkStatusChange__Delegate;                // 0x05C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLinkStatusChange__Delegate_UnknownData07[0x8];// 0x05D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnExternalUIChange__Delegate;                // 0x05E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnExternalUIChange__Delegate_UnknownData08[0x8];// 0x05F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnControllerChange__Delegate;                // 0x0608 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnControllerChange__Delegate_UnknownData09[0x8];// 0x0610 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnConnectionStatusChange__Delegate;          // 0x0628 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnConnectionStatusChange__Delegate_UnknownData10[0x8];// 0x0630 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnStorageDeviceChange__Delegate;             // 0x0648 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnStorageDeviceChange__Delegate_UnknownData11[0x8];// 0x0650 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCreateOnlineAccountCompleted__Delegate;    // 0x0668 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateOnlineAccountCompleted__Delegate_UnknownData12[0x8];// 0x0670 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x0688 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerTalkingStateChange__Delegate_UnknownData13[0x8];// 0x0690 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCloseKickPlayerDialog__Delegate;           // 0x06A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCloseKickPlayerDialog__Delegate_UnknownData14[0x8];// 0x06B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCommerceDialogClosed__Delegate;            // 0x06C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCommerceDialogClosed__Delegate_UnknownData15[0x8];// 0x06D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnErrorDialogClosed__Delegate;               // 0x06E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnErrorDialogClosed__Delegate_UnknownData16[0x8];// 0x06F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUnlockedDLCChange__Delegate;               // 0x0708 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUnlockedDLCChange__Delegate_UnknownData17[0x8];// 0x0710 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnStorePurchaseCompleteDelegate__Delegate;   // 0x0728 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnStorePurchaseCompleteDelegate__Delegate_UnknownData18[0x8];// 0x0730 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUserOrphaned__Delegate;                    // 0x0748 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUserOrphaned__Delegate_UnknownData19[0x8]; // 0x0750 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUserRestored__Delegate;                    // 0x0768 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUserRestored__Delegate_UnknownData20[0x8]; // 0x0770 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerSigningOut__Delegate;                // 0x0788 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerSigningOut__Delegate_UnknownData21[0x8];// 0x0790 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventCryptoKeyCreated__Delegate;             // 0x07A8 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventCryptoKeyCreated__Delegate_UnknownData22[0x8];// 0x07B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventTextMessageSigned__Delegate;            // 0x07C8 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventTextMessageSigned__Delegate_UnknownData23[0x8];// 0x07D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventTextMessageValidated__Delegate;         // 0x07E8 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventTextMessageValidated__Delegate_UnknownData24[0x8];// 0x07F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCaptureAvailabilityChange__Delegate;       // 0x0808 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCaptureAvailabilityChange__Delegate_UnknownData25[0x8];// 0x0810 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineSubsystemEOS"))
@@ -296,13 +322,14 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS
-// 0x0028 (0x0060 - 0x0088)
+// 0x0030 (0x0060 - 0x0090)
 class UOnlineAntiCheatInterfaceEOS : public UObject
 {
 public:
 	struct FPointer                                    PlatformHandle;                                // 0x0060 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0068 (0x0008) [0x0001000000000000]               
-	struct FScriptDelegate                             __EventMessageGenerated__Delegate;             // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventMessageGenerated__Delegate;             // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventMessageGenerated__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatInterfaceEOS"))
@@ -314,14 +341,16 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS
-// 0x0040 (0x0088 - 0x00C8)
+// 0x0050 (0x0090 - 0x00E0)
 class UOnlineAntiCheatClientInterfaceEOS : public UOnlineAntiCheatInterfaceEOS
 {
 public:
-	struct FPointer                                    ClientHandle;                                  // 0x0088 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    ReportHandle;                                  // 0x0090 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FScriptDelegate                             __EventClientIntegrityViolation__Delegate;     // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerReportComplete__Delegate;         // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPointer                                    ClientHandle;                                  // 0x0090 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    ReportHandle;                                  // 0x0098 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FScriptDelegate                             __EventClientIntegrityViolation__Delegate;     // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventClientIntegrityViolation__Delegate_UnknownData00[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventPlayerReportComplete__Delegate;         // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventPlayerReportComplete__Delegate_UnknownData01[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatClientInterfaceEOS"))
@@ -336,13 +365,15 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS
-// 0x0038 (0x0088 - 0x00C0)
+// 0x0048 (0x0090 - 0x00D8)
 class UOnlineAntiCheatServerInterfaceEOS : public UOnlineAntiCheatInterfaceEOS
 {
 public:
-	struct FPointer                                    ServerHandle;                                  // 0x0088 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FScriptDelegate                             __EventClientActionRequired__Delegate;         // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventClientAuthStatusChanged__Delegate;      // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPointer                                    ServerHandle;                                  // 0x0090 (0x0008) [0x0001000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FScriptDelegate                             __EventClientActionRequired__Delegate;         // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventClientActionRequired__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventClientAuthStatusChanged__Delegate;      // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventClientAuthStatusChanged__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAntiCheatServerInterfaceEOS"))
@@ -357,11 +388,11 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineAuthInterfaceEOS
-// 0x0008 (0x03C8 - 0x03D0)
+// 0x0008 (0x0430 - 0x0438)
 class UOnlineAuthInterfaceEOS : public UOnlineAuthInterfaceImpl
 {
 public:
-	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x03C8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0430 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineAuthInterfaceEOS"))
@@ -371,11 +402,11 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineFriendsInterfaceEOS
-// 0x0008 (0x0080 - 0x0088)
+// 0x0008 (0x0088 - 0x0090)
 class UOnlineFriendsInterfaceEOS : public UOnlineFriendsInterfaceImpl
 {
 public:
-	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0080 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0088 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineFriendsInterfaceEOS"))
@@ -384,14 +415,14 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineGameInterfaceEOS
-// 0x001C (0x0318 - 0x0334)
+// 0x001C (0x03A8 - 0x03C4)
 class UOnlineGameInterfaceEOS : public UOnlineGameInterfaceImpl
 {
 public:
-	struct FPointer                                    SessionsHandle;                                // 0x0318 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	struct FPointer                                    CurrentSearchHandle;                           // 0x0320 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0328 (0x0008) [0x0000000000000000]               
-	uint32_t                                           bGameSessionUpdateInProgress : 1;              // 0x0330 (0x0004) [0x0000000000000000] [0x100000001] 
+	struct FPointer                                    SessionsHandle;                                // 0x03A8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    CurrentSearchHandle;                           // 0x03B0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x03B8 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bGameSessionUpdateInProgress : 1;              // 0x03C0 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineGameInterfaceEOS"))
@@ -401,11 +432,11 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlinePersistentAuthInterfaceEOS
-// 0x0008 (0x00B8 - 0x00C0)
+// 0x0008 (0x00C8 - 0x00D0)
 class UOnlinePersistentAuthInterfaceEOS : public UOnlinePersistentAuthInterfaceImpl
 {
 public:
-	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x00B8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
+	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x00C8 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlinePersistentAuthInterfaceEOS"))
@@ -423,7 +454,7 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlinePlayerInterfaceEOS
-// 0x0650 (0x0060 - 0x06B0)
+// 0x07C8 (0x0060 - 0x0828)
 class UOnlinePlayerInterfaceEOS : public UObject
 {
 public:
@@ -467,53 +498,100 @@ public:
 	class TArray<struct FScriptDelegate>               BlockListUpdatedDelegates;                     // 0x0218 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               PlayerBlockedDelegates;                        // 0x0228 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               PlayerUnblockedDelegates;                      // 0x0238 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnBlockListUpdated__Delegate;                // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerBlocked__Delegate;                   // 0x0260 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerUnblocked__Delegate;                 // 0x0278 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLoginChange__Delegate;                     // 0x0290 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLoginCancelled__Delegate;                  // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMutingChange__Delegate;                    // 0x02C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFriendsChange__Delegate;                   // 0x02D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLoginFailed__Delegate;                     // 0x02F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceievedPinGrantCode__Delegate;           // 0x0308 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLogoutCompleted__Delegate;                 // 0x0320 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadProfileSettingsComplete__Delegate;     // 0x0338 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnWriteProfileSettingsComplete__Delegate;    // 0x0350 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadFriendsComplete__Delegate;             // 0x0368 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnKeyboardInputComplete__Delegate;           // 0x0380 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAddFriendComplete__Delegate;               // 0x0398 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryUserByDisplayName__Delegate;          // 0x03B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAddFriendByNameComplete__Delegate;         // 0x03C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAcceptFriendInviteComplete__Delegate;      // 0x03E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDenyFriendInviteComplete__Delegate;        // 0x03F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRemoveFriendComplete__Delegate;            // 0x0410 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFriendInviteReceived__Delegate;            // 0x0428 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFriendInviteCanceled__Delegate;            // 0x0440 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedGameInvite__Delegate;              // 0x0458 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnJoinFriendGameComplete__Delegate;          // 0x0470 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFriendMessageReceived__Delegate;           // 0x0488 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRequestNativePlatformAuthTicketComplete__Delegate;// 0x04A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadPlayerStorageComplete__Delegate;       // 0x04B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadPlayerStorageForNetIdComplete__Delegate;// 0x04D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnWritePlayerStorageComplete__Delegate;      // 0x04E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadCrossTitleProfileSettingsComplete__Delegate;// 0x0500 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserSignInComplete__Delegate;              // 0x0518 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __CanPlayOnlineChanged__Delegate;              // 0x0530 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSaveDataNoSpaceDialogComplete__Delegate;   // 0x0548 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisteredController__Delegate;            // 0x0560 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnregisteredController__Delegate;          // 0x0578 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnInputAPIChanged__Delegate;                 // 0x0590 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLoginStatusChange__Delegate;               // 0x05A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUserSwitchComplete__Delegate;              // 0x05C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeviceSelectionComplete__Delegate;         // 0x05D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnProfileDataChanged__Delegate;              // 0x05F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnlockAchievementComplete__Delegate;       // 0x0608 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadAchievementsComplete__Delegate;        // 0x0620 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAvatarChange__Delegate;                    // 0x0638 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __FriendPresenceChange__Delegate;              // 0x0650 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x0668 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EpicIDToPlatformIDCallback__Delegate;        // 0x0680 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFriendInviteAccepted__Delegate;            // 0x0698 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnBlockListUpdated__Delegate;                // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnBlockListUpdated__Delegate_UnknownData02[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerBlocked__Delegate;                   // 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerBlocked__Delegate_UnknownData03[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerUnblocked__Delegate;                 // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerUnblocked__Delegate_UnknownData04[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLoginChange__Delegate;                     // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLoginChange__Delegate_UnknownData05[0x8];  // 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLoginCancelled__Delegate;                  // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLoginCancelled__Delegate_UnknownData06[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnMutingChange__Delegate;                    // 0x02E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnMutingChange__Delegate_UnknownData07[0x8]; // 0x02F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFriendsChange__Delegate;                   // 0x0308 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFriendsChange__Delegate_UnknownData08[0x8];// 0x0310 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLoginFailed__Delegate;                     // 0x0328 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLoginFailed__Delegate_UnknownData09[0x8];  // 0x0330 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceievedPinGrantCode__Delegate;           // 0x0348 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceievedPinGrantCode__Delegate_UnknownData10[0x8];// 0x0350 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLogoutCompleted__Delegate;                 // 0x0368 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLogoutCompleted__Delegate_UnknownData11[0x8];// 0x0370 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadProfileSettingsComplete__Delegate;     // 0x0388 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadProfileSettingsComplete__Delegate_UnknownData12[0x8];// 0x0390 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnWriteProfileSettingsComplete__Delegate;    // 0x03A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnWriteProfileSettingsComplete__Delegate_UnknownData13[0x8];// 0x03B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadFriendsComplete__Delegate;             // 0x03C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadFriendsComplete__Delegate_UnknownData14[0x8];// 0x03D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnKeyboardInputComplete__Delegate;           // 0x03E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnKeyboardInputComplete__Delegate_UnknownData15[0x8];// 0x03F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAddFriendComplete__Delegate;               // 0x0408 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAddFriendComplete__Delegate_UnknownData16[0x8];// 0x0410 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryUserByDisplayName__Delegate;          // 0x0428 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryUserByDisplayName__Delegate_UnknownData17[0x8];// 0x0430 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAddFriendByNameComplete__Delegate;         // 0x0448 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAddFriendByNameComplete__Delegate_UnknownData18[0x8];// 0x0450 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAcceptFriendInviteComplete__Delegate;      // 0x0468 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAcceptFriendInviteComplete__Delegate_UnknownData19[0x8];// 0x0470 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDenyFriendInviteComplete__Delegate;        // 0x0488 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDenyFriendInviteComplete__Delegate_UnknownData20[0x8];// 0x0490 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRemoveFriendComplete__Delegate;            // 0x04A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRemoveFriendComplete__Delegate_UnknownData21[0x8];// 0x04B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFriendInviteReceived__Delegate;            // 0x04C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFriendInviteReceived__Delegate_UnknownData22[0x8];// 0x04D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFriendInviteCanceled__Delegate;            // 0x04E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFriendInviteCanceled__Delegate_UnknownData23[0x8];// 0x04F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceivedGameInvite__Delegate;              // 0x0508 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedGameInvite__Delegate_UnknownData24[0x8];// 0x0510 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnJoinFriendGameComplete__Delegate;          // 0x0528 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnJoinFriendGameComplete__Delegate_UnknownData25[0x8];// 0x0530 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFriendMessageReceived__Delegate;           // 0x0548 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFriendMessageReceived__Delegate_UnknownData26[0x8];// 0x0550 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRequestNativePlatformAuthTicketComplete__Delegate;// 0x0568 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRequestNativePlatformAuthTicketComplete__Delegate_UnknownData27[0x8];// 0x0570 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadPlayerStorageComplete__Delegate;       // 0x0588 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadPlayerStorageComplete__Delegate_UnknownData28[0x8];// 0x0590 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadPlayerStorageForNetIdComplete__Delegate;// 0x05A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadPlayerStorageForNetIdComplete__Delegate_UnknownData29[0x8];// 0x05B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnWritePlayerStorageComplete__Delegate;      // 0x05C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnWritePlayerStorageComplete__Delegate_UnknownData30[0x8];// 0x05D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadCrossTitleProfileSettingsComplete__Delegate;// 0x05E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadCrossTitleProfileSettingsComplete__Delegate_UnknownData31[0x8];// 0x05F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUserSignInComplete__Delegate;              // 0x0608 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUserSignInComplete__Delegate_UnknownData32[0x8];// 0x0610 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __CanPlayOnlineChanged__Delegate;              // 0x0628 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __CanPlayOnlineChanged__Delegate_UnknownData33[0x8];// 0x0630 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnSaveDataNoSpaceDialogComplete__Delegate;   // 0x0648 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnSaveDataNoSpaceDialogComplete__Delegate_UnknownData34[0x8];// 0x0650 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRegisteredController__Delegate;            // 0x0668 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRegisteredController__Delegate_UnknownData35[0x8];// 0x0670 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUnregisteredController__Delegate;          // 0x0688 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUnregisteredController__Delegate_UnknownData36[0x8];// 0x0690 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnInputAPIChanged__Delegate;                 // 0x06A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnInputAPIChanged__Delegate_UnknownData37[0x8];// 0x06B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLoginStatusChange__Delegate;               // 0x06C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLoginStatusChange__Delegate_UnknownData38[0x8];// 0x06D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUserSwitchComplete__Delegate;              // 0x06E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUserSwitchComplete__Delegate_UnknownData39[0x8];// 0x06F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeviceSelectionComplete__Delegate;         // 0x0708 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeviceSelectionComplete__Delegate_UnknownData40[0x8];// 0x0710 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnProfileDataChanged__Delegate;              // 0x0728 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnProfileDataChanged__Delegate_UnknownData41[0x8];// 0x0730 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUnlockAchievementComplete__Delegate;       // 0x0748 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUnlockAchievementComplete__Delegate_UnknownData42[0x8];// 0x0750 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadAchievementsComplete__Delegate;        // 0x0768 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadAchievementsComplete__Delegate_UnknownData43[0x8];// 0x0770 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAvatarChange__Delegate;                    // 0x0788 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAvatarChange__Delegate_UnknownData44[0x8]; // 0x0790 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __FriendPresenceChange__Delegate;              // 0x07A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __FriendPresenceChange__Delegate_UnknownData45[0x8];// 0x07B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x07C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnSanitizeStringComplete__Delegate_UnknownData46[0x8];// 0x07D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EpicIDToPlatformIDCallback__Delegate;        // 0x07E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EpicIDToPlatformIDCallback__Delegate_UnknownData47[0x8];// 0x07F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFriendInviteAccepted__Delegate;            // 0x0808 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFriendInviteAccepted__Delegate_UnknownData48[0x8];// 0x0810 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlinePlayerInterfaceEOS"))
@@ -765,16 +843,19 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineStatsInterfaceEOS
-// 0x0068 (0x0060 - 0x00C8)
+// 0x0080 (0x0060 - 0x00E0)
 class UOnlineStatsInterfaceEOS : public UObject
 {
 public:
 	struct FPointer                                    StatsHandle;                                   // 0x0060 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	class UOnlinePlayerInterfaceEOS*                   PlayerInterfaceEOS;                            // 0x0068 (0x0008) [0x0000000000000000]               
 	class TArray<struct FScriptDelegate>               ReadStatsDelegates;                            // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadOnlineStatsComplete__Delegate;         // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadOnlineStatsComplete__Delegate_UnknownData00[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFlushOnlineStatsComplete__Delegate;        // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFlushOnlineStatsComplete__Delegate_UnknownData01[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRegisterHostStatGuidComplete__Delegate;    // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRegisterHostStatGuidComplete__Delegate_UnknownData02[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineStatsInterfaceEOS"))
@@ -802,7 +883,7 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS
-// 0x00B8 (0x0060 - 0x0118)
+// 0x00D8 (0x0060 - 0x0138)
 class UOnlineUserCloudFileInterfaceEOS : public UObject
 {
 public:
@@ -814,10 +895,14 @@ public:
 	class TArray<struct FScriptDelegate>               ReadUserFileCompleteDelegates;                 // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               WriteUserFileCompleteDelegates;                // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               DeleteUserFileCompleteDelegates;               // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnEnumerateUserFilesComplete__Delegate;      // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadUserFileComplete__Delegate;            // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnWriteUserFileComplete__Delegate;           // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnEnumerateUserFilesComplete__Delegate;      // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnEnumerateUserFilesComplete__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadUserFileComplete__Delegate;            // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadUserFileComplete__Delegate_UnknownData02[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnWriteUserFileComplete__Delegate;           // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnWriteUserFileComplete__Delegate_UnknownData03[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteUserFileComplete__Delegate_UnknownData04[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS"))
@@ -845,7 +930,7 @@ public:
 };
 
 // Class OnlineSubsystemEOS.OnlineVoiceInterfaceEOS
-// 0x0238 (0x0060 - 0x0298)
+// 0x0288 (0x0060 - 0x02E8)
 class UOnlineVoiceInterfaceEOS : public UObject
 {
 public:
@@ -860,16 +945,26 @@ public:
 	class TArray<class FString>                        AccountsWithAgreementResponse;                 // 0x00F8 (0x0010) [0x0000004000400000] (CPF_NeedCtorLink | CPF_PrivateWrite)
 	struct FMap_Mirror                                 ProductUserIdToEpicUserIdMap;                  // 0x0108 (0x0050) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
 	struct FMap_Mirror                                 PendingEpicIdQueries;                          // 0x0158 (0x0050) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
-	struct FScriptDelegate                             __EventLeftVoiceRoom__Delegate;                // 0x01A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventJoinedVoiceRoom__Delegate;              // 0x01C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventRemovedFromVoiceRoom__Delegate;         // 0x01D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerJoinedVoiceRoom__Delegate;        // 0x01F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerLeftVoiceRoom__Delegate;          // 0x0208 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerStatusChanged__Delegate;          // 0x0220 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventPlayerVoiceAgreementStatusChanged__Delegate;// 0x0238 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventVoiceRecordingStatusChanged__Delegate;  // 0x0250 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x0268 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x0280 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventLeftVoiceRoom__Delegate;                // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventLeftVoiceRoom__Delegate_UnknownData00[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventJoinedVoiceRoom__Delegate;              // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventJoinedVoiceRoom__Delegate_UnknownData01[0x8];// 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventRemovedFromVoiceRoom__Delegate;         // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventRemovedFromVoiceRoom__Delegate_UnknownData02[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventPlayerJoinedVoiceRoom__Delegate;        // 0x0208 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventPlayerJoinedVoiceRoom__Delegate_UnknownData03[0x8];// 0x0210 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventPlayerLeftVoiceRoom__Delegate;          // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventPlayerLeftVoiceRoom__Delegate_UnknownData04[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventPlayerStatusChanged__Delegate;          // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventPlayerStatusChanged__Delegate_UnknownData05[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventPlayerVoiceAgreementStatusChanged__Delegate;// 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventPlayerVoiceAgreementStatusChanged__Delegate_UnknownData06[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventVoiceRecordingStatusChanged__Delegate;  // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventVoiceRecordingStatusChanged__Delegate_UnknownData07[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlayerTalkingStateChange__Delegate;        // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlayerTalkingStateChange__Delegate_UnknownData08[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRecognitionComplete__Delegate;             // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRecognitionComplete__Delegate_UnknownData09[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.OnlineVoiceInterfaceEOS"))
@@ -945,13 +1040,14 @@ public:
 };
 
 // Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1
-// 0x0020 (0x0060 - 0x0080)
+// 0x0028 (0x0060 - 0x0088)
 class U__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1 : public UObject
 {
 public:
 	int32_t                                            LocalUserNum;                                  // 0x0060 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             Callback;                                      // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          Callback_UnknownData01[0x8];                   // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class OnlineSubsystemEOS.__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1"))

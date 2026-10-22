@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: Engine_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -2987,15 +2987,15 @@ struct UDownloadableContentEnumerator_execDeleteDLC_Params
 // [0x00020003] 
 struct UDownloadableContentEnumerator_execClearFindDLCDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function Engine.DownloadableContentEnumerator.AddFindDLCDelegate
 // [0x00020003] 
 struct UDownloadableContentEnumerator_execAddFindDLCDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.DownloadableContentEnumerator.OnFindDLCComplete
@@ -5687,8 +5687,8 @@ struct AGameInfo_execGetIntOption_Params
 struct AGameInfo_execSanitizePlayerNameWordFilter_Params
 {
 	class FString                                      PlayerName;                                       // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0030 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function Engine.GameInfo.NameSanitizedDelegate
@@ -5785,7 +5785,7 @@ struct AGameInfo_execSetGameSpeed_Params
 struct AGameInfo_execDebugPause_Params
 {
 	// int32_t                                         Index;                                            // 0x0000 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          CanUnpauseCriteriaMet;                            // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          CanUnpauseCriteriaMet;                            // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.GameInfo.ForceClearUnpauseDelegates
@@ -5800,7 +5800,7 @@ struct AGameInfo_execForceClearUnpauseDelegates_Params
 struct AGameInfo_eventClearPause_Params
 {
 	// int32_t                                         Index;                                            // 0x0000 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          CanUnpauseCriteriaMet;                            // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          CanUnpauseCriteriaMet;                            // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.GameInfo.SetPause
@@ -5808,9 +5808,9 @@ struct AGameInfo_eventClearPause_Params
 struct AGameInfo_execSetPause_Params
 {
 	class APlayerController*                           PC;                                               // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             CanUnpauseDelegate;                               // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         FoundIndex;                                       // 0x0024 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             CanUnpauseDelegate;                               // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         FoundIndex;                                       // 0x002C (0x0004) [0x0000000000000000]               
 };
 
 // Function Engine.GameInfo.CanUnpause
@@ -7297,14 +7297,14 @@ struct UGroupComponent_ORS_execAddComponents_Params
 // [0x00020401] 
 struct UGroupComponent_ORS_execRemoveComponent_Params
 {
-	struct FComponentTemplate                          ComponentToRemove;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FComponentTemplate                          ComponentToRemove;                                // 0x0000 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.GroupComponent_ORS.AddComponent
 // [0x00020401] 
 struct UGroupComponent_ORS_execAddComponent_Params
 {
-	struct FComponentTemplate                          ComponentToAdd;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FComponentTemplate                          ComponentToAdd;                                   // 0x0000 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.GroupComponent_ORS.RemoveClassDefaultObject
@@ -10734,9 +10734,9 @@ struct APlayerController_execSetPause_Params
 {
 	uint32_t                                           bPause : 1;                                       // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             CanUnpauseDelegate;                               // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// uint32_t                                        bResult : 1;                                      // 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FScriptDelegate                             CanUnpauseDelegate;                               // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        bResult : 1;                                      // 0x002C (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function Engine.PlayerController.CanUnpause
@@ -11754,12 +11754,12 @@ struct APlayerController_execOnUnregisterPlayerCompleteForHostMigrate_Params
 struct APlayerController_execRemoveMissingPeersFromSession_Params
 {
 	class FName                                        SessionName;                                      // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             UnregisterDelegate;                               // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class TArray<struct FUniqueNetId>               RegisteredPlayers;                                // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FUniqueNetId                             ZeroId;                                           // 0x0038 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         PlayerIdx;                                        // 0x0080 (0x0004) [0x0000000000000000]               
-	// class APlayerReplicationInfo*                   RegisteredPRI;                                    // 0x0088 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             UnregisterDelegate;                               // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class TArray<struct FUniqueNetId>               RegisteredPlayers;                                // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FUniqueNetId                             ZeroId;                                           // 0x0040 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         PlayerIdx;                                        // 0x0088 (0x0004) [0x0000000000000000]               
+	// class APlayerReplicationInfo*                   RegisteredPRI;                                    // 0x0090 (0x0008) [0x0000000000000000]               
 };
 
 // Function Engine.PlayerController.GetPRIFromNetId
@@ -12829,13 +12829,13 @@ struct UCloudSaveSystem_execOnDeleteSaveDataComplete_Params
 	class FString                                      StorageID;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         Scan;                                             // 0x0050 (0x0004) [0x0000000000000000]               
-	// int32_t                                         Index;                                            // 0x0054 (0x0004) [0x0000000000000000]               
-	// int32_t                                         SlotDeleted;                                      // 0x0058 (0x0004) [0x0000000000000000]               
-	// int32_t                                         NumSaveSlots;                                     // 0x005C (0x0004) [0x0000000000000000]               
-	// class FString                                   DataStoreID;                                      // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   DataBlobName;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         Scan;                                             // 0x0058 (0x0004) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x005C (0x0004) [0x0000000000000000]               
+	// int32_t                                         SlotDeleted;                                      // 0x0060 (0x0004) [0x0000000000000000]               
+	// int32_t                                         NumSaveSlots;                                     // 0x0064 (0x0004) [0x0000000000000000]               
+	// class FString                                   DataStoreID;                                      // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   DataBlobName;                                     // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystem.DeleteSaveData
@@ -12844,12 +12844,12 @@ struct UCloudSaveSystem_execDeleteSaveData_Params
 {
 	int32_t                                            SaveSlot;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDeleteSaveDataCallback;                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class FString                                   DataStoreID;                                      // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   BlobName;                                         // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0048 (0x0008) [0x0000000000000000]               
-	// uint32_t                                        RValue : 1;                                       // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FScriptDelegate                             InDeleteSaveDataCallback;                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class FString                                   DataStoreID;                                      // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   BlobName;                                         // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0050 (0x0008) [0x0000000000000000]               
+	// uint32_t                                        RValue : 1;                                       // 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function Engine.CloudSaveSystem.OnSetSaveDataComplete
@@ -12863,7 +12863,7 @@ struct UCloudSaveSystem_execOnSetSaveDataComplete_Params
 	class FString                                      Error;                                            // 0x0028 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         SaveSlotIndex;                                    // 0x0038 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Index;                                            // 0x003C (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          LocalCallback;                                    // 0x0040 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          LocalCallback;                                    // 0x0040 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystem.SetSaveData
@@ -12872,14 +12872,14 @@ struct UCloudSaveSystem_execSetSaveData_Params
 {
 	int32_t                                            SaveSlot;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InSetSaveDataCallback;                            // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class TArray<uint8_t>                              SaveDataBlob;                                     // 0x0020 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FSetSaveDataCallbackStruct               CallbackStruct;                                   // 0x0030 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0050 (0x0008) [0x0000000000000000]               
-	// class FString                                   DataStoreID;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   BlobName;                                         // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// uint32_t                                        ErrorOccured : 1;                                 // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class FString                                   Error;                                            // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             InSetSaveDataCallback;                            // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<uint8_t>                              SaveDataBlob;                                     // 0x0028 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FSetSaveDataCallbackStruct               CallbackStruct;                                   // 0x0038 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0060 (0x0008) [0x0000000000000000]               
+	// class FString                                   DataStoreID;                                      // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   BlobName;                                         // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        ErrorOccured : 1;                                 // 0x0088 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class FString                                   Error;                                            // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystem.OnGetSaveDataComplete
@@ -12894,7 +12894,7 @@ struct UCloudSaveSystem_execOnGetSaveDataComplete_Params
 	class FString                                      Error;                                            // 0x0038 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         SaveSlotIndex;                                    // 0x0048 (0x0004) [0x0000000000000000]               
 	// int32_t                                         Index;                                            // 0x004C (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          LocalCallback;                                    // 0x0050 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          LocalCallback;                                    // 0x0050 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystem.GetSaveData
@@ -12903,14 +12903,14 @@ struct UCloudSaveSystem_execGetSaveData_Params
 {
 	int32_t                                            SaveSlot;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             OnGetSaveDataCallback;                            // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class FString                                   DataStoreID;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FGetSaveDataCallbackStruct               CallbackStruct;                                   // 0x0030 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0050 (0x0008) [0x0000000000000000]               
-	// class TArray<uint8_t>                           EmptyBuffer;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   BlobName;                                         // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// uint32_t                                        ErrorOccured : 1;                                 // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class FString                                   Error;                                            // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnGetSaveDataCallback;                            // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class FString                                   DataStoreID;                                      // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FGetSaveDataCallbackStruct               CallbackStruct;                                   // 0x0038 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FSaveSlotOperation                       SlotOperation;                                    // 0x0060 (0x0008) [0x0000000000000000]               
+	// class TArray<uint8_t>                           EmptyBuffer;                                      // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   BlobName;                                         // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        ErrorOccured : 1;                                 // 0x0088 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class FString                                   Error;                                            // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystem.Init
@@ -14226,8 +14226,8 @@ struct UHttpBaseInterface_execGetHeader_Params
 // [0x00020003] 
 struct UHttpRequestInterface_execSetProcessRequestCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ProcessRequestCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UHttpRequestInterface*                       ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             ProcessRequestCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UHttpRequestInterface*                       ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.HttpRequestInterface.OnProcessRequestComplete
@@ -14334,15 +14334,15 @@ struct UIniLocPatcher_execClearCachedFiles_Params
 // [0x00020003] 
 struct UIniLocPatcher_execClearReadFileDelegate_Params
 {
-	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function Engine.IniLocPatcher.AddReadFileDelegate
 // [0x00020003] 
 struct UIniLocPatcher_execAddReadFileDelegate_Params
 {
-	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.IniLocPatcher.AddFileToDownload
@@ -14379,7 +14379,7 @@ struct UIniLocPatcher_execTriggerDownloadCompleteDelegates_Params
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      Filename;                                         // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         Index;                                            // 0x0018 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          OnReadTitleFileComplete;                          // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          OnReadTitleFileComplete;                          // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.IniLocPatcher.OnFileCacheSaveComplete
@@ -14594,8 +14594,8 @@ struct UNetworkEncryptionKey_execGenerate_Params
 struct UOnlineAuthInterface_execRequestAccountAuthorization_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineAuthInterface.OnAccountAuthorization
@@ -14617,8 +14617,8 @@ struct UOnlineAuthInterface_execOnLoginChanged_Params
 struct UOnlineAuthInterface_execRequestMtxCode_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineAuthInterface.RequestAuthTicket
@@ -14626,8 +14626,8 @@ struct UOnlineAuthInterface_execRequestMtxCode_Params
 struct UOnlineAuthInterface_execRequestAuthTicket_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineAuthInterface.RequiresAuthTicket
@@ -14881,14 +14881,14 @@ struct UOnlineAuthInterface_execSendClientAuthRequest_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearServerConnectionCloseDelegate_Params
 {
-	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddServerConnectionCloseDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddServerConnectionCloseDelegate_Params
 {
-	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerConnectionCloseDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnServerConnectionClose
@@ -14902,14 +14902,14 @@ struct UOnlineAuthInterface_execOnServerConnectionClose_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearClientConnectionCloseDelegate_Params
 {
-	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddClientConnectionCloseDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddClientConnectionCloseDelegate_Params
 {
-	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientConnectionCloseDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnClientConnectionClose
@@ -14923,14 +14923,14 @@ struct UOnlineAuthInterface_execOnClientConnectionClose_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearServerAuthRetryRequestDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthRetryRequestDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthRetryRequestDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddServerAuthRetryRequestDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddServerAuthRetryRequestDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthRetryRequestDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthRetryRequestDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnServerAuthRetryRequest
@@ -14944,14 +14944,14 @@ struct UOnlineAuthInterface_execOnServerAuthRetryRequest_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearClientAuthEndSessionRequestDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthEndSessionRequestDelegate;              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthEndSessionRequestDelegate;              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddClientAuthEndSessionRequestDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddClientAuthEndSessionRequestDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthEndSessionRequestDelegate;              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthEndSessionRequestDelegate;              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnClientAuthEndSessionRequest
@@ -14965,14 +14965,14 @@ struct UOnlineAuthInterface_execOnClientAuthEndSessionRequest_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearServerAuthCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddServerAuthCompleteDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddServerAuthCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnServerAuthComplete
@@ -14990,14 +14990,14 @@ struct UOnlineAuthInterface_execOnServerAuthComplete_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearClientAuthCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddClientAuthCompleteDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddClientAuthCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnClientAuthComplete
@@ -15015,14 +15015,14 @@ struct UOnlineAuthInterface_execOnClientAuthComplete_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearServerAuthResponseDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthResponseDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthResponseDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddServerAuthResponseDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddServerAuthResponseDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthResponseDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthResponseDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnServerAuthResponse
@@ -15038,14 +15038,14 @@ struct UOnlineAuthInterface_execOnServerAuthResponse_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearClientAuthResponseDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthResponseDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthResponseDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddClientAuthResponseDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddClientAuthResponseDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthResponseDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthResponseDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnClientAuthResponse
@@ -15061,14 +15061,14 @@ struct UOnlineAuthInterface_execOnClientAuthResponse_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearServerAuthRequestDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthRequestDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthRequestDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddServerAuthRequestDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddServerAuthRequestDelegate_Params
 {
-	struct FScriptDelegate                             ServerAuthRequestDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ServerAuthRequestDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnServerAuthRequest
@@ -15085,14 +15085,14 @@ struct UOnlineAuthInterface_execOnServerAuthRequest_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearClientAuthRequestDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthRequestDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthRequestDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddClientAuthRequestDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddClientAuthRequestDelegate_Params
 {
-	struct FScriptDelegate                             ClientAuthRequestDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ClientAuthRequestDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnClientAuthRequest
@@ -15109,14 +15109,14 @@ struct UOnlineAuthInterface_execOnClientAuthRequest_Params
 // [0x00020000] 
 struct UOnlineAuthInterface_execClearAuthReadyDelegate_Params
 {
-	struct FScriptDelegate                             AuthReadyDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AuthReadyDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.AddAuthReadyDelegate
 // [0x00020000] 
 struct UOnlineAuthInterface_execAddAuthReadyDelegate_Params
 {
-	struct FScriptDelegate                             AuthReadyDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AuthReadyDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAuthInterface.OnAuthReady
@@ -15171,8 +15171,8 @@ struct UOnlineFriendsInterface_execRequestLinkedAccounts_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  AccountIds;                                       // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlineFriendsInterface.OnReceivedLinkedAccount
@@ -15288,14 +15288,14 @@ struct UOnlinePersistentAuthInterface_execGetRefreshToken_Params
 // [0x00020000] 
 struct UOnlinePersistentAuthInterface_execClearUnderageUserDetectedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePersistentAuthInterface.AddUnderageUserDetectedDelegate
 // [0x00020000] 
 struct UOnlinePersistentAuthInterface_execAddUnderageUserDetectedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePersistentAuthInterface.OnUnderageUserDetected
@@ -15322,7 +15322,7 @@ struct UOnlinePersistentAuthInterface_execClearRequestPinGrantCodeDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePersistentAuthInterface.AddRequestPinGrantCodeDelegate
@@ -15331,7 +15331,7 @@ struct UOnlinePersistentAuthInterface_execAddRequestPinGrantCodeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePersistentAuthInterface.OnReceievedPinGrantCode
@@ -16029,14 +16029,14 @@ struct UOnlineSubsystem_execStartOnlineGameSession_Params
 // [0x00020000] 
 struct UOnlineSubsystem_execClearSystemUserControllerPairingChangedDelegate_Params
 {
-	struct FScriptDelegate                             PairingChangeDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PairingChangeDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSubsystem.AddSystemUserControllerPairingChangedDelegate
 // [0x00020000] 
 struct UOnlineSubsystem_execAddSystemUserControllerPairingChangedDelegate_Params
 {
-	struct FScriptDelegate                             PairingChangeDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PairingChangeDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSubsystem.OnSystemUserControllerPairingChanged
@@ -16240,7 +16240,7 @@ struct UOnlineSubsystem_execReadOnlineAvatars_Params
 	class TArray<struct FUniqueNetId>                  PlayerNetIds;                                     // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint8_t                                            Size;                                             // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;                 // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineAvatarCompleteDelegate;                 // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSubsystem.OnReadOnlineAvatarComplete
@@ -16634,7 +16634,7 @@ struct UOnlineSubsystem_execGetFeaturePrivilegeLevel_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            Privilege;                                        // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSubsystem.FeaturePrivilegeLevelUpdated
@@ -16745,8 +16745,8 @@ struct UPlatformInterfaceBase_execClearDelegate_Params
 {
 	int32_t                                            DelegateType;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function Engine.PlatformInterfaceBase.AddDelegate
@@ -16755,7 +16755,7 @@ struct UPlatformInterfaceBase_execAddDelegate_Params
 {
 	int32_t                                            DelegateType;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.PlatformInterfaceBase.GetInAppMessageInterface
@@ -26053,8 +26053,8 @@ struct UUIDataStore_eventRefreshSubscribers_Params
 	class UUIDataProvider*                             SourceProvider;                                   // 0x0010 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	int32_t                                            ArrayIndex;                                       // 0x0018 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	// int32_t                                         Idx;                                              // 0x001C (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Subscriber;                                       // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FScriptDelegate>            SubscriberArrayCopy;                              // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Subscriber;                                       // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FScriptDelegate>            SubscriberArrayCopy;                              // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.UIDataStore.NotifyGameSessionEnded
@@ -31659,14 +31659,14 @@ struct UOnlineTitleFileCacheInterface_execGetTitleFileContents_Params
 // [0x00020000] 
 struct UOnlineTitleFileCacheInterface_execClearSaveTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             SaveCompleteDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SaveCompleteDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileCacheInterface.AddSaveTitleFileCompleteDelegate
 // [0x00020000] 
 struct UOnlineTitleFileCacheInterface_execAddSaveTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             SaveCompleteDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SaveCompleteDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileCacheInterface.OnSaveTitleFileComplete
@@ -31692,14 +31692,14 @@ struct UOnlineTitleFileCacheInterface_execSaveTitleFile_Params
 // [0x00020000] 
 struct UOnlineTitleFileCacheInterface_execClearLoadTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             LoadCompleteDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoadCompleteDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileCacheInterface.AddLoadTitleFileCompleteDelegate
 // [0x00020000] 
 struct UOnlineTitleFileCacheInterface_execAddLoadTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             LoadCompleteDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoadCompleteDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileCacheInterface.OnLoadTitleFileComplete
@@ -31723,14 +31723,14 @@ struct UOnlineTitleFileCacheInterface_execLoadTitleFile_Params
 // [0x00020000] 
 struct UOnlineTitleFileInterface_execClearRequestTitleFileListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RequestTitleFileListDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RequestTitleFileListDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileInterface.AddRequestTitleFileListCompleteDelegate
 // [0x00020000] 
 struct UOnlineTitleFileInterface_execAddRequestTitleFileListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RequestTitleFileListDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RequestTitleFileListDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileInterface.OnRequestTitleFileListComplete
@@ -31785,14 +31785,14 @@ struct UOnlineTitleFileInterface_execGetTitleFileContents_Params
 // [0x00020000] 
 struct UOnlineTitleFileInterface_execClearReadTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileInterface.AddReadTitleFileCompleteDelegate
 // [0x00020000] 
 struct UOnlineTitleFileInterface_execAddReadTitleFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadTitleFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineTitleFileInterface.ReadTitleFile
@@ -31824,14 +31824,14 @@ struct UUserCloudFileInterface_execClearAllDelegates_Params
 // [0x00020000] 
 struct UUserCloudFileInterface_execClearDeleteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.AddDeleteUserFileCompleteDelegate
 // [0x00020000] 
 struct UUserCloudFileInterface_execAddDeleteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.DeleteUserFile
@@ -31859,14 +31859,14 @@ struct UUserCloudFileInterface_execOnDeleteUserFileComplete_Params
 // [0x00020000] 
 struct UUserCloudFileInterface_execClearWriteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.AddWriteUserFileCompleteDelegate
 // [0x00020000] 
 struct UUserCloudFileInterface_execAddWriteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.WriteUserFile
@@ -31893,14 +31893,14 @@ struct UUserCloudFileInterface_execOnWriteUserFileComplete_Params
 // [0x00020000] 
 struct UUserCloudFileInterface_execClearReadUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.AddReadUserFileCompleteDelegate
 // [0x00020000] 
 struct UUserCloudFileInterface_execAddReadUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.ReadUserFile
@@ -31934,14 +31934,14 @@ struct UUserCloudFileInterface_execGetUserFileList_Params
 // [0x00020000] 
 struct UUserCloudFileInterface_execClearEnumerateUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.AddEnumerateUserFileCompleteDelegate
 // [0x00020000] 
 struct UUserCloudFileInterface_execAddEnumerateUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileInterface.EnumerateUserFiles
@@ -32026,8 +32026,8 @@ struct UCloudSaveSystemDataBlobStoreInterface_execDeleteDataBlob_Params
 {
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InDeleteDataBlobCallback;                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             InDeleteDataBlobCallback;                         // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0040 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.CloudSaveSystemDataBlobStoreInterface.DeleteDataBlobCallbackDelegate
@@ -32048,7 +32048,7 @@ struct UCloudSaveSystemDataBlobStoreInterface_execSetDataBlob_Params
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              DataBlob;                                         // 0x0020 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InSetDataBlobCallback;                            // 0x0030 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InSetDataBlobCallback;                            // 0x0030 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystemDataBlobStoreInterface.SetDataBlobCallbackDelegate
@@ -32068,7 +32068,7 @@ struct UCloudSaveSystemDataBlobStoreInterface_execGetDataBlob_Params
 {
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnGetDataBlobComplete;                            // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnGetDataBlobComplete;                            // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.CloudSaveSystemDataBlobStoreInterface.GetDataBlobCallbackDelegate
@@ -32155,14 +32155,14 @@ struct AColorScaleVolume_eventTouch_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearGamePlayersChangedDelegate_Params
 {
-	struct FScriptDelegate                             GamePlayersChangedDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GamePlayersChangedDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddGamePlayersChangedDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddGamePlayersChangedDelegate_Params
 {
-	struct FScriptDelegate                             GamePlayersChangedDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GamePlayersChangedDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnGamePlayersChanged
@@ -32177,14 +32177,14 @@ struct UOnlineGameInterface_execOnGamePlayersChanged_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearJoinMigratedOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddJoinMigratedOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddJoinMigratedOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinMigratedOnlineGameCompleteDelegate;           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnJoinMigratedOnlineGameComplete
@@ -32211,14 +32211,14 @@ struct UOnlineGameInterface_execJoinMigratedOnlineGame_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearMigrateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddMigrateOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddMigrateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MigrateOnlineGameCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnMigrateOnlineGameComplete
@@ -32243,14 +32243,14 @@ struct UOnlineGameInterface_execMigrateOnlineGame_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearRecalculateSkillRatingCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RecalculateSkillRatingGameCompleteDelegate;       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecalculateSkillRatingGameCompleteDelegate;       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddRecalculateSkillRatingCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddRecalculateSkillRatingCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RecalculateSkillRatingCompleteDelegate;           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecalculateSkillRatingCompleteDelegate;           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnRecalculateSkillRatingComplete
@@ -32286,7 +32286,7 @@ struct UOnlineGameInterface_execClearGameInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddGameInviteAcceptedDelegate
@@ -32295,7 +32295,7 @@ struct UOnlineGameInterface_execAddGameInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GameInviteAcceptedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnGameInviteAccepted
@@ -32318,14 +32318,14 @@ struct UOnlineGameInterface_execGetArbitratedPlayers_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearArbitrationRegistrationCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddArbitrationRegistrationCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddArbitrationRegistrationCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ArbitrationRegistrationCompleteDelegate;          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnArbitrationRegistrationComplete
@@ -32348,14 +32348,14 @@ struct UOnlineGameInterface_execRegisterForArbitration_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearEndOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddEndOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddEndOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EndOnlineGameCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnEndOnlineGameComplete
@@ -32378,14 +32378,14 @@ struct UOnlineGameInterface_execEndOnlineGame_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearStartOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddStartOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddStartOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StartOnlineGameCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnStartOnlineGameComplete
@@ -32408,14 +32408,14 @@ struct UOnlineGameInterface_execStartOnlineGame_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearUnregisterPlayerCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddUnregisterPlayerCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddUnregisterPlayerCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisterPlayerCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnUnregisterPlayerComplete
@@ -32449,14 +32449,14 @@ struct UOnlineGameInterface_execUnregisterPlayer_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearRegisterPlayerCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddRegisterPlayerCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddRegisterPlayerCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterPlayerCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnRegisterPlayerComplete
@@ -32500,14 +32500,14 @@ struct UOnlineGameInterface_execGetResolvedConnectString_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearJoinOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddJoinOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddJoinOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinOnlineGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnJoinOnlineGameComplete
@@ -32587,14 +32587,14 @@ struct UOnlineGameInterface_execReadPlatformSpecificSessionInfo_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearQosStatusChangedDelegate_Params
 {
-	struct FScriptDelegate                             QosStatusChangedDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QosStatusChangedDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddQosStatusChangedDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddQosStatusChangedDelegate_Params
 {
-	struct FScriptDelegate                             QosStatusChangedDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QosStatusChangedDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnQosStatusChanged
@@ -32609,14 +32609,14 @@ struct UOnlineGameInterface_execOnQosStatusChanged_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearCancelFindOnlineGamesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddCancelFindOnlineGamesCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddCancelFindOnlineGamesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CancelFindOnlineGamesCompleteDelegate;            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnCancelFindOnlineGamesComplete
@@ -32637,14 +32637,14 @@ struct UOnlineGameInterface_execCancelFindOnlineGames_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearFindOnlineGamesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddFindOnlineGamesCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddFindOnlineGamesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FindOnlineGamesCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnFindOnlineGamesComplete
@@ -32668,14 +32668,14 @@ struct UOnlineGameInterface_execFindOnlineGames_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearDestroyOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddDestroyOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddDestroyOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DestroyOnlineGameCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnDestroyOnlineGameComplete
@@ -32706,14 +32706,14 @@ struct UOnlineGameInterface_execGetGameSettings_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearUpdateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddUpdateOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddUpdateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UpdateOnlineGameCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnUpdateOnlineGameComplete
@@ -32738,14 +32738,14 @@ struct UOnlineGameInterface_execUpdateOnlineGame_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearCreateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddCreateOnlineGameCompleteDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddCreateOnlineGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CreateOnlineGameCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.OnCreateOnlineGameComplete
@@ -32781,14 +32781,14 @@ struct UOnlineGameInterface_execSetFriendJoinLocation_Params
 // [0x00020000] 
 struct UOnlineGameInterface_execClearReportMatchmakingInfoDelegate_Params
 {
-	struct FScriptDelegate                             OldDelegate;                                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OldDelegate;                                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.AddReportMatchmakingInfoDelegate
 // [0x00020000] 
 struct UOnlineGameInterface_execAddReportMatchmakingInfoDelegate_Params
 {
-	struct FScriptDelegate                             NewDelegate;                                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             NewDelegate;                                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameInterface.EventReportMatchmakingInfo
@@ -32822,7 +32822,7 @@ struct UOnlinePlayerInterface_execAddPlayerUnblockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnPlayerUnblocked
@@ -32841,7 +32841,7 @@ struct UOnlinePlayerInterface_execAddPlayerBlockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnPlayerBlocked
@@ -32860,7 +32860,7 @@ struct UOnlinePlayerInterface_execAddBlockListUpdatedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Delegate;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnBlockListUpdated
@@ -32877,7 +32877,7 @@ struct UOnlinePlayerInterface_execEpicIDToPlatformID_Params
 	struct FUniqueNetId                                EpicAccountId;                                    // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TargetPlatform;                                   // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.EpicIDToPlatformIDCallback
@@ -32974,14 +32974,14 @@ struct UOnlinePlayerInterface_execSetInputAPI_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearInputAPIChangedDelegate_Params
 {
-	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddInputAPIChangedDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddInputAPIChangedDelegate_Params
 {
-	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnInputAPIChanged
@@ -32995,28 +32995,28 @@ struct UOnlinePlayerInterface_execOnInputAPIChanged_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearUnregisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearRegisteredControllerDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearRegisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddUnregisteredControllerDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddUnregisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddRegisteredControllerDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddRegisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnUnregisteredController
@@ -33071,14 +33071,14 @@ struct UOnlinePlayerInterface_execGetPlayHistoryRegistrationKey_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execRemoveCanPlayOnlineChangedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddCanPlayOnlineChangedDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddCanPlayOnlineChangedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.GetPlayerLanguage
@@ -33116,7 +33116,7 @@ struct UOnlinePlayerInterface_execClearReadAchievementsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAchievementsCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAchievementsCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadAchievementsCompleteDelegate
@@ -33125,7 +33125,7 @@ struct UOnlinePlayerInterface_execAddReadAchievementsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAchievementsCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAchievementsCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadAchievementsComplete
@@ -33153,7 +33153,7 @@ struct UOnlinePlayerInterface_execClearUnlockAchievementCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             UnlockAchievementCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnlockAchievementCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddUnlockAchievementCompleteDelegate
@@ -33162,7 +33162,7 @@ struct UOnlinePlayerInterface_execAddUnlockAchievementCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             UnlockAchievementCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnlockAchievementCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnUnlockAchievementComplete
@@ -33199,7 +33199,7 @@ struct UOnlinePlayerInterface_execClearFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendMessageReceivedDelegate
@@ -33208,7 +33208,7 @@ struct UOnlinePlayerInterface_execAddFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendMessageReceived
@@ -33235,14 +33235,14 @@ struct UOnlinePlayerInterface_execGetFriendMessages_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearJoinFriendGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddJoinFriendGameCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddJoinFriendGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnJoinFriendGameComplete
@@ -33268,7 +33268,7 @@ struct UOnlinePlayerInterface_execClearReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReceivedGameInviteDelegate
@@ -33277,7 +33277,7 @@ struct UOnlinePlayerInterface_execAddReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReceivedGameInvite
@@ -33328,7 +33328,7 @@ struct UOnlinePlayerInterface_execClearFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendInviteCanceledDelegate
@@ -33337,7 +33337,7 @@ struct UOnlinePlayerInterface_execAddFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendInviteCanceled
@@ -33355,7 +33355,7 @@ struct UOnlinePlayerInterface_execClearFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendInviteReceivedDelegate
@@ -33364,7 +33364,7 @@ struct UOnlinePlayerInterface_execAddFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendInviteReceived
@@ -33394,7 +33394,7 @@ struct UOnlinePlayerInterface_execClearRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddRemoveFriendCompleteDelegate
@@ -33403,7 +33403,7 @@ struct UOnlinePlayerInterface_execAddRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnRemoveFriendComplete
@@ -33431,7 +33431,7 @@ struct UOnlinePlayerInterface_execClearDenyFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddDenyFriendInviteCompleteDelegate
@@ -33440,7 +33440,7 @@ struct UOnlinePlayerInterface_execAddDenyFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnDenyFriendInviteComplete
@@ -33467,7 +33467,7 @@ struct UOnlinePlayerInterface_execClearAcceptFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddAcceptFriendInviteCompleteDelegate
@@ -33476,7 +33476,7 @@ struct UOnlinePlayerInterface_execAddAcceptFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnAcceptFriendInviteComplete
@@ -33493,7 +33493,7 @@ struct UOnlinePlayerInterface_execClearAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddAddFriendByNameCompleteDelegate
@@ -33502,7 +33502,7 @@ struct UOnlinePlayerInterface_execAddAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnAddFriendByNameComplete
@@ -33539,7 +33539,7 @@ struct UOnlinePlayerInterface_execClearQueryUserByDisplayNameCompleteDelegate_Pa
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddQueryUserByDisplayNameCompleteDelegate
@@ -33548,7 +33548,7 @@ struct UOnlinePlayerInterface_execAddQueryUserByDisplayNameCompleteDelegate_Para
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnQueryUserByDisplayName
@@ -33578,7 +33578,7 @@ struct UOnlinePlayerInterface_execClearAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddAddFriendCompleteDelegate
@@ -33587,7 +33587,7 @@ struct UOnlinePlayerInterface_execAddAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnAddFriendComplete
@@ -33611,14 +33611,14 @@ struct UOnlinePlayerInterface_execGetKeyboardInputResults_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearKeyboardInputDoneDelegate_Params
 {
-	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddKeyboardInputDoneDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddKeyboardInputDoneDelegate_Params
 {
-	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnKeyboardInputComplete
@@ -33681,7 +33681,7 @@ struct UOnlinePlayerInterface_execClearReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadFriendsCompleteDelegate
@@ -33690,7 +33690,7 @@ struct UOnlinePlayerInterface_execAddReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadFriendsComplete
@@ -33717,7 +33717,7 @@ struct UOnlinePlayerInterface_execClearWritePlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WritePlayerStorageCompleteDelegate;               // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WritePlayerStorageCompleteDelegate;               // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddWritePlayerStorageCompleteDelegate
@@ -33726,7 +33726,7 @@ struct UOnlinePlayerInterface_execAddWritePlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WritePlayerStorageCompleteDelegate;               // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WritePlayerStorageCompleteDelegate;               // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnWritePlayerStorageComplete
@@ -33763,7 +33763,7 @@ struct UOnlinePlayerInterface_execGetPlayerStorage_Params
 struct UOnlinePlayerInterface_execClearReadPlayerStorageForNetIdCompleteDelegate_Params
 {
 	struct FUniqueNetId                                NetId;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             ReadPlayerStorageForNetIdCompleteDelegate;        // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadPlayerStorageForNetIdCompleteDelegate;        // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadPlayerStorageForNetIdCompleteDelegate
@@ -33771,7 +33771,7 @@ struct UOnlinePlayerInterface_execClearReadPlayerStorageForNetIdCompleteDelegate
 struct UOnlinePlayerInterface_execAddReadPlayerStorageForNetIdCompleteDelegate_Params
 {
 	struct FUniqueNetId                                NetId;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             ReadPlayerStorageForNetIdCompleteDelegate;        // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadPlayerStorageForNetIdCompleteDelegate;        // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadPlayerStorageForNetIdComplete
@@ -33799,7 +33799,7 @@ struct UOnlinePlayerInterface_execClearReadPlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadPlayerStorageCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadPlayerStorageCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadPlayerStorageCompleteDelegate
@@ -33808,7 +33808,7 @@ struct UOnlinePlayerInterface_execAddReadPlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadPlayerStorageCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadPlayerStorageCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadPlayerStorageComplete
@@ -33837,7 +33837,7 @@ struct UOnlinePlayerInterface_execClearWriteProfileSettingsCompleteDelegate_Para
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddWriteProfileSettingsCompleteDelegate
@@ -33846,7 +33846,7 @@ struct UOnlinePlayerInterface_execAddWriteProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnWriteProfileSettingsComplete
@@ -33883,7 +33883,7 @@ struct UOnlinePlayerInterface_execClearReadProfileSettingsCompleteDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddReadProfileSettingsCompleteDelegate
@@ -33892,7 +33892,7 @@ struct UOnlinePlayerInterface_execAddReadProfileSettingsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnReadProfileSettingsComplete
@@ -33920,7 +33920,7 @@ struct UOnlinePlayerInterface_execClearAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddAvatarChangeDelegate
@@ -33929,7 +33929,7 @@ struct UOnlinePlayerInterface_execAddAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.GetFriendPresence
@@ -33945,7 +33945,7 @@ struct UOnlinePlayerInterface_execClearFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendPresenceChangeDelegate
@@ -33954,7 +33954,7 @@ struct UOnlinePlayerInterface_execAddFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearFriendsChangeDelegate
@@ -33963,7 +33963,7 @@ struct UOnlinePlayerInterface_execClearFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddFriendsChangeDelegate
@@ -33972,51 +33972,51 @@ struct UOnlinePlayerInterface_execAddFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearMutingChangeDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearMutingChangeDelegate_Params
 {
-	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddMutingChangeDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddMutingChangeDelegate_Params
 {
-	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginCancelledDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearLoginCancelledDelegate_Params
 {
-	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginCancelledDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddLoginCancelledDelegate_Params
 {
-	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearLoginStatusChangeDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearLoginStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginStatusDelegate;                              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	struct FScriptDelegate                             LoginStatusDelegate;                              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginStatusChangeDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddLoginStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginStatusDelegate;                              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	struct FScriptDelegate                             LoginStatusDelegate;                              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginStatusChange
@@ -34032,42 +34032,42 @@ struct UOnlinePlayerInterface_execOnLoginStatusChange_Params
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearLoginChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginChangeDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddLoginChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearUserSignInCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearUserSignInCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSignInCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSignInCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddUserSignInCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddUserSignInCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSignInCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSignInCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.ClearUserSwitchCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execClearUserSwitchCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddUserSwitchCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterface_execAddUserSwitchCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.SetPrimaryPlayerGamepadToLastInput
@@ -34380,7 +34380,7 @@ struct UOnlinePlayerInterface_execClearLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddLogoutCompletedDelegate
@@ -34389,7 +34389,7 @@ struct UOnlinePlayerInterface_execAddLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnLogoutCompleted
@@ -34414,7 +34414,7 @@ struct UOnlinePlayerInterface_execClearLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.AddLoginFailedDelegate
@@ -34423,7 +34423,7 @@ struct UOnlinePlayerInterface_execAddLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnLoginFailed
@@ -34534,7 +34534,7 @@ struct UOnlinePlayerInterface_execAddFriendInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteAccepted;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteAccepted;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterface.OnFriendInviteAccepted
@@ -34588,9 +34588,9 @@ struct UOnlinePlayerInterface_execOnUserSwitchComplete_Params
 struct UOnlinePlayerInterfaceEx_execWordFilterSanitizeString_Params
 {
 	class FString                                      Comment;                                          // 0x0000 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FUniqueNetId                                PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnSanitizeStringComplete
@@ -34625,14 +34625,14 @@ struct UOnlinePlayerInterfaceEx_execRecordPlayersRecentlyMet_Params
 // [0x00020000] 
 struct UOnlinePlayerInterfaceEx_execClearSaveDataNoSpaceDialogCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddSaveDataNoSpaceDialogCompleteDelegate
 // [0x00020000] 
 struct UOnlinePlayerInterfaceEx_execAddSaveDataNoSpaceDialogCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnSaveDataNoSpaceDialogComplete
@@ -34732,7 +34732,7 @@ struct UOnlinePlayerInterfaceEx_execClearReadCrossTitleProfileSettingsCompleteDe
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddReadCrossTitleProfileSettingsCompleteDelegate
@@ -34741,7 +34741,7 @@ struct UOnlinePlayerInterfaceEx_execAddReadCrossTitleProfileSettingsCompleteDele
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnReadCrossTitleProfileSettingsComplete
@@ -34802,7 +34802,7 @@ struct UOnlinePlayerInterfaceEx_execClearProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddProfileDataChangedDelegate
@@ -34811,7 +34811,7 @@ struct UOnlinePlayerInterfaceEx_execAddProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnProfileDataChanged
@@ -34855,7 +34855,7 @@ struct UOnlinePlayerInterfaceEx_execClearDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.AddDeviceSelectionDoneDelegate
@@ -34864,7 +34864,7 @@ struct UOnlinePlayerInterfaceEx_execAddDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePlayerInterfaceEx.OnDeviceSelectionComplete
@@ -35187,7 +35187,7 @@ struct ACoverReplicator_execPurgeOldEntries_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execDownloadAllWorkshopData_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnDownloadedWorkshopData
@@ -35212,14 +35212,14 @@ struct UOnlineCommunityContentInterface_execRateContent_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execClearGetContentPayloadCompleteDelegate_Params
 {
-	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddGetContentPayloadCompleteDelegate
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execAddGetContentPayloadCompleteDelegate_Params
 {
-	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GetContentPayloadCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnGetContentPayloadComplete
@@ -35246,14 +35246,14 @@ struct UOnlineCommunityContentInterface_execGetContentPayload_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execClearDownloadContentCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddDownloadContentCompleteDelegate
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execAddDownloadContentCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DownloadContentCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnDownloadContentComplete
@@ -35280,14 +35280,14 @@ struct UOnlineCommunityContentInterface_execDownloadContent_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execClearUploadContentCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UploadContentCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UploadContentCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddUploadContentCompleteDelegate
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execAddUploadContentCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UploadContentCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UploadContentCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnUploadContentComplete
@@ -35325,14 +35325,14 @@ struct UOnlineCommunityContentInterface_execGetFriendsContentList_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execClearReadFriendsContentListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddReadFriendsContentListCompleteDelegate
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execAddReadFriendsContentListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadFriendsContentListCompleteDelegate;           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnReadFriendsContentListComplete
@@ -35368,14 +35368,14 @@ struct UOnlineCommunityContentInterface_execGetContentList_Params
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execClearReadContentListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.AddReadContentListCompleteDelegate
 // [0x00020000] 
 struct UOnlineCommunityContentInterface_execAddReadContentListCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentListCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineCommunityContentInterface.OnReadContentListComplete
@@ -35450,7 +35450,7 @@ struct UOnlineGameDVRInterface_execClearRecordEventCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecordEventCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecordEventCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameDVRInterface.AddRecordEventCompleteDelegate
@@ -35459,7 +35459,7 @@ struct UOnlineGameDVRInterface_execAddRecordEventCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecordEventCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecordEventCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameDVRInterface.OnRecordEventComplete
@@ -35488,7 +35488,7 @@ struct UOnlineGameDVRInterface_execClearReadRecordedClipsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadRecordedClipsCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadRecordedClipsCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameDVRInterface.AddReadRecordedClipsCompleteDelegate
@@ -35497,7 +35497,7 @@ struct UOnlineGameDVRInterface_execAddReadRecordedClipsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadRecordedClipsCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadRecordedClipsCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineGameDVRInterface.ClearCachedRecordedClips
@@ -35540,14 +35540,14 @@ struct UOnlineGameDVRInterface_execEnableRecording_Params
 // [0x00020000] 
 struct USharedCloudFileInterface_execClearWriteSharedFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteSharedFileCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteSharedFileCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.SharedCloudFileInterface.AddWriteSharedFileCompleteDelegate
 // [0x00020000] 
 struct USharedCloudFileInterface_execAddWriteSharedFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteSharedFileCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteSharedFileCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.SharedCloudFileInterface.WriteSharedFile
@@ -35575,14 +35575,14 @@ struct USharedCloudFileInterface_execOnWriteSharedFileComplete_Params
 // [0x00020000] 
 struct USharedCloudFileInterface_execClearReadSharedFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadSharedFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSharedFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.SharedCloudFileInterface.AddReadSharedFileCompleteDelegate
 // [0x00020000] 
 struct USharedCloudFileInterface_execAddReadSharedFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadSharedFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSharedFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.SharedCloudFileInterface.ReadSharedFile
@@ -35632,7 +35632,7 @@ struct UOnlineSocialInterface_execClearPostLinkCompleted_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PostLinkDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostLinkDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.AddPostLinkCompleted
@@ -35641,7 +35641,7 @@ struct UOnlineSocialInterface_execAddPostLinkCompleted_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PostLinkDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostLinkDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.OnPostLinkCompleted
@@ -35669,7 +35669,7 @@ struct UOnlineSocialInterface_execClearPostImageCompleted_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PostImageDelegate;                                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostImageDelegate;                                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.AddPostImageCompleted
@@ -35678,7 +35678,7 @@ struct UOnlineSocialInterface_execAddPostImageCompleted_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PostImageDelegate;                                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostImageDelegate;                                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.OnPostImageCompleted
@@ -35705,14 +35705,14 @@ struct UOnlineSocialInterface_execPostImage_Params
 // [0x00020000] 
 struct UOnlineSocialInterface_execClearQuerySocialPostPrivilegesCompleted_Params
 {
-	struct FScriptDelegate                             PostPrivilegesDelegate;                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostPrivilegesDelegate;                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.AddQuerySocialPostPrivilegesCompleted
 // [0x00020000] 
 struct UOnlineSocialInterface_execAddQuerySocialPostPrivilegesCompleted_Params
 {
-	struct FScriptDelegate                             PostPrivilegesDelegate;                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PostPrivilegesDelegate;                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSocialInterface.OnQuerySocialPostPrivilegesCompleted
@@ -35792,7 +35792,7 @@ struct UOnlinePartyChatInterface_execClearPartyMembersInfoChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PartyMembersInfoChangedDelegate;                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PartyMembersInfoChangedDelegate;                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.AddPartyMembersInfoChangedDelegate
@@ -35801,7 +35801,7 @@ struct UOnlinePartyChatInterface_execAddPartyMembersInfoChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PartyMembersInfoChangedDelegate;                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PartyMembersInfoChangedDelegate;                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.OnPartyMembersInfoChanged
@@ -35822,7 +35822,7 @@ struct UOnlinePartyChatInterface_execClearPartyMemberListChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PartyMemberListChangedDelegate;                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PartyMemberListChangedDelegate;                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.AddPartyMemberListChangedDelegate
@@ -35831,7 +35831,7 @@ struct UOnlinePartyChatInterface_execAddPartyMemberListChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PartyMemberListChangedDelegate;                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PartyMemberListChangedDelegate;                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.OnPartyMemberListChanged
@@ -35867,7 +35867,7 @@ struct UOnlinePartyChatInterface_execClearSendPartyGameInvitesCompleteDelegate_P
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             SendPartyGameInvitesCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SendPartyGameInvitesCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.AddSendPartyGameInvitesCompleteDelegate
@@ -35876,7 +35876,7 @@ struct UOnlinePartyChatInterface_execAddSendPartyGameInvitesCompleteDelegate_Par
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             SendPartyGameInvitesCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SendPartyGameInvitesCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePartyChatInterface.OnSendPartyGameInvitesComplete
@@ -35909,14 +35909,14 @@ struct UOnlineNewsInterface_execGetNews_Params
 // [0x00020000] 
 struct UOnlineNewsInterface_execClearReadNewsCompletedDelegate_Params
 {
-	struct FScriptDelegate                             ReadNewsDelegate;                                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadNewsDelegate;                                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineNewsInterface.AddReadNewsCompletedDelegate
 // [0x00020000] 
 struct UOnlineNewsInterface_execAddReadNewsCompletedDelegate_Params
 {
-	struct FScriptDelegate                             ReadNewsDelegate;                                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadNewsDelegate;                                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineNewsInterface.OnReadNewsCompleted
@@ -35957,14 +35957,14 @@ struct UOnlineStatsInterface_execGetClientStatGuid_Params
 // [0x00020000] 
 struct UOnlineStatsInterface_execClearRegisterHostStatGuidCompleteDelegateDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.AddRegisterHostStatGuidCompleteDelegate
 // [0x00020000] 
 struct UOnlineStatsInterface_execAddRegisterHostStatGuidCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.OnRegisterHostStatGuidComplete
@@ -36004,14 +36004,14 @@ struct UOnlineStatsInterface_execWriteOnlinePlayerScores_Params
 // [0x00020000] 
 struct UOnlineStatsInterface_execClearFlushOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.AddFlushOnlineStatsCompleteDelegate
 // [0x00020000] 
 struct UOnlineStatsInterface_execAddFlushOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.OnFlushOnlineStatsComplete
@@ -36051,14 +36051,14 @@ struct UOnlineStatsInterface_execFreeStats_Params
 // [0x00020000] 
 struct UOnlineStatsInterface_execClearReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.AddReadOnlineStatsCompleteDelegate
 // [0x00020000] 
 struct UOnlineStatsInterface_execAddReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineStatsInterface.OnReadOnlineStatsComplete
@@ -36165,7 +36165,7 @@ struct UOnlineVoiceInterface_execClearRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineVoiceInterface.AddRecognitionCompleteDelegate
@@ -36174,7 +36174,7 @@ struct UOnlineVoiceInterface_execAddRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineVoiceInterface.OnRecognitionComplete
@@ -36229,14 +36229,14 @@ struct UOnlineVoiceInterface_execStartNetworkedVoice_Params
 // [0x00020000] 
 struct UOnlineVoiceInterface_execClearPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineVoiceInterface.AddPlayerTalkingDelegate
 // [0x00020000] 
 struct UOnlineVoiceInterface_execAddPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineVoiceInterface.OnPlayerTalkingStateChange
@@ -36367,7 +36367,7 @@ struct UOnlineContentInterface_execClearWriteSaveGameDataComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteSaveGameDataCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteSaveGameDataCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddWriteSaveGameDataComplete
@@ -36376,7 +36376,7 @@ struct UOnlineContentInterface_execAddWriteSaveGameDataComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteSaveGameDataCompleteDelegate;                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteSaveGameDataCompleteDelegate;                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnWriteSaveGameDataComplete
@@ -36413,7 +36413,7 @@ struct UOnlineContentInterface_execClearReadSaveGameDataComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddReadSaveGameDataComplete
@@ -36422,7 +36422,7 @@ struct UOnlineContentInterface_execAddReadSaveGameDataComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnReadSaveGameDataComplete
@@ -36484,7 +36484,7 @@ struct UOnlineContentInterface_execClearQueryAvailableDownloadsComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDownloadsDelegate;                           // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDownloadsDelegate;                           // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddQueryAvailableDownloadsComplete
@@ -36493,7 +36493,7 @@ struct UOnlineContentInterface_execAddQueryAvailableDownloadsComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDownloadsDelegate;                           // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDownloadsDelegate;                           // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnQueryAvailableDownloadsComplete
@@ -36528,7 +36528,7 @@ struct UOnlineContentInterface_execClearReadCrossTitleSaveGameDataComplete_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddReadCrossTitleSaveGameDataComplete
@@ -36537,7 +36537,7 @@ struct UOnlineContentInterface_execAddReadCrossTitleSaveGameDataComplete_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadSaveGameDataCompleteDelegate;                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnReadCrossTitleSaveGameDataComplete
@@ -36594,7 +36594,7 @@ struct UOnlineContentInterface_execClearReadCrossTitleContentCompleteDelegate_Pa
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ContentType;                                      // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddReadCrossTitleContentCompleteDelegate
@@ -36604,7 +36604,7 @@ struct UOnlineContentInterface_execAddReadCrossTitleContentCompleteDelegate_Para
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ContentType;                                      // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnReadCrossTitleContentComplete
@@ -36682,7 +36682,7 @@ struct UOnlineContentInterface_execClearReadContentComplete_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ContentType;                                      // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.AddReadContentComplete
@@ -36692,7 +36692,7 @@ struct UOnlineContentInterface_execAddReadContentComplete_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                            ContentType;                                      // 0x0001 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[6];                                      // 0x0002 (0x0006) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadContentCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineContentInterface.OnReadContentComplete
@@ -36706,16 +36706,16 @@ struct UOnlineContentInterface_execOnReadContentComplete_Params
 // [0x00024000] 
 struct UOnlineContentInterface_execClearContentChangeDelegate_Params
 {
-	struct FScriptDelegate                             ContentDelegate;                                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             ContentDelegate;                                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function Engine.OnlineContentInterface.AddContentChangeDelegate
 // [0x00024000] 
 struct UOnlineContentInterface_execAddContentChangeDelegate_Params
 {
-	struct FScriptDelegate                             ContentDelegate;                                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             ContentDelegate;                                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function Engine.OnlineContentInterface.OnContentChange
@@ -36728,14 +36728,14 @@ struct UOnlineContentInterface_execOnContentChange_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearHostStartPlayTogetherDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddHostStartPlayTogetherDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddHostStartPlayTogetherDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnHostStartPlayTogether
@@ -36749,14 +36749,14 @@ struct UOnlineLobbyInterface_execOnHostStartPlayTogether_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyErrorDelegate_Params
 {
-	struct FScriptDelegate                             LobbyErrorDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyErrorDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyErrorDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyErrorDelegate_Params
 {
-	struct FScriptDelegate                             LobbyErrorDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyErrorDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyError
@@ -36770,14 +36770,14 @@ struct UOnlineLobbyInterface_execOnLobbyError_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbySessionCreatedDelegate_Params
 {
-	struct FScriptDelegate                             LobbySessionCreatedDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbySessionCreatedDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbySessionCreatedDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbySessionCreatedDelegate_Params
 {
-	struct FScriptDelegate                             LobbySessionCreatedDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbySessionCreatedDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbySessionCreated
@@ -36815,14 +36815,14 @@ struct UOnlineLobbyInterface_execKickPlayer_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyDestroyedDelegate_Params
 {
-	struct FScriptDelegate                             LobbyDestroyedDelegate;                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyDestroyedDelegate;                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyDestroyedDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyDestroyedDelegate_Params
 {
-	struct FScriptDelegate                             LobbyDestroyedDelegate;                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyDestroyedDelegate;                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyDestroyed
@@ -36856,14 +36856,14 @@ struct UOnlineLobbyInterface_execShowInviteUI_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyInviteDelegate_Params
 {
-	struct FScriptDelegate                             LobbyInviteDelegate;                              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyInviteDelegate;                              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyInviteDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyInviteDelegate_Params
 {
-	struct FScriptDelegate                             LobbyInviteDelegate;                              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyInviteDelegate;                              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyInvite
@@ -36953,14 +36953,14 @@ struct UOnlineLobbyInterface_execGetLobbyAdmin_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyJoinGameDelegate_Params
 {
-	struct FScriptDelegate                             LobbyJoinGameDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyJoinGameDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyJoinGameDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyJoinGameDelegate_Params
 {
-	struct FScriptDelegate                             LobbyJoinGameDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyJoinGameDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyJoinGame
@@ -36976,14 +36976,14 @@ struct UOnlineLobbyInterface_execOnLobbyJoinGame_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyReceiveBinaryDataDelegate_Params
 {
-	struct FScriptDelegate                             LobbyReceiveBinaryDataDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyReceiveBinaryDataDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyReceiveBinaryDataDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyReceiveBinaryDataDelegate_Params
 {
-	struct FScriptDelegate                             LobbyReceiveBinaryDataDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyReceiveBinaryDataDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyReceiveBinaryData
@@ -37009,14 +37009,14 @@ struct UOnlineLobbyInterface_execSendLobbyBinaryData_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyReceiveMessageDelegate_Params
 {
-	struct FScriptDelegate                             LobbyReceiveMessageDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyReceiveMessageDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyReceiveMessageDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyReceiveMessageDelegate_Params
 {
-	struct FScriptDelegate                             LobbyReceiveMessageDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyReceiveMessageDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyReceiveMessage
@@ -37043,14 +37043,14 @@ struct UOnlineLobbyInterface_execSendLobbyMessage_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyMemberStatusUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbyMemberStatusUpdateDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyMemberStatusUpdateDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyMemberStatusUpdateDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyMemberStatusUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbyMemberStatusUpdateDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyMemberStatusUpdateDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyMemberStatusUpdate
@@ -37067,14 +37067,14 @@ struct UOnlineLobbyInterface_execOnLobbyMemberStatusUpdate_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbyMemberSettingsUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbyMemberSettingsUpdateDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyMemberSettingsUpdateDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbyMemberSettingsUpdateDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbyMemberSettingsUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbyMemberSettingsUpdateDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbyMemberSettingsUpdateDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbyMemberSettingsUpdate
@@ -37089,14 +37089,14 @@ struct UOnlineLobbyInterface_execOnLobbyMemberSettingsUpdate_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearLobbySettingsUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbySettingsUpdateDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbySettingsUpdateDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddLobbySettingsUpdateDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddLobbySettingsUpdateDelegate_Params
 {
-	struct FScriptDelegate                             LobbySettingsUpdateDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LobbySettingsUpdateDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnLobbySettingsUpdate
@@ -37128,14 +37128,14 @@ struct UOnlineLobbyInterface_execLeaveLobby_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearJoinLobbyCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinLobbyCompleteDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinLobbyCompleteDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddJoinLobbyCompleteDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddJoinLobbyCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinLobbyCompleteDelegate;                        // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinLobbyCompleteDelegate;                        // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnJoinLobbyComplete
@@ -37163,14 +37163,14 @@ struct UOnlineLobbyInterface_execJoinLobby_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearFindLobbiesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FindLobbiesCompleteDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FindLobbiesCompleteDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddFindLobbiesCompleteDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddFindLobbiesCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FindLobbiesCompleteDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FindLobbiesCompleteDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnFindLobbiesComplete
@@ -37208,14 +37208,14 @@ struct UOnlineLobbyInterface_execFindLobbies_Params
 // [0x00020000] 
 struct UOnlineLobbyInterface_execClearCreateLobbyCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CreateLobbyCompleteDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CreateLobbyCompleteDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.AddCreateLobbyCompleteDelegate
 // [0x00020000] 
 struct UOnlineLobbyInterface_execAddCreateLobbyCompleteDelegate_Params
 {
-	struct FScriptDelegate                             CreateLobbyCompleteDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CreateLobbyCompleteDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineLobbyInterface.OnCreateLobbyComplete
@@ -37244,14 +37244,14 @@ struct UOnlineLobbyInterface_execCreateLobby_Params
 // [0x00020000] 
 struct UOnlinePurchaseInterface_execClearMicroTxnResponseDelegate_Params
 {
-	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePurchaseInterface.AddMicroTxnResponseDelegate
 // [0x00020000] 
 struct UOnlinePurchaseInterface_execAddMicroTxnResponseDelegate_Params
 {
-	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlinePurchaseInterface.OnMicroTxnResponse
@@ -37279,8 +37279,8 @@ struct UOnlinePurchaseInterface_execGetAppPriceInfo_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class FName>                          AppNames;                                         // 0x0048 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.OnlinePurchaseInterface.EventGetAppPriceInfoComplete
@@ -37297,14 +37297,14 @@ struct UOnlinePurchaseInterface_execEventGetAppPriceInfoComplete_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearCaptureAvailabilityChangeDelegate_Params
 {
-	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddCaptureAvailabilityChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddCaptureAvailabilityChangeDelegate_Params
 {
-	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnCaptureAvailabilityChange
@@ -37318,14 +37318,14 @@ struct UOnlineSystemInterface_execOnCaptureAvailabilityChange_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearPlayerSigningOutDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddPlayerSigningOutDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddPlayerSigningOutDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnPlayerSigningOut
@@ -37361,14 +37361,14 @@ struct UOnlineSystemInterface_execHandleBootMessage_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearErrorDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddErrorDialogClosedDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddErrorDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnErrorDialogClosed
@@ -37382,14 +37382,14 @@ struct UOnlineSystemInterface_execOnErrorDialogClosed_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearCommerceDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddCommerceDialogClosedDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddCommerceDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnCommerceDialogClosed
@@ -37402,14 +37402,14 @@ struct UOnlineSystemInterface_execOnCommerceDialogClosed_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearCloseKickPlayerDialogDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddCloseKickPlayerDialogDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddCloseKickPlayerDialogDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnCloseKickPlayerDialog
@@ -37422,14 +37422,14 @@ struct UOnlineSystemInterface_execOnCloseKickPlayerDialog_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearUnlockedDLCChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddUnlockedDLCChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddUnlockedDLCChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.GetUnlockedDLC
@@ -37464,14 +37464,14 @@ struct UOnlineSystemInterface_execGetDLCPurchaseTime_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearStorageDeviceChangeDelegate_Params
 {
-	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddStorageDeviceChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddStorageDeviceChangeDelegate_Params
 {
-	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnStorageDeviceChange
@@ -37491,14 +37491,14 @@ struct UOnlineSystemInterface_execGetNATType_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearConnectionStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddConnectionStatusChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddConnectionStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnConnectionStatusChange
@@ -37535,7 +37535,7 @@ struct UOnlineSystemInterface_execOpenStoreForItemsAsync_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OpenStoreForItems
@@ -37545,7 +37545,7 @@ struct UOnlineSystemInterface_execOpenStoreForItems_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnStorePurchaseCompleteDelegate
@@ -37609,14 +37609,14 @@ struct UOnlineSystemInterface_execIsControllerConnected_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearUserRestoredDelegate_Params
 {
-	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddUserRestoredDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddUserRestoredDelegate_Params
 {
-	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnUserRestored
@@ -37630,14 +37630,14 @@ struct UOnlineSystemInterface_execOnUserRestored_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearUserOrphanedDelegate_Params
 {
-	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddUserOrphanedDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddUserOrphanedDelegate_Params
 {
-	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnUserOrphaned
@@ -37653,14 +37653,14 @@ struct UOnlineSystemInterface_execOnUserOrphaned_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearControllerChangeDelegate_Params
 {
-	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddControllerChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddControllerChangeDelegate_Params
 {
-	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnControllerChange
@@ -37689,14 +37689,14 @@ struct UOnlineSystemInterface_execGetNetworkNotificationPosition_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearExternalUIChangeDelegate_Params
 {
-	struct FScriptDelegate                             ExternalUIDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ExternalUIDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddExternalUIChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddExternalUIChangeDelegate_Params
 {
-	struct FScriptDelegate                             ExternalUIDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ExternalUIDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnExternalUIChange
@@ -37710,14 +37710,14 @@ struct UOnlineSystemInterface_execOnExternalUIChange_Params
 // [0x00020000] 
 struct UOnlineSystemInterface_execClearLinkStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.AddLinkStatusChangeDelegate
 // [0x00020000] 
 struct UOnlineSystemInterface_execAddLinkStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSystemInterface.OnLinkStatusChange
@@ -37740,7 +37740,7 @@ struct UOnlineMarketplaceInterface_execClearConsumeInventoryItemCompleteDelegate
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ConsumeInventoryItemCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConsumeInventoryItemCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.AddConsumeInventoryItemCompleteDelegate
@@ -37749,7 +37749,7 @@ struct UOnlineMarketplaceInterface_execAddConsumeInventoryItemCompleteDelegate_P
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ConsumeInventoryItemCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConsumeInventoryItemCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.OnConsumeInventoryItemComplete
@@ -37799,7 +37799,7 @@ struct UOnlineMarketplaceInterface_execClearReadInventoryItemsCompleteDelegate_P
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadInventoryItemsCompleteDelegate;               // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadInventoryItemsCompleteDelegate;               // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.AddReadInventoryItemsCompleteDelegate
@@ -37808,7 +37808,7 @@ struct UOnlineMarketplaceInterface_execAddReadInventoryItemsCompleteDelegate_Par
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadInventoryItemsCompleteDelegate;               // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadInventoryItemsCompleteDelegate;               // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.OnReadInventoryItemsComplete
@@ -37834,7 +37834,7 @@ struct UOnlineMarketplaceInterface_execClearReadAdditionalProductDetailsComplete
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAdditionalProductDetailsCompleteDelegate;     // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAdditionalProductDetailsCompleteDelegate;     // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.AddReadAdditionalProductDetailsCompleteDelegate
@@ -37843,7 +37843,7 @@ struct UOnlineMarketplaceInterface_execAddReadAdditionalProductDetailsCompleteDe
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAdditionalProductDetailsCompleteDelegate;     // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAdditionalProductDetailsCompleteDelegate;     // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.OnReadAdditionalProductDetailsComplete
@@ -37888,7 +37888,7 @@ struct UOnlineMarketplaceInterface_execClearReadAvailableProductsCompleteDelegat
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAvailableProductsCompleteDelegate;            // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAvailableProductsCompleteDelegate;            // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.AddReadAvailableProductsCompleteDelegate
@@ -37897,7 +37897,7 @@ struct UOnlineMarketplaceInterface_execAddReadAvailableProductsCompleteDelegate_
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadAvailableProductsCompleteDelegate;            // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadAvailableProductsCompleteDelegate;            // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineMarketplaceInterface.OnReadAvailableProductsComplete
@@ -37961,14 +37961,14 @@ struct UOnlineAccountInterface_execCreateLocalAccount_Params
 // [0x00020000] 
 struct UOnlineAccountInterface_execClearCreateOnlineAccountCompletedDelegate_Params
 {
-	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAccountInterface.AddCreateOnlineAccountCompletedDelegate
 // [0x00020000] 
 struct UOnlineAccountInterface_execAddCreateOnlineAccountCompletedDelegate_Params
 {
-	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineAccountInterface.OnCreateOnlineAccountCompleted
@@ -38318,14 +38318,14 @@ struct UOnlineSuppliedUIInterface_execShowMatchmakingUI_Params
 // [0x00020000] 
 struct UOnlineSuppliedUIInterface_execClearShowOnlineStatsUICompleteDelegate_Params
 {
-	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSuppliedUIInterface.AddShowOnlineStatsUICompleteDelegate
 // [0x00020000] 
 struct UOnlineSuppliedUIInterface_execAddShowOnlineStatsUICompleteDelegate_Params
 {
-	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ShowOnlineStatsUICompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Engine.OnlineSuppliedUIInterface.ShowOnlineStatsUI
@@ -38454,7 +38454,8 @@ struct UTimeWindow_execIsActive_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// uint64_t                                        NowTime;                                          // 0x0008 (0x0008) [0x0000000000000000]               
-	// int32_t                                         TimeDiff;                                         // 0x0010 (0x0004) [0x0000000000000000]               
+	// int64_t                                         TimeDiff;                                         // 0x0010 (0x0008) [0x0000000000000000]               
+	// int64_t                                         Period;                                           // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // Function Engine.TimeWindow.GetEndTime
@@ -38478,7 +38479,8 @@ struct UTimeWindow_execGetStartTime_Params
 {
 	uint64_t                                           inTime;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         TimeDiff;                                         // 0x0010 (0x0004) [0x0000000000000000]               
+	// int64_t                                         TimeDiff;                                         // 0x0010 (0x0008) [0x0000000000000000]               
+	// int64_t                                         Period;                                           // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // Function Engine.TimeWindow.GetStartTimeFromNow
@@ -38547,7 +38549,7 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execOnDeleteUserFileComplete_P
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.DeleteDataBlob
@@ -38556,9 +38558,9 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execDeleteDataBlob_Params
 {
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InDeleteDataBlobCallback;                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// uint32_t                                        RValue : 1;                                       // 0x003C (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FScriptDelegate                             InDeleteDataBlobCallback;                         // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0040 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        RValue : 1;                                       // 0x0044 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.OnWriteUserFileComplete
@@ -38569,7 +38571,7 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execOnWriteUserFileComplete_Pa
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.SetDataBlob
@@ -38579,9 +38581,9 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execSetDataBlob_Params
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              DataBlob;                                         // 0x0020 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InSetDataBlobCallback;                            // 0x0030 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// uint32_t                                        ErrorOccured : 1;                                 // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class FString                                   Error;                                            // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             InSetDataBlobCallback;                            // 0x0030 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// uint32_t                                        ErrorOccured : 1;                                 // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class FString                                   Error;                                            // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.OnReadUserFileComplete
@@ -38592,9 +38594,9 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execOnReadUserFileComplete_Par
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      UserId;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Filename;                                         // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<uint8_t>                           FileContents;                                     // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// uint32_t                                        LocalResult : 1;                                  // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<uint8_t>                           FileContents;                                     // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        LocalResult : 1;                                  // 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.GetDataBlob
@@ -38603,10 +38605,10 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execGetDataBlob_Params
 {
 	class FString                                      StorageID;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      BlobName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InGetDataBlobCallback;                            // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// uint32_t                                        ErrorOccured : 1;                                 // 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class FString                                   Error;                                            // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<uint8_t>                           EmptyBuffer;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             InGetDataBlobCallback;                            // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// uint32_t                                        ErrorOccured : 1;                                 // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class FString                                   Error;                                            // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<uint8_t>                           EmptyBuffer;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function Engine.UserCloudFileCloudSaveSystemDataBlobStore.Init
@@ -38655,8 +38657,8 @@ struct UUserCloudFileCloudSaveSystemDataBlobStore_execGetDataBlobCallbackDelegat
 struct UContentAuthorizationTokenInterface_execGetContentAuthorizationToken_Params
 {
 	class FString                                      Nonce;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Engine.ContentAuthorizationTokenInterface.EventGetCATComplete

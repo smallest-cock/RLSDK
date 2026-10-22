@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: GFxUI_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -1460,7 +1460,7 @@ struct UGFxClikWidget_execSetListener_Params
 {
 	class UGFxObject*                                  O;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      Member;                                           // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Listener;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Listener;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function GFxUI.GFxClikWidget.GetEventStringFromTypename
@@ -1484,13 +1484,13 @@ struct UGFxClikWidget_execRemoveAllEventListeners_Params
 struct UGFxClikWidget_execAddEventListener_Params
 {
 	class FName                                        Type;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Listener;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           useCapture : 1;                                   // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	int32_t                                            listenerPriority;                                 // 0x0024 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	uint32_t                                           useWeakReference : 1;                             // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	// class UGFxObject*                               O;                                                // 0x0030 (0x0008) [0x0000000000000000]               
-	// class UGFxObject*                               funcobj;                                          // 0x0038 (0x0008) [0x0000000000000000]               
-	// class FString                                   Typestring;                                       // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Listener;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           useCapture : 1;                                   // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	int32_t                                            listenerPriority;                                 // 0x002C (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           useWeakReference : 1;                             // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	// class UGFxObject*                               O;                                                // 0x0038 (0x0008) [0x0000000000000000]               
+	// class UGFxObject*                               funcobj;                                          // 0x0040 (0x0008) [0x0000000000000000]               
+	// class FString                                   Typestring;                                       // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function GFxUI.GFxClikWidget.EventListener

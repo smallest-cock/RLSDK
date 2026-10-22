@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: AkAudio_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -213,7 +213,7 @@ public:
 };
 
 // Class AkAudio.AkDevice
-// 0x0058 (0x0060 - 0x00B8)
+// 0x0060 (0x0060 - 0x00C0)
 class UAkDevice : public UObject
 {
 public:
@@ -225,7 +225,8 @@ public:
 	class FName                                        DynamicRangeSetting_High_Gameplay;             // 0x0088 (0x0008) [0x0000000000000000]               
 	class FName                                        MasterAudioBusName;                            // 0x0090 (0x0008) [0x0000000000000000]               
 	class FName                                        GameplayAudioBusName;                          // 0x0098 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventInitialized__Delegate;                  // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventInitialized__Delegate_UnknownData00[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkDevice"))
@@ -298,7 +299,7 @@ public:
 };
 
 // Class AkAudio.AkMusicAnalysis
-// 0x00B0 (0x0060 - 0x0110)
+// 0x00C8 (0x0060 - 0x0128)
 class UAkMusicAnalysis : public UObject
 {
 public:
@@ -312,9 +313,12 @@ public:
 	uint32_t                                           bDebugPrintMusicAnalysisValues : 1;            // 0x00B8 (0x0004) [0x0000000000004001] [0x00000001] (CPF_Edit | CPF_Config)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00BC (0x0004) MISSED OFFSET
 	class UAkSoundCue*                                 MusicAnalysisSilentLoop;                       // 0x00C0 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __EventNewMusicTrack__Delegate;                // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMusicBeat__Delegate;                    // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMusicBar__Delegate;                     // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventNewMusicTrack__Delegate;                // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventNewMusicTrack__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventMusicBeat__Delegate;                    // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventMusicBeat__Delegate_UnknownData03[0x8]; // 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventMusicBar__Delegate;                     // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventMusicBar__Delegate_UnknownData04[0x8];  // 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkMusicAnalysis"))
@@ -328,12 +332,14 @@ public:
 };
 
 // Class AkAudio.AkMusicDevice
-// 0x0030 (0x0060 - 0x0090)
+// 0x0040 (0x0060 - 0x00A0)
 class UAkMusicDevice : public UObject
 {
 public:
-	struct FScriptDelegate                             __EventTrackStart__Delegate;                   // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventTrackEnd__Delegate;                     // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventTrackStart__Delegate;                   // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventTrackStart__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventTrackEnd__Delegate;                     // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventTrackEnd__Delegate_UnknownData01[0x8];  // 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkMusicDevice"))
@@ -416,7 +422,7 @@ public:
 };
 
 // Class AkAudio.AkRevPhysicsSimulation
-// 0x0050 (0x0060 - 0x00B0)
+// 0x0058 (0x0060 - 0x00B8)
 class UAkRevPhysicsSimulation : public UObject
 {
 public:
@@ -434,7 +440,8 @@ public:
 	float                                              FrictionResistance;                            // 0x008C (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              EngineResistance;                              // 0x0090 (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              NetForce;                                      // 0x0094 (0x0004) [0x0000000000002000] (CPF_Transient)
-	struct FScriptDelegate                             __EventGearChange__Delegate;                   // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGearChange__Delegate;                   // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventGearChange__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkRevPhysicsSimulation"))
@@ -495,7 +502,7 @@ public:
 };
 
 // Class AkAudio.AkSoundSource
-// 0x00FB (0x009D - 0x0198)
+// 0x0113 (0x009D - 0x01B0)
 class UAkSoundSource : public UActorComponent
 {
 public:
@@ -515,9 +522,12 @@ public:
 	uint8_t                                          UnknownData02[0x7];                            // 0x0131 (0x0007) MISSED OFFSET
 	class TArray<EAkCallbackType>                      CallbackTypes;                                 // 0x0138 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	struct FPointer                                    SoundSourceId;                                 // 0x0148 (0x0008) [0x0000000000003000] (CPF_Native | CPF_Transient)
-	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x0150 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventMarker__Delegate;                       // 0x0168 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDuration__Delegate;                     // 0x0180 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventFinished__Delegate;                     // 0x0150 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventFinished__Delegate_UnknownData03[0x8];  // 0x0158 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventMarker__Delegate;                       // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventMarker__Delegate_UnknownData04[0x8];    // 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventDuration__Delegate;                     // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventDuration__Delegate_UnknownData05[0x8];  // 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkSoundSource"))
@@ -739,18 +749,18 @@ public:
 };
 
 // Class AkAudio.AkAudioDevice
-// 0x0140 (0x0068 - 0x01A8)
+// 0x0190 (0x0068 - 0x01F8)
 class UAkAudioDevice : public USubsystem
 {
 public:
-	uint8_t                                          UnknownData00[0x10];                          // 0x0068 (0x0010) MISSED OFFSET
-	int32_t                                            MaxNumMemoryPools;                             // 0x0078 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            DefaultMemoryPoolKB;                           // 0x007C (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            DefaultEngineMemoryPoolKB;                     // 0x0080 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            WwiseBusSendBufferSamples;                     // 0x0084 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint32_t                                           DebugRecordWwiseBusSends : 1;                  // 0x0088 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
-	float                                              LowMemoryThreshold;                            // 0x008C (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData01[0x118];                        // 0x0090 (0x0118) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x20];                          // 0x0068 (0x0020) MISSED OFFSET
+	int32_t                                            MaxNumMemoryPools;                             // 0x0088 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            DefaultMemoryPoolKB;                           // 0x008C (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            DefaultEngineMemoryPoolKB;                     // 0x0090 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            WwiseBusSendBufferSamples;                     // 0x0094 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint32_t                                           DebugRecordWwiseBusSends : 1;                  // 0x0098 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	float                                              LowMemoryThreshold;                            // 0x009C (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData01[0x158];                        // 0x00A0 (0x0158) MISSED OFFSET
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class AkAudio.AkAudioDevice"))

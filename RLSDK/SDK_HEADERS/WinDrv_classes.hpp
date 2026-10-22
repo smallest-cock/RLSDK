@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: WinDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -52,12 +52,12 @@
 #endif 
 
 // Class WinDrv.FacebookWindows
-// 0x0010 (0x00E8 - 0x00F8)
+// 0x0010 (0x00F0 - 0x0100)
 class UFacebookWindows : public UFacebookIntegration
 {
 public:
-	struct FPointer                                    VfTable_FTickableObject;                       // 0x00E8 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	struct FPointer                                    ChildProcHandle;                               // 0x00F0 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	struct FPointer                                    VfTable_FTickableObject;                       // 0x00F0 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
+	struct FPointer                                    ChildProcHandle;                               // 0x00F8 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.FacebookWindows"))
@@ -75,14 +75,14 @@ public:
 };
 
 // Class WinDrv.HttpRequestWindows
-// 0x0030 (0x0078 - 0x00A8)
+// 0x0030 (0x0080 - 0x00B0)
 class UHttpRequestWindows : public UHttpRequestInterface
 {
 public:
-	struct FPointer                                    Request;                                       // 0x0078 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class FString                                      RequestVerb;                                   // 0x0080 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
-	struct FPointer                                    RequestURL;                                    // 0x0090 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class TArray<uint8_t>                              Payload;                                       // 0x0098 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
+	struct FPointer                                    Request;                                       // 0x0080 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class FString                                      RequestVerb;                                   // 0x0088 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
+	struct FPointer                                    RequestURL;                                    // 0x0098 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class TArray<uint8_t>                              Payload;                                       // 0x00A0 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.HttpRequestWindows"))
@@ -150,12 +150,12 @@ public:
 };
 
 // Class WinDrv.HttpRequestWindowsMcp
-// 0x0020 (0x00A8 - 0x00C8)
+// 0x0020 (0x00B0 - 0x00D0)
 class UHttpRequestWindowsMcp : public UHttpRequestWindows
 {
 public:
-	class FString                                      AppID;                                         // 0x00A8 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
-	class FString                                      AppSecret;                                     // 0x00B8 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
+	class FString                                      AppID;                                         // 0x00B0 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
+	class FString                                      AppSecret;                                     // 0x00C0 (0x0010) [0x0000000000404002] (CPF_Const | CPF_Config | CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class WinDrv.HttpRequestWindowsMcp"))

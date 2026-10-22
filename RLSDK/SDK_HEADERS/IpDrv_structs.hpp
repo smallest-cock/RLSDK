@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: IpDrv_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -53,7 +53,7 @@ struct FAvatarKey
 };
 
 // ScriptStruct IpDrv.OnlineImageDownloaderWeb.OnlineImageDownload
-// Size: 0x0040
+// Size: 0x0048
 struct FOnlineImageDownload
 {
 	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
@@ -61,16 +61,18 @@ struct FOnlineImageDownload
 	uint8_t                                            Status;                                        // 0x0018 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x0019 (0x0007) MISSED OFFSET
 	class UTexture2DDynamic*                           Texture;                                       // 0x0020 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             DecodedCallbacks;                              // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             DecodedCallbacks;                              // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          DecodedCallbacksUnknownData01[0x8];            // 0x0030 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct IpDrv.ImageDecoder.DecodeImageRequest
-// Size: 0x0030
+// Size: 0x0038
 struct FDecodeImageRequest
 {
 	class FString                                      RequestURL;                                    // 0x0000 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnFinishedCallback;                            // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FPointer                                    Task;                                          // 0x0028 (0x0008) [0x0000000000001000] (CPF_Native)  
+	struct FScriptDelegate                             OnFinishedCallback;                            // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnFinishedCallbackUnknownData00[0x8];          // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	struct FPointer                                    Task;                                          // 0x0030 (0x0008) [0x0000000000001000] (CPF_Native)  
 };
 
 // ScriptStruct IpDrv.ImageDecoder.DecodeImageTask
@@ -543,13 +545,14 @@ struct FClientMeshBeaconConnection
 };
 
 // ScriptStruct IpDrv.OnlineAuthInterfaceImpl.AuthCodeRequest
-// Size: 0x0068 (0x0064 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0070 (0x006C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FAuthCodeRequest
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            RequestID;                                     // 0x0060 (0x0004) [0x0000000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0064 (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	int32_t                                            RequestID;                                     // 0x0068 (0x0004) [0x0000000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x006C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig
@@ -618,13 +621,14 @@ struct FPlaylistPopulation
 };
 
 // ScriptStruct IpDrv.OnlineSubsystemCommonImpl.SanitizeCallbackData
-// Size: 0x0030
+// Size: 0x0038
 struct FSanitizeCallbackData
 {
 	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      Comment;                                       // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData01[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	class FString                                      Comment;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct IpDrv.OnlineTitleFileDownloadMcp.TitleFileMcp

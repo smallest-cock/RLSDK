@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: ProjectX_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -5567,21 +5567,6 @@ void UEOSMetrics_X::AddEvent(class UEOSMetricEvent_X* InEvent)
 	this->ProcessEvent(uFnAddEvent, &AddEvent_Params, nullptr);
 };
 
-// Function ProjectX.EOSMetrics_X.HandleCrash
-// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
-// Parameter Info:
-void UEOSMetrics_X::HandleCrash()
-{
-    static UFunction* uFnHandleCrash = nullptr;
-    if (!uFnHandleCrash)
-        uFnHandleCrash = UFunction::FindFunction("Function ProjectX.EOSMetrics_X.HandleCrash");
-
-	UEOSMetrics_X_execHandleCrash_Params HandleCrash_Params;
-	memset(&HandleCrash_Params, 0, sizeof(HandleCrash_Params));
-
-	this->ProcessEvent(uFnHandleCrash, &HandleCrash_Params, nullptr);
-};
-
 // Function ProjectX.EOSMetrics_X.GetUploadType
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -8447,6 +8432,21 @@ void UOnlinePlayerAuthentication_X::RequestAuthTicket()
 	this->ProcessEvent(uFnRequestAuthTicket, &RequestAuthTicket_Params, nullptr);
 };
 
+// Function ProjectX.OnlinePlayerAuthentication_X.HandleAuthTicketRefused
+// [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
+// Parameter Info:
+void UOnlinePlayerAuthentication_X::HandleAuthTicketRefused()
+{
+    static UFunction* uFnHandleAuthTicketRefused = nullptr;
+    if (!uFnHandleAuthTicketRefused)
+        uFnHandleAuthTicketRefused = UFunction::FindFunction("Function ProjectX.OnlinePlayerAuthentication_X.HandleAuthTicketRefused");
+
+	UOnlinePlayerAuthentication_X_execHandleAuthTicketRefused_Params HandleAuthTicketRefused_Params;
+	memset(&HandleAuthTicketRefused_Params, 0, sizeof(HandleAuthTicketRefused_Params));
+
+	this->ProcessEvent(uFnHandleAuthTicketRefused, &HandleAuthTicketRefused_Params, nullptr);
+};
+
 // Function ProjectX.OnlinePlayerAuthentication_X.GoToRequestEpicAuthTicket
 // [0x00080003] (FUNC_Final | FUNC_Defined | FUNC_Protected)
 // Parameter Info:
@@ -9031,8 +9031,7 @@ void UOnlinePlayerAuthentication_X::OnInit()
 // Function ProjectX.OnlinePlayerAuthentication_X.EventOnMMRRefunded
 // [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
 // Parameter Info:
-// class TArray<struct FMMRCompensationData> MMRCompensationList            (CPF_Parm | CPF_NeedCtorLink)
-void UOnlinePlayerAuthentication_X::EventOnMMRRefunded(const class TArray<struct FMMRCompensationData>& MMRCompensationList)
+void UOnlinePlayerAuthentication_X::EventOnMMRRefunded()
 {
     static UFunction* uFnEventOnMMRRefunded = nullptr;
     if (!uFnEventOnMMRRefunded)
@@ -9040,7 +9039,6 @@ void UOnlinePlayerAuthentication_X::EventOnMMRRefunded(const class TArray<struct
 
 	UOnlinePlayerAuthentication_X_execEventOnMMRRefunded_Params EventOnMMRRefunded_Params;
 	memset(&EventOnMMRRefunded_Params, 0, sizeof(EventOnMMRRefunded_Params));
-	memcpy_s(&EventOnMMRRefunded_Params.MMRCompensationList, sizeof(EventOnMMRRefunded_Params.MMRCompensationList), &MMRCompensationList, sizeof(MMRCompensationList));
 
 	this->ProcessEvent(uFnEventOnMMRRefunded, &EventOnMMRRefunded_Params, nullptr);
 };
@@ -12509,6 +12507,23 @@ bool UGeForceNow_X::IsStreaming()
 
 	UGeForceNow_X::StaticClass()->ProcessEvent(uFnIsStreaming, &IsStreaming_Params, nullptr);
 	return IsStreaming_Params.ReturnValue;
+};
+
+// Function ProjectX.GFxDataRow_X.ShouldCreate
+// [0x00022802] (FUNC_Defined | FUNC_Event | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UGFxDataRow_X::eventShouldCreate()
+{
+    static UFunction* uFnShouldCreate = nullptr;
+    if (!uFnShouldCreate)
+        uFnShouldCreate = UFunction::FindFunction("Function ProjectX.GFxDataRow_X.ShouldCreate");
+
+	UGFxDataRow_X_eventShouldCreate_Params ShouldCreate_Params;
+	memset(&ShouldCreate_Params, 0, sizeof(ShouldCreate_Params));
+
+	UGFxDataRow_X::StaticClass()->ProcessEvent(uFnShouldCreate, &ShouldCreate_Params, nullptr);
+	return ShouldCreate_Params.ReturnValue;
 };
 
 // Function ProjectX.GFxDataRow_X.FlashEventObject
@@ -16679,6 +16694,27 @@ void UOnlineLegalTextEOS_X::Sync()
 	this->ProcessEvent(uFnSync, &Sync_Params, nullptr);
 };
 
+// Function ProjectX.OnlineLegalTextEOS_X.LogKeyResponse
+// [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
+// Parameter Info:
+// class UKeyRequestResponse*     Response                       (CPF_Const | CPF_Parm)
+// class UError*                  Error                          (CPF_Parm)
+// int32_t                        ResponseCode                   (CPF_Parm)
+void UOnlineLegalTextEOS_X::LogKeyResponse(class UKeyRequestResponse* Response, class UError* Error, int32_t ResponseCode)
+{
+    static UFunction* uFnLogKeyResponse = nullptr;
+    if (!uFnLogKeyResponse)
+        uFnLogKeyResponse = UFunction::FindFunction("Function ProjectX.OnlineLegalTextEOS_X.LogKeyResponse");
+
+	UOnlineLegalTextEOS_X_execLogKeyResponse_Params LogKeyResponse_Params;
+	memset(&LogKeyResponse_Params, 0, sizeof(LogKeyResponse_Params));
+	LogKeyResponse_Params.Response = Response;
+	LogKeyResponse_Params.Error = Error;
+	memcpy_s(&LogKeyResponse_Params.ResponseCode, sizeof(LogKeyResponse_Params.ResponseCode), &ResponseCode, sizeof(ResponseCode));
+
+	this->ProcessEvent(uFnLogKeyResponse, &LogKeyResponse_Params, nullptr);
+};
+
 // Function ProjectX.OnlineLegalTextEOS_X.RequestKey
 // [0x00040003] (FUNC_Final | FUNC_Defined | FUNC_Private)
 // Parameter Info:
@@ -20688,6 +20724,67 @@ void UPsyNetStaticData_X::EventLoaded(class UPsyNetStaticData_X* Data)
 	EventLoaded_Params.Data = Data;
 
 	this->ProcessEvent(uFnEventLoaded, &EventLoaded_Params, nullptr);
+};
+
+// Function ProjectX.PsyNetUrl_X.ValidateURL
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  InURL                          (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       bWebSocket                     (CPF_Parm)
+// uint32_t                       bEnforce                       (CPF_Parm)
+class FString UPsyNetUrl_X::ValidateURL(const class FString& InURL, bool bWebSocket, bool bEnforce)
+{
+    static UFunction* uFnValidateURL = nullptr;
+    if (!uFnValidateURL)
+        uFnValidateURL = UFunction::FindFunction("Function ProjectX.PsyNetUrl_X.ValidateURL");
+
+	UPsyNetUrl_X_execValidateURL_Params ValidateURL_Params;
+	memset(&ValidateURL_Params, 0, sizeof(ValidateURL_Params));
+	memcpy_s(&ValidateURL_Params.InURL, sizeof(ValidateURL_Params.InURL), &InURL, sizeof(InURL));
+	ValidateURL_Params.bWebSocket = bWebSocket;
+	ValidateURL_Params.bEnforce = bEnforce;
+
+	UPsyNetUrl_X::StaticClass()->ProcessEvent(uFnValidateURL, &ValidateURL_Params, nullptr);
+	return ValidateURL_Params.ReturnValue;
+};
+
+// Function ProjectX.PsyNetUrl_X.IsSecurityEnforced
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+bool UPsyNetUrl_X::IsSecurityEnforced()
+{
+    static UFunction* uFnIsSecurityEnforced = nullptr;
+    if (!uFnIsSecurityEnforced)
+        uFnIsSecurityEnforced = UFunction::FindFunction("Function ProjectX.PsyNetUrl_X.IsSecurityEnforced");
+
+	UPsyNetUrl_X_execIsSecurityEnforced_Params IsSecurityEnforced_Params;
+	memset(&IsSecurityEnforced_Params, 0, sizeof(IsSecurityEnforced_Params));
+
+	UPsyNetUrl_X::StaticClass()->ProcessEvent(uFnIsSecurityEnforced, &IsSecurityEnforced_Params, nullptr);
+	return IsSecurityEnforced_Params.ReturnValue;
+};
+
+// Function ProjectX.PsyNetUrl_X.IsAllowedURL
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  InURL                          (CPF_Parm | CPF_NeedCtorLink)
+// uint32_t                       bWebSocket                     (CPF_Parm)
+bool UPsyNetUrl_X::IsAllowedURL(const class FString& InURL, bool bWebSocket)
+{
+    static UFunction* uFnIsAllowedURL = nullptr;
+    if (!uFnIsAllowedURL)
+        uFnIsAllowedURL = UFunction::FindFunction("Function ProjectX.PsyNetUrl_X.IsAllowedURL");
+
+	UPsyNetUrl_X_execIsAllowedURL_Params IsAllowedURL_Params;
+	memset(&IsAllowedURL_Params, 0, sizeof(IsAllowedURL_Params));
+	memcpy_s(&IsAllowedURL_Params.InURL, sizeof(IsAllowedURL_Params.InURL), &InURL, sizeof(InURL));
+	IsAllowedURL_Params.bWebSocket = bWebSocket;
+
+	UPsyNetUrl_X::StaticClass()->ProcessEvent(uFnIsAllowedURL, &IsAllowedURL_Params, nullptr);
+	return IsAllowedURL_Params.ReturnValue;
 };
 
 // Function ProjectX.PsyNetUrl_X.GetURL
@@ -29446,6 +29543,25 @@ class UWebRequest_X* UWebRequest_X::SetVerb(const class FString& InVerb)
 
 	this->ProcessEvent(uFnSetVerb, &SetVerb_Params, nullptr);
 	return SetVerb_Params.ReturnValue;
+};
+
+// Function ProjectX.WebRequest_X.StripUrlSecrets
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  InURL                          (CPF_Parm | CPF_NeedCtorLink)
+class FString UWebRequest_X::StripUrlSecrets(const class FString& InURL)
+{
+    static UFunction* uFnStripUrlSecrets = nullptr;
+    if (!uFnStripUrlSecrets)
+        uFnStripUrlSecrets = UFunction::FindFunction("Function ProjectX.WebRequest_X.StripUrlSecrets");
+
+	UWebRequest_X_execStripUrlSecrets_Params StripUrlSecrets_Params;
+	memset(&StripUrlSecrets_Params, 0, sizeof(StripUrlSecrets_Params));
+	memcpy_s(&StripUrlSecrets_Params.InURL, sizeof(StripUrlSecrets_Params.InURL), &InURL, sizeof(InURL));
+
+	UWebRequest_X::StaticClass()->ProcessEvent(uFnStripUrlSecrets, &StripUrlSecrets_Params, nullptr);
+	return StripUrlSecrets_Params.ReturnValue;
 };
 
 // Function ProjectX.WebRequest_X.RedactUrlSecrets
@@ -42050,6 +42166,23 @@ void AGRI_X::eventPostBeginPlay()
 	memset(&PostBeginPlay_Params, 0, sizeof(PostBeginPlay_Params));
 
 	this->ProcessEvent(uFnPostBeginPlay, &PostBeginPlay_Params, nullptr);
+};
+
+// Function ProjectX.GRI_X.EventGameClassReceived
+// [0x00120001] (FUNC_Final | FUNC_Public | FUNC_Delegate)
+// Parameter Info:
+// class AGRI_X*                  GRI                            (CPF_Parm)
+void AGRI_X::EventGameClassReceived(class AGRI_X* GRI)
+{
+    static UFunction* uFnEventGameClassReceived = nullptr;
+    if (!uFnEventGameClassReceived)
+        uFnEventGameClassReceived = UFunction::FindFunction("Function ProjectX.GRI_X.EventGameClassReceived");
+
+	AGRI_X_execEventGameClassReceived_Params EventGameClassReceived_Params;
+	memset(&EventGameClassReceived_Params, 0, sizeof(EventGameClassReceived_Params));
+	EventGameClassReceived_Params.GRI = GRI;
+
+	this->ProcessEvent(uFnEventGameClassReceived, &EventGameClassReceived_Params, nullptr);
 };
 
 // Function ProjectX.GRI_X.EventMatchGUIDChanged
@@ -68776,8 +68909,8 @@ void UOnlinePlayerStorage_X::OnInit()
 // [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
 // Parameter Info:
 // class URPC_LoginAuthPlayer_X*  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-// class TArray<struct FMMRCompensationData> InCheaterCompensations         (CPF_Parm | CPF_NeedCtorLink)
-class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetCheaterCompensationOverride(const class TArray<struct FMMRCompensationData>& InCheaterCompensations)
+// uint32_t                       bCheaterCompensation           (CPF_Parm)
+class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetCheaterCompensationOverride(bool bCheaterCompensation)
 {
     static UFunction* uFnSetCheaterCompensationOverride = nullptr;
     if (!uFnSetCheaterCompensationOverride)
@@ -68785,7 +68918,7 @@ class URPC_LoginAuthPlayer_X* URPC_LoginAuthPlayer_X::SetCheaterCompensationOver
 
 	URPC_LoginAuthPlayer_X_execSetCheaterCompensationOverride_Params SetCheaterCompensationOverride_Params;
 	memset(&SetCheaterCompensationOverride_Params, 0, sizeof(SetCheaterCompensationOverride_Params));
-	memcpy_s(&SetCheaterCompensationOverride_Params.InCheaterCompensations, sizeof(SetCheaterCompensationOverride_Params.InCheaterCompensations), &InCheaterCompensations, sizeof(InCheaterCompensations));
+	SetCheaterCompensationOverride_Params.bCheaterCompensation = bCheaterCompensation;
 
 	this->ProcessEvent(uFnSetCheaterCompensationOverride, &SetCheaterCompensationOverride_Params, nullptr);
 	return SetCheaterCompensationOverride_Params.ReturnValue;
@@ -72448,6 +72581,29 @@ void USetVisibilityComponent_X::eventAttached()
 	memset(&Attached_Params, 0, sizeof(Attached_Params));
 
 	this->ProcessEvent(uFnAttached, &Attached_Params, nullptr);
+};
+
+// Function ProjectX.FlatbufferMetrics_X.Upload
+// [0x00020003] (FUNC_Final | FUNC_Defined | FUNC_Public)
+// Parameter Info:
+// class FString                  MatchGUID                      (CPF_Parm | CPF_NeedCtorLink)
+// int32_t                        SizeBytes                      (CPF_Parm)
+// float                          UploadDuration                 (CPF_Parm)
+// uint32_t                       bSuccess                       (CPF_Parm)
+void UFlatbufferMetrics_X::Upload(const class FString& MatchGUID, int32_t SizeBytes, float UploadDuration, bool bSuccess)
+{
+    static UFunction* uFnUpload = nullptr;
+    if (!uFnUpload)
+        uFnUpload = UFunction::FindFunction("Function ProjectX.FlatbufferMetrics_X.Upload");
+
+	UFlatbufferMetrics_X_execUpload_Params Upload_Params;
+	memset(&Upload_Params, 0, sizeof(Upload_Params));
+	memcpy_s(&Upload_Params.MatchGUID, sizeof(Upload_Params.MatchGUID), &MatchGUID, sizeof(MatchGUID));
+	memcpy_s(&Upload_Params.SizeBytes, sizeof(Upload_Params.SizeBytes), &SizeBytes, sizeof(SizeBytes));
+	memcpy_s(&Upload_Params.UploadDuration, sizeof(Upload_Params.UploadDuration), &UploadDuration, sizeof(UploadDuration));
+	Upload_Params.bSuccess = bSuccess;
+
+	this->ProcessEvent(uFnUpload, &Upload_Params, nullptr);
 };
 
 /*

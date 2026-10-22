@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: Core_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -81,6 +81,12 @@
 #endif
 #ifndef CONST_Pi
 #define CONST_Pi                                          3.1415926535897932
+#endif
+#ifndef CONST_MinSQWORD
+#define CONST_MinSQWORD                                   -9223372036854775808i
+#endif
+#ifndef CONST_MaxSQWORD
+#define CONST_MaxSQWORD                                   9223372036854775807i
 #endif
 #ifndef CONST_MaxQWORD
 #define CONST_MaxQWORD                                    0xFFFFFFFFFFFFFFFF
@@ -1619,6 +1625,34 @@ enum class EContentKeyIndex_ContinuousIntegration : uint8_t
 };
 
 // Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate60
+enum class EContentKeyIndex_PrimeUpdate60_2 : uint8_t
+{
+	PrimeUpdate60_1_F43924E89173464E346D031F4507D036   = 0,
+	PrimeUpdate60_1_621176E5330724C39EFB9ACFA86E1F51   = 1,
+	PrimeUpdate60_1_4D9164DD03091E54104BCB9A004B8668   = 2,
+	PrimeUpdate60_1_60ACE2692E9A7A03EF06B23F767D42DF   = 3,
+	PrimeUpdate60_1_091EDC19B6EF38E9286947F523749A43   = 4,
+	PrimeUpdate60_1_00E7AA34ADDFF6D8203EA36B7908E041   = 5,
+	PrimeUpdate60_1_A4B37FEEDD43CBA47E89015612B7FBCF   = 6,
+	PrimeUpdate60_1_EE806804DE532DA03B291E1B15EB548E   = 7,
+	PrimeUpdate60_1_50A0B1FB3CB02D42394E0BF6E2C934F0   = 8,
+	PrimeUpdate60_1_8400D6077BF2DC2064762BA963D8392B   = 9,
+	PrimeUpdate60_1_A95161F4B789DA7668553D75A108040F   = 10,
+	PrimeUpdate60_1_FBEA3A784B2B104419BD34370CD8C875   = 11,
+	PrimeUpdate60_1_D2F0398F9EBCDBDF0BC79FDD1CA8B034   = 12,
+	PrimeUpdate60_1_D6612DFFF6838FD11E21ABED19E40B97   = 13,
+	PrimeUpdate60_1_DA12CD538D4B4F8B2C3B8FF46121511D   = 14,
+	PrimeUpdate60_1_E618F5A758C637971FEA0028B10BA3A7   = 15,
+	PrimeUpdate60_1_8C725F2D9B949DFCFAAED9DFDA492D77   = 16,
+	PrimeUpdate60_1_9540CC986ADFB383D82DBC4B3418453D   = 17,
+	PrimeUpdate60_1_05E6133248B17F41BDECD43C0EBFAF91   = 18,
+	PrimeUpdate60_1_AECF800994621CBF7429D7902CD9B3BF   = 19,
+	PrimeUpdate60_1_9B5639D96D289225B66BB56C80DB7EEC   = 20,
+	PrimeUpdate60_1_F7647FC21B4082ACAE8718EEBEE59AB4   = 21,
+	PrimeUpdate60_1_END                                = 22
+};
+
+// Enum Core._Types_Generated.EContentKeyIndex_PrimeUpdate60
 enum class EContentKeyIndex_PrimeUpdate60 : uint8_t
 {
 	PrimeUpdate60_4EC3312A4B9D8EDF92C1A84CD94D83DD     = 0,
@@ -1861,6 +1895,7 @@ public:
 	static int32_t SortAscendingString(const class FString& A, const class FString& B);
 	static int32_t SortDescendingQWORD(uint64_t A, uint64_t B);
 	static int32_t SortAscendingQWORD(uint64_t A, uint64_t B);
+	static int32_t SQWordToIntClamped(int64_t Value);
 	static int32_t SortDescendingInt(int32_t A, int32_t B);
 	static int32_t SortAscendingInt(int32_t A, int32_t B);
 	static class FString PadString(const class FString& Str, int32_t Characters);
@@ -2216,6 +2251,7 @@ public:
 	static bool LessEqual_SQWordSQWord(int64_t A, int64_t B);
 	static bool Greater_SQWordSQWord(int64_t A, int64_t B);
 	static bool Less_SQWordSQWord(int64_t A, int64_t B);
+	static int64_t Percent_SQWordSQWord(int64_t A, int64_t B);
 	static int64_t Subtract_SQWordSQWord(int64_t A, int64_t B);
 	static int64_t Add_SQWordSQWord(int64_t A, int64_t B);
 	static int64_t Divide_SQWordSQWord(int64_t A, int64_t B);
@@ -2233,7 +2269,7 @@ public:
 	static bool LessEqual_QWordQWord(uint64_t A, uint64_t B);
 	static bool Greater_QWordQWord(uint64_t A, uint64_t B);
 	static bool Less_QWordQWord(uint64_t A, uint64_t B);
-	static int32_t Subtract_QWordQWord(uint64_t A, uint64_t B);
+	static int64_t Subtract_QWordQWord(uint64_t A, uint64_t B);
 	static uint64_t Add_QWordQWord(uint64_t A, uint64_t B);
 	static uint64_t Divide_QWordQWord(uint64_t A, uint64_t B);
 	static uint64_t Multiply_QWordQWord(uint64_t A, uint64_t B);
@@ -2356,6 +2392,8 @@ public:
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.UTF8"))
+	static bool IsValidUTF8(const class FString& Input);
+	static class FString Sanitize(const class FString& Input);
 	static void DecodeInline(class TArray<uint8_t>& outInput, class FString& outOutput);
 	static class FString Decode(class TArray<uint8_t>& outInput);
 	static void EncodeInline(const class FString& Input, class TArray<uint8_t>& outOutput);
@@ -2415,11 +2453,12 @@ public:
 };
 
 // Class Core.Subscription
-// 0x0018 (0x0060 - 0x0078)
+// 0x0020 (0x0060 - 0x0080)
 class USubscription : public UObject
 {
 public:
-	struct FScriptDelegate                             __SubscriberCallback__Delegate;                // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __SubscriberCallback__Delegate;                // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __SubscriberCallback__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.Subscription"))
@@ -2852,7 +2891,7 @@ public:
 };
 
 // Class Core.FeatureSystem
-// 0x0020 (0x0060 - 0x0080)
+// 0x0028 (0x0060 - 0x0088)
 class UFeatureSystem : public UObject
 {
 public:
@@ -3035,6 +3074,9 @@ public:
 	uint32_t                                           StatTitles : 1;                                // 0x007C (0x0004) [0x0000000040000000] [0x04000000] (CPF_DataBinding)
 	uint32_t                                           ReactiveExplosion : 1;                         // 0x007C (0x0004) [0x0000000040000000] [0x08000000] (CPF_DataBinding)
 	uint32_t                                           Crosshair : 1;                                 // 0x007C (0x0004) [0x0000000040000000] [0x10000000] (CPF_DataBinding)
+	uint32_t : 1;	// skipped bits
+	uint32_t                                           BundlePreview : 1;                             // 0x007C (0x0004) [0x0000000040000000] [0x40000000] (CPF_DataBinding)
+	uint8_t                                          UnknownData01[0x8];                            // 0x0080 (0x0008) MISSED OFFSET
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.FeatureSystem"))
@@ -3141,12 +3183,13 @@ public:
 };
 
 // Class Core.DelegateTracker
-// 0x0028 (0x0060 - 0x0088)
+// 0x0030 (0x0060 - 0x0090)
 class UDelegateTracker : public UObject
 {
 public:
 	class TArray<struct FAsyncDelegateInfo>            AsyncDelegates;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __PlaceholderDelegate__Delegate;               // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __PlaceholderDelegate__Delegate;               // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __PlaceholderDelegate__Delegate_UnknownData00[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.DelegateTracker"))
@@ -3156,7 +3199,7 @@ public:
 };
 
 // Class Core.DebugDrawer
-// 0x0060 (0x0060 - 0x00C0)
+// 0x0068 (0x0060 - 0x00C8)
 class UDebugDrawer : public UObject
 {
 public:
@@ -3170,7 +3213,8 @@ public:
 	class TArray<class UObject*>                       QueuedObjects;                                 // 0x0090 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
 	int32_t                                            PrintObjectCount;                              // 0x00A0 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __LogFunc__Delegate;                           // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __LogFunc__Delegate;                           // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __LogFunc__Delegate_UnknownData02[0x8];        // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.DebugDrawer"))
@@ -3230,12 +3274,13 @@ public:
 };
 
 // Class Core.StringMap
-// 0x0068 (0x0070 - 0x00D8)
+// 0x0070 (0x0070 - 0x00E0)
 class UStringMap : public UComponent
 {
 public:
 	struct FMap_Mirror                                 Map;                                           // 0x0070 (0x0050) [0x0000000000001002] (CPF_Const | CPF_Native)
-	struct FScriptDelegate                             __PairCallback__Delegate;                      // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __PairCallback__Delegate;                      // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __PairCallback__Delegate_UnknownData00[0x8];   // 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.StringMap"))
@@ -3250,7 +3295,7 @@ public:
 };
 
 // Class Core.ObjectProvider
-// 0x0170 (0x0070 - 0x01E0)
+// 0x0188 (0x0070 - 0x01F8)
 class UObjectProvider : public UComponent
 {
 public:
@@ -3271,9 +3316,12 @@ public:
 	class TArray<class UObjectProvider*>               Children;                                      // 0x0168 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 	class TArray<class UObjectProvider*>               Proxies;                                       // 0x0178 (0x0010) [0x000000000448200A] (CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
 	class TArray<struct FObjectProviderPendingCallback> PendingInjectionCallbacks;                     // 0x0188 (0x0010) [0x0000000000402002] (CPF_Const | CPF_Transient | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ObjectSubscriptionCallback__Delegate;        // 0x0198 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ObjectListSubscriptionCallback__Delegate;    // 0x01B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ObjectChangeCallback__Delegate;              // 0x01C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ObjectSubscriptionCallback__Delegate;        // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __ObjectSubscriptionCallback__Delegate_UnknownData01[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __ObjectListSubscriptionCallback__Delegate;    // 0x01B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __ObjectListSubscriptionCallback__Delegate_UnknownData02[0x8];// 0x01C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __ObjectChangeCallback__Delegate;              // 0x01D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __ObjectChangeCallback__Delegate_UnknownData03[0x8];// 0x01E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.ObjectProvider"))
@@ -3416,7 +3464,7 @@ public:
 };
 
 // Class Core.AsyncTask
-// 0x0070 (0x0060 - 0x00D0)
+// 0x0090 (0x0060 - 0x00F0)
 class UAsyncTask : public UObject
 {
 public:
@@ -3424,10 +3472,14 @@ public:
 	uint32_t                                           bDisposed : 1;                                 // 0x0060 (0x0004) [0x0000004000000000] [0x00000002] (CPF_PrivateWrite)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0064 (0x0004) MISSED OFFSET
 	class UError*                                      Error;                                         // 0x0068 (0x0008) [0x0000004000000000] (CPF_PrivateWrite)
-	struct FScriptDelegate                             __EventAsyncTaskSuccess__Delegate;             // 0x0070 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAsyncTaskFail__Delegate;                // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAsyncTaskComplete__Delegate;            // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventDisposed__Delegate;                     // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventAsyncTaskSuccess__Delegate;             // 0x0070 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAsyncTaskSuccess__Delegate_UnknownData01[0x8];// 0x0078 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAsyncTaskFail__Delegate;                // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAsyncTaskFail__Delegate_UnknownData02[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAsyncTaskComplete__Delegate;            // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAsyncTaskComplete__Delegate_UnknownData03[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventDisposed__Delegate;                     // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventDisposed__Delegate_UnknownData04[0x8];  // 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class Core.AsyncTask"))
@@ -3453,7 +3505,7 @@ public:
 };
 
 // Class Core.AsyncResult
-// 0x0000 (0x00D0 - 0x00D0)
+// 0x0000 (0x00F0 - 0x00F0)
 class UAsyncResult : public UAsyncTask
 {
 public:
@@ -3576,7 +3628,7 @@ public:
 };
 
 // Class Core.TAsyncResult
-// 0x0000 (0x00D0 - 0x00D0)
+// 0x0000 (0x00F0 - 0x00F0)
 class UTAsyncResult : public UAsyncTask
 {
 public:

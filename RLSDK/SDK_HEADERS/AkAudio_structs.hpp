@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: AkAudio_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -114,13 +114,24 @@ struct FAkRevSimUpdateParams
 	struct FAkRevSimFrame                              frame;                                         // 0x0038 (0x0010) [0x0000000000000000]               
 };
 
+// ScriptStruct AkAudio.AkSoundBanksInfo.SoundBankMediaInfo
+// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+struct FSoundBankMediaInfo
+{
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ShortName;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bStreaming : 1;                                // 0x0020 (0x0004) [0x0000000000000000] [0x100000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
+};
+
 // ScriptStruct AkAudio.AkSoundBanksInfo.SoundBankInfo
-// Size: 0x0030
+// Size: 0x0040
 struct FSoundBankInfo
 {
 	class FString                                      ShortName;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      RelativePath;                                  // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Language;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FSoundBankMediaInfo>           Media;                                         // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct AkAudio.InterpTrackAkEvent.AkEventTrackKey

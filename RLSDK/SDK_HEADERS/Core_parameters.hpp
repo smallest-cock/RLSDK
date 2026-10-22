@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: Core_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -171,6 +171,14 @@ struct UObject_execSortAscendingQWORD_Params
 	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.Object.SQWordToIntClamped
+// [0x00022401] 
+struct UObject_execSQWordToIntClamped_Params
+{
+	int64_t                                            Value;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ReturnValue;                                      // 0x0008 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.Object.SortDescendingInt
@@ -3369,6 +3377,15 @@ struct UObject_execLess_SQWordSQWord_Params
 	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function Core.Object.Percent_SQWordSQWord
+// [0x00023401] 
+struct UObject_execPercent_SQWordSQWord_Params
+{
+	int64_t                                            A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function Core.Object.Subtract_SQWordSQWord
 // [0x00023401] 
 struct UObject_execSubtract_SQWordSQWord_Params
@@ -3528,7 +3545,7 @@ struct UObject_execSubtract_QWordQWord_Params
 {
 	uint64_t                                           A;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           B;                                                // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	int32_t                                            ReturnValue;                                      // 0x0010 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	int64_t                                            ReturnValue;                                      // 0x0010 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.Object.Add_QWordQWord
@@ -3926,6 +3943,22 @@ struct UObject_execNot_PreBool_Params
 	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function Core.UTF8.IsValidUTF8
+// [0x00022401] 
+struct UUTF8_execIsValidUTF8_Params
+{
+	class FString                                      Input;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function Core.UTF8.Sanitize
+// [0x00022401] 
+struct UUTF8_execSanitize_Params
+{
+	class FString                                      Input;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0010 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+};
+
 // Function Core.UTF8.DecodeInline
 // [0x00422401] 
 struct UUTF8_execDecodeInline_Params
@@ -3983,9 +4016,9 @@ struct USubscription_execTriggerAll_Params
 // [0x00022003] 
 struct USubscription_execCreate_Params
 {
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class USubscription*                               ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class USubscription*                            Subscription;                                     // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class USubscription*                               ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class USubscription*                            Subscription;                                     // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function Core.Subscription.Dispose
@@ -4004,7 +4037,7 @@ struct USubscription_execTriggerCallback_Params
 // [0x00020003] 
 struct USubscription_execSetCallback_Params
 {
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.Subscription.SubscriberCallback
@@ -4254,15 +4287,15 @@ struct UDelegateTracker_execRemoveDelegate_Params
 {
 	int32_t                                            CallbackId;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReturnValue;                                      // 0x0008 (0x0018) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReturnValue;                                      // 0x0008 (0x0020) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function Core.DelegateTracker.AddDelegate
 // [0x00020401] 
 struct UDelegateTracker_execAddDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            ReturnValue;                                      // 0x0018 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            ReturnValue;                                      // 0x0020 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.DelegateTracker.PlaceholderDelegate
@@ -4427,7 +4460,7 @@ struct UStringObjectMap_execSet_Params
 // [0x00020401] 
 struct UStringMap_execForEach_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.StringMap.Append
@@ -4655,8 +4688,8 @@ struct UObjectProvider_execUnsubscribeAll_Params
 // [0x00024401] 
 struct UObjectProvider_execUnsubscribe_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback2;                                        // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback2;                                        // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.ObjectProvider.SubscribeList
@@ -4664,7 +4697,7 @@ struct UObjectProvider_execUnsubscribe_Params
 struct UObjectProvider_execSubscribeList_Params
 {
 	class UClass*                                      BaseClass;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.ObjectProvider.SubscribeOnce
@@ -4672,8 +4705,8 @@ struct UObjectProvider_execSubscribeList_Params
 struct UObjectProvider_execSubscribeOnce_Params
 {
 	class UClass*                                      BaseClass;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnAdd;                                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnRemove;                                         // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnAdd;                                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnRemove;                                         // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.ObjectProvider.Subscribe
@@ -4681,8 +4714,8 @@ struct UObjectProvider_execSubscribeOnce_Params
 struct UObjectProvider_execSubscribe_Params
 {
 	class UClass*                                      BaseClass;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnAdd;                                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnRemove;                                         // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnAdd;                                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnRemove;                                         // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function Core.ObjectProvider.ObjectChangeCallback
@@ -4889,8 +4922,8 @@ struct UAsyncTask_execDependOn_Params
 // [0x00020803] 
 struct UAsyncTask_eventNotifyOnDispose_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.AsyncTask.ClearCallbacks
@@ -4923,24 +4956,24 @@ struct UAsyncTask_eventSetError_Params
 // [0x00020803] 
 struct UAsyncTask_eventNotifyOnComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.AsyncTask.NotifyOnFail
 // [0x00020803] 
 struct UAsyncTask_eventNotifyOnFail_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.AsyncTask.NotifyOnSuccess
 // [0x00020803] 
 struct UAsyncTask_eventNotifyOnSuccess_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function Core.AsyncTask.EventDisposed

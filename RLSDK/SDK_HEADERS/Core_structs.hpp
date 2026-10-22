@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: Core_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -630,12 +630,13 @@ struct FBreadcrumbEntry
 };
 
 // ScriptStruct Core.DelegateTracker.AsyncDelegateInfo
-// Size: 0x0020
+// Size: 0x0028
 struct FAsyncDelegateInfo
 {
 	int32_t                                            CallbackId;                                    // 0x0000 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x4];                            // 0x0004 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             AsyncDelegate;                                 // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             AsyncDelegate;                                 // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          AsyncDelegateUnknownData01[0x8];               // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct Core.DistributionFloat.RawDistributionFloat
@@ -661,21 +662,23 @@ struct FRawDistributionVector : FRawDistribution
 };
 
 // ScriptStruct Core.ObjectProvider.ObjectProviderSubscription
-// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0030 (0x002C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FObjectProviderSubscription
 {
 	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bFireOnce : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x100000001] 
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	uint32_t                                           bFireOnce : 1;                                 // 0x0028 (0x0004) [0x0000000000000000] [0x100000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct Core.ObjectProvider.ObjectProviderPendingCallback
-// Size: 0x0020
+// Size: 0x0028
 struct FObjectProviderPendingCallback
 {
-	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UObject*                                     Value;                                         // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0008 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	class UObject*                                     Value;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct Core.ObjectProvider.ObjectPropertyInjection

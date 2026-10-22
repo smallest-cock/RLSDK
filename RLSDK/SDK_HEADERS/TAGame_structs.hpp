@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: TAGame_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -2389,12 +2389,13 @@ struct FNotificationCooldown
 };
 
 // ScriptStruct TAGame.GFxData_ErrorModals_TA.PendingError
-// Size: 0x0028
+// Size: 0x0030
 struct FPendingError
 {
 	class UError*                                      Error;                                         // 0x0000 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UClass*                                      ModalClass;                                    // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	class UClass*                                      ModalClass;                                    // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct TAGame.GFxData_MenuTree_TA.MenuTreeNodeData
@@ -2445,11 +2446,12 @@ struct FInviteDatabind
 };
 
 // ScriptStruct TAGame.GFxData_PartyInvite_TA.InviteTarget
-// Size: 0x0060
+// Size: 0x0068
 struct FInviteTarget
 {
 	struct FUniqueNetId                                ToPlayer;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             InviteHandler;                                 // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteHandler;                                 // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          InviteHandlerUnknownData00[0x8];               // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProductHash_TA.ProductHashSource
@@ -2900,24 +2902,26 @@ struct FPendingValidatedMessage
 };
 
 // ScriptStruct TAGame.TextModerationManager_TA.PendingSignedMessage
-// Size: 0x0028 (0x0024 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0030 (0x002C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPendingSignedMessage
 {
 	class USignedMessageObject_X*                      MessageObject;                                 // 0x0000 (0x0008) [0x0001000000000000]               
-	struct FScriptDelegate                             FinishedCallback;                              // 0x0008 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            RequestID;                                     // 0x0020 (0x0004) [0x0001000000000000]               
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0024 (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             FinishedCallback;                              // 0x0008 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          FinishedCallbackUnknownData00[0x8];            // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	int32_t                                            RequestID;                                     // 0x0028 (0x0004) [0x0001000000000000]               
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.TextModerationManager_TA.PendingKeyGenMessage
-// Size: 0x0078
+// Size: 0x0080
 struct FPendingKeyGenMessage
 {
 	class FString                                      Message;                                       // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	struct FUniqueNetId                                SenderId;                                      // 0x0010 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                   // 0x0058 (0x0001) [0x0001000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x0059 (0x0007) MISSED OFFSET
-	struct FScriptDelegate                             FinishedCallback;                              // 0x0060 (0x0018) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             FinishedCallback;                              // 0x0060 (0x0020) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          FinishedCallbackUnknownData01[0x8];            // 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TextModerationManager_TA.UserPublicKey
@@ -2938,24 +2942,27 @@ struct FKeyRegistrationContent
 };
 
 // ScriptStruct TAGame.TourBracketCache_TA.BracketResult
-// Size: 0x00B8
+// Size: 0x00C8
 struct FBracketResult
 {
 	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FTourBracket                                Bracket;                                       // 0x0008 (0x0078) [0x0000000000400000] (CPF_NeedCtorLink)
 	float                                              RetrieveTime;                                  // 0x0080 (0x0004) [0x0000000000002000] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x0084 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             BracketChangedCallback;                        // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ErrorCallback;                                 // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             BracketChangedCallback;                        // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          BracketChangedCallbackUnknownData01[0x8];      // 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             ErrorCallback;                                 // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ErrorCallbackUnknownData02[0x8];               // 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TourBracketCache_TA.BracketRequest
-// Size: 0x0028
+// Size: 0x0030
 struct FBracketRequest
 {
 	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.RPC_TourUpdateGame_TA.TeamUpdateInfo
@@ -3047,18 +3054,19 @@ struct FSettingEvent
 };
 
 // ScriptStruct TAGame.VanityQuery_TA.VanityQueryRequest
-// Size: 0x0048 (0x0044 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0050 (0x004C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FVanityQueryRequest
 {
 	class UGFxShell_X*                                 Shell;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	uint8_t                                            VanityType;                                    // 0x0008 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x0009 (0x0007) MISSED OFFSET
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             VanityCallback;                                // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            NumIdsToQuery;                                 // 0x0038 (0x0004) [0x0000000000000000]               
-	int32_t                                            NumQueriesCompleted;                           // 0x003C (0x0004) [0x0000000000000000]               
-	uint32_t                                           bForced : 1;                                   // 0x0040 (0x0004) [0x0000000000000000] [0x100000001] 
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0044 (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             VanityCallback;                                // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          VanityCallbackUnknownData01[0x8];              // 0x0028 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	int32_t                                            NumIdsToQuery;                                 // 0x0040 (0x0004) [0x0000000000000000]               
+	int32_t                                            NumQueriesCompleted;                           // 0x0044 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bForced : 1;                                   // 0x0048 (0x0004) [0x0000000000000000] [0x100000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x004C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.ViralItemConfig_TA.ViralSeriesGroup
@@ -3405,7 +3413,7 @@ struct FArenaStatSound
 };
 
 // ScriptStruct TAGame.StatFactory_TA.StatEventCollection
-// Size: 0x0290
+// Size: 0x02A0
 struct FStatEventCollection
 {
 	class UStatEvent_TA*                               Win;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
@@ -3454,42 +3462,44 @@ struct FStatEventCollection
 	class UStatEvent_TA*                               CarDemolitionScore;                            // 0x0158 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               DemolitionSave;                                // 0x0160 (0x0008) [0x0000000000000001] (CPF_Edit)    
 	class UStatEvent_TA*                               DemolitionRespawn;                             // 0x0168 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               LowFive;                                       // 0x0170 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               HighFive;                                      // 0x0178 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PossessionPoint;                               // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PossessionSteal;                               // 0x0188 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PossessionDenial;                              // 0x0190 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PossessionClear;                               // 0x0198 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               ComebackWin;                                   // 0x01A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               SmallBoostsCollected;                          // 0x01A8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BigBoostsCollected;                            // 0x01B0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BoostUsed;                                     // 0x01B8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               Dodges;                                        // 0x01C0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               DistanceDrivenMeters;                          // 0x01C8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               SupersonicDistanceDrivenMeters;                // 0x01D0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               DistanceFlown;                                 // 0x01D8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               CrossbarHits;                                  // 0x01E0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               DoubleGrapple;                                 // 0x01E8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               MaxDodgeStreak;                                // 0x01F0 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PowerUpsUsed;                                  // 0x01F8 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               InfectedPlayersDefeated;                       // 0x0200 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               PlayersInfected;                               // 0x0208 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpPoint;                                   // 0x0210 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpPossession;                              // 0x0218 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpDenial;                                  // 0x0220 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               KeepUpClear;                                   // 0x0228 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               FlipReset;                                     // 0x0230 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               AerialFlipReset;                               // 0x0238 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BellyFlipReset;                                // 0x0240 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               AerialBellyFlipReset;                          // 0x0248 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               MaxFlipResetStreak;                            // 0x0250 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               EqualizerGoal;                                 // 0x0258 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               AerialEqualizerGoal;                           // 0x0260 (0x0008) [0x0000000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BladeTargetGrabSwap;                           // 0x0268 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BladeRedirect;                                 // 0x0270 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BladeCooldown;                                 // 0x0278 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BladeCooldownHit;                              // 0x0280 (0x0008) [0x0001000000000001] (CPF_Edit)    
-	class UStatEvent_TA*                               BladeCooldownSave;                             // 0x0288 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialDemo;                                    // 0x0170 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               LowFive;                                       // 0x0178 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               HighFive;                                      // 0x0180 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PossessionPoint;                               // 0x0188 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PossessionSteal;                               // 0x0190 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PossessionDenial;                              // 0x0198 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PossessionClear;                               // 0x01A0 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               ComebackWin;                                   // 0x01A8 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               SmallBoostsCollected;                          // 0x01B0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BigBoostsCollected;                            // 0x01B8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BoostUsed;                                     // 0x01C0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               Dodges;                                        // 0x01C8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DistanceDrivenMeters;                          // 0x01D0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               SupersonicDistanceDrivenMeters;                // 0x01D8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DistanceFlown;                                 // 0x01E0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               CrossbarHits;                                  // 0x01E8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               DoubleGrapple;                                 // 0x01F0 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxDodgeStreak;                                // 0x01F8 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PowerUpsUsed;                                  // 0x0200 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               InfectedPlayersDefeated;                       // 0x0208 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               PlayersInfected;                               // 0x0210 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpPoint;                                   // 0x0218 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpPossession;                              // 0x0220 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpDenial;                                  // 0x0228 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               KeepUpClear;                                   // 0x0230 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               FlipReset;                                     // 0x0238 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialFlipReset;                               // 0x0240 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BellyFlipReset;                                // 0x0248 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialBellyFlipReset;                          // 0x0250 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxFlipResetStreak;                            // 0x0258 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               MaxAerialFlipResetStreak;                      // 0x0260 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               EqualizerGoal;                                 // 0x0268 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               AerialEqualizerGoal;                           // 0x0270 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BladeTargetGrabSwap;                           // 0x0278 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BladeRedirect;                                 // 0x0280 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BladeCooldown;                                 // 0x0288 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BladeCooldownHit;                              // 0x0290 (0x0008) [0x0001000000000001] (CPF_Edit)    
+	class UStatEvent_TA*                               BladeCooldownSave;                             // 0x0298 (0x0008) [0x0001000000000001] (CPF_Edit)    
 };
 
 // ScriptStruct TAGame.AssetAttribute_ChangeProductDrawScale_TA.ProductSlotNewDrawScale
@@ -5907,6 +5917,15 @@ struct FLoadingPlayer
 	float                                              TimeoutTime;                                   // 0x004C (0x0004) [0x0000000000000000]               
 };
 
+// ScriptStruct TAGame.SkinForcedFinishCache_TA.SkinForcedFinishFlags
+// Size: 0x0008
+struct FSkinForcedFinishFlags
+{
+	int32_t                                            SkinProductID;                                 // 0x0000 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bForcedTeamFinish : 1;                         // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bForcedCustomFinish : 1;                       // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
+};
+
 // ScriptStruct TAGame.LoadoutSequencer_TA.SequenceData
 // Size: 0x0010
 struct FSequenceData
@@ -5925,13 +5944,14 @@ struct FMapSelectorPair
 };
 
 // ScriptStruct TAGame.MapDataLoader_TA.MapImageLoadRequest
-// Size: 0x0038
+// Size: 0x0040
 struct FMapImageLoadRequest
 {
 	class UMapData_TA*                                 MapData;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	class FName                                        PackageName;                                   // 0x0008 (0x0008) [0x0000000000000000]               
 	class FString                                      AssetPath;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0028 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.MapPrefsMetrics_TA.MapPrefsMetric
@@ -6214,7 +6234,7 @@ struct FIgnoredGoalRotations
 };
 
 // ScriptStruct TAGame.ProductAssetLoader_TA.AssetLoadRequest
-// Size: 0x0050
+// Size: 0x0058
 struct FAssetLoadRequest
 {
 	struct FAssetLoadResult                            Result;                                        // 0x0000 (0x0020) [0x0000000000000000]               
@@ -6224,7 +6244,8 @@ struct FAssetLoadRequest
 	uint8_t                                          UnknownData00[0x3];                            // 0x002D (0x0003) MISSED OFFSET
 	uint32_t                                           bIsThumbnailRequest : 1;                       // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData01[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             OnLoadedCallback;                              // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoadedCallback;                              // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnLoadedCallbackUnknownData02[0x8];            // 0x0040 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProductAttribute_InheritCarSetting_TA.InheritedParameter
@@ -6339,15 +6360,16 @@ struct FRenderThumbnailScene
 };
 
 // ScriptStruct TAGame.ProductThumbnailQueue_TA.RenderThumbnailRequest
-// Size: 0x0030
+// Size: 0x0038
 struct FRenderThumbnailRequest
 {
 	struct FProductThumbnailResult                     Result;                                        // 0x0000 (0x0018) [0x0000000000000002] (CPF_Const)   
-	struct FScriptDelegate                             Callback;                                      // 0x0018 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0018 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0020 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProfileCameraSave_TA.CameraPresetFloatOverride
-// Size: 0x0028
+// Size: 0x0030
 struct FCameraPresetFloatOverride
 {
 	uint8_t                                            Preset;                                        // 0x0000 (0x0001) [0x0000000000000000]               
@@ -6355,18 +6377,20 @@ struct FCameraPresetFloatOverride
 	float                                              ValueKBM;                                      // 0x0004 (0x0004) [0x0000000000000000]               
 	float                                              ValueController;                               // 0x0008 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x000C (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             ApplyFunc;                                     // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ApplyFunc;                                     // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ApplyFuncUnknownData02[0x8];                   // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ProfileCameraSave_TA.CameraPresetBoolOverride
-// Size: 0x0020
+// Size: 0x0028
 struct FCameraPresetBoolOverride
 {
 	uint8_t                                            Preset;                                        // 0x0000 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x3];                            // 0x0001 (0x0003) MISSED OFFSET
 	uint32_t                                           bValueKBM : 1;                                 // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint32_t                                           bValueController : 1;                          // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
-	struct FScriptDelegate                             ApplyFunc;                                     // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ApplyFunc;                                     // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ApplyFuncUnknownData01[0x8];                   // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.RBHistory_TA.RBPhysicsSnapshot
@@ -6490,19 +6514,21 @@ struct FReplayIOTaskBase
 };
 
 // ScriptStruct TAGame.ReplayManager_TA.ReplayExportCallbackData
-// Size: 0x0020
+// Size: 0x0028
 struct FReplayExportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ReplayManager_TA.ReplayImportCallbackData
-// Size: 0x0020
+// Size: 0x0028
 struct FReplayImportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001002] (CPF_Const | CPF_Native)
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.ReplayManager_TA.ReplayExportTask
@@ -6808,14 +6834,16 @@ struct FCatalogueCacheItem
 };
 
 // ScriptStruct TAGame.ShopMetrics_TA.ShopItemData
-// Size: 0x0020
+// Size: 0x0028
 struct FShopItemData
 {
 	int32_t                                            ShopItemID;                                    // 0x0000 (0x0004) [0x0000000000000000]               
 	int32_t                                            NumTimesPreviewed;                             // 0x0004 (0x0004) [0x0000000000000000]               
 	int32_t                                            NumTimesPurchaseOpened;                        // 0x0008 (0x0004) [0x0000000000000000]               
 	int32_t                                            NumTimesPurchaseCancelled;                     // 0x000C (0x0004) [0x0000000000000000]               
-	class TArray<int32_t>                              Costs;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            TimeSpentPreviewing;                           // 0x0010 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bSingleBundleShopItem : 1;                     // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	class TArray<int32_t>                              Costs;                                         // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.ShopMetrics_TA.ShopTabData
@@ -6991,12 +7019,13 @@ struct FRewardsResult
 };
 
 // ScriptStruct TAGame.TourRewards_TA.RewardsRequest
-// Size: 0x0028
+// Size: 0x0030
 struct FRewardsRequest
 {
 	uint64_t                                           TourID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
 	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct TAGame.TourSeeder_TA.TeamSeeds
@@ -7019,13 +7048,14 @@ struct FTrainingManipulationEvent
 };
 
 // ScriptStruct TAGame.Tutorial_TA.ButtonInfo
-// Size: 0x0030 (0x002C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0038 (0x0034 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FButtonInfo
 {
 	class FString                                      Text;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ClickDelegate;                                 // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint32_t                                           bCorrectAnswer : 1;                            // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x002C (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             ClickDelegate;                                 // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ClickDelegateUnknownData00[0x8];               // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	uint32_t                                           bCorrectAnswer : 1;                            // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0034 (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct TAGame.Tutorial_TA.ActionNameInfo
@@ -7316,30 +7346,6 @@ struct FAntiCheatMessage
 	class TArray<class FString>                        MessageParts;                                  // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
-// ScriptStruct TAGame.SettingsSnapshotManager_TA.ProductData
-// Size: 0x0020
-struct FProductData
-{
-	struct FProductInstanceID                          InstanceID;                                    // 0x0000 (0x0010) [0x0001000000000000]               
-	int32_t                                            ProductID;                                     // 0x0010 (0x0004) [0x0001000000000000]               
-	int32_t                                            PaintID;                                       // 0x0014 (0x0004) [0x0001000000000000]               
-	int32_t                                            SpecialEditionID;                              // 0x0018 (0x0004) [0x0001000000000000]               
-	int32_t                                            TeamEditionId;                                 // 0x001C (0x0004) [0x0001000000000000]               
-};
-
-// ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata
-// Size: 0x0070
-struct FJsonMetadata
-{
-	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
-	class FString                                      platformKey;                                   // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
-	int32_t                                            SchemaVersion;                                 // 0x0058 (0x0004) [0x0001000000000000]               
-	int32_t                                            clientVersion;                                 // 0x005C (0x0004) [0x0001000000000000]               
-	uint64_t                                           timestampUtc;                                  // 0x0060 (0x0008) [0x0001000000000000]               
-	int32_t                                            settingsVersion;                               // 0x0068 (0x0004) [0x0001000000000000]               
-	int32_t                                            Checksum;                                      // 0x006C (0x0004) [0x0001000000000000]               
-};
-
 // ScriptStruct TAGame.CustomScoreboardConfig_TA.ScoreboardGameModeDef
 // Size: 0x0010
 struct FScoreboardGameModeDef
@@ -7355,6 +7361,14 @@ struct FScoreboardStatRestriction
 	uint8_t                                            Stat;                                          // 0x0000 (0x0001) [0x0001000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x0001 (0x0007) MISSED OFFSET
 	class TArray<class FName>                          ModeIDs;                                       // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+};
+
+// ScriptStruct TAGame.ProfileScoreboardSave_TA.ScoreboardModePreference
+// Size: 0x0018
+struct FScoreboardModePreference
+{
+	class FName                                        ModeID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
+	class TArray<uint8_t>                              Stats;                                         // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 };
 
 // ScriptStruct TAGame.DemoSpawnSelectMetrics_TA.DemoSpawnEvent
@@ -7387,12 +7401,28 @@ struct FGFxScoreboardGameMode
 	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0014 (0x0004) PADDING FOR MINALIGNMENT
 };
 
-// ScriptStruct TAGame.ProfileScoreboardSave_TA.ScoreboardModePreference
-// Size: 0x0018
-struct FScoreboardModePreference
+// ScriptStruct TAGame.SettingsSnapshotManager_TA.ProductData
+// Size: 0x0020
+struct FProductData
 {
-	class FName                                        ModeID;                                        // 0x0000 (0x0008) [0x0001000000000000]               
-	class TArray<uint8_t>                              Stats;                                         // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	struct FProductInstanceID                          InstanceID;                                    // 0x0000 (0x0010) [0x0001000000000000]               
+	int32_t                                            ProductID;                                     // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            PaintID;                                       // 0x0014 (0x0004) [0x0001000000000000]               
+	int32_t                                            SpecialEditionID;                              // 0x0018 (0x0004) [0x0001000000000000]               
+	int32_t                                            TeamEditionId;                                 // 0x001C (0x0004) [0x0001000000000000]               
+};
+
+// ScriptStruct TAGame.SettingsSnapshotManager_TA.JsonMetadata
+// Size: 0x0070
+struct FJsonMetadata
+{
+	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      platformKey;                                   // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SchemaVersion;                                 // 0x0058 (0x0004) [0x0001000000000000]               
+	int32_t                                            clientVersion;                                 // 0x005C (0x0004) [0x0001000000000000]               
+	uint64_t                                           timestampUtc;                                  // 0x0060 (0x0008) [0x0001000000000000]               
+	int32_t                                            settingsVersion;                               // 0x0068 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x006C (0x0004) [0x0001000000000000]               
 };
 
 // ScriptStruct TAGame.SpecialEvent_TA.SpecialEventStoreConfigs

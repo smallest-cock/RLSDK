@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: Core_classes.cpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -494,6 +494,25 @@ int32_t UObject::SortAscendingQWORD(uint64_t A, uint64_t B)
 
 	UObject::StaticClass()->ProcessEvent(uFnSortAscendingQWORD, &SortAscendingQWORD_Params, nullptr);
 	return SortAscendingQWORD_Params.ReturnValue;
+};
+
+// Function Core.Object.SQWordToIntClamped
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        Value                          (CPF_Parm)
+int32_t UObject::SQWordToIntClamped(int64_t Value)
+{
+    static UFunction* uFnSQWordToIntClamped = nullptr;
+    if (!uFnSQWordToIntClamped)
+        uFnSQWordToIntClamped = UFunction::FindFunction("Function Core.Object.SQWordToIntClamped");
+
+	UObject_execSQWordToIntClamped_Params SQWordToIntClamped_Params;
+	memset(&SQWordToIntClamped_Params, 0, sizeof(SQWordToIntClamped_Params));
+	memcpy_s(&SQWordToIntClamped_Params.Value, sizeof(SQWordToIntClamped_Params.Value), &Value, sizeof(Value));
+
+	UObject::StaticClass()->ProcessEvent(uFnSQWordToIntClamped, &SQWordToIntClamped_Params, nullptr);
+	return SQWordToIntClamped_Params.ReturnValue;
 };
 
 // Function Core.Object.SortDescendingInt
@@ -7904,6 +7923,27 @@ bool UObject::Less_SQWordSQWord(int64_t A, int64_t B)
 	return Less_SQWordSQWord_Params.ReturnValue;
 };
 
+// Function Core.Object.Percent_SQWordSQWord
+// [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        A                              (CPF_Parm)
+// int64_t                        B                              (CPF_Parm)
+int64_t UObject::Percent_SQWordSQWord(int64_t A, int64_t B)
+{
+    static UFunction* uFnPercent_SQWordSQWord = nullptr;
+    if (!uFnPercent_SQWordSQWord)
+        uFnPercent_SQWordSQWord = UFunction::FindFunction("Function Core.Object.Percent_SQWordSQWord");
+
+	UObject_execPercent_SQWordSQWord_Params Percent_SQWordSQWord_Params;
+	memset(&Percent_SQWordSQWord_Params, 0, sizeof(Percent_SQWordSQWord_Params));
+	memcpy_s(&Percent_SQWordSQWord_Params.A, sizeof(Percent_SQWordSQWord_Params.A), &A, sizeof(A));
+	memcpy_s(&Percent_SQWordSQWord_Params.B, sizeof(Percent_SQWordSQWord_Params.B), &B, sizeof(B));
+
+	UObject::StaticClass()->ProcessEvent(uFnPercent_SQWordSQWord, &Percent_SQWordSQWord_Params, nullptr);
+	return Percent_SQWordSQWord_Params.ReturnValue;
+};
+
 // Function Core.Object.Subtract_SQWordSQWord
 // [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
 // Parameter Info:
@@ -8268,10 +8308,10 @@ bool UObject::Less_QWordQWord(uint64_t A, uint64_t B)
 // Function Core.Object.Subtract_QWordQWord
 // [0x00023401] (FUNC_Final | FUNC_Native | FUNC_Operator | FUNC_Static | FUNC_Public)
 // Parameter Info:
-// int32_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// int64_t                        ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 // uint64_t                       A                              (CPF_Parm)
 // uint64_t                       B                              (CPF_Parm)
-int32_t UObject::Subtract_QWordQWord(uint64_t A, uint64_t B)
+int64_t UObject::Subtract_QWordQWord(uint64_t A, uint64_t B)
 {
     static UFunction* uFnSubtract_QWordQWord = nullptr;
     if (!uFnSubtract_QWordQWord)
@@ -9241,6 +9281,44 @@ bool UObject::Not_PreBool(bool A)
 
 	UObject::StaticClass()->ProcessEvent(uFnNot_PreBool, &Not_PreBool_Params, nullptr);
 	return Not_PreBool_Params.ReturnValue;
+};
+
+// Function Core.UTF8.IsValidUTF8
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// bool                           ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+// class FString                  Input                          (CPF_Parm | CPF_NeedCtorLink)
+bool UUTF8::IsValidUTF8(const class FString& Input)
+{
+    static UFunction* uFnIsValidUTF8 = nullptr;
+    if (!uFnIsValidUTF8)
+        uFnIsValidUTF8 = UFunction::FindFunction("Function Core.UTF8.IsValidUTF8");
+
+	UUTF8_execIsValidUTF8_Params IsValidUTF8_Params;
+	memset(&IsValidUTF8_Params, 0, sizeof(IsValidUTF8_Params));
+	memcpy_s(&IsValidUTF8_Params.Input, sizeof(IsValidUTF8_Params.Input), &Input, sizeof(Input));
+
+	UUTF8::StaticClass()->ProcessEvent(uFnIsValidUTF8, &IsValidUTF8_Params, nullptr);
+	return IsValidUTF8_Params.ReturnValue;
+};
+
+// Function Core.UTF8.Sanitize
+// [0x00022401] (FUNC_Final | FUNC_Native | FUNC_Static | FUNC_Public)
+// Parameter Info:
+// class FString                  ReturnValue                    (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+// class FString                  Input                          (CPF_Parm | CPF_NeedCtorLink)
+class FString UUTF8::Sanitize(const class FString& Input)
+{
+    static UFunction* uFnSanitize = nullptr;
+    if (!uFnSanitize)
+        uFnSanitize = UFunction::FindFunction("Function Core.UTF8.Sanitize");
+
+	UUTF8_execSanitize_Params Sanitize_Params;
+	memset(&Sanitize_Params, 0, sizeof(Sanitize_Params));
+	memcpy_s(&Sanitize_Params.Input, sizeof(Sanitize_Params.Input), &Input, sizeof(Input));
+
+	UUTF8::StaticClass()->ProcessEvent(uFnSanitize, &Sanitize_Params, nullptr);
+	return Sanitize_Params.ReturnValue;
 };
 
 // Function Core.UTF8.DecodeInline

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: ProjectX_structs.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -864,11 +864,12 @@ struct FPendingStorage
 };
 
 // ScriptStruct ProjectX.BlockStatusReporter_X.PlayerBlockListenData
-// Size: 0x0028
+// Size: 0x0030
 struct FPlayerBlockListenData
 {
 	class FString                                      EpicID;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0018 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.CabinedModeResponse.CabinedModeData
@@ -916,11 +917,12 @@ struct FPlaylistRestrictionPlayer
 };
 
 // ScriptStruct ProjectX.OnlinePlayerFriends_X.EpicSocialTaskData
-// Size: 0x0060
+// Size: 0x0068
 struct FEpicSocialTaskData
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnCompleteCallback;                            // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnCompleteCallback;                            // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnCompleteCallbackUnknownData00[0x8];          // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.StorageMaxSize
@@ -954,7 +956,7 @@ struct FPsyNetPartyInfo
 };
 
 // ScriptStruct ProjectX.WordFilterTypes_X.WordFilterPair
-// Size: 0x0078
+// Size: 0x0088
 struct FWordFilterPair
 {
 	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -966,8 +968,10 @@ struct FWordFilterPair
 	float                                              LastRequestTime;                               // 0x0038 (0x0004) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x003C (0x0004) MISSED OFFSET
 	class UError*                                      Error;                                         // 0x0040 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ErrorCallback;                                 // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData02[0x8];                    // 0x0050 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             ErrorCallback;                                 // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ErrorCallbackUnknownData03[0x8];               // 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX._SharedHelpers.Orientation
@@ -1016,12 +1020,14 @@ struct FAnimatedLinearColorParam : FAnimatedParam
 };
 
 // ScriptStruct ProjectX.OnlineConfig_X.ModifierSubscription
-// Size: 0x0038
+// Size: 0x0048
 struct FModifierSubscription
 {
 	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             OnAdd;                                         // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnRemove;                                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnAdd;                                         // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnAddUnknownData00[0x8];                       // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             OnRemove;                                      // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnRemoveUnknownData01[0x8];                    // 0x0030 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.AprilConfig_X.QuickChatOverridePair
@@ -1092,10 +1098,11 @@ struct FVectorInterpRate
 };
 
 // ScriptStruct ProjectX.CheatManager_X.TestStructEvent
-// Size: 0x0018
+// Size: 0x0020
 struct FTestStructEvent
 {
-	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0008 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.ClassPropertyConfig_X.PropertyOverride
@@ -1231,11 +1238,12 @@ struct FTradePermissionEnabledPair
 };
 
 // ScriptStruct ProjectX.EpochTimerTick_X.EpochTimer
-// Size: 0x0020
+// Size: 0x0028
 struct FEpochTimer
 {
-	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	uint64_t                                           EpochTime;                                     // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0008 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	uint64_t                                           EpochTime;                                     // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // ScriptStruct ProjectX.ParameterDispenser_X.NameParamPair
@@ -1341,12 +1349,14 @@ struct FFXActorEventCheck
 };
 
 // ScriptStruct ProjectX.FXActor_X.FXEventSubscription
-// Size: 0x0038
+// Size: 0x0048
 struct FFXEventSubscription
 {
 	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             OnPushed;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnPopped;                                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnPushed;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnPushedUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             OnPopped;                                      // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          OnPoppedUnknownData01[0x8];                    // 0x0030 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.ExplosionHitHandler_X.ContactInformation
@@ -1530,11 +1540,12 @@ struct FLensFlareFloatParamCurve
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheImportCallbackData
-// Size: 0x0020
+// Size: 0x0028
 struct FCacheImportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheIOTaskBase
@@ -1554,11 +1565,12 @@ struct FCacheExportTask : FCacheIOTaskBase
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheExportCallbackData
-// Size: 0x0020
+// Size: 0x0028
 struct FCacheExportCallbackData
 {
 	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.LocalCache_X.CacheImportTask
@@ -1675,14 +1687,15 @@ struct FSteamPlayerDLCOwnershipState
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.PlayerDLCInfo
-// Size: 0x0078 (0x0074 PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
+// Size: 0x0080 (0x007C PropertySize + 0x0004 padding to satisfy MinAlignment of 8)
 struct FPlayerDLCInfo
 {
 	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FSteamPlayerDLCOwnershipState> DLCs;                                          // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             ValidationReadyDelegate;                       // 0x0058 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	float                                              TimeLastOwnershipRequest;                      // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
-	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x0074 (0x0004) PADDING FOR MINALIGNMENT
+	struct FScriptDelegate                             ValidationReadyDelegate;                       // 0x0058 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          ValidationReadyDelegateUnknownData00[0x8];     // 0x0060 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
+	float                                              TimeLastOwnershipRequest;                      // 0x0078 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                          MinAlignmentPadding[0x4];                      // 0x007C (0x0004) PADDING FOR MINALIGNMENT
 };
 
 // ScriptStruct ProjectX.OnlineGameDLC_X.SteamWebRequestData
@@ -1851,12 +1864,13 @@ struct FPendingReservation
 };
 
 // ScriptStruct ProjectX.OnlineGameSkill_X.SkillSyncRequest
-// Size: 0x0068
+// Size: 0x0070
 struct FSkillSyncRequest
 {
 	class URPC_X*                                      RPC;                                           // 0x0000 (0x0008) [0x0000000000000000]               
 	struct FUniqueNetId                                PlayerID;                                      // 0x0008 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                      // 0x0050 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0050 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0058 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.RPC_GetPartyMemberSkill_X.PartyMemberSkill
@@ -1885,13 +1899,14 @@ struct FUploadStatDataSet
 };
 
 // ScriptStruct ProjectX.OnlineGameWordFilterProcessor_X.WordFilterRequest
-// Size: 0x0040
+// Size: 0x0048
 struct FWordFilterRequest
 {
 	class UWebRequest_X*                               Request;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	class FString                                      Comment;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class FString                                      Sanitized;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                      // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0030 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.OnlinePlayerStorageManifest_X.StorageMetadata
@@ -2052,11 +2067,12 @@ struct FPostProcessOverride
 };
 
 // ScriptStruct ProjectX.PsyNetServiceSubscriptions_X.ServiceSubscription
-// Size: 0x0020
+// Size: 0x0028
 struct FServiceSubscription
 {
 	class UClass*                                      Class;                                         // 0x0000 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData00[0x8];                    // 0x0010 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.PsyNetChannel_X.PendingChannelService
@@ -2367,7 +2383,7 @@ struct FNetworkAdapterMetrics
 };
 
 // ScriptStruct ProjectX.WebCache_X.CachedDataRequest
-// Size: 0x0050
+// Size: 0x0058
 struct FCachedDataRequest
 {
 	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -2376,7 +2392,8 @@ struct FCachedDataRequest
 	class UCachedWebData_X*                            CachedWebData;                                 // 0x0028 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bZipResponse : 1;                              // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
 	uint8_t                                          UnknownData00[0x4];                            // 0x0034 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             Callback;                                      // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          CallbackUnknownData01[0x8];                    // 0x0040 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY [Original: 0x0020, Missing: 0x0008]
 };
 
 // ScriptStruct ProjectX.ServerPlayerIdCache_X.PlayerIdLink

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: GFxUI_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -178,12 +178,12 @@ public:
 };
 
 // Class GFxUI.GFxInteraction
-// 0x000C (0x00D0 - 0x00DC)
+// 0x000C (0x00F0 - 0x00FC)
 class UGFxInteraction : public UInteraction
 {
 public:
-	struct FPointer                                    VfTable_FCallbackEventDevice;                  // 0x00D0 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	uint32_t                                           bFakeMobileTouches : 1;                        // 0x00D8 (0x0004) [0x0000000000000000] [0x100000001] 
+	struct FPointer                                    VfTable_FCallbackEventDevice;                  // 0x00F0 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
+	uint32_t                                           bFakeMobileTouches : 1;                        // 0x00F8 (0x0004) [0x0000000000000000] [0x100000001] 
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxInteraction"))
@@ -197,7 +197,7 @@ public:
 };
 
 // Class GFxUI.GFxMoviePlayer
-// 0x01B8 (0x0060 - 0x0218)
+// 0x01C0 (0x0060 - 0x0220)
 class UGFxMoviePlayer : public UObject
 {
 public:
@@ -253,7 +253,8 @@ public:
 	class UGFxObject*                                  SplitscreenLayoutObject;                       // 0x01F0 (0x0008) [0x0000000000002000] (CPF_Transient)
 	int32_t                                            SplitscreenLayoutYAdjust;                      // 0x01F8 (0x0004) [0x0000000000004000] (CPF_Config)  
 	uint8_t                                          UnknownData06[0x4];                            // 0x01FC (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __OnPostAdvance__Delegate;                     // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnPostAdvance__Delegate;                     // 0x0200 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPostAdvance__Delegate_UnknownData07[0x8];  // 0x0208 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxMoviePlayer"))
@@ -594,11 +595,12 @@ public:
 };
 
 // Class GFxUI.GFxClikWidget
-// 0x0018 (0x00A0 - 0x00B8)
+// 0x0020 (0x00A0 - 0x00C0)
 class UGFxClikWidget : public UGFxObject
 {
 public:
-	struct FScriptDelegate                             __EventListener__Delegate;                     // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventListener__Delegate;                     // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventListener__Delegate_UnknownData00[0x8];  // 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class GFxUI.GFxClikWidget"))

@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: OnlineSubsystemEOS_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -29,14 +29,14 @@
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearCaptureAvailabilityChangeDelegate_Params
 {
-	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCaptureAvailabilityChangeDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddCaptureAvailabilityChangeDelegate_Params
 {
-	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CaptureAvailabilityDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCaptureAvailabilityChange
@@ -150,14 +150,14 @@ struct UOnlineSubsystemEOS_eventFormatCurrency_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearMicroTxnResponseDelegate_Params
 {
-	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddMicroTxnResponseDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddMicroTxnResponseDelegate_Params
 {
-	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ResponseMicroTxnDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.GetAppPriceInfo
@@ -166,8 +166,8 @@ struct UOnlineSubsystemEOS_execGetAppPriceInfo_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<class FName>                          AppNames;                                         // 0x0048 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.HandleBootMessage
@@ -188,14 +188,14 @@ struct UOnlineSubsystemEOS_execGetOverlayEnabled_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearPlayerSigningOutDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddPlayerSigningOutDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddPlayerSigningOutDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnPlayerSigningOut
@@ -216,14 +216,14 @@ struct UOnlineSubsystemEOS_execRefreshNetworkErrorToggle_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearUserRestoredDelegate_Params
 {
-	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddUserRestoredDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddUserRestoredDelegate_Params
 {
-	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserRestoredDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnUserRestored
@@ -237,14 +237,14 @@ struct UOnlineSubsystemEOS_execOnUserRestored_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearUserOrphanedDelegate_Params
 {
-	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddUserOrphanedDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddUserOrphanedDelegate_Params
 {
-	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserOrphanedDelegate;                             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnUserOrphaned
@@ -261,7 +261,7 @@ struct UOnlineSubsystemEOS_execOpenStoreForItemsAsync_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OpenStoreForItems
@@ -271,7 +271,7 @@ struct UOnlineSubsystemEOS_execOpenStoreForItems_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class FString>                        Targets;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnStorePurchaseCompleteDelegate;                  // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OpenStoreForDLC
@@ -340,14 +340,14 @@ struct UOnlineSubsystemEOS_execAnyPlayerChatRestricted_Params
 // [0x00020003] 
 struct UOnlineSubsystemEOS_execClearUnlockedDLCChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddUnlockedDLCChangeDelegate
 // [0x00020003] 
 struct UOnlineSubsystemEOS_execAddUnlockedDLCChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.GetUnlockedDLC
@@ -375,14 +375,14 @@ struct UOnlineSubsystemEOS_execUpdateSessionStatusFromPlayers_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearErrorDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddErrorDialogClosedDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddErrorDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnErrorDialogClosed
@@ -396,14 +396,14 @@ struct UOnlineSubsystemEOS_execOnErrorDialogClosed_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearCommerceDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCommerceDialogClosedDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddCommerceDialogClosedDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCommerceDialogClosed
@@ -423,14 +423,14 @@ struct UOnlineSubsystemEOS_execGetCurrentConnectionStatus_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearCloseKickPlayerDialogDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCloseKickPlayerDialogDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddCloseKickPlayerDialogDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCloseKickPlayerDialog
@@ -511,14 +511,14 @@ struct UOnlineSubsystemEOS_execCreateLocalAccount_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearCreateOnlineAccountCompletedDelegate_Params
 {
-	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddCreateOnlineAccountCompletedDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddCreateOnlineAccountCompletedDelegate_Params
 {
-	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AccountCreateDelegate;                            // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnCreateOnlineAccountCompleted
@@ -550,14 +550,14 @@ struct UOnlineSubsystemEOS_execIsKeyValid_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearStorageDeviceChangeDelegate_Params
 {
-	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddStorageDeviceChangeDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddStorageDeviceChangeDelegate_Params
 {
-	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             StorageDeviceChangeDelegate;                      // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnStorageDeviceChange
@@ -577,14 +577,14 @@ struct UOnlineSubsystemEOS_execGetNATType_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearConnectionStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddConnectionStatusChangeDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddConnectionStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConnectionStatusDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnConnectionStatusChange
@@ -606,14 +606,14 @@ struct UOnlineSubsystemEOS_execIsControllerConnected_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearControllerChangeDelegate_Params
 {
-	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddControllerChangeDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddControllerChangeDelegate_Params
 {
-	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ControllerChangeDelegate;                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnControllerChange
@@ -649,15 +649,15 @@ struct UOnlineSubsystemEOS_execNotifyExternalUIChanged_Params
 // [0x00020003] 
 struct UOnlineSubsystemEOS_execClearExternalUIChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddExternalUIChangeDelegate
 // [0x00020003] 
 struct UOnlineSubsystemEOS_execAddExternalUIChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnExternalUIChange
@@ -671,14 +671,14 @@ struct UOnlineSubsystemEOS_execOnExternalUIChange_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearLinkStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddLinkStatusChangeDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddLinkStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LinkStatusDelegate;                               // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnLinkStatusChange
@@ -715,14 +715,14 @@ struct UOnlineSubsystemEOS_execGetClientStatGuid_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearRegisterHostStatGuidCompleteDelegateDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddRegisterHostStatGuidCompleteDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddRegisterHostStatGuidCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnFlushOnlineStatsComplete
@@ -774,14 +774,14 @@ struct UOnlineSubsystemEOS_execFreeStats_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddReadOnlineStatsCompleteDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnReadOnlineStatsComplete
@@ -876,8 +876,8 @@ struct UOnlineSubsystemEOS_execClearRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddRecognitionCompleteDelegate
@@ -886,7 +886,7 @@ struct UOnlineSubsystemEOS_execAddRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnRecognitionComplete
@@ -941,14 +941,14 @@ struct UOnlineSubsystemEOS_execStartNetworkedVoice_Params
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execClearPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.AddPlayerTalkingDelegate
 // [0x00020001] 
 struct UOnlineSubsystemEOS_execAddPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineSubsystemEOS.OnPlayerTalking
@@ -1281,8 +1281,8 @@ struct UOnlineAuthInterfaceEOS_execRequiresAuthTicket_Params
 struct UOnlineAuthInterfaceEOS_execRequestAuthTicket_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function OnlineSubsystemEOS.OnlineAuthInterfaceEOS.RequestMtxCode
@@ -1290,8 +1290,8 @@ struct UOnlineAuthInterfaceEOS_execRequestAuthTicket_Params
 struct UOnlineAuthInterfaceEOS_execRequestMtxCode_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0060 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function OnlineSubsystemEOS.OnlineFriendsInterfaceEOS.GetActivePlatformId
@@ -1312,8 +1312,8 @@ struct UOnlineFriendsInterfaceEOS_execRequestLinkedAccounts_Params
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FUniqueNetId>                  AccountIds;                                       // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function OnlineSubsystemEOS.OnlineGameInterfaceEOS.AcceptGameInvite
@@ -1445,7 +1445,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendInviteAcceptedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteAccepted;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteAccepted;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnFriendInviteAccepted
@@ -1479,7 +1479,7 @@ struct UOnlinePlayerInterfaceEOS_execAddPlayerUnblockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddPlayerBlockedDelegate
@@ -1488,7 +1488,7 @@ struct UOnlinePlayerInterfaceEOS_execAddPlayerBlockedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddBlockListUpdatedDelegate
@@ -1497,7 +1497,7 @@ struct UOnlinePlayerInterfaceEOS_execAddBlockListUpdatedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.EpicIDToPlatformID
@@ -1507,7 +1507,7 @@ struct UOnlinePlayerInterfaceEOS_execEpicIDToPlatformID_Params
 	struct FUniqueNetId                                EpicAccountId;                                    // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            TargetPlatform;                                   // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.EpicIDToPlatformIDCallback
@@ -1579,9 +1579,9 @@ struct UOnlinePlayerInterfaceEOS_execRecordPlayersRecentlyMet_Params
 struct UOnlinePlayerInterfaceEOS_execWordFilterSanitizeString_Params
 {
 	class FString                                      Comment;                                          // 0x0000 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FUniqueNetId                                PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             SanitizeDelegate;                                 // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnSanitizeStringComplete
@@ -1615,7 +1615,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddAvatarChangeDelegate
@@ -1624,7 +1624,7 @@ struct UOnlinePlayerInterfaceEOS_execAddAvatarChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             AvatarDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearFriendPresenceChangeDelegate
@@ -1633,7 +1633,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddFriendPresenceChangeDelegate
@@ -1642,7 +1642,7 @@ struct UOnlinePlayerInterfaceEOS_eventAddFriendPresenceChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             PresenceDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.FriendPresenceChange
@@ -1699,7 +1699,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadAchievementsCompleteDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearUnlockAchievementCompleteDelegate
@@ -1708,7 +1708,7 @@ struct UOnlinePlayerInterfaceEOS_execClearUnlockAchievementCompleteDelegate_Para
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadAchievementsCompleteDelegate
@@ -1717,7 +1717,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadAchievementsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddUnlockAchievementCompleteDelegate
@@ -1726,7 +1726,7 @@ struct UOnlinePlayerInterfaceEOS_execAddUnlockAchievementCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadAchievementsComplete
@@ -1774,7 +1774,7 @@ struct UOnlinePlayerInterfaceEOS_execClearProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddProfileDataChangedDelegate
@@ -1783,7 +1783,7 @@ struct UOnlinePlayerInterfaceEOS_execAddProfileDataChangedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ProfileDataChangedDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnProfileDataChanged
@@ -1826,7 +1826,7 @@ struct UOnlinePlayerInterfaceEOS_execClearDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddDeviceSelectionDoneDelegate
@@ -1835,7 +1835,7 @@ struct UOnlinePlayerInterfaceEOS_execAddDeviceSelectionDoneDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnDeviceSelectionComplete
@@ -2078,14 +2078,14 @@ struct UOnlinePlayerInterfaceEOS_execSetPrimaryPlayerGamepadToLastInput_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearUserSwitchCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddUserSwitchCompleteDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddUserSwitchCompleteDelegate_Params
 {
-	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UserSwitchCompleteDelegate;                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnUserSwitchComplete
@@ -2099,16 +2099,16 @@ struct UOnlinePlayerInterfaceEOS_execOnUserSwitchComplete_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearLoginStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddLoginStatusChangeDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddLoginStatusChangeDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint8_t                                            LocalUserNum;                                     // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint8_t                                            LocalUserNum;                                     // 0x0020 (0x0001) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnLoginStatusChange
@@ -2222,14 +2222,14 @@ struct UOnlinePlayerInterfaceEOS_execSetInputAPI_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearInputAPIChangedDelegate_Params
 {
-	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddInputAPIChangedDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddInputAPIChangedDelegate_Params
 {
-	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputAPIChangedDelegate;                          // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnInputAPIChanged
@@ -2243,28 +2243,28 @@ struct UOnlinePlayerInterfaceEOS_execOnInputAPIChanged_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearUnregisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearRegisteredControllerDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearRegisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddUnregisteredControllerDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddUnregisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             UnregisteredControllerDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddRegisteredControllerDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddRegisteredControllerDelegate_Params
 {
-	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisteredControllerDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnUnregisteredController
@@ -2308,14 +2308,14 @@ struct UOnlinePlayerInterfaceEOS_execUpdateStat_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearSaveDataNoSpaceDialogCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddSaveDataNoSpaceDialogCompleteDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddSaveDataNoSpaceDialogCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeviceDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnSaveDataNoSpaceDialogComplete
@@ -2394,14 +2394,14 @@ struct UOnlinePlayerInterfaceEOS_execShowFeedbackUI_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execRemoveCanPlayOnlineChangedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddCanPlayOnlineChangedDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddCanPlayOnlineChangedDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.CanPlayOnlineChanged
@@ -2415,14 +2415,14 @@ struct UOnlinePlayerInterfaceEOS_execCanPlayOnlineChanged_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearUserSignInCompleteDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddUserSignInCompleteDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddUserSignInCompleteDelegate_Params
 {
-	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnUserSignInComplete
@@ -2470,7 +2470,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadCrossTitleProfileSettingsCompleteD
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadCrossTitleProfileSettingsCompleteDelegate
@@ -2479,7 +2479,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadCrossTitleProfileSettingsCompleteDel
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadCrossTitleProfileSettingsComplete
@@ -2509,7 +2509,7 @@ struct UOnlinePlayerInterfaceEOS_execClearWritePlayerStorageCompleteDelegate_Par
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddWritePlayerStorageCompleteDelegate
@@ -2518,7 +2518,7 @@ struct UOnlinePlayerInterfaceEOS_execAddWritePlayerStorageCompleteDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnWritePlayerStorageComplete
@@ -2546,7 +2546,7 @@ struct UOnlinePlayerInterfaceEOS_execWritePlayerStorage_Params
 struct UOnlinePlayerInterfaceEOS_execClearReadPlayerStorageForNetIdCompleteDelegate_Params
 {
 	struct FUniqueNetId                                NetId;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InDelegate;                                       // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadPlayerStorageForNetIdCompleteDelegate
@@ -2554,7 +2554,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadPlayerStorageForNetIdCompleteDeleg
 struct UOnlinePlayerInterfaceEOS_execAddReadPlayerStorageForNetIdCompleteDelegate_Params
 {
 	struct FUniqueNetId                                NetId;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InDelegate;                                       // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadPlayerStorageForNetIdComplete
@@ -2582,7 +2582,7 @@ struct UOnlinePlayerInterfaceEOS_execClearReadPlayerStorageCompleteDelegate_Para
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadPlayerStorageCompleteDelegate
@@ -2591,7 +2591,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadPlayerStorageCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadPlayerStorageComplete
@@ -2629,10 +2629,10 @@ struct UOnlinePlayerInterfaceEOS_execRequestNativePlatformAuthTicket_Params
 {
 	int32_t                                            LocalUserNum;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlineSubsystem*                         NativeOnlineSubsystem;                            // 0x0020 (0x0008) [0x0000000000000000]               
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0028 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class U__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1* _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UOnlineSubsystem*                         NativeOnlineSubsystem;                            // 0x0028 (0x0008) [0x0000000000000000]               
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class U__OnlinePlayerInterfaceEOS__RequestNativePlatformAuthTicket_0x1* _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnRequestNativePlatformAuthTicketComplete
@@ -2699,7 +2699,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddFriendMessageReceivedDelegate
@@ -2708,7 +2708,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendMessageReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MessageDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnFriendMessageReceived
@@ -2735,15 +2735,15 @@ struct UOnlinePlayerInterfaceEOS_execGetFriendMessages_Params
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execClearJoinFriendGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddJoinFriendGameCompleteDelegate
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execAddJoinFriendGameCompleteDelegate_Params
 {
-	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             JoinFriendGameCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnJoinFriendGameComplete
@@ -2769,8 +2769,8 @@ struct UOnlinePlayerInterfaceEOS_execClearReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReceivedGameInviteDelegate
@@ -2779,7 +2779,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReceivedGameInviteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReceivedGameInviteDelegate;                       // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReceivedGameInvite
@@ -2830,7 +2830,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddFriendInviteCanceledDelegate
@@ -2839,7 +2839,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendInviteCanceledDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnFriendInviteCanceled
@@ -2857,7 +2857,7 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddFriendInviteReceivedDelegate
@@ -2866,7 +2866,7 @@ struct UOnlinePlayerInterfaceEOS_execAddFriendInviteReceivedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnFriendInviteReceived
@@ -2896,7 +2896,7 @@ struct UOnlinePlayerInterfaceEOS_execClearRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddRemoveFriendCompleteDelegate
@@ -2905,7 +2905,7 @@ struct UOnlinePlayerInterfaceEOS_execAddRemoveFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RemoveFriendDelegate;                             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnRemoveFriendComplete
@@ -2933,7 +2933,7 @@ struct UOnlinePlayerInterfaceEOS_execClearDenyFriendInviteCompleteDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddDenyFriendInviteCompleteDelegate
@@ -2942,7 +2942,7 @@ struct UOnlinePlayerInterfaceEOS_execAddDenyFriendInviteCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnDenyFriendInviteComplete
@@ -2969,7 +2969,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAcceptFriendInviteCompleteDelegate_Par
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddAcceptFriendInviteCompleteDelegate
@@ -2978,7 +2978,7 @@ struct UOnlinePlayerInterfaceEOS_execAddAcceptFriendInviteCompleteDelegate_Param
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnAcceptFriendInviteComplete
@@ -2995,7 +2995,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddAddFriendByNameCompleteDelegate
@@ -3004,7 +3004,7 @@ struct UOnlinePlayerInterfaceEOS_execAddAddFriendByNameCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnAddFriendByNameComplete
@@ -3041,7 +3041,7 @@ struct UOnlinePlayerInterfaceEOS_execClearQueryUserByDisplayNameCompleteDelegate
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddQueryUserByDisplayNameCompleteDelegate
@@ -3050,7 +3050,7 @@ struct UOnlinePlayerInterfaceEOS_execAddQueryUserByDisplayNameCompleteDelegate_P
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             QueryDelegate;                                    // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnQueryUserByDisplayName
@@ -3080,7 +3080,7 @@ struct UOnlinePlayerInterfaceEOS_execClearAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddAddFriendCompleteDelegate
@@ -3089,7 +3089,7 @@ struct UOnlinePlayerInterfaceEOS_execAddAddFriendCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnAddFriendComplete
@@ -3113,14 +3113,14 @@ struct UOnlinePlayerInterfaceEOS_execGetKeyboardInputResults_Params
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execClearKeyboardInputDoneDelegate_Params
 {
-	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddKeyboardInputDoneDelegate
 // [0x00020001] 
 struct UOnlinePlayerInterfaceEOS_execAddKeyboardInputDoneDelegate_Params
 {
-	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InputDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnKeyboardInputComplete
@@ -3174,8 +3174,8 @@ struct UOnlinePlayerInterfaceEOS_execClearReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadFriendsCompleteDelegate
@@ -3184,7 +3184,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadFriendsCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadFriendsCompleteDelegate;                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadFriendsComplete
@@ -3211,8 +3211,8 @@ struct UOnlinePlayerInterfaceEOS_execClearWriteProfileSettingsCompleteDelegate_P
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddWriteProfileSettingsCompleteDelegate
@@ -3221,7 +3221,7 @@ struct UOnlinePlayerInterfaceEOS_execAddWriteProfileSettingsCompleteDelegate_Par
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteProfileSettingsCompleteDelegate;             // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnWriteProfileSettingsComplete
@@ -3258,8 +3258,8 @@ struct UOnlinePlayerInterfaceEOS_execClearReadProfileSettingsCompleteDelegate_Pa
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddReadProfileSettingsCompleteDelegate
@@ -3268,7 +3268,7 @@ struct UOnlinePlayerInterfaceEOS_execAddReadProfileSettingsCompleteDelegate_Para
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadProfileSettingsCompleteDelegate;              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReadProfileSettingsComplete
@@ -3296,8 +3296,8 @@ struct UOnlinePlayerInterfaceEOS_execClearFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddFriendsChangeDelegate
@@ -3306,51 +3306,51 @@ struct UOnlinePlayerInterfaceEOS_eventAddFriendsChangeDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FriendsDelegate;                                  // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearMutingChangeDelegate
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execClearMutingChangeDelegate_Params
 {
-	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddMutingChangeDelegate
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execAddMutingChangeDelegate_Params
 {
-	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             MutingDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearLoginCancelledDelegate
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execClearLoginCancelledDelegate_Params
 {
-	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddLoginCancelledDelegate
 // [0x00020003] 
 struct UOnlinePlayerInterfaceEOS_execAddLoginCancelledDelegate_Params
 {
-	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CancelledDelegate;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ClearLoginChangeDelegate
 // [0x00020401] 
 struct UOnlinePlayerInterfaceEOS_execClearLoginChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddLoginChangeDelegate
 // [0x00020401] 
 struct UOnlinePlayerInterfaceEOS_execAddLoginChangeDelegate_Params
 {
-	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginDelegate;                                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.ShowFriendsUI
@@ -3496,8 +3496,8 @@ struct UOnlinePlayerInterfaceEOS_execClearLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0028 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddLogoutCompletedDelegate
@@ -3506,7 +3506,7 @@ struct UOnlinePlayerInterfaceEOS_execAddLogoutCompletedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LogoutDelegate;                                   // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnLogoutCompleted
@@ -3531,7 +3531,7 @@ struct UOnlinePlayerInterfaceEOS_execClearLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.AddLoginFailedDelegate
@@ -3540,7 +3540,7 @@ struct UOnlinePlayerInterfaceEOS_execAddLoginFailedDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             LoginFailedDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlinePlayerInterfaceEOS.OnReceievedPinGrantCode
@@ -3664,14 +3664,14 @@ struct UOnlineStatsInterfaceEOS_execGetClientStatGuid_Params
 // [0x00020001] 
 struct UOnlineStatsInterfaceEOS_execClearRegisterHostStatGuidCompleteDelegateDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.AddRegisterHostStatGuidCompleteDelegate
 // [0x00020001] 
 struct UOnlineStatsInterfaceEOS_execAddRegisterHostStatGuidCompleteDelegate_Params
 {
-	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RegisterHostStatGuidCompleteDelegate;             // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.OnRegisterHostStatGuidComplete
@@ -3711,14 +3711,14 @@ struct UOnlineStatsInterfaceEOS_execWriteOnlinePlayerScores_Params
 // [0x00020001] 
 struct UOnlineStatsInterfaceEOS_execClearFlushOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.AddFlushOnlineStatsCompleteDelegate
 // [0x00020001] 
 struct UOnlineStatsInterfaceEOS_execAddFlushOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FlushOnlineStatsCompleteDelegate;                 // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.OnFlushOnlineStatsComplete
@@ -3758,15 +3758,15 @@ struct UOnlineStatsInterfaceEOS_execFreeStats_Params
 // [0x00020003] 
 struct UOnlineStatsInterfaceEOS_execClearReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         RemoveIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         RemoveIndex;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.AddReadOnlineStatsCompleteDelegate
 // [0x00020003] 
 struct UOnlineStatsInterfaceEOS_execAddReadOnlineStatsCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadOnlineStatsCompleteDelegate;                  // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineStatsInterfaceEOS.OnReadOnlineStatsComplete
@@ -3830,14 +3830,14 @@ struct UOnlineUserCloudFileInterfaceEOS_execClearAllDelegates_Params
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execClearDeleteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.AddDeleteUserFileCompleteDelegate
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execAddDeleteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DeleteUserFileCompleteDelegate;                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.DeleteUserFile
@@ -3865,14 +3865,14 @@ struct UOnlineUserCloudFileInterfaceEOS_execOnDeleteUserFileComplete_Params
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execClearWriteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.AddWriteUserFileCompleteDelegate
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execAddWriteUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             WriteUserFileCompleteDelegate;                    // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.WriteUserFile
@@ -3899,14 +3899,14 @@ struct UOnlineUserCloudFileInterfaceEOS_execOnWriteUserFileComplete_Params
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execClearReadUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.AddReadUserFileCompleteDelegate
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execAddReadUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ReadUserFileCompleteDelegate;                     // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.ReadUserFile
@@ -3940,14 +3940,14 @@ struct UOnlineUserCloudFileInterfaceEOS_execGetUserFileList_Params
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execClearEnumerateUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.AddEnumerateUserFileCompleteDelegate
 // [0x00020003] 
 struct UOnlineUserCloudFileInterfaceEOS_execAddEnumerateUserFileCompleteDelegate_Params
 {
-	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             EnumerateUserFileCompleteDelegate;                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineUserCloudFileInterfaceEOS.EnumerateUserFiles
@@ -4046,7 +4046,7 @@ struct UOnlineVoiceInterfaceEOS_execClearRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineVoiceInterfaceEOS.AddRecognitionCompleteDelegate
@@ -4055,7 +4055,7 @@ struct UOnlineVoiceInterfaceEOS_execAddRecognitionCompleteDelegate_Params
 {
 	uint8_t                                            LocalUserNum;                                     // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             RecognitionDelegate;                              // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineVoiceInterfaceEOS.GetRecognitionResults
@@ -4104,14 +4104,14 @@ struct UOnlineVoiceInterfaceEOS_execStartNetworkedVoice_Params
 // [0x00020001] 
 struct UOnlineVoiceInterfaceEOS_execClearPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineVoiceInterfaceEOS.AddPlayerTalkingDelegate
 // [0x00020001] 
 struct UOnlineVoiceInterfaceEOS_execAddPlayerTalkingDelegate_Params
 {
-	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             TalkerDelegate;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function OnlineSubsystemEOS.OnlineVoiceInterfaceEOS.UnmuteRemoteTalker

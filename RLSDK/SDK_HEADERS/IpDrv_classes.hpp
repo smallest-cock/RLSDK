@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: IpDrv_classes.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -367,19 +367,28 @@ enum class ERequestType : uint8_t
 #endif 
 
 // Class IpDrv.AdHocDelegates
-// 0x00D8 (0x0060 - 0x0138)
+// 0x0120 (0x0060 - 0x0180)
 class UAdHocDelegates : public UObject
 {
 public:
-	struct FScriptDelegate                             __EventAdHocOnNetworkChanged__Delegate;        // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAdHocError__Delegate;                   // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAdHocInitialized__Delegate;             // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAccessPointCreated__Delegate;           // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventBecomeStation__Delegate;                // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStationConnected__Delegate;             // 0x00D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventStationDisconnected__Delegate;          // 0x00F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAdHocFinalized__Delegate;               // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventAdHocDestroyed__Delegate;               // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventAdHocOnNetworkChanged__Delegate;        // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAdHocOnNetworkChanged__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAdHocError__Delegate;                   // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAdHocError__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAdHocInitialized__Delegate;             // 0x00A0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAdHocInitialized__Delegate_UnknownData02[0x8];// 0x00A8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAccessPointCreated__Delegate;           // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAccessPointCreated__Delegate_UnknownData03[0x8];// 0x00C8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventBecomeStation__Delegate;                // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventBecomeStation__Delegate_UnknownData04[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventStationConnected__Delegate;             // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventStationConnected__Delegate_UnknownData05[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventStationDisconnected__Delegate;          // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventStationDisconnected__Delegate_UnknownData06[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAdHocFinalized__Delegate;               // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAdHocFinalized__Delegate_UnknownData07[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventAdHocDestroyed__Delegate;               // 0x0160 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventAdHocDestroyed__Delegate_UnknownData08[0x8];// 0x0168 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.AdHocDelegates"))
@@ -406,7 +415,7 @@ public:
 };
 
 // Class IpDrv.AvatarDownload
-// 0x0080 (0x0060 - 0x00E0)
+// 0x0088 (0x0060 - 0x00E8)
 class UAvatarDownload : public UObject
 {
 public:
@@ -415,26 +424,28 @@ public:
 	EAvatarSize                                        AvatarSize;                                    // 0x00B8 (0x0001) [0x0000000000000000]               
 	uint8_t                                          UnknownData00[0x7];                            // 0x00B9 (0x0007) MISSED OFFSET
 	class UTexture*                                    Texture;                                       // 0x00C0 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             Callbacks;                                     // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callbacks;                                     // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          Callbacks_UnknownData01[0x8];                  // 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.AvatarDownload"))
 };
 
 // Class IpDrv.OnlineSubsystemCommonImpl
-// 0x0048 (0x0368 - 0x03B0)
+// 0x0050 (0x0398 - 0x03E8)
 class UOnlineSubsystemCommonImpl : public UOnlineSubsystem
 {
 public:
-	struct FPointer                                    VoiceEngine;                                   // 0x0368 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	int32_t                                            MaxLocalTalkers;                               // 0x0370 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            MaxRemoteTalkers;                              // 0x0374 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint32_t                                           bIsUsingSpeechRecognition : 1;                 // 0x0378 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
-	uint8_t                                          UnknownData00[0x4];                            // 0x037C (0x0004) MISSED OFFSET
-	class UOnlineGameInterfaceImpl*                    GameInterfaceImpl;                             // 0x0380 (0x0008) [0x0000000000000000]               
-	class UOnlineAuthInterfaceImpl*                    AuthInterfaceImpl;                             // 0x0388 (0x0008) [0x0000000000000000]               
-	class UOnlinePurchaseInterfaceImpl*                PurchaseInterfaceImpl;                         // 0x0390 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x0398 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FPointer                                    VoiceEngine;                                   // 0x0398 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	int32_t                                            MaxLocalTalkers;                               // 0x03A0 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            MaxRemoteTalkers;                              // 0x03A4 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint32_t                                           bIsUsingSpeechRecognition : 1;                 // 0x03A8 (0x0004) [0x0000000000004000] [0x00000001] (CPF_Config)
+	uint8_t                                          UnknownData00[0x4];                            // 0x03AC (0x0004) MISSED OFFSET
+	class UOnlineGameInterfaceImpl*                    GameInterfaceImpl;                             // 0x03B0 (0x0008) [0x0000000000000000]               
+	class UOnlineAuthInterfaceImpl*                    AuthInterfaceImpl;                             // 0x03B8 (0x0008) [0x0000000000000000]               
+	class UOnlinePurchaseInterfaceImpl*                PurchaseInterfaceImpl;                         // 0x03C0 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             __OnSanitizeStringComplete__Delegate;          // 0x03C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnSanitizeStringComplete__Delegate_UnknownData01[0x8];// 0x03D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineSubsystemCommonImpl"))
@@ -526,15 +537,15 @@ public:
 };
 
 // Class IpDrv.HttpRequestCurl
-// 0x0048 (0x0078 - 0x00C0)
+// 0x0048 (0x0080 - 0x00C8)
 class UHttpRequestCurl : public UHttpRequestInterface
 {
 public:
-	struct FPointer                                    Request;                                       // 0x0078 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class FString                                      RequestVerb;                                   // 0x0080 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
-	class FString                                      RequestURL;                                    // 0x0090 (0x0010) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
-	class TArray<uint8_t>                              Payload;                                       // 0x00A0 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
-	class TArray<class FString>                        AllowedRedirectURLs;                           // 0x00B0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	struct FPointer                                    Request;                                       // 0x0080 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class FString                                      RequestVerb;                                   // 0x0088 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
+	class FString                                      RequestURL;                                    // 0x0098 (0x0010) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
+	class TArray<uint8_t>                              Payload;                                       // 0x00A8 (0x0010) [0x0000000000001002] (CPF_Const | CPF_Native)
+	class TArray<class FString>                        AllowedRedirectURLs;                           // 0x00B8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.HttpRequestCurl"))
@@ -576,13 +587,14 @@ public:
 };
 
 // Class IpDrv.ImageDecoder
-// 0x0030 (0x0060 - 0x0090)
+// 0x0038 (0x0060 - 0x0098)
 class UImageDecoder : public UObject
 {
 public:
 	struct FPointer                                    VfTable_FTickableObject;                       // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	class TArray<struct FDecodeImageRequest>           ActiveDecodeRequests;                          // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __ImageDecodedDelegate__Delegate;              // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __ImageDecodedDelegate__Delegate;              // 0x0078 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __ImageDecodedDelegate__Delegate_UnknownData00[0x8];// 0x0080 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.ImageDecoder"))
@@ -698,7 +710,7 @@ public:
 };
 
 // Class IpDrv.OnlineNewsInterfaceMcp
-// 0x0040 (0x0080 - 0x00C0)
+// 0x0048 (0x0080 - 0x00C8)
 class UOnlineNewsInterfaceMcp : public UMCPBase
 {
 public:
@@ -706,7 +718,8 @@ public:
 	class TArray<struct FScriptDelegate>               ReadNewsDelegates;                             // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	uint32_t                                           bNeedsTicking : 1;                             // 0x00A0 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __OnReadNewsCompleted__Delegate;               // 0x00A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadNewsCompleted__Delegate;               // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadNewsCompleted__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineNewsInterfaceMcp"))
@@ -718,7 +731,7 @@ public:
 };
 
 // Class IpDrv.OnlineTitleFileDownloadBase
-// 0x0098 (0x0080 - 0x0118)
+// 0x00A8 (0x0080 - 0x0128)
 class UOnlineTitleFileDownloadBase : public UMCPBase
 {
 public:
@@ -730,8 +743,10 @@ public:
 	float                                              Timeout;                                       // 0x00D0 (0x0004) [0x0000000000004000] (CPF_Config)  
 	uint8_t                                          UnknownData00[0x4];                            // 0x00D4 (0x0004) MISSED OFFSET
 	class TArray<struct FFileNameToURLMapping>         FilesToUrls;                                   // 0x00D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadTitleFileComplete__Delegate;           // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRequestTitleFileListComplete__Delegate;    // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadTitleFileComplete__Delegate;           // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadTitleFileComplete__Delegate_UnknownData01[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRequestTitleFileListComplete__Delegate;    // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRequestTitleFileListComplete__Delegate_UnknownData02[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadBase"))
@@ -751,12 +766,12 @@ public:
 };
 
 // Class IpDrv.OnlineTitleFileDownloadMcp
-// 0x0014 (0x0118 - 0x012C)
+// 0x0014 (0x0128 - 0x013C)
 class UOnlineTitleFileDownloadMcp : public UOnlineTitleFileDownloadBase
 {
 public:
-	class TArray<struct FTitleFileMcp>                 TitleFiles;                                    // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	int32_t                                            DownloadCount;                                 // 0x0128 (0x0004) [0x0000000000002000] (CPF_Transient)
+	class TArray<struct FTitleFileMcp>                 TitleFiles;                                    // 0x0128 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            DownloadCount;                                 // 0x0138 (0x0004) [0x0000000000002000] (CPF_Transient)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadMcp"))
@@ -768,11 +783,11 @@ public:
 };
 
 // Class IpDrv.OnlineTitleFileDownloadWeb
-// 0x0010 (0x0118 - 0x0128)
+// 0x0010 (0x0128 - 0x0138)
 class UOnlineTitleFileDownloadWeb : public UOnlineTitleFileDownloadBase
 {
 public:
-	class TArray<struct FTitleFileWeb>                 TitleFiles;                                    // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FTitleFileWeb>                 TitleFiles;                                    // 0x0128 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineTitleFileDownloadWeb"))
@@ -790,15 +805,17 @@ public:
 };
 
 // Class IpDrv.TitleFileDownloadCache
-// 0x0060 (0x0080 - 0x00E0)
+// 0x0070 (0x0080 - 0x00F0)
 class UTitleFileDownloadCache : public UMCPBase
 {
 public:
 	class TArray<struct FTitleFileCacheEntry>          TitleFiles;                                    // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               LoadCompleteDelegates;                         // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               SaveCompleteDelegates;                         // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLoadTitleFileComplete__Delegate;           // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSaveTitleFileComplete__Delegate;           // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnLoadTitleFileComplete__Delegate;           // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLoadTitleFileComplete__Delegate_UnknownData00[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnSaveTitleFileComplete__Delegate;           // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnSaveTitleFileComplete__Delegate_UnknownData01[0x8];// 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.TitleFileDownloadCache"))
@@ -821,7 +838,7 @@ public:
 };
 
 // Class IpDrv.McpMessageBase
-// 0x0098 (0x0078 - 0x0110)
+// 0x00B8 (0x0078 - 0x0130)
 class UMcpMessageBase : public UMcpServiceBase
 {
 public:
@@ -830,10 +847,14 @@ public:
 	uint8_t                                          UnknownData00[0x7];                            // 0x0089 (0x0007) MISSED OFFSET
 	class TArray<struct FMcpMessageContents>           MessageContentsList;                           // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FMcpMessageList>               MessageLists;                                  // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateMessageComplete__Delegate;           // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteMessageComplete__Delegate;           // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryMessagesComplete__Delegate;           // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryMessageContentsComplete__Delegate;    // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateMessageComplete__Delegate;           // 0x00B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateMessageComplete__Delegate_UnknownData01[0x8];// 0x00B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteMessageComplete__Delegate;           // 0x00D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteMessageComplete__Delegate_UnknownData02[0x8];// 0x00D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryMessagesComplete__Delegate;           // 0x00F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryMessagesComplete__Delegate_UnknownData03[0x8];// 0x00F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryMessageContentsComplete__Delegate;    // 0x0110 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryMessageContentsComplete__Delegate_UnknownData04[0x8];// 0x0118 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpMessageBase"))
@@ -853,18 +874,18 @@ public:
 };
 
 // Class IpDrv.McpMessageManager
-// 0x0078 (0x0110 - 0x0188)
+// 0x0078 (0x0130 - 0x01A8)
 class UMcpMessageManager : public UMcpMessageBase
 {
 public:
-	struct FPointer                                    VfTable_FTickableObject;                       // 0x0110 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	class FString                                      CreateMessageUrl;                              // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteMessageUrl;                              // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryMessagesUrl;                              // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryMessageContentsUrl;                       // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteAllMessagesUrl;                          // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FMcpCompressMessageRequest>    CompressMessageRequests;                       // 0x0168 (0x0010) [0x0000000000001000] (CPF_Native)  
-	class TArray<struct FMcpUncompressMessageRequest>  UncompressMessageRequests;                     // 0x0178 (0x0010) [0x0000000000001000] (CPF_Native)  
+	struct FPointer                                    VfTable_FTickableObject;                       // 0x0130 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
+	class FString                                      CreateMessageUrl;                              // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteMessageUrl;                              // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryMessagesUrl;                              // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryMessageContentsUrl;                       // 0x0168 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteAllMessagesUrl;                          // 0x0178 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FMcpCompressMessageRequest>    CompressMessageRequests;                       // 0x0188 (0x0010) [0x0000000000001000] (CPF_Native)  
+	class TArray<struct FMcpUncompressMessageRequest>  UncompressMessageRequests;                     // 0x0198 (0x0010) [0x0000000000001000] (CPF_Native)  
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpMessageManager"))
@@ -887,7 +908,7 @@ public:
 };
 
 // Class IpDrv.McpUserCloudFileDownload
-// 0x00F0 (0x0078 - 0x0168)
+// 0x0110 (0x0078 - 0x0188)
 class UMcpUserCloudFileDownload : public UMcpServiceBase
 {
 public:
@@ -900,10 +921,14 @@ public:
 	class TArray<struct FScriptDelegate>               ReadUserFileCompleteDelegates;                 // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               WriteUserFileCompleteDelegates;                // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               DeleteUserFileCompleteDelegates;               // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnEnumerateUserFilesComplete__Delegate;      // 0x0108 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadUserFileComplete__Delegate;            // 0x0120 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnWriteUserFileComplete__Delegate;           // 0x0138 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0150 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnEnumerateUserFilesComplete__Delegate;      // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnEnumerateUserFilesComplete__Delegate_UnknownData00[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadUserFileComplete__Delegate;            // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadUserFileComplete__Delegate_UnknownData01[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnWriteUserFileComplete__Delegate;           // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnWriteUserFileComplete__Delegate_UnknownData02[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteUserFileComplete__Delegate;          // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteUserFileComplete__Delegate_UnknownData03[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserCloudFileDownload"))
@@ -968,7 +993,7 @@ public:
 };
 
 // Class IpDrv.MeshBeaconClient
-// 0x0140 (0x00A8 - 0x01E8)
+// 0x0168 (0x00A8 - 0x0210)
 class UMeshBeaconClient : public UMeshBeacon
 {
 public:
@@ -985,11 +1010,16 @@ public:
 	class UClientBeaconAddressResolver*                Resolver;                                      // 0x0160 (0x0008) [0x0000000000000000]               
 	uint32_t                                           bUsingRegisteredAddr : 1;                      // 0x0168 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
 	uint8_t                                          UnknownData01[0x4];                            // 0x016C (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __OnConnectionRequestResult__Delegate;         // 0x0170 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedBandwidthTestRequest__Delegate;    // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedBandwidthTestResults__Delegate;    // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x01B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateNewSessionRequestReceived__Delegate; // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnConnectionRequestResult__Delegate;         // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnConnectionRequestResult__Delegate_UnknownData02[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceivedBandwidthTestRequest__Delegate;    // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedBandwidthTestRequest__Delegate_UnknownData03[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceivedBandwidthTestResults__Delegate;    // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedBandwidthTestResults__Delegate_UnknownData04[0x8];// 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnTravelRequestReceived__Delegate_UnknownData05[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCreateNewSessionRequestReceived__Delegate; // 0x01F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateNewSessionRequestReceived__Delegate_UnknownData06[0x8];// 0x01F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.MeshBeaconClient"))
@@ -1005,7 +1035,7 @@ public:
 };
 
 // Class IpDrv.MeshBeaconHost
-// 0x00E8 (0x00A8 - 0x0190)
+// 0x0110 (0x00A8 - 0x01B8)
 class UMeshBeaconHost : public UMeshBeacon
 {
 public:
@@ -1014,11 +1044,16 @@ public:
 	struct FUniqueNetId                                OwningPlayerId;                                // 0x00C8 (0x0048) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	uint32_t                                           bAllowBandwidthTesting : 1;                    // 0x0110 (0x0004) [0x0000000000000000] [0x00000001] 
 	int32_t                                            ConnectionBacklog;                             // 0x0114 (0x0004) [0x0000000000004000] (CPF_Config)  
-	struct FScriptDelegate                             __OnReceivedClientConnectionRequest__Delegate; // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStartedBandwidthTest__Delegate;            // 0x0130 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFinishedBandwidthTest__Delegate;           // 0x0148 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAllPendingPlayersConnected__Delegate;      // 0x0160 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedClientCreateNewSessionResult__Delegate;// 0x0178 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReceivedClientConnectionRequest__Delegate; // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedClientConnectionRequest__Delegate_UnknownData00[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnStartedBandwidthTest__Delegate;            // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnStartedBandwidthTest__Delegate_UnknownData01[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFinishedBandwidthTest__Delegate;           // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFinishedBandwidthTest__Delegate_UnknownData02[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAllPendingPlayersConnected__Delegate;      // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAllPendingPlayersConnected__Delegate_UnknownData03[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceivedClientCreateNewSessionResult__Delegate;// 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedClientCreateNewSessionResult__Delegate_UnknownData04[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.MeshBeaconHost"))
@@ -1043,7 +1078,7 @@ public:
 };
 
 // Class IpDrv.OnlineAuthInterfaceImpl
-// 0x0368 (0x0060 - 0x03C8)
+// 0x03D0 (0x0060 - 0x0430)
 class UOnlineAuthInterfaceImpl : public UObject
 {
 public:
@@ -1071,19 +1106,32 @@ public:
 	class TArray<struct FScriptDelegate>               ServerAuthRetryRequestDelegates;               // 0x0260 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ClientConnectionCloseDelegates;                // 0x0270 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               ServerConnectionCloseDelegates;                // 0x0280 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAuthReady__Delegate;                       // 0x0290 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientAuthRequest__Delegate;               // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnServerAuthRequest__Delegate;               // 0x02C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientAuthResponse__Delegate;              // 0x02D8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnServerAuthResponse__Delegate;              // 0x02F0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientAuthComplete__Delegate;              // 0x0308 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnServerAuthComplete__Delegate;              // 0x0320 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientAuthEndSessionRequest__Delegate;     // 0x0338 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnServerAuthRetryRequest__Delegate;          // 0x0350 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientConnectionClose__Delegate;           // 0x0368 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnServerConnectionClose__Delegate;           // 0x0380 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceivedAuthCode__Delegate;                // 0x0398 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAccountAuthorization__Delegate;            // 0x03B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnAuthReady__Delegate;                       // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAuthReady__Delegate_UnknownData02[0x8];    // 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientAuthRequest__Delegate;               // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientAuthRequest__Delegate_UnknownData03[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnServerAuthRequest__Delegate;               // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnServerAuthRequest__Delegate_UnknownData04[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientAuthResponse__Delegate;              // 0x02F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientAuthResponse__Delegate_UnknownData05[0x8];// 0x02F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnServerAuthResponse__Delegate;              // 0x0310 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnServerAuthResponse__Delegate_UnknownData06[0x8];// 0x0318 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientAuthComplete__Delegate;              // 0x0330 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientAuthComplete__Delegate_UnknownData07[0x8];// 0x0338 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnServerAuthComplete__Delegate;              // 0x0350 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnServerAuthComplete__Delegate_UnknownData08[0x8];// 0x0358 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientAuthEndSessionRequest__Delegate;     // 0x0370 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientAuthEndSessionRequest__Delegate_UnknownData09[0x8];// 0x0378 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnServerAuthRetryRequest__Delegate;          // 0x0390 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnServerAuthRetryRequest__Delegate_UnknownData10[0x8];// 0x0398 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientConnectionClose__Delegate;           // 0x03B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientConnectionClose__Delegate_UnknownData11[0x8];// 0x03B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnServerConnectionClose__Delegate;           // 0x03D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnServerConnectionClose__Delegate_UnknownData12[0x8];// 0x03D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReceivedAuthCode__Delegate;                // 0x03F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedAuthCode__Delegate_UnknownData13[0x8];// 0x03F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAccountAuthorization__Delegate;            // 0x0410 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAccountAuthorization__Delegate_UnknownData14[0x8];// 0x0418 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineAuthInterfaceImpl"))
@@ -1159,12 +1207,13 @@ public:
 };
 
 // Class IpDrv.OnlineFriendsInterfaceImpl
-// 0x0020 (0x0060 - 0x0080)
+// 0x0028 (0x0060 - 0x0088)
 class UOnlineFriendsInterfaceImpl : public UObject
 {
 public:
 	struct FPointer                                    VfTable_IOnlineFriendsInterface;               // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
-	struct FScriptDelegate                             __OnReceivedLinkedAccount__Delegate;           // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReceivedLinkedAccount__Delegate;           // 0x0068 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceivedLinkedAccount__Delegate_UnknownData00[0x8];// 0x0070 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineFriendsInterfaceImpl"))
@@ -1174,7 +1223,7 @@ public:
 };
 
 // Class IpDrv.OnlineGameInterfaceImpl
-// 0x02B8 (0x0060 - 0x0318)
+// 0x0348 (0x0060 - 0x03A8)
 class UOnlineGameInterfaceImpl : public UObject
 {
 public:
@@ -1203,24 +1252,42 @@ public:
 	struct FPointer                                    LanBeacon;                                     // 0x0148 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	struct FPointer                                    SessionInfo;                                   // 0x0150 (0x0008) [0x0000000000003002] (CPF_Const | CPF_Native | CPF_Transient)
 	class TArray<struct FScriptDelegate>               GameInviteAcceptedDelegates;                   // 0x0158 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFindOnlineGamesComplete__Delegate;         // 0x0168 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateOnlineGameComplete__Delegate;        // 0x0180 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUpdateOnlineGameComplete__Delegate;        // 0x0198 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDestroyOnlineGameComplete__Delegate;       // 0x01B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCancelFindOnlineGamesComplete__Delegate;   // 0x01C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnJoinOnlineGameComplete__Delegate;          // 0x01E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisterPlayerComplete__Delegate;          // 0x01F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnregisterPlayerComplete__Delegate;        // 0x0210 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnStartOnlineGameComplete__Delegate;         // 0x0228 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnEndOnlineGameComplete__Delegate;           // 0x0240 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnArbitrationRegistrationComplete__Delegate; // 0x0258 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnGameInviteAccepted__Delegate;              // 0x0270 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRecalculateSkillRatingComplete__Delegate;  // 0x0288 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMigrateOnlineGameComplete__Delegate;       // 0x02A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnJoinMigratedOnlineGameComplete__Delegate;  // 0x02B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQosStatusChanged__Delegate;                // 0x02D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventReportMatchmakingInfo__Delegate;        // 0x02E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnGamePlayersChanged__Delegate;              // 0x0300 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnFindOnlineGamesComplete__Delegate;         // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFindOnlineGamesComplete__Delegate_UnknownData01[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCreateOnlineGameComplete__Delegate;        // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateOnlineGameComplete__Delegate_UnknownData02[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUpdateOnlineGameComplete__Delegate;        // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUpdateOnlineGameComplete__Delegate_UnknownData03[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDestroyOnlineGameComplete__Delegate;       // 0x01C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDestroyOnlineGameComplete__Delegate_UnknownData04[0x8];// 0x01D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnCancelFindOnlineGamesComplete__Delegate;   // 0x01E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCancelFindOnlineGamesComplete__Delegate_UnknownData05[0x8];// 0x01F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnJoinOnlineGameComplete__Delegate;          // 0x0208 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnJoinOnlineGameComplete__Delegate_UnknownData06[0x8];// 0x0210 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRegisterPlayerComplete__Delegate;          // 0x0228 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRegisterPlayerComplete__Delegate_UnknownData07[0x8];// 0x0230 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUnregisterPlayerComplete__Delegate;        // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUnregisterPlayerComplete__Delegate_UnknownData08[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnStartOnlineGameComplete__Delegate;         // 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnStartOnlineGameComplete__Delegate_UnknownData09[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnEndOnlineGameComplete__Delegate;           // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnEndOnlineGameComplete__Delegate_UnknownData10[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnArbitrationRegistrationComplete__Delegate; // 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnArbitrationRegistrationComplete__Delegate_UnknownData11[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnGameInviteAccepted__Delegate;              // 0x02C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnGameInviteAccepted__Delegate_UnknownData12[0x8];// 0x02D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRecalculateSkillRatingComplete__Delegate;  // 0x02E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRecalculateSkillRatingComplete__Delegate_UnknownData13[0x8];// 0x02F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnMigrateOnlineGameComplete__Delegate;       // 0x0308 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnMigrateOnlineGameComplete__Delegate_UnknownData14[0x8];// 0x0310 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnJoinMigratedOnlineGameComplete__Delegate;  // 0x0328 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnJoinMigratedOnlineGameComplete__Delegate_UnknownData15[0x8];// 0x0330 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQosStatusChanged__Delegate;                // 0x0348 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQosStatusChanged__Delegate_UnknownData16[0x8];// 0x0350 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventReportMatchmakingInfo__Delegate;        // 0x0368 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventReportMatchmakingInfo__Delegate_UnknownData17[0x8];// 0x0370 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnGamePlayersChanged__Delegate;              // 0x0388 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnGamePlayersChanged__Delegate_UnknownData18[0x8];// 0x0390 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineGameInterfaceImpl"))
@@ -1308,7 +1375,7 @@ public:
 };
 
 // Class IpDrv.OnlineImageDownloaderWeb
-// 0x00B0 (0x0060 - 0x0110)
+// 0x00C0 (0x0060 - 0x0120)
 class UOnlineImageDownloaderWeb : public UObject
 {
 public:
@@ -1321,8 +1388,10 @@ public:
 	int32_t                                            ActiveDownloadCount;                           // 0x00D4 (0x0004) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
 	int32_t                                            SucceededDownloadCount;                        // 0x00D8 (0x0004) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
 	int32_t                                            FailedDownloadCount;                           // 0x00DC (0x0004) [0x0000004000001000] (CPF_Native | CPF_PrivateWrite)
-	struct FScriptDelegate                             __OnOnlineImageFinished__Delegate;             // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __EventImageDecoded__Delegate;                 // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnOnlineImageFinished__Delegate;             // 0x00E0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnOnlineImageFinished__Delegate_UnknownData01[0x8];// 0x00E8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __EventImageDecoded__Delegate;                 // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventImageDecoded__Delegate_UnknownData02[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineImageDownloaderWeb"))
@@ -1361,7 +1430,7 @@ public:
 };
 
 // Class IpDrv.OnlineLobbyInterfaceImpl
-// 0x0260 (0x0060 - 0x02C0)
+// 0x02D0 (0x0060 - 0x0330)
 class UOnlineLobbyInterfaceImpl : public UObject
 {
 public:
@@ -1382,20 +1451,34 @@ public:
 	class TArray<struct FActiveLobbyInfo>              ActiveLobbies;                                 // 0x0140 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class TArray<struct FBasicLobbyInfo>               CachedFindLobbyResults;                        // 0x0150 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
 	class TArray<uint8_t>                              CachedBinaryData;                              // 0x0160 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x0170 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x0188 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x01A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x01B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x01D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x01E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x0260 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x0278 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x0290 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x02A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateLobbyComplete__Delegate;             // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateLobbyComplete__Delegate_UnknownData00[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnFindLobbiesComplete__Delegate;             // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnFindLobbiesComplete__Delegate_UnknownData01[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnJoinLobbyComplete__Delegate;               // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnJoinLobbyComplete__Delegate_UnknownData02[0x8];// 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbySettingsUpdate__Delegate;             // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbySettingsUpdate__Delegate_UnknownData03[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyMemberSettingsUpdate__Delegate;       // 0x01F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyMemberSettingsUpdate__Delegate_UnknownData04[0x8];// 0x01F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyMemberStatusUpdate__Delegate;         // 0x0210 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyMemberStatusUpdate__Delegate_UnknownData05[0x8];// 0x0218 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyReceiveMessage__Delegate;             // 0x0230 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyReceiveMessage__Delegate_UnknownData06[0x8];// 0x0238 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyReceiveBinaryData__Delegate;          // 0x0250 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyReceiveBinaryData__Delegate_UnknownData07[0x8];// 0x0258 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyJoinGame__Delegate;                   // 0x0270 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyJoinGame__Delegate_UnknownData08[0x8];// 0x0278 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyInvite__Delegate;                     // 0x0290 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyInvite__Delegate_UnknownData09[0x8];  // 0x0298 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                  // 0x02B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyDestroyed__Delegate_UnknownData10[0x8];// 0x02B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbySessionCreated__Delegate;             // 0x02D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbySessionCreated__Delegate_UnknownData11[0x8];// 0x02D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnLobbyError__Delegate;                      // 0x02F0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnLobbyError__Delegate_UnknownData12[0x8];   // 0x02F8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;           // 0x0310 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnHostStartPlayTogether__Delegate_UnknownData13[0x8];// 0x0318 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlineLobbyInterfaceImpl"))
@@ -1477,15 +1560,17 @@ public:
 };
 
 // Class IpDrv.OnlinePersistentAuthInterfaceImpl
-// 0x0058 (0x0060 - 0x00B8)
+// 0x0068 (0x0060 - 0x00C8)
 class UOnlinePersistentAuthInterfaceImpl : public UObject
 {
 public:
 	struct FPointer                                    VfTable_IOnlinePersistentAuthInterface;        // 0x0060 (0x0008) [0x0000000000801002] (CPF_Const | CPF_Native | CPF_NoExport)
 	class TArray<struct FScriptDelegate>               RequestPinGrantCodeDelegates;                  // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	class TArray<struct FScriptDelegate>               UnderageUserDetectedDelegates;                 // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReceievedPinGrantCode__Delegate;           // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUnderageUserDetected__Delegate;            // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReceievedPinGrantCode__Delegate;           // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReceievedPinGrantCode__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUnderageUserDetected__Delegate;            // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUnderageUserDetected__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePersistentAuthInterfaceImpl"))
@@ -1509,7 +1594,7 @@ public:
 };
 
 // Class IpDrv.OnlinePlaylistManager
-// 0x00E8 (0x0060 - 0x0148)
+// 0x00F8 (0x0060 - 0x0158)
 class UOnlinePlaylistManager : public UObject
 {
 public:
@@ -1537,8 +1622,10 @@ public:
 	class FString                                      DataCenterFileName;                            // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	float                                              LastPlaylistDownloadTime;                      // 0x0110 (0x0004) [0x0000000000002000] (CPF_Transient)
 	float                                              PlaylistRefreshInterval;                       // 0x0114 (0x0004) [0x0000000000004000] (CPF_Config)  
-	struct FScriptDelegate                             __OnReadPlaylistComplete__Delegate;            // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPlaylistPopulationDataUpdated__Delegate;   // 0x0130 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnReadPlaylistComplete__Delegate;            // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadPlaylistComplete__Delegate_UnknownData02[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPlaylistPopulationDataUpdated__Delegate;   // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPlaylistPopulationDataUpdated__Delegate_UnknownData03[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePlaylistManager"))
@@ -1571,12 +1658,14 @@ public:
 };
 
 // Class IpDrv.OnlinePurchaseInterfaceImpl
-// 0x0030 (0x0060 - 0x0090)
+// 0x0040 (0x0060 - 0x00A0)
 class UOnlinePurchaseInterfaceImpl : public UObject
 {
 public:
-	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x0078 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __EventGetAppPriceInfoComplete__Delegate;      // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __EventGetAppPriceInfoComplete__Delegate_UnknownData00[0x8];// 0x0068 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnMicroTxnResponse__Delegate;                // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnMicroTxnResponse__Delegate_UnknownData01[0x8];// 0x0088 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePurchaseInterfaceImpl"))
@@ -1589,7 +1678,7 @@ public:
 };
 
 // Class IpDrv.PartyBeacon
-// 0x0048 (0x0060 - 0x00A8)
+// 0x0050 (0x0060 - 0x00B0)
 class UPartyBeacon : public UObject
 {
 public:
@@ -1604,7 +1693,8 @@ public:
 	float                                              ElapsedHeartbeatTime;                          // 0x0080 (0x0004) [0x0000000000000000]               
 	class FName                                        BeaconName;                                    // 0x0084 (0x0008) [0x0000000000000000]               
 	uint8_t                                          UnknownData01[0x4];                            // 0x008C (0x0004) MISSED OFFSET
-	struct FScriptDelegate                             __OnDestroyComplete__Delegate;                 // 0x0090 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnDestroyComplete__Delegate;                 // 0x0090 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDestroyComplete__Delegate_UnknownData02[0x8];// 0x0098 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeacon"))
@@ -1613,26 +1703,31 @@ public:
 };
 
 // Class IpDrv.PartyBeaconClient
-// 0x0118 (0x00A8 - 0x01C0)
+// 0x0140 (0x00B0 - 0x01F0)
 class UPartyBeaconClient : public UPartyBeacon
 {
 public:
-	struct FOnlineGameSearchResult                     HostPendingRequest;                            // 0x00A8 (0x0010) [0x0000000000000002] (CPF_Const)   
-	struct FPartyReservation                           PendingRequest;                                // 0x00B8 (0x0060) [0x0000000000400000] (CPF_NeedCtorLink)
-	EPartyBeaconClientState                            ClientBeaconState;                             // 0x0118 (0x0001) [0x0000000000000000]               
-	EPartyBeaconClientRequest                          ClientBeaconRequestType;                       // 0x0119 (0x0001) [0x0000000000000000]               
-	uint8_t                                          UnknownData00[0x2];                            // 0x011A (0x0002) MISSED OFFSET
-	float                                              ReservationRequestTimeout;                     // 0x011C (0x0004) [0x0000000000004000] (CPF_Config)  
-	float                                              ReservationRequestElapsedTime;                 // 0x0120 (0x0004) [0x0000000000000000]               
-	uint8_t                                          UnknownData01[0x4];                            // 0x0124 (0x0004) MISSED OFFSET
-	class FString                                      ResolverClassName;                             // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class UClass*                                      ResolverClass;                                 // 0x0138 (0x0008) [0x0000000000000000]               
-	class UClientBeaconAddressResolver*                Resolver;                                      // 0x0140 (0x0008) [0x0000000000000000]               
-	struct FScriptDelegate                             __OnReservationRequestComplete__Delegate;      // 0x0148 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReservationCountUpdated__Delegate;         // 0x0160 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x0178 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnHostIsReady__Delegate;                     // 0x0190 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnHostHasCancelled__Delegate;                // 0x01A8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FOnlineGameSearchResult                     HostPendingRequest;                            // 0x00B0 (0x0010) [0x0000000000000002] (CPF_Const)   
+	struct FPartyReservation                           PendingRequest;                                // 0x00C0 (0x0060) [0x0000000000400000] (CPF_NeedCtorLink)
+	EPartyBeaconClientState                            ClientBeaconState;                             // 0x0120 (0x0001) [0x0000000000000000]               
+	EPartyBeaconClientRequest                          ClientBeaconRequestType;                       // 0x0121 (0x0001) [0x0000000000000000]               
+	uint8_t                                          UnknownData00[0x2];                            // 0x0122 (0x0002) MISSED OFFSET
+	float                                              ReservationRequestTimeout;                     // 0x0124 (0x0004) [0x0000000000004000] (CPF_Config)  
+	float                                              ReservationRequestElapsedTime;                 // 0x0128 (0x0004) [0x0000000000000000]               
+	uint8_t                                          UnknownData01[0x4];                            // 0x012C (0x0004) MISSED OFFSET
+	class FString                                      ResolverClassName;                             // 0x0130 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class UClass*                                      ResolverClass;                                 // 0x0140 (0x0008) [0x0000000000000000]               
+	class UClientBeaconAddressResolver*                Resolver;                                      // 0x0148 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             __OnReservationRequestComplete__Delegate;      // 0x0150 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReservationRequestComplete__Delegate_UnknownData02[0x8];// 0x0158 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReservationCountUpdated__Delegate;         // 0x0170 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReservationCountUpdated__Delegate_UnknownData03[0x8];// 0x0178 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnTravelRequestReceived__Delegate;           // 0x0190 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnTravelRequestReceived__Delegate_UnknownData04[0x8];// 0x0198 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnHostIsReady__Delegate;                     // 0x01B0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnHostIsReady__Delegate_UnknownData05[0x8];  // 0x01B8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnHostHasCancelled__Delegate;                // 0x01D0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnHostHasCancelled__Delegate_UnknownData06[0x8];// 0x01D8 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeaconClient"))
@@ -1648,26 +1743,29 @@ public:
 };
 
 // Class IpDrv.PartyBeaconHost
-// 0x0098 (0x00A8 - 0x0140)
+// 0x00B0 (0x00B0 - 0x0160)
 class UPartyBeaconHost : public UPartyBeacon
 {
 public:
-	class TArray<struct FClientBeaconConnection>       Clients;                                       // 0x00A8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	int32_t                                            NumTeams;                                      // 0x00B8 (0x0004) [0x0000000000000002] (CPF_Const)   
-	int32_t                                            NumPlayersPerTeam;                             // 0x00BC (0x0004) [0x0000000000000002] (CPF_Const)   
-	int32_t                                            NumReservations;                               // 0x00C0 (0x0004) [0x0000000000000002] (CPF_Const)   
-	int32_t                                            NumConsumedReservations;                       // 0x00C4 (0x0004) [0x0000000000000002] (CPF_Const)   
-	class TArray<struct FPartyReservation>             Reservations;                                  // 0x00C8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class FName                                        OnlineSessionName;                             // 0x00D8 (0x0008) [0x0000000000000000]               
-	int32_t                                            ConnectionBacklog;                             // 0x00E0 (0x0004) [0x0000000000004000] (CPF_Config)  
-	int32_t                                            ForceTeamNum;                                  // 0x00E4 (0x0004) [0x0000000000000002] (CPF_Const)   
-	int32_t                                            ReservedHostTeamNum;                           // 0x00E8 (0x0004) [0x0000000000000002] (CPF_Const)   
-	uint32_t                                           bBestFitTeamAssignment : 1;                    // 0x00EC (0x0004) [0x0000000000000000] [0x00000001] 
-	EPartyBeaconHostState                              BeaconState;                                   // 0x00F0 (0x0001) [0x0000000000000002] (CPF_Const)   
-	uint8_t                                          UnknownData00[0x7];                            // 0x00F1 (0x0007) MISSED OFFSET
-	struct FScriptDelegate                             __OnReservationChange__Delegate;               // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReservationsFull__Delegate;                // 0x0110 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnClientCancellationReceived__Delegate;      // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FClientBeaconConnection>       Clients;                                       // 0x00B0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	int32_t                                            NumTeams;                                      // 0x00C0 (0x0004) [0x0000000000000002] (CPF_Const)   
+	int32_t                                            NumPlayersPerTeam;                             // 0x00C4 (0x0004) [0x0000000000000002] (CPF_Const)   
+	int32_t                                            NumReservations;                               // 0x00C8 (0x0004) [0x0000000000000002] (CPF_Const)   
+	int32_t                                            NumConsumedReservations;                       // 0x00CC (0x0004) [0x0000000000000002] (CPF_Const)   
+	class TArray<struct FPartyReservation>             Reservations;                                  // 0x00D0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class FName                                        OnlineSessionName;                             // 0x00E0 (0x0008) [0x0000000000000000]               
+	int32_t                                            ConnectionBacklog;                             // 0x00E8 (0x0004) [0x0000000000004000] (CPF_Config)  
+	int32_t                                            ForceTeamNum;                                  // 0x00EC (0x0004) [0x0000000000000002] (CPF_Const)   
+	int32_t                                            ReservedHostTeamNum;                           // 0x00F0 (0x0004) [0x0000000000000002] (CPF_Const)   
+	uint32_t                                           bBestFitTeamAssignment : 1;                    // 0x00F4 (0x0004) [0x0000000000000000] [0x00000001] 
+	EPartyBeaconHostState                              BeaconState;                                   // 0x00F8 (0x0001) [0x0000000000000002] (CPF_Const)   
+	uint8_t                                          UnknownData00[0x7];                            // 0x00F9 (0x0007) MISSED OFFSET
+	struct FScriptDelegate                             __OnReservationChange__Delegate;               // 0x0100 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReservationChange__Delegate_UnknownData01[0x8];// 0x0108 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReservationsFull__Delegate;                // 0x0120 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReservationsFull__Delegate_UnknownData02[0x8];// 0x0128 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnClientCancellationReceived__Delegate;      // 0x0140 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnClientCancellationReceived__Delegate_UnknownData03[0x8];// 0x0148 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.PartyBeaconHost"))
@@ -1708,11 +1806,11 @@ public:
 };
 
 // Class IpDrv.TcpipConnection
-// 0x0028 (0xB1F0 - 0xB218)
+// 0x0028 (0xB1F8 - 0xB220)
 class UTcpipConnection : public UNetConnection
 {
 public:
-	uint8_t                                          UnknownData00[0x28];                          // 0xB1F0 (0x0028) MISSED OFFSET
+	uint8_t                                          UnknownData00[0x28];                          // 0xB1F8 (0x0028) MISSED OFFSET
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.TcpipConnection"))
@@ -1807,33 +1905,33 @@ public:
 };
 
 // Class IpDrv.OnlinePlaylistProvider
-// 0x0030 (0x009C - 0x00CC)
+// 0x0030 (0x00A4 - 0x00D4)
 class UOnlinePlaylistProvider : public UUIResourceDataProvider
 {
 public:
-	uint8_t                                          UnknownData00[0x4];                            // 0x009C (0x0004) MISSED OFFSET
-	int32_t                                            PlaylistId;                                    // 0x00A0 (0x0004) [0x0000000000004000] (CPF_Config)  
-	uint8_t                                          UnknownData01[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
-	class TArray<class FName>                          PlaylistGameTypeNames;                         // 0x00A8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DisplayName;                                   // 0x00B8 (0x0010) [0x000000000040C002] (CPF_Const | CPF_Config | CPF_Localized | CPF_NeedCtorLink)
-	int32_t                                            Priority;                                      // 0x00C8 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData00[0x4];                            // 0x00A4 (0x0004) MISSED OFFSET
+	int32_t                                            PlaylistId;                                    // 0x00A8 (0x0004) [0x0000000000004000] (CPF_Config)  
+	uint8_t                                          UnknownData01[0x4];                            // 0x00AC (0x0004) MISSED OFFSET
+	class TArray<class FName>                          PlaylistGameTypeNames;                         // 0x00B0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DisplayName;                                   // 0x00C0 (0x0010) [0x000000000040C002] (CPF_Const | CPF_Config | CPF_Localized | CPF_NeedCtorLink)
+	int32_t                                            Priority;                                      // 0x00D0 (0x0004) [0x0000000000004000] (CPF_Config)  
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.OnlinePlaylistProvider"))
 };
 
 // Class IpDrv.UIDataStore_OnlinePlaylists
-// 0x0060 (0x00A0 - 0x0100)
+// 0x0060 (0x00A8 - 0x0108)
 class UUIDataStore_OnlinePlaylists : public UUIDataStore
 {
 public:
-	class FString                                      ProviderClassName;                             // 0x00A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class UClass*                                      ProviderClass;                                 // 0x00B0 (0x0008) [0x0000000000002000] (CPF_Transient)
-	class TArray<class UUIResourceDataProvider*>       RankedDataProviders;                           // 0x00B8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class TArray<class UUIResourceDataProvider*>       UnrankedDataProviders;                         // 0x00C8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class TArray<class UUIResourceDataProvider*>       RecModeDataProviders;                          // 0x00D8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class TArray<class UUIResourceDataProvider*>       PrivateDataProviders;                          // 0x00E8 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
-	class UOnlinePlaylistManager*                      PlaylistMan;                                   // 0x00F8 (0x0008) [0x0000000000000000]               
+	class FString                                      ProviderClassName;                             // 0x00A8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class UClass*                                      ProviderClass;                                 // 0x00B8 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class TArray<class UUIResourceDataProvider*>       RankedDataProviders;                           // 0x00C0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class TArray<class UUIResourceDataProvider*>       UnrankedDataProviders;                         // 0x00D0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class TArray<class UUIResourceDataProvider*>       RecModeDataProviders;                          // 0x00E0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class TArray<class UUIResourceDataProvider*>       PrivateDataProviders;                          // 0x00F0 (0x0010) [0x0000000000400002] (CPF_Const | CPF_NeedCtorLink)
+	class UOnlinePlaylistManager*                      PlaylistMan;                                   // 0x0100 (0x0008) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.UIDataStore_OnlinePlaylists"))
@@ -1930,17 +2028,23 @@ public:
 };
 
 // Class IpDrv.McpClashMobBase
-// 0x00A0 (0x0078 - 0x0118)
+// 0x00D0 (0x0078 - 0x0148)
 class UMcpClashMobBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpClashMobClassName;                          // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryChallengeListComplete__Delegate;      // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDownloadChallengeFileComplete__Delegate;   // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAcceptChallengeComplete__Delegate;         // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryChallengeUserStatusComplete__Delegate;// 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUpdateChallengeUserProgressComplete__Delegate;// 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUpdateChallengeUserRewardComplete__Delegate;// 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnQueryChallengeListComplete__Delegate;      // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryChallengeListComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDownloadChallengeFileComplete__Delegate;   // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDownloadChallengeFileComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAcceptChallengeComplete__Delegate;         // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAcceptChallengeComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryChallengeUserStatusComplete__Delegate;// 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryChallengeUserStatusComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUpdateChallengeUserProgressComplete__Delegate;// 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUpdateChallengeUserProgressComplete__Delegate_UnknownData04[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUpdateChallengeUserRewardComplete__Delegate;// 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUpdateChallengeUserRewardComplete__Delegate_UnknownData05[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpClashMobBase"))
@@ -1967,7 +2071,7 @@ public:
 };
 
 // Class IpDrv.McpClashMobFileDownload
-// 0x0000 (0x0128 - 0x0128)
+// 0x0000 (0x0138 - 0x0138)
 class UMcpClashMobFileDownload : public UOnlineTitleFileDownloadWeb
 {
 public:
@@ -1978,25 +2082,25 @@ public:
 };
 
 // Class IpDrv.McpClashMobManager
-// 0x0150 (0x0118 - 0x0268)
+// 0x0150 (0x0148 - 0x0298)
 class UMcpClashMobManager : public UMcpClashMobBase
 {
 public:
-	class FString                                      ChallengeListUrl;                              // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ChallengeStatusUrl;                            // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ChallengeMultiStatusUrl;                       // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      AcceptChallengeUrl;                            // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      UpdateChallengeProgressUrl;                    // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      UpdateRewardProgressUrl;                       // 0x0168 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class UHttpRequestInterface*                       HTTPRequestChallengeList;                      // 0x0178 (0x0008) [0x0000000000000000]               
-	class TArray<struct FMcpChallengeUserRequest>      ChallengeUserRequests;                         // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FMcpClashMobChallengeEvent>    ChallengeEvents;                               // 0x0190 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FMcpClashMobChallengeUserStatus> ChallengeUserStatus;                           // 0x01A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FMcpClashMobChallengeUserStatus             TempChallengeUserStatus;                       // 0x01B0 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FMcpClashMobChallengeUserStatus> TempChallengeUserStatusArray;                  // 0x0240 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UOnlineTitleFileCacheInterface*              FileCache_Object;                              // 0x0250 (0x0008) [0x0000000000000000] 
-	class UOnlineTitleFileCacheInterface*              FileCache_Interface;                           // 0x0258 (0x0008) [0x0000000000000000]               
-	class UMcpClashMobFileDownload*                    FileDownloader;                                // 0x0260 (0x0008) [0x0000000000000000]               
+	class FString                                      ChallengeListUrl;                              // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ChallengeStatusUrl;                            // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ChallengeMultiStatusUrl;                       // 0x0168 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      AcceptChallengeUrl;                            // 0x0178 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      UpdateChallengeProgressUrl;                    // 0x0188 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      UpdateRewardProgressUrl;                       // 0x0198 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class UHttpRequestInterface*                       HTTPRequestChallengeList;                      // 0x01A8 (0x0008) [0x0000000000000000]               
+	class TArray<struct FMcpChallengeUserRequest>      ChallengeUserRequests;                         // 0x01B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FMcpClashMobChallengeEvent>    ChallengeEvents;                               // 0x01C0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FMcpClashMobChallengeUserStatus> ChallengeUserStatus;                           // 0x01D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FMcpClashMobChallengeUserStatus             TempChallengeUserStatus;                       // 0x01E0 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FMcpClashMobChallengeUserStatus> TempChallengeUserStatusArray;                  // 0x0270 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UOnlineTitleFileCacheInterface*              FileCache_Object;                              // 0x0280 (0x0008) [0x0000000000000000] 
+	class UOnlineTitleFileCacheInterface*              FileCache_Interface;                           // 0x0288 (0x0008) [0x0000000000000000]               
+	class UMcpClashMobFileDownload*                    FileDownloader;                                // 0x0290 (0x0008) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpClashMobManager"))
@@ -2025,21 +2129,30 @@ public:
 };
 
 // Class IpDrv.McpGroupsBase
-// 0x00F8 (0x0078 - 0x0170)
+// 0x0140 (0x0078 - 0x01B8)
 class UMcpGroupsBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpGroupsManagerClassName;                     // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
 	class TArray<struct FMcpGroupList>                 GroupLists;                                    // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateGroupComplete__Delegate;             // 0x0098 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteGroupComplete__Delegate;             // 0x00B0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryGroupsComplete__Delegate;             // 0x00C8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryGroupMembersComplete__Delegate;       // 0x00E0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAddGroupMembersComplete__Delegate;         // 0x00F8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRemoveGroupMembersComplete__Delegate;      // 0x0110 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteAllGroupsComplete__Delegate;         // 0x0128 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryGroupInvitesComplete__Delegate;       // 0x0140 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAcceptGroupInviteComplete__Delegate;       // 0x0158 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateGroupComplete__Delegate;             // 0x0098 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateGroupComplete__Delegate_UnknownData00[0x8];// 0x00A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteGroupComplete__Delegate;             // 0x00B8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteGroupComplete__Delegate_UnknownData01[0x8];// 0x00C0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryGroupsComplete__Delegate;             // 0x00D8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryGroupsComplete__Delegate_UnknownData02[0x8];// 0x00E0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryGroupMembersComplete__Delegate;       // 0x00F8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryGroupMembersComplete__Delegate_UnknownData03[0x8];// 0x0100 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAddGroupMembersComplete__Delegate;         // 0x0118 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAddGroupMembersComplete__Delegate_UnknownData04[0x8];// 0x0120 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRemoveGroupMembersComplete__Delegate;      // 0x0138 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRemoveGroupMembersComplete__Delegate_UnknownData05[0x8];// 0x0140 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteAllGroupsComplete__Delegate;         // 0x0158 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteAllGroupsComplete__Delegate_UnknownData06[0x8];// 0x0160 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryGroupInvitesComplete__Delegate;       // 0x0178 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryGroupInvitesComplete__Delegate_UnknownData07[0x8];// 0x0180 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAcceptGroupInviteComplete__Delegate;       // 0x0198 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAcceptGroupInviteComplete__Delegate_UnknownData08[0x8];// 0x01A0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpGroupsBase"))
@@ -2068,23 +2181,27 @@ public:
 };
 
 // Class IpDrv.McpGroupsManager
-// 0x00F0 (0x0170 - 0x0260)
+// 0x0110 (0x01B8 - 0x02C8)
 class UMcpGroupsManager : public UMcpGroupsBase
 {
 public:
-	class FString                                      CreateGroupUrl;                                // 0x0170 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteGroupUrl;                                // 0x0180 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryGroupsUrl;                                // 0x0190 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryGroupMembersUrl;                          // 0x01A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      AddGroupMembersUrl;                            // 0x01B0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      RemoveGroupMembersUrl;                         // 0x01C0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteAllGroupsUrl;                            // 0x01D0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      AcceptGroupInviteUrl;                          // 0x01E0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      RejectGroupInviteUrl;                          // 0x01F0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryGroupsRequestComplete__Delegate;      // 0x0200 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryGroupMembersRequestComplete__Delegate;// 0x0218 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAddGroupMembersRequestComplete__Delegate;  // 0x0230 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAcceptGroupInviteRequestComplete__Delegate;// 0x0248 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CreateGroupUrl;                                // 0x01B8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteGroupUrl;                                // 0x01C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryGroupsUrl;                                // 0x01D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryGroupMembersUrl;                          // 0x01E8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      AddGroupMembersUrl;                            // 0x01F8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      RemoveGroupMembersUrl;                         // 0x0208 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteAllGroupsUrl;                            // 0x0218 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      AcceptGroupInviteUrl;                          // 0x0228 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      RejectGroupInviteUrl;                          // 0x0238 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnQueryGroupsRequestComplete__Delegate;      // 0x0248 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryGroupsRequestComplete__Delegate_UnknownData00[0x8];// 0x0250 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryGroupMembersRequestComplete__Delegate;// 0x0268 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryGroupMembersRequestComplete__Delegate_UnknownData01[0x8];// 0x0270 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAddGroupMembersRequestComplete__Delegate;  // 0x0288 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAddGroupMembersRequestComplete__Delegate_UnknownData02[0x8];// 0x0290 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAcceptGroupInviteRequestComplete__Delegate;// 0x02A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAcceptGroupInviteRequestComplete__Delegate_UnknownData03[0x8];// 0x02B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpGroupsManager"))
@@ -2111,13 +2228,15 @@ public:
 };
 
 // Class IpDrv.McpIdMappingBase
-// 0x0040 (0x0078 - 0x00B8)
+// 0x0050 (0x0078 - 0x00C8)
 class UMcpIdMappingBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpIdMappingClassName;                         // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAddMappingComplete__Delegate;              // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryMappingsComplete__Delegate;           // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnAddMappingComplete__Delegate;              // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAddMappingComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryMappingsComplete__Delegate;           // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryMappingsComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpIdMappingBase"))
@@ -2130,15 +2249,15 @@ public:
 };
 
 // Class IpDrv.McpIdMappingManager
-// 0x0050 (0x00B8 - 0x0108)
+// 0x0050 (0x00C8 - 0x0118)
 class UMcpIdMappingManager : public UMcpIdMappingBase
 {
 public:
-	class TArray<struct FMcpIdMapping>                 AccountMappings;                               // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      AddMappingUrl;                                 // 0x00C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryMappingUrl;                               // 0x00D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FAddMappingRequest>            AddMappingRequests;                            // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FQueryMappingRequest>          QueryMappingRequests;                          // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FMcpIdMapping>                 AccountMappings;                               // 0x00C8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      AddMappingUrl;                                 // 0x00D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryMappingUrl;                               // 0x00E8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FAddMappingRequest>            AddMappingRequests;                            // 0x00F8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FQueryMappingRequest>          QueryMappingRequests;                          // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpIdMappingManager"))
@@ -2150,15 +2269,19 @@ public:
 };
 
 // Class IpDrv.McpManagedValueManagerBase
-// 0x0070 (0x0078 - 0x00E8)
+// 0x0090 (0x0078 - 0x0108)
 class UMcpManagedValueManagerBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpManagedValueManagerClassName;               // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnReadSaveSlotComplete__Delegate;            // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnUpdateValueComplete__Delegate;             // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteValueComplete__Delegate;             // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateSaveSlotComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnReadSaveSlotComplete__Delegate;            // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnReadSaveSlotComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnUpdateValueComplete__Delegate;             // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnUpdateValueComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteValueComplete__Delegate;             // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteValueComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpManagedValueManagerBase"))
@@ -2176,19 +2299,19 @@ public:
 };
 
 // Class IpDrv.McpManagedValueManager
-// 0x0090 (0x00E8 - 0x0178)
+// 0x0090 (0x0108 - 0x0198)
 class UMcpManagedValueManager : public UMcpManagedValueManagerBase
 {
 public:
-	class FString                                      CreateSaveSlotUrl;                             // 0x00E8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ReadSaveSlotUrl;                               // 0x00F8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      UpdateValueUrl;                                // 0x0108 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteValueUrl;                                // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FManagedValueSaveSlot>         SaveSlots;                                     // 0x0128 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct UMcpManagedValueManager_FSaveSlotRequestState> CreateSaveSlotRequests;                        // 0x0138 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct UMcpManagedValueManager_FSaveSlotRequestState> ReadSaveSlotRequests;                          // 0x0148 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FValueRequestState>            UpdateValueRequests;                           // 0x0158 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FValueRequestState>            DeleteValueRequests;                           // 0x0168 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CreateSaveSlotUrl;                             // 0x0108 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ReadSaveSlotUrl;                               // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      UpdateValueUrl;                                // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteValueUrl;                                // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FManagedValueSaveSlot>         SaveSlots;                                     // 0x0148 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct UMcpManagedValueManager_FSaveSlotRequestState> CreateSaveSlotRequests;                        // 0x0158 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct UMcpManagedValueManager_FSaveSlotRequestState> ReadSaveSlotRequests;                          // 0x0168 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FValueRequestState>            UpdateValueRequests;                           // 0x0178 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FValueRequestState>            DeleteValueRequests;                           // 0x0188 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpManagedValueManager"))
@@ -2207,12 +2330,13 @@ public:
 };
 
 // Class IpDrv.McpServerTimeBase
-// 0x0028 (0x0078 - 0x00A0)
+// 0x0030 (0x0078 - 0x00A8)
 class UMcpServerTimeBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpServerTimeClassName;                        // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryServerTimeComplete__Delegate;         // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnQueryServerTimeComplete__Delegate;         // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryServerTimeComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpServerTimeBase"))
@@ -2223,13 +2347,13 @@ public:
 };
 
 // Class IpDrv.McpServerTimeManager
-// 0x0028 (0x00A0 - 0x00C8)
+// 0x0028 (0x00A8 - 0x00D0)
 class UMcpServerTimeManager : public UMcpServerTimeBase
 {
 public:
-	class FString                                      TimeStampUrl;                                  // 0x00A0 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      LastTimeStamp;                                 // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class UHttpRequestInterface*                       HTTPRequestServerTime;                         // 0x00C0 (0x0008) [0x0000000000000000]               
+	class FString                                      TimeStampUrl;                                  // 0x00A8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      LastTimeStamp;                                 // 0x00B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UHttpRequestInterface*                       HTTPRequestServerTime;                         // 0x00C8 (0x0008) [0x0000000000000000]               
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpServerTimeManager"))
@@ -2239,21 +2363,31 @@ public:
 };
 
 // Class IpDrv.McpUserInventoryBase
-// 0x0100 (0x0078 - 0x0178)
+// 0x0150 (0x0078 - 0x01C8)
 class UMcpUserInventoryBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpUserInventoryClassName;                     // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteSaveSlotComplete__Delegate;          // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQuerySaveSlotListComplete__Delegate;       // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryInventoryItemsComplete__Delegate;     // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnPurchaseItemComplete__Delegate;            // 0x00E8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnSellItemComplete__Delegate;                // 0x0100 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnEarnItemComplete__Delegate;                // 0x0118 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnConsumeItemComplete__Delegate;             // 0x0130 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteItemComplete__Delegate;              // 0x0148 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRecordIapComplete__Delegate;               // 0x0160 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnCreateSaveSlotComplete__Delegate;          // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnCreateSaveSlotComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteSaveSlotComplete__Delegate;          // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteSaveSlotComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQuerySaveSlotListComplete__Delegate;       // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQuerySaveSlotListComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryInventoryItemsComplete__Delegate;     // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryInventoryItemsComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnPurchaseItemComplete__Delegate;            // 0x0108 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnPurchaseItemComplete__Delegate_UnknownData04[0x8];// 0x0110 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnSellItemComplete__Delegate;                // 0x0128 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnSellItemComplete__Delegate_UnknownData05[0x8];// 0x0130 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnEarnItemComplete__Delegate;                // 0x0148 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnEarnItemComplete__Delegate_UnknownData06[0x8];// 0x0150 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnConsumeItemComplete__Delegate;             // 0x0168 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnConsumeItemComplete__Delegate_UnknownData07[0x8];// 0x0170 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteItemComplete__Delegate;              // 0x0188 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteItemComplete__Delegate_UnknownData08[0x8];// 0x0190 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnRecordIapComplete__Delegate;               // 0x01A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRecordIapComplete__Delegate_UnknownData09[0x8];// 0x01B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserInventoryBase"))
@@ -2284,25 +2418,25 @@ public:
 };
 
 // Class IpDrv.McpUserInventoryManager
-// 0x00F0 (0x0178 - 0x0268)
+// 0x00F0 (0x01C8 - 0x02B8)
 class UMcpUserInventoryManager : public UMcpUserInventoryBase
 {
 public:
-	class FString                                      CreateSaveSlotUrl;                             // 0x0178 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteSaveSlotUrl;                             // 0x0188 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ListSaveSlotUrl;                               // 0x0198 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ListItemsUrl;                                  // 0x01A8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      PurchaseItemUrl;                               // 0x01B8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      SellItemUrl;                                   // 0x01C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      EarnItemUrl;                                   // 0x01D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      ConsumeItemUrl;                                // 0x01E8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteItemUrl;                                 // 0x01F8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      IapRecordUrl;                                  // 0x0208 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<struct FMcpInventorySaveSlot>         SaveSlots;                                     // 0x0218 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> SaveSlotRequests;                              // 0x0228 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> ListSaveSlotRequests;                          // 0x0238 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> ListItemsRequests;                             // 0x0248 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FInventoryItemRequestState>    ItemRequests;                                  // 0x0258 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CreateSaveSlotUrl;                             // 0x01C8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteSaveSlotUrl;                             // 0x01D8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ListSaveSlotUrl;                               // 0x01E8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ListItemsUrl;                                  // 0x01F8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      PurchaseItemUrl;                               // 0x0208 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      SellItemUrl;                                   // 0x0218 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      EarnItemUrl;                                   // 0x0228 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      ConsumeItemUrl;                                // 0x0238 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteItemUrl;                                 // 0x0248 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      IapRecordUrl;                                  // 0x0258 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<struct FMcpInventorySaveSlot>         SaveSlots;                                     // 0x0268 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> SaveSlotRequests;                              // 0x0278 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> ListSaveSlotRequests;                          // 0x0288 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct UMcpUserInventoryManager_FSaveSlotRequestState> ListItemsRequests;                             // 0x0298 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FInventoryItemRequestState>    ItemRequests;                                  // 0x02A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserInventoryManager"))
@@ -2337,15 +2471,19 @@ public:
 };
 
 // Class IpDrv.McpUserManagerBase
-// 0x0070 (0x0078 - 0x00E8)
+// 0x0090 (0x0078 - 0x0108)
 class UMcpUserManagerBase : public UMcpServiceBase
 {
 public:
 	class FString                                      McpUserManagerClassName;                       // 0x0078 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnRegisterUserComplete__Delegate;            // 0x0088 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnAuthenticateUserComplete__Delegate;        // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnQueryUsersComplete__Delegate;              // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	struct FScriptDelegate                             __OnDeleteUserComplete__Delegate;              // 0x00D0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             __OnRegisterUserComplete__Delegate;            // 0x0088 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnRegisterUserComplete__Delegate_UnknownData00[0x8];// 0x0090 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnAuthenticateUserComplete__Delegate;        // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnAuthenticateUserComplete__Delegate_UnknownData01[0x8];// 0x00B0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnQueryUsersComplete__Delegate;              // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnQueryUsersComplete__Delegate_UnknownData02[0x8];// 0x00D0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
+	struct FScriptDelegate                             __OnDeleteUserComplete__Delegate;              // 0x00E8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                          __OnDeleteUserComplete__Delegate_UnknownData03[0x8];// 0x00F0 (0x0008) FIX WRONG SIZE OF PREVIOUS PROPERTY  [Original:0x0020, Missing: 0x0008]
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserManagerBase"))
@@ -2366,22 +2504,22 @@ public:
 };
 
 // Class IpDrv.McpUserManager
-// 0x00C0 (0x00E8 - 0x01A8)
+// 0x00C0 (0x0108 - 0x01C8)
 class UMcpUserManager : public UMcpUserManagerBase
 {
 public:
-	class TArray<struct FMcpUserStatus>                UserStatuses;                                  // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class FString                                      RegisterUserMcpUrl;                            // 0x00F8 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      RegisterUserFacebookUrl;                       // 0x0108 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryUserUrl;                                  // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      QueryUsersUrl;                                 // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      DeleteUserUrl;                                 // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      FacebookAuthUrl;                               // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class FString                                      McpAuthUrl;                                    // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
-	class TArray<class UHttpRequestInterface*>         RegisterUserRequests;                          // 0x0168 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class UHttpRequestInterface*>         QueryUsersRequests;                            // 0x0178 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<struct FUserRequest>                  DeleteUserRequests;                            // 0x0188 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	class TArray<class UHttpRequestInterface*>         AuthUserRequests;                              // 0x0198 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FMcpUserStatus>                UserStatuses;                                  // 0x0108 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      RegisterUserMcpUrl;                            // 0x0118 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      RegisterUserFacebookUrl;                       // 0x0128 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryUserUrl;                                  // 0x0138 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      QueryUsersUrl;                                 // 0x0148 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      DeleteUserUrl;                                 // 0x0158 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      FacebookAuthUrl;                               // 0x0168 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class FString                                      McpAuthUrl;                                    // 0x0178 (0x0010) [0x0000000000404000] (CPF_Config | CPF_NeedCtorLink)
+	class TArray<class UHttpRequestInterface*>         RegisterUserRequests;                          // 0x0188 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class UHttpRequestInterface*>         QueryUsersRequests;                            // 0x0198 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FUserRequest>                  DeleteUserRequests;                            // 0x01A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class UHttpRequestInterface*>         AuthUserRequests;                              // 0x01B8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 
 public:
     STATIC_CLASS_GETTER(UObject::FindClass("Class IpDrv.McpUserManager"))

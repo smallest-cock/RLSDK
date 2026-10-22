@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: GameDefines.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -337,15 +337,15 @@ enum EClassCastFlag : uint32_t
 # ========================================================================================= #
 */
 
-#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x021E9130)
-#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x021E9128)
-#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x022EB7D0)
-#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02424458)
-#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x024244A0)
+#define BUILDDATE_OFFSET         static_cast<uintptr_t>(0x0223A198)
+#define GPSYONIXBUILDID_OFFSET   static_cast<uintptr_t>(0x0223A188)
+#define GMALLOC_OFFSET           static_cast<uintptr_t>(0x0233C8D0)
+#define GNAMES_OFFSET            static_cast<uintptr_t>(0x02475918)
+#define GOBJECTS_OFFSET          static_cast<uintptr_t>(0x02475960)
 
 // Game Build Info
-#define GPSYONIXBUILDID_STRING "261001.2867.529371"
-#define BUILDDATE_STRING       "Oct  1 2026 01:20:52"
+#define GPSYONIXBUILDID_STRING "261013.63066.530866"
+#define BUILDDATE_STRING       "Oct 13 2026 18:09:07"
 
 // Process Event
 #define ProcessEvent_Pattern	(const uint8_t*)""

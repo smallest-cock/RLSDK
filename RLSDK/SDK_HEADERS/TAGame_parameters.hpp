@@ -1,12 +1,12 @@
 /*
 #############################################################################################
-# Rocket League SDK (RLSDK) Season 24 (v2.77)
-# Generated with RLSDKGenerator v1.1.5 on 10/07/2026 12:03AM
+# Rocket League SDK (RLSDK) Season 24 (v2.78)
+# Generated with RLSDKGenerator v1.1.5 on 10/21/2026 09:40PM
 # ========================================================================================= #
 # File: TAGame_parameters.hpp
 # ========================================================================================= #
-# Psyonix Build ID: 261001.2867.529371
-# Build Date: Oct  1 2026 01:20:52
+# Psyonix Build ID: 261013.63066.530866
+# Build Date: Oct 13 2026 18:09:07
 # ========================================================================================= #
 # Credits: ItsBranK, TheFeckless, SSLow
 # Links: www.github.com/smallest-cock/RLSDK-Generator, discord.gg/d5ahhQmJbJ
@@ -1017,7 +1017,7 @@ struct APlayerControllerBase_TA_execClampSpectatorLocation_Params
 // [0x00020003] 
 struct APlayerControllerBase_TA_execNotifyOnPlayerInputSet_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.PlayerControllerBase_TA.SetPlayerInput
@@ -2399,6 +2399,8 @@ struct APlayerController_TA_execClientArbitratedMatchEnded_Params
 struct APlayerController_TA_execHandleDisconnected_Params
 {
 	class UPsyNetConnection_X*                         Connection;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class AGRI_X*                                   GRI;                                              // 0x0008 (0x0008) [0x0000000000000000]               
+	// class UGameSettingPlaylist_TA*                  Playlist;                                         // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.PlayerController_TA.HandleMatchTypeSet
@@ -2879,7 +2881,6 @@ struct APlayerController_TA_execShouldExitBallCamFromFreeLook_Params
 	// class UCameraState_LookAtBall_TA*               LookAtBall;                                       // 0x0010 (0x0008) [0x0001000000000000]               
 	// float                                           MouseSpeed;                                       // 0x0018 (0x0004) [0x0000000000000000]               
 	// float                                           Deadzone;                                         // 0x001C (0x0004) [0x0000000000000000]               
-	// uint32_t                                        bExitFromStick : 1;                               // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.PlayerController_TA.NormalizeFreeLookInputForRemote
@@ -4188,6 +4189,14 @@ struct ABall_TA_execSpawnEndOfGameFX_Params
 // [0x00020103] 
 struct ABall_TA_execSetEndOfGameHidden_Params
 {
+};
+
+// Function TAGame.Ball_TA.ShouldUseGoalExplosion
+// [0x00020103] 
+struct ABall_TA_execShouldUseGoalExplosion_Params
+{
+	class UProductAsset_GoalExplosion_TA*              GoalExplosion;                                    // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.Ball_TA.SetExplosionFXActor
@@ -9591,6 +9600,13 @@ struct AGameEvent_TA_exec__GameEvent_TA__InitMutators_0x1_Params
 	class UMutator_TA*                                 Mutator;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function TAGame.GameEvent_TA.__GameEvent_TA__Destroyed_0x1
+// [0x40040103] 
+struct AGameEvent_TA_exec__GameEvent_TA__Destroyed_0x1_Params
+{
+	class UMutator_TA*                                 P;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function TAGame.GameEvent_TA.__GameEvent_TA__SetAllowReadyUp_0x1
 // [0x40040003] 
 struct AGameEvent_TA_exec__GameEvent_TA__SetAllowReadyUp_0x1_Params
@@ -9967,7 +9983,7 @@ struct AGameEvent_TA_execIsOnlineMultiplayer_Params
 // [0x00020103] 
 struct AGameEvent_TA_execNotifyMatchTypeSet_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameEvent_TA.CreateMatchType
@@ -10814,8 +10830,8 @@ struct AGameEvent_TA_execTimerUpdateBotCount_Params
 struct AGameEvent_TA_execTryRestartPlayer_Params
 {
 	class APRI_TA*                                     PlayerPRI;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             RestartPlayerCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class AController*                              Controller;                                       // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             RestartPlayerCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class AController*                              Controller;                                       // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GameEvent_TA.HandleSelectedLoadout
@@ -11634,7 +11650,7 @@ struct AGameEvent_Team_TA_execDestroyTeams_Params
 // [0x00020103] 
 struct AGameEvent_Team_TA_execNotifyAllTeamsCreated_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameEvent_Team_TA.OnAllTeamsCreated
@@ -12104,8 +12120,8 @@ struct UGameShare_TA_execSetTotalGameBalls_Params
 // [0x00020003] 
 struct UGameShare_TA_execNotifyCarPreviewActorAdded_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class U__GameShare_TA__NotifyCarPreviewActorAdded_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class U__GameShare_TA__NotifyCarPreviewActorAdded_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GameShare_TA.RemoveCarPreviewActor
@@ -12147,7 +12163,7 @@ struct UGameShare_TA_execSetWorldUIHidden_Params
 // [0x00020003] 
 struct UGameShare_TA_execNotifyHideWorldUIChanged_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameShare_TA.EventCarPreviewActorRemoved
@@ -12293,7 +12309,7 @@ struct UGameViewportClient_TA_execGetLocalPlayerCount_Params
 // [0x00020003] 
 struct UGameViewportClient_TA_execNotifyOnNumLocalPlayersUpdated_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameViewportClient_TA.UpdateNumLocalPlayers
@@ -13373,21 +13389,23 @@ struct UGFxData_Shops_TA_execOpenedPurchaseShopItem_Params
 struct UGFxData_Shops_TA_execPreviewShopItem_Params
 {
 	int32_t                                            ShopItemID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	// struct FShopItem                                Item;                                             // 0x0008 (0x00E8) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ShownPriceAmount;                                 // 0x00F0 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ItemIndex;                                        // 0x0004 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ShopIndex;                                        // 0x0008 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ShopID;                                           // 0x000C (0x0004) [0x0000000000000000]               
+	// struct FShopCost                                Cost;                                             // 0x0010 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ShownPriceAmount;                                 // 0x0080 (0x0004) [0x0000000000000000]               
 };
 
-// Function TAGame.GFxData_Shops_TA.GetItemFromID
-// [0x00440003] 
-struct UGFxData_Shops_TA_execGetItemFromID_Params
+// Function TAGame.GFxData_Shops_TA.GetShopItemIndexesFromID
+// [0x00C20003] 
+struct UGFxData_Shops_TA_execGetShopItemIndexesFromID_Params
 {
-	int32_t                                            ShopItemID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FShopItem                                   OutShopItem;                                      // 0x0008 (0x00E8) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x00F0 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         ShopID;                                           // 0x00F4 (0x0004) [0x0000000000000000]               
-	// class UGFxData_ShopCatalogue_TA*                Catalogue;                                        // 0x00F8 (0x0008) [0x0000000000000000]               
-	// int32_t                                         ShopItemIndex;                                    // 0x0100 (0x0004) [0x0000000000000000]               
+	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ShopItemID;                                       // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ShopIndex;                                        // 0x0008 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	int32_t                                            ShopItemIndex;                                    // 0x000C (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FShopsMapEntry                           CatalogueMapEntry;                                // 0x0018 (0x0010) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Shops_TA.ExitShopPage
@@ -13404,12 +13422,15 @@ struct UGFxData_Shops_TA_execOnMTXShopChanged_Params
 };
 
 // Function TAGame.GFxData_Shops_TA.OnShopCatalogueChanged
-// [0x08020003] 
+// [0x08820003] 
 struct UGFxData_Shops_TA_execOnShopCatalogueChanged_Params
 {
 	int32_t                                            NewShopID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	// int32_t                                         ShopIndex;                                        // 0x0004 (0x0004) [0x0000000000000000]               
-	// class USaveData_TA*                             SaveData;                                         // 0x0008 (0x0008) [0x0000000000000000]               
+	// struct FShopsMapEntry                           CatalogueMapEntry;                                // 0x0008 (0x0010) [0x0000000000000000]               
+	// int32_t                                         ShopIndex;                                        // 0x0018 (0x0004) [0x0000000000000000]               
+	// struct FShopCost                                Cost;                                             // 0x0020 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ShownPriceAmount;                                 // 0x0090 (0x0004) [0x0000000000000000]               
+	// class USaveData_TA*                             SaveData;                                         // 0x0098 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Shops_TA.OnEnterShopMenu
@@ -13590,8 +13611,8 @@ struct UGFxData_Shops_TA_execHandleGetAllShopsFailed_Params
 // [0x00040003] 
 struct UGFxData_Shops_TA_execHandleImageDownloaded_Params
 {
-	struct FOnlineImageDownload                        DownloadResult;                                   // 0x0000 (0x0040) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UGFxData_ShopCatalogue_TA*                Catalogue;                                        // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FOnlineImageDownload                        DownloadResult;                                   // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UGFxData_ShopCatalogue_TA*                Catalogue;                                        // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Shops_TA.HandleGetAllShops
@@ -14723,7 +14744,7 @@ struct ULocalPlayer_TA_execHandleSplitScreenTypeChanged_Params
 // [0x00020003] 
 struct ULocalPlayer_TA_execNotifyWhenProfileSet_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.LocalPlayer_TA.SetProfile
@@ -14993,7 +15014,7 @@ struct UMapDataLoader_TA_eventUpdateAvailableMaps_Params
 struct UMapDataLoader_TA_execLoadLargeMapImage_Params
 {
 	class UMapData_TA*                                 Map;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.MapDataLoader_TA.GetMapSelector
@@ -15919,8 +15940,8 @@ struct UMaxActorsGroup_TA_execGetEnabledActorsString_Params
 struct UMaxActorsGroup_TA_execRemoveListener_Params
 {
 	class AActor*                                      CheckActor;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnEnabled;                                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnDisabled;                                       // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnEnabled;                                        // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnDisabled;                                       // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.MaxActorsGroup_TA.AddListener
@@ -15928,8 +15949,8 @@ struct UMaxActorsGroup_TA_execRemoveListener_Params
 struct UMaxActorsGroup_TA_execAddListener_Params
 {
 	class AActor*                                      CheckActor;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnEnabled;                                        // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnDisabled;                                       // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnEnabled;                                        // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnDisabled;                                       // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.MaxActorsGroup_TA.OnToggledDelegate
@@ -16429,13 +16450,13 @@ struct UMTXGarageUtils_TA_execCatalogInfoItemsToPurchaseInfoItems_Params
 	class UShopsConfig_TA*                             ShopConfig;                                       // 0x0020 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class UOnlineProductStoreSet_TA*                   OnlineProductSet;                                 // 0x0028 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class UCachedUnlockedProducts_TA*                  OfflineItems;                                     // 0x0030 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             FormatCurrency;                                   // 0x0038 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnlineProductToMTXProduct;                        // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class TArray<struct FMTXPurchaseInfo>              ReturnValue;                                      // 0x0068 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class TArray<struct FMTXPurchaseInfo>           PurchaseInfoItems;                                // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FMTCatalogInfo                           CatalogInfoItem;                                  // 0x0088 (0x00B8) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0140 (0x0004) [0x0000000000000000]               
-	// struct FMTXPurchaseInfo                         PurchaseInfoItem;                                 // 0x0148 (0x00E0) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             FormatCurrency;                                   // 0x0038 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnlineProductToMTXProduct;                        // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<struct FMTXPurchaseInfo>              ReturnValue;                                      // 0x0078 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class TArray<struct FMTXPurchaseInfo>           PurchaseInfoItems;                                // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FMTCatalogInfo                           CatalogInfoItem;                                  // 0x0098 (0x00B8) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0150 (0x0004) [0x0000000000000000]               
+	// struct FMTXPurchaseInfo                         PurchaseInfoItem;                                 // 0x0158 (0x00E0) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.MTXGarageUtils_TA.CatalogInfoItemToPurchaseInfoItem
@@ -16447,11 +16468,11 @@ struct UMTXGarageUtils_TA_execCatalogInfoItemToPurchaseInfoItem_Params
 	class UProductsConfig_TA*                          ProductsConfig;                                   // 0x00C0 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class UShopsConfig_TA*                             ShopConfig;                                       // 0x00C8 (0x0008) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class UProductDatabase_TA*                         ProductDB;                                        // 0x00D0 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             FormatCurrency;                                   // 0x00D8 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnlineProductToMTXProduct;                        // 0x00F0 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FMTXPurchaseInfo                            ReturnValue;                                      // 0x0108 (0x00E0) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// struct FMTXPurchaseInfo                         PurchaseInfoItem;                                 // 0x01E8 (0x00E0) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<class FString>                     MapLocal_0x1;                                     // 0x02C8 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FormatCurrency;                                   // 0x00D8 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnlineProductToMTXProduct;                        // 0x00F8 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FMTXPurchaseInfo                            ReturnValue;                                      // 0x0118 (0x00E0) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// struct FMTXPurchaseInfo                         PurchaseInfoItem;                                 // 0x01F8 (0x00E0) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class FString>                     MapLocal_0x1;                                     // 0x02D8 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.MTXGarageUtils_TA.UpdateInjectedItemsOwnership
@@ -16535,9 +16556,9 @@ struct UMTXGarageUtils_TA_execSetPriceFromInt_Params
 	int32_t                                            OriginalPrice;                                    // 0x00E4 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            DiscountPercentage;                               // 0x00E8 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x00EC (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FormatCurrency;                                   // 0x00F0 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UMtxConfig_TA*                               MtxConfig;                                        // 0x0108 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// class FString                                   formattedPrice;                                   // 0x0110 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             FormatCurrency;                                   // 0x00F0 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UMtxConfig_TA*                               MtxConfig;                                        // 0x0110 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class FString                                   formattedPrice;                                   // 0x0118 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.MTXGarageUtils_TA.SetPriceFromString
@@ -17088,32 +17109,32 @@ struct UNotification_TA_execGetSenderID_Params
 // [0x00020003] 
 struct UNotification_TA_execSetHiddenDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UNotification_TA*                            ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UNotification_TA*                            ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.Notification_TA.SetShownDelegate
 // [0x00020003] 
 struct UNotification_TA_execSetShownDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UNotification_TA*                            ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UNotification_TA*                            ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.Notification_TA.SetDenyDelegate
 // [0x00020003] 
 struct UNotification_TA_execSetDenyDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UNotification_TA*                            ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UNotification_TA*                            ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.Notification_TA.SetAcceptDelegate
 // [0x00020003] 
 struct UNotification_TA_execSetAcceptDelegate_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UNotification_TA*                            ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UNotification_TA*                            ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.Notification_TA.RemoveNotification
@@ -17354,8 +17375,8 @@ struct UNotificationManager_TA_execGetNewNotificationID_Params
 // [0x00020003] 
 struct UNotificationManager_TA_execHasExistingNotification_Params
 {
-	struct FScriptDelegate                             HasExistingDelegate;                              // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             HasExistingDelegate;                              // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.NotificationManager_TA.RemoveNotificationTypeFromSender
@@ -17492,7 +17513,7 @@ struct UOnlineProduct_TA_execSetRocketPassProductFlag_Params
 // [0x00020003] 
 struct UOnlineProduct_TA_execSetTradehold_Params
 {
-	int32_t                                            InTradehold;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            InTradeHold;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.OnlineProduct_TA.SortOnlineProductsByQuality
@@ -17561,6 +17582,14 @@ struct UOnlineProduct_TA_execSetProductID_Params
 struct UOnlineProduct_TA_execGetIsUntradeable_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.OnlineProduct_TA.DoesTradeHoldAllowsTradeIn
+// [0x00022401] 
+struct UOnlineProduct_TA_execDoesTradeHoldAllowsTradeIn_Params
+{
+	int32_t                                            InTradeHold;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.OnlineProduct_TA.SortByTradeHoldAscending
@@ -18020,7 +18049,7 @@ struct UPersona_TA_execSetBlockStatus_Params
 // [0x00020003] 
 struct UPersona_TA_execNotifyOnNameSanitized_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Persona_TA.SetPlayerNameSanitized
@@ -18040,9 +18069,9 @@ struct UPersona_TA_execSetPlayerNameInternal_Params
 	class FString                                      OutUnsanitizedName;                               // 0x0020 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	uint32_t                                           bPrimaryName : 1;                                 // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0038 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bEpicName : 1;                                    // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	// class UOnlineGameWordFilter_X*                  WordFilter;                                       // 0x0058 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0038 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bEpicName : 1;                                    // 0x0058 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	// class UOnlineGameWordFilter_X*                  WordFilter;                                       // 0x0060 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.Persona_TA.SetEpicName
@@ -18521,9 +18550,9 @@ struct UPersonas_TA_execHandleIdsLinked_Params
 	uint32_t                                           bSuccess : 1;                                     // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FLinkedAccountData>            ReceivedAccountData;                              // 0x0008 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FLinkedAccountData                       LinkedAccountItr;                                 // 0x0030 (0x00A8) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x1;                              // 0x00D8 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FLinkedAccountData                       LinkedAccountItr;                                 // 0x0038 (0x00A8) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x1;                              // 0x00E0 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.Personas_TA.GetOrCreate
@@ -18544,13 +18573,13 @@ struct UPersonas_TA_execGetOrCreateAndLink_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      PlayerName;                                       // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UPersona_TA*                                 ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UPersona_TA*                              Persona;                                          // 0x0078 (0x0008) [0x0000000000000000]               
-	// class UOnlinePlayerFriends_X*                   OnlineFriends;                                    // 0x0080 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x1;                             // 0x0088 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class U__Personas_TA__GetOrCreateAndLink_0x1*   _0x1;                                             // 0x0098 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x2;                             // 0x00A0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UPersona_TA*                                 ReturnValue;                                      // 0x0078 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UPersona_TA*                              Persona;                                          // 0x0080 (0x0008) [0x0000000000000000]               
+	// class UOnlinePlayerFriends_X*                   OnlineFriends;                                    // 0x0088 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x1;                             // 0x0090 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class U__Personas_TA__GetOrCreateAndLink_0x1*   _0x1;                                             // 0x00A0 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x2;                             // 0x00A8 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Personas_TA.LinkIds
@@ -18804,7 +18833,7 @@ struct UPlayerVanity_TA_execInit_Params
 	struct FProductHashID                              InHashID;                                         // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding1[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UProductAttribute_TA*>          InAttributes;                                     // 0x0020 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0030 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.PlayerVanity_TA.InitWithPlayerName
@@ -18814,8 +18843,8 @@ struct UPlayerVanity_TA_execInitWithPlayerName_Params
 	class FString                                      InPlayerName;                                     // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	int32_t                                            InProductID;                                      // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// struct FProductInstanceID                       StructInitializer_0x1;                            // 0x0030 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// struct FProductInstanceID                       StructInitializer_0x1;                            // 0x0038 (0x0010) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.PlayerVanity_TA.InitWithPlayerID
@@ -18829,7 +18858,7 @@ struct UPlayerVanity_TA_execInitWithPlayerID_Params
 	struct FProductHashID                              InHashID;                                         // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding1[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<class UProductAttribute_TA*>          InAttributes;                                     // 0x0068 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0078 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0078 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.PlayerVanity_TA.InitWithSaveObject
@@ -19628,7 +19657,7 @@ struct UProductAssetLoader_TA_execCancelLoadAssets_Params
 struct UProductAssetLoader_TA_execLoadAssetByNameAsync_Params
 {
 	class FName                                        AssetName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductAssetLoader_TA.LoadThumbnailAssetAsync
@@ -19637,7 +19666,7 @@ struct UProductAssetLoader_TA_execLoadThumbnailAssetAsync_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductAssetLoader_TA.LoadAssetAsync
@@ -19646,7 +19675,7 @@ struct UProductAssetLoader_TA_execLoadAssetAsync_Params
 {
 	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoaded;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductAssetLoader_TA.LoadAssetByName
@@ -19700,7 +19729,7 @@ struct UProductAttribute_TA_execHasLoadedAllAdditionalReferences_Params
 // [0x00020000] 
 struct UProductAttribute_TA_execLoadAdditionalAssets_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductAttribute_TA.ShouldLoadAdditionalAssets
@@ -20398,8 +20427,8 @@ struct UProductAttribute_TeamEdition_TA_execHasLoadedAllAdditionalReferences_Par
 // [0x400020002] 
 struct UProductAttribute_TeamEdition_TA_execLoadAdditionalAssets_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UDataAsset_ESportsTeam_TA*                ESportsTeam;                                      // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UDataAsset_ESportsTeam_TA*                ESportsTeam;                                      // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ProductAttribute_TeamEdition_TA.ShouldLoadAdditionalAssets
@@ -21171,7 +21200,7 @@ struct UProductLoader_TA_execOnAllAssetsLoaded_Params
 // [0x00020003] 
 struct UProductLoader_TA_execNotifyWhenAllAssetsLoaded_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductLoader_TA.AddMissingDefaultSkinAssetForBody
@@ -21706,7 +21735,7 @@ struct UProduct_TA_execGetPlatforms_Params
 // [0x00020003] 
 struct UProduct_TA_execLoadAssetAsync_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Product_TA.LoadAsset
@@ -21825,7 +21854,7 @@ struct UProductThumbnailQueue_TA_execRenderThumbnail_Params
 	uint8_t                                            Size;                                             // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[3];                                      // 0x0011 (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	int32_t                                            TeamID;                                           // 0x0014 (0x0004) [0x0000000000000082] (CPF_Const | CPF_Parm)
-	struct FScriptDelegate                             OnRendered;                                       // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnRendered;                                       // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductThumbnailQueue_TA.GetInstance
@@ -23570,7 +23599,7 @@ struct UReplayManager_TA_execExportReplayBytes_Params
 {
 	class TArray<uint8_t>                              Bytes;                                            // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class FString                                      ReplayID;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ReplayManager_TA.ExportReplay
@@ -23578,7 +23607,7 @@ struct UReplayManager_TA_execExportReplayBytes_Params
 struct UReplayManager_TA_execExportReplay_Params
 {
 	class UReplay_TA*                                  Replay;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ReplayManager_TA.ImportReplayFile
@@ -23586,8 +23615,8 @@ struct UReplayManager_TA_execExportReplay_Params
 struct UReplayManager_TA_execImportReplayFile_Params
 {
 	class FString                                      FilePath;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bSyncronous : 1;                                  // 0x0028 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bSyncronous : 1;                                  // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function TAGame.ReplayManager_TA.LoadHeaderFile
@@ -23595,7 +23624,7 @@ struct UReplayManager_TA_execImportReplayFile_Params
 struct UReplayManager_TA_execLoadHeaderFile_Params
 {
 	class FString                                      FilePath;                                         // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ReplayManager_TA.StartAsyncHeadersCountTask
@@ -23609,14 +23638,14 @@ struct UReplayManager_TA_execStartAsyncHeadersCountTask_Params
 // [0x00024401] 
 struct UReplayManager_TA_execLoadOtherPCPlatformHeaders_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ReplayManager_TA.LoadHeaders
 // [0x00024401] 
 struct UReplayManager_TA_execLoadHeaders_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ReplayManager_TA.GetReplayFolder
@@ -25185,7 +25214,7 @@ struct USaveGameManager_TA_execOnLocalSaveDataDisabled_Params
 };
 
 // Function TAGame.SaveGameManager_TA.Load
-// [0x00020003] 
+// [0x00020002] 
 struct USaveGameManager_TA_execLoad_Params
 {
 	// class FString                                   SaveFileName;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
@@ -25195,7 +25224,7 @@ struct USaveGameManager_TA_execLoad_Params
 // [0x00020003] 
 struct USaveGameManager_TA_execNotifyWhenLoaded_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.SaveGameManager_TA.HandlePlayerLoginStatusChange
@@ -25272,7 +25301,7 @@ struct USaveGameManager_TA_execEventDataLoaded_Params
 // [0x00020401] 
 struct USaveObjectManager_TA_execCancelGetHeaders_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.SaveObjectManager_TA.GetHeaders
@@ -25283,7 +25312,7 @@ struct USaveObjectManager_TA_execGetHeaders_Params
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class FString                                      InPath;                                           // 0x0008 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      InPattern;                                        // 0x0018 (0x0010) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.SaveObjectManager_TA.SetNewFileSaveCount
@@ -25329,7 +25358,7 @@ struct USaveObjectManager_TA_execLoadAsync_Params
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.SaveObjectManager_TA.Load
@@ -25461,7 +25490,7 @@ struct USaveObjectManager_TA_execLoadGameDataAsync_Params
 	class FString                                      PathName;                                         // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint32_t                                           bExactFileMatch : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.SaveObjectManager_TA.LoadGameData
@@ -25907,6 +25936,20 @@ struct USeqAct_SpawnFXActor_TA_execEventSpawned_Params
 // [0x400020802] 
 struct USeqCond_IsFeatureEnabled_TA_eventActivated_Params
 {
+};
+
+// Function TAGame.ShopsConfig_TA.BuildDisallowedBundlePreviewProductsSet
+// [0x00020401] 
+struct UShopsConfig_TA_execBuildDisallowedBundlePreviewProductsSet_Params
+{
+};
+
+// Function TAGame.ShopsConfig_TA.IsProductAllowedForBundlePreview
+// [0x00020401] 
+struct UShopsConfig_TA_execIsProductAllowedForBundlePreview_Params
+{
+	int32_t                                            ProductID;                                        // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0004 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsConfig_TA.BuildDisallowedInjectedProductsSets
@@ -26941,7 +26984,7 @@ struct UCarMeshComponent_TA_execClearAttachments_Params
 // [0x00020003] 
 struct UCarMeshComponent_TA_execNotifyWhenAttached_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.CarMeshComponent_TA.OnDetached
@@ -28078,8 +28121,8 @@ struct UTickNotifyDelegate_TA_execStart_Params
 // [0x00020003] 
 struct UTickNotifyDelegate_TA_execOnPrePhysicsStep_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTickNotifyDelegate_TA*                      ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTickNotifyDelegate_TA*                      ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TickNotifyDelegate_TA.Create
@@ -28160,7 +28203,7 @@ struct UUserBugReportBulkData_TA_execWaitForGC_Params
 // [0x00024003] 
 struct UUserBugReportBulkData_TA_execInit_Params
 {
-	struct FScriptDelegate                             CompleteCallback;                                 // 0x0000 (0x0018) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             CompleteCallback;                                 // 0x0000 (0x0020) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.UserBugReportBulkData_TA.EventComplete
@@ -28177,14 +28220,14 @@ struct UVanityQuery_TA_execCompleteRequests_Params
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0010 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0011 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ProcessQuery;                                     // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bUsedCachedResult : 1;                            // 0x0030 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// class TArray<struct FUniqueNetId>               HaveIds;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FUniqueNetId>               FilteredIDs;                                      // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class U__VanityQuery_TA__CompleteRequests_0x1*  _0x1;                                             // 0x0058 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FUniqueNetId>               FilterLocal_0x2;                                  // 0x0060 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0070 (0x0048) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00B8 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             ProcessQuery;                                     // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bUsedCachedResult : 1;                            // 0x0038 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// class TArray<struct FUniqueNetId>               HaveIds;                                          // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FUniqueNetId>               FilteredIDs;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class U__VanityQuery_TA__CompleteRequests_0x1*  _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FUniqueNetId>               FilterLocal_0x2;                                  // 0x0068 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0078 (0x0048) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00C0 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.VanityQuery_TA.GetQueryInfo
@@ -28195,19 +28238,19 @@ struct UVanityQuery_TA_execGetQueryInfo_Params
 	uint8_t                                            InType;                                           // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UGFxShell_X*                                 OutShell;                                         // 0x0050 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
-	struct FScriptDelegate                             OutCallback;                                      // 0x0058 (0x0018) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0070 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         Index;                                            // 0x0074 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             OutCallback;                                      // 0x0058 (0x0020) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         Index;                                            // 0x007C (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.VanityQuery_TA.FindNewRequests
 // [0x00C40003] 
 struct UVanityQuery_TA_execFindNewRequests_Params
 {
-	struct FVanityQueryRequest                         InRequest;                                        // 0x0000 (0x0048) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FVanityQuerySet                             QuerySet;                                         // 0x0048 (0x0018) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// int32_t                                         I;                                                // 0x0060 (0x0004) [0x0000000000000000]               
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0068 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FVanityQueryRequest                         InRequest;                                        // 0x0000 (0x0050) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FVanityQuerySet                             QuerySet;                                         // 0x0050 (0x0018) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	// int32_t                                         I;                                                // 0x0068 (0x0004) [0x0000000000000000]               
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0070 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanityQuery_TA.GetNumActiveQueries
@@ -28224,10 +28267,10 @@ struct UVanityQuery_TA_execGetNumActiveQueries_Params
 struct UVanityQuery_TA_execGetNextAvailableIDs_Params
 {
 	class TArray<struct FVanityQuerySet>               QuerySets;                                        // 0x0000 (0x0010) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FVanityQueryRequest                      Request;                                          // 0x0010 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         I;                                                // 0x0058 (0x0004) [0x0000000000000000]               
-	// struct FVanityQuerySet                          QuerySet;                                         // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         Index;                                            // 0x0078 (0x0004) [0x0000000000000000]               
+	// struct FVanityQueryRequest                      Request;                                          // 0x0010 (0x0050) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         I;                                                // 0x0060 (0x0004) [0x0000000000000000]               
+	// struct FVanityQuerySet                          QuerySet;                                         // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         Index;                                            // 0x0080 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.VanityQuery_TA.CanStartNewQuery
@@ -28245,9 +28288,9 @@ struct UVanityQuery_TA_execStartQuery_Params
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bForcedUpdate : 1;                                // 0x0038 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// struct FVanityQueryRequest                      VQR;                                              // 0x0040 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bForcedUpdate : 1;                                // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// struct FVanityQueryRequest                      VQR;                                              // 0x0048 (0x0050) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanityQuery_TA.HaveRequestsQueued
@@ -28273,7 +28316,7 @@ struct UVanityQuery_TA_execCompleteRequest_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UGFxShell_X*                                 Shell;                                            // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanityQuery_TA.VanitiesUpdated
@@ -28356,8 +28399,8 @@ struct UVanitySetManager_TA_execProcessBorders_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UGFxShell_X*                                 Shell;                                            // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0038 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanitySetManager_TA.ReadBorders
@@ -28366,8 +28409,8 @@ struct UVanitySetManager_TA_execReadBorders_Params
 {
 	class UGFxShell_X*                                 Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bForceUpdate : 1;                                 // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bForceUpdate : 1;                                 // 0x0038 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function TAGame.VanitySetManager_TA.GetAvatarBorder
@@ -28428,8 +28471,8 @@ struct UVanitySetManager_TA_execProcessBanners_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UGFxShell_X*                                 Shell;                                            // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0038 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanitySetManager_TA.ReadBanners
@@ -28438,8 +28481,8 @@ struct UVanitySetManager_TA_execReadBanners_Params
 {
 	class UGFxShell_X*                                 Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bForcedUpdate : 1;                                // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bForcedUpdate : 1;                                // 0x0038 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function TAGame.VanitySetManager_TA.GetBanner
@@ -28474,9 +28517,9 @@ struct UVanitySetManager_TA_execHandleSubSystemReadAvatar_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	class UTexture*                                    Avatar;                                           // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      OnlinePlayerName;                                 // 0x0050 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UGFxShell_X*                              Shell;                                            // 0x0078 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x1;                             // 0x0080 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UGFxShell_X*                              Shell;                                            // 0x0080 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FUniqueNetId>               ArrayInitializer_0x1;                             // 0x0088 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanitySetManager_TA.RequestAvatars
@@ -28497,8 +28540,8 @@ struct UVanitySetManager_TA_execProcessAvatars_Params
 {
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UGFxShell_X*                                 Shell;                                            // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0030 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0038 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanitySetManager_TA.ReadAvatars
@@ -28507,8 +28550,8 @@ struct UVanitySetManager_TA_execReadAvatars_Params
 {
 	class UGFxShell_X*                                 Shell;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bForceUpdate : 1;                                 // 0x0030 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bForceUpdate : 1;                                 // 0x0038 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function TAGame.VanitySetManager_TA.GetAvatar
@@ -28534,11 +28577,11 @@ struct UVanitySetManager_TA_execReadVanity_Internal_Params
 	class TArray<struct FUniqueNetId>                  PlayerIds;                                        // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InType;                                           // 0x0018 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0019 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bForcedUpdate : 1;                                // 0x0038 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// class TArray<struct FUniqueNetId>               FilterLocal_0x1;                                  // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<struct FUniqueNetId>               ValidIDs;                                         // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FUniqueNetId                             PlayerID;                                         // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bForcedUpdate : 1;                                // 0x0040 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// class TArray<struct FUniqueNetId>               FilterLocal_0x1;                                  // 0x0048 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FUniqueNetId>               ValidIDs;                                         // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FUniqueNetId                             PlayerID;                                         // 0x0068 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VanitySetManager_TA.TryProcessVanity
@@ -28550,8 +28593,8 @@ struct UVanitySetManager_TA_execTryProcessVanity_Params
 	// class TArray<struct FUniqueNetId>               HaveIds;                                          // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class UVanitySet_TA*                            VanitySet;                                        // 0x0028 (0x0008) [0x0000000000000000]               
 	// class UPlayerVanity_TA*                         Vanity;                                           // 0x0030 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// struct FScriptDelegate                          RequestCallback;                                  // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         I;                                                // 0x0050 (0x0004) [0x0000000000000000]               
+	// struct FScriptDelegate                          RequestCallback;                                  // 0x0038 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         I;                                                // 0x0058 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.VanitySetManager_TA.UpdateQueries
@@ -29553,6 +29596,18 @@ struct APRI_TA_execGetAssistScoreboardStat_Params
 	// struct FScoreboardStat                          ScoreStat;                                        // 0x001C (0x000C) [0x0000000000000000]               
 };
 
+// Function TAGame.PRI_TA.UpdateMatchFlipResets
+// [0x00040003] 
+struct APRI_TA_execUpdateMatchFlipResets_Params
+{
+};
+
+// Function TAGame.PRI_TA.OnFlipResetPerformed
+// [0x00020003] 
+struct APRI_TA_execOnFlipResetPerformed_Params
+{
+};
+
 // Function TAGame.PRI_TA.SupportsCustomScoreboard
 // [0x00020103] 
 struct APRI_TA_execSupportsCustomScoreboard_Params
@@ -29574,13 +29629,14 @@ struct APRI_TA_execGetCustomScoreboardStatValue_Params
 struct APRI_TA_execGetCustomStatsData_Params
 {
 	class UProfileScoreboardSave_TA*                   PlayerSave;                                       // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	class TArray<struct FScoreboardStat>               ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class FName                                     ModeID;                                           // 0x0018 (0x0008) [0x0000000000000000]               
-	// class TArray<uint8_t>                           Stats;                                            // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FScoreboardStat>            OutStats;                                         // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScoreboardStat                          StructInitializer_0x1;                            // 0x0040 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
-	// uint8_t                                         Stat;                                             // 0x004C (0x0001) [0x0000000000000000]               
-	// struct FScoreboardStat                          StructInitializer_0x2;                            // 0x0050 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	class UClass*                                      GameClass;                                        // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	class TArray<struct FScoreboardStat>               ReturnValue;                                      // 0x0010 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class FName                                     ModeID;                                           // 0x0020 (0x0008) [0x0000000000000000]               
+	// class TArray<uint8_t>                           Stats;                                            // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FScoreboardStat>            OutStats;                                         // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScoreboardStat                          StructInitializer_0x1;                            // 0x0048 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	// uint8_t                                         Stat;                                             // 0x0054 (0x0001) [0x0000000000000000]               
+	// struct FScoreboardStat                          StructInitializer_0x2;                            // 0x0058 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.PRI_TA.GetCustomScoreboardStats
@@ -29589,6 +29645,7 @@ struct APRI_TA_execGetCustomScoreboardStats_Params
 {
 	class UProfileScoreboardSave_TA*                   PlayerSave;                                       // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	class TArray<struct FScoreboardStat>               ReturnValue;                                      // 0x0008 (0x0010) [0x0001000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class UClass*                                   GameClass;                                        // 0x0018 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.PRI_TA.GetSpectatorStats
@@ -32602,7 +32659,7 @@ struct ACar_TA_execIsVehicleSetup_Params
 // [0x00020103] 
 struct ACar_TA_execNotifyWhenVehicleSetup_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Car_TA.HandleVisualAssetLoaded
@@ -33539,6 +33596,17 @@ struct UGFxData_Mutators_TA_execInitMutators_Params
 	// class FString                                   BoostOptionValue;                                 // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
+// Function TAGame.GFxData_Mutators_TA.ClearStaleGameTags
+// [0x00020003] 
+struct UGFxData_Mutators_TA_execClearStaleGameTags_Params
+{
+	uint8_t                                            InSettingsType;                                   // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
+	// class UGameTags_TA*                             PersistedTags;                                    // 0x0008 (0x0008) [0x0000000000000000]               
+	// class UGameSettingCategory_X*                   Category;                                         // 0x0010 (0x0008) [0x0000000000000000]               
+	// class FString                                   CategoryName;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   Value;                                            // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
 // Function TAGame.GFxData_Mutators_TA.HandleMatchCreatorAdminChanged
 // [0x00040003] 
 struct UGFxData_Mutators_TA_execHandleMatchCreatorAdminChanged_Params
@@ -34429,11 +34497,11 @@ struct UShopNotificationsManager_TA_execHandleAssetLoaded_Params
 {
 	struct FAssetLoadResult                            Result;                                           // 0x0000 (0x0020) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FItemShopNotificationData                   ShopNotificationData;                             // 0x0020 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UProductAsset_TA*                         ProductAsset;                                     // 0x0080 (0x0008) [0x0000000000000000]               
-	// struct FOnlineProductData                       ProductData;                                      // 0x0088 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x00C8 (0x0008) [0x0000000000000000]               
-	// class U__ShopNotificationsManager_TA__HandleAssetLoaded_0x1* _0x1;                                             // 0x00D0 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0068 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UProductAsset_TA*                         ProductAsset;                                     // 0x0088 (0x0008) [0x0000000000000000]               
+	// struct FOnlineProductData                       ProductData;                                      // 0x0090 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x00D0 (0x0008) [0x0000000000000000]               
+	// class U__ShopNotificationsManager_TA__HandleAssetLoaded_0x1* _0x1;                                             // 0x00D8 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopNotificationsManager_TA.LoadNotificationIcon
@@ -34441,11 +34509,11 @@ struct UShopNotificationsManager_TA_execHandleAssetLoaded_Params
 struct UShopNotificationsManager_TA_execLoadNotificationIcon_Params
 {
 	struct FItemShopNotificationData                   ShopNotificationData;                             // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UWebImageCache_X*                         WebImageCache;                                    // 0x0060 (0x0008) [0x0000000000000000]               
-	// class U__ShopNotificationsManager_TA__LoadNotificationIcon_0x1* _0x1;                                             // 0x0068 (0x0008) [0x0000000000000000]               
-	// struct FOnlineProductData                       ProductData;                                      // 0x0070 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ProductID;                                        // 0x00B0 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UWebImageCache_X*                         WebImageCache;                                    // 0x0068 (0x0008) [0x0000000000000000]               
+	// class U__ShopNotificationsManager_TA__LoadNotificationIcon_0x1* _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
+	// struct FOnlineProductData                       ProductData;                                      // 0x0078 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ProductID;                                        // 0x00B8 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopNotificationsManager_TA.HasSeenShopNotification
@@ -36471,6 +36539,24 @@ struct AGameEvent_Soccar_TA_exec__GameEvent_Soccar_TA__CheckJoinInProgress_0x1_P
 	struct FUniqueNetId                                ReturnValue;                                      // 0x0008 (0x0048) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
+// Function TAGame.GameEvent_Soccar_TA.__MatchPointTeam__ChangeNotifyFunc
+// [0x00000000] 
+struct AGameEvent_Soccar_TA_exec__MatchPointTeam__ChangeNotifyFunc_Params
+{
+};
+
+// Function TAGame.GameEvent_Soccar_TA.__MercyGoalDifference__ChangeNotifyFunc
+// [0x00000000] 
+struct AGameEvent_Soccar_TA_exec__MercyGoalDifference__ChangeNotifyFunc_Params
+{
+};
+
+// Function TAGame.GameEvent_Soccar_TA.__MatchEndReason__ChangeNotifyFunc
+// [0x00000000] 
+struct AGameEvent_Soccar_TA_exec__MatchEndReason__ChangeNotifyFunc_Params
+{
+};
+
 // Function TAGame.GameEvent_Soccar_TA.__ReplicatedServerPerformanceState__ChangeNotifyFunc
 // [0x00000000] 
 struct AGameEvent_Soccar_TA_exec__ReplicatedServerPerformanceState__ChangeNotifyFunc_Params
@@ -37664,7 +37750,7 @@ struct AGameEvent_Soccar_TA_execOnMatchEnded_Params
 // [0x00020103] 
 struct AGameEvent_Soccar_TA_execNotifyOnGameEnded_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameEvent_Soccar_TA.GetEndMatchState
@@ -39500,30 +39586,6 @@ struct U__BanSync_TA__GetPlayerBanMessages_0x1_exec__BanSync_TA__GetPlayerBanMes
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
-// Function TAGame.__BinaryUploader_TA__Upload_0x1.__BinaryUploader_TA__Upload_0x1
-// [0x00020003] 
-struct U__BinaryUploader_TA__Upload_0x1_exec__BinaryUploader_TA__Upload_0x1_Params
-{
-	class FString                                      K;                                                // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      V;                                                // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function TAGame.BinaryUploader_TA.Upload
-// [0x00020003] 
-struct UBinaryUploader_TA_execUpload_Params
-{
-	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class U__BinaryUploader_TA__Upload_0x1*         _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
-};
-
-// Function TAGame.BinaryUploader_TA.SetHeader
-// [0x00020003] 
-struct UBinaryUploader_TA_execSetHeader_Params
-{
-	class FString                                      Key;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      Value;                                            // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
 // Function TAGame.__BotConfig_TA__RefreshIDs_0x1.__BotConfig_TA__RefreshIDs_0x2
 // [0x00020003] 
 struct U__BotConfig_TA__RefreshIDs_0x1_exec__BotConfig_TA__RefreshIDs_0x2_Params
@@ -40819,11 +40881,42 @@ struct ACarPreviewActor_TA_execActivatePreviewSlot_Params
 	// class UAttachmentBehavior_TA*                   Behavior;                                         // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.CarPreviewActor_TA.DelayedActivateSlot
+// [0x00020003] 
+struct ACarPreviewActor_TA_execDelayedActivateSlot_Params
+{
+};
+
+// Function TAGame.CarPreviewActor_TA.ClearActivateSlotDelay
+// [0x00020003] 
+struct ACarPreviewActor_TA_execClearActivateSlotDelay_Params
+{
+};
+
+// Function TAGame.CarPreviewActor_TA.IsPreviewingSlot
+// [0x00020003] 
+struct ACarPreviewActor_TA_execIsPreviewingSlot_Params
+{
+	class UProductSlot_TA*                             Slot;                                             // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        bResult : 1;                                      // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
 // Function TAGame.CarPreviewActor_TA.SetPreviewSlot
 // [0x00020003] 
 struct ACarPreviewActor_TA_execSetPreviewSlot_Params
 {
 	class UProductSlot_TA*                             InSlot;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// uint32_t                                        bSlotChanged : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// Function TAGame.CarPreviewActor_TA.SetPreviewSlots
+// [0x00420003] 
+struct ACarPreviewActor_TA_execSetPreviewSlots_Params
+{
+	class TArray<class UProductSlot_TA*>               InSlots;                                          // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	// uint32_t                                        bSlotChanged : 1;                                 // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class TArray<class UProductSlot_TA*>            DifferenceLocal_0x1;                              // 0x0018 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.CarPreviewActor_TA.ChangeCarPart
@@ -40857,13 +40950,16 @@ struct ACarPreviewActor_TA_execForceSetLoadout_Params
 };
 
 // Function TAGame.CarPreviewActor_TA.SetLoadout
-// [0x00C20003] 
+// [0x00C24003] 
 struct ACarPreviewActor_TA_execSetLoadout_Params
 {
 	struct FLoadoutData                                InLoadout;                                        // 0x0000 (0x0040) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FLoadoutData                             NewLoadout;                                       // 0x0040 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FClientLoadoutOnlineData                 OnlineLoadout;                                    // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<int32_t>                           OnlineProductIDs;                                 // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              InActivatePreviewSlotDelay;                       // 0x0040 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x0044 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FLoadoutData                             NewLoadout;                                       // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FClientLoadoutOnlineData                 OnlineLoadout;                                    // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<int32_t>                           OnlineProductIDs;                                 // 0x0098 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        bLoadoutChange : 1;                               // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.CarPreviewActor_TA.PostInitAnimTree
@@ -42346,7 +42442,7 @@ struct UOnlinePlayer_TA_execOnLoginChange_Params
 // [0x00020003] 
 struct UOnlinePlayer_TA_execNotifyMainMenuAddedToStage_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.OnlinePlayer_TA.HandleMainMenuAddedToStage
@@ -42766,9 +42862,9 @@ struct ACrowdActorManager_TA_execStopCrowdExcitementSound_Params
 // [0x00020003] 
 struct ACrowdActorManager_TA_execStopCrowdSound_Params
 {
-	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class TArray<class ACrowdActor_TA*>             FilterLocal_0x1;                                  // 0x0018 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class U__CrowdActorManager_TA__StopCrowdSound_0x2* _0x2;                                             // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class TArray<class ACrowdActor_TA*>             FilterLocal_0x1;                                  // 0x0020 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class U__CrowdActorManager_TA__StopCrowdSound_0x2* _0x2;                                             // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.CrowdActorManager_TA.PlayCrowdActorSound
@@ -42783,9 +42879,9 @@ struct ACrowdActorManager_TA_execPlayCrowdActorSound_Params
 // [0x00020003] 
 struct ACrowdActorManager_TA_execPlayCrowdSound_Params
 {
-	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class TArray<class ACrowdActor_TA*>             FilterLocal_0x1;                                  // 0x0018 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class U__CrowdActorManager_TA__PlayCrowdSound_0x2* _0x2;                                             // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class TArray<class ACrowdActor_TA*>             FilterLocal_0x1;                                  // 0x0020 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class U__CrowdActorManager_TA__PlayCrowdSound_0x2* _0x2;                                             // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.CrowdActorManager_TA.OverrideCrowdActorSounds
@@ -43073,14 +43169,14 @@ struct UCrowdSoundManagerBase_TA_execClearPendingCrowdFlags_Params
 // [0x00080003] 
 struct UCrowdSoundManagerBase_TA_execStopCrowdActorSound_Params
 {
-	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.CrowdSoundManagerBase_TA.PlayCrowdActorSound
 // [0x00080003] 
 struct UCrowdSoundManagerBase_TA_execPlayCrowdActorSound_Params
 {
-	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             GetSoundDelegate;                                 // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.CrowdSoundManagerBase_TA.AddDynamicModifier
@@ -43105,9 +43201,9 @@ struct UCrowdSoundManagerBase_TA_execCanModifyCrowd_Params
 struct UCrowdSoundManagerBase_TA_execCreateCurveModifier_Params
 {
 	class UDynamicValueModifierCurve_X*                ModArchetype;                                     // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UDynamicValueModifier_X*                     ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UDynamicValueModifierCurve_X*             Mod;                                              // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             InDelegate;                                       // 0x0008 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UDynamicValueModifier_X*                     ReturnValue;                                      // 0x0028 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UDynamicValueModifierCurve_X*             Mod;                                              // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.CrowdSoundManagerBase_TA.RemoveAllModifiers
@@ -43429,8 +43525,8 @@ struct UTriggerCondition_TA_execRegister_Params
 // [0x00020003] 
 struct UTriggerCondition_TA_execSetCallback_Params
 {
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTriggerCondition_TA*                        ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTriggerCondition_TA*                        ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TriggerCondition_TA.SetRepeatable
@@ -45762,13 +45858,13 @@ struct UFirstTimeExperienceManager_TA_execHasOtherFTEGroupBlockers_Params
 struct UFirstTimeExperienceManager_TA_execNotifyWhenGroupComplete_Params
 {
 	class FName                                        GroupName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UStatusTrigger_FTEGroupComplete_TA*       FTETrigger;                                       // 0x0020 (0x0008) [0x0000000000000000]               
-	// class UTriggerClump_TA*                         TriggerClump;                                     // 0x0028 (0x0008) [0x0000000000000000]               
-	// class UTriggerClump_TA*                         ObjectInitializer_0x1;                            // 0x0030 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
-	// class TArray<class UStatusTrigger_X*>           ArrayInitializer_0x2;                             // 0x0038 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class UTriggerCondition_TA*                     TriggerCondition;                                 // 0x0048 (0x0008) [0x0000000000000000]               
-	// class U__FirstTimeExperienceManager_TA__NotifyWhenGroupComplete_0x1* _0x1;                                             // 0x0050 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UStatusTrigger_FTEGroupComplete_TA*       FTETrigger;                                       // 0x0028 (0x0008) [0x0000000000000000]               
+	// class UTriggerClump_TA*                         TriggerClump;                                     // 0x0030 (0x0008) [0x0000000000000000]               
+	// class UTriggerClump_TA*                         ObjectInitializer_0x1;                            // 0x0038 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	// class TArray<class UStatusTrigger_X*>           ArrayInitializer_0x2;                             // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class UTriggerCondition_TA*                     TriggerCondition;                                 // 0x0050 (0x0008) [0x0000000000000000]               
+	// class U__FirstTimeExperienceManager_TA__NotifyWhenGroupComplete_0x1* _0x1;                                             // 0x0058 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.FirstTimeExperienceManager_TA.IsActive
@@ -47277,6 +47373,12 @@ struct UMutator_TA_execIsInProhitibitedDefaultMatchTypes_Params
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function TAGame.Mutator_TA.Teardown
+// [0x00020000] 
+struct UMutator_TA_execTeardown_Params
+{
+};
+
 // Function TAGame.Mutator_TA.MutateObject
 // [0x00020000] 
 struct UMutator_TA_execMutateObject_Params
@@ -48187,6 +48289,23 @@ struct UOnlineGameDedicatedServer_TA_execDidRematchVotePass_Params
 	// class AGameEvent_Soccar_TA*                     GameEvent;                                        // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.OnlineGameDedicatedServer_TA.SalvagePendingFlatbufferSession
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_TA_execSalvagePendingFlatbufferSession_Params
+{
+};
+
+// Function TAGame.OnlineGameDedicatedServer_TA.RecordFlatbufferUploadMetric
+// [0x00040003] 
+struct UOnlineGameDedicatedServer_TA_execRecordFlatbufferUploadMetric_Params
+{
+	class UWebRequest_X*                               Request;                                          // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	int32_t                                            SizeBytes;                                        // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	float                                              StartAppTime;                                     // 0x000C (0x0004) [0x0001000000000080] (CPF_Parm)    
+	class FString                                      FlatbufferMatchGuid;                              // 0x0010 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// float                                           UploadDuration;                                   // 0x0020 (0x0004) [0x0000000000000000]               
+};
+
 // Function TAGame.OnlineGameDedicatedServer_TA.UploadFlatbuffersSession
 // [0x00C40003] 
 struct UOnlineGameDedicatedServer_TA_execUploadFlatbuffersSession_Params
@@ -48195,6 +48314,9 @@ struct UOnlineGameDedicatedServer_TA_execUploadFlatbuffersSession_Params
 	class TArray<struct FKeyValuePair>                 Headers;                                          // 0x0010 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	// class UBinaryUploader_TA*                       Uploader;                                         // 0x0020 (0x0008) [0x0000000000000000]               
 	// struct FKeyValuePair                            Pair;                                             // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// uint32_t                                        bSalvaged : 1;                                    // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	// struct FScriptDelegate                          OnComplete;                                       // 0x0050 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class U__OnlineGameDedicatedServer_TA__UploadFlatbuffersSession_0x1* _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.OnlineGameDedicatedServer_TA.InitFlatbufferUpload
@@ -49107,17 +49229,14 @@ struct UMatchType_Private_TA_execShouldSubmitPrivateMatchComplete_Params
 // [0x400020002] 
 struct UMatchType_Private_TA_execDestroyMatchType_Params
 {
-	// class TArray<class ULocalPlayer*>               GamePlayers;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class ULocalPlayer_TA*                          LP;                                               // 0x0010 (0x0008) [0x0000000000000000]               
-	// class UGFxShell_TA*                             Shell;                                            // 0x0018 (0x0008) [0x0000000000000000]               
-	// class UGFxData_LocalPlayer_TA*                  LocalPlayerData;                                  // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.MatchType_Private_TA.OnInitGameEvent
 // [0x400880002] 
 struct UMatchType_Private_TA_execOnInitGameEvent_Params
 {
-	// struct FCustomMatchSettings                     ServerSettings;                                   // 0x0000 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UOnlineGameJoinGame_X*                    JoinGame;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+	// struct FCustomMatchSettings                     ServerSettings;                                   // 0x0008 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.MatchType_Private_TA.IsOnlineMultiplayer
@@ -51271,14 +51390,24 @@ struct AStatFactory_TA_execIsBicycleHit_Params
 	// struct FVector                                  HitOffset;                                        // 0x0144 (0x000C) [0x0000000000000000]               
 };
 
+// Function TAGame.StatFactory_TA.IsCarAirborne
+// [0x00080003] 
+struct AStatFactory_TA_execIsCarAirborne_Params
+{
+	class ACar_TA*                                     Car;                                              // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	float                                              InMinHeight;                                      // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.StatFactory_TA.IsLocationFarOffGround
 // [0x00840003] 
 struct AStatFactory_TA_execIsLocationFarOffGround_Params
 {
 	struct FVector                                     InLocation;                                       // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
-	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// struct FVector                                  TraceEnd;                                         // 0x0010 (0x000C) [0x0000000000000000]               
-	// struct FVector                                  StructInitializer_0x1;                            // 0x001C (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	float                                              InMinHeight;                                      // 0x000C (0x0004) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0010 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// struct FVector                                  TraceEnd;                                         // 0x0014 (0x000C) [0x0000000000000000]               
+	// struct FVector                                  StructInitializer_0x1;                            // 0x0020 (0x000C) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.StatFactory_TA.IsAerialHit
@@ -53395,10 +53524,10 @@ struct AGFxHUD_TA_execGetVoteByRow_Params
 // [0x00040003] 
 struct AGFxHUD_TA_execGetVoteRow_Params
 {
-	struct FScriptDelegate                             MatchCondition;                                   // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            ReturnValue;                                      // 0x0018 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         RowIndex;                                         // 0x001C (0x0004) [0x0000000000000000]               
-	// class UGFxData_Vote_TA*                         VoteData;                                         // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             MatchCondition;                                   // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            ReturnValue;                                      // 0x0020 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         RowIndex;                                         // 0x0024 (0x0004) [0x0000000000000000]               
+	// class UGFxData_Vote_TA*                         VoteData;                                         // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxHUD_TA.HandleVoteStarted
@@ -53996,6 +54125,13 @@ struct AGFxHUD_TA_execUpdateScoreboardStatNames_Params
 	// class TArray<class FString>                     MapLocal_0x1;                                     // 0x0020 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
+// Function TAGame.GFxHUD_TA.HandleGameClassReceived
+// [0x00040003] 
+struct AGFxHUD_TA_execHandleGameClassReceived_Params
+{
+	class AGRI_X*                                      GRI;                                              // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+};
+
 // Function TAGame.GFxHUD_TA.HandleScoreboardSaveChanged
 // [0x00040003] 
 struct AGFxHUD_TA_execHandleScoreboardSaveChanged_Params
@@ -54208,8 +54344,8 @@ struct AHUDBase_TA_execToggleScoreboard_Params
 struct AHUDBase_TA_execChatWithExternalKeyboard_Params
 {
 	class FString                                      Title;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.HUDBase_TA.OpenPartyChat
@@ -55306,13 +55442,13 @@ struct AGameEvent_TrainingEditor_TA_execGetCurrentRoundData_Params
 struct AGameEvent_TrainingEditor_TA_execCanPlayTestRound_Params
 {
 	struct FEditorRoundData                            Round;                                            // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FindObjectCallback;                               // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         I;                                                // 0x0034 (0x0004) [0x0000000000000000]               
-	// class UJsonObject*                              JsonObject;                                       // 0x0038 (0x0008) [0x0000000000000000]               
-	// uint32_t                                        bHasSpawnPoint : 1;                               // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
-	// uint32_t                                        bHasBall : 1;                                     // 0x0044 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class AActor*                                   ActorArchetype;                                   // 0x0048 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             FindObjectCallback;                               // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         I;                                                // 0x003C (0x0004) [0x0000000000000000]               
+	// class UJsonObject*                              JsonObject;                                       // 0x0040 (0x0008) [0x0000000000000000]               
+	// uint32_t                                        bHasSpawnPoint : 1;                               // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bHasBall : 1;                                     // 0x004C (0x0004) [0x0000000000000000] [0x00000001] 
+	// class AActor*                                   ActorArchetype;                                   // 0x0050 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GameEvent_TrainingEditor_TA.CleanupRoundActors
@@ -58082,7 +58218,7 @@ struct UGFxData_ChallengeManager_TA_execOnShowIntroModal_Params
 	class FString                                      Description;                                      // 0x0010 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      ShowcaseImage;                                    // 0x0020 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      SubText;                                          // 0x0030 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      SubTitle;                                         // 0x0040 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Subtitle;                                         // 0x0040 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_ChallengeManager_TA.ShouldTriggerIntroModal
@@ -59486,9 +59622,9 @@ struct UGFxData_Clubs_TA_execHandleClubActionComplete_Params
 struct UGFxData_Clubs_TA_execCreateClubAction_Params
 {
 	class FName                                        ActionName;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UGFxClubAction_TA*                        Action;                                           // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGFxClubAction_TA*                        Action;                                           // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Clubs_TA.OnSyncClubDetails
@@ -59935,8 +60071,8 @@ struct UGFxClubAction_TA_execHandleTaskComplete_Params
 // [0x00020003] 
 struct UGFxClubAction_TA_execStart_Params
 {
-	struct FScriptDelegate                             Action;                                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Action;                                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UGFxClubAction_TA*                           ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.GFxClubAction_TA.SetError
@@ -63277,8 +63413,8 @@ struct UGFxData_EpicLogin_TA_eventOnShellSet_Params
 // [0x00020003] 
 struct U__GFxData_ErrorModals_TA__AlertError_0x1_exec__GFxData_ErrorModals_TA__AlertError_0x1_Params
 {
-	struct FPendingError                               PE;                                               // 0x0000 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingError                               PE;                                               // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.GFxData_ErrorModals_TA.__GFxData_ErrorModals_TA__OnShellSet_0x4
@@ -63325,7 +63461,7 @@ struct UGFxData_ErrorModals_TA_execShowError_Params
 {
 	uint32_t                                           bForce : 1;                                       // 0x0000 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
 	// class UGFxModal_X*                              Modal;                                            // 0x0008 (0x0008) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0010 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_ErrorModals_TA.CanShowError
@@ -63349,10 +63485,10 @@ struct UGFxData_ErrorModals_TA_execRemoveErrorType_Params
 struct UGFxData_ErrorModals_TA_execAlertError_Params
 {
 	class UError*                                      Error;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UClass*                                      InModalClass;                                     // 0x0020 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	// class U__GFxData_ErrorModals_TA__AlertError_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
-	// struct FPendingError                            StructInitializer_0x1;                            // 0x0030 (0x0028) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UClass*                                      InModalClass;                                     // 0x0028 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	// class U__GFxData_ErrorModals_TA__AlertError_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
+	// struct FPendingError                            StructInitializer_0x1;                            // 0x0038 (0x0030) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_ErrorModals_TA.OnShellSet
@@ -63372,8 +63508,8 @@ struct UGFxData_ErrorModals_TA_execOnErrorModalCreated_Params
 // [0x00020003] 
 struct U__GFxData_ErrorModals_TA__RemoveErrorType_0x1_exec__GFxData_ErrorModals_TA__RemoveErrorType_0x1_Params
 {
-	struct FPendingError                               P;                                                // 0x0000 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingError                               P;                                                // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__GFxData_FaceIt_TA__HandleError_0x1.__GFxData_FaceIt_TA__HandleError_0x1
@@ -63627,6 +63763,7 @@ struct UGFxShell_TA_execGetEULATitle_Params
 struct UGFxShell_TA_execGetEULA_Params
 {
 	class FString                                      ReturnValue;                                      // 0x0000 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class FString                                   EulaText;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxShell_TA.OnRankedReconnect
@@ -63697,13 +63834,13 @@ struct UGFxShell_TA_execShowTextInput_Params
 {
 	class FString                                      Title;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Body;                                             // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0038 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class FString                                      DefaultText;                                      // 0x0040 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            MaxLength;                                        // 0x0050 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                          padding1[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class UGFxModal_X*                                 ReturnValue;                                      // 0x0058 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0040 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0044 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      DefaultText;                                      // 0x0048 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            MaxLength;                                        // 0x0058 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x005C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UGFxModal_X*                                 ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.GFxShell_TA.HandleCommerceDialogClosed
@@ -64308,7 +64445,7 @@ struct UGFxShell_TA_execHandleGameInvitePasswordRequired_Params
 // [0x00020003] 
 struct UGFxShell_TA_execShowPasswordPrompt_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxShell_TA.HandleGameInviteConfirmed
@@ -64350,6 +64487,12 @@ struct UGFxShell_TA_execHandlePCDestroyed_Params
 struct UGFxShell_TA_execHandleReceivedController_Params
 {
 	class UPlayer*                                     PlayerRef;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxShell_TA.UpdateNoMovie
+// [0x00020003] 
+struct UGFxShell_TA_execUpdateNoMovie_Params
+{
 };
 
 // Function TAGame.GFxShell_TA.OnStart
@@ -66449,7 +66592,7 @@ struct UGFxData_Leaderboards_TA_execInitShowGlobalLeaderboards_Params
 struct UGFxData_Leaderboards_TA_execGetPlayerLeaderboardValue_Params
 {
 	class FName                                        LeaderboardName;                                  // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             NewDelegate;                                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             NewDelegate;                                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_Leaderboards_TA.BeginGetLeaderboard
@@ -67060,6 +67203,13 @@ struct UGFxData_LocalPlayer_TA_execHandlePrimaryPlayerChange_Params
 {
 	class ULocalPlayer*                                OldPrimary;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ULocalPlayer*                                NewPrimary;                                       // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_LocalPlayer_TA.SetSkippedIntroCinematic
+// [0x00020003] 
+struct UGFxData_LocalPlayer_TA_execSetSkippedIntroCinematic_Params
+{
+	uint32_t                                           bValue : 1;                                       // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
 // Function TAGame.GFxData_LocalPlayer_TA.OnRemoved
@@ -67889,7 +68039,7 @@ struct UGFxData_MTXGarage_TA_execHandlePsynetConfirmPurchase_Params
 	// class UGFxData_MultiItemDrops_TA*               GFxMultiItemDrop;                                 // 0x0128 (0x0008) [0x0000000000000000]               
 	// struct FOnlineProductData                       DroppedProduct;                                   // 0x0130 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
 	// class TArray<struct FOnlineProductData>         ArrayInitializer_0x1;                             // 0x0170 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<int32_t>                           InjectedProductIDs;                               // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<int32_t>                           InjectedProductIds;                               // 0x0180 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 	// struct FCartInfo                                CartItem;                                         // 0x0190 (0x0008) [0x0010000000000000]               
 	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0198 (0x0004) [0x0000000000000000]               
 	// int32_t                                         CatalogItemIdx;                                   // 0x019C (0x0004) [0x0000000000000000]               
@@ -68380,6 +68530,16 @@ struct UGFxData_MTXGarage_TA_execGetOrCreateCachedCatalog_Params
 	uint8_t                                          padding0[7];                                      // 0x0001 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class UMTXGarageCatalogCache_TA*                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class UMTXGarageCatalogCache_TA*                Ret;                                              // 0x0010 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_MTXGarage_TA.GetCachedCatalogueFromID
+// [0x00020003] 
+struct UGFxData_MTXGarage_TA_execGetCachedCatalogueFromID_Params
+{
+	int32_t                                            CatalogueID;                                      // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UMTXGarageCatalogCache_TA*                   ReturnValue;                                      // 0x0008 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__GFxData_MTXGarage_TA__GetCachedCatalogueFromID_0x1* _0x1;                                             // 0x0010 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_MTXGarage_TA.GetCachedCatalog
@@ -70355,11 +70515,11 @@ struct UGFxData_Party_TA_execProcessInvitationResponse_Params
 	class UOnlineGameParty_X*                          Party;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueLobbyId                              PartyID;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                InviterId;                                        // 0x0018 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UGFxModal_X*                                 CreatedModal;                                     // 0x0078 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
-	bool                                               ReturnValue : 1;                                  // 0x0080 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// uint32_t                                        bTryingToJoinOwnParty : 1;                        // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class U__GFxData_Party_TA__ProcessInvitationResponse_0x1* _0x1;                                             // 0x0088 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UGFxModal_X*                                 CreatedModal;                                     // 0x0080 (0x0008) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
+	bool                                               ReturnValue : 1;                                  // 0x0088 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        bTryingToJoinOwnParty : 1;                        // 0x008C (0x0004) [0x0000000000000000] [0x00000001] 
+	// class U__GFxData_Party_TA__ProcessInvitationResponse_0x1* _0x1;                                             // 0x0090 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Party_TA.OnPlayerInvitedSilent
@@ -70369,8 +70529,8 @@ struct UGFxData_Party_TA_execOnPlayerInvitedSilent_Params
 	class UOnlineGameParty_X*                          Party;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueLobbyId                              PartyID;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                InviterId;                                        // 0x0018 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UGFxModal_X*                              instance;                                         // 0x0078 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UGFxModal_X*                              instance;                                         // 0x0080 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Party_TA.JoinAttempt
@@ -70380,8 +70540,8 @@ struct UGFxData_Party_TA_execJoinAttempt_Params
 	class UOnlineGameParty_X*                          Party;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueLobbyId                              PartyID;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                InviterId;                                        // 0x0018 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UGFxModal_X*                              CreatedModal;                                     // 0x0078 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UGFxModal_X*                              CreatedModal;                                     // 0x0080 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Party_TA.OnPlayerInvited
@@ -70391,8 +70551,8 @@ struct UGFxData_Party_TA_execOnPlayerInvited_Params
 	class UOnlineGameParty_X*                          Party;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueLobbyId                              PartyID;                                          // 0x0008 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	struct FUniqueNetId                                InviterId;                                        // 0x0018 (0x0048) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class U__GFxData_Party_TA__OnPlayerInvited_0x1* _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             JoinPartyCallback;                                // 0x0060 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class U__GFxData_Party_TA__OnPlayerInvited_0x1* _0x1;                                             // 0x0080 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Party_TA.HandleGetAvatar
@@ -70889,8 +71049,8 @@ struct UGFxData_PartyInvite_TA_execOnJoinLobbyComplete_Params
 	struct FActiveLobbyInfo                            LobbyInfo;                                        // 0x0008 (0x0030) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueLobbyId                              LobbyId;                                          // 0x0038 (0x0010) [0x0000000000000182] (CPF_Const | CPF_Parm | CPF_OutParm)
 	class FString                                      Error;                                            // 0x0048 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FInviteTarget                            Invite;                                           // 0x0058 (0x0060) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          InviteHandler;                                    // 0x00B8 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FInviteTarget                            Invite;                                           // 0x0058 (0x0068) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          InviteHandler;                                    // 0x00C0 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_PartyInvite_TA.OnPartyCreated
@@ -70926,15 +71086,15 @@ struct UGFxData_PartyInvite_TA_execOnPartyInviteComplete_Params
 struct UGFxData_PartyInvite_TA_execInviteToPartyInternal_Params
 {
 	struct FUniqueNetId                                ToPlayer;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             InviteHandler;                                    // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UPersona_TA*                              InvitedPersona;                                   // 0x0060 (0x0008) [0x0000000000000000]               
-	// uint32_t                                        bIsCrossplayPlatform : 1;                         // 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class TArray<uint8_t>                           ArrayResultLocal_0x1;                             // 0x0070 (0x0010) [0x0000000000400100] (CPF_OutParm | CPF_NeedCtorLink)
-	// class U__GFxData_PartyInvite_TA__InviteToPartyInternal_0x1* _0x2;                                             // 0x0080 (0x0008) [0x0000000000000000]               
-	// class TArray<struct FPartyMember>               DisabledPartyMembers;                             // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FPartyMember>               FilterLocal_0x3;                                  // 0x0098 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class FString                                   PlayersStrings;                                   // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<class FString>                     MapLocal_0x4;                                     // 0x00B8 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             InviteHandler;                                    // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UPersona_TA*                              InvitedPersona;                                   // 0x0068 (0x0008) [0x0000000000000000]               
+	// uint32_t                                        bIsCrossplayPlatform : 1;                         // 0x0070 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class TArray<uint8_t>                           ArrayResultLocal_0x1;                             // 0x0078 (0x0010) [0x0000000000400100] (CPF_OutParm | CPF_NeedCtorLink)
+	// class U__GFxData_PartyInvite_TA__InviteToPartyInternal_0x1* _0x2;                                             // 0x0088 (0x0008) [0x0000000000000000]               
+	// class TArray<struct FPartyMember>               DisabledPartyMembers;                             // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FPartyMember>               FilterLocal_0x3;                                  // 0x00A0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class FString                                   PlayersStrings;                                   // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class FString>                     MapLocal_0x4;                                     // 0x00C0 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_PartyInvite_TA.InviteToParty
@@ -70986,7 +71146,7 @@ struct UGFxData_PartyInvite_TA_execSendPartyInvitation_Params
 struct U__GFxData_PartyInvite_TA__InviteToPartyInternal_0x1_exec__GFxData_PartyInvite_TA__InviteToPartyInternal_0x4_Params
 {
 	class UPrivilegeCheck_X*                           PrivilegeCheck;                                   // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// struct FInviteTarget                            StructInitializer_0x1;                            // 0x0008 (0x0060) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FInviteTarget                            StructInitializer_0x1;                            // 0x0008 (0x0068) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.__GFxData_PartyInvite_TA__InviteToPartyInternal_0x1.__GFxData_PartyInvite_TA__InviteToPartyInternal_0x1
@@ -73132,7 +73292,7 @@ struct ULoadout_TA_execApplyRequiredProducts_Params
 };
 
 // Function TAGame.Loadout_TA.ValidateForcedProducts
-// [0x00422003] 
+// [0x00C22003] 
 struct ULoadout_TA_execValidateForcedProducts_Params
 {
 	struct FLoadoutData                                Data;                                             // 0x0000 (0x0040) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
@@ -73146,7 +73306,7 @@ struct ULoadout_TA_execValidateForcedProducts_Params
 	// class U__Loadout_TA__ValidateForcedProducts_0x1* _0x1;                                             // 0x0088 (0x0008) [0x0000000000000000]               
 	// class TArray<int32_t>                           MapLocal_0x2;                                     // 0x0090 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 	// int32_t                                         SkinProductID;                                    // 0x00A0 (0x0004) [0x0000000000000000]               
-	// class UProductAsset_Skin_TA*                    SkinAsset;                                        // 0x00A8 (0x0008) [0x0000000000000000]               
+	// struct FSkinForcedFinishFlags                   SkinFlags;                                        // 0x00A4 (0x0008) [0x0000000000000000]               
 	// class UIForcedProduct*                          ForcedTeamFinish;                                 // 0x00B0 (0x0010) [0x0000000000000000]               
 	// class UIForcedProduct*                          ForcedCustomFinish;                               // 0x00C0 (0x0010) [0x0000000000000000]               
 	// int32_t                                         Index;                                            // 0x00D0 (0x0004) [0x0000000000000000]               
@@ -76822,6 +76982,7 @@ struct UGFxData_Settings_TA_execInitTrainingSettings_Params
 	// uint32_t                                        bOnlineFreeplay : 1;                              // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
 	// uint32_t                                        bFreeplay : 1;                                    // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
 	// uint32_t                                        bCustomTraining : 1;                              // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bAerialTargets : 1;                               // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class AGameInfo*                                ModeGameInfo;                                     // 0x0018 (0x0008) [0x0000000000000000]               
 	// uint32_t                                        bHasBall : 1;                                     // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
 	// class UGFxData_UserSetting_TA*                  BoostRefillDelaySetting;                          // 0x0028 (0x0008) [0x0000000000000000]               
@@ -76832,12 +76993,12 @@ struct UGFxData_Settings_TA_execInitTrainingSettings_Params
 // [0x00080003] 
 struct UGFxData_Settings_TA_execInitGameplaySettings_Params
 {
-	// struct FScriptDelegate                          GetEnableFreeplayUnlimitedBoost;                  // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          SetEnableFreeplayUnlimitedBoost;                  // 0x0018 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          GetRankInfoDisplayType;                           // 0x0030 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          SetRankInfoDisplayType;                           // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UGFxData_UserSetting_TA*                  TournamentScheduleRegionSetting;                  // 0x0060 (0x0008) [0x0000000000000000]               
-	// class URegion_X*                                Region;                                           // 0x0068 (0x0008) [0x0000000000000000]               
+	// struct FScriptDelegate                          GetEnableFreeplayUnlimitedBoost;                  // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          SetEnableFreeplayUnlimitedBoost;                  // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          GetRankInfoDisplayType;                           // 0x0040 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          SetRankInfoDisplayType;                           // 0x0060 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UGFxData_UserSetting_TA*                  TournamentScheduleRegionSetting;                  // 0x0080 (0x0008) [0x0000000000000000]               
+	// class URegion_X*                                Region;                                           // 0x0088 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Settings_TA.SetShowNetQualityIndicators
@@ -78900,16 +79061,16 @@ struct UGFxData_Settings_TA_execCreateScalarUserSetting_Params
 	class FName                                        Id;                                               // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	float                                              DefaultValue;                                     // 0x0010 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SetFunc;                                          // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FProfileSliderLimits                        Limits;                                           // 0x0048 (0x000C) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	uint32_t                                           bUserSetting : 1;                                 // 0x0054 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint32_t                                           bEnabled : 1;                                     // 0x0058 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                            DisplayMode;                                      // 0x005C (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                          padding1[3];                                      // 0x005D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0068 (0x0008) [0x0000000000000000]               
-	// int32_t                                         Index;                                            // 0x0070 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SetFunc;                                          // 0x0038 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FProfileSliderLimits                        Limits;                                           // 0x0058 (0x000C) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bUserSetting : 1;                                 // 0x0064 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bEnabled : 1;                                     // 0x0068 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                            DisplayMode;                                      // 0x006C (0x0001) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[3];                                      // 0x006D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0078 (0x0008) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x0080 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Settings_TA.CreateBooleanUserSetting
@@ -78920,13 +79081,13 @@ struct UGFxData_Settings_TA_execCreateBooleanUserSetting_Params
 	class FName                                        Id;                                               // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint32_t                                           DefaultValue : 1;                                 // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0014 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SetFunc;                                          // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bUserSetting : 1;                                 // 0x0048 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint32_t                                           bEnabled : 1;                                     // 0x004C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0058 (0x0008) [0x0000000000000000]               
-	// int32_t                                         Index;                                            // 0x0060 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             GetFunc;                                          // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SetFunc;                                          // 0x0038 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bUserSetting : 1;                                 // 0x0058 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bEnabled : 1;                                     // 0x005C (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0068 (0x0008) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x0070 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Settings_TA.CreateListUserSetting
@@ -78936,13 +79097,13 @@ struct UGFxData_Settings_TA_execCreateListUserSetting_Params
 	class FName                                        Group;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FName                                        Id;                                               // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      DefaultValue;                                     // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             GetFunc;                                          // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             SetFunc;                                          // 0x0038 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bUserSetting : 1;                                 // 0x0050 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint32_t                                           bEnabled : 1;                                     // 0x0054 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0058 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0060 (0x0008) [0x0000000000000000]               
-	// int32_t                                         Index;                                            // 0x0068 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             GetFunc;                                          // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             SetFunc;                                          // 0x0040 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bUserSetting : 1;                                 // 0x0060 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bEnabled : 1;                                     // 0x0064 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	class UGFxData_UserSetting_TA*                     ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGFxData_UserSetting_TA*                  UserSetting;                                      // 0x0070 (0x0008) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x0078 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Settings_TA.GetUserSetting
@@ -79145,7 +79306,7 @@ struct UOnlineStorageSyncManager_TA_execIsOnlinePlayerStorageSyncSuccess_Params
 // [0x00020003] 
 struct UOnlineStorageSyncManager_TA_execNotifyWhenSyncComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.OnlineStorageSyncManager_TA.HandleStorageSyncFail
@@ -79179,7 +79340,7 @@ struct UOnlineStorageSyncManager_TA_execRetrySyncOnlinePlayerStorage_Params
 // [0x00020003] 
 struct UOnlineStorageSyncManager_TA_execNotifyOnSyncOnlinePlayerStorageStarted_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.OnlineStorageSyncManager_TA.HandleCertifiedStatsReceived
@@ -80314,8 +80475,8 @@ struct UOnlineGameTournaments_TA_execAlertError_Params
 {
 	class UGFxShell_TA*                                Shell;                                            // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
 	class UError*                                      Error;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UClass*                                      ModalClass;                                       // 0x0028 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UClass*                                      ModalClass;                                       // 0x0030 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 };
 
 // Function TAGame.OnlineGameTournaments_TA.GetTourRank
@@ -80381,7 +80542,7 @@ struct UOnlineGameTournaments_TA_execGetIsRegistered_Params
 // [0x00020003] 
 struct UOnlineGameTournaments_TA_execNotifyTourActivated_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.OnlineGameTournaments_TA.ActivateTourEvent
@@ -80590,7 +80751,7 @@ struct UTourSubscriptions_TA_execHandleTourCreated_Params
 // [0x00020003] 
 struct UTourSubscriptions_TA_execNotifyWhenSynced_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourSubscriptions_TA.HandleCrossPlatformChanged
@@ -80739,9 +80900,9 @@ struct UTourCheckInError_TA_execAlertSignupError_Params
 	class UGFxShell_TA*                                Shell;                                            // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
 	class UError*                                      InError;                                          // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	uint64_t                                           TournamentID;                                     // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class U__TourCheckInError_TA__AlertSignupError_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
-	// uint32_t                                        bProcessedError : 1;                              // 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class U__TourCheckInError_TA__AlertSignupError_0x1* _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	// uint32_t                                        bProcessedError : 1;                              // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.TourCheckInError_TA.HandleMemberPreCheckInErrorMessage
@@ -83474,8 +83635,8 @@ struct ULoadoutValidation_TA_execValidateLoadoutDLC_Params
 	struct FLoadoutData                                TeamLoadouts[2];                                  // 0x0000 (0x0080) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FLoadoutAttributesArray                     LoadoutAttributes[2];                             // 0x0080 (0x0020) [0x0000000000400180] (CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	struct FUniqueNetId                                InPlayerID;                                       // 0x00A0 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnLoadoutModified;                                // 0x00E8 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnTeamPaintModified;                              // 0x0100 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnLoadoutModified;                                // 0x00E8 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnTeamPaintModified;                              // 0x0108 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.LoadoutValidation_TA.ShouldValidateOnlineProducts
@@ -83491,9 +83652,9 @@ struct ULoadoutValidation_TA_execShouldValidateOnlineProducts_Params
 struct ULoadoutValidation_TA_execCorrectDLCOwnership_Params
 {
 	class APRI_TA*                                     InPRI;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             OnLoadoutModified;                                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             OnTeamPaintModified;                              // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class U__LoadoutValidation_TA__CorrectDLCOwnership_0x1* _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             OnLoadoutModified;                                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnTeamPaintModified;                              // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class U__LoadoutValidation_TA__CorrectDLCOwnership_0x1* _0x1;                                             // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.LoadoutValidation_TA.RemoveCertifiedProductStat
@@ -84645,8 +84806,8 @@ struct UMTXGarageCatalogCache_TA_execSendOnlineRequest_Params
 // [0x00020003] 
 struct UMTXGarageCatalogCache_TA_execRequestCatalog_Params
 {
-	struct FScriptDelegate                             CompletedCallback;                                // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// float                                           CurTime;                                          // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             CompletedCallback;                                // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// float                                           CurTime;                                          // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.MTXGarageCatalogCache_TA.Invalidate
@@ -84675,9 +84836,9 @@ struct UMTXGarageCatalogCache_TA_execQueryCatalogsDefault_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InCategory;                                       // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             CompletedCallback;                                // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             DisposedCallback;                                 // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0080 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             CompletedCallback;                                // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DisposedCallback;                                 // 0x0070 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0090 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.MTXGarageCatalogCache_TA.QueryCatalogs
@@ -84687,9 +84848,9 @@ struct UMTXGarageCatalogCache_TA_execQueryCatalogs_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InCategory;                                       // 0x0048 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0049 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             CompletedCallback;                                // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             DisposedCallback;                                 // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0080 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             CompletedCallback;                                // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             DisposedCallback;                                 // 0x0070 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0090 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.MTXGarageCatalogCache_TA.CatalogTaskDisposed
@@ -84818,18 +84979,6 @@ struct UMutator_Freeplay_Base_TA_execInit_Params
 	// class AGameEvent_Breakout_TA*                   BreakoutGame;                                     // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
-// Function TAGame.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x4
-// [0x00020003] 
-struct U__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1_exec__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x4_Params
-{
-};
-
-// Function TAGame.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x3
-// [0x00020003] 
-struct U__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1_exec__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x3_Params
-{
-};
-
 // Function TAGame.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1.__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x2
 // [0x00020003] 
 struct U__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x1_exec__Mutator_Freeplay_TA__HandlePrimaryGameplaySettingsSave_0x2_Params
@@ -84855,6 +85004,13 @@ struct UMutator_Freeplay_TA_exec__Mutator_Freeplay_TA__Init_0x1_Params
 {
 	class AGameEvent_TA*                               SG;                                               // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class ACar_TA*                                     InCar;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.Mutator_Freeplay_TA.__Mutator_Freeplay_TA__Teardown_0x1
+// [0x40040003] 
+struct UMutator_Freeplay_TA_exec__Mutator_Freeplay_TA__Teardown_0x1_Params
+{
+	class ULocalPlayer_TA*                             P;                                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.Mutator_Freeplay_TA.__Mutator_Freeplay_TA__SetBoostFillForCar_0x1
@@ -84890,7 +85046,7 @@ struct UMutator_Freeplay_TA_execHandleBoostFillDelayChange_Params
 };
 
 // Function TAGame.Mutator_Freeplay_TA.HandleBoostFillTypeChange
-// [0x00040003] 
+// [0x00080003] 
 struct UMutator_Freeplay_TA_execHandleBoostFillTypeChange_Params
 {
 	uint8_t                                            InBoostFillType;                                  // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
@@ -84908,6 +85064,20 @@ struct UMutator_Freeplay_TA_execHandleGoalDisableChange_Params
 struct UMutator_Freeplay_TA_execHandleGameSpeedChange_Params
 {
 	float                                              NewSpeed;                                         // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.Mutator_Freeplay_TA.Teardown
+// [0x400020002] 
+struct UMutator_Freeplay_TA_execTeardown_Params
+{
+};
+
+// Function TAGame.Mutator_Freeplay_TA.SubscribeBoostSettings
+// [0x00080002] 
+struct UMutator_Freeplay_TA_execSubscribeBoostSettings_Params
+{
+	class UGameplaySettingsSave_TA*                    Settings;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class U__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1* _0x1;                                             // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.Mutator_Freeplay_TA.HandlePrimaryGameplaySettingsSave
@@ -84997,13 +85167,19 @@ struct UMutator_Freeplay_TA_execSpawnDummyBot_Params
 	// class UProductAsset_Bot_TA*                     BotAsset;                                         // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.Mutator_Freeplay_TA.GetPrimarySaveObjects
+// [0x00080003] 
+struct UMutator_Freeplay_TA_execGetPrimarySaveObjects_Params
+{
+	class UObjectProvider*                             ReturnValue;                                      // 0x0000 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+};
+
 // Function TAGame.Mutator_Freeplay_TA.Init
 // [0x400020002] 
 struct UMutator_Freeplay_TA_execInit_Params
 {
 	class AGameEvent_TA*                               GameEvent;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UGameEvent_Soccar_SubRules_Items_TA*      Items;                                            // 0x0008 (0x0008) [0x0000000000000000]               
-	// class UObjectProvider*                          PrimarySaveObjects;                               // 0x0010 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function TAGame.__Mutator_Freeplay_TA__MutateObject_0x1.__Mutator_Freeplay_TA__MutateObject_0x1
@@ -85231,6 +85407,31 @@ struct U__OnlineGameDedicatedServer_TA__InitMatchLogUpload_0x1_exec__OnlineGameD
 struct U__OnlineGameDedicatedServer_TA__InitReplayUpload_0x1_exec__OnlineGameDedicatedServer_TA__InitReplayUpload_0x1_Params
 {
 	class URPC_X*                                      instance;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.BinaryUploader_TA.UploadData
+// [0x00424003] 
+struct UBinaryUploader_TA_execUploadData_Params
+{
+	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class TArray<uint8_t>                              InData;                                           // 0x0010 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnComplete;                                       // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class U__BinaryUploader_TA__UploadData_0x1*     _0x1;                                             // 0x0040 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.BinaryUploader_TA.Upload
+// [0x00020003] 
+struct UBinaryUploader_TA_execUpload_Params
+{
+	class FString                                      URL;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function TAGame.BinaryUploader_TA.SetHeader
+// [0x00020003] 
+struct UBinaryUploader_TA_execSetHeader_Params
+{
+	class FString                                      Key;                                              // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Value;                                            // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.__OnlineGameDLC_TA__GetDlcIdFromName_0x1.__OnlineGameDLC_TA__GetDlcIdFromName_0x1
@@ -85703,7 +85904,8 @@ struct UOnlineGameTourServer_TA_execHandleCreateFaceItReservation_Params
 	class UPsyNetService_CreateExternalMatch_X*        Notification;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// class UGameSettingPlaylist_TA*                  Playlist;                                         // 0x0008 (0x0008) [0x0000000000000000]               
 	// uint64_t                                        DateTimeNow;                                      // 0x0010 (0x0008) [0x0000000000000000]               
-	// float                                           WaitSeconds;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	// int64_t                                         SecondsUntilExpire;                               // 0x0018 (0x0008) [0x0000000000000000]               
+	// float                                           WaitSeconds;                                      // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.OnlineGameTourServer_TA.SetTeamDifficultiesByTeamID
@@ -86104,8 +86306,8 @@ struct UOnlinePlayerFriends_TA_execHandlePlatformPresenceChange_Params
 struct UOnlinePlayerFriends_TA_execDownloadRecentPlayerDetails_Params
 {
 	class TArray<struct FUniqueNetId>                  RecentPlayerIds;                                  // 0x0000 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class U__OnlinePlayerFriends_TA__DownloadRecentPlayerDetails_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class U__OnlinePlayerFriends_TA__DownloadRecentPlayerDetails_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.OnlinePlayerFriends_TA.HandleEpicIdsReceived
@@ -86346,7 +86548,8 @@ struct UOnlineProductExpirationHelper_TA_execFindNextExpirationTime_Params
 	// uint64_t                                        NextTime;                                         // 0x0000 (0x0008) [0x0000000000000000]               
 	// class UOnlineProduct_TA*                        Product;                                          // 0x0008 (0x0008) [0x0000000000000000]               
 	// class UProductAttribute_Expiration_TA*          Attr;                                             // 0x0010 (0x0008) [0x0000000000000000]               
-	// float                                           Delay;                                            // 0x0018 (0x0004) [0x0000000000000000]               
+	// int64_t                                         SecondsRemaining;                                 // 0x0018 (0x0008) [0x0000000000000000]               
+	// float                                           Delay;                                            // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.OnlineProductExpirationHelper_TA.RemoveProduct
@@ -89420,9 +89623,9 @@ struct UShopsManager_TA_execGetPlayer_Params
 // [0x00024003] 
 struct UShopsManager_TA_execGetItemShopNotifications_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsManager_TA.HandlePurchaseSuccess
@@ -89447,10 +89650,10 @@ struct UShopsManager_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceAmount;                              // 0x0014 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             SuccessCallback;                                  // 0x0020 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0038 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0050 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__ShopsManager_TA__Purchase_0x1*         _0x1;                                             // 0x0058 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             SuccessCallback;                                  // 0x0020 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0040 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__ShopsManager_TA__Purchase_0x1*         _0x1;                                             // 0x0068 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsManager_TA.GetCrateShop
@@ -89459,9 +89662,9 @@ struct UShopsManager_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsManager_TA.GetShopCatalogues
@@ -89469,8 +89672,8 @@ struct UShopsManager_TA_execGetCrateShop_Params
 struct UShopsManager_TA_execGetShopCatalogues_Params
 {
 	class TArray<int32_t>                              ShopIDs;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0030 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ShopsManager_TA.GetShopCatalogue
@@ -89479,18 +89682,18 @@ struct UShopsManager_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsManager_TA.GetAllShops
 // [0x00024003] 
 struct UShopsManager_TA_execGetAllShops_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsManager_TA.InitServiceProvider
@@ -89679,6 +89882,13 @@ struct UShopMetrics_TA_execShopSessionStarted_Params
 	// class TArray<int32_t>                           DifferenceLocal_0x1;                              // 0x0000 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
+// Function TAGame.ShopMetrics_TA.UpdateCurrentPreviewTime
+// [0x00020003] 
+struct UShopMetrics_TA_execUpdateCurrentPreviewTime_Params
+{
+	// int32_t                                         CurrentTabIndex;                                  // 0x0000 (0x0004) [0x0000000000000000]               
+};
+
 // Function TAGame.ShopMetrics_TA.CancelledPurchaseShopItem
 // [0x00020003] 
 struct UShopMetrics_TA_execCancelledPurchaseShopItem_Params
@@ -89698,14 +89908,15 @@ struct UShopMetrics_TA_execOpenedPurchaseShopItem_Params
 };
 
 // Function TAGame.ShopMetrics_TA.PreviewedShopItem
-// [0x00820003] 
+// [0x00824003] 
 struct UShopMetrics_TA_execPreviewedShopItem_Params
 {
 	int32_t                                            ShopItemID;                                       // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            PriceAmount;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	// int32_t                                         CurrentTabIndex;                                  // 0x0008 (0x0004) [0x0000000000000000]               
-	// int32_t                                         ShopItemIndex;                                    // 0x000C (0x0004) [0x0000000000000000]               
-	// struct FShopItemData                            StructInitializer_0x1;                            // 0x0010 (0x0020) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	uint32_t                                           bSingleBundleShopItem : 1;                        // 0x0008 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	// int32_t                                         CurrentTabIndex;                                  // 0x000C (0x0004) [0x0000000000000000]               
+	// int32_t                                         ShopItemIndex;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+	// struct FShopItemData                            StructInitializer_0x1;                            // 0x0018 (0x0028) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ShopMetrics_TA.IDChanged
@@ -89725,9 +89936,9 @@ struct UShopMetrics_TA_execIDChanged_Params
 // [0x00024000] 
 struct UShopsService_TA_execGetItemShopNotifications_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsService_TA.Purchase
@@ -89743,9 +89954,9 @@ struct UShopsService_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceAmount;                              // 0x005C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0088 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00A8 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsService_TA.GetCrateShop
@@ -89754,9 +89965,9 @@ struct UShopsService_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsService_TA.GetShopCatalogues
@@ -89764,8 +89975,8 @@ struct UShopsService_TA_execGetCrateShop_Params
 struct UShopsService_TA_execGetShopCatalogues_Params
 {
 	class TArray<int32_t>                              ShopIDs;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0030 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ShopsService_TA.GetShopCatalogue
@@ -89774,18 +89985,18 @@ struct UShopsService_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.ShopsService_TA.GetAllShops
 // [0x00024000] 
 struct UShopsService_TA_execGetAllShops_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__ShopsManager_TA__Purchase_0x1.__ShopsManager_TA__Purchase_0x2
@@ -89823,10 +90034,10 @@ struct U__ShopsService_PsyNet_TA__GetAllShops_0x1_exec__ShopsService_PsyNet_TA__
 // [0x400024002] 
 struct UShopsService_PsyNet_TA_execGetItemShopNotifications_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__ShopsService_PsyNet_TA__GetItemShopNotifications_0x1* _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__ShopsService_PsyNet_TA__GetItemShopNotifications_0x1* _0x1;                                             // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsService_PsyNet_TA.Purchase
@@ -89842,10 +90053,10 @@ struct UShopsService_PsyNet_TA_execPurchase_Params
 	int32_t                                            ExpectedPriceAmount;                              // 0x005C (0x0004) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            ExpectedProductCount;                             // 0x0060 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0064 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__ShopsService_PsyNet_TA__Purchase_0x1*  _0x1;                                             // 0x00A0 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             SuccessCallback;                                  // 0x0068 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0088 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00A8 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__ShopsService_PsyNet_TA__Purchase_0x1*  _0x1;                                             // 0x00B0 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsService_PsyNet_TA.GetCrateShop
@@ -89854,10 +90065,10 @@ struct UShopsService_PsyNet_TA_execGetCrateShop_Params
 {
 	int32_t                                            CrateID;                                          // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__ShopsService_PsyNet_TA__GetCrateShop_0x1* _0x1;                                             // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__ShopsService_PsyNet_TA__GetCrateShop_0x1* _0x1;                                             // 0x0050 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsService_PsyNet_TA.GetShopCatalogues
@@ -89865,9 +90076,9 @@ struct UShopsService_PsyNet_TA_execGetCrateShop_Params
 struct UShopsService_PsyNet_TA_execGetShopCatalogues_Params
 {
 	class TArray<int32_t>                              ShopIDs;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class U__ShopsService_PsyNet_TA__GetShopCatalogues_0x1* _0x1;                                             // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0030 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class U__ShopsService_PsyNet_TA__GetShopCatalogues_0x1* _0x1;                                             // 0x0050 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsService_PsyNet_TA.GetShopCatalogue
@@ -89876,21 +90087,21 @@ struct UShopsService_PsyNet_TA_execGetShopCatalogue_Params
 {
 	int32_t                                            ShopID;                                           // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class TArray<int32_t>                           ArrayInitializer_0x1;                             // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class U__ShopsService_PsyNet_TA__GetShopCatalogue_0x1* _0x1;                                             // 0x0050 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0028 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0048 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class TArray<int32_t>                           ArrayInitializer_0x1;                             // 0x0050 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class U__ShopsService_PsyNet_TA__GetShopCatalogue_0x1* _0x1;                                             // 0x0060 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.ShopsService_PsyNet_TA.GetAllShops
 // [0x400024002] 
 struct UShopsService_PsyNet_TA_execGetAllShops_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             FailedCallback;                                   // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__ShopsService_PsyNet_TA__GetAllShops_0x1* _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             FailedCallback;                                   // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__ShopsService_PsyNet_TA__GetAllShops_0x1* _0x1;                                             // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.__ShopsService_PsyNet_TA__GetCrateShop_0x1.__ShopsService_PsyNet_TA__GetCrateShop_0x2
@@ -91062,9 +91273,9 @@ struct UTAsyncResult__PrivilegeCheck_X_eventClearCallbacks_Params
 struct UTAsyncResult__PrivilegeCheck_X_eventSetResultWhen_Params
 {
 	class UAsyncTask*                                  Other;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             GetResultDelegate;                                // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__PrivilegeCheck_X__SetResultWhen_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             GetResultDelegate;                                // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__PrivilegeCheck_X__SetResultWhen_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__PrivilegeCheck_X.SetResult
@@ -91080,18 +91291,18 @@ struct UTAsyncResult__PrivilegeCheck_X_eventSetResult_Params
 // [0x00020003] 
 struct UTAsyncResult__PrivilegeCheck_X_execNotifyOnResultComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__PrivilegeCheck_X__NotifyOnResultComplete_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__PrivilegeCheck_X__NotifyOnResultComplete_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__PrivilegeCheck_X.NotifyOnResult
 // [0x00020003] 
 struct UTAsyncResult__PrivilegeCheck_X_execNotifyOnResult_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__PrivilegeCheck_X__NotifyOnResult_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__PrivilegeCheck_X*             ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__PrivilegeCheck_X__NotifyOnResult_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__PrivilegeCheck_X.ResultDelegate
@@ -91180,9 +91391,9 @@ struct UTAsyncResult__UserBugReportUploadResult_TA_eventClearCallbacks_Params
 struct UTAsyncResult__UserBugReportUploadResult_TA_eventSetResultWhen_Params
 {
 	class UAsyncTask*                                  Other;                                            // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             GetResultDelegate;                                // 0x0008 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__UserBugReportUploadResult_TA__SetResultWhen_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             GetResultDelegate;                                // 0x0008 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0028 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__UserBugReportUploadResult_TA__SetResultWhen_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__UserBugReportUploadResult_TA.SetResult
@@ -91198,18 +91409,18 @@ struct UTAsyncResult__UserBugReportUploadResult_TA_eventSetResult_Params
 // [0x00020003] 
 struct UTAsyncResult__UserBugReportUploadResult_TA_execNotifyOnResultComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0018 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__UserBugReportUploadResult_TA__NotifyOnResultComplete_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__UserBugReportUploadResult_TA__NotifyOnResultComplete_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__UserBugReportUploadResult_TA.NotifyOnResult
 // [0x00020003] 
 struct UTAsyncResult__UserBugReportUploadResult_TA_execNotifyOnResult_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0018 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TAsyncResult__UserBugReportUploadResult_TA__NotifyOnResult_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UTAsyncResult__UserBugReportUploadResult_TA* ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TAsyncResult__UserBugReportUploadResult_TA__NotifyOnResult_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TAsyncResult__UserBugReportUploadResult_TA.ResultDelegate
@@ -91631,7 +91842,7 @@ struct UTextModerationManager_TA_execHandleTextMessageSigned_Params
 	int32_t                                            RequestID;                                        // 0x0010 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	// class U__TextModerationManager_TA__HandleTextMessageSigned_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
 	// int32_t                                         UserIndex;                                        // 0x0020 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.TextModerationManager_TA.GetNextRequestId
@@ -91672,14 +91883,14 @@ struct UTextModerationManager_TA_execInternalSignMessage_Params
 	struct FUniqueNetId                                SenderId;                                         // 0x0010 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0058 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0059 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0078 (0x0008) [0x0000000000000000]               
-	// class FString                                   EpicAccountId;                                    // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class USignedMessageObject_X*                   MessageObject;                                    // 0x0090 (0x0008) [0x0001000000000000]               
-	// class UGameplaySettingsSave_TA*                 GameplaySettings;                                 // 0x0098 (0x0008) [0x0000000000000000]               
-	// int32_t                                         RequestID;                                        // 0x00A0 (0x0004) [0x0000000000000000]               
-	// struct FPendingSignedMessage                    StructInitializer_0x1;                            // 0x00A8 (0x0028) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class FString                                   PayloadJson;                                      // 0x00D0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0080 (0x0008) [0x0000000000000000]               
+	// class FString                                   EpicAccountId;                                    // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class USignedMessageObject_X*                   MessageObject;                                    // 0x0098 (0x0008) [0x0001000000000000]               
+	// class UGameplaySettingsSave_TA*                 GameplaySettings;                                 // 0x00A0 (0x0008) [0x0000000000000000]               
+	// int32_t                                         RequestID;                                        // 0x00A8 (0x0004) [0x0000000000000000]               
+	// struct FPendingSignedMessage                    StructInitializer_0x1;                            // 0x00B0 (0x0030) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class FString                                   PayloadJson;                                      // 0x00E0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.TextModerationManager_TA.PreFilterMessage
@@ -91690,11 +91901,11 @@ struct UTextModerationManager_TA_execPreFilterMessage_Params
 	struct FUniqueNetId                                SenderId;                                         // 0x0010 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0058 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0059 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0078 (0x0008) [0x0000000000000000]               
-	// uint8_t                                         Usage;                                            // 0x0080 (0x0001) [0x0000000000000000]               
-	// uint32_t                                        bPreFilterMessage : 1;                            // 0x0084 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class U__TextModerationManager_TA__PreFilterMessage_0x1* _0x1;                                             // 0x0088 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0080 (0x0008) [0x0000000000000000]               
+	// uint8_t                                         Usage;                                            // 0x0088 (0x0001) [0x0000000000000000]               
+	// uint32_t                                        bPreFilterMessage : 1;                            // 0x008C (0x0004) [0x0000000000000000] [0x00000001] 
+	// class U__TextModerationManager_TA__PreFilterMessage_0x1* _0x1;                                             // 0x0090 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TextModerationManager_TA.SignMessage
@@ -91705,13 +91916,13 @@ struct UTextModerationManager_TA_execSignMessage_Params
 	struct FUniqueNetId                                SenderId;                                         // 0x0010 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            ChatChannel;                                      // 0x0058 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[7];                                      // 0x0059 (0x0007) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0078 (0x0008) [0x0000000000000000]               
-	// int32_t                                         KeyIndex;                                         // 0x0080 (0x0004) [0x0000000000000000]               
-	// class U__TextModerationManager_TA__SignMessage_0x1* _0x1;                                             // 0x0088 (0x0008) [0x0000000000000000]               
-	// int32_t                                         KeyGenIndex;                                      // 0x0090 (0x0004) [0x0000000000000000]               
-	// struct FPendingKeyGenMessage                    KeyGenMessage;                                    // 0x0098 (0x0078) [0x0001000000400000] (CPF_NeedCtorLink)
-	// class USignedMessageObject_X*                   ErrorMessage;                                     // 0x0110 (0x0008) [0x0001000000000000]               
+	struct FScriptDelegate                             FinishedCallback;                                 // 0x0060 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UOnlinePlayer_X*                          OnlinePlayer;                                     // 0x0080 (0x0008) [0x0000000000000000]               
+	// int32_t                                         KeyIndex;                                         // 0x0088 (0x0004) [0x0000000000000000]               
+	// class U__TextModerationManager_TA__SignMessage_0x1* _0x1;                                             // 0x0090 (0x0008) [0x0000000000000000]               
+	// int32_t                                         KeyGenIndex;                                      // 0x0098 (0x0004) [0x0000000000000000]               
+	// struct FPendingKeyGenMessage                    KeyGenMessage;                                    // 0x00A0 (0x0080) [0x0001000000400000] (CPF_NeedCtorLink)
+	// class USignedMessageObject_X*                   ErrorMessage;                                     // 0x0120 (0x0008) [0x0001000000000000]               
 };
 
 // Function TAGame.TextModerationManager_TA.OnKeyFailedToGenerate
@@ -91723,10 +91934,10 @@ struct UTextModerationManager_TA_execOnKeyFailedToGenerate_Params
 	// class U__TextModerationManager_TA__OnKeyFailedToGenerate_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FPendingKeyGenMessage>      FilterLocal_0x2;                                  // 0x0028 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 	// class USignedMessageObject_X*                   ErrorMessage;                                     // 0x0038 (0x0008) [0x0001000000000000]               
-	// struct FPendingKeyGenMessage                    Message;                                          // 0x0040 (0x0078) [0x0011000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00B8 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x00C0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<struct FPendingKeyGenMessage>      DifferenceLocal_0x4;                              // 0x00D8 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FPendingKeyGenMessage                    Message;                                          // 0x0040 (0x0080) [0x0011000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00C0 (0x0004) [0x0000000000000000]               
+	// struct FScriptDelegate                          Callback;                                         // 0x00C8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FPendingKeyGenMessage>      DifferenceLocal_0x4;                              // 0x00E8 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TextModerationManager_TA.ConvertError
@@ -91756,9 +91967,9 @@ struct UTextModerationManager_TA_execHandleCryptoKeyRegistered_Params
 	// class U__TextModerationManager_TA__HandleCryptoKeyRegistered_0x1* _0x1;                                             // 0x0028 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FPendingKeyGenMessage>      PendingMessages;                                  // 0x0030 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
 	// class TArray<struct FPendingKeyGenMessage>      FilterLocal_0x2;                                  // 0x0040 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// struct FPendingKeyGenMessage                    Message;                                          // 0x0050 (0x0078) [0x0011000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00C8 (0x0004) [0x0000000000000000]               
-	// class TArray<struct FPendingKeyGenMessage>      DifferenceLocal_0x4;                              // 0x00D0 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// struct FPendingKeyGenMessage                    Message;                                          // 0x0050 (0x0080) [0x0011000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x3;                              // 0x00D0 (0x0004) [0x0000000000000000]               
+	// class TArray<struct FPendingKeyGenMessage>      DifferenceLocal_0x4;                              // 0x00D8 (0x0010) [0x0001000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TextModerationManager_TA.HandleCryptoKeyCreated
@@ -91811,8 +92022,8 @@ struct UTextModerationManager_TA_execEventMessageReceived_Params
 // [0x00020003] 
 struct U__TextModerationManager_TA__HandleCryptoKeyRegistered_0x1_exec__TextModerationManager_TA__HandleCryptoKeyRegistered_0x2_Params
 {
-	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0078) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0080) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0080 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__TextModerationManager_TA__HandleCryptoKeyRegistered_0x1.__TextModerationManager_TA__HandleCryptoKeyRegistered_0x1
@@ -91851,8 +92062,8 @@ struct U__TextModerationManager_TA__HandleTextMessageSigned_0x1_exec__TextModera
 // [0x00020003] 
 struct U__TextModerationManager_TA__HandleTextMessageSigned_0x1_exec__TextModerationManager_TA__HandleTextMessageSigned_0x1_Params
 {
-	struct FPendingSignedMessage                       P;                                                // 0x0000 (0x0028) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingSignedMessage                       P;                                                // 0x0000 (0x0030) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0030 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__TextModerationManager_TA__HandleTextMessageValidated_0x1.__TextModerationManager_TA__HandleTextMessageValidated_0x3
@@ -91883,8 +92094,8 @@ struct U__TextModerationManager_TA__HandleTextMessageValidated_0x1_exec__TextMod
 // [0x00020003] 
 struct U__TextModerationManager_TA__OnKeyFailedToGenerate_0x1_exec__TextModerationManager_TA__OnKeyFailedToGenerate_0x1_Params
 {
-	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0078) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0080) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0080 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TextModerationMetrics_TA.QuickChatUsed
@@ -91946,8 +92157,8 @@ struct U__TextModerationManager_TA__PreFilterMessage_0x1_exec__TextModerationMan
 // [0x00020003] 
 struct U__TextModerationManager_TA__SignMessage_0x1_exec__TextModerationManager_TA__SignMessage_0x2_Params
 {
-	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0078) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0078 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FPendingKeyGenMessage                       P;                                                // 0x0000 (0x0080) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0080 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.__TextModerationManager_TA__SignMessage_0x1.__TextModerationManager_TA__SignMessage_0x1
@@ -91977,7 +92188,7 @@ struct UTourBracketCache_TA_exec__TourBracketCache_TA__RequestCached_0x1_Params
 // [0x40040003] 
 struct UTourBracketCache_TA_exec__TourBracketCache_TA__Dispose_0x1_Params
 {
-	struct FBracketRequest                             R;                                                // 0x0000 (0x0028) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FBracketRequest                             R;                                                // 0x0000 (0x0030) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourBracketCache_TA.Dispose
@@ -92001,17 +92212,17 @@ struct UTourBracketCache_TA_execHandleDownload_Params
 {
 	struct FTourBracket                                Bracket;                                          // 0x0000 (0x0078) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         BracketIndex;                                     // 0x0078 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          BracketChangedCallback;                           // 0x0080 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         RequestIndex;                                     // 0x0098 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x00A0 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          BracketChangedCallback;                           // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         RequestIndex;                                     // 0x00A0 (0x0004) [0x0000000000000000]               
+	// struct FScriptDelegate                          Callback;                                         // 0x00A8 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourBracketCache_TA.ClearOnBracketChanged
 // [0x00020003] 
 struct UTourBracketCache_TA_execClearOnBracketChanged_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         I;                                                // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         I;                                                // 0x0020 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TourBracketCache_TA.NotifyOnBracketChanged
@@ -92019,7 +92230,7 @@ struct UTourBracketCache_TA_execClearOnBracketChanged_Params
 struct UTourBracketCache_TA_execNotifyOnBracketChanged_Params
 {
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourBracketCache_TA.HandleGetBracketError
@@ -92030,7 +92241,7 @@ struct UTourBracketCache_TA_execHandleGetBracketError_Params
 	class UError*                                      Error;                                            // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         RequestIndex;                                     // 0x0010 (0x0004) [0x0000000000000000]               
 	// int32_t                                         BracketIndex;                                     // 0x0014 (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x0018 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0018 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourBracketCache_TA.NotifyOnBracketError
@@ -92038,7 +92249,7 @@ struct UTourBracketCache_TA_execHandleGetBracketError_Params
 struct UTourBracketCache_TA_execNotifyOnBracketError_Params
 {
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourBracketCache_TA.Request
@@ -92047,10 +92258,10 @@ struct UTourBracketCache_TA_execRequest_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         RequestIndex;                                     // 0x0070 (0x0004) [0x0000000000000000]               
-	// class U__TourBracketCache_TA__Request_0x1*      _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         RequestIndex;                                     // 0x0078 (0x0004) [0x0000000000000000]               
+	// class U__TourBracketCache_TA__Request_0x1*      _0x1;                                             // 0x0080 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourBracketCache_TA.RequestCached
@@ -92059,11 +92270,11 @@ struct UTourBracketCache_TA_execRequestCached_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// uint32_t                                        bIsComplete : 1;                                  // 0x0070 (0x0004) [0x0000000000000000] [0x00000001] 
-	// uint32_t                                        bIsCached : 1;                                    // 0x0074 (0x0004) [0x0000000000000000] [0x00000001] 
-	// class U__TourBracketCache_TA__RequestCached_0x2* _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        bIsComplete : 1;                                  // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bIsCached : 1;                                    // 0x007C (0x0004) [0x0000000000000000] [0x00000001] 
+	// class U__TourBracketCache_TA__RequestCached_0x2* _0x1;                                             // 0x0080 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourBracketCache_TA.OnBracketError
@@ -92962,10 +93173,10 @@ struct UTourRegistration_TA_execRegister_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class UTourSettings_TA*                            Settings;                                         // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FTourPrivateCredentials                     Credentials;                                      // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0088 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UErrorType*                               Error;                                            // 0x0090 (0x0008) [0x0000000000000000]               
-	// class U__TourRegistration_TA__Register_0x1*     _0x1;                                             // 0x0098 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0090 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UErrorType*                               Error;                                            // 0x0098 (0x0008) [0x0000000000000000]               
+	// class U__TourRegistration_TA__Register_0x1*     _0x1;                                             // 0x00A0 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourRegistration_TA.Init
@@ -92994,8 +93205,8 @@ struct U__TourRegistration_TA__Register_0x1_exec__TourRegistration_TA__Register_
 struct UTourService_TA_execStartMatchmaking_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnStartMatchmaking
@@ -93010,8 +93221,8 @@ struct UTourService_TA_execGetRewards_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnGetRewards
@@ -93029,8 +93240,8 @@ struct UTourService_TA_execGetMatchDetails_Params
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnGetMatchDetails
@@ -93046,8 +93257,8 @@ struct UTourService_TA_execGetMatch_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnGetMatch
@@ -93063,8 +93274,8 @@ struct UTourService_TA_execGetBracket_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnGetBracket
@@ -93085,8 +93296,8 @@ struct UTourService_TA_execCheckIn_Params
 	class TArray<struct FUniqueNetId>                  LocalTeamMemberIDs;                               // 0x0080 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  AllTeamMemberIDs;                                 // 0x0090 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TeamID;                                           // 0x00A0 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x00A8 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x00C0 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x00A8 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00C8 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnCheckIn
@@ -93105,8 +93316,8 @@ struct UTourService_TA_execRegisterTournament_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FTourPrivateCredentials                     Credentials;                                      // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0088 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0090 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.CreateTournament
@@ -93115,8 +93326,8 @@ struct UTourService_TA_execCreateTournament_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FTourCreateSettings                         Settings;                                         // 0x0048 (0x0038) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0080 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00A0 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.TourService_TA.OnTournamentResult
@@ -93203,9 +93414,9 @@ struct UTourService_PsyNet_TA_exec__TourService_PsyNet_TA__BuildTeam_0x1_Params
 struct UTourService_PsyNet_TA_execStartMatchmaking_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__StartMatchmaking_0x1* _0x1;                                             // 0x0068 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__StartMatchmaking_0x1* _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.GetMatchDetails
@@ -93215,9 +93426,9 @@ struct UTourService_PsyNet_TA_execGetMatchDetails_Params
 	uint64_t                                           TournamentID;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__GetMatchDetails_0x1* _0x1;                                             // 0x0030 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0030 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__GetMatchDetails_0x1* _0x1;                                             // 0x0038 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.GetMatch
@@ -93226,9 +93437,9 @@ struct UTourService_PsyNet_TA_execGetMatch_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__GetMatch_0x1*   _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__GetMatch_0x1*   _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.GetBracket
@@ -93237,9 +93448,9 @@ struct UTourService_PsyNet_TA_execGetBracket_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__GetBracket_0x1* _0x1;                                             // 0x0070 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__GetBracket_0x1* _0x1;                                             // 0x0078 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.BuildTeam
@@ -93266,9 +93477,9 @@ struct UTourService_PsyNet_TA_execCheckIn_Params
 	class TArray<struct FUniqueNetId>                  LocalTeamMemberIDs;                               // 0x0080 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class TArray<struct FUniqueNetId>                  AllTeamMemberIDs;                                 // 0x0090 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TeamID;                                           // 0x00A0 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x00A8 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x00C0 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__CheckIn_0x1*    _0x1;                                             // 0x00C8 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x00A8 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00C8 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__CheckIn_0x1*    _0x1;                                             // 0x00D0 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.RegisterTournament
@@ -93278,9 +93489,9 @@ struct UTourService_PsyNet_TA_execRegisterTournament_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FTourPrivateCredentials                     Credentials;                                      // 0x0050 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0088 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__RegisterTournament_0x1* _0x1;                                             // 0x0090 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0070 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0090 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__RegisterTournament_0x1* _0x1;                                             // 0x0098 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TourService_PsyNet_TA.CreateTournament
@@ -93289,9 +93500,9 @@ struct UTourService_PsyNet_TA_execCreateTournament_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	struct FTourCreateSettings                         Settings;                                         // 0x0048 (0x0038) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0080 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0098 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class U__TourService_PsyNet_TA__CreateTournament_0x1* _0x1;                                             // 0x00A0 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0080 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x00A0 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class U__TourService_PsyNet_TA__CreateTournament_0x1* _0x1;                                             // 0x00A8 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.__TourService_PsyNet_TA__CreateTournament_0x1.__TourService_PsyNet_TA__CreateTournament_0x1
@@ -93625,7 +93836,7 @@ struct UTourEvent_TA_execHandleStartTimeElapsed_Params
 // [0x00020003] 
 struct UTourEvent_TA_execNotifyOnStartTimeElapsed_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourEvent_TA.SetActiveTour
@@ -93930,14 +94141,14 @@ struct UTourEventMatch_TA_execStartGetMatchTask_Params
 // [0x00020003] 
 struct UTourEventMatch_TA_execNotifyOnError_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourEventMatch_TA.NotifyOnDependentMatchUpdated
 // [0x00020003] 
 struct UTourEventMatch_TA_execNotifyOnDependentMatchUpdated_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourEventMatch_TA.IsWaitingForMatchResults
@@ -93958,7 +94169,7 @@ struct UTourEventMatch_TA_execHasNextMatch_Params
 // [0x00020003] 
 struct UTourEventMatch_TA_execNotifyOnMatchReady_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourEventMatch_TA.IsFirstRound
@@ -94267,8 +94478,8 @@ struct U__UserBugReportConfig_TA__GetCategory_0x1_exec__UserBugReportConfig_TA__
 // [0x00024003] 
 struct UUserBugReportGeneratedData_TA_execInit_Params
 {
-	struct FScriptDelegate                             CompleteCallback;                                 // 0x0000 (0x0018) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class U__UserBugReportGeneratedData_TA__Init_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             CompleteCallback;                                 // 0x0000 (0x0020) [0x0001000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class U__UserBugReportGeneratedData_TA__Init_0x1* _0x1;                                             // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.UserBugReportGeneratedData_TA.EventComplete
@@ -94604,7 +94815,7 @@ struct UWallet_TA_execIncreaseCurrency_Params
 struct UWallet_TA_execSetCurrencyTradehold_Params
 {
 	int32_t                                            InCurrencyID;                                     // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	int32_t                                            InTradehold;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            InTradeHold;                                      // 0x0004 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	// int32_t                                         Index;                                            // 0x0008 (0x0004) [0x0000000000000000]               
 	// class UOnlineProduct_TA*                        OnlineProduct;                                    // 0x0010 (0x0008) [0x0000000000000000]               
 };
@@ -95783,10 +95994,10 @@ struct UVersionHelper_TA_execUpdate_Params
 	class UObject*                                     VersionObject;                                    // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            Version;                                          // 0x0018 (0x0004) [0x0000000000000180] (CPF_Parm | CPF_OutParm)
 	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             VersionChangedCallback;                           // 0x0020 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            VersionMax;                                       // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	// int32_t                                         CurrentVersion;                                   // 0x003C (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          UpdateFunc;                                       // 0x0040 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             VersionChangedCallback;                           // 0x0020 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            VersionMax;                                       // 0x0040 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	// int32_t                                         CurrentVersion;                                   // 0x0044 (0x0004) [0x0000000000000000]               
+	// struct FScriptDelegate                          UpdateFunc;                                       // 0x0048 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.VersionHelper_TA.VersionChangedDelegate
@@ -99009,7 +99220,7 @@ struct ABall_GameEditor_TA_execEditingBegin_Params
 // [0x00020003] 
 struct ABall_GameEditor_TA_execNotifyOnSelectionChange_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Ball_GameEditor_TA.GetCameraPositionOffset
@@ -99331,7 +99542,7 @@ struct UInterface_GameEditor_TA_execEditingBegin_Params
 // [0x00020000] 
 struct UInterface_GameEditor_TA_execNotifyOnSelectionChange_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Interface_GameEditor_TA.SerializedDataIsEqual
@@ -99927,6 +100138,14 @@ struct UBeamTraceComponent_TA_eventAttached_Params
 	// int32_t                                         Idx;                                              // 0x0020 (0x0004) [0x0000000000000000]               
 	// uint32_t                                        bAttachDirectlyToOwner : 1;                       // 0x0024 (0x0004) [0x0000000000000000] [0x00000001] 
 	// int32_t                                         AttachmentIndex;                                  // 0x0028 (0x0004) [0x0000000000000000]               
+};
+
+// Function TAGame.__BinaryUploader_TA__UploadData_0x1.__BinaryUploader_TA__UploadData_0x1
+// [0x00020003] 
+struct U__BinaryUploader_TA__UploadData_0x1_exec__BinaryUploader_TA__UploadData_0x1_Params
+{
+	class FString                                      K;                                                // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      V;                                                // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.BlogTileCache_TA.__BlogTileCache_TA__UpdateTileIDs_0x1
@@ -101022,10 +101241,10 @@ struct UProfileCameraSave_TA_execApplyCameraPresetPerInputOverrides_Params
 {
 	uint8_t                                            Preset;                                           // 0x0000 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                            InputType;                                        // 0x0001 (0x0001) [0x0001000000000080] (CPF_Parm)    
-	// struct FCameraPresetBoolOverride                BoolOverride;                                     // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          func;                                             // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FCameraPresetFloatOverride               FloatOverride;                                    // 0x0040 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          FloatFunc;                                        // 0x0068 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FCameraPresetBoolOverride                BoolOverride;                                     // 0x0008 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          func;                                             // 0x0030 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FCameraPresetFloatOverride               FloatOverride;                                    // 0x0050 (0x0030) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          FloatFunc;                                        // 0x0080 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProfileCameraSave_TA.CreateFloatPresetOverride
@@ -101037,8 +101256,8 @@ struct UProfileCameraSave_TA_execCreateFloatPresetOverride_Params
 	float                                              ValueKBM;                                         // 0x0004 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	float                                              ValueController;                                  // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
 	uint8_t                                          padding1[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ApplyFunc;                                        // 0x0010 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FCameraPresetFloatOverride               Override;                                         // 0x0028 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ApplyFunc;                                        // 0x0010 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FCameraPresetFloatOverride               Override;                                         // 0x0030 (0x0030) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProfileCameraSave_TA.CreateBoolPresetOverride
@@ -101050,15 +101269,15 @@ struct UProfileCameraSave_TA_execCreateBoolPresetOverride_Params
 	uint32_t                                           bValueKBM : 1;                                    // 0x0004 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
 	uint32_t                                           bValueController : 1;                             // 0x0008 (0x0004) [0x0001000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             ApplyFunc;                                        // 0x0010 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FCameraPresetBoolOverride                Override;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ApplyFunc;                                        // 0x0010 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FCameraPresetBoolOverride                Override;                                         // 0x0030 (0x0028) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProfileCameraSave_TA.RegisterPresetInputOverrides
 // [0x00040003] 
 struct UProfileCameraSave_TA_execRegisterPresetInputOverrides_Params
 {
-	// struct FScriptDelegate                          ApplyBallCamMode;                                 // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          ApplyBallCamMode;                                 // 0x0000 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProfileCameraSave_TA.ApplyCameraPreset
@@ -101653,7 +101872,6 @@ struct UCameraState_LookAtBall_TA_execShouldKeepExecuting_Params
 {
 	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 	// class APlayerController_TA*                     PC;                                               // 0x0008 (0x0008) [0x0000000000000000]               
-	// uint32_t                                        bKeepInHoldMode : 1;                              // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // Function TAGame.CameraState_LookAtBall_TA.ShouldExecute
@@ -101727,12 +101945,12 @@ struct UTargetFinder_TA_execFindTargetsInRotatedPlane_Params
 	float                                              MaxRadius;                                        // 0x0044 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxDegreeAngle;                                   // 0x0048 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0068 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
-	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0078 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0088 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UTarget_TA*                               NewTarget;                                        // 0x0098 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           DegreeAngle;                                      // 0x00A0 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0070 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
+	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0080 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0090 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UTarget_TA*                               NewTarget;                                        // 0x00A0 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           DegreeAngle;                                      // 0x00A8 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TargetFinder_TA.FindClosestTargetInRotatedPlane
@@ -101750,14 +101968,14 @@ struct UTargetFinder_TA_execFindClosestTargetInRotatedPlane_Params
 	float                                              MaxRadius;                                        // 0x0044 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxDegreeAngle;                                   // 0x0048 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x004C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// class UTarget_TA*                               BestTarget;                                       // 0x0070 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           ClosestDistanceToOrgin;                           // 0x0078 (0x0004) [0x0000000000000000]               
-	// float                                           DistanceToOrgin;                                  // 0x007C (0x0004) [0x0000000000000000]               
-	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0080 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UTarget_TA*                               NewTarget;                                        // 0x0090 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           DegreeAngle;                                      // 0x0098 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// class UTarget_TA*                               BestTarget;                                       // 0x0078 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           ClosestDistanceToOrgin;                           // 0x0080 (0x0004) [0x0000000000000000]               
+	// float                                           DistanceToOrgin;                                  // 0x0084 (0x0004) [0x0000000000000000]               
+	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0088 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UTarget_TA*                               NewTarget;                                        // 0x0098 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           DegreeAngle;                                      // 0x00A0 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TargetFinder_TA.FindClosestTargetInRotatedPlanes
@@ -101772,10 +101990,10 @@ struct UTargetFinder_TA_execFindClosestTargetInRotatedPlanes_Params
 	struct FVector                                     CheckDirection;                                   // 0x0030 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FPlaneSelectData>              PlaneSelectSettings;                              // 0x0040 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// struct FPlaneSelectData                         PlaneData;                                        // 0x0070 (0x0010) [0x0000000000000000]               
-	// class UTarget_TA*                               NewTarget;                                        // 0x0080 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// struct FPlaneSelectData                         PlaneData;                                        // 0x0078 (0x0010) [0x0000000000000000]               
+	// class UTarget_TA*                               NewTarget;                                        // 0x0088 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function TAGame.TargetFinder_TA.FindClosestTargetInDirection
@@ -101791,16 +102009,16 @@ struct UTargetFinder_TA_execFindClosestTargetInDirection_Params
 	int32_t                                            YDirection;                                       // 0x0034 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// class UTarget_TA*                               BestTarget;                                       // 0x0060 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           ClosestAngle;                                     // 0x0068 (0x0004) [0x0000000000000000]               
-	// struct FVector                                  CheckSideDirection;                               // 0x006C (0x000C) [0x0000000000000000]               
-	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0078 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UTarget_TA*                               NewTarget;                                        // 0x0088 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// struct FVector                                  DirectionToTarget;                                // 0x0090 (0x000C) [0x0000000000000000]               
-	// float                                           ViewSideDot;                                      // 0x009C (0x0004) [0x0000000000000000]               
-	// float                                           Angle;                                            // 0x00A0 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// class UTarget_TA*                               BestTarget;                                       // 0x0068 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           ClosestAngle;                                     // 0x0070 (0x0004) [0x0000000000000000]               
+	// struct FVector                                  CheckSideDirection;                               // 0x0074 (0x000C) [0x0000000000000000]               
+	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0080 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UTarget_TA*                               NewTarget;                                        // 0x0090 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// struct FVector                                  DirectionToTarget;                                // 0x0098 (0x000C) [0x0000000000000000]               
+	// float                                           ViewSideDot;                                      // 0x00A4 (0x0004) [0x0000000000000000]               
+	// float                                           Angle;                                            // 0x00A8 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TargetFinder_TA.FindClosestTargetByAngle
@@ -101816,13 +102034,13 @@ struct UTargetFinder_TA_execFindClosestTargetByAngle_Params
 	float                                              MaxDegreeAngle;                                   // 0x0034 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0058 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// class UTarget_TA*                               BestTarget;                                       // 0x0060 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           DegreeAngle;                                      // 0x0068 (0x0004) [0x0000000000000000]               
-	// float                                           ClosestDegreeAngle;                               // 0x006C (0x0004) [0x0000000000000000]               
-	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0070 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UTarget_TA*                               NewTarget;                                        // 0x0080 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// class UTarget_TA*                               BestTarget;                                       // 0x0068 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           DegreeAngle;                                      // 0x0070 (0x0004) [0x0000000000000000]               
+	// float                                           ClosestDegreeAngle;                               // 0x0074 (0x0004) [0x0000000000000000]               
+	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0078 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UTarget_TA*                               NewTarget;                                        // 0x0088 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function TAGame.TargetFinder_TA.FindTargetsByAngle
@@ -101838,12 +102056,12 @@ struct UTargetFinder_TA_execFindTargetsByAngle_Params
 	float                                              MaxDegreeAngle;                                   // 0x0034 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	float                                              MaxRadius;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
 	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0058 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
-	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0068 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0078 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UTarget_TA*                               NewTarget;                                        // 0x0088 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           DegreeAngle;                                      // 0x0090 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0040 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0060 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
+	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0070 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class TArray<class UTarget_TA*>                 RadiusTargets;                                    // 0x0080 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UTarget_TA*                               NewTarget;                                        // 0x0090 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           DegreeAngle;                                      // 0x0098 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TargetFinder_TA.FindTargetsWithinRadius
@@ -101857,12 +102075,12 @@ struct UTargetFinder_TA_execFindTargetsWithinRadius_Params
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0020 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	float                                              MaxRadius;                                        // 0x0028 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding1[4];                                      // 0x002C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0030 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0048 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
-	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0058 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
-	// class UObject*                                  ObjectTarget;                                     // 0x0068 (0x0008) [0x0000000000000000]               
-	// class UTarget_TA*                               NewTarget;                                        // 0x0070 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// float                                           Distance;                                         // 0x0078 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0030 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class TArray<class UTarget_TA*>                    ReturnValue;                                      // 0x0050 (0x0010) [0x0000000004400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink | CPF_EditInline)
+	// class TArray<class UTarget_TA*>                 Targets;                                          // 0x0060 (0x0010) [0x0000000004400000] (CPF_NeedCtorLink | CPF_EditInline)
+	// class UObject*                                  ObjectTarget;                                     // 0x0070 (0x0008) [0x0000000000000000]               
+	// class UTarget_TA*                               NewTarget;                                        // 0x0078 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// float                                           Distance;                                         // 0x0080 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TargetFinder_TA.FindClosestTargetByAngles
@@ -101877,10 +102095,10 @@ struct UTargetFinder_TA_execFindClosestTargetByAngles_Params
 	struct FVector                                     CheckDirection;                                   // 0x0028 (0x000C) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding1[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
 	class TArray<struct FAngleSelectData>              AngleSelectSettings;                              // 0x0038 (0x0010) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0048 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0060 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// struct FAngleSelectData                         AngleData;                                        // 0x0068 (0x0008) [0x0000000000000000]               
-	// class UTarget_TA*                               NewTarget;                                        // 0x0070 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0048 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// struct FAngleSelectData                         AngleData;                                        // 0x0070 (0x0008) [0x0000000000000000]               
+	// class UTarget_TA*                               NewTarget;                                        // 0x0078 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function TAGame.TargetFinder_TA.FindBestTarget
@@ -101894,15 +102112,15 @@ struct UTargetFinder_TA_execFindBestTarget_Params
 	class UTarget_TA*                                  ActiveTarget;                                     // 0x0028 (0x0008) [0x0000000004000080] (CPF_Parm | CPF_EditInline)
 	class TArray<struct FPlaneSelectData>              PlaneSelectSettings;                              // 0x0030 (0x0010) [0x0000000000400192] (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class TArray<struct FAngleSelectData>              AngleSelectSettings;                              // 0x0040 (0x0010) [0x0000000000400192] (CPF_Const | CPF_OptionalParm | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTarget_TA*                                  ReturnValue;                                      // 0x0068 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
-	// class UTarget_TA*                               BestTarget;                                       // 0x0070 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// int32_t                                         BestPriority;                                     // 0x0078 (0x0004) [0x0000000000000000]               
-	// int32_t                                         NumValidTargets;                                  // 0x007C (0x0004) [0x0000000000000000]               
-	// class UObject*                                  ObjectTarget;                                     // 0x0080 (0x0008) [0x0000000000000000]               
-	// class UTarget_TA*                               NewTarget;                                        // 0x0088 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// class UTarget_TA*                               TargetPlane;                                      // 0x0090 (0x0008) [0x0000000004000000] (CPF_EditInline)
-	// class UTarget_TA*                               TargetAngle;                                      // 0x0098 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	struct FScriptDelegate                             Callback_AllowTarget;                             // 0x0050 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTarget_TA*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000004000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_EditInline)
+	// class UTarget_TA*                               BestTarget;                                       // 0x0078 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// int32_t                                         BestPriority;                                     // 0x0080 (0x0004) [0x0000000000000000]               
+	// int32_t                                         NumValidTargets;                                  // 0x0084 (0x0004) [0x0000000000000000]               
+	// class UObject*                                  ObjectTarget;                                     // 0x0088 (0x0008) [0x0000000000000000]               
+	// class UTarget_TA*                               NewTarget;                                        // 0x0090 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// class UTarget_TA*                               TargetPlane;                                      // 0x0098 (0x0008) [0x0000000004000000] (CPF_EditInline)
+	// class UTarget_TA*                               TargetAngle;                                      // 0x00A0 (0x0008) [0x0000000004000000] (CPF_EditInline)
 };
 
 // Function TAGame.TargetFinder_TA.TargetFilter
@@ -103580,6 +103798,15 @@ struct UPremiumGaragePreviewSet_TA_execSetPreviewProduct_Params
 	// uint32_t                                        bChangedCarPart : 1;                              // 0x00A0 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
+// Function TAGame.PremiumGaragePreviewSet_TA.SetFullLoadout
+// [0x00420003] 
+struct UPremiumGaragePreviewSet_TA_execSetFullLoadout_Params
+{
+	struct FLoadoutData                                InLoadout;                                        // 0x0000 (0x0040) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class TArray<class UProductSlot_TA*>               ChangedSlots;                                     // 0x0040 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	float                                              ActivateSlotDelay;                                // 0x0050 (0x0004) [0x0001000000000080] (CPF_Parm)    
+};
+
 // Function TAGame.PremiumGaragePreviewSet_TA.HandleCarSwapComplete
 // [0x00020003] 
 struct UPremiumGaragePreviewSet_TA_execHandleCarSwapComplete_Params
@@ -105065,8 +105292,8 @@ struct UStreamerSafeAnonymizationUtils_TA_execHandleLocalProfileSet_Params
 // [0x00020103] 
 struct UStreamerSafeAnonymizationUtils_TA_execSubscribeToLocalAnonymizationSettings_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class ULocalPlayer_TA*                          LP;                                               // 0x0018 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class ULocalPlayer_TA*                          LP;                                               // 0x0020 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.StreamerSafeAnonymizationUtils_TA.OnAnonymizationChanged
@@ -107457,6 +107684,25 @@ struct UGFxData_CinematicIntro_TA_execOnFinished_Params
 {
 };
 
+// Function TAGame.GFxData_CinematicIntro_TA.BeginSkip
+// [0x00040003] 
+struct UGFxData_CinematicIntro_TA_execBeginSkip_Params
+{
+};
+
+// Function TAGame.GFxData_CinematicIntro_TA.NotifySkipKey
+// [0x00044003] 
+struct UGFxData_CinematicIntro_TA_execNotifySkipKey_Params
+{
+	int32_t                                            ControllerId;                                     // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	class FName                                        Key;                                              // 0x0004 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                            EventType;                                        // 0x000C (0x0001) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[3];                                      // 0x000D (0x0003) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	float                                              AmountDepressed;                                  // 0x0010 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint32_t                                           bGamepad : 1;                                     // 0x0014 (0x0004) [0x0001000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.GFxData_CinematicIntro_TA.StartSequence
 // [0x00080003] 
 struct UGFxData_CinematicIntro_TA_execStartSequence_Params
@@ -108801,7 +109047,7 @@ struct AGameEditor_Actor_TA_execEditingBegin_Params
 // [0x00020003] 
 struct AGameEditor_Actor_TA_execNotifyOnSelectionChange_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GameEditor_Actor_TA.EditorGetLocation
@@ -109317,10 +109563,11 @@ struct UEOSOnlineStorageUploader_TA_execCanUploadData_Params
 {
 	uint32_t                                           bForce : 1;                                       // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 	uint8_t                                          padding0[4];                                      // 0x0004 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             UploadTimer;                                      // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0020 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// uint64_t                                        SecondsSinceLastRequest;                          // 0x0028 (0x0008) [0x0000000000000000]               
-	// uint64_t                                        SecondsRemaining;                                 // 0x0030 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             UploadTimer;                                      // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0028 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint64_t                                        SecondsSinceLastRequest;                          // 0x0030 (0x0008) [0x0000000000000000]               
+	// uint64_t                                        MinSecondsBetweenUploads;                         // 0x0038 (0x0008) [0x0000000000000000]               
+	// uint64_t                                        SecondsRemaining;                                 // 0x0040 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.EOSOnlineStorageUploader_TA.CanWriteToOnlineStorage
@@ -109669,7 +109916,7 @@ struct UEOSPermissions_TA_execIsVoiceAgeRestricted_Params
 // [0x00020003] 
 struct UEOSPermissions_TA_execNotifyOnDownloadedPermissions_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.EOSPermissions_TA.GetAreShopNotificationsEnabledDefault
@@ -109823,8 +110070,8 @@ struct UEOSPermissions_TA_execOnPermissionCheckFailed_Params
 struct UEOSPermissions_TA_execDoStringConversion_Params
 {
 	class FString                                      InValue;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             ConversionDelegate;                               // 0x0010 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      ReturnValue;                                      // 0x0028 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConversionDelegate;                               // 0x0010 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0030 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.EOSPermissions_TA.LogPermission
@@ -109833,8 +110080,8 @@ struct UEOSPermissions_TA_execLogPermission_Params
 {
 	struct FK3SSetting                                 Setting;                                          // 0x0000 (0x01F0) [0x0000000000400082] (CPF_Const | CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      InterpretedValue;                                 // 0x01F0 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             ConversionDelegate;                               // 0x0200 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class FString                                   logString;                                        // 0x0218 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ConversionDelegate;                               // 0x0200 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class FString                                   logString;                                        // 0x0220 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.EOSPermissions_TA.UpdatePlayerPermissions
@@ -110679,8 +110926,8 @@ struct UFaceItFindServerTask_TA_execInit_Params
 // [0x00020003] 
 struct UFaceItFindServerTask_TA_execNotifyOnResult_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UFaceItFindServerTask_TA*                    ReturnValue;                                      // 0x0018 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UFaceItFindServerTask_TA*                    ReturnValue;                                      // 0x0020 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.FaceItFindServerTask_TA.FindUsingRPC
@@ -112084,6 +112331,14 @@ struct AGameEvent_FTE_TA_execSubmitMatchComplete_Params
 {
 };
 
+// Function TAGame.GameEvent_FTE_TA.Destroyed
+// [0x400020902] 
+struct AGameEvent_FTE_TA_eventDestroyed_Params
+{
+	// class APlayerController_TA*                     PC;                                               // 0x0000 (0x0008) [0x0000000000000000]               
+	// class UFirstTimeExperienceManager_TA*           FTEManager;                                       // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
 // Function TAGame.GameEvent_FTE_TA.EndGame
 // [0x400020002] 
 struct AGameEvent_FTE_TA_execEndGame_Params
@@ -112094,7 +112349,7 @@ struct AGameEvent_FTE_TA_execEndGame_Params
 // [0x00020003] 
 struct USave_TA_execCancelGetHeaders_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Save_TA.GetHeaders
@@ -112104,7 +112359,7 @@ struct USave_TA_execGetHeaders_Params
 	class ULocalPlayer_TA*                             Player;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      FolderPath;                                       // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class FString                                      Pattern;                                          // 0x0018 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0028 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Save_TA.GetFullSavePath
@@ -112148,7 +112403,7 @@ struct USave_TA_execLoadAsync_Params
 {
 	class ULocalPlayer_TA*                             Player;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	class FString                                      SaveFileName;                                     // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.Save_TA.Load
@@ -113422,10 +113677,10 @@ struct UTrainingPackProgress_TA_execClearUncompletedShots_Params
 struct UTrainingPackProgress_TA_execInitProgress_Params
 {
 	class UTrainingEditorData_TA*                      TrainingData;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// struct FEditorRoundData                         RoundData;                                        // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         RoundNumber;                                      // 0x0038 (0x0004) [0x0000000000000000]               
-	// struct FTrainingRoundProgress                   StructInitializer_0x1;                            // 0x003C (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// struct FEditorRoundData                         RoundData;                                        // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         RoundNumber;                                      // 0x0040 (0x0004) [0x0000000000000000]               
+	// struct FTrainingRoundProgress                   StructInitializer_0x1;                            // 0x0044 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.TrainingPackProgress_TA.ValidateRound
@@ -113448,10 +113703,10 @@ struct UTrainingPackProgress_TA_execEventProgressUpdated_Params
 struct UTrainingProgressSave_TA_execGetPackProgress_Params
 {
 	class UTrainingEditorData_TA*                      TrainingData;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTrainingPackProgress_TA*                    ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         PackProgressIndex;                                // 0x0028 (0x0004) [0x0000000000000000]               
-	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0030 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTrainingPackProgress_TA*                    ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         PackProgressIndex;                                // 0x0030 (0x0004) [0x0000000000000000]               
+	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0038 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TrainingProgressSave_TA.ValidateRound
@@ -114214,10 +114469,10 @@ struct UPostMatchCelebrationPreviewer_TA_execInit_Params
 // [0x00020003] 
 struct URocketPassPreviewSet_TA_execNotifyWhenPreviewCarReady_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            SlotIndex;                                        // 0x0018 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	struct FProductHashID                              HashID;                                           // 0x001C (0x0004) [0x0000000000000080] (CPF_Parm)    
-	uint32_t                                           bUseBaseLoadout : 1;                              // 0x0020 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            SlotIndex;                                        // 0x0020 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	struct FProductHashID                              HashID;                                           // 0x0024 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	uint32_t                                           bUseBaseLoadout : 1;                              // 0x0028 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
 };
 
 // Function TAGame.RocketPassPreviewSet_TA.ExitPremiumGarage
@@ -114386,7 +114641,7 @@ struct UPostProcessManager_TA_execSetDOFDistance_Params
 // [0x00020003] 
 struct UPostProcessManager_TA_execNotifyWhenPostProcessSettingsCached_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.PostProcessManager_TA.IsReplayFXDirtied
@@ -116082,6 +116337,20 @@ struct UGFxData_MainMenu_TA_execPushCurrentSoundState_Params
 	class FName                                        SoundState;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
+// Function TAGame.GFxData_MainMenu_TA.PushPendingSoundState
+// [0x00020003] 
+struct UGFxData_MainMenu_TA_execPushPendingSoundState_Params
+{
+};
+
+// Function TAGame.GFxData_MainMenu_TA.PushCurrentSoundStateDelayed
+// [0x00020003] 
+struct UGFxData_MainMenu_TA_execPushCurrentSoundStateDelayed_Params
+{
+	class FName                                        SoundState;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	float                                              Delay;                                            // 0x0008 (0x0004) [0x0000000000000080] (CPF_Parm)    
+};
+
 // Function TAGame.GFxData_MainMenu_TA.HandleExplosionTierChanged
 // [0x00020003] 
 struct UGFxData_MainMenu_TA_execHandleExplosionTierChanged_Params
@@ -116117,6 +116386,17 @@ struct UGFxData_MainMenu_TA_execSetPreviewProduct_Params
 	// class UMusicStingersPreviewer_TA*               MusicStingersPreviewer;                           // 0x0048 (0x0008) [0x0000000000000000]               
 	// class UPremiumGaragePreviewSet_TA*              PremiumPreview;                                   // 0x0050 (0x0008) [0x0000000000000000]               
 	// class UPostMatchCelebrationPreviewer_TA*        PostMatchPreview;                                 // 0x0058 (0x0008) [0x0000000004000000] (CPF_EditInline)
+};
+
+// Function TAGame.GFxData_MainMenu_TA.SetFullLoadout
+// [0x00420003] 
+struct UGFxData_MainMenu_TA_execSetFullLoadout_Params
+{
+	struct FLoadoutData                                InLoadout;                                        // 0x0000 (0x0040) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class TArray<class UProductSlot_TA*>               ChangedSlots;                                     // 0x0040 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	float                                              VFXSoundDelay;                                    // 0x0050 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	// class AGameInfo_GFxMenu_TA*                     GameInfo_GFxMenu;                                 // 0x0058 (0x0008) [0x0000000000000000]               
+	// class UPremiumGaragePreviewSet_TA*              PremiumPreview;                                   // 0x0060 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_MainMenu_TA.HandleRocketPassPreviewCarReady
@@ -116182,6 +116462,12 @@ struct UGFxData_MainMenu_TA_execSetPremiumDLCPack_Params
 struct UGFxData_MainMenu_TA_execGetProfile_Params
 {
 	class UProfile_TA*                                 ReturnValue;                                      // 0x0000 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_MainMenu_TA.OnRemoved
+// [0x400080802] 
+struct UGFxData_MainMenu_TA_eventOnRemoved_Params
+{
 };
 
 // Function TAGame.GFxData_MainMenu_TA.OnShellSet
@@ -116581,11 +116867,11 @@ struct AGFxHUD_Spectator_TA_execGetFocusPlayerNames_Params
 struct AGFxHUD_Spectator_TA_execOpenMenuWithKeycode_Params
 {
 	class FName                                        Action;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UPlayerInput_TA*                          Input;                                            // 0x0020 (0x0008) [0x0000000000000000]               
-	// class FName                                     ActionKey;                                        // 0x0028 (0x0008) [0x0000000000000000]               
-	// int32_t                                         KeyCode;                                          // 0x0030 (0x0004) [0x0000000000000000]               
-	// int32_t                                         MouseButton;                                      // 0x0034 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// class UPlayerInput_TA*                          Input;                                            // 0x0028 (0x0008) [0x0000000000000000]               
+	// class FName                                     ActionKey;                                        // 0x0030 (0x0008) [0x0000000000000000]               
+	// int32_t                                         KeyCode;                                          // 0x0038 (0x0004) [0x0000000000000000]               
+	// int32_t                                         MouseButton;                                      // 0x003C (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxHUD_Spectator_TA.OpenMenuWithKeycodeDelegate
@@ -117441,6 +117727,136 @@ struct USeqAct_CinematicIntroStartNextSeq_TA_eventActivated_Params
 struct USeqAct_CinematicIntroStartNextSeq_TA_execEventActivated_Params
 {
 	class USeqAct_CinematicIntroStartNextSeq_TA*       SeqAct;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.__bClosedFirstMatchWindow__ChangeNotifyFunc
+// [0x00000000] 
+struct UGFxData_FirstTimeExperience_TA_exec__bClosedFirstMatchWindow__ChangeNotifyFunc_Params
+{
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.HandleFTEChange
+// [0x00040003] 
+struct UGFxData_FirstTimeExperience_TA_execHandleFTEChange_Params
+{
+	class UFirstTimeExperienceManager_TA*              InFTEManager;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint32_t                                           bIsActive : 1;                                    // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	class FName                                        GroupName;                                        // 0x000C (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class FName                                        CheckpointName;                                   // 0x0014 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch
+// [0x00080003] 
+struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Params
+{
+	class FString                                      MatchType;                                        // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.StreamLoadLevel
+// [0x00080003] 
+struct UGFxData_FirstTimeExperience_TA_execStreamLoadLevel_Params
+{
+	class UClass*                                      InSeqClass;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// class USequenceObject*                          Evt;                                              // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.SetFirstMatchWindowClosed
+// [0x00020003] 
+struct UGFxData_FirstTimeExperience_TA_execSetFirstMatchWindowClosed_Params
+{
+	uint32_t                                           bHasClosedWindow : 1;                             // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.OnFirstMatchWindowClosed
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execOnFirstMatchWindowClosed_Params
+{
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTELevel
+// [0x08820003] 
+struct UGFxData_FirstTimeExperience_TA_execLoadFTELevel_Params
+{
+	class FString                                      InType;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bAutoEntered : 1;                                 // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// struct FFTELevelData                            LevelData;                                        // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   GameTags;                                         // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class FString>                     OptionsArray;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0080 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class FString                                   Info;                                             // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         InfoIndex;                                        // 0x00A0 (0x0004) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch_Part2
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Part2_Params
+{
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch_Part1
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Part1_Params
+{
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.HasOtherFTEBlockers
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execHasOtherFTEBlockers_Params
+{
+	class FName                                        GroupName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.TryStartFTEGroup
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execTryStartFTEGroup_Params
+{
+	class FName                                        GroupName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint32_t                                           bIgnoreCompletion : 1;                            // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.CheckpointTentativelyCompleted
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execCheckpointTentativelyCompleted_Params
+{
+	class FName                                        InCheckpoint;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.CheckpointCompleted
+// [0x08020003] 
+struct UGFxData_FirstTimeExperience_TA_execCheckpointCompleted_Params
+{
+	class FName                                        InCheckpoint;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint32_t                                           bHasError : 1;                                    // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.HandleFTESaveAdded
+// [0x00040003] 
+struct UGFxData_FirstTimeExperience_TA_execHandleFTESaveAdded_Params
+{
+	class UFirstTimeExperienceSave_TA*                 InFTESave;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// uint32_t                                        bLegacyUser : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.HandleManagerCreated
+// [0x00040003] 
+struct UGFxData_FirstTimeExperience_TA_execHandleManagerCreated_Params
+{
+	class UFirstTimeExperienceManager_TA*              InFTEManager;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.OnShellSet
+// [0x400080802] 
+struct UGFxData_FirstTimeExperience_TA_eventOnShellSet_Params
+{
+};
+
+// Function TAGame.GFxData_FirstTimeExperience_TA.EventFirstMatchWindowClosed
+// [0x00120001] 
+struct UGFxData_FirstTimeExperience_TA_execEventFirstMatchWindowClosed_Params
+{
+	class UGFxData_FirstTimeExperience_TA*             FTEGfx;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.GFxData_ClientPerformanceStats_TA.OnShellSet
@@ -118604,136 +119020,6 @@ struct UGFxData_EOSVoiceUser_TA_eventOnShellSet_Params
 {
 };
 
-// Function TAGame.GFxData_FirstTimeExperience_TA.__bClosedFirstMatchWindow__ChangeNotifyFunc
-// [0x00000000] 
-struct UGFxData_FirstTimeExperience_TA_exec__bClosedFirstMatchWindow__ChangeNotifyFunc_Params
-{
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.HandleFTEChange
-// [0x00040003] 
-struct UGFxData_FirstTimeExperience_TA_execHandleFTEChange_Params
-{
-	class UFirstTimeExperienceManager_TA*              InFTEManager;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	uint32_t                                           bIsActive : 1;                                    // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	class FName                                        GroupName;                                        // 0x000C (0x0008) [0x0000000000000080] (CPF_Parm)    
-	class FName                                        CheckpointName;                                   // 0x0014 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch
-// [0x00080003] 
-struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Params
-{
-	class FString                                      MatchType;                                        // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.StreamLoadLevel
-// [0x00080003] 
-struct UGFxData_FirstTimeExperience_TA_execStreamLoadLevel_Params
-{
-	class UClass*                                      InSeqClass;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// class USequenceObject*                          Evt;                                              // 0x0008 (0x0008) [0x0000000000000000]               
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.SetFirstMatchWindowClosed
-// [0x00020003] 
-struct UGFxData_FirstTimeExperience_TA_execSetFirstMatchWindowClosed_Params
-{
-	uint32_t                                           bHasClosedWindow : 1;                             // 0x0000 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.OnFirstMatchWindowClosed
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execOnFirstMatchWindowClosed_Params
-{
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTELevel
-// [0x08820003] 
-struct UGFxData_FirstTimeExperience_TA_execLoadFTELevel_Params
-{
-	class FString                                      InType;                                           // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bAutoEntered : 1;                                 // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	// struct FFTELevelData                            LevelData;                                        // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   GameTags;                                         // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<class FString>                     OptionsArray;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<class FString>                     ArrayInitializer_0x1;                             // 0x0080 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class FString                                   Info;                                             // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         InfoIndex;                                        // 0x00A0 (0x0004) [0x0000000000000000]               
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch_Part2
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Part2_Params
-{
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.LoadFTEMatch_Part1
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execLoadFTEMatch_Part1_Params
-{
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.HasOtherFTEBlockers
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execHasOtherFTEBlockers_Params
-{
-	class FName                                        GroupName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.TryStartFTEGroup
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execTryStartFTEGroup_Params
-{
-	class FName                                        GroupName;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	uint32_t                                           bIgnoreCompletion : 1;                            // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.CheckpointTentativelyCompleted
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execCheckpointTentativelyCompleted_Params
-{
-	class FName                                        InCheckpoint;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.CheckpointCompleted
-// [0x08020003] 
-struct UGFxData_FirstTimeExperience_TA_execCheckpointCompleted_Params
-{
-	class FName                                        InCheckpoint;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	uint32_t                                           bHasError : 1;                                    // 0x0008 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.HandleFTESaveAdded
-// [0x00040003] 
-struct UGFxData_FirstTimeExperience_TA_execHandleFTESaveAdded_Params
-{
-	class UFirstTimeExperienceSave_TA*                 InFTESave;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	// uint32_t                                        bLegacyUser : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.HandleManagerCreated
-// [0x00040003] 
-struct UGFxData_FirstTimeExperience_TA_execHandleManagerCreated_Params
-{
-	class UFirstTimeExperienceManager_TA*              InFTEManager;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.OnShellSet
-// [0x400080802] 
-struct UGFxData_FirstTimeExperience_TA_eventOnShellSet_Params
-{
-};
-
-// Function TAGame.GFxData_FirstTimeExperience_TA.EventFirstMatchWindowClosed
-// [0x00120001] 
-struct UGFxData_FirstTimeExperience_TA_execEventFirstMatchWindowClosed_Params
-{
-	class UGFxData_FirstTimeExperience_TA*             FTEGfx;                                           // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
 // Function TAGame.GFxData_ESportConfig_TA.DownloadImage
 // [0x08020003] 
 struct UGFxData_ESportConfig_TA_execDownloadImage_Params
@@ -118802,16 +119088,16 @@ struct UTravelManager_TA_execStart_Params
 // [0x00024003] 
 struct UTravelManager_TA_execBuildURL_Params
 {
-	struct FScriptDelegate                             GetMapDataCallback;                               // 0x0000 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class FString                                      ReturnValue;                                      // 0x0018 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
-	// class FString                                   OutputURL;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class FString                                   Option;                                           // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class TArray<class FString>                     AllGameTags;                                      // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// class UMapData_TA*                              MapData;                                          // 0x0058 (0x0008) [0x0000000000000000]               
-	// class TArray<class FString>                     ConcatLocal_0x1;                                  // 0x0060 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class TArray<class FString>                     DistinctLocal_0x2;                                // 0x0070 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
-	// class FString                                   GameTag;                                          // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         TagIndex;                                         // 0x0090 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             GetMapDataCallback;                               // 0x0000 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      ReturnValue;                                      // 0x0020 (0x0010) [0x0000000000400580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink)
+	// class FString                                   OutputURL;                                        // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class FString                                   Option;                                           // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<class FString>                     AllGameTags;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class UMapData_TA*                              MapData;                                          // 0x0060 (0x0008) [0x0000000000000000]               
+	// class TArray<class FString>                     ConcatLocal_0x1;                                  // 0x0068 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<class FString>                     DistinctLocal_0x2;                                // 0x0078 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class FString                                   GameTag;                                          // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         TagIndex;                                         // 0x0098 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TravelManager_TA.GetMapData
@@ -120459,7 +120745,7 @@ struct ULoadoutSequencer_TA_execStart_Params
 {
 	struct FLoadoutData                                InLoadout;                                        // 0x0000 (0x0040) [0x0000000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
 	class ACarPreviewActor_TA*                         InPreviewActor;                                   // 0x0040 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.LoadoutSequencer_TA.SequencerLog
@@ -120715,6 +121001,155 @@ struct UGFxData_PlayerVanity_TA_eventOnRemoved_Params
 // [0x400080802] 
 struct UGFxData_PlayerVanity_TA_eventOnShellSet_Params
 {
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromShopItem_0x2
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromShopItem_0x2_Params
+{
+	struct FShopDeliverable                            P;                                                // 0x0000 (0x0060) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FProductHashID                              ReturnValue;                                      // 0x0060 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromShopItem_0x1
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromShopItem_0x1_Params
+{
+	struct FShopDeliverable                            P;                                                // 0x0000 (0x0060) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            ReturnValue;                                      // 0x0060 (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x4
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x4_Params
+{
+	struct FMTXProduct                                 P;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	struct FProductHashID                              ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x3
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x3_Params
+{
+	struct FMTXProduct                                 P;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	struct FProductHashID                              ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x2
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x2_Params
+{
+	struct FMTXProduct                                 P;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x1
+// [0x40040003] 
+struct UGFxData_BundleShopPreview_TA_exec__GFxData_BundleShopPreview_TA__UpdateFromMTXCatalogue_0x1_Params
+{
+	struct FMTXProduct                                 P;                                                // 0x0000 (0x000C) [0x0000000000000080] (CPF_Parm)    
+	int32_t                                            ReturnValue;                                      // 0x000C (0x0004) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.UpdateFromMTXCatalogue
+// [0x00020003] 
+struct UGFxData_BundleShopPreview_TA_execUpdateFromMTXCatalogue_Params
+{
+	class UMTXGarageCatalogCache_TA*                   Catalogue;                                        // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	class UShopsConfig_TA*                             ShopConfig;                                       // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	// class TArray<int32_t>                           ProductIDs;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<int32_t>                           MapLocal_0x1;                                     // 0x0020 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<int32_t>                           InjectedProductIds;                               // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<int32_t>                           MapLocal_0x2;                                     // 0x0040 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             ProductHashIDs;                                   // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             MapLocal_0x3;                                     // 0x0060 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             InjectedProductHashIds;                           // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             MapLocal_0x4;                                     // 0x0080 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<int32_t>                           IgnoredProductIDs;                                // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.RequestBundlePreview
+// [0x08020003] 
+struct UGFxData_BundleShopPreview_TA_execRequestBundlePreview_Params
+{
+	int32_t                                            InShopID;                                         // 0x0000 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	int32_t                                            InShopItemID;                                     // 0x0004 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	int32_t                                            InCatalogueID;                                    // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x000C (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// uint32_t                                        bNewShop : 1;                                     // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	// uint32_t                                        bFoundShop : 1;                                   // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	// class UGFxData_Shops_TA*                        Shop;                                             // 0x0018 (0x0008) [0x0000000000000000]               
+	// int32_t                                         ShopIndex;                                        // 0x0020 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ShopItemIndex;                                    // 0x0024 (0x0004) [0x0000000000000000]               
+	// class UGFxData_ShopCatalogue_TA*                ShopCatalogue;                                    // 0x0028 (0x0008) [0x0000000000000000]               
+	// class UMTXGarageCatalogCache_TA*                MTXCatalogue;                                     // 0x0030 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.UpdateFromShopItem
+// [0x00020003] 
+struct UGFxData_BundleShopPreview_TA_execUpdateFromShopItem_Params
+{
+	class UGFxData_ShopCatalogue_TA*                   Catalogue;                                        // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	int32_t                                            ShopItemIndex;                                    // 0x0008 (0x0004) [0x0001000000000080] (CPF_Parm)    
+	uint8_t                                          padding0[4];                                      // 0x000C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UShopsConfig_TA*                             ShopConfig;                                       // 0x0010 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	// class TArray<int32_t>                           ProductIDs;                                       // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<int32_t>                           MapLocal_0x1;                                     // 0x0028 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             ProductHashIDs;                                   // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// class TArray<struct FProductHashID>             MapLocal_0x2;                                     // 0x0048 (0x0010) [0x0000000000400102] (CPF_Const | CPF_OutParm | CPF_NeedCtorLink)
+	// class TArray<int32_t>                           IgnoredProductIDs;                                // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.UpdateFromProductIDs
+// [0x00C20003] 
+struct UGFxData_BundleShopPreview_TA_execUpdateFromProductIDs_Params
+{
+	class TArray<int32_t>                              ShopProductIDs;                                   // 0x0000 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class TArray<struct FProductHashID>                ShopProductHashIDs;                               // 0x0010 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class TArray<int32_t>                              IgnoredProductIDs;                                // 0x0020 (0x0010) [0x0001000000400182] (CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink)
+	class UShopsConfig_TA*                             ShopConfig;                                       // 0x0030 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0038 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         BodyProductID;                                    // 0x003C (0x0004) [0x0000000000000000]               
+	// struct FProductHashID                           BodyProductHashID;                                // 0x0040 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ProductID;                                        // 0x0044 (0x0004) [0x0000000000000000]               
+	// int32_t                                         Index;                                            // 0x0048 (0x0004) [0x0000000000000000]               
+	// class UProduct_TA*                              Product;                                          // 0x0050 (0x0008) [0x0000000000000000]               
+	// class UOnlineGameParty_TA*                      OnlineParty;                                      // 0x0058 (0x0008) [0x0000000000000000]               
+	// class UPartyMemberLoadout_TA*                   InitialLoadout;                                   // 0x0060 (0x0008) [0x0000000000000000]               
+	// int32_t                                         EquippedProductCount;                             // 0x0068 (0x0004) [0x0000000000000000]               
+	// struct FProductHashSource                       BodyProductSource;                                // 0x0070 (0x0020) [0x0000000000000000]               
+	// int32_t                                         SIndex;                                           // 0x0090 (0x0004) [0x0000000000000000]               
+	// int32_t                                         SlotProductID;                                    // 0x0094 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ProductIndex;                                     // 0x0098 (0x0004) [0x0000000000000000]               
+	// struct FProductHashSource                       ProductSource;                                    // 0x00A0 (0x0020) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.DeactivateBundlePreview
+// [0x00020003] 
+struct UGFxData_BundleShopPreview_TA_execDeactivateBundlePreview_Params
+{
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.HandlePartyMemberLoadoutChange
+// [0x00040003] 
+struct UGFxData_BundleShopPreview_TA_execHandlePartyMemberLoadoutChange_Params
+{
+	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// uint32_t                                        bIsShellPlayer : 1;                               // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.OnRemoved
+// [0x400080802] 
+struct UGFxData_BundleShopPreview_TA_eventOnRemoved_Params
+{
+	// class UOnlineGameParty_TA*                      OnlineParty;                                      // 0x0000 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_BundleShopPreview_TA.OnShellSet
+// [0x400080802] 
+struct UGFxData_BundleShopPreview_TA_eventOnShellSet_Params
+{
+	// class UOnlineGameParty_TA*                      OnlineParty;                                      // 0x0000 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.MainMenuMetrics_TA.ControlGenerationFailed
@@ -121481,7 +121916,7 @@ struct UGFxData_Regions_TA_execSelectRegions_Params
 // [0x00020003] 
 struct UGFxData_Regions_TA_execNotifyWhenSynced_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_Regions_TA.HandleRegionsSynced
@@ -122535,6 +122970,14 @@ struct USeqEvent_MTXGarageBlueprintPreview_TA_execSetRevealRarity_Params
 {
 	uint8_t                                            InRarity;                                         // 0x0000 (0x0001) [0x0000000000000080] (CPF_Parm)    
 	// class USeqVar_Int*                              IntVar;                                           // 0x0008 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.__GFxData_MTXGarage_TA__GetCachedCatalogueFromID_0x1.__GFxData_MTXGarage_TA__GetCachedCatalogueFromID_0x1
+// [0x00020003] 
+struct U__GFxData_MTXGarage_TA__GetCachedCatalogueFromID_0x1_exec__GFxData_MTXGarage_TA__GetCachedCatalogueFromID_0x1_Params
+{
+	class UMTXGarageCatalogCache_TA*                   Catalogue;                                        // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.RewardDropGroup_TA.__RewardDropGroup_TA__UpdateLevelThresholds_0x1
@@ -123667,7 +124110,7 @@ struct UOnlineGamePlayerTitles_TA_execHandlePlayerTitlesRPC_Params
 	// int32_t                                         ResultIdx;                                        // 0x000C (0x0004) [0x0000000000000000]               
 	// class FName                                     TitleId;                                          // 0x0010 (0x0008) [0x0000000000000000]               
 	// class TArray<struct FScriptDelegate>            Callbacks;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0028 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.OnlineGamePlayerTitles_TA.SyncPlayerTitles
@@ -123675,8 +124118,8 @@ struct UOnlineGamePlayerTitles_TA_execHandlePlayerTitlesRPC_Params
 struct UOnlineGamePlayerTitles_TA_execSyncPlayerTitles_Params
 {
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         PlayerIdx;                                        // 0x0060 (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0048 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         PlayerIdx;                                        // 0x0068 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.OnlineGamePlayerTitles_TA.HandlePlayerPsyNetLogin
@@ -124250,7 +124693,7 @@ struct UProductAttribute_ShopItem_TA_execHasLoadedAllAdditionalReferences_Params
 // [0x400020002] 
 struct UProductAttribute_ShopItem_TA_execLoadAdditionalAssets_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.ProductAttribute_ShopItem_TA.ShouldLoadAdditionalAssets
@@ -124610,7 +125053,7 @@ struct UGFxModal_Info_TA_execSetHeaderVisible_Params
 struct UGFxModal_Info_TA_execHandleButtonClicked_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	// struct FScriptDelegate                          Callback;                                         // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_RewardDrop_TA.__GFxData_RewardDrop_TA__OnShellSet_0x1
@@ -124884,10 +125327,10 @@ struct URocketPassBundleContainer_TA_execGetMenuStack_Params
 // [0x00840003] 
 struct URocketPassBundleContainer_TA_execHandleImageDownloaded_Params
 {
-	struct FOnlineImageDownload                        DownloadResult;                                   // 0x0000 (0x0040) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// struct FRocketPassBundleInfo                    Bundle;                                           // 0x0040 (0x0038) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0078 (0x0004) [0x0000000000000000]               
-	// int32_t                                         ForEachRefIndex_0x2;                              // 0x007C (0x0004) [0x0000000000000000]               
+	struct FOnlineImageDownload                        DownloadResult;                                   // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// struct FRocketPassBundleInfo                    Bundle;                                           // 0x0048 (0x0038) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0080 (0x0004) [0x0000000000000000]               
+	// int32_t                                         ForEachRefIndex_0x2;                              // 0x0084 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.RocketPassBundleContainer_TA.UpdateBundleImages
@@ -125832,8 +126275,10 @@ struct UGFxData_SupportACreator_TA_execGetIconName_Params
 struct UGFxData_SupportACreator_TA_execHandleSetSupportACreatorSuccess_Params
 {
 	class URPC_SupportACreator_Set_TA*                 RPC;                                              // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	// int32_t                                         DaysToExpiration;                                 // 0x0008 (0x0004) [0x0000000000000000]               
-	// class FString                                   LocalizedSupportType;                             // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	// int64_t                                         SecondsToExpiration;                              // 0x0008 (0x0008) [0x0000000000000000]               
+	// int64_t                                         SecondsPerDay;                                    // 0x0010 (0x0008) [0x0000000000000000]               
+	// int32_t                                         DaysToExpiration;                                 // 0x0018 (0x0004) [0x0000000000000000]               
+	// class FString                                   LocalizedSupportType;                             // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_SupportACreator_TA.OnSetSupportACreator
@@ -125962,76 +126407,136 @@ struct UGFxData_TextChatUser_TA_eventOnShellSet_Params
 	// class UEOSPermissions_TA*                       Permissions;                                      // 0x0000 (0x0008) [0x0000000000000000]               
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.__GFxData_ThankYouMessageManager_TA__HandleUISaveDataLoaded_0x1
+// Function TAGame.GFxData_ThankYouMessageManager_TA.OnShowMessage
+// [0x410020002] 
+struct UGFxData_ThankYouMessageManager_TA_execOnShowMessage_Params
+{
+};
+
+// Function TAGame.GFxData_ThankYouMessageManager_TA.IsConfigEnabled
+// [0x400080002] 
+struct UGFxData_ThankYouMessageManager_TA_execIsConfigEnabled_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.__GFxData_OneTimeMainMenuMessage_TA__HandleUISaveDataLoaded_0x1
 // [0x40040003] 
-struct UGFxData_ThankYouMessageManager_TA_exec__GFxData_ThankYouMessageManager_TA__HandleUISaveDataLoaded_0x1_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_exec__GFxData_OneTimeMainMenuMessage_TA__HandleUISaveDataLoaded_0x1_Params
 {
 	class FName                                        instance;                                         // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.OnShowThankYouMessage
-// [0x10020003] 
-struct UGFxData_ThankYouMessageManager_TA_execOnShowThankYouMessage_Params
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.OnShowMessage
+// [0x10020002] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execOnShowMessage_Params
 {
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.TriggerThankYouMessage
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.GetQueue
 // [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execTriggerThankYouMessage_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execGetQueue_Params
+{
+	class UOneTimeMainMenuMessageQueue_TA*             ReturnValue;                                      // 0x0000 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.NotifyMessageDismissed
+// [0x08020003] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execNotifyMessageDismissed_Params
 {
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandleItemNotificationsFinished
-// [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandleItemNotificationsFinished_Params
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.TriggerDisplay
+// [0x00020003] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execTriggerDisplay_Params
 {
-	class UGFxData_MultiItemDrops_TA*                  DropNotifications;                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandleUIStateChanged
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.TriggerMessage
 // [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandleUIStateChanged_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execTriggerMessage_Params
 {
-	class AGameInfo_GFxMenu_TA*                        GameInfoMenu;                                     // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	uint8_t                                            UIState;                                          // 0x0008 (0x0001) [0x0001000000000080] (CPF_Parm)    
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandleFTEComplete
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandleItemNotificationsFinished
 // [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandleFTEComplete_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandleItemNotificationsFinished_Params
+{
+	class UGFxData_MultiItemDrops_TA*                  DropNotifications;                                // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandleUIStateChanged
+// [0x00040003] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandleUIStateChanged_Params
+{
+	class AGameInfo_GFxMenu_TA*                        GameInfoMenu;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	uint8_t                                            UIState;                                          // 0x0008 (0x0001) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandleFTEComplete
+// [0x00040003] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandleFTEComplete_Params
 {
 	// class AGameInfo_GFxMenu_TA*                     GFxMenu;                                          // 0x0000 (0x0008) [0x0000000000000000]               
 	// class UGFxData_MultiItemDrops_TA*               DropNotifications;                                // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandleUISaveDataLoaded
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandleUISaveDataLoaded
 // [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandleUISaveDataLoaded_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandleUISaveDataLoaded_Params
 {
 	// class UFirstTimeExperienceManager_TA*           FTEManager;                                       // 0x0000 (0x0008) [0x0000000000000000]               
 	// class FName                                     GroupName;                                        // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandleSaveManagerLoaded
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandleSaveManagerLoaded
 // [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandleSaveManagerLoaded_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandleSaveManagerLoaded_Params
 {
-	class USaveGameManager_TA*                         Manager;                                          // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	class UError*                                      Error;                                            // 0x0010 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	class USaveGameManager_TA*                         Manager;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class USaveData_TA*                                SaveData;                                         // 0x0008 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	class UError*                                      Error;                                            // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.HandlePsyNetConnected
-// [0x00040003] 
-struct UGFxData_ThankYouMessageManager_TA_execHandlePsyNetConnected_Params
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.IsConfigEnabled
+// [0x00080002] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execIsConfigEnabled_Params
 {
-	class UPsyNetConnection_X*                         Connection;                                       // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0000000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
-// Function TAGame.GFxData_ThankYouMessageManager_TA.OnMainMenuAddedToStageComplete
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.HandlePsyNetConnected
+// [0x00080002] 
+struct UGFxData_OneTimeMainMenuMessage_TA_execHandlePsyNetConnected_Params
+{
+	class UPsyNetConnection_X*                         Connection;                                       // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_OneTimeMainMenuMessage_TA.OnMainMenuAddedToStageComplete
 // [0x08020003] 
-struct UGFxData_ThankYouMessageManager_TA_execOnMainMenuAddedToStageComplete_Params
+struct UGFxData_OneTimeMainMenuMessage_TA_execOnMainMenuAddedToStageComplete_Params
 {
+};
+
+// Function TAGame.OneTimeMainMenuMessageQueue_TA.PromoteNext
+// [0x00040003] 
+struct UOneTimeMainMenuMessageQueue_TA_execPromoteNext_Params
+{
+};
+
+// Function TAGame.OneTimeMainMenuMessageQueue_TA.NotifyDismissed
+// [0x00020003] 
+struct UOneTimeMainMenuMessageQueue_TA_execNotifyDismissed_Params
+{
+	class UGFxData_OneTimeMainMenuMessage_TA*          Message;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.OneTimeMainMenuMessageQueue_TA.Enqueue
+// [0x00020003] 
+struct UOneTimeMainMenuMessageQueue_TA_execEnqueue_Params
+{
+	class UGFxData_OneTimeMainMenuMessage_TA*          Message;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+	// int32_t                                         InsertIndex;                                      // 0x0008 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TourBracketSync_TA.__TourBracketSync_TA__SendRequest_0x1
@@ -126310,7 +126815,7 @@ struct UTourRewards_TA_execHandleGetRewards_Params
 	class TArray<struct FTourReward>                   Rewards;                                          // 0x0008 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	// int32_t                                         ResultIndex;                                      // 0x0018 (0x0004) [0x0000000000000000]               
 	// int32_t                                         RequestIndex;                                     // 0x001C (0x0004) [0x0000000000000000]               
-	// struct FScriptDelegate                          Callback;                                         // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0020 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.TourRewards_TA.Request
@@ -126320,10 +126825,10 @@ struct UTourRewards_TA_execRequest_Params
 	class UTourService_TA*                             Service;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint64_t                                           TournamentID;                                     // 0x0050 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// int32_t                                         ResultIndex;                                      // 0x0078 (0x0004) [0x0000000000000000]               
-	// int32_t                                         RequestIndex;                                     // 0x007C (0x0004) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0078 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         ResultIndex;                                      // 0x0080 (0x0004) [0x0000000000000000]               
+	// int32_t                                         RequestIndex;                                     // 0x0084 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.TourRewards_TA.OnGetRewards
@@ -126443,10 +126948,10 @@ struct UTourMatchServerBrowser_TA_execGetMatchServer_Params
 	uint64_t                                           TournamentID;                                     // 0x0048 (0x0008) [0x0000000000000080] (CPF_Parm)    
 	int32_t                                            MatchID;                                          // 0x0050 (0x0004) [0x0000000000000080] (CPF_Parm)    
 	uint8_t                                          padding0[4];                                      // 0x0054 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UAsyncTask*                                  ReturnValue;                                      // 0x0070 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class URPC_TourGetMatchServer_TA*               RPC;                                              // 0x0078 (0x0008) [0x0000000000000000]               
-	// class URPC_TourGetMatchServer_TA*               ObjectInitializer_0x1;                            // 0x0080 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0058 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UAsyncTask*                                  ReturnValue;                                      // 0x0078 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class URPC_TourGetMatchServer_TA*               RPC;                                              // 0x0080 (0x0008) [0x0000000000000000]               
+	// class URPC_TourGetMatchServer_TA*               ObjectInitializer_0x1;                            // 0x0088 (0x0008) [0x0000000000000102] (CPF_Const | CPF_OutParm)
 };
 
 // Function TAGame.TourMatchServerBrowser_TA.OnGetMatchServer
@@ -126491,8 +126996,8 @@ struct UTrainingProgressTracker_TA_execSetCurrentProgress_Params
 struct UTrainingProgressTracker_TA_execSetProgressSave_Params
 {
 	class UTrainingProgressSave_TA*                    InProgressSave;                                   // 0x0000 (0x0008) [0x0000400000000080] (CPF_Parm)    
-	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0020 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0028 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TrainingProgressTracker_TA.HandleRoundAttempted
@@ -126508,9 +127013,9 @@ struct UTrainingProgressTracker_TA_execHandleRoundAttempted_Params
 struct UTrainingProgressTracker_TA_execHandlePlaytestStarted_Params
 {
 	class AGameEvent_TrainingEditor_TA*                InTrainingEditor;                                 // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	uint64_t                                           InCurrentTime;                                    // 0x0020 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	uint64_t                                           InCurrentTime;                                    // 0x0028 (0x0008) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	// class UTrainingPackProgress_TA*                 NewProgress;                                      // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TrainingProgressTracker_TA.Init
@@ -127288,7 +127793,7 @@ struct UGFxData_TrainingModeBrowser_TA_execGetTrainingMetrics_Params
 // [0x00020003] 
 struct UGFxData_TrainingModeBrowser_TA_execNotifyWhenFavoritesLoaded_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_TrainingModeBrowser_TA.HandleFavorites
@@ -128027,8 +128532,8 @@ struct UGFxData_Workshop_TA_execOnAvatarPersonaHandler_Params
 // [0x00020003] 
 struct UGFxData_Workshop_TA_execOnEventImageDownloaded_Params
 {
-	struct FOnlineImageDownload                        Image;                                            // 0x0000 (0x0040) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// int32_t                                         WorkshopItemIdx;                                  // 0x0040 (0x0004) [0x0000000000000000]               
+	struct FOnlineImageDownload                        Image;                                            // 0x0000 (0x0048) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	// int32_t                                         WorkshopItemIdx;                                  // 0x0048 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_Workshop_TA.HandleWorkshopData
@@ -128251,6 +128756,7 @@ struct AGFxHUD_GameEditor_TA_execInitGFx_Params
 struct AGFxHUD_Soccar_TA_execHandleBallExploded_Params
 {
 	class ABall_TA*                                    Ball;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
+	// class UProductAsset_GoalExplosion_TA*           GoalExplosion;                                    // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxHUD_Soccar_TA.HandleThistleMatch
@@ -128749,14 +129255,14 @@ struct UGFxModal_TextInput_TA_execSetData_Params
 // [0x00024003] 
 struct UGFxModal_TextInput_TA_execSetTextInputData_Params
 {
-	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0018 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                          padding0[4];                                      // 0x001C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class FString                                      DefaultText;                                      // 0x0020 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	int32_t                                            MaxLength;                                        // 0x0030 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
-	uint8_t                                          padding1[4];                                      // 0x0034 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
-	class UGFxModal_TextInput_TA*                      ReturnValue;                                      // 0x0038 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UGFxObject*                               DataObj;                                          // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             InCallback;                                       // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bDisplayAsPassword : 1;                           // 0x0020 (0x0004) [0x0000000000000090] [0x00000001] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding0[4];                                      // 0x0024 (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class FString                                      DefaultText;                                      // 0x0028 (0x0010) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	int32_t                                            MaxLength;                                        // 0x0038 (0x0004) [0x0000000000000090] (CPF_OptionalParm | CPF_Parm)
+	uint8_t                                          padding1[4];                                      // 0x003C (0x0004) PADDING TO SUPPORT 1 BYTE ALIGNMENT
+	class UGFxModal_TextInput_TA*                      ReturnValue;                                      // 0x0040 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UGFxObject*                               DataObj;                                          // 0x0048 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxModal_Tutorial_TA.HandleButtonClicked
@@ -128764,7 +129270,7 @@ struct UGFxModal_TextInput_TA_execSetTextInputData_Params
 struct UGFxModal_Tutorial_TA_execHandleButtonClicked_Params
 {
 	int32_t                                            Index;                                            // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
-	// struct FScriptDelegate                          Callback;                                         // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	// struct FScriptDelegate                          Callback;                                         // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
 };
 
 // Function TAGame.NameplateRenderTarget_TA.Render
@@ -128974,6 +129480,13 @@ struct UGFxData_AntiCheatStatus_TA_execHandlePsyNetConnection_Params
 	// class UOnlinePlayer_TA*                         OnlinePlayer;                                     // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.GFxData_AntiCheatStatus_TA.ShouldCreate
+// [0x400022802] 
+struct UGFxData_AntiCheatStatus_TA_eventShouldCreate_Params
+{
+	bool                                               ReturnValue : 1;                                  // 0x0000 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.GFxData_AntiCheatStatus_TA.OnShellSet
 // [0x400080802] 
 struct UGFxData_AntiCheatStatus_TA_eventOnShellSet_Params
@@ -128990,16 +129503,14 @@ struct UGFxData_CheatRefundManager_TA_eventOnRemoved_Params
 // [0x00020003] 
 struct UGFxData_CheatRefundManager_TA_execTriggerRefundModal_Params
 {
-	class TArray<struct FMMRCompensationData>          MMRCompensationList;                              // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlinePlayer_TA*                         OnlinePlayer;                                     // 0x0010 (0x0008) [0x0000000000000000]               
-	// class U__GFxData_CheatRefundManager_TA__TriggerRefundModal_0x1* _0x1;                                             // 0x0018 (0x0008) [0x0000000000000000]               
+	// class UOnlinePlayer_TA*                         OnlinePlayer;                                     // 0x0000 (0x0008) [0x0000000000000000]               
+	// class UNotificationManager_TA*                  NotificationManager;                              // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.GFxData_CheatRefundManager_TA.HandlePendingRefund
 // [0x00040003] 
 struct UGFxData_CheatRefundManager_TA_execHandlePendingRefund_Params
 {
-	class TArray<struct FMMRCompensationData>          MMRCompensationList;                              // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.GFxData_CheatRefundManager_TA.OnShellSet
@@ -129345,9 +129856,9 @@ struct AHauntedBallTrapTrigger_TA_eventPostBeginPlay_Params
 struct AHUDActor_TA_execCreate_Params
 {
 	class AHUD*                                        InHUD;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             InRenderDelegate;                                 // 0x0008 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class AHUDActor_TA*                                ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class AHUDActor_TA*                             Actor;                                            // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             InRenderDelegate;                                 // 0x0008 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class AHUDActor_TA*                                ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class AHUDActor_TA*                             Actor;                                            // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.HUDActor_TA.Destroyed
@@ -129684,8 +130195,8 @@ struct UIMicroEventConfig_TA_execGetNextActiveMicroEvent_Params
 // [0x00020003] 
 struct UMusicTracklist_TA_execAddLastTrackAction_Params
 {
-	struct FScriptDelegate                             Action;                                           // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class UMusicTracklist_TA*                          ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Action;                                           // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class UMusicTracklist_TA*                          ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.MusicTracklist_TA.Rebuild
@@ -130248,6 +130759,37 @@ struct ULightBarComponent_TA_execSetColor_Params
 	// class ULocalPlayer_X*                           LocalPlayer;                                      // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.SkinForcedFinishCache_TA.GetFlags
+// [0x00820003] 
+struct USkinForcedFinishCache_TA_execGetFlags_Params
+{
+	int32_t                                            SkinProductID;                                    // 0x0000 (0x0004) [0x0000000000000080] (CPF_Parm)    
+	struct FSkinForcedFinishFlags                      ReturnValue;                                      // 0x0004 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// int32_t                                         EntryIndex;                                       // 0x000C (0x0004) [0x0000000000000000]               
+	// struct FSkinForcedFinishFlags                   Flags;                                            // 0x0010 (0x0008) [0x0000000000000000]               
+	// class UProductAsset_Skin_TA*                    SkinAsset;                                        // 0x0018 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.SkinForcedFinishCache_TA.HandlePreLoadMap
+// [0x00040003] 
+struct USkinForcedFinishCache_TA_execHandlePreLoadMap_Params
+{
+	class FString                                      MapName;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function TAGame.SkinForcedFinishCache_TA.Construct
+// [0x400020802] 
+struct USkinForcedFinishCache_TA_eventConstruct_Params
+{
+};
+
+// Function TAGame.SkinForcedFinishCache_TA.GetInstance
+// [0x00022003] 
+struct USkinForcedFinishCache_TA_execGetInstance_Params
+{
+	class USkinForcedFinishCache_TA*                   ReturnValue;                                      // 0x0000 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.LoadoutRenderer_TA.HandleAllProductsLoaded
 // [0x00040003] 
 struct ULoadoutRenderer_TA_execHandleAllProductsLoaded_Params
@@ -130264,7 +130806,7 @@ struct ULoadoutRenderer_TA_execRenderLoadout_Params
 {
 	struct FClientLoadoutData                          Loadout;                                          // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	class ATeam_TA*                                    InTeamArchetype;                                  // 0x0010 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                         // 0x0018 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
 };
 
 // Function TAGame.LoadoutRenderer_TA.EventLoadoutRendered
@@ -131152,6 +131694,18 @@ struct UMutator_DisableScoring_TA_execInit_Params
 	// class AGameEvent_Soccar_TA*                     SoccarEvent;                                      // 0x0008 (0x0008) [0x0000000000000000]               
 };
 
+// Function TAGame.__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1.__Mutator_Freeplay_TA__SubscribeBoostSettings_0x2
+// [0x00020003] 
+struct U__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1_exec__Mutator_Freeplay_TA__SubscribeBoostSettings_0x2_Params
+{
+};
+
+// Function TAGame.__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1.__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1
+// [0x00020003] 
+struct U__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1_exec__Mutator_Freeplay_TA__SubscribeBoostSettings_0x1_Params
+{
+};
+
 // Function TAGame.Mutator_GameEvent_TA.Init
 // [0x400020002] 
 struct UMutator_GameEvent_TA_execInit_Params
@@ -131528,6 +132082,13 @@ struct UHonorDuelManager_TA_execEventJoiningHonorDuel_Params
 {
 	class UAsyncTask*                                  JoiningTask;                                      // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	struct FServerReservationData                      ReservationData;                                  // 0x0008 (0x0070) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function TAGame.__OnlineGameDedicatedServer_TA__UploadFlatbuffersSession_0x1.__OnlineGameDedicatedServer_TA__UploadFlatbuffersSession_0x1
+// [0x00020003] 
+struct U__OnlineGameDedicatedServer_TA__UploadFlatbuffersSession_0x1_exec__OnlineGameDedicatedServer_TA__UploadFlatbuffersSession_0x1_Params
+{
+	class UWebRequest_X*                               R;                                                // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.__OnlineGameDedicatedServer_TA__AllowMigrationMessageReconcile_0x3.__OnlineGameDedicatedServer_TA__AllowMigrationMessageReconcile_0x3
@@ -132350,7 +132911,8 @@ struct AAntiCheatMessenger_TA_execHandleClientAuthStatusChanged_Params
 	struct FUniqueNetId                                PlayerID;                                         // 0x0000 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
 	uint8_t                                            InAuthStatus;                                     // 0x0048 (0x0001) [0x0001000000000080] (CPF_Parm)    
 	// uint64_t                                        AuthFinishTimestamp;                              // 0x0050 (0x0008) [0x0000000000000000]               
-	// int32_t                                         SecondsToAuth;                                    // 0x0058 (0x0004) [0x0000000000000000]               
+	// int64_t                                         AuthDuration;                                     // 0x0058 (0x0008) [0x0000000000000000]               
+	// int32_t                                         SecondsToAuth;                                    // 0x0060 (0x0004) [0x0000000000000000]               
 };
 
 // Function TAGame.AntiCheatMessenger_TA.AuthStatusComplete
@@ -133978,8 +134540,8 @@ struct URPC_ProductsDebugSetCertified_TA_eventOnComplete_Params
 // [0x00020003] 
 struct URPC_ProductsDebugSetCertified_TA_execNotifyCertifiedComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class URPC_ProductsDebugSetCertified_TA*           ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_ProductsDebugSetCertified_TA*           ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.RPC_ProductsDebugSetCertified_TA.SetCertifiedValue
@@ -134033,8 +134595,8 @@ struct URPC_ProductsDebugSetEdition_TA_eventOnComplete_Params
 // [0x00020003] 
 struct URPC_ProductsDebugSetEdition_TA_execNotifyEditionComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class URPC_ProductsDebugSetEdition_TA*             ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_ProductsDebugSetEdition_TA*             ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.RPC_ProductsDebugSetEdition_TA.SetEditionID
@@ -134079,8 +134641,8 @@ struct URPC_ProductsDebugSetPainted_TA_eventOnComplete_Params
 // [0x00020003] 
 struct URPC_ProductsDebugSetPainted_TA_execNotifyPaintedComplete_Params
 {
-	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0018) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class URPC_ProductsDebugSetPainted_TA*             ReturnValue;                                      // 0x0018 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	struct FScriptDelegate                             Callback;                                         // 0x0000 (0x0020) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_ProductsDebugSetPainted_TA*             ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
 // Function TAGame.RPC_ProductsDebugSetPainted_TA.SetPaintID
@@ -136997,9 +137559,9 @@ struct UTradingMetrics_TA_execInvalidProductOffered_Params
 struct UTrainingProgressFactory_TA_execGetOrCreateProgress_Params
 {
 	class UTrainingEditorData_TA*                      TrainingData;                                     // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0018) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
-	class UTrainingPackProgress_TA*                    ReturnValue;                                      // 0x0020 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-	// class UTrainingPackProgress_TA*                 Progress;                                         // 0x0028 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             ValidateRoundCallback;                            // 0x0008 (0x0020) [0x0000000000400090] (CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink)
+	class UTrainingPackProgress_TA*                    ReturnValue;                                      // 0x0028 (0x0008) [0x0000000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+	// class UTrainingPackProgress_TA*                 Progress;                                         // 0x0030 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.TrainingProgressFactory_TA.ValidateRound
@@ -137235,19 +137797,69 @@ struct U__AntiCheatMessenger_TA__HandleIncomingMessagePart_0x1_exec__AntiCheatMe
 	bool                                               ReturnValue : 1;                                  // 0x0018 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
+// Function TAGame.__HonorDuelStatusSync_TA__GetStatus_0x1.__HonorDuelStatusSync_TA__GetStatus_0x1
+// [0x00020003] 
+struct U__HonorDuelStatusSync_TA__GetStatus_0x1_exec__HonorDuelStatusSync_TA__GetStatus_0x1_Params
+{
+	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.__HonorDuelStatusSync_TA__SetStatus_0x1.__HonorDuelStatusSync_TA__SetStatus_0x1
+// [0x00020003] 
+struct U__HonorDuelStatusSync_TA__SetStatus_0x1_exec__HonorDuelStatusSync_TA__SetStatus_0x1_Params
+{
+	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1.__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1
+// [0x00020003] 
+struct U__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1_exec__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1_Params
+{
+	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.RPC_GetPlayerStatus_TA.OnSuccess
+// [0x400880802] 
+struct URPC_GetPlayerStatus_TA_eventOnSuccess_Params
+{
+	// struct FPlayerStatus                            Status;                                           // 0x0000 (0x0068) [0x0010000000400000] (CPF_NeedCtorLink)
+	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0068 (0x0004) [0x0000000000000000]               
+	// class FString                                   StatusString;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+};
+
+// Function TAGame.RPC_GetPlayerStatus_TA.SetPlayerIDs
+// [0x00020003] 
+struct URPC_GetPlayerStatus_TA_execSetPlayerIDs_Params
+{
+	class TArray<struct FUniqueNetId>                  InIds;                                            // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class URPC_GetPlayerStatus_TA*                     ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.__HonorDuelStatusSync_TA__HasStatus_0x1.__HonorDuelStatusSync_TA__HasStatus_0x1
+// [0x00020003] 
+struct U__HonorDuelStatusSync_TA__HasStatus_0x1_exec__HonorDuelStatusSync_TA__HasStatus_0x1_Params
+{
+	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
+// Function TAGame.__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1.__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1
+// [0x00020003] 
+struct U__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1_exec__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1_Params
+{
+	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
+};
+
 // Function TAGame.ProductStat_CrossbarHits_TA.OnStatEvent
 // [0x400084002] 
 struct UProductStat_CrossbarHits_TA_execOnStatEvent_Params
 {
 	class UStatEvent_TA*                               StatEvent;                                        // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 	int32_t                                            Count;                                            // 0x0008 (0x0004) [0x0001000000000090] (CPF_OptionalParm | CPF_Parm)
-};
-
-// Function TAGame.__GFxData_CheatRefundManager_TA__TriggerRefundModal_0x1.__GFxData_CheatRefundManager_TA__TriggerRefundModal_0x1
-// [0x00020003] 
-struct U__GFxData_CheatRefundManager_TA__TriggerRefundModal_0x1_exec__GFxData_CheatRefundManager_TA__TriggerRefundModal_0x1_Params
-{
-	struct FMMRCompensationData                        Comp;                                             // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
 };
 
 // Function TAGame.HonorDuelMatchNotification_TA.ClickDeny
@@ -137321,77 +137933,11 @@ struct U__GFxData_HonorDuel_TA__HandleHonorDuelMatchStarted_0x1_exec__GFxData_Ho
 	bool                                               ReturnValue : 1;                                  // 0x0008 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
 };
 
-// Function TAGame.__HonorDuelStatusSync_TA__GetStatus_0x1.__HonorDuelStatusSync_TA__GetStatus_0x1
-// [0x00020003] 
-struct U__HonorDuelStatusSync_TA__GetStatus_0x1_exec__HonorDuelStatusSync_TA__GetStatus_0x1_Params
-{
-	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.__HonorDuelStatusSync_TA__SetStatus_0x1.__HonorDuelStatusSync_TA__SetStatus_0x1
-// [0x00020003] 
-struct U__HonorDuelStatusSync_TA__SetStatus_0x1_exec__HonorDuelStatusSync_TA__SetStatus_0x1_Params
-{
-	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1.__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1
-// [0x00020003] 
-struct U__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1_exec__HonorDuelStatusSync_TA__HandlePlayerStatuses_0x1_Params
-{
-	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.RPC_GetPlayerStatus_TA.OnSuccess
-// [0x400880802] 
-struct URPC_GetPlayerStatus_TA_eventOnSuccess_Params
-{
-	// struct FPlayerStatus                            Status;                                           // 0x0000 (0x0068) [0x0010000000400000] (CPF_NeedCtorLink)
-	// int32_t                                         ForEachRefIndex_0x1;                              // 0x0068 (0x0004) [0x0000000000000000]               
-	// class FString                                   StatusString;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
-};
-
-// Function TAGame.RPC_GetPlayerStatus_TA.SetPlayerIDs
-// [0x00020003] 
-struct URPC_GetPlayerStatus_TA_execSetPlayerIDs_Params
-{
-	class TArray<struct FUniqueNetId>                  InIds;                                            // 0x0000 (0x0010) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	class URPC_GetPlayerStatus_TA*                     ReturnValue;                                      // 0x0010 (0x0008) [0x0001000000000580] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.__HonorDuelStatusSync_TA__HasStatus_0x1.__HonorDuelStatusSync_TA__HasStatus_0x1
-// [0x00020003] 
-struct U__HonorDuelStatusSync_TA__HasStatus_0x1_exec__HonorDuelStatusSync_TA__HasStatus_0x1_Params
-{
-	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
-// Function TAGame.__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1.__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1
-// [0x00020003] 
-struct U__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1_exec__HonorDuelStatusSync_TA__HandlePlayerAdded_0x1_Params
-{
-	struct FPlayerStatus                               P;                                                // 0x0000 (0x0068) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	bool                                               ReturnValue : 1;                                  // 0x0068 (0x0004) [0x0001000000000580] [0x00000001] (CPF_Parm | CPF_OutParm | CPF_ReturnParm)
-};
-
 // Function TAGame.__SpecialEvent_TA__SyncImageForIndex_0x1.__SpecialEvent_TA__SyncImageForIndex_0x1
 // [0x00020003] 
 struct U__SpecialEvent_TA__SyncImageForIndex_0x1_exec__SpecialEvent_TA__SyncImageForIndex_0x1_Params
 {
 	class UTexture2DDynamic*                           Texture;                                          // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
-};
-
-// Function TAGame.MMRRefundNotification_TA.SetRefundData
-// [0x00020003] 
-struct UMMRRefundNotification_TA_execSetRefundData_Params
-{
-	struct FMMRCompensationData                        Compensation;                                     // 0x0000 (0x0008) [0x0001000000000080] (CPF_Parm)    
-	struct FUniqueNetId                                PlayerID;                                         // 0x0008 (0x0048) [0x0001000000400080] (CPF_Parm | CPF_NeedCtorLink)
-	// class UOnlineGameSkill_X*                       Skill;                                            // 0x0050 (0x0008) [0x0000000000000000]               
 };
 
 // Function TAGame.__Ball_Blade_TA__UpdateTargetCar_0x5.__Ball_Blade_TA__UpdateTargetCar_0x5
@@ -137757,6 +138303,37 @@ struct AFXActor_BladeBallTarget_TA_execHandlePRIChanged_Params
 struct AFXActor_BladeBallTarget_TA_eventPostBeginPlay_Params
 {
 	// class ACar_TA*                                  CarOwner;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_DevMenu_TA.ClearActiveModal
+// [0x00040003] 
+struct UGFxData_DevMenu_TA_execClearActiveModal_Params
+{
+	class UGFxModal_X*                                 Modal;                                            // 0x0000 (0x0008) [0x0000000000000080] (CPF_Parm)    
+};
+
+// Function TAGame.GFxData_DevMenu_TA.ShowResult
+// [0x00040003] 
+struct UGFxData_DevMenu_TA_execShowResult_Params
+{
+	class FString                                      Title;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	class FString                                      Body;                                             // 0x0010 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+};
+
+// Function TAGame.GFxData_DevMenu_TA.HandleClearUISavedValueKey
+// [0x00040003] 
+struct UGFxData_DevMenu_TA_execHandleClearUISavedValueKey_Params
+{
+	class FString                                      InKey;                                            // 0x0000 (0x0010) [0x0000000000400080] (CPF_Parm | CPF_NeedCtorLink)
+	uint32_t                                           bCanceled : 1;                                    // 0x0010 (0x0004) [0x0000000000000080] [0x00000001] (CPF_Parm)
+	// class FName                                     Key;                                              // 0x0014 (0x0008) [0x0000000000000000]               
+	// class UUISavedValues_TA*                        SavedValues;                                      // 0x0020 (0x0008) [0x0000000000000000]               
+};
+
+// Function TAGame.GFxData_DevMenu_TA.OpenClearUISavedValueKey
+// [0x08020003] 
+struct UGFxData_DevMenu_TA_execOpenClearUISavedValueKey_Params
+{
 };
 
 // Function TAGame.GFxData_SpecialEventManager_TA.HandleEventConfigChanged
